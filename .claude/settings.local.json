@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:developers.hivelocity.net)",
+      "WebFetch(domain:help.hivelocity.net)",
+      "Bash(py -3 -c \":*)"
+    ]
+  }
+}
