@@ -1,9 +1,12 @@
 import { useState, type FormEvent } from 'react'
 import { Link } from 'react-router-dom'
-import { Mail, Phone, MapPinned, Send, CheckCircle2 } from 'lucide-react'
+import { Mail, Phone, MapPinned, Send, CheckCircle2, AlertCircle, Loader2 } from 'lucide-react'
+
+type Status = 'idle' | 'loading' | 'success' | 'error'
 
 export default function Contact() {
-  const [submitted, setSubmitted] = useState(false)
+  const [status, setStatus] = useState<Status>('idle')
+  const [errorMsg, setErrorMsg] = useState('')
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -12,14 +15,34 @@ export default function Contact() {
     message: ''
   })
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    const subject = encodeURIComponent(`Website inquiry from ${form.name}`)
-    const body = encodeURIComponent(
-      `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone || '—'}\nCompany: ${form.company || '—'}\n\nMessage:\n${form.message}`
-    )
-    setSubmitted(true)
-    window.location.href = `mailto:info@amoradigital.nl?subject=${subject}&body=${body}`
+    setStatus('loading')
+    setErrorMsg('')
+
+    const formData = new FormData(e.currentTarget)
+    formData.append('access_key', '74b3d9d7-367c-4c9b-b82e-09d0f0d701b7')
+    formData.append('subject', `Website inquiry from ${form.name}`)
+    formData.append('from_name', 'Amora Digital Website')
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      })
+      const data = await response.json()
+
+      if (data.success) {
+        setStatus('success')
+        setForm({ name: '', email: '', phone: '', company: '', message: '' })
+      } else {
+        setStatus('error')
+        setErrorMsg(data.message || 'Something went wrong. Please try again.')
+      }
+    } catch {
+      setStatus('error')
+      setErrorMsg('Network error. Please check your connection and try again.')
+    }
   }
 
   return (
@@ -102,21 +125,29 @@ export default function Contact() {
               <div className="rounded-3xl border border-slate-200 bg-slate-50/50 p-6 sm:p-8 shadow-sm">
                 <h2 className="font-display text-xl font-bold text-slate-900 mb-6">Send a message</h2>
 
-                {submitted && (
-                  <div className="mb-6 flex items-start gap-3 p-4 rounded-xl bg-primary-50 border border-primary-100 text-primary-900 text-sm">
-                    <CheckCircle2 className="w-5 h-5 shrink-0 mt-0.5" />
-                    <p>
-                      If your email app opened, send the message from there. If nothing opened, check that you have a
-                      mail client configured, or email us at{' '}
-                      <a href="mailto:info@amoradigital.nl" className="font-medium underline">
-                        info@amoradigital.nl
-                      </a>
-                      .
-                    </p>
+                {status === 'success' && (
+                  <div className="mb-6 flex items-start gap-3 p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-900 text-sm">
+                    <CheckCircle2 className="w-5 h-5 shrink-0 mt-0.5 text-emerald-500" />
+                    <div>
+                      <p className="font-semibold">Message sent successfully!</p>
+                      <p className="text-emerald-700 mt-0.5">Thank you for reaching out. We typically reply within one business day.</p>
+                    </div>
+                  </div>
+                )}
+
+                {status === 'error' && (
+                  <div className="mb-6 flex items-start gap-3 p-4 rounded-xl bg-red-50 border border-red-200 text-red-900 text-sm">
+                    <AlertCircle className="w-5 h-5 shrink-0 mt-0.5 text-red-500" />
+                    <div>
+                      <p className="font-semibold">Failed to send message</p>
+                      <p className="text-red-700 mt-0.5">{errorMsg}</p>
+                    </div>
                   </div>
                 )}
 
                 <form onSubmit={handleSubmit} className="space-y-5">
+                  {/* Honeypot spam protection */}
+                  <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
                       <label htmlFor="contact-name" className="block text-sm font-medium text-slate-700 mb-1.5">
@@ -203,14 +234,23 @@ export default function Contact() {
 
                   <button
                     type="submit"
-                    className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-3.5 text-base font-semibold text-white bg-gradient-to-r from-primary-600 to-secondary-500 rounded-full hover:from-primary-700 hover:to-secondary-600 transition-all shadow-lg shadow-primary-500/25"
+                    disabled={status === 'loading'}
+                    className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-3.5 text-base font-semibold text-white bg-gradient-to-r from-primary-600 to-secondary-500 rounded-full hover:from-primary-700 hover:to-secondary-600 transition-all shadow-lg shadow-primary-500/25 disabled:opacity-70 disabled:cursor-not-allowed"
                   >
-                    <Send className="w-5 h-5" />
-                    Open in email app
+                    {status === 'loading' ? (
+                      <>
+                        <Loader2 className="w-5 h-5 animate-spin" />
+                        Sending…
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-5 h-5" />
+                        Send message
+                      </>
+                    )}
                   </button>
                   <p className="text-xs text-slate-500">
-                    Submitting opens your default email client with your message. By sending, you agree we may reply
-                    regarding your inquiry. See our{' '}
+                    By sending, you agree we may reply regarding your inquiry. See our{' '}
                     <Link to="/privacy-policy" className="text-primary-600 hover:underline">
                       Privacy Policy
                     </Link>
