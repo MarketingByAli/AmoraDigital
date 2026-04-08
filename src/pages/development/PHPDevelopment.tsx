@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import LeadForm from '../../components/LeadForm'
 import {
   ArrowRight,
   CheckCircle2,
@@ -600,79 +601,51 @@ export default function PHPDevelopment() {
               </div>
               
               {/* Lead Form */}
-              <div className="bg-white rounded-2xl p-8 shadow-2xl">
-                <h3 className="text-xl font-bold text-slate-900 mb-6">Start Your PHP Project</h3>
-                <form className="space-y-4">
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <label htmlFor="firstName" className="block text-sm font-medium text-slate-700 mb-1">First Name</label>
-                      <input 
-                        type="text" 
-                        id="firstName"
-                        className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
-                        placeholder="John"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="lastName" className="block text-sm font-medium text-slate-700 mb-1">Last Name</label>
-                      <input 
-                        type="text" 
-                        id="lastName"
-                        className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
-                        placeholder="Doe"
-                      />
-                    </div>
+              <LeadForm
+                title="Start Your PHP Project"
+                subject="PHP Development Inquiry"
+                buttonText="Get Free Consultation"
+                buttonClass="from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 shadow-lg shadow-indigo-500/25"
+                footnote="Free consultation. We'll respond within 24 hours."
+              >
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="firstName" className="block text-sm font-medium text-slate-700 mb-1">First Name</label>
+                    <input type="text" id="firstName" name="firstName" required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" placeholder="John" />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">Email</label>
-                    <input 
-                      type="email" 
-                      id="email"
-                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
-                      placeholder="john@company.com"
-                    />
+                    <label htmlFor="lastName" className="block text-sm font-medium text-slate-700 mb-1">Last Name</label>
+                    <input type="text" id="lastName" name="lastName" required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" placeholder="Doe" />
                   </div>
-                  <div>
-                    <label htmlFor="framework" className="block text-sm font-medium text-slate-700 mb-1">Preferred Framework</label>
-                    <select 
-                      id="framework"
-                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
-                    >
-                      <option value="">Select framework</option>
-                      <option value="laravel">Laravel</option>
-                      <option value="symfony">Symfony</option>
-                      <option value="wordpress">WordPress</option>
-                      <option value="codeigniter">CodeIgniter</option>
-                      <option value="custom">Custom PHP</option>
-                      <option value="unsure">Not sure yet</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label htmlFor="projectType" className="block text-sm font-medium text-slate-700 mb-1">Project Type</label>
-                    <select 
-                      id="projectType"
-                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
-                    >
-                      <option value="">Select project type</option>
-                      <option value="new">New Development</option>
-                      <option value="migration">Legacy Modernization</option>
-                      <option value="ecommerce">E-Commerce</option>
-                      <option value="api">API Development</option>
-                      <option value="maintenance">Maintenance & Support</option>
-                    </select>
-                  </div>
-                  <button 
-                    type="submit"
-                    className="w-full py-4 px-6 text-base font-semibold text-white bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg hover:from-indigo-600 hover:to-purple-700 transition-all shadow-lg shadow-indigo-500/25 flex items-center justify-center gap-2 group"
-                  >
-                    Get Free Consultation
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </button>
-                </form>
-                <p className="mt-4 text-xs text-slate-500 text-center">
-                  Free consultation. We'll respond within 24 hours.
-                </p>
-              </div>
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">Email</label>
+                  <input type="email" id="email" name="email" required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" placeholder="john@company.com" />
+                </div>
+                <div>
+                  <label htmlFor="framework" className="block text-sm font-medium text-slate-700 mb-1">Preferred Framework</label>
+                  <select id="framework" name="framework" className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors">
+                    <option value="">Select framework</option>
+                    <option value="Laravel">Laravel</option>
+                    <option value="Symfony">Symfony</option>
+                    <option value="WordPress">WordPress</option>
+                    <option value="CodeIgniter">CodeIgniter</option>
+                    <option value="Custom PHP">Custom PHP</option>
+                    <option value="Not sure yet">Not sure yet</option>
+                  </select>
+                </div>
+                <div>
+                  <label htmlFor="projectType" className="block text-sm font-medium text-slate-700 mb-1">Project Type</label>
+                  <select id="projectType" name="projectType" className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors">
+                    <option value="">Select project type</option>
+                    <option value="New Development">New Development</option>
+                    <option value="Legacy Modernization">Legacy Modernization</option>
+                    <option value="E-Commerce">E-Commerce</option>
+                    <option value="API Development">API Development</option>
+                    <option value="Maintenance & Support">Maintenance & Support</option>
+                  </select>
+                </div>
+              </LeadForm>
             </div>
           </div>
         </div>

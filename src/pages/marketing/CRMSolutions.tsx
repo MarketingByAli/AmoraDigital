@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import LeadForm from '../../components/LeadForm'
 import {
   ArrowRight,
   CheckCircle2,
@@ -554,72 +555,42 @@ export default function CRMSolutions() {
               </div>
               
               {/* Lead Form */}
-              <div className="bg-white rounded-2xl p-8 shadow-2xl">
-                <h3 className="text-xl font-bold text-slate-900 mb-6">Get Your Free CRM Consultation</h3>
-                <form className="space-y-4">
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <label htmlFor="firstName" className="block text-sm font-medium text-slate-700 mb-1">First Name</label>
-                      <input 
-                        type="text" 
-                        id="firstName"
-                        className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
-                        placeholder="John"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="lastName" className="block text-sm font-medium text-slate-700 mb-1">Last Name</label>
-                      <input 
-                        type="text" 
-                        id="lastName"
-                        className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
-                        placeholder="Doe"
-                      />
-                    </div>
+              <LeadForm
+                title="Get Your Free CRM Consultation"
+                subject="CRM Solutions Inquiry"
+                buttonText="Get Free Consultation"
+                buttonClass="from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 shadow-lg shadow-indigo-500/25"
+                footnote="Free consultation. No obligation."
+              >
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="firstName" className="block text-sm font-medium text-slate-700 mb-1">First Name</label>
+                    <input type="text" id="firstName" name="firstName" required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" placeholder="John" />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">Email</label>
-                    <input 
-                      type="email" 
-                      id="email"
-                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
-                      placeholder="john@company.com"
-                    />
+                    <label htmlFor="lastName" className="block text-sm font-medium text-slate-700 mb-1">Last Name</label>
+                    <input type="text" id="lastName" name="lastName" required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" placeholder="Doe" />
                   </div>
-                  <div>
-                    <label htmlFor="company" className="block text-sm font-medium text-slate-700 mb-1">Company</label>
-                    <input 
-                      type="text" 
-                      id="company"
-                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
-                      placeholder="Your Company"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="crm" className="block text-sm font-medium text-slate-700 mb-1">Current CRM Situation</label>
-                    <select 
-                      id="crm"
-                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
-                    >
-                      <option value="">Select your situation</option>
-                      <option value="none">No CRM - Using spreadsheets</option>
-                      <option value="basic">Basic CRM - Need upgrade</option>
-                      <option value="complex">Have CRM - Need optimization</option>
-                      <option value="custom">Need custom solution</option>
-                    </select>
-                  </div>
-                  <button 
-                    type="submit"
-                    className="w-full py-4 px-6 text-base font-semibold text-white bg-gradient-to-r from-indigo-600 to-violet-600 rounded-lg hover:from-indigo-700 hover:to-violet-700 transition-all shadow-lg shadow-indigo-500/25 flex items-center justify-center gap-2 group"
-                  >
-                    Get Free Consultation
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </button>
-                </form>
-                <p className="mt-4 text-xs text-slate-500 text-center">
-                  Free consultation. No obligation.
-                </p>
-              </div>
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">Email</label>
+                  <input type="email" id="email" name="email" required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" placeholder="john@company.com" />
+                </div>
+                <div>
+                  <label htmlFor="company" className="block text-sm font-medium text-slate-700 mb-1">Company</label>
+                  <input type="text" id="company" name="company" className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" placeholder="Your Company" />
+                </div>
+                <div>
+                  <label htmlFor="crm" className="block text-sm font-medium text-slate-700 mb-1">Current CRM Situation</label>
+                  <select id="crm" name="crm" className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors">
+                    <option value="">Select your situation</option>
+                    <option value="No CRM - Using spreadsheets">No CRM - Using spreadsheets</option>
+                    <option value="Basic CRM - Need upgrade">Basic CRM - Need upgrade</option>
+                    <option value="Have CRM - Need optimization">Have CRM - Need optimization</option>
+                    <option value="Need custom solution">Need custom solution</option>
+                  </select>
+                </div>
+              </LeadForm>
             </div>
           </div>
         </div>

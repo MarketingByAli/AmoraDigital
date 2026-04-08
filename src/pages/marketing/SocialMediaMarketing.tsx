@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import LeadForm from '../../components/LeadForm'
 import {
   ArrowRight,
   CheckCircle2,
@@ -493,57 +494,30 @@ export default function SocialMediaMarketing() {
               </div>
               
               {/* Lead Form */}
-              <div className="bg-white rounded-2xl p-8 shadow-2xl">
-                <h3 className="text-xl font-bold text-slate-900 mb-6">Get Your Free Strategy</h3>
-                <form className="space-y-4">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-1">Full Name</label>
-                    <input 
-                      type="text" 
-                      id="name"
-                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-pink-500 focus:border-pink-500 transition-colors"
-                      placeholder="John Doe"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">Email</label>
-                    <input 
-                      type="email" 
-                      id="email"
-                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-pink-500 focus:border-pink-500 transition-colors"
-                      placeholder="john@company.com"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="instagram" className="block text-sm font-medium text-slate-700 mb-1">Instagram Handle (optional)</label>
-                    <input 
-                      type="text" 
-                      id="instagram"
-                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-pink-500 focus:border-pink-500 transition-colors"
-                      placeholder="@yourbrand"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="goals" className="block text-sm font-medium text-slate-700 mb-1">What are your social media goals?</label>
-                    <textarea 
-                      id="goals"
-                      rows={3}
-                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-pink-500 focus:border-pink-500 transition-colors"
-                      placeholder="Tell us about your goals..."
-                    />
-                  </div>
-                  <button 
-                    type="submit"
-                    className="w-full py-4 px-6 text-base font-semibold text-white bg-gradient-to-r from-pink-500 to-purple-600 rounded-lg hover:from-pink-600 hover:to-purple-700 transition-all shadow-lg shadow-pink-500/25 flex items-center justify-center gap-2 group"
-                  >
-                    Get My Free Strategy
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </button>
-                </form>
-                <p className="mt-4 text-xs text-slate-500 text-center">
-                  Free consultation. No commitment required.
-                </p>
-              </div>
+              <LeadForm
+                title="Get Your Free Strategy"
+                subject="Social Media Marketing Inquiry"
+                buttonText="Get My Free Strategy"
+                buttonClass="from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 shadow-lg shadow-pink-500/25"
+                footnote="Free consultation. No commitment required."
+              >
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-1">Full Name</label>
+                  <input type="text" id="name" name="name" required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-pink-500 focus:border-pink-500 transition-colors" placeholder="John Doe" />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">Email</label>
+                  <input type="email" id="email" name="email" required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-pink-500 focus:border-pink-500 transition-colors" placeholder="john@company.com" />
+                </div>
+                <div>
+                  <label htmlFor="instagram" className="block text-sm font-medium text-slate-700 mb-1">Instagram Handle (optional)</label>
+                  <input type="text" id="instagram" name="instagram" className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-pink-500 focus:border-pink-500 transition-colors" placeholder="@yourbrand" />
+                </div>
+                <div>
+                  <label htmlFor="goals" className="block text-sm font-medium text-slate-700 mb-1">What are your social media goals?</label>
+                  <textarea id="goals" name="goals" rows={3} className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-pink-500 focus:border-pink-500 transition-colors" placeholder="Tell us about your goals..." />
+                </div>
+              </LeadForm>
             </div>
           </div>
         </div>

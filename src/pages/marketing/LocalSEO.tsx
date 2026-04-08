@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import LeadForm from '../../components/LeadForm'
 import {
   ArrowRight,
   CheckCircle2,
@@ -541,68 +542,36 @@ export default function LocalSEO() {
               </div>
               
               {/* Lead Form */}
-              <div className="bg-white rounded-2xl p-8 shadow-2xl">
-                <h3 className="text-xl font-bold text-slate-900 mb-6">Get Your Free Local SEO Audit</h3>
-                <form className="space-y-4">
+              <LeadForm
+                title="Get Your Free Local SEO Audit"
+                subject="Local SEO Audit Request"
+                buttonText="Get My Free Audit"
+                buttonClass="from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 shadow-lg shadow-emerald-500/25"
+                footnote="Free audit. See where you stand in local search."
+              >
+                <div>
+                  <label htmlFor="businessName" className="block text-sm font-medium text-slate-700 mb-1">Business Name</label>
+                  <input type="text" id="businessName" name="businessName" required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors" placeholder="Your Business Name" />
+                </div>
+                <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="businessName" className="block text-sm font-medium text-slate-700 mb-1">Business Name</label>
-                    <input 
-                      type="text" 
-                      id="businessName"
-                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
-                      placeholder="Your Business Name"
-                    />
-                  </div>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-1">Your Name</label>
-                      <input 
-                        type="text" 
-                        id="name"
-                        className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
-                        placeholder="John Doe"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-slate-700 mb-1">Phone</label>
-                      <input 
-                        type="tel" 
-                        id="phone"
-                        className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
-                        placeholder="+31 6 1234 5678"
-                      />
-                    </div>
+                    <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-1">Your Name</label>
+                    <input type="text" id="name" name="name" required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors" placeholder="John Doe" />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">Email</label>
-                    <input 
-                      type="email" 
-                      id="email"
-                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
-                      placeholder="john@business.com"
-                    />
+                    <label htmlFor="phone" className="block text-sm font-medium text-slate-700 mb-1">Phone</label>
+                    <input type="tel" id="phone" name="phone" className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors" placeholder="+31 6 1234 5678" />
                   </div>
-                  <div>
-                    <label htmlFor="location" className="block text-sm font-medium text-slate-700 mb-1">City/Region</label>
-                    <input 
-                      type="text" 
-                      id="location"
-                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
-                      placeholder="Amsterdam, Netherlands"
-                    />
-                  </div>
-                  <button 
-                    type="submit"
-                    className="w-full py-4 px-6 text-base font-semibold text-white bg-gradient-to-r from-green-500 to-emerald-600 rounded-lg hover:from-green-600 hover:to-emerald-700 transition-all shadow-lg shadow-emerald-500/25 flex items-center justify-center gap-2 group"
-                  >
-                    Get My Free Audit
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </button>
-                </form>
-                <p className="mt-4 text-xs text-slate-500 text-center">
-                  Free audit. See where you stand in local search.
-                </p>
-              </div>
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">Email</label>
+                  <input type="email" id="email" name="email" required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors" placeholder="john@business.com" />
+                </div>
+                <div>
+                  <label htmlFor="location" className="block text-sm font-medium text-slate-700 mb-1">City/Region</label>
+                  <input type="text" id="location" name="location" className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors" placeholder="Amsterdam, Netherlands" />
+                </div>
+              </LeadForm>
             </div>
           </div>
         </div>

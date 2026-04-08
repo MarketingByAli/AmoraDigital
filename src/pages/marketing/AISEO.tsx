@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import LeadForm from '../../components/LeadForm'
 import {
   ArrowRight,
   CheckCircle2,
@@ -561,72 +562,42 @@ export default function AISEO() {
               </div>
               
               {/* Lead Form */}
-              <div className="bg-white rounded-2xl p-8 shadow-2xl">
-                <h3 className="text-xl font-bold text-slate-900 mb-6">Get Your Free AI SEO Audit</h3>
-                <form className="space-y-4">
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <label htmlFor="firstName" className="block text-sm font-medium text-slate-700 mb-1">First Name</label>
-                      <input 
-                        type="text" 
-                        id="firstName"
-                        className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors"
-                        placeholder="John"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="lastName" className="block text-sm font-medium text-slate-700 mb-1">Last Name</label>
-                      <input 
-                        type="text" 
-                        id="lastName"
-                        className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors"
-                        placeholder="Doe"
-                      />
-                    </div>
+              <LeadForm
+                title="Get Your Free AI SEO Audit"
+                subject="AI SEO Audit Request"
+                buttonText="Get My Free AI SEO Audit"
+                buttonClass="from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 shadow-lg shadow-purple-500/25"
+                footnote="Free audit. Discover your AI visibility score."
+              >
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="firstName" className="block text-sm font-medium text-slate-700 mb-1">First Name</label>
+                    <input type="text" id="firstName" name="firstName" required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors" placeholder="John" />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">Email</label>
-                    <input 
-                      type="email" 
-                      id="email"
-                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors"
-                      placeholder="john@company.com"
-                    />
+                    <label htmlFor="lastName" className="block text-sm font-medium text-slate-700 mb-1">Last Name</label>
+                    <input type="text" id="lastName" name="lastName" required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors" placeholder="Doe" />
                   </div>
-                  <div>
-                    <label htmlFor="website" className="block text-sm font-medium text-slate-700 mb-1">Website URL</label>
-                    <input 
-                      type="url" 
-                      id="website"
-                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors"
-                      placeholder="https://yourwebsite.com"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="concern" className="block text-sm font-medium text-slate-700 mb-1">Primary Concern</label>
-                    <select 
-                      id="concern"
-                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors"
-                    >
-                      <option value="">Select your main concern</option>
-                      <option value="visibility">Not visible in AI search</option>
-                      <option value="citations">Want to be cited by AI</option>
-                      <option value="future">Future-proof my SEO</option>
-                      <option value="competitor">Competitors are ahead</option>
-                    </select>
-                  </div>
-                  <button 
-                    type="submit"
-                    className="w-full py-4 px-6 text-base font-semibold text-white bg-gradient-to-r from-purple-600 to-violet-600 rounded-lg hover:from-purple-700 hover:to-violet-700 transition-all shadow-lg shadow-purple-500/25 flex items-center justify-center gap-2 group"
-                  >
-                    Get My Free AI SEO Audit
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </button>
-                </form>
-                <p className="mt-4 text-xs text-slate-500 text-center">
-                  Free audit. Discover your AI visibility score.
-                </p>
-              </div>
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">Email</label>
+                  <input type="email" id="email" name="email" required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors" placeholder="john@company.com" />
+                </div>
+                <div>
+                  <label htmlFor="website" className="block text-sm font-medium text-slate-700 mb-1">Website URL</label>
+                  <input type="url" id="website" name="website" className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors" placeholder="https://yourwebsite.com" />
+                </div>
+                <div>
+                  <label htmlFor="concern" className="block text-sm font-medium text-slate-700 mb-1">Primary Concern</label>
+                  <select id="concern" name="concern" className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors">
+                    <option value="">Select your main concern</option>
+                    <option value="Not visible in AI search">Not visible in AI search</option>
+                    <option value="Want to be cited by AI">Want to be cited by AI</option>
+                    <option value="Future-proof my SEO">Future-proof my SEO</option>
+                    <option value="Competitors are ahead">Competitors are ahead</option>
+                  </select>
+                </div>
+              </LeadForm>
             </div>
           </div>
         </div>

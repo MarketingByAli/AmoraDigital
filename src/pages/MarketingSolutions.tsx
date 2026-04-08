@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import LeadForm from '../components/LeadForm'
 import {
   ArrowRight,
   Globe,
@@ -495,57 +496,30 @@ export default function MarketingSolutions() {
               </div>
               
               {/* Lead Form */}
-              <div className="bg-white rounded-2xl p-8 shadow-2xl">
-                <h3 className="text-xl font-bold text-slate-900 mb-6">Request Your Free Audit</h3>
-                <form className="space-y-4">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-1">Full Name</label>
-                    <input 
-                      type="text" 
-                      id="name"
-                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
-                      placeholder="John Doe"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">Work Email</label>
-                    <input 
-                      type="email" 
-                      id="email"
-                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
-                      placeholder="john@company.com"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="website" className="block text-sm font-medium text-slate-700 mb-1">Website URL</label>
-                    <input 
-                      type="url" 
-                      id="website"
-                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
-                      placeholder="https://yourwebsite.com"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-slate-700 mb-1">Phone Number</label>
-                    <input 
-                      type="tel" 
-                      id="phone"
-                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
-                      placeholder="+31 6 12345678"
-                    />
-                  </div>
-                  <button 
-                    type="submit"
-                    className="w-full py-4 px-6 text-base font-semibold text-white bg-gradient-to-r from-primary-600 to-secondary-500 rounded-lg hover:from-primary-700 hover:to-secondary-600 transition-all shadow-lg shadow-primary-500/25 flex items-center justify-center gap-2 group"
-                  >
-                    Get My Free Audit
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </button>
-                </form>
-                <p className="mt-4 text-xs text-slate-500 text-center">
-                  No spam. Unsubscribe anytime. By submitting, you agree to our Privacy Policy.
-                </p>
-              </div>
+              <LeadForm
+                title="Request Your Free Audit"
+                subject="Marketing Solutions Audit Request"
+                buttonText="Get My Free Audit"
+                buttonClass="from-primary-600 to-secondary-500 hover:from-primary-700 hover:to-secondary-600 shadow-lg shadow-primary-500/25"
+                footnote="No spam. By submitting, you agree to our Privacy Policy."
+              >
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-1">Full Name</label>
+                  <input type="text" id="name" name="name" required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors" placeholder="John Doe" />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">Work Email</label>
+                  <input type="email" id="email" name="email" required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors" placeholder="john@company.com" />
+                </div>
+                <div>
+                  <label htmlFor="website" className="block text-sm font-medium text-slate-700 mb-1">Website URL</label>
+                  <input type="url" id="website" name="website" className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors" placeholder="https://yourwebsite.com" />
+                </div>
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium text-slate-700 mb-1">Phone Number</label>
+                  <input type="tel" id="phone" name="phone" className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors" placeholder="+31 6 12345678" />
+                </div>
+              </LeadForm>
             </div>
           </div>
         </div>

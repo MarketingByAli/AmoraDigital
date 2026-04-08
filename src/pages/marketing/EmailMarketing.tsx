@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import LeadForm from '../../components/LeadForm'
 import {
   ArrowRight,
   CheckCircle2,
@@ -592,78 +593,50 @@ export default function EmailMarketing() {
               </div>
               
               {/* Lead Form */}
-              <div className="bg-white rounded-2xl p-8 shadow-2xl">
-                <h3 className="text-xl font-bold text-slate-900 mb-6">Get Your Free Email Audit</h3>
-                <form className="space-y-4">
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <label htmlFor="firstName" className="block text-sm font-medium text-slate-700 mb-1">First Name</label>
-                      <input 
-                        type="text" 
-                        id="firstName"
-                        className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-colors"
-                        placeholder="John"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="lastName" className="block text-sm font-medium text-slate-700 mb-1">Last Name</label>
-                      <input 
-                        type="text" 
-                        id="lastName"
-                        className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-colors"
-                        placeholder="Doe"
-                      />
-                    </div>
+              <LeadForm
+                title="Get Your Free Email Audit"
+                subject="Email Marketing Audit Request"
+                buttonText="Get My Free Email Audit"
+                buttonClass="from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700 shadow-lg shadow-cyan-500/25"
+                footnote="Free audit. Discover your email revenue potential."
+              >
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="firstName" className="block text-sm font-medium text-slate-700 mb-1">First Name</label>
+                    <input type="text" id="firstName" name="firstName" required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-colors" placeholder="John" />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">Email</label>
-                    <input 
-                      type="email" 
-                      id="email"
-                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-colors"
-                      placeholder="john@company.com"
-                    />
+                    <label htmlFor="lastName" className="block text-sm font-medium text-slate-700 mb-1">Last Name</label>
+                    <input type="text" id="lastName" name="lastName" required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-colors" placeholder="Doe" />
                   </div>
-                  <div>
-                    <label htmlFor="listSize" className="block text-sm font-medium text-slate-700 mb-1">Email List Size</label>
-                    <select 
-                      id="listSize"
-                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-colors"
-                    >
-                      <option value="">Select list size</option>
-                      <option value="0-1k">0 - 1,000 subscribers</option>
-                      <option value="1k-5k">1,000 - 5,000 subscribers</option>
-                      <option value="5k-25k">5,000 - 25,000 subscribers</option>
-                      <option value="25k+">25,000+ subscribers</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label htmlFor="platform" className="block text-sm font-medium text-slate-700 mb-1">Current Email Platform</label>
-                    <select 
-                      id="platform"
-                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-colors"
-                    >
-                      <option value="">Select platform</option>
-                      <option value="mailchimp">Mailchimp</option>
-                      <option value="klaviyo">Klaviyo</option>
-                      <option value="hubspot">HubSpot</option>
-                      <option value="activecampaign">ActiveCampaign</option>
-                      <option value="other">Other</option>
-                      <option value="none">Not using any</option>
-                    </select>
-                  </div>
-                  <button 
-                    type="submit"
-                    className="w-full py-4 px-6 text-base font-semibold text-white bg-gradient-to-r from-teal-500 to-cyan-600 rounded-lg hover:from-teal-600 hover:to-cyan-700 transition-all shadow-lg shadow-cyan-500/25 flex items-center justify-center gap-2 group"
-                  >
-                    Get My Free Email Audit
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </button>
-                </form>
-                <p className="mt-4 text-xs text-slate-500 text-center">
-                  Free audit. Discover your email revenue potential.
-                </p>
-              </div>
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">Email</label>
+                  <input type="email" id="email" name="email" required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-colors" placeholder="john@company.com" />
+                </div>
+                <div>
+                  <label htmlFor="listSize" className="block text-sm font-medium text-slate-700 mb-1">Email List Size</label>
+                  <select id="listSize" name="listSize" className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-colors">
+                    <option value="">Select list size</option>
+                    <option value="0 - 1,000 subscribers">0 - 1,000 subscribers</option>
+                    <option value="1,000 - 5,000 subscribers">1,000 - 5,000 subscribers</option>
+                    <option value="5,000 - 25,000 subscribers">5,000 - 25,000 subscribers</option>
+                    <option value="25,000+ subscribers">25,000+ subscribers</option>
+                  </select>
+                </div>
+                <div>
+                  <label htmlFor="emailPlatform" className="block text-sm font-medium text-slate-700 mb-1">Current Email Platform</label>
+                  <select id="emailPlatform" name="emailPlatform" className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-colors">
+                    <option value="">Select platform</option>
+                    <option value="Mailchimp">Mailchimp</option>
+                    <option value="Klaviyo">Klaviyo</option>
+                    <option value="HubSpot">HubSpot</option>
+                    <option value="ActiveCampaign">ActiveCampaign</option>
+                    <option value="Other">Other</option>
+                    <option value="Not using any">Not using any</option>
+                  </select>
+                </div>
+              </LeadForm>
             </div>
           </div>
         </div>

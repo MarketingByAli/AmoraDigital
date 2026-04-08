@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import LeadForm from '../../components/LeadForm'
 import {
   ArrowRight,
   CheckCircle2,
@@ -555,77 +556,49 @@ export default function PaidAdvertising() {
               </div>
               
               {/* Lead Form */}
-              <div className="bg-white rounded-2xl p-8 shadow-2xl">
-                <h3 className="text-xl font-bold text-slate-900 mb-6">Get Your Free Ad Audit</h3>
-                <form className="space-y-4">
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <label htmlFor="firstName" className="block text-sm font-medium text-slate-700 mb-1">First Name</label>
-                      <input 
-                        type="text" 
-                        id="firstName"
-                        className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-rose-500 focus:border-rose-500 transition-colors"
-                        placeholder="John"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="lastName" className="block text-sm font-medium text-slate-700 mb-1">Last Name</label>
-                      <input 
-                        type="text" 
-                        id="lastName"
-                        className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-rose-500 focus:border-rose-500 transition-colors"
-                        placeholder="Doe"
-                      />
-                    </div>
+              <LeadForm
+                title="Get Your Free Ad Audit"
+                subject="Paid Advertising Audit Request"
+                buttonText="Get My Free Ad Audit"
+                buttonClass="from-rose-500 to-pink-600 hover:from-rose-600 hover:to-pink-700 shadow-lg shadow-rose-500/25"
+                footnote="Free audit with actionable recommendations."
+              >
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="firstName" className="block text-sm font-medium text-slate-700 mb-1">First Name</label>
+                    <input type="text" id="firstName" name="firstName" required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-rose-500 focus:border-rose-500 transition-colors" placeholder="John" />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">Email</label>
-                    <input 
-                      type="email" 
-                      id="email"
-                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-rose-500 focus:border-rose-500 transition-colors"
-                      placeholder="john@company.com"
-                    />
+                    <label htmlFor="lastName" className="block text-sm font-medium text-slate-700 mb-1">Last Name</label>
+                    <input type="text" id="lastName" name="lastName" required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-rose-500 focus:border-rose-500 transition-colors" placeholder="Doe" />
                   </div>
-                  <div>
-                    <label htmlFor="budget" className="block text-sm font-medium text-slate-700 mb-1">Monthly Ad Budget</label>
-                    <select 
-                      id="budget"
-                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-rose-500 focus:border-rose-500 transition-colors"
-                    >
-                      <option value="">Select your budget</option>
-                      <option value="1k-5k">€1,000 - €5,000</option>
-                      <option value="5k-10k">€5,000 - €10,000</option>
-                      <option value="10k-25k">€10,000 - €25,000</option>
-                      <option value="25k+">€25,000+</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label htmlFor="platforms" className="block text-sm font-medium text-slate-700 mb-1">Current Platforms</label>
-                    <select 
-                      id="platforms"
-                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-rose-500 focus:border-rose-500 transition-colors"
-                    >
-                      <option value="">Select platforms you use</option>
-                      <option value="google">Google Ads only</option>
-                      <option value="meta">Meta Ads only</option>
-                      <option value="both">Google + Meta</option>
-                      <option value="multiple">Multiple platforms</option>
-                      <option value="none">Not running ads yet</option>
-                    </select>
-                  </div>
-                  <button 
-                    type="submit"
-                    className="w-full py-4 px-6 text-base font-semibold text-white bg-gradient-to-r from-rose-500 to-pink-600 rounded-lg hover:from-rose-600 hover:to-pink-700 transition-all shadow-lg shadow-rose-500/25 flex items-center justify-center gap-2 group"
-                  >
-                    Get My Free Ad Audit
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </button>
-                </form>
-                <p className="mt-4 text-xs text-slate-500 text-center">
-                  Free audit with actionable recommendations.
-                </p>
-              </div>
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">Email</label>
+                  <input type="email" id="email" name="email" required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-rose-500 focus:border-rose-500 transition-colors" placeholder="john@company.com" />
+                </div>
+                <div>
+                  <label htmlFor="budget" className="block text-sm font-medium text-slate-700 mb-1">Monthly Ad Budget</label>
+                  <select id="budget" name="budget" className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-rose-500 focus:border-rose-500 transition-colors">
+                    <option value="">Select your budget</option>
+                    <option value="€1,000 - €5,000">€1,000 - €5,000</option>
+                    <option value="€5,000 - €10,000">€5,000 - €10,000</option>
+                    <option value="€10,000 - €25,000">€10,000 - €25,000</option>
+                    <option value="€25,000+">€25,000+</option>
+                  </select>
+                </div>
+                <div>
+                  <label htmlFor="platforms" className="block text-sm font-medium text-slate-700 mb-1">Current Platforms</label>
+                  <select id="platforms" name="platforms" className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-rose-500 focus:border-rose-500 transition-colors">
+                    <option value="">Select platforms you use</option>
+                    <option value="Google Ads only">Google Ads only</option>
+                    <option value="Meta Ads only">Meta Ads only</option>
+                    <option value="Google + Meta">Google + Meta</option>
+                    <option value="Multiple platforms">Multiple platforms</option>
+                    <option value="Not running ads yet">Not running ads yet</option>
+                  </select>
+                </div>
+              </LeadForm>
             </div>
           </div>
         </div>

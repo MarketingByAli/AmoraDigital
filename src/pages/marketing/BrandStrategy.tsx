@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import LeadForm from '../../components/LeadForm'
 import {
   ArrowRight,
   CheckCircle2,
@@ -521,72 +522,42 @@ export default function BrandStrategy() {
               </div>
               
               {/* Lead Form */}
-              <div className="bg-white rounded-2xl p-8 shadow-2xl">
-                <h3 className="text-xl font-bold text-slate-900 mb-6">Get Your Free Brand Consultation</h3>
-                <form className="space-y-4">
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <label htmlFor="firstName" className="block text-sm font-medium text-slate-700 mb-1">First Name</label>
-                      <input 
-                        type="text" 
-                        id="firstName"
-                        className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-fuchsia-500 focus:border-fuchsia-500 transition-colors"
-                        placeholder="John"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="lastName" className="block text-sm font-medium text-slate-700 mb-1">Last Name</label>
-                      <input 
-                        type="text" 
-                        id="lastName"
-                        className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-fuchsia-500 focus:border-fuchsia-500 transition-colors"
-                        placeholder="Doe"
-                      />
-                    </div>
+              <LeadForm
+                title="Get Your Free Brand Consultation"
+                subject="Brand Strategy Inquiry"
+                buttonText="Get Free Consultation"
+                buttonClass="from-fuchsia-500 to-purple-600 hover:from-fuchsia-600 hover:to-purple-700 shadow-lg shadow-fuchsia-500/25"
+                footnote="Free consultation. Let's discuss your brand vision."
+              >
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="firstName" className="block text-sm font-medium text-slate-700 mb-1">First Name</label>
+                    <input type="text" id="firstName" name="firstName" required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-fuchsia-500 focus:border-fuchsia-500 transition-colors" placeholder="John" />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">Email</label>
-                    <input 
-                      type="email" 
-                      id="email"
-                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-fuchsia-500 focus:border-fuchsia-500 transition-colors"
-                      placeholder="john@company.com"
-                    />
+                    <label htmlFor="lastName" className="block text-sm font-medium text-slate-700 mb-1">Last Name</label>
+                    <input type="text" id="lastName" name="lastName" required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-fuchsia-500 focus:border-fuchsia-500 transition-colors" placeholder="Doe" />
                   </div>
-                  <div>
-                    <label htmlFor="company" className="block text-sm font-medium text-slate-700 mb-1">Company Name</label>
-                    <input 
-                      type="text" 
-                      id="company"
-                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-fuchsia-500 focus:border-fuchsia-500 transition-colors"
-                      placeholder="Your Company"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="project" className="block text-sm font-medium text-slate-700 mb-1">Project Type</label>
-                    <select 
-                      id="project"
-                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-fuchsia-500 focus:border-fuchsia-500 transition-colors"
-                    >
-                      <option value="">Select project type</option>
-                      <option value="new">New Brand (Starting from scratch)</option>
-                      <option value="rebrand">Rebrand (Refresh existing brand)</option>
-                      <option value="identity">Visual Identity Only</option>
-                      <option value="strategy">Brand Strategy Only</option>
-                    </select>
-                  </div>
-                  <button 
-                    type="submit"
-                    className="w-full py-4 px-6 text-base font-semibold text-white bg-gradient-to-r from-fuchsia-500 to-purple-600 rounded-lg hover:from-fuchsia-600 hover:to-purple-700 transition-all shadow-lg shadow-fuchsia-500/25 flex items-center justify-center gap-2 group"
-                  >
-                    Get Free Consultation
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </button>
-                </form>
-                <p className="mt-4 text-xs text-slate-500 text-center">
-                  Free consultation. Let's discuss your brand vision.
-                </p>
-              </div>
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">Email</label>
+                  <input type="email" id="email" name="email" required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-fuchsia-500 focus:border-fuchsia-500 transition-colors" placeholder="john@company.com" />
+                </div>
+                <div>
+                  <label htmlFor="company" className="block text-sm font-medium text-slate-700 mb-1">Company Name</label>
+                  <input type="text" id="company" name="company" className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-fuchsia-500 focus:border-fuchsia-500 transition-colors" placeholder="Your Company" />
+                </div>
+                <div>
+                  <label htmlFor="project" className="block text-sm font-medium text-slate-700 mb-1">Project Type</label>
+                  <select id="project" name="project" className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-fuchsia-500 focus:border-fuchsia-500 transition-colors">
+                    <option value="">Select project type</option>
+                    <option value="New Brand (Starting from scratch)">New Brand (Starting from scratch)</option>
+                    <option value="Rebrand (Refresh existing brand)">Rebrand (Refresh existing brand)</option>
+                    <option value="Visual Identity Only">Visual Identity Only</option>
+                    <option value="Brand Strategy Only">Brand Strategy Only</option>
+                  </select>
+                </div>
+              </LeadForm>
             </div>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import LeadForm from '../../components/LeadForm'
 import {
   ArrowRight,
   CheckCircle2,
@@ -592,74 +593,44 @@ export default function AIAutomation() {
               </div>
               
               {/* Lead Form */}
-              <div className="bg-white rounded-2xl p-8 shadow-2xl">
-                <h3 className="text-xl font-bold text-slate-900 mb-6">Start Your AI Journey</h3>
-                <form className="space-y-4">
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <label htmlFor="firstName" className="block text-sm font-medium text-slate-700 mb-1">First Name</label>
-                      <input 
-                        type="text" 
-                        id="firstName"
-                        className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-violet-500 focus:border-violet-500 transition-colors"
-                        placeholder="John"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="lastName" className="block text-sm font-medium text-slate-700 mb-1">Last Name</label>
-                      <input 
-                        type="text" 
-                        id="lastName"
-                        className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-violet-500 focus:border-violet-500 transition-colors"
-                        placeholder="Doe"
-                      />
-                    </div>
+              <LeadForm
+                title="Start Your AI Journey"
+                subject="AI Automation Inquiry"
+                buttonText="Get Free Consultation"
+                buttonClass="from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 shadow-lg shadow-violet-500/25"
+                footnote="Free consultation. We'll respond within 24 hours."
+              >
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="firstName" className="block text-sm font-medium text-slate-700 mb-1">First Name</label>
+                    <input type="text" id="firstName" name="firstName" required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-violet-500 focus:border-violet-500 transition-colors" placeholder="John" />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">Email</label>
-                    <input 
-                      type="email" 
-                      id="email"
-                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-violet-500 focus:border-violet-500 transition-colors"
-                      placeholder="john@company.com"
-                    />
+                    <label htmlFor="lastName" className="block text-sm font-medium text-slate-700 mb-1">Last Name</label>
+                    <input type="text" id="lastName" name="lastName" required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-violet-500 focus:border-violet-500 transition-colors" placeholder="Doe" />
                   </div>
-                  <div>
-                    <label htmlFor="interest" className="block text-sm font-medium text-slate-700 mb-1">Primary Interest</label>
-                    <select 
-                      id="interest"
-                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-violet-500 focus:border-violet-500 transition-colors"
-                    >
-                      <option value="">Select interest</option>
-                      <option value="chatbot">AI Chatbot</option>
-                      <option value="automation">Workflow Automation</option>
-                      <option value="document">Document Processing</option>
-                      <option value="analytics">Data Analytics</option>
-                      <option value="custom">Custom AI Solution</option>
-                      <option value="unsure">Not sure yet</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label htmlFor="challenge" className="block text-sm font-medium text-slate-700 mb-1">What Would You Like to Automate?</label>
-                    <textarea 
-                      id="challenge"
-                      rows={3}
-                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-violet-500 focus:border-violet-500 transition-colors resize-none"
-                      placeholder="Tell us about your automation needs..."
-                    />
-                  </div>
-                  <button 
-                    type="submit"
-                    className="w-full py-4 px-6 text-base font-semibold text-white bg-gradient-to-r from-violet-500 to-purple-600 rounded-lg hover:from-violet-600 hover:to-purple-700 transition-all shadow-lg shadow-violet-500/25 flex items-center justify-center gap-2 group"
-                  >
-                    Get Free Consultation
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </button>
-                </form>
-                <p className="mt-4 text-xs text-slate-500 text-center">
-                  Free consultation. We'll respond within 24 hours.
-                </p>
-              </div>
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">Email</label>
+                  <input type="email" id="email" name="email" required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-violet-500 focus:border-violet-500 transition-colors" placeholder="john@company.com" />
+                </div>
+                <div>
+                  <label htmlFor="interest" className="block text-sm font-medium text-slate-700 mb-1">Primary Interest</label>
+                  <select id="interest" name="interest" className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-violet-500 focus:border-violet-500 transition-colors">
+                    <option value="">Select interest</option>
+                    <option value="AI Chatbot">AI Chatbot</option>
+                    <option value="Workflow Automation">Workflow Automation</option>
+                    <option value="Document Processing">Document Processing</option>
+                    <option value="Data Analytics">Data Analytics</option>
+                    <option value="Custom AI Solution">Custom AI Solution</option>
+                    <option value="Not sure yet">Not sure yet</option>
+                  </select>
+                </div>
+                <div>
+                  <label htmlFor="challenge" className="block text-sm font-medium text-slate-700 mb-1">What Would You Like to Automate?</label>
+                  <textarea id="challenge" name="challenge" rows={3} className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-violet-500 focus:border-violet-500 transition-colors resize-none" placeholder="Tell us about your automation needs..." />
+                </div>
+              </LeadForm>
             </div>
           </div>
         </div>

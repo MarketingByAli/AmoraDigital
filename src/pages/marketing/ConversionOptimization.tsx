@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import LeadForm from '../../components/LeadForm'
 import {
   ArrowRight,
   CheckCircle2,
@@ -536,72 +537,42 @@ export default function ConversionOptimization() {
               </div>
               
               {/* Lead Form */}
-              <div className="bg-white rounded-2xl p-8 shadow-2xl">
-                <h3 className="text-xl font-bold text-slate-900 mb-6">Get Your Free CRO Audit</h3>
-                <form className="space-y-4">
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <label htmlFor="firstName" className="block text-sm font-medium text-slate-700 mb-1">First Name</label>
-                      <input 
-                        type="text" 
-                        id="firstName"
-                        className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors"
-                        placeholder="John"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="lastName" className="block text-sm font-medium text-slate-700 mb-1">Last Name</label>
-                      <input 
-                        type="text" 
-                        id="lastName"
-                        className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors"
-                        placeholder="Doe"
-                      />
-                    </div>
+              <LeadForm
+                title="Get Your Free CRO Audit"
+                subject="CRO Audit Request"
+                buttonText="Get My Free CRO Audit"
+                buttonClass="from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 shadow-lg shadow-orange-500/25"
+                footnote="Free audit with actionable recommendations."
+              >
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="firstName" className="block text-sm font-medium text-slate-700 mb-1">First Name</label>
+                    <input type="text" id="firstName" name="firstName" required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors" placeholder="John" />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">Email</label>
-                    <input 
-                      type="email" 
-                      id="email"
-                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors"
-                      placeholder="john@company.com"
-                    />
+                    <label htmlFor="lastName" className="block text-sm font-medium text-slate-700 mb-1">Last Name</label>
+                    <input type="text" id="lastName" name="lastName" required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors" placeholder="Doe" />
                   </div>
-                  <div>
-                    <label htmlFor="website" className="block text-sm font-medium text-slate-700 mb-1">Website URL</label>
-                    <input 
-                      type="url" 
-                      id="website"
-                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors"
-                      placeholder="https://yourwebsite.com"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="traffic" className="block text-sm font-medium text-slate-700 mb-1">Monthly Website Traffic</label>
-                    <select 
-                      id="traffic"
-                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors"
-                    >
-                      <option value="">Select traffic range</option>
-                      <option value="1k-5k">1,000 - 5,000 visitors</option>
-                      <option value="5k-20k">5,000 - 20,000 visitors</option>
-                      <option value="20k-50k">20,000 - 50,000 visitors</option>
-                      <option value="50k+">50,000+ visitors</option>
-                    </select>
-                  </div>
-                  <button 
-                    type="submit"
-                    className="w-full py-4 px-6 text-base font-semibold text-white bg-gradient-to-r from-orange-500 to-amber-500 rounded-lg hover:from-orange-600 hover:to-amber-600 transition-all shadow-lg shadow-orange-500/25 flex items-center justify-center gap-2 group"
-                  >
-                    Get My Free CRO Audit
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </button>
-                </form>
-                <p className="mt-4 text-xs text-slate-500 text-center">
-                  Free audit with actionable recommendations.
-                </p>
-              </div>
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">Email</label>
+                  <input type="email" id="email" name="email" required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors" placeholder="john@company.com" />
+                </div>
+                <div>
+                  <label htmlFor="website" className="block text-sm font-medium text-slate-700 mb-1">Website URL</label>
+                  <input type="url" id="website" name="website" className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors" placeholder="https://yourwebsite.com" />
+                </div>
+                <div>
+                  <label htmlFor="traffic" className="block text-sm font-medium text-slate-700 mb-1">Monthly Website Traffic</label>
+                  <select id="traffic" name="traffic" className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors">
+                    <option value="">Select traffic range</option>
+                    <option value="1,000 - 5,000 visitors">1,000 - 5,000 visitors</option>
+                    <option value="5,000 - 20,000 visitors">5,000 - 20,000 visitors</option>
+                    <option value="20,000 - 50,000 visitors">20,000 - 50,000 visitors</option>
+                    <option value="50,000+ visitors">50,000+ visitors</option>
+                  </select>
+                </div>
+              </LeadForm>
             </div>
           </div>
         </div>
