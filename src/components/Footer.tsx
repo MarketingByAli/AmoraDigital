@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { AMORA_LOGO_URL } from '../branding'
 import {
   Globe,
   Users,
@@ -74,14 +75,15 @@ export default function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-1">
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-600 to-secondary-500 flex items-center justify-center shadow-lg shadow-primary-500/25">
-                <span className="text-white font-bold text-lg">A</span>
-              </div>
-              <div>
-                <span className="font-display text-xl font-bold text-white">Amora</span>
-                <span className="font-display text-xl font-bold gradient-text">Digital</span>
-              </div>
+            <Link to="/" className="inline-flex mb-6">
+              <img
+                src={AMORA_LOGO_URL}
+                alt="Amora Digital"
+                className="h-9 w-auto max-h-10 max-w-[200px] sm:max-w-[220px] object-contain object-left"
+                width={220}
+                height={44}
+                decoding="async"
+              />
             </Link>
             
             <p className="text-slate-400 text-sm mb-6 leading-relaxed">

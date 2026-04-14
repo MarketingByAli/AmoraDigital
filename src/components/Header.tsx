@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { AMORA_LOGO_URL } from '../branding'
 import {
   ChevronDown,
   Globe,
@@ -73,15 +74,16 @@ export default function Header() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link to="/" className="flex items-center gap-3">
-              {/* Logo placeholder */}
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-600 to-secondary-500 flex items-center justify-center shadow-lg shadow-primary-500/25">
-                <span className="text-white font-bold text-lg">A</span>
-              </div>
-              <div className="hidden sm:block">
-                <span className="font-display text-xl font-bold text-slate-900">Amora</span>
-                <span className="font-display text-xl font-bold gradient-text">Digital</span>
-              </div>
+            <Link to="/" className="flex items-center">
+              <img
+                src={AMORA_LOGO_URL}
+                alt="Amora Digital"
+                className="h-9 w-auto max-h-10 sm:h-10 sm:max-h-11 max-w-[160px] sm:max-w-[200px] md:max-w-[220px] object-contain object-left"
+                width={220}
+                height={44}
+                decoding="async"
+                fetchPriority="high"
+              />
             </Link>
           </div>
 
