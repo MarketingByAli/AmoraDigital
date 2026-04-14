@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { AMORA_LOGO_URL } from '../branding'
+import { AMORA_LOGO_LIGHT_URL } from '../branding'
 import {
   Globe,
   Users,
@@ -77,7 +77,7 @@ export default function Footer() {
             {/* Logo */}
             <Link to="/" className="inline-flex mb-6">
               <img
-                src={AMORA_LOGO_URL}
+                src={AMORA_LOGO_LIGHT_URL}
                 alt="Amora Digital"
                 className="h-9 w-auto max-h-10 max-w-[200px] sm:max-w-[220px] object-contain object-left"
                 width={220}
