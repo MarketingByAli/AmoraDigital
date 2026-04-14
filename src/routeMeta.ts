@@ -55,7 +55,7 @@ const entries: Record<string, { title: string; description: string; ogImage?: st
   '/marketing/ai-seo': {
     title: `AI SEO | ${SITE}`,
     description:
-      'AI-assisted SEO workflows and content optimization to stay competitive in search.'
+      'AI SEO for ChatGPT, Google AI Overviews, and Perplexity: structured data, entity-focused content, and technical signals so AI systems cite your brand.'
   },
   '/marketing/local-seo': {
     title: `Local SEO | ${SITE}`,
@@ -153,6 +153,9 @@ const entries: Record<string, { title: string; description: string; ogImage?: st
       'Royal Casino Hub — casino industry news and reviews.'
   }
 }
+
+/** Paths that exist as real pages (used for robots / indexing signals). */
+export const INDEXABLE_PATHS = new Set(Object.keys(entries))
 
 export function getMetaForPath(pathname: string): { title: string; description: string; ogImage?: string } {
   return (

@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#6c2bd9" />
+    <meta name="geo.region" content="NL" />
+    <meta name="author" content="Amora Digital" />
 
     <!-- Primary meta (updated dynamically per route via DocumentMeta) -->
     <title>Amora Digital | Digital Marketing Agency</title>
@@ -14,8 +16,8 @@
     <meta property="og:site_name" content="Amora Digital" />
     <meta property="og:title" content="Amora Digital | Digital Marketing Agency" />
     <meta property="og:description" content="Amora Digital — digital marketing, SEO, paid ads, and custom development. Grow your business with our expert team." />
-    <meta property="og:url" content="https://amoradigital.com/" />
-    <meta property="og:image" content="https://amoradigital.com/og-image.png" />
+    <meta property="og:url" content="https://amoradigital.nl/" />
+    <meta property="og:image" content="https://amoradigital.nl/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
@@ -24,10 +26,10 @@
     <meta name="twitter:site" content="@amoradigital" />
     <meta name="twitter:title" content="Amora Digital | Digital Marketing Agency" />
     <meta name="twitter:description" content="Amora Digital — digital marketing, SEO, paid ads, and custom development. Grow your business with our expert team." />
-    <meta name="twitter:image" content="https://amoradigital.com/og-image.png" />
+    <meta name="twitter:image" content="https://amoradigital.nl/og-image.png" />
 
     <!-- Canonical (static fallback — DocumentMeta overrides per route) -->
-    <link rel="canonical" href="https://amoradigital.com/" />
+    <link rel="canonical" href="https://amoradigital.nl/" />
 
     <link rel="preconnect" href="https://amoradigital.nl" crossorigin />
 
@@ -39,21 +41,51 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-    <!-- JSON-LD: Organization schema -->
+    <!-- JSON-LD: Organization + WebSite (helps search & AI entity understanding) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Amora Digital",
-      "url": "https://amoradigital.com",
-      "logo": "https://amoradigital.nl/asset/Amora-Logo.svg",
-      "description": "Amora Digital — digital marketing, SEO, paid ads, and custom development.",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "customer support",
-        "url": "https://amoradigital.com/contact"
-      },
-      "sameAs": []
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://amoradigital.nl/#organization",
+          "name": "Amora Digital",
+          "url": "https://amoradigital.nl",
+          "logo": "https://amoradigital.nl/asset/Amora-Logo.svg",
+          "image": "https://amoradigital.nl/og-image.png",
+          "description": "Amora Digital — digital marketing, SEO, paid ads, AI SEO, and custom software development for growth-focused businesses.",
+          "email": "info@amoradigital.nl",
+          "telephone": "+31625580415",
+          "identifier": {
+            "@type": "PropertyValue",
+            "name": "KVK",
+            "value": "99536811"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "NL"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer support",
+            "email": "info@amoradigital.nl",
+            "telephone": "+31625580415",
+            "url": "https://amoradigital.nl/contact",
+            "areaServed": "NL",
+            "availableLanguage": ["English", "Dutch"]
+          },
+          "sameAs": []
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://amoradigital.nl/#website",
+          "url": "https://amoradigital.nl",
+          "name": "Amora Digital",
+          "description": "Digital marketing agency and custom development — SEO, paid media, web & app development.",
+          "publisher": { "@id": "https://amoradigital.nl/#organization" },
+          "inLanguage": "en"
+        }
+      ]
     }
     </script>
     <script type="module" src="/src/main.tsx"></script>

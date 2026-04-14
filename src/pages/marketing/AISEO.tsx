@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import LeadForm from '../../components/LeadForm'
+import JsonLd from '../../components/JsonLd'
 import {
   ArrowRight,
   CheckCircle2,
@@ -153,6 +154,45 @@ const checklist = [
   'Competitor AI visibility analysis'
 ]
 
+const AI_SEO_FAQ_JSON_LD = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is AI SEO?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'AI SEO is the practice of optimizing your website and brand so AI-powered search and assistants (such as ChatGPT, Google AI Overviews, and Perplexity) can discover, understand, and recommend your business. It combines structured data, clear entity signals, and authoritative content.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'How is AI SEO different from traditional SEO?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Traditional SEO focuses heavily on ranking blue links for keywords. AI SEO adds emphasis on machine-readable structure (schema), factual clarity, E-E-A-T signals, and content shaped for answers and citations inside AI-generated responses—not only ten blue links.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'Why does structured data matter for AI search?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Structured data (Schema.org JSON-LD) gives search engines and AI parsers explicit relationships between your organization, services, FAQs, and pages. That reduces ambiguity and increases the chance your brand is summarized accurately in AI answers.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'Which AI platforms can AI SEO influence?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Strategies align with major surfaces including ChatGPT-style assistants, Google AI-generated summaries in search, Perplexity and similar answer engines, and emerging crawlers that ingest the open web. Tactics evolve as each platform changes how it cites sources.'
+      }
+    }
+  ]
+} as const
+
 const futureProofing = [
   {
     icon: Bot,
@@ -179,6 +219,7 @@ const futureProofing = [
 export default function AISEO() {
   return (
     <div>
+      <JsonLd id="jsonld-faq-aiseo" schema={AI_SEO_FAQ_JSON_LD} />
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-violet-600 via-purple-700 to-indigo-900 text-white">
         <div className="absolute inset-0 overflow-hidden">
