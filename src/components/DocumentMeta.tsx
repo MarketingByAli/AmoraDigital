@@ -1,7 +1,7 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { useLocation } from 'react-router-dom'
 import { getMetaForPath, INDEXABLE_PATHS } from '../routeMeta'
-import { SITE_CANONICAL_ORIGIN } from '../siteConfig'
+import { GA_MEASUREMENT_ID, SITE_CANONICAL_ORIGIN } from '../siteConfig'
 
 const DEFAULT_OG_IMAGE = `${SITE_CANONICAL_ORIGIN}/og-image.png`
 const OG_IMAGE_WIDTH = '1200'
@@ -43,6 +43,7 @@ function setMetaRobots(content: string) {
 
 export default function DocumentMeta() {
   const { pathname } = useLocation()
+  const skipNextGtagConfig = useRef(true)
 
   useEffect(() => {
     const { title, description, ogImage } = getMetaForPath(pathname)
@@ -76,6 +77,13 @@ export default function DocumentMeta() {
     setMetaName('twitter:description', description)
     setMetaName('twitter:image', image)
     setMetaName('twitter:image:alt', title)
+
+    const gtag = (window as Window & { gtag?: (...args: unknown[]) => void }).gtag
+    if (skipNextGtagConfig.current) {
+      skipNextGtagConfig.current = false
+    } else {
+      gtag?.('config', GA_MEASUREMENT_ID, { page_path: pathname, page_title: title })
+    }
   }, [pathname])
 
   return null
