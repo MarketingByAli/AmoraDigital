@@ -138,7 +138,7 @@ function FoundersSection() {
                   <div className="text-xs text-slate-500">Years Experience</div>
                 </div>
                 <div className="text-center px-4 py-3 rounded-xl bg-secondary-50 border border-secondary-100">
-                  <div className="text-2xl font-bold text-secondary-700">500+</div>
+                  <div className="text-2xl font-bold text-secondary-700">1500+</div>
                   <div className="text-xs text-slate-500">Projects Delivered</div>
                 </div>
                 <div className="text-center px-4 py-3 rounded-xl bg-accent-50 border border-accent-100">

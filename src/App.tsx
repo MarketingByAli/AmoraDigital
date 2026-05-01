@@ -6,7 +6,6 @@ import ScrollToTopButton from './components/ScrollToTopButton'
 import ScrollProgress from './components/ScrollProgress'
 import RouteScrollAndFocus from './components/RouteScrollAndFocus'
 import DocumentMeta from './components/DocumentMeta'
-import SiteSchema from './components/SiteSchema'
 import RelatedServices from './components/RelatedServices'
 import { INDEXABLE_PATHS } from './routeMeta'
 
@@ -73,7 +72,6 @@ function PageInternalLinks() {
 function App() {
   return (
     <Router>
-      <SiteSchema />
       <DocumentMeta />
       <RouteScrollAndFocus />
       <div className="min-h-screen bg-white flex flex-col">

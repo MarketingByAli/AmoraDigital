@@ -218,7 +218,7 @@ export default function Footer() {
                   <div className="w-6 h-6 rounded-full bg-secondary-500 border-2 border-slate-900" />
                   <div className="w-6 h-6 rounded-full bg-accent-500 border-2 border-slate-900" />
                 </div>
-                <span className="text-xs text-slate-400">500+ Happy Clients</span>
+                <span className="text-xs text-slate-400">1500+ Happy Clients</span>
               </div>
               <div className="flex items-center gap-1">
                 {[...Array(5)].map((_, i) => (

@@ -201,7 +201,7 @@ export default function ConversionOptimization() {
                     <FlaskConical className="w-5 h-5 text-yellow-200" />
                   </div>
                   <div>
-                    <div className="text-lg font-bold text-white">500+</div>
+                    <div className="text-lg font-bold text-white">1500+</div>
                     <div className="text-xs text-white/60">Tests Run</div>
                   </div>
                 </div>

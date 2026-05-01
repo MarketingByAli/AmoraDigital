@@ -201,7 +201,7 @@ export default function MarketingSolutions() {
               {/* Quick stats */}
               <div className="mt-12 grid grid-cols-3 gap-8 max-w-lg">
                 <div>
-                  <div className="text-3xl font-bold">500+</div>
+                  <div className="text-3xl font-bold">1500+</div>
                   <div className="text-sm text-white/70">Campaigns Launched</div>
                 </div>
                 <div>

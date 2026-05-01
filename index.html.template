@@ -84,8 +84,13 @@
       rel="stylesheet"
     />
 
-    <!-- Sitewide JSON-LD: Organization + WebSite + ContactPoint -->
-    <!-- (DocumentMeta injects per-page BreadcrumbList / Service / FAQPage schema separately.) -->
+    <!--
+      Sitewide JSON-LD: Organization + WebSite.
+      This is the SINGLE source of truth for the brand's entity graph.
+      Per-page schema (BreadcrumbList, WebPage, Service, Product, FAQPage)
+      is injected separately by DocumentMeta.tsx and references the @id
+      anchors below ("#organization", "#website", "#logo", "#contact").
+    -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -100,6 +105,7 @@
           "logo": {
             "@type": "ImageObject",
             "@id": "https://amoradigital.nl/#logo",
+            "inLanguage": "en",
             "url": "https://amoradigital.nl/asset/Amora-Logo.svg",
             "contentUrl": "https://amoradigital.nl/asset/Amora-Logo.svg",
             "width": 512,
@@ -113,13 +119,13 @@
           "telephone": "+31625580415",
           "foundingDate": "2024-01-01",
           "knowsAbout": [
-            "digital marketing",
-            "SEO",
+            "digital marketing agency",
+            "SEO agency Netherlands",
             "AI SEO",
             "paid advertising",
             "Google Ads",
             "Meta Ads",
-            "web design",
+            "web design Netherlands",
             "React development",
             "PHP development",
             "Java development",
@@ -138,6 +144,7 @@
             "name": "KVK",
             "value": "99536811"
           },
+          "vatID": "99536811",
           "address": {
             "@type": "PostalAddress",
             "addressCountry": "NL",
@@ -164,7 +171,7 @@
           "@id": "https://amoradigital.nl/#website",
           "url": "https://amoradigital.nl",
           "name": "Amora Digital",
-          "description": "Digital marketing agency and custom development — SEO, AI SEO, paid media, web and app development.",
+          "description": "Amora Digital is a Netherlands-based digital marketing and custom development agency. We help businesses grow with SEO, AI SEO, paid advertising, web design, React, PHP and Java development.",
           "publisher": { "@id": "https://amoradigital.nl/#organization" },
           "inLanguage": "en",
           "potentialAction": {

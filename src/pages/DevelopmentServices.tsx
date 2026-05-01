@@ -38,7 +38,7 @@ const services = [
     features: ['Laravel', 'WordPress', 'Custom CMS', 'API Development', 'Legacy Modernization'],
     path: '/development/php',
     color: 'secondary',
-    stats: { value: '500+', label: 'Projects Delivered' }
+    stats: { value: '1500+', label: 'Projects Delivered' }
   },
   {
     icon: Cpu,

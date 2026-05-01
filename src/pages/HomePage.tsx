@@ -97,7 +97,7 @@ function HeroSection() {
             {/* Quick stats */}
             <div className="mt-12 grid grid-cols-3 gap-6 max-w-md mx-auto lg:mx-0">
               <div>
-                <div className="text-2xl sm:text-3xl font-bold text-slate-900">500+</div>
+                <div className="text-2xl sm:text-3xl font-bold text-slate-900">1500+</div>
                 <div className="text-sm text-slate-500">Projects Delivered</div>
               </div>
               <div>
@@ -637,7 +637,7 @@ function DevelopmentServicesSection() {
 
 function StatsSection() {
   const stats = [
-    { value: '500+', label: 'Projects Completed', description: 'Successful digital transformations' },
+    { value: '1500+', label: 'Projects Completed', description: 'Successful digital transformations' },
     { value: '98%', label: 'Client Retention', description: 'Our clients keep coming back' },
     { value: '10M+', label: 'Leads Generated', description: 'Quality leads for our clients' },
     { value: '150%', label: 'Average ROI', description: 'Return on marketing investment' }
