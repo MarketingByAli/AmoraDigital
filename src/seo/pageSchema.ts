@@ -10,6 +10,7 @@
  */
 
 import {
+  absoluteUrl,
   buildBreadcrumbSchema,
   buildFaqSchema,
   buildProductSchema,
@@ -654,7 +655,7 @@ export function resolvePageSchema(
   const config = pageSeoConfig[pathname]
   if (!config) return []
 
-  const breadcrumbId = `${pathname === '/' ? '' : pathname}#breadcrumb`
+  const breadcrumbId = `${absoluteUrl(pathname)}#breadcrumb`
   const breadcrumb = {
     ...buildBreadcrumbSchema(config.breadcrumbs),
     '@id': breadcrumbId

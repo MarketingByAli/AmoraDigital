@@ -38,12 +38,16 @@ export const CONTACT_ID = `${SITE_CANONICAL_ORIGIN}/#contact`
 
 export type JsonObject = Record<string, unknown>
 
-/** Absolute URL helper — prefixes the canonical origin when needed. */
+/**
+ * Absolute URL helper — prefixes the canonical origin when needed.
+ * Home (`/`) returns `${origin}/` (with trailing slash) so `@id` anchors and
+ * canonical URLs stay consistent with the sitemap.
+ */
 export function absoluteUrl(pathOrUrl: string): string {
-  if (!pathOrUrl) return SITE_CANONICAL_ORIGIN
+  if (!pathOrUrl) return `${SITE_CANONICAL_ORIGIN}/`
   if (pathOrUrl.startsWith('http://') || pathOrUrl.startsWith('https://')) return pathOrUrl
   const path = pathOrUrl.startsWith('/') ? pathOrUrl : `/${pathOrUrl}`
-  return `${SITE_CANONICAL_ORIGIN}${path === '/' ? '' : path}`
+  return `${SITE_CANONICAL_ORIGIN}${path}`
 }
 
 /** ImageObject for the site logo — used by Organization + Publisher references. */

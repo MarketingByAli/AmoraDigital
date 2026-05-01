@@ -78,7 +78,9 @@ export default function DocumentMeta() {
   useEffect(() => {
     const meta = getMetaForPath(pathname)
     const { title, description, ogImage, keywords } = meta
-    const canonicalUrl = `${SITE_CANONICAL_ORIGIN}${pathname === '/' ? '' : pathname}`
+    // Canonical for home is `${origin}/` (with trailing slash) to match
+    // the sitemap and avoid Google treating `/` and `` as different URLs.
+    const canonicalUrl = `${SITE_CANONICAL_ORIGIN}${pathname === '/' ? '/' : pathname}`
     const image = ogImage ?? DEFAULT_OG_IMAGE
     const indexable = INDEXABLE_PATHS.has(pathname)
 

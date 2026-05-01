@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build && node scripts/prerender.mjs",
-    "build:no-prerender": "tsc && vite build",
+    "clean": "node scripts/clean.mjs",
+    "build": "tsc && node scripts/clean.mjs && vite build && node scripts/prerender.mjs",
+    "build:no-prerender": "tsc && node scripts/clean.mjs && vite build",
     "prerender": "node scripts/prerender.mjs",
     "preview": "vite preview"
   },
