@@ -1,11 +1,14 @@
 import { lazy, Suspense } from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import ScrollToTopButton from './components/ScrollToTopButton'
 import ScrollProgress from './components/ScrollProgress'
 import RouteScrollAndFocus from './components/RouteScrollAndFocus'
 import DocumentMeta from './components/DocumentMeta'
+import SiteSchema from './components/SiteSchema'
+import RelatedServices from './components/RelatedServices'
+import { INDEXABLE_PATHS } from './routeMeta'
 
 const HomePage = lazy(() => import('./pages/HomePage'))
 const AboutUs = lazy(() => import('./pages/AboutUs'))
@@ -53,9 +56,24 @@ function PageLoader() {
   )
 }
 
+/**
+ * Internal-linking footer strip shown on every indexable page. Displays a
+ * curated set of related services so Googlebot, ChatGPT and users all get
+ * strong contextual links with keyword-rich anchor text.
+ * Skipped on Contact (already a CTA page) and Privacy Policy (legal).
+ */
+function PageInternalLinks() {
+  const { pathname } = useLocation()
+  const skip = pathname === '/contact' || pathname === '/privacy-policy'
+  if (skip) return null
+  if (!INDEXABLE_PATHS.has(pathname)) return null
+  return <RelatedServices />
+}
+
 function App() {
   return (
     <Router>
+      <SiteSchema />
       <DocumentMeta />
       <RouteScrollAndFocus />
       <div className="min-h-screen bg-white flex flex-col">
@@ -106,6 +124,7 @@ function App() {
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
+          <PageInternalLinks />
         </main>
         <Footer />
         <ScrollToTopButton />
