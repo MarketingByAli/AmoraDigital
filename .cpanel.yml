@@ -1,0 +1,31 @@
+---
+# cPanel deployment script.
+# Runs after `git pull` when you click "Deploy HEAD Commit" in
+# cPanel > Git Version Control, OR automatically if Auto Deploy is enabled.
+#
+# Repository path is configured in cPanel as /home/amoradigital/public_html,
+# so files are pulled directly into the web root. This script just performs
+# light housekeeping after each pull:
+#   - removes any stale dev artifacts that might linger from previous commits
+#   - normalises file permissions so the web server can read everything
+#
+# The actual production assets (index.html, assets/, route folders,
+# robots.txt, sitemap.xml, .htaccess, favicon.svg) come straight from git
+# because they are tracked (see .gitignore).
+
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/amoradigital/public_html
+    - /bin/mkdir -p $DEPLOYPATH
+
+    # Remove leftover dev folders that should never be web-accessible.
+    # (.htaccess also blocks them at the HTTP layer as a second defence.)
+    - /bin/rm -rf $DEPLOYPATH/node_modules
+    - /bin/rm -rf $DEPLOYPATH/dist
+    - /bin/rm -rf $DEPLOYPATH/.cursor
+    - /bin/rm -rf $DEPLOYPATH/.claude
+    - /bin/rm -rf $DEPLOYPATH/.vscode
+
+    # Normalise permissions: dirs 755, files 644, .htaccess 644.
+    - /usr/bin/find $DEPLOYPATH -type d -exec chmod 755 {} \;
+    - /usr/bin/find $DEPLOYPATH -type f -exec chmod 644 {} \;

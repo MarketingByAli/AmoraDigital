@@ -133,11 +133,23 @@ DirectoryIndex index.html
 </IfModule>
 
 # ----------------------------------------------------------------------------
-#  7. Block access to sensitive files
+#  7. Block access to sensitive files (cPanel git deploys the whole repo into
+#     public_html, so we explicitly block dev/source files from being served)
 # ----------------------------------------------------------------------------
-<FilesMatch "^(\.env|\.git|package\.json|package-lock\.json|tsconfig\.json|vite\.config\.ts|\.htaccess|\.gitignore)$">
+<FilesMatch "^(\.env.*|\.git.*|package\.json|package-lock\.json|tsconfig.*\.json|vite\.config\..*|postcss\.config\..*|tailwind\.config\..*|\.htaccess|\.gitignore|\.cpanel\.yml|index\.html\.template|README.*|.+\.ts|.+\.tsx|.+\.mjs)$">
   Require all denied
 </FilesMatch>
+
+# Block entire dev / source directories that ship via git deploy.
+RedirectMatch 404 ^/src(/|$)
+RedirectMatch 404 ^/scripts(/|$)
+RedirectMatch 404 ^/public(/|$)
+RedirectMatch 404 ^/node_modules(/|$)
+RedirectMatch 404 ^/dist(/|$)
+RedirectMatch 404 ^/\.git(/|$)
+RedirectMatch 404 ^/\.cursor(/|$)
+RedirectMatch 404 ^/\.claude(/|$)
+RedirectMatch 404 ^/\.vscode(/|$)
 
 # php -- BEGIN cPanel-generated handler, do not edit
 <IfModule mime_module>
