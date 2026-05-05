@@ -33,7 +33,7 @@ export const CONTENT_LANGUAGE = 'en'
 export const LOGO_URL = 'https://amoradigital.nl/asset/Amora-Logo.svg'
 export const LOGO_LIGHT_URL = 'https://amoradigital.nl/asset/amora-logo-light.svg'
 export const FAVICON_URL = 'https://amoradigital.nl/asset/amora-icon.svg'
-export const DEFAULT_OG_IMAGE = `${SITE_CANONICAL_ORIGIN}/og-image.png`
+export const DEFAULT_OG_IMAGE = `${SITE_CANONICAL_ORIGIN}/og/Home.png`
 export const OG_IMAGE_WIDTH = 1200
 export const OG_IMAGE_HEIGHT = 630
 

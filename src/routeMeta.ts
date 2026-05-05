@@ -6,13 +6,29 @@
  * characters with a clear value proposition and call to action.
  */
 
-import { SITE_NAME } from './siteConfig'
+import { SITE_CANONICAL_ORIGIN, SITE_NAME } from './siteConfig'
 
 type RouteMeta = {
   title: string
   description: string
   keywords?: readonly string[]
   ogImage?: string
+}
+
+function ogAssetPng(fileBase: string): string {
+  return `${SITE_CANONICAL_ORIGIN}/og/${fileBase}.png`
+}
+
+/**
+ * Maps each indexable pathname to `public/og/<file>.png`.
+ * Filename matches the last URL segment (`/marketing/paid-advertising` → `paid-advertising.png`).
+ * Home, contact and privacy-policy use `Home.png`.
+ */
+function ogImageForIndexablePath(pathname: string): string {
+  if (pathname === '/') return ogAssetPng('Home')
+  if (pathname === '/contact' || pathname === '/privacy-policy') return ogAssetPng('Home')
+  const segment = pathname.slice(pathname.lastIndexOf('/') + 1)
+  return ogAssetPng(segment)
 }
 
 const entries: Record<string, RouteMeta> = {
@@ -270,11 +286,13 @@ const entries: Record<string, RouteMeta> = {
 export const INDEXABLE_PATHS = new Set(Object.keys(entries))
 
 export function getMetaForPath(pathname: string): RouteMeta {
-  return (
-    entries[pathname] ?? {
-      title: `Page not found | ${SITE_NAME}`,
-      description:
-        'The page you requested does not exist. Return to the Amora Digital home or use the navigation menu to find what you need.'
-    }
-  )
+  const base = entries[pathname]
+  if (base) {
+    return { ...base, ogImage: base.ogImage ?? ogImageForIndexablePath(pathname) }
+  }
+  return {
+    title: `Page not found | ${SITE_NAME}`,
+    description:
+      'The page you requested does not exist. Return to the Amora Digital home or use the navigation menu to find what you need.'
+  }
 }

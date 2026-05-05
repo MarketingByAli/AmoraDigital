@@ -25,6 +25,7 @@ const ROOT = path.resolve(path.dirname(__filename), '..')
 /** Top-level entries that the build / prerender produces. */
 const TARGETS = [
   'assets',
+  'og',
   'about',
   'contact',
   'privacy-policy',

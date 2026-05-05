@@ -48,8 +48,8 @@
       content="Amora Digital is a Netherlands-based digital marketing and custom development agency. Grow with SEO, AI SEO, paid ads, web design, React, PHP and Java."
     />
     <meta property="og:url" content="https://amoradigital.nl/" />
-    <meta property="og:image" content="https://amoradigital.nl/og-image.png" />
-    <meta property="og:image:secure_url" content="https://amoradigital.nl/og-image.png" />
+    <meta property="og:image" content="https://amoradigital.nl/og/Home.png" />
+    <meta property="og:image:secure_url" content="https://amoradigital.nl/og/Home.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:type" content="image/png" />
@@ -64,7 +64,7 @@
       name="twitter:description"
       content="Amora Digital is a Netherlands-based digital marketing and custom development agency. Grow with SEO, AI SEO, paid ads, web design, React, PHP and Java."
     />
-    <meta name="twitter:image" content="https://amoradigital.nl/og-image.png" />
+    <meta name="twitter:image" content="https://amoradigital.nl/og/Home.png" />
     <meta name="twitter:image:alt" content="Amora Digital — Digital Marketing & Custom Development" />
 
     <!-- Network hints: establish connections early (perf + Core Web Vitals) -->

@@ -121,11 +121,9 @@ export default function DocumentMeta() {
     setMetaProperty('og:image', image)
     setMetaProperty('og:image:secure_url', image)
     setMetaProperty('og:image:alt', title)
-    if (!ogImage) {
-      setMetaProperty('og:image:width', String(OG_IMAGE_WIDTH))
-      setMetaProperty('og:image:height', String(OG_IMAGE_HEIGHT))
-      setMetaProperty('og:image:type', 'image/png')
-    }
+    setMetaProperty('og:image:width', String(OG_IMAGE_WIDTH))
+    setMetaProperty('og:image:height', String(OG_IMAGE_HEIGHT))
+    setMetaProperty('og:image:type', 'image/png')
 
     setMetaName('twitter:card', 'summary_large_image')
     setMetaName('twitter:site', '@amoradigital')
