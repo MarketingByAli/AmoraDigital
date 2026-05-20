@@ -7,10 +7,11 @@ import {
   GA_MEASUREMENT_ID,
   OG_IMAGE_HEIGHT,
   OG_IMAGE_WIDTH,
+  OG_LOCALE,
   SITE_CANONICAL_ORIGIN,
   SITE_NAME
 } from '../siteConfig'
-import { buildGraph, OG_ALTERNATE_LOCALE, OG_LOCALE } from '../seo/schema'
+import { buildGraph } from '../seo/schema'
 import { resolvePageSchema } from '../seo/pageSchema'
 
 const PAGE_SCHEMA_ID = 'amora-page-schema'
@@ -45,15 +46,12 @@ function setCanonical(url: string) {
   link.setAttribute('href', url)
 }
 
-function setAlternateLink(hreflang: string, href: string) {
-  let link = document.querySelector<HTMLLinkElement>(`link[rel="alternate"][hreflang="${hreflang}"]`)
-  if (!link) {
-    link = document.createElement('link')
-    link.setAttribute('rel', 'alternate')
-    link.setAttribute('hreflang', hreflang)
-    document.head.appendChild(link)
-  }
-  link.setAttribute('href', href)
+function removeAlternateLinks() {
+  document.querySelectorAll('link[rel="alternate"][hreflang]').forEach((el) => el.remove())
+}
+
+function removeMetaProperty(property: string) {
+  document.querySelectorAll(`meta[property="${property}"]`).forEach((el) => el.remove())
 }
 
 function setHtmlLang(lang: string) {
@@ -107,14 +105,12 @@ export default function DocumentMeta() {
     setMetaName('referrer', 'strict-origin-when-cross-origin')
 
     setCanonical(canonicalUrl)
-    setAlternateLink('en', canonicalUrl)
-    setAlternateLink('nl', canonicalUrl)
-    setAlternateLink('x-default', canonicalUrl)
+    removeAlternateLinks()
 
     setMetaProperty('og:type', 'website')
     setMetaProperty('og:site_name', SITE_NAME)
     setMetaProperty('og:locale', OG_LOCALE)
-    setMetaProperty('og:locale:alternate', OG_ALTERNATE_LOCALE)
+    removeMetaProperty('og:locale:alternate')
     setMetaProperty('og:title', title)
     setMetaProperty('og:description', description)
     setMetaProperty('og:url', canonicalUrl)

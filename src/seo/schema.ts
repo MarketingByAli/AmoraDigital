@@ -10,7 +10,6 @@
  */
 
 import {
-  ALTERNATE_LOCALE,
   BUSINESS_COUNTRY,
   BUSINESS_FOUNDING_DATE,
   BUSINESS_GEO_POSITION,
@@ -19,7 +18,6 @@ import {
   CONTACT_EMAIL,
   CONTACT_PHONE_E164,
   CONTENT_LANGUAGE,
-  DEFAULT_LOCALE,
   DEFAULT_OG_IMAGE,
   LOGO_URL,
   SITE_CANONICAL_ORIGIN,
@@ -218,6 +216,8 @@ export function buildWebPageSchema(options: {
   image?: string
   datePublished?: string
   dateModified?: string
+  /** `@id` anchor of an FAQPage node on this URL (links WebPage → FAQPage in the graph). */
+  faqId?: string
 }): JsonObject {
   const url = absoluteUrl(options.path)
   return {
@@ -237,6 +237,7 @@ export function buildWebPageSchema(options: {
     datePublished: options.datePublished,
     dateModified: options.dateModified,
     breadcrumb: options.breadcrumbId ? { '@id': options.breadcrumbId } : undefined,
+    hasPart: options.faqId ? { '@id': options.faqId } : undefined,
     potentialAction: [
       {
         '@type': 'ReadAction',
@@ -341,10 +342,17 @@ export function buildProductSchema(options: {
  * often cite the source.
  */
 export function buildFaqSchema(
+  path: string,
   questions: ReadonlyArray<{ question: string; answer: string }>
 ): JsonObject {
+  const url = absoluteUrl(path)
+  const webpageId = `${url}#webpage`
   return {
     '@type': 'FAQPage',
+    '@id': `${url}#faq`,
+    url,
+    inLanguage: CONTENT_LANGUAGE,
+    isPartOf: { '@id': webpageId },
     mainEntity: questions.map((q) => ({
       '@type': 'Question',
       name: q.question,
@@ -388,6 +396,3 @@ export function buildGraph(nodes: ReadonlyArray<JsonObject | null | undefined>):
   }
 }
 
-/** Locale helpers for Open Graph tags. */
-export const OG_LOCALE = DEFAULT_LOCALE
-export const OG_ALTERNATE_LOCALE = ALTERNATE_LOCALE

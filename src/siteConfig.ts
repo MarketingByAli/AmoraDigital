@@ -26,9 +26,9 @@ export const BUSINESS_GEO_POSITION = '52.3676;4.9041'
 
 export const BUSINESS_FOUNDING_DATE = '2024-01-01'
 
-export const DEFAULT_LOCALE = 'nl_NL'
-export const ALTERNATE_LOCALE = 'en_US'
 export const CONTENT_LANGUAGE = 'en'
+/** Open Graph locale — matches CONTENT_LANGUAGE until Dutch pages ship. */
+export const OG_LOCALE = 'en_US'
 
 export const LOGO_URL = 'https://amoradigital.nl/asset/Amora-Logo.svg'
 export const LOGO_LIGHT_URL = 'https://amoradigital.nl/asset/amora-logo-light.svg'

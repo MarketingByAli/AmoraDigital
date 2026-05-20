@@ -7,6 +7,7 @@ import ScrollProgress from './components/ScrollProgress'
 import RouteScrollAndFocus from './components/RouteScrollAndFocus'
 import DocumentMeta from './components/DocumentMeta'
 import RelatedServices from './components/RelatedServices'
+import FaqSection from './components/FaqSection'
 import { INDEXABLE_PATHS } from './routeMeta'
 
 const HomePage = lazy(() => import('./pages/HomePage'))
@@ -122,6 +123,7 @@ function App() {
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
+          <FaqSection />
           <PageInternalLinks />
         </main>
         <Footer />
