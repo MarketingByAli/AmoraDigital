@@ -1,315 +1,272 @@
 import { Link, useLocation } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
+import { ROUTES, localeFromPath, getRouteKey, type Locale, type RouteKey } from '../i18n/routes'
+import { UI } from '../i18n/ui'
 
-type ServiceLink = { name: string; path: string; description: string }
+type ServiceMeta = {
+  key: RouteKey
+  name: { en: string; nl: string }
+  description: { en: string; nl: string }
+}
 
-const ALL_SERVICES: ServiceLink[] = [
-  // Marketing
+const SERVICES: ServiceMeta[] = [
   {
-    name: 'SEO Services',
-    path: '/marketing/seo-services',
-    description: 'Rank higher in Google with technical and on-page SEO.'
+    key: 'seo-services',
+    name: { en: 'SEO Services', nl: 'SEO-diensten' },
+    description: {
+      en: 'Rank higher in Google with technical and on-page SEO.',
+      nl: 'Hoger scoren in Google met technische en on-page SEO.'
+    }
   },
   {
-    name: 'AI SEO',
-    path: '/marketing/ai-seo',
-    description: 'Get cited by ChatGPT, Perplexity and Google AI Overviews.'
+    key: 'ai-seo',
+    name: { en: 'AI SEO', nl: 'AI SEO' },
+    description: {
+      en: 'Get cited by ChatGPT, Perplexity and Google AI Overviews.',
+      nl: 'Word geciteerd door ChatGPT, Perplexity en Google AI Overviews.'
+    }
   },
   {
-    name: 'Local SEO',
-    path: '/marketing/local-seo',
-    description: 'Dominate Google Maps and local "near me" searches.'
+    key: 'local-seo',
+    name: { en: 'Local SEO', nl: 'Lokale SEO' },
+    description: {
+      en: 'Dominate Google Maps and local "near me" searches.',
+      nl: 'Domineer Google Maps en lokale "in de buurt"-zoekopdrachten.'
+    }
   },
   {
-    name: 'Paid Advertising',
-    path: '/marketing/paid-advertising',
-    description: 'ROI-driven Google Ads, Meta Ads and retargeting.'
+    key: 'paid-advertising',
+    name: { en: 'Paid Advertising', nl: 'Online adverteren' },
+    description: {
+      en: 'ROI-driven Google Ads, Meta Ads and retargeting.',
+      nl: 'Op ROI gerichte Google Ads, Meta Ads en retargeting.'
+    }
   },
   {
-    name: 'Social Media Marketing',
-    path: '/marketing/social-media-marketing',
-    description: 'Strategy, content and community across social platforms.'
+    key: 'social-media-marketing',
+    name: { en: 'Social Media Marketing', nl: 'Social media marketing' },
+    description: {
+      en: 'Strategy, content and community across social platforms.',
+      nl: 'Strategie, content en community op alle social platformen.'
+    }
   },
   {
-    name: 'Email Marketing',
-    path: '/marketing/email-marketing',
-    description: 'Automation and newsletters that turn subscribers into buyers.'
+    key: 'email-marketing',
+    name: { en: 'Email Marketing', nl: 'E-mailmarketing' },
+    description: {
+      en: 'Automation and newsletters that turn subscribers into buyers.',
+      nl: 'Automatisering en nieuwsbrieven die abonnees omzetten in klanten.'
+    }
   },
   {
-    name: 'Conversion Optimization',
-    path: '/marketing/conversion-optimization',
-    description: 'CRO and A/B testing to lift funnel conversions.'
+    key: 'conversion-optimization',
+    name: { en: 'Conversion Optimization', nl: 'Conversie-optimalisatie' },
+    description: {
+      en: 'CRO and A/B testing to lift funnel conversions.',
+      nl: 'CRO en A/B-testing voor meer conversies in je funnel.'
+    }
   },
   {
-    name: 'Brand Strategy',
-    path: '/marketing/brand-strategy',
-    description: 'Positioning, messaging and visual identity.'
+    key: 'brand-strategy',
+    name: { en: 'Brand Strategy', nl: 'Merkstrategie' },
+    description: {
+      en: 'Positioning, messaging and visual identity.',
+      nl: 'Positionering, messaging en visuele identiteit.'
+    }
   },
   {
-    name: 'Website Design',
-    path: '/marketing/website-design',
-    description: 'Conversion-focused, mobile-first custom websites.'
+    key: 'website-design',
+    name: { en: 'Website Design', nl: 'Webdesign' },
+    description: {
+      en: 'Conversion-focused, mobile-first custom websites.',
+      nl: 'Conversiegerichte, mobile-first websites op maat.'
+    }
   },
   {
-    name: 'CRM Solutions',
-    path: '/marketing/crm-solutions',
-    description: 'HubSpot, Pipedrive, Zoho and custom CRM setups.'
-  },
-  // Development
-  {
-    name: 'React Development',
-    path: '/development/react',
-    description: 'Modern React SPAs, dashboards and performant front ends.'
+    key: 'crm-solutions',
+    name: { en: 'CRM Solutions', nl: 'CRM-oplossingen' },
+    description: {
+      en: 'HubSpot, Pipedrive, Zoho and custom CRM setups.',
+      nl: 'HubSpot, Pipedrive, Zoho en maatwerk CRM-implementaties.'
+    }
   },
   {
-    name: 'PHP Development',
-    path: '/development/php',
-    description: 'Laravel, WordPress and custom PHP backends.'
+    key: 'react',
+    name: { en: 'React Development', nl: 'React Development' },
+    description: {
+      en: 'Modern React SPAs, dashboards and performant front ends.',
+      nl: "Moderne React-SPA's, dashboards en snelle front ends."
+    }
   },
   {
-    name: 'Java Development',
-    path: '/development/java',
-    description: 'Enterprise Spring Boot applications and APIs.'
+    key: 'php',
+    name: { en: 'PHP Development', nl: 'PHP Development' },
+    description: {
+      en: 'Laravel, WordPress and custom PHP backends.',
+      nl: 'Laravel, WordPress en maatwerk PHP-backends.'
+    }
   },
   {
-    name: 'Mobile App Development',
-    path: '/development/mobile-apps',
-    description: 'iOS, Android, React Native and Flutter apps.'
+    key: 'java',
+    name: { en: 'Java Development', nl: 'Java Development' },
+    description: {
+      en: 'Enterprise Spring Boot applications and APIs.',
+      nl: "Enterprise Spring Boot-applicaties en API's."
+    }
   },
   {
-    name: 'E-Commerce Solutions',
-    path: '/development/ecommerce',
-    description: 'Shopify, WooCommerce and custom online stores.'
+    key: 'mobile-apps',
+    name: { en: 'Mobile App Development', nl: 'Mobiele app-ontwikkeling' },
+    description: {
+      en: 'iOS, Android, React Native and Flutter apps.',
+      nl: 'iOS-, Android-, React Native- en Flutter-apps.'
+    }
   },
   {
-    name: 'AI & Automation',
-    path: '/development/ai-automation',
-    description: 'AI workflows, chatbots and business automation.'
+    key: 'ecommerce',
+    name: { en: 'E-Commerce Solutions', nl: 'E-commerce oplossingen' },
+    description: {
+      en: 'Shopify, WooCommerce and custom online stores.',
+      nl: 'Shopify, WooCommerce en maatwerk webshops.'
+    }
   },
   {
-    name: 'Full-Stack Development',
-    path: '/development/full-stack',
-    description: 'End-to-end builds from database to UI.'
+    key: 'ai-automation',
+    name: { en: 'AI & Automation', nl: 'AI & automatisering' },
+    description: {
+      en: 'AI workflows, chatbots and business automation.',
+      nl: 'AI-workflows, chatbots en bedrijfsautomatisering.'
+    }
   },
   {
-    name: 'Web Applications',
-    path: '/development/web-applications',
-    description: 'Custom SaaS, portals and internal tools.'
+    key: 'full-stack',
+    name: { en: 'Full-Stack Development', nl: 'Full-stack development' },
+    description: {
+      en: 'End-to-end builds from database to UI.',
+      nl: 'End-to-end oplevering van database tot UI.'
+    }
+  },
+  {
+    key: 'web-applications',
+    name: { en: 'Web Applications', nl: 'Webapplicaties' },
+    description: {
+      en: 'Custom SaaS, portals and internal tools.',
+      nl: 'Maatwerk SaaS, portalen en interne tools.'
+    }
   }
 ]
 
+const SERVICE_BY_KEY: Record<RouteKey, ServiceMeta | undefined> = SERVICES.reduce(
+  (acc, s) => {
+    acc[s.key] = s
+    return acc
+  },
+  {} as Record<RouteKey, ServiceMeta | undefined>
+)
+
 /**
- * Map each page to a curated list of related services. These curated links
- * use descriptive anchor text (a ranking signal) and build an internal link
- * mesh that pushes authority to siblings and cross-category cousins.
+ * Curated related-service mapping keyed by RouteKey so the same intent works
+ * for both English and Dutch URLs. Each list uses descriptive anchor text
+ * (a ranking signal) and builds an internal link mesh that pushes authority
+ * across the site.
  */
-const RELATED_BY_PATH: Record<string, string[]> = {
-  '/': [
-    '/marketing/seo-services',
-    '/marketing/ai-seo',
-    '/marketing/paid-advertising',
-    '/development/react',
-    '/development/ecommerce',
-    '/development/ai-automation'
+const RELATED_BY_KEY: Partial<Record<RouteKey, RouteKey[]>> = {
+  home: ['seo-services', 'ai-seo', 'paid-advertising', 'react', 'ecommerce', 'ai-automation'],
+  about: ['seo-services', 'react', 'ai-seo', 'paid-advertising'],
+  contact: ['seo-services', 'ai-seo', 'paid-advertising', 'react'],
+  marketing: [
+    'seo-services',
+    'ai-seo',
+    'paid-advertising',
+    'social-media-marketing',
+    'email-marketing',
+    'conversion-optimization'
   ],
-  '/about': [
-    '/marketing/seo-services',
-    '/development/react',
-    '/marketing/ai-seo',
-    '/marketing/paid-advertising'
+  'seo-services': ['ai-seo', 'local-seo', 'conversion-optimization', 'website-design', 'react'],
+  'ai-seo': ['seo-services', 'local-seo', 'brand-strategy', 'ai-automation'],
+  'local-seo': ['seo-services', 'ai-seo', 'website-design', 'paid-advertising'],
+  'paid-advertising': [
+    'conversion-optimization',
+    'seo-services',
+    'social-media-marketing',
+    'email-marketing'
   ],
-  '/contact': [
-    '/marketing/seo-services',
-    '/marketing/ai-seo',
-    '/marketing/paid-advertising',
-    '/development/react'
+  'social-media-marketing': [
+    'paid-advertising',
+    'brand-strategy',
+    'email-marketing',
+    'seo-services'
   ],
-  '/marketing': [
-    '/marketing/seo-services',
-    '/marketing/ai-seo',
-    '/marketing/paid-advertising',
-    '/marketing/social-media-marketing',
-    '/marketing/email-marketing',
-    '/marketing/conversion-optimization'
+  'email-marketing': [
+    'crm-solutions',
+    'conversion-optimization',
+    'paid-advertising',
+    'social-media-marketing'
   ],
-  '/marketing/seo-services': [
-    '/marketing/ai-seo',
-    '/marketing/local-seo',
-    '/marketing/conversion-optimization',
-    '/marketing/website-design',
-    '/development/react'
+  'conversion-optimization': [
+    'website-design',
+    'paid-advertising',
+    'seo-services',
+    'email-marketing'
   ],
-  '/marketing/ai-seo': [
-    '/marketing/seo-services',
-    '/marketing/local-seo',
-    '/marketing/brand-strategy',
-    '/development/ai-automation'
+  'brand-strategy': [
+    'website-design',
+    'social-media-marketing',
+    'ai-seo',
+    'paid-advertising'
   ],
-  '/marketing/local-seo': [
-    '/marketing/seo-services',
-    '/marketing/ai-seo',
-    '/marketing/website-design',
-    '/marketing/paid-advertising'
+  'website-design': ['conversion-optimization', 'seo-services', 'brand-strategy', 'react'],
+  'crm-solutions': ['email-marketing', 'paid-advertising', 'ai-automation', 'web-applications'],
+  development: ['react', 'php', 'mobile-apps', 'ecommerce', 'ai-automation', 'full-stack'],
+  react: ['full-stack', 'web-applications', 'mobile-apps', 'website-design', 'seo-services'],
+  php: ['full-stack', 'ecommerce', 'web-applications', 'website-design'],
+  java: ['full-stack', 'web-applications', 'ai-automation'],
+  'mobile-apps': ['react', 'full-stack', 'ai-automation', 'paid-advertising'],
+  ecommerce: ['paid-advertising', 'conversion-optimization', 'email-marketing', 'seo-services'],
+  'ai-automation': ['ai-seo', 'crm-solutions', 'full-stack', 'web-applications'],
+  'full-stack': ['react', 'php', 'java', 'web-applications'],
+  'web-applications': ['full-stack', 'react', 'ai-automation', 'conversion-optimization'],
+  'auto-form-builder': [
+    'crm-solutions',
+    'conversion-optimization',
+    'email-marketing',
+    'php'
   ],
-  '/marketing/paid-advertising': [
-    '/marketing/conversion-optimization',
-    '/marketing/seo-services',
-    '/marketing/social-media-marketing',
-    '/marketing/email-marketing'
-  ],
-  '/marketing/social-media-marketing': [
-    '/marketing/paid-advertising',
-    '/marketing/brand-strategy',
-    '/marketing/email-marketing',
-    '/marketing/seo-services'
-  ],
-  '/marketing/email-marketing': [
-    '/marketing/crm-solutions',
-    '/marketing/conversion-optimization',
-    '/marketing/paid-advertising',
-    '/marketing/social-media-marketing'
-  ],
-  '/marketing/conversion-optimization': [
-    '/marketing/website-design',
-    '/marketing/paid-advertising',
-    '/marketing/seo-services',
-    '/marketing/email-marketing'
-  ],
-  '/marketing/brand-strategy': [
-    '/marketing/website-design',
-    '/marketing/social-media-marketing',
-    '/marketing/ai-seo',
-    '/marketing/paid-advertising'
-  ],
-  '/marketing/website-design': [
-    '/marketing/conversion-optimization',
-    '/marketing/seo-services',
-    '/marketing/brand-strategy',
-    '/development/react'
-  ],
-  '/marketing/crm-solutions': [
-    '/marketing/email-marketing',
-    '/marketing/paid-advertising',
-    '/development/ai-automation',
-    '/development/web-applications'
-  ],
-  '/development': [
-    '/development/react',
-    '/development/php',
-    '/development/mobile-apps',
-    '/development/ecommerce',
-    '/development/ai-automation',
-    '/development/full-stack'
-  ],
-  '/development/react': [
-    '/development/full-stack',
-    '/development/web-applications',
-    '/development/mobile-apps',
-    '/marketing/website-design',
-    '/marketing/seo-services'
-  ],
-  '/development/php': [
-    '/development/full-stack',
-    '/development/ecommerce',
-    '/development/web-applications',
-    '/marketing/website-design'
-  ],
-  '/development/java': [
-    '/development/full-stack',
-    '/development/web-applications',
-    '/development/ai-automation'
-  ],
-  '/development/mobile-apps': [
-    '/development/react',
-    '/development/full-stack',
-    '/development/ai-automation',
-    '/marketing/paid-advertising'
-  ],
-  '/development/ecommerce': [
-    '/marketing/paid-advertising',
-    '/marketing/conversion-optimization',
-    '/marketing/email-marketing',
-    '/marketing/seo-services'
-  ],
-  '/development/ai-automation': [
-    '/marketing/ai-seo',
-    '/marketing/crm-solutions',
-    '/development/full-stack',
-    '/development/web-applications'
-  ],
-  '/development/full-stack': [
-    '/development/react',
-    '/development/php',
-    '/development/java',
-    '/development/web-applications'
-  ],
-  '/development/web-applications': [
-    '/development/full-stack',
-    '/development/react',
-    '/development/ai-automation',
-    '/marketing/conversion-optimization'
-  ],
-  '/products/auto-form-builder': [
-    '/marketing/crm-solutions',
-    '/marketing/conversion-optimization',
-    '/marketing/email-marketing',
-    '/development/php'
-  ],
-  '/products/auto-form-crm': [
-    '/marketing/crm-solutions',
-    '/marketing/email-marketing',
-    '/development/web-applications'
-  ],
-  '/products/hi-fan': [
-    '/marketing/social-media-marketing',
-    '/marketing/brand-strategy',
-    '/development/web-applications'
-  ],
-  '/products/pinkpeck': [
-    '/marketing/social-media-marketing',
-    '/marketing/brand-strategy',
-    '/marketing/ai-seo'
-  ],
-  '/products/unbox-deal': [
-    '/development/ecommerce',
-    '/marketing/paid-advertising',
-    '/marketing/seo-services'
-  ],
-  '/products/royal-casino-hub': [
-    '/marketing/seo-services',
-    '/marketing/ai-seo',
-    '/marketing/brand-strategy'
-  ]
+  'auto-form-crm': ['crm-solutions', 'email-marketing', 'web-applications'],
+  'hi-fan': ['social-media-marketing', 'brand-strategy', 'web-applications'],
+  pinkpeck: ['social-media-marketing', 'brand-strategy', 'ai-seo'],
+  'unbox-deal': ['ecommerce', 'paid-advertising', 'seo-services'],
+  'royal-casino-hub': ['seo-services', 'ai-seo', 'brand-strategy']
 }
 
 type RelatedServicesProps = {
   /** Force a specific path to resolve related services for. */
   path?: string
-  /** Heading shown above the grid. */
+  /** Heading shown above the grid (defaults to localized UI string). */
   title?: string
-  /** Subheading shown under the title. */
+  /** Subheading shown under the title (defaults to localized UI string). */
   subtitle?: string
   /** Max number of cards to show (after filtering the current page). */
   limit?: number
 }
 
-const SERVICE_BY_PATH: Record<string, ServiceLink> = Object.fromEntries(
-  ALL_SERVICES.map((s) => [s.path, s])
-)
-
 export default function RelatedServices({
   path,
-  title = 'Related services you might need',
-  subtitle = 'Get more out of your investment by combining complementary services.',
+  title,
+  subtitle,
   limit = 6
 }: RelatedServicesProps) {
   const { pathname } = useLocation()
-  const key = path ?? pathname
-  const paths = RELATED_BY_PATH[key] ?? RELATED_BY_PATH['/']
-  const items = paths
-    .filter((p) => p !== key)
-    .map((p) => SERVICE_BY_PATH[p])
-    .filter((s): s is ServiceLink => Boolean(s))
+  const targetPath = path ?? pathname
+  const locale: Locale = localeFromPath(targetPath)
+  const ui = UI[locale].related
+
+  const key = getRouteKey(targetPath)
+  const related = (key ? RELATED_BY_KEY[key] : undefined) ?? RELATED_BY_KEY.home ?? []
+  const items = related
+    .filter((k) => k !== key)
+    .map((k) => SERVICE_BY_KEY[k])
+    .filter((s): s is ServiceMeta => Boolean(s))
     .slice(0, limit)
 
   if (items.length === 0) return null
@@ -322,28 +279,31 @@ export default function RelatedServices({
             id="related-services-heading"
             className="font-display text-3xl md:text-4xl font-bold text-slate-900 mb-3"
           >
-            {title}
+            {title ?? ui.title}
           </h2>
-          <p className="text-slate-600 max-w-2xl mx-auto">{subtitle}</p>
+          <p className="text-slate-600 max-w-2xl mx-auto">{subtitle ?? ui.subtitle}</p>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {items.map((item) => (
-            <Link
-              key={item.path}
-              to={item.path}
-              className="group block p-6 rounded-2xl border border-slate-200 bg-white hover:border-primary-300 hover:shadow-lg transition-all"
-            >
-              <h3 className="text-lg font-semibold text-slate-900 mb-2 group-hover:text-primary-600 transition-colors">
-                {item.name}
-              </h3>
-              <p className="text-sm text-slate-600 mb-4">{item.description}</p>
-              <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary-600">
-                Learn more about {item.name.toLowerCase()}
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-              </span>
-            </Link>
-          ))}
+          {items.map((item) => {
+            const name = item.name[locale]
+            return (
+              <Link
+                key={item.key}
+                to={ROUTES[item.key][locale]}
+                className="group block p-6 rounded-2xl border border-slate-200 bg-white hover:border-primary-300 hover:shadow-lg transition-all"
+              >
+                <h3 className="text-lg font-semibold text-slate-900 mb-2 group-hover:text-primary-600 transition-colors">
+                  {name}
+                </h3>
+                <p className="text-sm text-slate-600 mb-4">{item.description[locale]}</p>
+                <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary-600">
+                  {ui.learnMore(name)}
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                </span>
+              </Link>
+            )
+          })}
         </div>
       </div>
     </section>

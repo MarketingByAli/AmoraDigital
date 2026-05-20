@@ -22,7 +22,12 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 const ROOT = path.resolve(__dirname, '..')
 
-const ROUTES = [
+/**
+ * Bilingual route table. Must stay in sync with `src/i18n/routes.ts`.
+ * English keeps the original URLs; Dutch lives under `/nl/...` with
+ * translated slugs so each locale has its own crawlable static document.
+ */
+const EN_ROUTES = [
   '/',
   '/about',
   '/contact',
@@ -54,6 +59,41 @@ const ROUTES = [
   '/products/unbox-deal',
   '/products/royal-casino-hub'
 ]
+
+const NL_ROUTES = [
+  '/nl',
+  '/nl/over-ons',
+  '/nl/contact',
+  '/nl/privacybeleid',
+  '/nl/marketing',
+  '/nl/marketing/webdesign',
+  '/nl/marketing/crm-oplossingen',
+  '/nl/marketing/social-media-marketing',
+  '/nl/marketing/online-adverteren',
+  '/nl/marketing/seo-diensten',
+  '/nl/marketing/ai-seo',
+  '/nl/marketing/lokale-seo',
+  '/nl/marketing/e-mailmarketing',
+  '/nl/marketing/conversie-optimalisatie',
+  '/nl/marketing/merkstrategie',
+  '/nl/ontwikkeling',
+  '/nl/ontwikkeling/react-development',
+  '/nl/ontwikkeling/php-development',
+  '/nl/ontwikkeling/java-development',
+  '/nl/ontwikkeling/mobiele-apps',
+  '/nl/ontwikkeling/e-commerce',
+  '/nl/ontwikkeling/ai-automatisering',
+  '/nl/ontwikkeling/full-stack',
+  '/nl/ontwikkeling/webapplicaties',
+  '/nl/producten/auto-form-builder',
+  '/nl/producten/auto-form-crm',
+  '/nl/producten/hi-fan',
+  '/nl/producten/pinkpeck',
+  '/nl/producten/unbox-deal',
+  '/nl/producten/royal-casino-hub'
+]
+
+const ROUTES = [...EN_ROUTES, ...NL_ROUTES]
 
 const PORT = 5178
 const RENDER_TIMEOUT_MS = 25000
@@ -100,6 +140,7 @@ async function renderRoute(browser, route) {
 
 function outputPathFor(route) {
   if (route === '/') return path.join(ROOT, 'index.html')
+  // For Dutch routes, the root `/nl` folder also needs an `index.html`.
   const dir = path.join(ROOT, route.replace(/^\//, ''))
   fs.mkdirSync(dir, { recursive: true })
   return path.join(dir, 'index.html')

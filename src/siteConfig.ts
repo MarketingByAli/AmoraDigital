@@ -26,9 +26,15 @@ export const BUSINESS_GEO_POSITION = '52.3676;4.9041'
 
 export const BUSINESS_FOUNDING_DATE = '2024-01-01'
 
+/** Default language signal — used when locale-aware code falls back. */
 export const CONTENT_LANGUAGE = 'en'
-/** Open Graph locale — matches CONTENT_LANGUAGE until Dutch pages ship. */
+/** Default Open Graph locale used by fallback / non-localized paths. */
 export const OG_LOCALE = 'en_US'
+
+/** Dutch site copy used by Organization/WebSite schemas and meta fallbacks. */
+export const SITE_SLOGAN_NL = 'Digitale marketing & maatwerk softwareontwikkeling'
+export const SITE_DESCRIPTION_NL =
+  'Amora Digital is een digitaal marketing- en softwareontwikkelingsbureau uit Nederland. We laten je bedrijf groeien met SEO, AI SEO, online adverteren, webdesign, React, PHP en Java.'
 
 export const LOGO_URL = 'https://amoradigital.nl/asset/Amora-Logo.svg'
 export const LOGO_LIGHT_URL = 'https://amoradigital.nl/asset/amora-logo-light.svg'

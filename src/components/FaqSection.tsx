@@ -1,7 +1,8 @@
 import { useLocation } from 'react-router-dom'
 import { ChevronDown } from 'lucide-react'
 import { getFaqsForPath } from '../seo/pageSchema'
-import { INDEXABLE_PATHS } from '../routeMeta'
+import { INDEXABLE_PATHS, localeFromPath } from '../i18n/routes'
+import { UI } from '../i18n/ui'
 
 /**
  * Visible FAQ block — content must match FAQPage JSON-LD in DocumentMeta exactly.
@@ -11,6 +12,8 @@ export default function FaqSection() {
   const { pathname } = useLocation()
   if (!INDEXABLE_PATHS.has(pathname)) return null
 
+  const locale = localeFromPath(pathname)
+  const ui = UI[locale].faq
   const faqs = getFaqsForPath(pathname)
   if (faqs.length === 0) return null
 
@@ -26,11 +29,9 @@ export default function FaqSection() {
             id="faq-heading"
             className="font-display text-3xl md:text-4xl font-bold text-slate-900 mb-3"
           >
-            Frequently Asked Questions
+            {ui.heading}
           </h2>
-          <p className="text-slate-600 text-lg">
-            Expert answers on SEO, AI SEO, Local SEO and digital growth from Amora Digital.
-          </p>
+          <p className="text-slate-600 text-lg">{ui.subheading}</p>
         </div>
 
         <div className="space-y-3" role="list">

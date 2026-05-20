@@ -1,18 +1,27 @@
 import { useEffect, useRef } from 'react'
 import { useLocation } from 'react-router-dom'
-import { getMetaForPath, INDEXABLE_PATHS } from '../routeMeta'
+import { getMetaForPath } from '../routeMeta'
 import {
-  CONTENT_LANGUAGE,
   DEFAULT_OG_IMAGE,
   GA_MEASUREMENT_ID,
   OG_IMAGE_HEIGHT,
   OG_IMAGE_WIDTH,
-  OG_LOCALE,
   SITE_CANONICAL_ORIGIN,
   SITE_NAME
 } from '../siteConfig'
 import { buildGraph } from '../seo/schema'
 import { resolvePageSchema } from '../seo/pageSchema'
+import {
+  DEFAULT_LOCALE,
+  INDEXABLE_PATHS,
+  LOCALE_HREFLANG,
+  LOCALE_HTML_LANG,
+  LOCALE_OG,
+  ROUTES,
+  getRouteKey,
+  localeFromPath,
+  type Locale
+} from '../i18n/routes'
 
 const PAGE_SCHEMA_ID = 'amora-page-schema'
 
@@ -46,12 +55,22 @@ function setCanonical(url: string) {
   link.setAttribute('href', url)
 }
 
-function removeAlternateLinks() {
+function clearAlternateLinks() {
   document.querySelectorAll('link[rel="alternate"][hreflang]').forEach((el) => el.remove())
 }
 
-function removeMetaProperty(property: string) {
-  document.querySelectorAll(`meta[property="${property}"]`).forEach((el) => el.remove())
+function appendAlternate(hreflang: string, href: string) {
+  const link = document.createElement('link')
+  link.setAttribute('rel', 'alternate')
+  link.setAttribute('hreflang', hreflang)
+  link.setAttribute('href', href)
+  document.head.appendChild(link)
+}
+
+function clearOgLocaleAlternates() {
+  document
+    .querySelectorAll('meta[property="og:locale:alternate"]')
+    .forEach((el) => el.remove())
 }
 
 function setHtmlLang(lang: string) {
@@ -69,20 +88,28 @@ function setPageJsonLd(schema: object | null) {
   document.head.appendChild(script)
 }
 
+/**
+ * Canonical URL helper. Home (`/`) keeps a trailing slash to match the
+ * sitemap; every other route (including `/nl`) has no trailing slash.
+ */
+function canonicalForPath(pathname: string): string {
+  return `${SITE_CANONICAL_ORIGIN}${pathname === '/' ? '/' : pathname}`
+}
+
 export default function DocumentMeta() {
   const { pathname } = useLocation()
   const skipNextGtagConfig = useRef(true)
 
   useEffect(() => {
-    const meta = getMetaForPath(pathname)
+    const locale: Locale = localeFromPath(pathname)
+    const meta = getMetaForPath(pathname, locale)
     const { title, description, ogImage, keywords } = meta
-    // Canonical for home is `${origin}/` (with trailing slash) to match
-    // the sitemap and avoid Google treating `/` and `` as different URLs.
-    const canonicalUrl = `${SITE_CANONICAL_ORIGIN}${pathname === '/' ? '/' : pathname}`
+    const canonicalUrl = canonicalForPath(pathname)
     const image = ogImage ?? DEFAULT_OG_IMAGE
     const indexable = INDEXABLE_PATHS.has(pathname)
+    const key = getRouteKey(pathname)
 
-    setHtmlLang(CONTENT_LANGUAGE)
+    setHtmlLang(LOCALE_HTML_LANG[locale])
 
     document.title = title
     setMetaName('description', description)
@@ -105,12 +132,30 @@ export default function DocumentMeta() {
     setMetaName('referrer', 'strict-origin-when-cross-origin')
 
     setCanonical(canonicalUrl)
-    removeAlternateLinks()
+
+    // Hreflang cluster — only emit when the page has a known mapping in both
+    // locales. `x-default` points to the English version for international
+    // search audiences.
+    clearAlternateLinks()
+    if (key) {
+      const enUrl = `${SITE_CANONICAL_ORIGIN}${ROUTES[key].en === '/' ? '/' : ROUTES[key].en}`
+      const nlUrl = `${SITE_CANONICAL_ORIGIN}${ROUTES[key].nl}`
+      appendAlternate(LOCALE_HREFLANG.en, enUrl)
+      appendAlternate(LOCALE_HREFLANG.nl, nlUrl)
+      appendAlternate('x-default', enUrl)
+    }
 
     setMetaProperty('og:type', 'website')
     setMetaProperty('og:site_name', SITE_NAME)
-    setMetaProperty('og:locale', OG_LOCALE)
-    removeMetaProperty('og:locale:alternate')
+    setMetaProperty('og:locale', LOCALE_OG[locale])
+    clearOgLocaleAlternates()
+    if (key) {
+      const alternateLocale: Locale = locale === 'en' ? 'nl' : 'en'
+      const alt = document.createElement('meta')
+      alt.setAttribute('property', 'og:locale:alternate')
+      alt.setAttribute('content', LOCALE_OG[alternateLocale])
+      document.head.appendChild(alt)
+    }
     setMetaProperty('og:title', title)
     setMetaProperty('og:description', description)
     setMetaProperty('og:url', canonicalUrl)
@@ -150,5 +195,8 @@ export default function DocumentMeta() {
     }
   }, [pathname])
 
+  // Reference DEFAULT_LOCALE to keep the import meaningful for future tooling
+  // and avoid an unused-import lint when this component grows.
+  void DEFAULT_LOCALE
   return null
 }

@@ -49,11 +49,11 @@ export function absoluteUrl(pathOrUrl: string): string {
 }
 
 /** ImageObject for the site logo — used by Organization + Publisher references. */
-function buildLogoImage(): JsonObject {
+function buildLogoImage(language: string = CONTENT_LANGUAGE): JsonObject {
   return {
     '@type': 'ImageObject',
     '@id': LOGO_ID,
-    inLanguage: CONTENT_LANGUAGE,
+    inLanguage: language,
     url: LOGO_URL,
     contentUrl: LOGO_URL,
     width: 512,
@@ -120,14 +120,14 @@ export function buildOrganizationSchema(): JsonObject {
  * action, which can produce a sitelinks search box in Google and helps AI
  * assistants discover internal search intent.
  */
-export function buildWebSiteSchema(): JsonObject {
+export function buildWebSiteSchema(language: string = CONTENT_LANGUAGE): JsonObject {
   return {
     '@type': 'WebSite',
     '@id': WEBSITE_ID,
     url: SITE_CANONICAL_ORIGIN,
     name: SITE_NAME,
     description: SITE_DESCRIPTION,
-    inLanguage: CONTENT_LANGUAGE,
+    inLanguage: language,
     publisher: { '@id': ORG_ID },
     potentialAction: {
       '@type': 'SearchAction',
@@ -218,6 +218,8 @@ export function buildWebPageSchema(options: {
   dateModified?: string
   /** `@id` anchor of an FAQPage node on this URL (links WebPage → FAQPage in the graph). */
   faqId?: string
+  /** BCP-47 language tag for the page (e.g. `en`, `nl`). */
+  language?: string
 }): JsonObject {
   const url = absoluteUrl(options.path)
   return {
@@ -229,7 +231,7 @@ export function buildWebPageSchema(options: {
     isPartOf: { '@id': WEBSITE_ID },
     about: { '@id': ORG_ID },
     publisher: { '@id': ORG_ID },
-    inLanguage: CONTENT_LANGUAGE,
+    inLanguage: options.language ?? CONTENT_LANGUAGE,
     primaryImageOfPage: {
       '@type': 'ImageObject',
       url: options.image ?? DEFAULT_OG_IMAGE
@@ -343,7 +345,8 @@ export function buildProductSchema(options: {
  */
 export function buildFaqSchema(
   path: string,
-  questions: ReadonlyArray<{ question: string; answer: string }>
+  questions: ReadonlyArray<{ question: string; answer: string }>,
+  language: string = CONTENT_LANGUAGE
 ): JsonObject {
   const url = absoluteUrl(path)
   const webpageId = `${url}#webpage`
@@ -351,7 +354,7 @@ export function buildFaqSchema(
     '@type': 'FAQPage',
     '@id': `${url}#faq`,
     url,
-    inLanguage: CONTENT_LANGUAGE,
+    inLanguage: language,
     isPartOf: { '@id': webpageId },
     mainEntity: questions.map((q) => ({
       '@type': 'Question',

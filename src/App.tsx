@@ -8,7 +8,8 @@ import RouteScrollAndFocus from './components/RouteScrollAndFocus'
 import DocumentMeta from './components/DocumentMeta'
 import RelatedServices from './components/RelatedServices'
 import FaqSection from './components/FaqSection'
-import { INDEXABLE_PATHS } from './routeMeta'
+import { INDEXABLE_PATHS, ROUTES, localeFromPath } from './i18n/routes'
+import { UI } from './i18n/ui'
 
 const HomePage = lazy(() => import('./pages/HomePage'))
 const AboutUs = lazy(() => import('./pages/AboutUs'))
@@ -46,8 +47,15 @@ const UnboxDeal = lazy(() => import('./pages/products/UnboxDeal'))
 const RoyalCasinoHub = lazy(() => import('./pages/products/RoyalCasinoHub'))
 
 function PageLoader() {
+  const { pathname } = useLocation()
+  const locale = localeFromPath(pathname)
+  const label = UI[locale].pageLoader
   return (
-    <div className="min-h-[50vh] flex items-center justify-center" aria-busy="true" aria-label="Loading page">
+    <div
+      className="min-h-[50vh] flex items-center justify-center"
+      aria-busy="true"
+      aria-label={label}
+    >
       <div
         className="h-10 w-10 rounded-full border-2 border-primary-600 border-t-transparent animate-spin"
         aria-hidden
@@ -64,8 +72,14 @@ function PageLoader() {
  */
 function PageInternalLinks() {
   const { pathname } = useLocation()
-  const skip = pathname === '/contact' || pathname === '/privacy-policy'
-  if (skip) return null
+  if (
+    pathname === ROUTES.contact.en ||
+    pathname === ROUTES.contact.nl ||
+    pathname === ROUTES.privacy.en ||
+    pathname === ROUTES.privacy.nl
+  ) {
+    return null
+  }
   if (!INDEXABLE_PATHS.has(pathname)) return null
   return <RelatedServices />
 }
@@ -85,40 +99,75 @@ function App() {
         >
           <Suspense fallback={<PageLoader />}>
             <Routes>
-              <Route path="/" element={<HomePage />} />
+              {/* English routes */}
+              <Route path={ROUTES.home.en} element={<HomePage />} />
+              <Route path={ROUTES.about.en} element={<AboutUs />} />
+              <Route path={ROUTES.contact.en} element={<Contact />} />
+              <Route path={ROUTES.privacy.en} element={<PrivacyPolicy />} />
 
-              <Route path="/about" element={<AboutUs />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path={ROUTES.marketing.en} element={<MarketingSolutions />} />
+              <Route path={ROUTES['website-design'].en} element={<WebsiteDesign />} />
+              <Route path={ROUTES['crm-solutions'].en} element={<CRMSolutions />} />
+              <Route path={ROUTES['social-media-marketing'].en} element={<SocialMediaMarketing />} />
+              <Route path={ROUTES['paid-advertising'].en} element={<PaidAdvertising />} />
+              <Route path={ROUTES['seo-services'].en} element={<SEOServices />} />
+              <Route path={ROUTES['ai-seo'].en} element={<AISEO />} />
+              <Route path={ROUTES['local-seo'].en} element={<LocalSEO />} />
+              <Route path={ROUTES['email-marketing'].en} element={<EmailMarketing />} />
+              <Route path={ROUTES['conversion-optimization'].en} element={<ConversionOptimization />} />
+              <Route path={ROUTES['brand-strategy'].en} element={<BrandStrategy />} />
 
-              <Route path="/marketing" element={<MarketingSolutions />} />
-              <Route path="/marketing/website-design" element={<WebsiteDesign />} />
-              <Route path="/marketing/crm-solutions" element={<CRMSolutions />} />
-              <Route path="/marketing/social-media-marketing" element={<SocialMediaMarketing />} />
-              <Route path="/marketing/paid-advertising" element={<PaidAdvertising />} />
-              <Route path="/marketing/seo-services" element={<SEOServices />} />
-              <Route path="/marketing/ai-seo" element={<AISEO />} />
-              <Route path="/marketing/local-seo" element={<LocalSEO />} />
-              <Route path="/marketing/email-marketing" element={<EmailMarketing />} />
-              <Route path="/marketing/conversion-optimization" element={<ConversionOptimization />} />
-              <Route path="/marketing/brand-strategy" element={<BrandStrategy />} />
+              <Route path={ROUTES.development.en} element={<DevelopmentServices />} />
+              <Route path={ROUTES.react.en} element={<ReactDevelopment />} />
+              <Route path={ROUTES.php.en} element={<PHPDevelopment />} />
+              <Route path={ROUTES.java.en} element={<JavaDevelopment />} />
+              <Route path={ROUTES['mobile-apps'].en} element={<MobileAppDevelopment />} />
+              <Route path={ROUTES.ecommerce.en} element={<ECommerceSolutions />} />
+              <Route path={ROUTES['ai-automation'].en} element={<AIAutomation />} />
+              <Route path={ROUTES['full-stack'].en} element={<FullStackDevelopment />} />
+              <Route path={ROUTES['web-applications'].en} element={<WebApplications />} />
 
-              <Route path="/development" element={<DevelopmentServices />} />
-              <Route path="/development/react" element={<ReactDevelopment />} />
-              <Route path="/development/php" element={<PHPDevelopment />} />
-              <Route path="/development/java" element={<JavaDevelopment />} />
-              <Route path="/development/mobile-apps" element={<MobileAppDevelopment />} />
-              <Route path="/development/ecommerce" element={<ECommerceSolutions />} />
-              <Route path="/development/ai-automation" element={<AIAutomation />} />
-              <Route path="/development/full-stack" element={<FullStackDevelopment />} />
-              <Route path="/development/web-applications" element={<WebApplications />} />
+              <Route path={ROUTES['auto-form-builder'].en} element={<AutoFormBuilder />} />
+              <Route path={ROUTES['auto-form-crm'].en} element={<AutoFormCRM />} />
+              <Route path={ROUTES['hi-fan'].en} element={<HiFan />} />
+              <Route path={ROUTES.pinkpeck.en} element={<PinkPeck />} />
+              <Route path={ROUTES['unbox-deal'].en} element={<UnboxDeal />} />
+              <Route path={ROUTES['royal-casino-hub'].en} element={<RoyalCasinoHub />} />
 
-              <Route path="/products/auto-form-builder" element={<AutoFormBuilder />} />
-              <Route path="/products/auto-form-crm" element={<AutoFormCRM />} />
-              <Route path="/products/hi-fan" element={<HiFan />} />
-              <Route path="/products/pinkpeck" element={<PinkPeck />} />
-              <Route path="/products/unbox-deal" element={<UnboxDeal />} />
-              <Route path="/products/royal-casino-hub" element={<RoyalCasinoHub />} />
+              {/* Dutch routes (/nl/...) */}
+              <Route path={ROUTES.home.nl} element={<HomePage />} />
+              <Route path={ROUTES.about.nl} element={<AboutUs />} />
+              <Route path={ROUTES.contact.nl} element={<Contact />} />
+              <Route path={ROUTES.privacy.nl} element={<PrivacyPolicy />} />
+
+              <Route path={ROUTES.marketing.nl} element={<MarketingSolutions />} />
+              <Route path={ROUTES['website-design'].nl} element={<WebsiteDesign />} />
+              <Route path={ROUTES['crm-solutions'].nl} element={<CRMSolutions />} />
+              <Route path={ROUTES['social-media-marketing'].nl} element={<SocialMediaMarketing />} />
+              <Route path={ROUTES['paid-advertising'].nl} element={<PaidAdvertising />} />
+              <Route path={ROUTES['seo-services'].nl} element={<SEOServices />} />
+              <Route path={ROUTES['ai-seo'].nl} element={<AISEO />} />
+              <Route path={ROUTES['local-seo'].nl} element={<LocalSEO />} />
+              <Route path={ROUTES['email-marketing'].nl} element={<EmailMarketing />} />
+              <Route path={ROUTES['conversion-optimization'].nl} element={<ConversionOptimization />} />
+              <Route path={ROUTES['brand-strategy'].nl} element={<BrandStrategy />} />
+
+              <Route path={ROUTES.development.nl} element={<DevelopmentServices />} />
+              <Route path={ROUTES.react.nl} element={<ReactDevelopment />} />
+              <Route path={ROUTES.php.nl} element={<PHPDevelopment />} />
+              <Route path={ROUTES.java.nl} element={<JavaDevelopment />} />
+              <Route path={ROUTES['mobile-apps'].nl} element={<MobileAppDevelopment />} />
+              <Route path={ROUTES.ecommerce.nl} element={<ECommerceSolutions />} />
+              <Route path={ROUTES['ai-automation'].nl} element={<AIAutomation />} />
+              <Route path={ROUTES['full-stack'].nl} element={<FullStackDevelopment />} />
+              <Route path={ROUTES['web-applications'].nl} element={<WebApplications />} />
+
+              <Route path={ROUTES['auto-form-builder'].nl} element={<AutoFormBuilder />} />
+              <Route path={ROUTES['auto-form-crm'].nl} element={<AutoFormCRM />} />
+              <Route path={ROUTES['hi-fan'].nl} element={<HiFan />} />
+              <Route path={ROUTES.pinkpeck.nl} element={<PinkPeck />} />
+              <Route path={ROUTES['unbox-deal'].nl} element={<UnboxDeal />} />
+              <Route path={ROUTES['royal-casino-hub'].nl} element={<RoyalCasinoHub />} />
 
               <Route path="*" element={<NotFound />} />
             </Routes>

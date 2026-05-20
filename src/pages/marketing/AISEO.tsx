@@ -1,300 +1,265 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import LeadForm from '../../components/LeadForm'
 import {
-  ArrowRight,
-  CheckCircle2,
-  Zap,
-  Bot,
-  Brain,
-  Sparkles,
-  Search,
-  MessageSquare,
-  Globe,
-  FileText,
-  Code,
-  TrendingUp,
-  Target,
-  Shield,
-  Star,
-  Phone,
-  Mail,
-  Layers,
-  Network,
-  Database,
-  Lightbulb,
-  Award
+  ArrowRight, CheckCircle2, Zap, Bot, Brain, Sparkles, Search, MessageSquare, Globe, FileText,
+  Code, TrendingUp, Target, Shield, Star, Phone, Mail, Layers, Network, Database, Lightbulb, Award
 } from 'lucide-react'
+import { ROUTES, localeFromPath, type Locale } from '../../i18n/routes'
 
-const aiPlatforms = [
-  {
-    name: 'ChatGPT',
-    description: 'Optimize for OpenAI\'s conversational AI recommendations',
-    icon: MessageSquare,
-    color: 'from-emerald-500 to-teal-600'
+const T = {
+  en: {
+    crumbHome: 'Home', crumbMarketing: 'Marketing', crumbCurrent: 'AI SEO',
+    headPre: 'Get Found by ', headHighlight: 'AI Search', headPost: ' & Assistants',
+    sub: "The future of search is AI. ChatGPT, Google AI Overview, Perplexity — they are changing how people find businesses. Is your brand optimized to be recommended by AI?",
+    ctaAudit: 'Get AI SEO Audit', ctaWhy: 'Why AI SEO?',
+    trust1: 'Early AI SEO Pioneers', trust2: 'AI-Certified Team',
+    stats: [
+      { value: '40%', label: 'Of Searches', description: 'Will use AI by 2025' },
+      { value: '73%', label: 'Of Users', description: 'Trust AI recommendations' },
+      { value: '5x', label: 'More Visibility', description: 'With AI optimization' },
+      { value: '60%', label: 'Click Reduction', description: 'From AI answers (threat!)' }
+    ],
+    why: { badge: 'The Future is AI', headPre: 'Why You Need ', headHighlight: 'AI SEO Now', sub: "The way people search is fundamentally changing. Don't get left behind." },
+    futureProofing: [
+      { title: 'AI-First Indexing', description: 'As AI becomes the primary way people find information, being AI-visible is crucial.' },
+      { title: 'Zero-Click Future', description: 'Users get answers without clicking. You need to BE the answer, not just rank for it.' },
+      { title: 'Multi-Platform Presence', description: "ChatGPT, Perplexity, Google AI \u2014 your brand needs visibility across all AI platforms." },
+      { title: 'Early Mover Advantage', description: 'Companies optimizing for AI now will dominate while competitors play catch-up.' }
+    ],
+    platformsSection: { badge: 'AI Platforms', headPre: 'Be Visible Across ', headHighlight: 'All AI Platforms', sub: 'We optimize your presence for every major AI search and assistant platform.' },
+    aiPlatforms: [
+      { name: 'ChatGPT', description: "Optimize for OpenAI's conversational AI recommendations" },
+      { name: 'Google AI Overview', description: "Appear in Google's AI-generated search summaries" },
+      { name: 'Perplexity AI', description: "Get cited in Perplexity's AI-powered search answers" },
+      { name: 'Claude & Others', description: 'Visibility across emerging AI assistants and search tools' }
+    ],
+    diffSection: { badge: 'The Difference', headPre: 'Traditional SEO vs ', headHighlight: 'AI SEO', sub: 'AI SEO requires a fundamentally different approach than traditional search optimization.' },
+    differences: [
+      { traditional: 'Keyword-focused content', aiSeo: 'Intent and entity-focused content' },
+      { traditional: 'Link building for authority', aiSeo: 'Knowledge graph & entity building' },
+      { traditional: 'Meta tags optimization', aiSeo: 'Structured data & schema markup' },
+      { traditional: 'Ranking on page 1', aiSeo: 'Being cited in AI answers' }
+    ],
+    servicesSection: { badge: 'Our Services', headPre: 'Complete AI SEO ', headHighlight: 'Solutions', sub: 'Everything you need to be visible and recommended by AI systems.' },
+    services: [
+      { title: 'Structured Data', description: 'Implement schema markup that AI systems can easily understand and reference.' },
+      { title: 'Content Optimization', description: 'Create authoritative, well-structured content that AI prefers to cite.' },
+      { title: 'Entity Building', description: "Build your brand's knowledge graph presence across the web." },
+      { title: 'Technical AI-SEO', description: 'Optimize site architecture and markup for AI crawlers and parsers.' },
+      { title: 'Conversational Content', description: 'Create Q&A and conversational content AI loves to reference.' },
+      { title: 'Authority Building', description: 'Establish E-E-A-T signals that make AI trust your content.' }
+    ],
+    process: { badge: 'Our Process', headPre: 'How We Make You ', headHighlight: 'AI Visible' },
+    processItems: [
+      { step: '01', title: 'AI Visibility Audit', description: 'We analyze how AI systems currently perceive and reference your brand.' },
+      { step: '02', title: 'Entity Strategy', description: "We develop a strategy to build your brand's presence in knowledge graphs." },
+      { step: '03', title: 'Content & Technical', description: 'We optimize content structure and implement AI-friendly markup.' },
+      { step: '04', title: 'Monitor & Adapt', description: 'We track AI citations and continuously adapt to algorithm changes.' }
+    ],
+    checklistSection: { badge: "What's Included", headPre: 'Complete AI SEO ', headHighlight: 'Checklist' },
+    checklist: [
+      'Schema.org structured data implementation', 'Knowledge panel optimization', 'FAQ and Q&A content creation',
+      'Entity relationship mapping', 'Authoritative content development', 'E-E-A-T signal optimization',
+      'AI crawler accessibility', 'Conversational keyword targeting', 'Featured snippet optimization',
+      'Voice search readiness', 'Citation tracking setup', 'Competitor AI visibility analysis'
+    ],
+    testimonial: {
+      quote: '"We were invisible in AI search results. Now when people ask ChatGPT about our industry, we are consistently recommended. This is the future of SEO."',
+      author: 'Thomas Jansen', role: 'CEO, InnovateTech Solutions'
+    },
+    lead: {
+      heading: 'Ready for the AI Search Revolution?',
+      sub: "Get a free AI SEO audit and discover how visible your brand is to AI assistants \u2014 and what you can do to improve.",
+      bullets: ['AI visibility assessment', 'Structured data audit', 'Entity presence analysis', 'Custom AI SEO roadmap'],
+      title: 'Get Your Free AI SEO Audit', subject: 'AI SEO Audit Request',
+      button: 'Get My Free AI SEO Audit', footnote: 'Free audit. Discover your AI visibility score.',
+      first: 'First Name', firstPh: 'John', last: 'Last Name', lastPh: 'Doe',
+      email: 'Email', emailPh: 'john@company.com', website: 'Website URL', websitePh: 'https://yourwebsite.com',
+      concern: 'Primary Concern', concernPh: 'Select your main concern',
+      concernOpts: ['Not visible in AI search', 'Want to be cited by AI', 'Future-proof my SEO', 'Competitors are ahead']
+    },
+    quick: { heading: 'Ready for the AI future?', sub: "Let's discuss your AI SEO strategy today.", email: 'Email Us' }
   },
-  {
-    name: 'Google AI Overview',
-    description: 'Appear in Google\'s AI-generated search summaries',
-    icon: Search,
-    color: 'from-blue-500 to-indigo-600'
-  },
-  {
-    name: 'Perplexity AI',
-    description: 'Get cited in Perplexity\'s AI-powered search answers',
-    icon: Brain,
-    color: 'from-purple-500 to-violet-600'
-  },
-  {
-    name: 'Claude & Others',
-    description: 'Visibility across emerging AI assistants and search tools',
-    icon: Bot,
-    color: 'from-orange-500 to-amber-600'
+  nl: {
+    crumbHome: 'Home', crumbMarketing: 'Marketing', crumbCurrent: 'AI-SEO',
+    headPre: 'Word gevonden door ', headHighlight: 'AI-zoeken', headPost: ' & assistenten',
+    sub: 'De toekomst van zoeken is AI. ChatGPT, Google AI Overview, Perplexity \u2014 ze veranderen hoe mensen bedrijven vinden. Is jouw merk geoptimaliseerd om door AI aanbevolen te worden?',
+    ctaAudit: 'Vraag AI SEO-audit', ctaWhy: 'Waarom AI-SEO?',
+    trust1: 'Pioniers in AI-SEO', trust2: 'AI-gecertificeerd team',
+    stats: [
+      { value: '40%', label: 'Van zoekopdrachten', description: 'Gebruikt AI in 2025' },
+      { value: '73%', label: 'Van gebruikers', description: 'Vertrouwt AI-aanbevelingen' },
+      { value: '5x', label: 'Meer zichtbaarheid', description: 'Met AI-optimalisatie' },
+      { value: '60%', label: 'Minder clicks', description: 'Door AI-antwoorden (risico!)' }
+    ],
+    why: { badge: 'De toekomst is AI', headPre: 'Waarom je nu ', headHighlight: 'AI-SEO nodig hebt', sub: 'De manier waarop mensen zoeken verandert fundamenteel. Loop niet achter.' },
+    futureProofing: [
+      { title: 'AI-first indexering', description: 'Nu AI dé manier wordt om informatie te vinden, is AI-zichtbaarheid cruciaal.' },
+      { title: 'Zero-click toekomst', description: 'Gebruikers krijgen antwoord zonder te klikken. Je moet HET antwoord zijn, niet alleen ranken.' },
+      { title: 'Multi-platform aanwezigheid', description: 'ChatGPT, Perplexity, Google AI \u2014 je merk moet zichtbaar zijn op alle AI-platformen.' },
+      { title: 'Early-mover voordeel', description: 'Bedrijven die nu optimaliseren voor AI domineren straks, terwijl concurrenten achterlopen.' }
+    ],
+    platformsSection: { badge: 'AI-platforms', headPre: 'Zichtbaar op ', headHighlight: 'alle AI-platforms', sub: 'We optimaliseren je aanwezigheid voor elk groot AI-zoek- en assistentenplatform.' },
+    aiPlatforms: [
+      { name: 'ChatGPT', description: 'Optimaliseer voor de aanbevelingen van OpenAI\u2019s conversational AI' },
+      { name: 'Google AI Overview', description: 'Verschijn in de AI-gegenereerde Google-samenvattingen' },
+      { name: 'Perplexity AI', description: 'Word geciteerd in de AI-antwoorden van Perplexity' },
+      { name: 'Claude & overige', description: 'Zichtbaarheid in opkomende AI-assistenten en zoektools' }
+    ],
+    diffSection: { badge: 'Het verschil', headPre: 'Klassieke SEO vs ', headHighlight: 'AI-SEO', sub: 'AI-SEO vraagt om een fundamenteel andere aanpak dan klassieke zoekoptimalisatie.' },
+    differences: [
+      { traditional: 'Zoekwoordgerichte content', aiSeo: 'Intentie- en entiteitgerichte content' },
+      { traditional: 'Linkbuilding voor autoriteit', aiSeo: 'Knowledge graph & entiteitenopbouw' },
+      { traditional: 'Optimalisatie van metatags', aiSeo: 'Gestructureerde data & schema-markup' },
+      { traditional: 'Ranken op pagina 1', aiSeo: 'Geciteerd worden in AI-antwoorden' }
+    ],
+    servicesSection: { badge: 'Onze diensten', headPre: 'Complete AI-SEO-', headHighlight: 'oplossingen', sub: 'Alles wat je nodig hebt om zichtbaar en aanbevolen te worden door AI-systemen.' },
+    services: [
+      { title: 'Gestructureerde data', description: 'Implementeer schema-markup die AI-systemen makkelijk begrijpen en kunnen citeren.' },
+      { title: 'Content-optimalisatie', description: 'Creëer gezaghebbende, goed gestructureerde content die AI graag citeert.' },
+      { title: 'Entiteitenopbouw', description: 'Bouw de aanwezigheid van je merk in het knowledge graph van het web.' },
+      { title: 'Technische AI-SEO', description: 'Optimaliseer site-architectuur en markup voor AI-crawlers en -parsers.' },
+      { title: 'Conversational content', description: 'Maak Q&A- en gespreksgerichte content die AI graag citeert.' },
+      { title: 'Autoriteit opbouwen', description: 'Bouw E-E-A-T-signalen op zodat AI je content vertrouwt.' }
+    ],
+    process: { badge: 'Onze werkwijze', headPre: 'Zo maken we je ', headHighlight: 'AI-zichtbaar' },
+    processItems: [
+      { step: '01', title: 'AI-zichtbaarheidsaudit', description: 'We analyseren hoe AI-systemen je merk nu zien en citeren.' },
+      { step: '02', title: 'Entiteitenstrategie', description: 'We ontwikkelen een strategie om je merk in knowledge graphs te verankeren.' },
+      { step: '03', title: 'Content & techniek', description: 'We optimaliseren contentstructuur en implementeren AI-vriendelijke markup.' },
+      { step: '04', title: 'Monitoren & aanpassen', description: 'We volgen AI-citaties en passen continu aan op algoritme-updates.' }
+    ],
+    checklistSection: { badge: 'Wat zit erin', headPre: 'Complete AI-SEO-', headHighlight: 'checklist' },
+    checklist: [
+      'Implementatie Schema.org', 'Optimalisatie knowledge panel', 'FAQ- en Q&A-contentcreatie',
+      'Mapping van entiteiten', 'Ontwikkeling gezaghebbende content', 'E-E-A-T-signaaloptimalisatie',
+      'Toegankelijkheid voor AI-crawlers', 'Targeting van conversational keywords', 'Optimalisatie featured snippets',
+      'Voice search-gereedheid', 'Setup van citation tracking', 'Concurrent-AI-zichtbaarheidsanalyse'
+    ],
+    testimonial: {
+      quote: '"We waren onzichtbaar in AI-zoekresultaten. Nu wordt ons bedrijf consequent aanbevolen als mensen ChatGPT iets over onze branche vragen. Dit is de toekomst van SEO."',
+      author: 'Thomas Jansen', role: 'CEO, InnovateTech Solutions'
+    },
+    lead: {
+      heading: 'Klaar voor de AI-zoekrevolutie?',
+      sub: 'Vraag een gratis AI-SEO-audit aan en ontdek hoe zichtbaar je merk is voor AI-assistenten \u2014 en wat je kunt verbeteren.',
+      bullets: ['AI-zichtbaarheidsanalyse', 'Audit gestructureerde data', 'Analyse entiteit-aanwezigheid', 'Persoonlijke AI-SEO-roadmap'],
+      title: 'Vraag je gratis AI-SEO-audit', subject: 'Aanvraag AI-SEO-audit',
+      button: 'Vraag mijn gratis audit', footnote: 'Gratis audit. Ontdek je AI-zichtbaarheidsscore.',
+      first: 'Voornaam', firstPh: 'Jan', last: 'Achternaam', lastPh: 'Jansen',
+      email: 'E-mail', emailPh: 'jan@bedrijf.nl', website: 'Website-URL', websitePh: 'https://jouwwebsite.nl',
+      concern: 'Belangrijkste zorg', concernPh: 'Kies je belangrijkste zorg',
+      concernOpts: ['Niet zichtbaar in AI-zoeken', 'Wil door AI geciteerd worden', 'SEO futureproof maken', 'Concurrenten lopen voor']
+    },
+    quick: { heading: 'Klaar voor de AI-toekomst?', sub: 'Laten we vandaag je AI-SEO-strategie bespreken.', email: 'Mail ons' }
   }
-]
+} as const
 
-const stats = [
-  { value: '40%', label: 'Of Searches', description: 'Will use AI by 2025' },
-  { value: '73%', label: 'Of Users', description: 'Trust AI recommendations' },
-  { value: '5x', label: 'More Visibility', description: 'With AI optimization' },
-  { value: '60%', label: 'Click Reduction', description: 'From AI answers (threat!)' }
-]
-
-const services = [
-  {
-    icon: Database,
-    title: 'Structured Data',
-    description: 'Implement schema markup that AI systems can easily understand and reference.'
-  },
-  {
-    icon: FileText,
-    title: 'Content Optimization',
-    description: 'Create authoritative, well-structured content that AI prefers to cite.'
-  },
-  {
-    icon: Network,
-    title: 'Entity Building',
-    description: 'Build your brand\'s knowledge graph presence across the web.'
-  },
-  {
-    icon: Code,
-    title: 'Technical AI-SEO',
-    description: 'Optimize site architecture and markup for AI crawlers and parsers.'
-  },
-  {
-    icon: MessageSquare,
-    title: 'Conversational Content',
-    description: 'Create Q&A and conversational content AI loves to reference.'
-  },
-  {
-    icon: Shield,
-    title: 'Authority Building',
-    description: 'Establish E-E-A-T signals that make AI trust your content.'
-  }
-]
-
-const differences = [
-  {
-    traditional: 'Keyword-focused content',
-    aiSeo: 'Intent and entity-focused content',
-    icon: Target
-  },
-  {
-    traditional: 'Link building for authority',
-    aiSeo: 'Knowledge graph & entity building',
-    icon: Network
-  },
-  {
-    traditional: 'Meta tags optimization',
-    aiSeo: 'Structured data & schema markup',
-    icon: Code
-  },
-  {
-    traditional: 'Ranking on page 1',
-    aiSeo: 'Being cited in AI answers',
-    icon: MessageSquare
-  }
-]
-
-const process = [
-  {
-    step: '01',
-    title: 'AI Visibility Audit',
-    description: 'We analyze how AI systems currently perceive and reference your brand.'
-  },
-  {
-    step: '02',
-    title: 'Entity Strategy',
-    description: 'We develop a strategy to build your brand\'s presence in knowledge graphs.'
-  },
-  {
-    step: '03',
-    title: 'Content & Technical',
-    description: 'We optimize content structure and implement AI-friendly markup.'
-  },
-  {
-    step: '04',
-    title: 'Monitor & Adapt',
-    description: 'We track AI citations and continuously adapt to algorithm changes.'
-  }
-]
-
-const checklist = [
-  'Schema.org structured data implementation',
-  'Knowledge panel optimization',
-  'FAQ and Q&A content creation',
-  'Entity relationship mapping',
-  'Authoritative content development',
-  'E-E-A-T signal optimization',
-  'AI crawler accessibility',
-  'Conversational keyword targeting',
-  'Featured snippet optimization',
-  'Voice search readiness',
-  'Citation tracking setup',
-  'Competitor AI visibility analysis'
-]
-
-const futureProofing = [
-  {
-    icon: Bot,
-    title: 'AI-First Indexing',
-    description: 'As AI becomes the primary way people find information, being AI-visible is crucial.'
-  },
-  {
-    icon: TrendingUp,
-    title: 'Zero-Click Future',
-    description: 'Users get answers without clicking. You need to BE the answer, not just rank for it.'
-  },
-  {
-    icon: Globe,
-    title: 'Multi-Platform Presence',
-    description: 'ChatGPT, Perplexity, Google AI—your brand needs visibility across all AI platforms.'
-  },
-  {
-    icon: Lightbulb,
-    title: 'Early Mover Advantage',
-    description: 'Companies optimizing for AI now will dominate while competitors play catch-up.'
-  }
-]
+const SERVICE_ICONS = [Database, FileText, Network, Code, MessageSquare, Shield]
+const DIFF_ICONS = [Target, Network, Code, MessageSquare]
+const FUTURE_ICONS = [Bot, TrendingUp, Globe, Lightbulb]
+const PLATFORM_ICONS = [MessageSquare, Search, Brain, Bot]
+const PLATFORM_COLORS = ['from-emerald-500 to-teal-600', 'from-blue-500 to-indigo-600', 'from-purple-500 to-violet-600', 'from-orange-500 to-amber-600']
 
 export default function AISEO() {
+  const { pathname } = useLocation()
+  const locale: Locale = localeFromPath(pathname)
+  const t = T[locale]
+
   return (
     <div>
-      {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-violet-600 via-purple-700 to-indigo-900 text-white">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-white/10 rounded-full blur-3xl" />
           <div className="absolute top-60 -left-20 w-60 h-60 bg-cyan-400/20 rounded-full blur-3xl" />
-          {/* Animated grid background */}
           <div className="absolute inset-0 opacity-10">
-            <div className="absolute inset-0" style={{
-              backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
-              backgroundSize: '50px 50px'
-            }} />
+            <div className="absolute inset-0" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)', backgroundSize: '50px 50px' }} />
           </div>
         </div>
-        
+
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-24 lg:pt-28 lg:pb-32">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Left Content */}
             <div>
-              {/* Breadcrumb */}
-              <nav className="flex items-center gap-2 text-sm mb-8">
-                <Link to="/" className="text-white/60 hover:text-white transition-colors">Home</Link>
-                <span className="text-white/40">/</span>
-                <Link to="/marketing" className="text-white/60 hover:text-white transition-colors">Marketing</Link>
-                <span className="text-white/40">/</span>
-                <span className="text-white">AI SEO</span>
+              <nav className="flex items-center gap-2 text-sm mb-8" aria-label="Breadcrumb">
+                <Link to={ROUTES.home[locale]} className="text-white/60 hover:text-white transition-colors">{t.crumbHome}</Link>
+                <span className="text-white/40" aria-hidden>/</span>
+                <Link to={ROUTES.marketing[locale]} className="text-white/60 hover:text-white transition-colors">{t.crumbMarketing}</Link>
+                <span className="text-white/40" aria-hidden>/</span>
+                <span className="text-white">{t.crumbCurrent}</span>
               </nav>
-              
+
               <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
-                Get Found by{' '}
-                <span className="text-cyan-300">AI Search</span>{' '}
-                & Assistants
+                {t.headPre}<span className="text-cyan-300">{t.headHighlight}</span>{t.headPost}
               </h1>
-              
-              <p className="text-lg sm:text-xl text-white/80 mb-8 max-w-xl">
-                The future of search is AI. ChatGPT, Google AI Overview, Perplexity—they're 
-                changing how people find businesses. Is your brand optimized to be recommended by AI?
-              </p>
-              
+              <p className="text-lg sm:text-xl text-white/80 mb-8 max-w-xl">{t.sub}</p>
+
               <div className="flex flex-col sm:flex-row gap-4">
-                <a 
-                  href="#contact-form" 
-                  className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-purple-700 bg-white rounded-xl hover:bg-slate-100 transition-all shadow-lg group"
-                >
-                  Get AI SEO Audit
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <a href="#contact-form" className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-purple-700 bg-white rounded-xl hover:bg-slate-100 transition-all shadow-lg group">
+                  {t.ctaAudit}
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden />
                 </a>
-                <a 
-                  href="#why-ai-seo" 
-                  className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white border-2 border-white/30 rounded-xl hover:bg-white/10 transition-all"
-                >
-                  Why AI SEO?
+                <a href="#why-ai-seo" className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white border-2 border-white/30 rounded-xl hover:bg-white/10 transition-all">
+                  {t.ctaWhy}
                 </a>
               </div>
-              
-              {/* Trust signals */}
+
               <div className="mt-12 flex items-center gap-6">
                 <div className="flex items-center gap-2">
-                  <Award className="w-5 h-5 text-cyan-300" />
-                  <span className="text-sm text-white/70">Early AI SEO Pioneers</span>
+                  <Award className="w-5 h-5 text-cyan-300" aria-hidden />
+                  <span className="text-sm text-white/70">{t.trust1}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Bot className="w-5 h-5 text-cyan-300" />
-                  <span className="text-sm text-white/70">AI-Certified Team</span>
+                  <Bot className="w-5 h-5 text-cyan-300" aria-hidden />
+                  <span className="text-sm text-white/70">{t.trust2}</span>
                 </div>
               </div>
             </div>
-            
-            {/* Right Visual - AI Network */}
+
             <div className="relative hidden lg:block h-[500px]">
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-cyan-400/20 rounded-full blur-3xl" />
-              
-              {/* Central AI brain */}
+
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
                 <div className="w-32 h-32 bg-gradient-to-br from-cyan-400 to-purple-500 rounded-full flex items-center justify-center shadow-2xl shadow-purple-500/50">
-                  <Brain className="w-16 h-16 text-white" />
+                  <Brain className="w-16 h-16 text-white" aria-hidden />
                 </div>
               </div>
-              
-              {/* Orbiting platforms */}
+
               <div className="absolute top-8 left-1/2 -translate-x-1/2 animate-float z-20">
                 <div className="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 flex items-center justify-center">
-                  <MessageSquare className="w-8 h-8 text-emerald-300" />
+                  <MessageSquare className="w-8 h-8 text-emerald-300" aria-hidden />
                 </div>
                 <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-xs text-white/60 whitespace-nowrap">ChatGPT</span>
               </div>
-              
+
               <div className="absolute top-1/2 right-4 -translate-y-1/2 animate-float z-20" style={{ animationDelay: '0.5s' }}>
                 <div className="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 flex items-center justify-center">
-                  <Search className="w-8 h-8 text-blue-300" />
+                  <Search className="w-8 h-8 text-blue-300" aria-hidden />
                 </div>
                 <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-xs text-white/60 whitespace-nowrap">Google AI</span>
               </div>
-              
+
               <div className="absolute bottom-16 right-16 animate-float z-20" style={{ animationDelay: '1s' }}>
                 <div className="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 flex items-center justify-center">
-                  <Brain className="w-8 h-8 text-purple-300" />
+                  <Brain className="w-8 h-8 text-purple-300" aria-hidden />
                 </div>
                 <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-xs text-white/60 whitespace-nowrap">Perplexity</span>
               </div>
-              
+
               <div className="absolute bottom-16 left-16 animate-float z-20" style={{ animationDelay: '1.5s' }}>
                 <div className="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 flex items-center justify-center">
-                  <Bot className="w-8 h-8 text-orange-300" />
+                  <Bot className="w-8 h-8 text-orange-300" aria-hidden />
                 </div>
                 <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-xs text-white/60 whitespace-nowrap">Claude</span>
               </div>
-              
+
               <div className="absolute top-1/2 left-4 -translate-y-1/2 animate-float z-20" style={{ animationDelay: '2s' }}>
                 <div className="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 flex items-center justify-center">
-                  <Sparkles className="w-8 h-8 text-pink-300" />
+                  <Sparkles className="w-8 h-8 text-pink-300" aria-hidden />
                 </div>
                 <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-xs text-white/60 whitespace-nowrap">Copilot</span>
               </div>
-              
-              {/* Connection lines (decorative) */}
-              <svg className="absolute inset-0 w-full h-full" style={{ zIndex: 5 }}>
+
+              <svg className="absolute inset-0 w-full h-full" style={{ zIndex: 5 }} aria-hidden>
                 <line x1="50%" y1="15%" x2="50%" y2="38%" stroke="rgba(255,255,255,0.1)" strokeWidth="1" strokeDasharray="4" />
                 <line x1="85%" y1="50%" x2="62%" y2="50%" stroke="rgba(255,255,255,0.1)" strokeWidth="1" strokeDasharray="4" />
                 <line x1="75%" y1="75%" x2="58%" y2="58%" stroke="rgba(255,255,255,0.1)" strokeWidth="1" strokeDasharray="4" />
@@ -306,11 +271,10 @@ export default function AISEO() {
         </div>
       </section>
 
-      {/* Stats Section */}
       <section className="py-12 bg-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat) => (
+            {t.stats.map((stat) => (
               <div key={stat.label} className="text-center">
                 <div className="text-3xl md:text-4xl font-bold text-white mb-1">{stat.value}</div>
                 <div className="text-sm font-medium text-white/90">{stat.label}</div>
@@ -321,158 +285,152 @@ export default function AISEO() {
         </div>
       </section>
 
-      {/* Why AI SEO Section */}
       <section id="why-ai-seo" className="py-20 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-100 text-purple-700 text-sm font-medium mb-4">
-              <Zap className="w-4 h-4" />
-              <span>The Future is AI</span>
+              <Zap className="w-4 h-4" aria-hidden />
+              <span>{t.why.badge}</span>
             </div>
             <h2 className="section-heading text-slate-900 mb-4">
-              Why You Need{' '}
-              <span className="gradient-text">AI SEO Now</span>
+              {t.why.headPre}<span className="gradient-text">{t.why.headHighlight}</span>
             </h2>
-            <p className="section-subheading mx-auto">
-              The way people search is fundamentally changing. Don't get left behind.
-            </p>
+            <p className="section-subheading mx-auto">{t.why.sub}</p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {futureProofing.map((item) => (
-              <div key={item.title} className="p-6 rounded-2xl bg-slate-50 hover:bg-purple-50 hover:shadow-lg transition-all border border-transparent hover:border-purple-100">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-violet-600 flex items-center justify-center mb-4 shadow-lg">
-                  <item.icon className="w-6 h-6 text-white" />
+            {t.futureProofing.map((item, i) => {
+              const Icon = FUTURE_ICONS[i]
+              return (
+                <div key={item.title} className="p-6 rounded-2xl bg-slate-50 hover:bg-purple-50 hover:shadow-lg transition-all border border-transparent hover:border-purple-100">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-violet-600 flex items-center justify-center mb-4 shadow-lg">
+                    <Icon className="w-6 h-6 text-white" aria-hidden />
+                  </div>
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">{item.title}</h3>
+                  <p className="text-sm text-slate-600">{item.description}</p>
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 mb-2">{item.title}</h3>
-                <p className="text-sm text-slate-600">{item.description}</p>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </section>
 
-      {/* AI Platforms Section */}
       <section className="py-20 lg:py-28 bg-gradient-to-b from-slate-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-100 text-cyan-700 text-sm font-medium mb-4">
-              <Bot className="w-4 h-4" />
-              <span>AI Platforms</span>
+              <Bot className="w-4 h-4" aria-hidden />
+              <span>{t.platformsSection.badge}</span>
             </div>
             <h2 className="section-heading text-slate-900 mb-4">
-              Be Visible Across{' '}
-              <span className="gradient-text">All AI Platforms</span>
+              {t.platformsSection.headPre}<span className="gradient-text">{t.platformsSection.headHighlight}</span>
             </h2>
-            <p className="section-subheading mx-auto">
-              We optimize your presence for every major AI search and assistant platform.
-            </p>
+            <p className="section-subheading mx-auto">{t.platformsSection.sub}</p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 gap-6">
-            {aiPlatforms.map((platform) => (
-              <div key={platform.name} className="bg-white rounded-2xl p-6 shadow-lg border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all">
-                <div className="flex items-start gap-4">
-                  <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${platform.color} flex items-center justify-center shadow-lg flex-shrink-0`}>
-                    <platform.icon className="w-7 h-7 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-slate-900 mb-2">{platform.name}</h3>
-                    <p className="text-slate-600">{platform.description}</p>
+            {t.aiPlatforms.map((platform, i) => {
+              const Icon = PLATFORM_ICONS[i]
+              return (
+                <div key={platform.name} className="bg-white rounded-2xl p-6 shadow-lg border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all">
+                  <div className="flex items-start gap-4">
+                    <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${PLATFORM_COLORS[i]} flex items-center justify-center shadow-lg flex-shrink-0`}>
+                      <Icon className="w-7 h-7 text-white" aria-hidden />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-slate-900 mb-2">{platform.name}</h3>
+                      <p className="text-slate-600">{platform.description}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </section>
 
-      {/* Traditional vs AI SEO */}
       <section className="py-20 lg:py-28 bg-purple-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white text-sm font-medium mb-4">
-              <Layers className="w-4 h-4" />
-              <span>The Difference</span>
+              <Layers className="w-4 h-4" aria-hidden />
+              <span>{t.diffSection.badge}</span>
             </div>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-              Traditional SEO vs{' '}
-              <span className="text-cyan-300">AI SEO</span>
+              {t.diffSection.headPre}<span className="text-cyan-300">{t.diffSection.headHighlight}</span>
             </h2>
-            <p className="text-lg text-white/80 max-w-2xl mx-auto">
-              AI SEO requires a fundamentally different approach than traditional search optimization.
-            </p>
+            <p className="text-lg text-white/80 max-w-2xl mx-auto">{t.diffSection.sub}</p>
           </div>
-          
+
           <div className="space-y-4 max-w-3xl mx-auto">
-            {differences.map((diff, index) => (
-              <div key={index} className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10">
-                <div className="grid grid-cols-[1fr,auto,1fr] items-center gap-4">
-                  <div className="text-right">
-                    <span className="text-white/60 text-sm">{diff.traditional}</span>
-                  </div>
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center">
-                    <diff.icon className="w-5 h-5 text-white" />
-                  </div>
-                  <div className="text-left">
-                    <span className="text-cyan-300 font-medium text-sm">{diff.aiSeo}</span>
+            {t.differences.map((diff, index) => {
+              const Icon = DIFF_ICONS[index]
+              return (
+                <div key={index} className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10">
+                  <div className="grid grid-cols-[1fr,auto,1fr] items-center gap-4">
+                    <div className="text-right">
+                      <span className="text-white/60 text-sm">{diff.traditional}</span>
+                    </div>
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center">
+                      <Icon className="w-5 h-5 text-white" aria-hidden />
+                    </div>
+                    <div className="text-left">
+                      <span className="text-cyan-300 font-medium text-sm">{diff.aiSeo}</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </section>
 
-      {/* Services Section */}
       <section className="py-20 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-100 text-violet-700 text-sm font-medium mb-4">
-              <Sparkles className="w-4 h-4" />
-              <span>Our Services</span>
+              <Sparkles className="w-4 h-4" aria-hidden />
+              <span>{t.servicesSection.badge}</span>
             </div>
             <h2 className="section-heading text-slate-900 mb-4">
-              Complete AI SEO{' '}
-              <span className="gradient-text">Solutions</span>
+              {t.servicesSection.headPre}<span className="gradient-text">{t.servicesSection.headHighlight}</span>
             </h2>
-            <p className="section-subheading mx-auto">
-              Everything you need to be visible and recommended by AI systems.
-            </p>
+            <p className="section-subheading mx-auto">{t.servicesSection.sub}</p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service) => (
-              <div key={service.title} className="p-6 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-slate-100 group">
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform">
-                  <service.icon className="w-7 h-7 text-white" />
+            {t.services.map((service, i) => {
+              const Icon = SERVICE_ICONS[i]
+              return (
+                <div key={service.title} className="p-6 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-slate-100 group">
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform">
+                    <Icon className="w-7 h-7 text-white" aria-hidden />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-2">{service.title}</h3>
+                  <p className="text-slate-600">{service.description}</p>
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-2">{service.title}</h3>
-                <p className="text-slate-600">{service.description}</p>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </section>
 
-      {/* Process Section */}
       <section className="py-20 lg:py-28 bg-gradient-to-b from-slate-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-100 text-indigo-700 text-sm font-medium mb-4">
-              <Target className="w-4 h-4" />
-              <span>Our Process</span>
+              <Target className="w-4 h-4" aria-hidden />
+              <span>{t.process.badge}</span>
             </div>
             <h2 className="section-heading text-slate-900 mb-4">
-              How We Make You{' '}
-              <span className="gradient-text">AI Visible</span>
+              {t.process.headPre}<span className="gradient-text">{t.process.headHighlight}</span>
             </h2>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {process.map((step, index) => (
+            {t.processItems.map((step, index) => (
               <div key={step.step} className="relative">
-                {index < process.length - 1 && (
+                {index < t.processItems.length - 1 && (
                   <div className="hidden lg:block absolute top-12 left-full w-full h-0.5 bg-gradient-to-r from-purple-300 to-transparent -z-10" />
                 )}
                 <div className="text-6xl font-bold text-purple-100 mb-4">{step.step}</div>
@@ -484,24 +442,22 @@ export default function AISEO() {
         </div>
       </section>
 
-      {/* Checklist Section */}
       <section className="py-20 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-100 text-cyan-700 text-sm font-medium mb-4">
-              <CheckCircle2 className="w-4 h-4" />
-              <span>What's Included</span>
+              <CheckCircle2 className="w-4 h-4" aria-hidden />
+              <span>{t.checklistSection.badge}</span>
             </div>
             <h2 className="section-heading text-slate-900 mb-4">
-              Complete AI SEO{' '}
-              <span className="gradient-text">Checklist</span>
+              {t.checklistSection.headPre}<span className="gradient-text">{t.checklistSection.headHighlight}</span>
             </h2>
           </div>
-          
+
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
-            {checklist.map((item) => (
+            {t.checklist.map((item) => (
               <div key={item} className="flex items-center gap-3 px-4 py-3 rounded-lg bg-slate-50 hover:bg-purple-50 transition-colors">
-                <CheckCircle2 className="w-5 h-5 text-purple-500 flex-shrink-0" />
+                <CheckCircle2 className="w-5 h-5 text-purple-500 flex-shrink-0" aria-hidden />
                 <span className="text-sm text-slate-700">{item}</span>
               </div>
             ))}
@@ -509,31 +465,26 @@ export default function AISEO() {
         </div>
       </section>
 
-      {/* Testimonial */}
       <section className="py-20 bg-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
             <div className="flex justify-center gap-1 mb-6">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-6 h-6 text-yellow-400 fill-current" />
+                <Star key={i} className="w-6 h-6 text-yellow-400 fill-current" aria-hidden />
               ))}
             </div>
-            <blockquote className="text-2xl md:text-3xl font-medium text-white mb-8 leading-relaxed">
-              "We were invisible in AI search results. Now when people ask ChatGPT about 
-              our industry, we're consistently recommended. This is the future of SEO."
-            </blockquote>
+            <blockquote className="text-2xl md:text-3xl font-medium text-white mb-8 leading-relaxed">{t.testimonial.quote}</blockquote>
             <div className="flex items-center justify-center gap-4">
               <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-violet-600" />
               <div className="text-left">
-                <div className="font-semibold text-white">Thomas Jansen</div>
-                <div className="text-slate-400 text-sm">CEO, InnovateTech Solutions</div>
+                <div className="font-semibold text-white">{t.testimonial.author}</div>
+                <div className="text-slate-400 text-sm">{t.testimonial.role}</div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA / Lead Form */}
       <section id="contact-form" className="py-20 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative rounded-3xl bg-gradient-to-br from-violet-600 via-purple-700 to-indigo-900 p-8 md:p-12 lg:p-16 overflow-hidden">
@@ -541,60 +492,53 @@ export default function AISEO() {
               <div className="absolute -top-20 -right-20 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
               <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-cyan-400/20 rounded-full blur-3xl" />
             </div>
-            
+
             <div className="relative grid lg:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-                  Ready for the AI Search Revolution?
-                </h2>
-                <p className="text-lg text-white/90 mb-8">
-                  Get a free AI SEO audit and discover how visible your brand is 
-                  to AI assistants—and what you can do to improve.
-                </p>
+                <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">{t.lead.heading}</h2>
+                <p className="text-lg text-white/90 mb-8">{t.lead.sub}</p>
                 <ul className="space-y-3">
-                  {['AI visibility assessment', 'Structured data audit', 'Entity presence analysis', 'Custom AI SEO roadmap'].map((item) => (
+                  {t.lead.bullets.map((item) => (
                     <li key={item} className="flex items-center gap-3 text-white/90">
-                      <CheckCircle2 className="w-5 h-5 text-cyan-300 flex-shrink-0" />
+                      <CheckCircle2 className="w-5 h-5 text-cyan-300 flex-shrink-0" aria-hidden />
                       {item}
                     </li>
                   ))}
                 </ul>
               </div>
-              
-              {/* Lead Form */}
+
               <LeadForm
-                title="Get Your Free AI SEO Audit"
-                subject="AI SEO Audit Request"
-                buttonText="Get My Free AI SEO Audit"
+                title={t.lead.title}
+                subject={t.lead.subject}
+                buttonText={t.lead.button}
                 buttonClass="from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 shadow-lg shadow-purple-500/25"
-                footnote="Free audit. Discover your AI visibility score."
+                footnote={t.lead.footnote}
               >
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="firstName" className="block text-sm font-medium text-slate-700 mb-1">First Name</label>
-                    <input type="text" id="firstName" name="firstName" required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors" placeholder="John" />
+                    <label htmlFor="ai-first" className="block text-sm font-medium text-slate-700 mb-1">{t.lead.first}</label>
+                    <input type="text" id="ai-first" name="firstName" required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors" placeholder={t.lead.firstPh} />
                   </div>
                   <div>
-                    <label htmlFor="lastName" className="block text-sm font-medium text-slate-700 mb-1">Last Name</label>
-                    <input type="text" id="lastName" name="lastName" required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors" placeholder="Doe" />
+                    <label htmlFor="ai-last" className="block text-sm font-medium text-slate-700 mb-1">{t.lead.last}</label>
+                    <input type="text" id="ai-last" name="lastName" required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors" placeholder={t.lead.lastPh} />
                   </div>
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">Email</label>
-                  <input type="email" id="email" name="email" required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors" placeholder="john@company.com" />
+                  <label htmlFor="ai-email" className="block text-sm font-medium text-slate-700 mb-1">{t.lead.email}</label>
+                  <input type="email" id="ai-email" name="email" required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors" placeholder={t.lead.emailPh} />
                 </div>
                 <div>
-                  <label htmlFor="website" className="block text-sm font-medium text-slate-700 mb-1">Website URL</label>
-                  <input type="url" id="website" name="website" className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors" placeholder="https://yourwebsite.com" />
+                  <label htmlFor="ai-website" className="block text-sm font-medium text-slate-700 mb-1">{t.lead.website}</label>
+                  <input type="url" id="ai-website" name="website" className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors" placeholder={t.lead.websitePh} />
                 </div>
                 <div>
-                  <label htmlFor="concern" className="block text-sm font-medium text-slate-700 mb-1">Primary Concern</label>
-                  <select id="concern" name="concern" className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors">
-                    <option value="">Select your main concern</option>
-                    <option value="Not visible in AI search">Not visible in AI search</option>
-                    <option value="Want to be cited by AI">Want to be cited by AI</option>
-                    <option value="Future-proof my SEO">Future-proof my SEO</option>
-                    <option value="Competitors are ahead">Competitors are ahead</option>
+                  <label htmlFor="ai-concern" className="block text-sm font-medium text-slate-700 mb-1">{t.lead.concern}</label>
+                  <select id="ai-concern" name="concern" className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors">
+                    <option value="">{t.lead.concernPh}</option>
+                    {t.lead.concernOpts.map((opt) => (
+                      <option key={opt} value={opt}>{opt}</option>
+                    ))}
                   </select>
                 </div>
               </LeadForm>
@@ -603,28 +547,21 @@ export default function AISEO() {
         </div>
       </section>
 
-      {/* Quick Contact */}
       <section className="py-12 bg-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-center md:text-left">
-              <h3 className="text-xl font-bold text-white mb-1">Ready for the AI future?</h3>
-              <p className="text-slate-400">Let's discuss your AI SEO strategy today.</p>
+              <h3 className="text-xl font-bold text-white mb-1">{t.quick.heading}</h3>
+              <p className="text-slate-400">{t.quick.sub}</p>
             </div>
             <div className="flex items-center gap-4">
-              <a 
-                href="tel:+31625580415"
-                className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-white border border-white/20 rounded-full hover:bg-white/10 transition-colors"
-              >
-                <Phone className="w-4 h-4" />
+              <a href="tel:+31625580415" className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-white border border-white/20 rounded-full hover:bg-white/10 transition-colors">
+                <Phone className="w-4 h-4" aria-hidden />
                 +31 6 25580415
               </a>
-              <a 
-                href="mailto:info@amoradigital.nl"
-                className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-slate-900 bg-white rounded-full hover:bg-slate-100 transition-colors"
-              >
-                <Mail className="w-4 h-4" />
-                Email Us
+              <a href="mailto:info@amoradigital.nl" className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-slate-900 bg-white rounded-full hover:bg-slate-100 transition-colors">
+                <Mail className="w-4 h-4" aria-hidden />
+                {t.quick.email}
               </a>
             </div>
           </div>

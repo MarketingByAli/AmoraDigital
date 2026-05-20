@@ -1,5 +1,8 @@
 import { useState, type FormEvent, type ReactNode } from 'react'
+import { useLocation } from 'react-router-dom'
 import { ArrowRight, CheckCircle2, AlertCircle, Loader2 } from 'lucide-react'
+import { localeFromPath } from '../i18n/routes'
+import { UI } from '../i18n/ui'
 
 interface LeadFormProps {
   title: string
@@ -12,7 +15,16 @@ interface LeadFormProps {
 
 type Status = 'idle' | 'loading' | 'success' | 'error'
 
-export default function LeadForm({ title, subject, buttonText, buttonClass, footnote, children }: LeadFormProps) {
+export default function LeadForm({
+  title,
+  subject,
+  buttonText,
+  buttonClass,
+  footnote,
+  children
+}: LeadFormProps) {
+  const { pathname } = useLocation()
+  const ui = UI[localeFromPath(pathname)].form
   const [status, setStatus] = useState<Status>('idle')
   const [errorMsg, setErrorMsg] = useState('')
 
@@ -38,11 +50,11 @@ export default function LeadForm({ title, subject, buttonText, buttonClass, foot
         ;(e.target as HTMLFormElement).reset()
       } else {
         setStatus('error')
-        setErrorMsg(data.message || 'Something went wrong. Please try again.')
+        setErrorMsg(data.message || ui.fallbackError)
       }
     } catch {
       setStatus('error')
-      setErrorMsg('Network error. Please check your connection and try again.')
+      setErrorMsg(ui.networkError)
     }
   }
 
@@ -51,14 +63,14 @@ export default function LeadForm({ title, subject, buttonText, buttonClass, foot
       <div className="bg-white rounded-2xl p-8 shadow-2xl">
         <h3 className="text-xl font-bold text-slate-900 mb-6">{title}</h3>
         <div className="flex flex-col items-center justify-center py-8 text-center">
-          <CheckCircle2 className="w-14 h-14 text-emerald-500 mb-4" />
-          <p className="font-semibold text-slate-900 text-lg">Message sent successfully!</p>
-          <p className="text-slate-500 text-sm mt-2">Thank you for reaching out. We typically reply within one business day.</p>
+          <CheckCircle2 className="w-14 h-14 text-emerald-500 mb-4" aria-hidden />
+          <p className="font-semibold text-slate-900 text-lg">{ui.success}</p>
+          <p className="text-slate-500 text-sm mt-2">{ui.successBody}</p>
           <button
             onClick={() => setStatus('idle')}
             className="mt-6 text-sm text-primary-600 hover:underline"
           >
-            Send another message
+            {ui.sendAnother}
           </button>
         </div>
       </div>
@@ -71,7 +83,7 @@ export default function LeadForm({ title, subject, buttonText, buttonClass, foot
 
       {status === 'error' && (
         <div className="mb-4 flex items-start gap-3 p-3 rounded-lg bg-red-50 border border-red-200 text-red-900 text-sm">
-          <AlertCircle className="w-4 h-4 shrink-0 mt-0.5 text-red-500" />
+          <AlertCircle className="w-4 h-4 shrink-0 mt-0.5 text-red-500" aria-hidden />
           <p>{errorMsg}</p>
         </div>
       )}
@@ -86,13 +98,13 @@ export default function LeadForm({ title, subject, buttonText, buttonClass, foot
         >
           {status === 'loading' ? (
             <>
-              <Loader2 className="w-5 h-5 animate-spin" />
-              Sending…
+              <Loader2 className="w-5 h-5 animate-spin" aria-hidden />
+              {ui.sending}
             </>
           ) : (
             <>
               {buttonText}
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden />
             </>
           )}
         </button>
