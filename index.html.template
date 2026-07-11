@@ -18,7 +18,7 @@
     <meta name="ICBM" content="52.3676, 4.9041" />
 
     <!-- Primary meta (DocumentMeta updates per route) -->
-    <title>Amora Digital | Digital Marketing & Custom Development Agency</title>
+    <title>Amora Digital | Digital Marketing & Development Agency</title>
     <meta
       name="description"
       content="Amora Digital is a Netherlands-based digital marketing and custom development agency. Grow with SEO, AI SEO, paid ads, web design, React, PHP and Java."
@@ -38,7 +38,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Amora Digital" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:title" content="Amora Digital | Digital Marketing & Custom Development Agency" />
+    <meta property="og:title" content="Amora Digital | Digital Marketing & Development Agency" />
     <meta
       property="og:description"
       content="Amora Digital is a Netherlands-based digital marketing and custom development agency. Grow with SEO, AI SEO, paid ads, web design, React, PHP and Java."
@@ -53,9 +53,7 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@amoradigital" />
-    <meta name="twitter:creator" content="@amoradigital" />
-    <meta name="twitter:title" content="Amora Digital | Digital Marketing & Custom Development Agency" />
+    <meta name="twitter:title" content="Amora Digital | Digital Marketing & Development Agency" />
     <meta
       name="twitter:description"
       content="Amora Digital is a Netherlands-based digital marketing and custom development agency. Grow with SEO, AI SEO, paid ads, web design, React, PHP and Java."
@@ -141,7 +139,6 @@
             "name": "KVK",
             "value": "99536811"
           },
-          "vatID": "99536811",
           "address": {
             "@type": "PostalAddress",
             "addressCountry": "NL",

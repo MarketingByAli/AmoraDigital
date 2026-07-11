@@ -311,7 +311,10 @@ function FoundersSection({ locale }: { locale: Locale }) {
                   src="https://amoradigital.nl/asset/Ali_Ghasemirad.jpg"
                   alt={`${t.ali.name} - ${t.ali.role}`}
                   className="w-full h-auto object-cover"
+                  width={800}
+                  height={800}
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>
@@ -373,7 +376,10 @@ function FoundersSection({ locale }: { locale: Locale }) {
                   src="https://amoradigital.nl/asset/Morassa.jpg"
                   alt={`${t.morassa.name} - ${t.morassa.role}`}
                   className="w-full h-auto object-cover"
+                  width={800}
+                  height={800}
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>

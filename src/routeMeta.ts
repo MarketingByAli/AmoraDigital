@@ -46,7 +46,7 @@ function ogImageForKey(key: RouteKey): string {
 const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
   home: {
     en: {
-      title: `${SITE_NAME} | Digital Marketing & Custom Development Agency`,
+      title: `${SITE_NAME} | Digital Marketing & Development Agency`,
       description:
         'Amora Digital is a Netherlands-based digital marketing and custom development agency. Grow with SEO, AI SEO, paid ads, web design, React, PHP and Java.',
       keywords: [
@@ -60,7 +60,7 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
       ]
     },
     nl: {
-      title: `${SITE_NAME} | Bureau voor digitale marketing & softwareontwikkeling`,
+      title: `${SITE_NAME} | Digitale marketing & softwareontwikkeling`,
       description:
         'Amora Digital is een Nederlands digital marketing- en softwareontwikkelingsbureau. Groei met SEO, AI SEO, online adverteren, webdesign, React, PHP en Java.',
       keywords: [
@@ -432,7 +432,7 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
 
   java: {
     en: {
-      title: `Java Development Services | Spring Boot, APIs & Microservices`,
+      title: `Java Development | Spring Boot APIs & Microservices`,
       description:
         'Enterprise Java development with Spring Boot — scalable microservices, REST APIs and secure integrations for high-traffic and regulated industries.',
       keywords: ['Java development', 'Spring Boot agency', 'enterprise Java', 'Java microservices']
@@ -447,7 +447,7 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
 
   'mobile-apps': {
     en: {
-      title: `Mobile App Development | iOS, Android, React Native & Flutter`,
+      title: `Mobile App Development | iOS, Android & React Native`,
       description:
         'Native and cross-platform mobile apps for iOS and Android with React Native, Flutter, Swift and Kotlin — from discovery to store launch.',
       keywords: [
@@ -458,7 +458,7 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
       ]
     },
     nl: {
-      title: `Mobiele app development | iOS, Android, React Native & Flutter`,
+      title: `Mobiele app-ontwikkeling | iOS, Android & React Native`,
       description:
         'Native en cross-platform mobiele apps voor iOS en Android met React Native, Flutter, Swift en Kotlin — van concept tot publicatie in de stores.',
       keywords: [
@@ -472,7 +472,7 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
 
   ecommerce: {
     en: {
-      title: `E-Commerce Development | Shopify, WooCommerce & Custom Stores`,
+      title: `E-Commerce Development | Shopify, WooCommerce & Custom`,
       description:
         'E-commerce websites on Shopify, WooCommerce and custom platforms with payments, inventory, ERP/CRM integrations and conversion-focused design.',
       keywords: ['ecommerce development', 'Shopify agency', 'WooCommerce agency', 'online store']
@@ -487,7 +487,7 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
 
   'ai-automation': {
     en: {
-      title: `AI & Automation Services | Workflow AI, Chatbots, Integrations`,
+      title: `AI & Automation | Workflow AI, Chatbots & Integrations`,
       description:
         'AI-powered workflows and automation using OpenAI, Claude, Zapier, n8n and custom pipelines — save hours and scale operations without adding headcount.',
       keywords: ['AI automation', 'workflow automation', 'AI integration', 'chatbot development']
@@ -589,13 +589,13 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
     en: {
       title: `PinkPeck | Content Creation & Social Toolkit`,
       description:
-        'PinkPeck is a content creation and social toolkit from Amora Digital for faster, better-looking social content.',
+        'PinkPeck by Amora Digital is a content creation and social toolkit — templates, scheduling and AI helpers to ship better-looking social posts faster.',
       keywords: ['content creation tool', 'social media tools', 'PinkPeck']
     },
     nl: {
       title: `PinkPeck | Content creation & social toolkit`,
       description:
-        'PinkPeck is een toolkit voor contentcreatie en social media van Amora Digital — sneller en mooier social content maken.',
+        'PinkPeck van Amora Digital is een toolkit voor contentcreatie en social media — templates, planning en AI-hulp om sneller mooier social content te maken.',
       keywords: ['content creation tool', 'social media tools', 'PinkPeck']
     }
   },
@@ -619,13 +619,13 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
     en: {
       title: `Royal Casino Hub | Casino Industry News & Reviews`,
       description:
-        'Royal Casino Hub covers casino industry news, product reviews and guides for the iGaming audience.',
+        'Royal Casino Hub is a casino review and news platform by Amora Digital — expert reviews, community ratings, industry news and guides for the iGaming audience.',
       keywords: ['casino reviews', 'casino news', 'iGaming industry']
     },
     nl: {
       title: `Royal Casino Hub | Casino-nieuws & reviews`,
       description:
-        'Royal Casino Hub behandelt nieuws uit de casino-industrie, productreviews en gidsen voor het iGaming-publiek.',
+        'Royal Casino Hub is een casino-review- en nieuwsplatform van Amora Digital — expert-reviews, community-beoordelingen, branchenieuws en gidsen voor iGaming-fans.',
       keywords: ['casino reviews', 'casino nieuws', 'iGaming industrie']
     }
   }

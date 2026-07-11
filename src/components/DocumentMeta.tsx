@@ -167,8 +167,6 @@ export default function DocumentMeta() {
     setMetaProperty('og:image:type', 'image/png')
 
     setMetaName('twitter:card', 'summary_large_image')
-    setMetaName('twitter:site', '@amoradigital')
-    setMetaName('twitter:creator', '@amoradigital')
     setMetaName('twitter:title', title)
     setMetaName('twitter:description', description)
     setMetaName('twitter:image', image)

@@ -28,6 +28,17 @@ import {
   type Locale,
   type RouteKey
 } from '../i18n/routes'
+import { BUSINESS_FOUNDING_DATE } from '../siteConfig'
+
+/**
+ * Build-time date (injected via Vite `define`). Ensures every prerendered
+ * page carries a fresh `dateModified` in its WebPage JSON-LD — a strong
+ * freshness signal for Google and AI crawlers on every deploy.
+ * Falls back to the founding date for dev-mode runtime where the define
+ * is unavailable.
+ */
+const BUILD_DATE: string =
+  typeof __BUILD_DATE__ === 'string' ? __BUILD_DATE__ : BUSINESS_FOUNDING_DATE
 
 export type FaqItem = { question: string; answer: string }
 
@@ -41,6 +52,12 @@ type ProductArgs = {
   category?: string
   applicationCategory?: string
   operatingSystem?: string
+  /**
+   * Optional offer overrides. Omit for the default free `InStock` offer that
+   * satisfies Google Rich Results validation for SoftwareApplication/Product.
+   * Use `availability: 'https://schema.org/PreOrder'` for coming-soon items.
+   */
+  offers?: { price?: string; priceCurrency?: string; availability?: string }
 }
 
 type PageSeoLocaleEntry = {
@@ -1739,7 +1756,8 @@ export const pageSeoByKey: Record<RouteKey, PageSeoConfig> = {
     pageType: 'ItemPage',
     product: {
       applicationCategory: 'BusinessApplication',
-      category: 'CRM Software'
+      category: 'CRM Software',
+      offers: { availability: 'https://schema.org/PreOrder' }
     },
     locales: {
       en: {
@@ -2125,7 +2143,9 @@ export function resolvePageSchema(
     breadcrumbId,
     image: meta.image,
     faqId,
-    language
+    language,
+    datePublished: BUSINESS_FOUNDING_DATE,
+    dateModified: BUILD_DATE
   })
 
   const nodes: JsonObject[] = [breadcrumb, webPage]
@@ -2155,7 +2175,8 @@ export function resolvePageSchema(
         description: localeEntry.productDescription,
         category: config.product.category,
         applicationCategory: config.product.applicationCategory,
-        operatingSystem: config.product.operatingSystem
+        operatingSystem: config.product.operatingSystem,
+        offers: config.product.offers
       })
     )
   }

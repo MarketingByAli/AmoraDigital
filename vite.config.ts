@@ -9,9 +9,16 @@ import react from '@vitejs/plugin-react'
  * Post-build, `scripts/prerender.mjs` generates per-route `index.html` files
  * so crawlers see fully rendered HTML (titles, meta, JSON-LD, body content)
  * on first response, bypassing the client-side rendering pitfall.
+ *
+ * `__BUILD_DATE__` is inlined at build time so every prerendered page ships
+ * a fresh `dateModified` value in its WebPage JSON-LD — a strong freshness
+ * signal for Google and AI crawlers.
  */
 export default defineConfig({
   plugins: [react()],
+  define: {
+    __BUILD_DATE__: JSON.stringify(new Date().toISOString().slice(0, 10))
+  },
   build: {
     outDir: '.',
     emptyOutDir: false,

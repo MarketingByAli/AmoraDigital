@@ -1,42 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml"
-  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-
-  <!-- ============================================================
-       Core pages
-       ============================================================ -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://amoradigital.nl/</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/" />
     <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/" />
-    <image:image>
-      <image:loc>https://amoradigital.nl/og/Home.png</image:loc>
-      <image:title>Amora Digital — Digital Marketing &amp; Custom Development</image:title>
-    </image:image>
+   
+    <image:image><image:loc>https://amoradigital.nl/og/Home.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://amoradigital.nl/nl</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/" />
     <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/" />
-    <image:image>
-      <image:loc>https://amoradigital.nl/og/Home.png</image:loc>
-      <image:title>Amora Digital — Digitale Marketing &amp; Softwareontwikkeling</image:title>
-    </image:image>
+   
+    <image:image><image:loc>https://amoradigital.nl/og/Home.png</image:loc></image:image>
   </url>
-
   <url>
     <loc>https://amoradigital.nl/about</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/about" />
@@ -45,17 +33,16 @@
   </url>
   <url>
     <loc>https://amoradigital.nl/nl/over-ons</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/about" />
     <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/over-ons" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/about" />
   </url>
-
   <url>
     <loc>https://amoradigital.nl/contact</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/contact" />
@@ -64,17 +51,16 @@
   </url>
   <url>
     <loc>https://amoradigital.nl/nl/contact</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/contact" />
     <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/contact" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/contact" />
   </url>
-
   <url>
     <loc>https://amoradigital.nl/privacy-policy</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/privacy-policy" />
@@ -83,20 +69,16 @@
   </url>
   <url>
     <loc>https://amoradigital.nl/nl/privacybeleid</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/privacy-policy" />
     <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/privacybeleid" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/privacy-policy" />
   </url>
-
-  <!-- ============================================================
-       Marketing hub + services
-       ============================================================ -->
   <url>
     <loc>https://amoradigital.nl/marketing</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/marketing" />
@@ -105,17 +87,16 @@
   </url>
   <url>
     <loc>https://amoradigital.nl/nl/marketing</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/marketing" />
     <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/marketing" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/marketing" />
   </url>
-
   <url>
     <loc>https://amoradigital.nl/marketing/website-design</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/marketing/website-design" />
@@ -124,17 +105,16 @@
   </url>
   <url>
     <loc>https://amoradigital.nl/nl/marketing/webdesign</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/marketing/website-design" />
     <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/marketing/webdesign" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/marketing/website-design" />
   </url>
-
   <url>
     <loc>https://amoradigital.nl/marketing/crm-solutions</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/marketing/crm-solutions" />
@@ -143,17 +123,16 @@
   </url>
   <url>
     <loc>https://amoradigital.nl/nl/marketing/crm-oplossingen</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/marketing/crm-solutions" />
     <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/marketing/crm-oplossingen" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/marketing/crm-solutions" />
   </url>
-
   <url>
     <loc>https://amoradigital.nl/marketing/social-media-marketing</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/marketing/social-media-marketing" />
@@ -162,17 +141,16 @@
   </url>
   <url>
     <loc>https://amoradigital.nl/nl/marketing/social-media-marketing</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/marketing/social-media-marketing" />
     <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/marketing/social-media-marketing" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/marketing/social-media-marketing" />
   </url>
-
   <url>
     <loc>https://amoradigital.nl/marketing/paid-advertising</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/marketing/paid-advertising" />
@@ -181,17 +159,16 @@
   </url>
   <url>
     <loc>https://amoradigital.nl/nl/marketing/online-adverteren</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/marketing/paid-advertising" />
     <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/marketing/online-adverteren" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/marketing/paid-advertising" />
   </url>
-
   <url>
     <loc>https://amoradigital.nl/marketing/seo-services</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/marketing/seo-services" />
@@ -200,17 +177,16 @@
   </url>
   <url>
     <loc>https://amoradigital.nl/nl/marketing/seo-diensten</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/marketing/seo-services" />
     <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/marketing/seo-diensten" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/marketing/seo-services" />
   </url>
-
   <url>
     <loc>https://amoradigital.nl/marketing/ai-seo</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/marketing/ai-seo" />
@@ -219,17 +195,16 @@
   </url>
   <url>
     <loc>https://amoradigital.nl/nl/marketing/ai-seo</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/marketing/ai-seo" />
     <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/marketing/ai-seo" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/marketing/ai-seo" />
   </url>
-
   <url>
     <loc>https://amoradigital.nl/marketing/local-seo</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/marketing/local-seo" />
@@ -238,17 +213,16 @@
   </url>
   <url>
     <loc>https://amoradigital.nl/nl/marketing/lokale-seo</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/marketing/local-seo" />
     <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/marketing/lokale-seo" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/marketing/local-seo" />
   </url>
-
   <url>
     <loc>https://amoradigital.nl/marketing/email-marketing</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/marketing/email-marketing" />
@@ -257,17 +231,16 @@
   </url>
   <url>
     <loc>https://amoradigital.nl/nl/marketing/e-mailmarketing</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/marketing/email-marketing" />
     <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/marketing/e-mailmarketing" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/marketing/email-marketing" />
   </url>
-
   <url>
     <loc>https://amoradigital.nl/marketing/conversion-optimization</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/marketing/conversion-optimization" />
@@ -276,17 +249,16 @@
   </url>
   <url>
     <loc>https://amoradigital.nl/nl/marketing/conversie-optimalisatie</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/marketing/conversion-optimization" />
     <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/marketing/conversie-optimalisatie" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/marketing/conversion-optimization" />
   </url>
-
   <url>
     <loc>https://amoradigital.nl/marketing/brand-strategy</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/marketing/brand-strategy" />
@@ -295,20 +267,16 @@
   </url>
   <url>
     <loc>https://amoradigital.nl/nl/marketing/merkstrategie</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/marketing/brand-strategy" />
     <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/marketing/merkstrategie" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/marketing/brand-strategy" />
   </url>
-
-  <!-- ============================================================
-       Development hub + services
-       ============================================================ -->
   <url>
     <loc>https://amoradigital.nl/development</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/development" />
@@ -317,17 +285,16 @@
   </url>
   <url>
     <loc>https://amoradigital.nl/nl/ontwikkeling</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/development" />
     <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/ontwikkeling" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/development" />
   </url>
-
   <url>
     <loc>https://amoradigital.nl/development/react</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/development/react" />
@@ -336,17 +303,16 @@
   </url>
   <url>
     <loc>https://amoradigital.nl/nl/ontwikkeling/react-development</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/development/react" />
     <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/ontwikkeling/react-development" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/development/react" />
   </url>
-
   <url>
     <loc>https://amoradigital.nl/development/php</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/development/php" />
@@ -355,17 +321,16 @@
   </url>
   <url>
     <loc>https://amoradigital.nl/nl/ontwikkeling/php-development</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/development/php" />
     <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/ontwikkeling/php-development" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/development/php" />
   </url>
-
   <url>
     <loc>https://amoradigital.nl/development/java</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/development/java" />
@@ -374,17 +339,16 @@
   </url>
   <url>
     <loc>https://amoradigital.nl/nl/ontwikkeling/java-development</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/development/java" />
     <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/ontwikkeling/java-development" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/development/java" />
   </url>
-
   <url>
     <loc>https://amoradigital.nl/development/mobile-apps</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/development/mobile-apps" />
@@ -393,17 +357,16 @@
   </url>
   <url>
     <loc>https://amoradigital.nl/nl/ontwikkeling/mobiele-apps</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/development/mobile-apps" />
     <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/ontwikkeling/mobiele-apps" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/development/mobile-apps" />
   </url>
-
   <url>
     <loc>https://amoradigital.nl/development/ecommerce</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/development/ecommerce" />
@@ -412,17 +375,16 @@
   </url>
   <url>
     <loc>https://amoradigital.nl/nl/ontwikkeling/e-commerce</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/development/ecommerce" />
     <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/ontwikkeling/e-commerce" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/development/ecommerce" />
   </url>
-
   <url>
     <loc>https://amoradigital.nl/development/ai-automation</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/development/ai-automation" />
@@ -431,17 +393,16 @@
   </url>
   <url>
     <loc>https://amoradigital.nl/nl/ontwikkeling/ai-automatisering</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/development/ai-automation" />
     <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/ontwikkeling/ai-automatisering" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/development/ai-automation" />
   </url>
-
   <url>
     <loc>https://amoradigital.nl/development/full-stack</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/development/full-stack" />
@@ -450,17 +411,16 @@
   </url>
   <url>
     <loc>https://amoradigital.nl/nl/ontwikkeling/full-stack</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/development/full-stack" />
     <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/ontwikkeling/full-stack" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/development/full-stack" />
   </url>
-
   <url>
     <loc>https://amoradigital.nl/development/web-applications</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/development/web-applications" />
@@ -469,20 +429,16 @@
   </url>
   <url>
     <loc>https://amoradigital.nl/nl/ontwikkeling/webapplicaties</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/development/web-applications" />
     <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/ontwikkeling/webapplicaties" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/development/web-applications" />
   </url>
-
-  <!-- ============================================================
-       Products
-       ============================================================ -->
   <url>
     <loc>https://amoradigital.nl/products/auto-form-builder</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/products/auto-form-builder" />
@@ -491,17 +447,16 @@
   </url>
   <url>
     <loc>https://amoradigital.nl/nl/producten/auto-form-builder</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/products/auto-form-builder" />
     <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/producten/auto-form-builder" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/products/auto-form-builder" />
   </url>
-
   <url>
     <loc>https://amoradigital.nl/products/auto-form-crm</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/products/auto-form-crm" />
@@ -510,17 +465,16 @@
   </url>
   <url>
     <loc>https://amoradigital.nl/nl/producten/auto-form-crm</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/products/auto-form-crm" />
     <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/producten/auto-form-crm" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/products/auto-form-crm" />
   </url>
-
   <url>
     <loc>https://amoradigital.nl/products/hi-fan</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/products/hi-fan" />
@@ -529,17 +483,16 @@
   </url>
   <url>
     <loc>https://amoradigital.nl/nl/producten/hi-fan</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/products/hi-fan" />
     <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/producten/hi-fan" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/products/hi-fan" />
   </url>
-
   <url>
     <loc>https://amoradigital.nl/products/pinkpeck</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/products/pinkpeck" />
@@ -548,17 +501,16 @@
   </url>
   <url>
     <loc>https://amoradigital.nl/nl/producten/pinkpeck</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/products/pinkpeck" />
     <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/producten/pinkpeck" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/products/pinkpeck" />
   </url>
-
   <url>
     <loc>https://amoradigital.nl/products/unbox-deal</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/products/unbox-deal" />
@@ -567,17 +519,16 @@
   </url>
   <url>
     <loc>https://amoradigital.nl/nl/producten/unbox-deal</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/products/unbox-deal" />
     <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/producten/unbox-deal" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/products/unbox-deal" />
   </url>
-
   <url>
     <loc>https://amoradigital.nl/products/royal-casino-hub</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/products/royal-casino-hub" />
@@ -586,12 +537,11 @@
   </url>
   <url>
     <loc>https://amoradigital.nl/nl/producten/royal-casino-hub</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/products/royal-casino-hub" />
     <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/producten/royal-casino-hub" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/products/royal-casino-hub" />
   </url>
-
 </urlset>

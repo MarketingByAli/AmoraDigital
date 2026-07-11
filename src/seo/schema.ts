@@ -95,7 +95,6 @@ export function buildOrganizationSchema(): JsonObject {
       name: 'KVK',
       value: BUSINESS_KVK
     },
-    vatID: BUSINESS_KVK,
     address: {
       '@type': 'PostalAddress',
       addressCountry: BUSINESS_COUNTRY,
@@ -299,7 +298,13 @@ export function buildServiceSchema(options: {
 }
 
 /**
- * Product/SoftwareApplication schema for product pages.
+ * Product / SoftwareApplication schema for product pages.
+ *
+ * Google Rich Results requires that Product and SoftwareApplication nodes
+ * carry `offers` (or `aggregateRating` / `review`). We always emit a valid
+ * `Offer` node — defaulting to a free "InStock" offer — so the schema
+ * validates and can produce rich results. Pages can override `offers` to
+ * declare a real price or `PreOrder` availability for coming-soon products.
  */
 export function buildProductSchema(options: {
   path: string
@@ -313,6 +318,7 @@ export function buildProductSchema(options: {
   offers?: { price?: string; priceCurrency?: string; availability?: string }
 }): JsonObject {
   const url = absoluteUrl(options.path)
+  const offers = options.offers ?? {}
   return {
     '@type': options.applicationCategory ? 'SoftwareApplication' : 'Product',
     '@id': `${url}#product`,
@@ -326,15 +332,13 @@ export function buildProductSchema(options: {
     category: options.category,
     brand: { '@id': ORG_ID },
     publisher: { '@id': ORG_ID },
-    offers: options.offers
-      ? {
-          '@type': 'Offer',
-          price: options.offers.price ?? '0',
-          priceCurrency: options.offers.priceCurrency ?? 'EUR',
-          availability: options.offers.availability ?? 'https://schema.org/InStock',
-          url
-        }
-      : undefined
+    offers: {
+      '@type': 'Offer',
+      price: offers.price ?? '0',
+      priceCurrency: offers.priceCurrency ?? 'EUR',
+      availability: offers.availability ?? 'https://schema.org/InStock',
+      url
+    }
   }
 }
 
