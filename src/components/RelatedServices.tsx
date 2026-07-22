@@ -236,7 +236,78 @@ const RELATED_BY_KEY: Partial<Record<RouteKey, RouteKey[]>> = {
   'hi-fan': ['social-media-marketing', 'brand-strategy', 'web-applications'],
   pinkpeck: ['social-media-marketing', 'brand-strategy', 'ai-seo'],
   'unbox-deal': ['ecommerce', 'paid-advertising', 'seo-services'],
-  'royal-casino-hub': ['seo-services', 'ai-seo', 'brand-strategy']
+  'royal-casino-hub': ['seo-services', 'ai-seo', 'brand-strategy'],
+  branches: ['seo-services', 'local-seo', 'website-design', 'paid-advertising', 'marketing'],
+  'branches-restaurants': [
+    'website-design',
+    'local-seo',
+    'social-media-marketing',
+    'paid-advertising',
+    'seo-services'
+  ],
+  'branches-tandartsen': [
+    'website-design',
+    'local-seo',
+    'paid-advertising',
+    'social-media-marketing',
+    'seo-services'
+  ],
+  'branches-fysiotherapeuten': [
+    'website-design',
+    'local-seo',
+    'paid-advertising',
+    'seo-services',
+    'conversion-optimization'
+  ],
+  'branches-kappers-schoonheidssalons': [
+    'website-design',
+    'local-seo',
+    'social-media-marketing',
+    'seo-services',
+    'brand-strategy'
+  ],
+  'branches-makelaars': [
+    'website-design',
+    'local-seo',
+    'paid-advertising',
+    'social-media-marketing',
+    'seo-services'
+  ],
+  'branches-restaurants-website-laten-maken': [
+    'website-design',
+    'local-seo',
+    'social-media-marketing',
+    'paid-advertising',
+    'seo-services'
+  ],
+  'branches-restaurants-lokale-seo': [
+    'local-seo',
+    'seo-services',
+    'website-design',
+    'paid-advertising',
+    'social-media-marketing'
+  ],
+  'branches-tandartsen-website-laten-maken': [
+    'website-design',
+    'local-seo',
+    'paid-advertising',
+    'social-media-marketing',
+    'seo-services'
+  ],
+  'branches-tandartsen-lokale-seo': [
+    'local-seo',
+    'seo-services',
+    'website-design',
+    'paid-advertising',
+    'social-media-marketing'
+  ],
+  'branches-fysiotherapeuten-website-laten-maken': [
+    'website-design',
+    'local-seo',
+    'paid-advertising',
+    'seo-services',
+    'conversion-optimization'
+  ]
 }
 
 type RelatedServicesProps = {

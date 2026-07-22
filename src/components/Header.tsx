@@ -28,10 +28,12 @@ import {
   Heart,
   Feather,
   Package,
-  Crown
+  Crown,
+  Building2
 } from 'lucide-react'
 import { ROUTES, localeFromPath, type Locale, type RouteKey } from '../i18n/routes'
 import { UI } from '../i18n/ui'
+import { getLiveBranchHubs } from '../data/branches'
 import LanguageSwitcher from './LanguageSwitcher'
 
 type NavItem = {
@@ -128,10 +130,12 @@ export default function Header() {
   const marketingServices = useMemo(() => marketingItems(locale), [locale])
   const developmentServices = useMemo(() => developmentItems(locale), [locale])
   const products = useMemo(() => productItems(locale), [locale])
+  const liveHubs = useMemo(() => getLiveBranchHubs(), [])
 
   const homePath = ROUTES.home[locale]
   const marketingPath = ROUTES.marketing[locale]
   const developmentPath = ROUTES.development[locale]
+  const branchesPath = ROUTES.branches[locale]
   const contactPath = ROUTES.contact[locale]
 
   return (
@@ -232,6 +236,50 @@ export default function Header() {
                           <div>
                             <div className="text-sm font-medium text-slate-900 group-hover:text-accent-600 transition-colors">{service.name}</div>
                             <div className="text-xs text-slate-500">{service.description}</div>
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            <div
+              className="relative"
+              onMouseEnter={() => setActiveDropdown('industries')}
+              onMouseLeave={() => setActiveDropdown(null)}
+            >
+              <Link to={branchesPath} className="flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-slate-700 hover:text-primary-600 transition-colors rounded-lg hover:bg-slate-50">
+                {ui.nav.industries}
+                <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === 'industries' ? 'rotate-180' : ''}`} />
+              </Link>
+
+              {activeDropdown === 'industries' && (
+                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4">
+                  <div className="bg-white rounded-2xl shadow-2xl border border-slate-100 p-4 w-80 animate-fade-in">
+                    <Link to={branchesPath} className="flex items-center gap-2 mb-3 pb-3 border-b border-slate-100 hover:opacity-80 transition-opacity">
+                      <div className="w-8 h-8 rounded-lg bg-primary-100 flex items-center justify-center">
+                        <Building2 className="w-4 h-4 text-primary-600" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-slate-900">{ui.nav.industries}</h3>
+                        <p className="text-xs text-slate-500">{ui.nav.industriesTagline}</p>
+                      </div>
+                    </Link>
+                    <div className="space-y-1">
+                      {liveHubs.map((hub) => (
+                        <Link
+                          key={hub.routeKey}
+                          to={ROUTES[hub.routeKey][locale]}
+                          className="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors group"
+                        >
+                          <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
+                            <Building2 className="w-5 h-5 text-white" />
+                          </div>
+                          <div>
+                            <div className="text-sm font-medium text-slate-900 group-hover:text-primary-600 transition-colors">{hub.name[locale]}</div>
+                            <div className="text-xs text-slate-500">{hub.benefit[locale]}</div>
                           </div>
                         </Link>
                       ))}
@@ -350,6 +398,31 @@ export default function Header() {
                     <Link key={service.key} to={ROUTES[service.key][locale]} className="flex items-center gap-3 px-4 py-2 text-sm text-slate-600 hover:text-accent-600 hover:bg-slate-50 rounded-lg" onClick={() => setMobileMenuOpen(false)}>
                       <service.icon className="w-4 h-4" />
                       {service.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <div className="mb-2">
+              <div className="flex items-center justify-between w-full px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-lg">
+                <Link to={branchesPath} onClick={() => setMobileMenuOpen(false)} className="hover:text-primary-600">
+                  {ui.nav.industries}
+                </Link>
+                <button onClick={() => setActiveDropdown(activeDropdown === 'industries-mobile' ? null : 'industries-mobile')} aria-label="Toggle">
+                  <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === 'industries-mobile' ? 'rotate-180' : ''}`} />
+                </button>
+              </div>
+              {activeDropdown === 'industries-mobile' && (
+                <div className="ml-4 mt-2 space-y-1">
+                  <Link to={branchesPath} className="flex items-center gap-3 px-4 py-2 text-sm text-slate-600 hover:text-primary-600 hover:bg-slate-50 rounded-lg" onClick={() => setMobileMenuOpen(false)}>
+                    <Building2 className="w-4 h-4" />
+                    {ui.nav.industries}
+                  </Link>
+                  {liveHubs.map((hub) => (
+                    <Link key={hub.routeKey} to={ROUTES[hub.routeKey][locale]} className="flex items-center gap-3 px-4 py-2 text-sm text-slate-600 hover:text-primary-600 hover:bg-slate-50 rounded-lg" onClick={() => setMobileMenuOpen(false)}>
+                      <Building2 className="w-4 h-4" />
+                      {hub.name[locale]}
                     </Link>
                   ))}
                 </div>

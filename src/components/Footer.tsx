@@ -25,6 +25,7 @@ import {
 } from 'lucide-react'
 import { ROUTES, localeFromPath, type Locale, type RouteKey } from '../i18n/routes'
 import { UI } from '../i18n/ui'
+import { getLiveBranchHubs } from '../data/branches'
 import LanguageSwitcher from './LanguageSwitcher'
 
 type FooterServiceItem = {
@@ -78,13 +79,14 @@ export default function Footer() {
   const { pathname } = useLocation()
   const locale: Locale = localeFromPath(pathname)
   const ui = UI[locale]
+  const liveHubs = getLiveBranchHubs()
 
   const tr = (item: { en: string; nl: string }) => (locale === 'nl' ? item.nl : item.en)
 
   return (
     <footer className="bg-slate-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10 lg:gap-8">
 
           <div className="lg:col-span-1">
             <Link to={ROUTES.home[locale]} className="inline-flex mb-6" aria-label="Amora Digital">
@@ -159,6 +161,33 @@ export default function Footer() {
                   >
                     <service.icon className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
                     <span>{tr(service)}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-semibold text-white mb-4 flex items-center gap-2">
+              <div className="w-1.5 h-1.5 rounded-full bg-primary-400" />
+              {ui.footer.industries}
+            </h3>
+            <ul className="space-y-2.5">
+              <li>
+                <Link
+                  to={ROUTES.branches[locale]}
+                  className="text-sm text-slate-400 hover:text-primary-400 transition-colors"
+                >
+                  {ui.footer.viewAllIndustries}
+                </Link>
+              </li>
+              {liveHubs.map((hub) => (
+                <li key={hub.routeKey}>
+                  <Link
+                    to={ROUTES[hub.routeKey][locale]}
+                    className="text-sm text-slate-400 hover:text-primary-400 transition-colors"
+                  >
+                    {hub.name[locale]}
                   </Link>
                 </li>
               ))}

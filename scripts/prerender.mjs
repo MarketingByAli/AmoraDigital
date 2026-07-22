@@ -57,7 +57,18 @@ const EN_ROUTES = [
   '/products/hi-fan',
   '/products/pinkpeck',
   '/products/unbox-deal',
-  '/products/royal-casino-hub'
+  '/products/royal-casino-hub',
+  '/branches',
+  '/branches/restaurants',
+  '/branches/tandartsen',
+  '/branches/fysiotherapeuten',
+  '/branches/kappers-schoonheidssalons',
+  '/branches/makelaars',
+  '/branches/restaurants/website-laten-maken',
+  '/branches/restaurants/lokale-seo',
+  '/branches/tandartsen/website-laten-maken',
+  '/branches/tandartsen/lokale-seo',
+  '/branches/fysiotherapeuten/website-laten-maken'
 ]
 
 const NL_ROUTES = [
@@ -90,7 +101,18 @@ const NL_ROUTES = [
   '/nl/producten/hi-fan',
   '/nl/producten/pinkpeck',
   '/nl/producten/unbox-deal',
-  '/nl/producten/royal-casino-hub'
+  '/nl/producten/royal-casino-hub',
+  '/nl/branches',
+  '/nl/branches/restaurants',
+  '/nl/branches/tandartsen',
+  '/nl/branches/fysiotherapeuten',
+  '/nl/branches/kappers-schoonheidssalons',
+  '/nl/branches/makelaars',
+  '/nl/branches/restaurants/website-laten-maken',
+  '/nl/branches/restaurants/lokale-seo',
+  '/nl/branches/tandartsen/website-laten-maken',
+  '/nl/branches/tandartsen/lokale-seo',
+  '/nl/branches/fysiotherapeuten/website-laten-maken'
 ]
 
 const ROUTES = [...EN_ROUTES, ...NL_ROUTES]

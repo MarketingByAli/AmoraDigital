@@ -628,6 +628,288 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
         'Royal Casino Hub is een casino-review- en nieuwsplatform van Amora Digital — expert-reviews, community-beoordelingen, branchenieuws en gidsen voor iGaming-fans.',
       keywords: ['casino reviews', 'casino nieuws', 'iGaming industrie']
     }
+  },
+
+  branches: {
+    en: {
+      title: `Online marketing by industry | Amora Digital`,
+      description:
+        'Online marketing by industry: websites, SEO and campaigns tailored to your sector. Amora Digital has completed 1,500+ projects. Explore your industry hub.',
+      keywords: ['online marketing by industry', 'industry marketing', 'SEO by industry'],
+      ogImage: ogAssetPng('Home')
+    },
+    nl: {
+      title: `Online marketing per branche | Amora Digital`,
+      description:
+        'Online marketing per branche: websites, SEO en campagnes gericht op jouw sector. Amora Digital helpt met 1.500+ afgeronde projecten. Ontdek jouw branche.',
+      keywords: ['online marketing per branche', 'branche marketing', 'SEO per branche'],
+      ogImage: ogAssetPng('Home')
+    }
+  },
+
+  'branches-restaurants': {
+    en: {
+      title: `Online marketing for restaurants | Amora Digital`,
+      description:
+        'Online marketing for restaurants & cafés: websites, local SEO, social and Google Ads for more guests and reservations. 1,500+ projects.',
+      keywords: [
+        'online marketing for restaurants',
+        'restaurant SEO',
+        'restaurant website',
+        'Google Ads hospitality'
+      ],
+      ogImage: ogAssetPng('Home')
+    },
+    nl: {
+      title: `Online marketing voor restaurants | Amora Digital`,
+      description:
+        'Online marketing voor restaurants & cafés: websites, lokale SEO, social en Google Ads voor meer gasten en reserveringen. 1.500+ projecten.',
+      keywords: [
+        'online marketing voor restaurants',
+        'SEO restaurant',
+        'website restaurant',
+        'Google Ads horeca'
+      ],
+      ogImage: ogAssetPng('Home')
+    }
+  },
+
+  'branches-tandartsen': {
+    en: {
+      title: `Online marketing for dentists | Amora Digital`,
+      description:
+        'Online marketing for dentists: websites, local SEO, Google Ads and social to attract new patients and fill your agenda. 1,500+ projects.',
+      keywords: [
+        'online marketing for dentists',
+        'dentist SEO',
+        'dental practice website',
+        'Google Ads dentists'
+      ],
+      ogImage: ogAssetPng('Home')
+    },
+    nl: {
+      title: `Online marketing voor tandartsen | Amora Digital`,
+      description:
+        'Online marketing voor tandartsen: websites, lokale SEO, Google Ads en social om nieuwe patiënten aan te trekken en je agenda te vullen. 1.500+ projecten.',
+      keywords: [
+        'online marketing voor tandartsen',
+        'SEO tandarts',
+        'website tandartspraktijk',
+        'Google Ads tandarts'
+      ],
+      ogImage: ogAssetPng('Home')
+    }
+  },
+
+  'branches-fysiotherapeuten': {
+    en: {
+      title: `Online marketing for physiotherapists | Amora`,
+      description:
+        'Online marketing for physiotherapists: websites, local SEO and Google Ads to attract new clients and fill your agenda. 1,500+ projects.',
+      keywords: [
+        'online marketing for physiotherapists',
+        'physiotherapy SEO',
+        'physio practice website',
+        'Google Ads physiotherapy'
+      ],
+      ogImage: ogAssetPng('Home')
+    },
+    nl: {
+      title: `Online marketing voor fysiotherapeuten | Amora`,
+      description:
+        'Online marketing voor fysiotherapeuten: websites, lokale SEO en Google Ads om nieuwe cliënten aan te trekken en je agenda te vullen. 1.500+ projecten.',
+      keywords: [
+        'online marketing voor fysiotherapeuten',
+        'SEO fysiotherapie',
+        'website fysiopraktijk',
+        'Google Ads fysiotherapie'
+      ],
+      ogImage: ogAssetPng('Home')
+    }
+  },
+
+  'branches-kappers-schoonheidssalons': {
+    en: {
+      title: `Online marketing for hair & beauty salons | Amora`,
+      description:
+        'Online marketing for hairdressers and beauty salons: websites, local SEO and social to get more bookings. 1,500+ projects.',
+      keywords: [
+        'online marketing for hairdressers',
+        'beauty salon SEO',
+        'salon website',
+        'social media for salons'
+      ],
+      ogImage: ogAssetPng('Home')
+    },
+    nl: {
+      title: `Online marketing voor kappers | Amora Digital`,
+      description:
+        'Online marketing voor kappers en schoonheidssalons: websites, lokale SEO en social voor meer boekingen. 1.500+ projecten.',
+      keywords: [
+        'online marketing voor kappers',
+        'SEO schoonheidssalon',
+        'website kapper',
+        'social media salon'
+      ],
+      ogImage: ogAssetPng('Home')
+    }
+  },
+
+  'branches-makelaars': {
+    en: {
+      title: `Online marketing for real estate agents | Amora`,
+      description:
+        'Online marketing for real estate agents: websites, local SEO, Google Ads and social for more listings and leads. 1,500+ projects.',
+      keywords: [
+        'online marketing for real estate agents',
+        'estate agent SEO',
+        'real estate website',
+        'Google Ads real estate'
+      ],
+      ogImage: ogAssetPng('Home')
+    },
+    nl: {
+      title: `Online marketing voor makelaars | Amora Digital`,
+      description:
+        'Online marketing voor makelaars: websites, lokale SEO, Google Ads en social voor meer opdrachten en leads. 1.500+ projecten.',
+      keywords: [
+        'online marketing voor makelaars',
+        'SEO makelaar',
+        'website makelaarskantoor',
+        'Google Ads makelaar'
+      ],
+      ogImage: ogAssetPng('Home')
+    }
+  },
+  'branches-restaurants-website-laten-maken': {
+    en: {
+      title: `Website design for restaurants | Amora`,
+      description:
+        'Restaurant website with online reservations, digital menu, Maps and mobile booking. Built for hospitality. 1,500+ projects.',
+      keywords: [
+        'website design for restaurants',
+        'restaurant website',
+        'online reservation system',
+        'digital menu restaurant'
+      ],
+      ogImage: ogAssetPng('Home')
+    },
+    nl: {
+      title: `Website laten maken voor restaurants | Amora`,
+      description:
+        'Restaurantwebsite met online reserveringen, digitale menukaart, Maps en mobiel boeken. Speciaal voor horeca. 1.500+ projecten.',
+      keywords: [
+        'website laten maken voor restaurants',
+        'restaurant website',
+        'online reserveringssysteem',
+        'digitale menukaart'
+      ],
+      ogImage: ogAssetPng('Home')
+    }
+  },
+  'branches-restaurants-lokale-seo': {
+    en: {
+      title: `Local SEO for restaurants | Amora`,
+      description:
+        'Local SEO for restaurants: Google Business Profile, Maps, reviews and neighbourhood keywords that fill covers. 1,500+ projects.',
+      keywords: [
+        'local SEO for restaurants',
+        'restaurant Google Maps',
+        'Google Business Profile restaurant',
+        'restaurant reviews SEO'
+      ],
+      ogImage: ogAssetPng('Home')
+    },
+    nl: {
+      title: `Lokale SEO voor restaurants | Amora`,
+      description:
+        'Lokale SEO voor restaurants: Google Bedrijfsprofiel, Maps, reviews en buurtzoekwoorden die covers vullen. 1.500+ projecten.',
+      keywords: [
+        'lokale SEO voor restaurants',
+        'restaurant Google Maps',
+        'Google Bedrijfsprofiel restaurant',
+        'reviews restaurant SEO'
+      ],
+      ogImage: ogAssetPng('Home')
+    }
+  },
+  'branches-tandartsen-website-laten-maken': {
+    en: {
+      title: `Website design for dentists | Amora`,
+      description:
+        'Dental practice website with online appointments, treatments, new-patient registration and mobile booking. 1,500+ projects.',
+      keywords: [
+        'website design for dentists',
+        'dental practice website',
+        'online dental appointments',
+        'dentist website'
+      ],
+      ogImage: ogAssetPng('Home')
+    },
+    nl: {
+      title: `Website laten maken voor tandartsen | Amora`,
+      description:
+        'Praktijkwebsite voor tandartsen met online afspraken, behandelingen, inschrijving nieuwe patiënten en mobiel boeken. 1.500+ projecten.',
+      keywords: [
+        'website laten maken voor tandartsen',
+        'website tandartspraktijk',
+        'online afspraak tandarts',
+        'tandarts website'
+      ],
+      ogImage: ogAssetPng('Home')
+    }
+  },
+  'branches-tandartsen-lokale-seo': {
+    en: {
+      title: `Local SEO for dentists | Amora`,
+      description:
+        'Local SEO for dentists: Google Business Profile, Maps, patient reviews and city keywords that fill the agenda. 1,500+ projects.',
+      keywords: [
+        'local SEO for dentists',
+        'dentist Google Maps',
+        'Google Business Profile dentist',
+        'dental practice reviews'
+      ],
+      ogImage: ogAssetPng('Home')
+    },
+    nl: {
+      title: `Lokale SEO voor tandartsen | Amora`,
+      description:
+        'Lokale SEO voor tandartsen: Google Bedrijfsprofiel, Maps, patiëntreviews en stadszoekwoorden die de agenda vullen. 1.500+ projecten.',
+      keywords: [
+        'lokale SEO voor tandartsen',
+        'tandarts Google Maps',
+        'Google Bedrijfsprofiel tandarts',
+        'patiëntreviews tandarts'
+      ],
+      ogImage: ogAssetPng('Home')
+    }
+  },
+  'branches-fysiotherapeuten-website-laten-maken': {
+    en: {
+      title: `Website design for physiotherapists | Amora`,
+      description:
+        'Physio website with online booking, specialisations, DTF and insurance info, built for new client intakes. 1,500+ projects.',
+      keywords: [
+        'website design for physiotherapists',
+        'physiotherapy website',
+        'physio online booking',
+        'fysio website'
+      ],
+      ogImage: ogAssetPng('Home')
+    },
+    nl: {
+      title: `Website laten maken voor fysiotherapeuten | Amora`,
+      description:
+        'Fysiowebsite met online afspraken, specialisaties, DTF- en vergoedingsinfo — gebouwd voor nieuwe cliëntintakes. 1.500+ projecten.',
+      keywords: [
+        'website laten maken voor fysiotherapeuten',
+        'website fysiotherapie',
+        'online afspraak fysio',
+        'fysiopraktijk website'
+      ],
+      ogImage: ogAssetPng('Home')
+    }
   }
 }
 

@@ -45,6 +45,27 @@ const HiFan = lazy(() => import('./pages/products/HiFan'))
 const PinkPeck = lazy(() => import('./pages/products/PinkPeck'))
 const UnboxDeal = lazy(() => import('./pages/products/UnboxDeal'))
 const RoyalCasinoHub = lazy(() => import('./pages/products/RoyalCasinoHub'))
+const Branches = lazy(() => import('./pages/Branches'))
+const BranchesRestaurants = lazy(() => import('./pages/branches/Restaurants'))
+const BranchesTandartsen = lazy(() => import('./pages/branches/Tandartsen'))
+const BranchesFysiotherapeuten = lazy(() => import('./pages/branches/Fysiotherapeuten'))
+const BranchesKappersSchoonheidssalons = lazy(() => import('./pages/branches/KappersSchoonheidssalons'))
+const BranchesMakelaars = lazy(() => import('./pages/branches/Makelaars'))
+const BranchesRestaurantsWebsiteLatenMaken = lazy(
+  () => import('./pages/branches/restaurants/WebsiteLatenMaken')
+)
+const BranchesRestaurantsLokaleSeo = lazy(
+  () => import('./pages/branches/restaurants/LokaleSeo')
+)
+const BranchesTandartsenWebsiteLatenMaken = lazy(
+  () => import('./pages/branches/tandartsen/WebsiteLatenMaken')
+)
+const BranchesTandartsenLokaleSeo = lazy(
+  () => import('./pages/branches/tandartsen/LokaleSeo')
+)
+const BranchesFysiotherapeutenWebsiteLatenMaken = lazy(
+  () => import('./pages/branches/fysiotherapeuten/WebsiteLatenMaken')
+)
 
 function PageLoader() {
   const { pathname } = useLocation()
@@ -133,6 +154,32 @@ function App() {
               <Route path={ROUTES.pinkpeck.en} element={<PinkPeck />} />
               <Route path={ROUTES['unbox-deal'].en} element={<UnboxDeal />} />
               <Route path={ROUTES['royal-casino-hub'].en} element={<RoyalCasinoHub />} />
+              <Route path={ROUTES.branches.en} element={<Branches />} />
+              <Route path={ROUTES['branches-restaurants'].en} element={<BranchesRestaurants />} />
+              <Route path={ROUTES['branches-tandartsen'].en} element={<BranchesTandartsen />} />
+              <Route path={ROUTES['branches-fysiotherapeuten'].en} element={<BranchesFysiotherapeuten />} />
+              <Route path={ROUTES['branches-kappers-schoonheidssalons'].en} element={<BranchesKappersSchoonheidssalons />} />
+              <Route path={ROUTES['branches-makelaars'].en} element={<BranchesMakelaars />} />
+              <Route
+                path={ROUTES['branches-restaurants-website-laten-maken'].en}
+                element={<BranchesRestaurantsWebsiteLatenMaken />}
+              />
+              <Route
+                path={ROUTES['branches-restaurants-lokale-seo'].en}
+                element={<BranchesRestaurantsLokaleSeo />}
+              />
+              <Route
+                path={ROUTES['branches-tandartsen-website-laten-maken'].en}
+                element={<BranchesTandartsenWebsiteLatenMaken />}
+              />
+              <Route
+                path={ROUTES['branches-tandartsen-lokale-seo'].en}
+                element={<BranchesTandartsenLokaleSeo />}
+              />
+              <Route
+                path={ROUTES['branches-fysiotherapeuten-website-laten-maken'].en}
+                element={<BranchesFysiotherapeutenWebsiteLatenMaken />}
+              />
 
               {/* Dutch routes (/nl/...) */}
               <Route path={ROUTES.home.nl} element={<HomePage />} />
@@ -168,6 +215,32 @@ function App() {
               <Route path={ROUTES.pinkpeck.nl} element={<PinkPeck />} />
               <Route path={ROUTES['unbox-deal'].nl} element={<UnboxDeal />} />
               <Route path={ROUTES['royal-casino-hub'].nl} element={<RoyalCasinoHub />} />
+              <Route path={ROUTES.branches.nl} element={<Branches />} />
+              <Route path={ROUTES['branches-restaurants'].nl} element={<BranchesRestaurants />} />
+              <Route path={ROUTES['branches-tandartsen'].nl} element={<BranchesTandartsen />} />
+              <Route path={ROUTES['branches-fysiotherapeuten'].nl} element={<BranchesFysiotherapeuten />} />
+              <Route path={ROUTES['branches-kappers-schoonheidssalons'].nl} element={<BranchesKappersSchoonheidssalons />} />
+              <Route path={ROUTES['branches-makelaars'].nl} element={<BranchesMakelaars />} />
+              <Route
+                path={ROUTES['branches-restaurants-website-laten-maken'].nl}
+                element={<BranchesRestaurantsWebsiteLatenMaken />}
+              />
+              <Route
+                path={ROUTES['branches-restaurants-lokale-seo'].nl}
+                element={<BranchesRestaurantsLokaleSeo />}
+              />
+              <Route
+                path={ROUTES['branches-tandartsen-website-laten-maken'].nl}
+                element={<BranchesTandartsenWebsiteLatenMaken />}
+              />
+              <Route
+                path={ROUTES['branches-tandartsen-lokale-seo'].nl}
+                element={<BranchesTandartsenLokaleSeo />}
+              />
+              <Route
+                path={ROUTES['branches-fysiotherapeuten-website-laten-maken'].nl}
+                element={<BranchesFysiotherapeutenWebsiteLatenMaken />}
+              />
 
               <Route path="*" element={<NotFound />} />
             </Routes>

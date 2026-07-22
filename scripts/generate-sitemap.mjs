@@ -55,7 +55,89 @@ const PAGES = [
   { key: 'hi-fan',            en: '/products/hi-fan',            nl: '/nl/producten/hi-fan',            changefreq: 'monthly', priority: '0.7' },
   { key: 'pinkpeck',          en: '/products/pinkpeck',          nl: '/nl/producten/pinkpeck',          changefreq: 'monthly', priority: '0.7' },
   { key: 'unbox-deal',        en: '/products/unbox-deal',        nl: '/nl/producten/unbox-deal',        changefreq: 'monthly', priority: '0.7' },
-  { key: 'royal-casino-hub',  en: '/products/royal-casino-hub',  nl: '/nl/producten/royal-casino-hub',  changefreq: 'monthly', priority: '0.7' }
+  { key: 'royal-casino-hub',  en: '/products/royal-casino-hub',  nl: '/nl/producten/royal-casino-hub',  changefreq: 'monthly', priority: '0.7' },
+
+  { key: 'branches', en: '/branches', nl: '/nl/branches', changefreq: 'weekly', priority: '0.9', image: '/og/Home.png' },
+  {
+    key: 'branches-restaurants',
+    en: '/branches/restaurants',
+    nl: '/nl/branches/restaurants',
+    changefreq: 'weekly',
+    priority: '0.85',
+    image: '/og/Home.png'
+  },
+  {
+    key: 'branches-tandartsen',
+    en: '/branches/tandartsen',
+    nl: '/nl/branches/tandartsen',
+    changefreq: 'weekly',
+    priority: '0.85',
+    image: '/og/Home.png'
+  },
+  {
+    key: 'branches-fysiotherapeuten',
+    en: '/branches/fysiotherapeuten',
+    nl: '/nl/branches/fysiotherapeuten',
+    changefreq: 'weekly',
+    priority: '0.85',
+    image: '/og/Home.png'
+  },
+  {
+    key: 'branches-kappers-schoonheidssalons',
+    en: '/branches/kappers-schoonheidssalons',
+    nl: '/nl/branches/kappers-schoonheidssalons',
+    changefreq: 'weekly',
+    priority: '0.85',
+    image: '/og/Home.png'
+  },
+  {
+    key: 'branches-makelaars',
+    en: '/branches/makelaars',
+    nl: '/nl/branches/makelaars',
+    changefreq: 'weekly',
+    priority: '0.85',
+    image: '/og/Home.png'
+  },
+  {
+    key: 'branches-restaurants-website-laten-maken',
+    en: '/branches/restaurants/website-laten-maken',
+    nl: '/nl/branches/restaurants/website-laten-maken',
+    changefreq: 'weekly',
+    priority: '0.8',
+    image: '/og/Home.png'
+  },
+  {
+    key: 'branches-restaurants-lokale-seo',
+    en: '/branches/restaurants/lokale-seo',
+    nl: '/nl/branches/restaurants/lokale-seo',
+    changefreq: 'weekly',
+    priority: '0.8',
+    image: '/og/Home.png'
+  },
+  {
+    key: 'branches-tandartsen-website-laten-maken',
+    en: '/branches/tandartsen/website-laten-maken',
+    nl: '/nl/branches/tandartsen/website-laten-maken',
+    changefreq: 'weekly',
+    priority: '0.8',
+    image: '/og/Home.png'
+  },
+  {
+    key: 'branches-tandartsen-lokale-seo',
+    en: '/branches/tandartsen/lokale-seo',
+    nl: '/nl/branches/tandartsen/lokale-seo',
+    changefreq: 'weekly',
+    priority: '0.8',
+    image: '/og/Home.png'
+  },
+  {
+    key: 'branches-fysiotherapeuten-website-laten-maken',
+    en: '/branches/fysiotherapeuten/website-laten-maken',
+    nl: '/nl/branches/fysiotherapeuten/website-laten-maken',
+    changefreq: 'weekly',
+    priority: '0.8',
+    image: '/og/Home.png'
+  }
 ]
 
 function xmlEscape(s) {

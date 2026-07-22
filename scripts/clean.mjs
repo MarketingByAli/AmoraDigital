@@ -31,7 +31,8 @@ const TARGETS = [
   'privacy-policy',
   'marketing',
   'development',
-  'products'
+  'products',
+  'branches'
 ]
 
 let removed = 0

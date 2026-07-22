@@ -70,6 +70,17 @@ export type RouteKey =
   | 'pinkpeck'
   | 'unbox-deal'
   | 'royal-casino-hub'
+  | 'branches'
+  | 'branches-restaurants'
+  | 'branches-tandartsen'
+  | 'branches-fysiotherapeuten'
+  | 'branches-kappers-schoonheidssalons'
+  | 'branches-makelaars'
+  | 'branches-restaurants-website-laten-maken'
+  | 'branches-restaurants-lokale-seo'
+  | 'branches-tandartsen-website-laten-maken'
+  | 'branches-tandartsen-lokale-seo'
+  | 'branches-fysiotherapeuten-website-laten-maken'
 
 /**
  * Localized pathnames per route. English keeps the current URLs verbatim
@@ -125,6 +136,48 @@ export const ROUTES: Record<RouteKey, Record<Locale, string>> = {
   'royal-casino-hub': {
     en: '/products/royal-casino-hub',
     nl: '/nl/producten/royal-casino-hub'
+  },
+
+  branches: { en: '/branches', nl: '/nl/branches' },
+  'branches-restaurants': {
+    en: '/branches/restaurants',
+    nl: '/nl/branches/restaurants'
+  },
+  'branches-tandartsen': {
+    en: '/branches/tandartsen',
+    nl: '/nl/branches/tandartsen'
+  },
+  'branches-fysiotherapeuten': {
+    en: '/branches/fysiotherapeuten',
+    nl: '/nl/branches/fysiotherapeuten'
+  },
+  'branches-kappers-schoonheidssalons': {
+    en: '/branches/kappers-schoonheidssalons',
+    nl: '/nl/branches/kappers-schoonheidssalons'
+  },
+  'branches-makelaars': {
+    en: '/branches/makelaars',
+    nl: '/nl/branches/makelaars'
+  },
+  'branches-restaurants-website-laten-maken': {
+    en: '/branches/restaurants/website-laten-maken',
+    nl: '/nl/branches/restaurants/website-laten-maken'
+  },
+  'branches-restaurants-lokale-seo': {
+    en: '/branches/restaurants/lokale-seo',
+    nl: '/nl/branches/restaurants/lokale-seo'
+  },
+  'branches-tandartsen-website-laten-maken': {
+    en: '/branches/tandartsen/website-laten-maken',
+    nl: '/nl/branches/tandartsen/website-laten-maken'
+  },
+  'branches-tandartsen-lokale-seo': {
+    en: '/branches/tandartsen/lokale-seo',
+    nl: '/nl/branches/tandartsen/lokale-seo'
+  },
+  'branches-fysiotherapeuten-website-laten-maken': {
+    en: '/branches/fysiotherapeuten/website-laten-maken',
+    nl: '/nl/branches/fysiotherapeuten/website-laten-maken'
   }
 }
 

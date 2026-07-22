@@ -13,6 +13,8 @@ type UIStrings = {
     marketingTagline: string
     development: string
     developmentTagline: string
+    industries: string
+    industriesTagline: string
     products: string
     productsTagline: string
     productsHeading: string
@@ -30,6 +32,8 @@ type UIStrings = {
     contactKvkLabel: string
     marketing: string
     development: string
+    industries: string
+    viewAllIndustries: string
     products: string
     company: string
     letsWork: string
@@ -78,6 +82,8 @@ export const UI: Record<Locale, UIStrings> = {
       marketingTagline: 'Grow your business online',
       development: 'Development Services',
       developmentTagline: 'Custom software solutions',
+      industries: 'Industries',
+      industriesTagline: 'Marketing by industry',
       products: 'Products',
       productsTagline: 'Ready-to-use solutions',
       productsHeading: 'Our Products',
@@ -96,6 +102,8 @@ export const UI: Record<Locale, UIStrings> = {
       contactKvkLabel: 'KVK',
       marketing: 'Marketing Solutions',
       development: 'Development Services',
+      industries: 'Industries',
+      viewAllIndustries: 'View all industries',
       products: 'Products',
       company: 'Company',
       letsWork: "Let's Work Together",
@@ -144,6 +152,8 @@ export const UI: Record<Locale, UIStrings> = {
       marketingTagline: 'Laat je bedrijf online groeien',
       development: 'Softwareontwikkeling',
       developmentTagline: 'Maatwerk softwareoplossingen',
+      industries: 'Branches',
+      industriesTagline: 'Marketing per branche',
       products: 'Producten',
       productsTagline: 'Direct inzetbare oplossingen',
       productsHeading: 'Onze producten',
@@ -162,6 +172,8 @@ export const UI: Record<Locale, UIStrings> = {
       contactKvkLabel: 'KvK',
       marketing: 'Marketingoplossingen',
       development: 'Softwareontwikkeling',
+      industries: 'Branches',
+      viewAllIndustries: 'Bekijk alle branches',
       products: 'Producten',
       company: 'Bedrijf',
       letsWork: 'Samen werken',

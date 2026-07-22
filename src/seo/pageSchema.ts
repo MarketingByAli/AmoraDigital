@@ -2009,6 +2009,1031 @@ export const pageSeoByKey: Record<RouteKey, PageSeoConfig> = {
     }
   },
 
+  branches: {
+    parents: ['home'],
+    pageType: 'CollectionPage',
+    locales: {
+      en: {
+        breadcrumbName: 'Industries',
+        faqs: [
+          {
+            question: 'What is online marketing by industry?',
+            answer:
+              'Online marketing by industry means websites, SEO and campaigns are tailored to the search intent, competition and customer journey of a specific sector — for example restaurants, dentists or real estate agents.'
+          },
+          {
+            question: 'Which industries does Amora Digital work with?',
+            answer:
+              'Amora Digital supports restaurants, dentists, physiotherapists, real estate agents, contractors, webshops, gyms and other local and national sectors with websites, SEO and online marketing.'
+          },
+          {
+            question: 'How do I request a quote?',
+            answer:
+              'Contact us via the contact page, email info@amoradigital.nl or call +31 6 25580415. We typically reply within one business day.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Branches',
+        faqs: [
+          {
+            question: 'Wat is online marketing per branche?',
+            answer:
+              'Online marketing per branche betekent dat websites, SEO en campagnes worden afgestemd op de zoekintentie, concurrentie en klantreis van een specifieke sector — bijvoorbeeld restaurants, tandartsen of makelaars.'
+          },
+          {
+            question: 'Voor welke branches werkt Amora Digital?',
+            answer:
+              'Amora Digital ondersteunt onder meer restaurants, tandartsen, fysiotherapeuten, makelaars, aannemers, webshops, sportscholen en andere lokale en landelijke sectoren met websites, SEO en online marketing.'
+          },
+          {
+            question: 'Hoe vraag ik een offerte aan?',
+            answer:
+              'Neem contact op via de contactpagina, mail info@amoradigital.nl of bel +31 6 25580415. We reageren doorgaans binnen één werkdag.'
+          }
+        ]
+      }
+    }
+  },
+
+  'branches-restaurants': {
+    parents: ['home', 'branches'],
+    pageType: 'CollectionPage',
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Online marketing for restaurants',
+      category: 'Digital Marketing',
+      offers: [
+        { name: 'Website design for restaurants' },
+        { name: 'Local SEO for restaurants' },
+        { name: 'Social media management for restaurants' },
+        { name: 'Google Ads for restaurants' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Restaurants & cafés',
+        serviceName: 'Online marketing for restaurants & cafés',
+        serviceDescription:
+          'Online marketing for restaurants and cafés: websites, local SEO, social media and Google Ads focused on more guests and reservations.',
+        faqs: [
+          {
+            question: 'How much does a restaurant website cost?',
+            answer:
+              'Investment depends on scope: menu, reservations, multilingual support and integrations. After a short call we provide a fixed quote. We always build mobile-first and SEO-ready.'
+          },
+          {
+            question: 'How long does local SEO take for a restaurant?',
+            answer:
+              'Early improvements to Google Business Profile and on-page SEO often show within a few weeks. Stable rankings for local search terms usually need several months of consistent optimisation and reviews.'
+          },
+          {
+            question: 'Can you help us get more reservations?',
+            answer:
+              'Yes. We combine a clear website CTA, local visibility and targeted ads or social so searchers book or call instead of only browsing.'
+          },
+          {
+            question: 'Is social media worth it for hospitality?',
+            answer:
+              'Yes, when it is consistent and links through to reservations or offers. We focus on content that mixes atmosphere with action — not posts without a goal.'
+          },
+          {
+            question: 'Do you also work with cafés and lunchrooms?',
+            answer:
+              'Yes. The approach applies to restaurants, cafés, lunchrooms and similar hospitality businesses that want more local guests.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Restaurants & cafés',
+        serviceName: 'Online marketing voor restaurants & cafés',
+        serviceDescription:
+          'Online marketing voor restaurants en cafés: websites, lokale SEO, social media en Google Ads gericht op meer gasten en reserveringen.',
+        faqs: [
+          {
+            question: 'Wat kost een website voor een restaurant?',
+            answer:
+              'De investering hangt af van scope: menu, reserveringen, meertaligheid en koppelingen. Na een kort gesprek geven we een vaste offerte. We bouwen altijd mobile-first en SEO-klaar op.'
+          },
+          {
+            question: 'Hoe lang duurt lokale SEO voor een restaurant?',
+            answer:
+              'Eerste verbeteringen aan Google Bedrijfsprofiel en on-page SEO zie je vaak binnen enkele weken. Stabiele rankings voor lokale zoektermen vragen meestal enkele maanden consistente optimalisatie en reviews.'
+          },
+          {
+            question: 'Kunnen jullie helpen met meer reserveringen?',
+            answer:
+              'Ja. We combineren een duidelijke website-CTA, lokale vindbaarheid en gerichte ads of social, zodat zoekers sneller boeken of bellen in plaats van alleen te kijken.'
+          },
+          {
+            question: 'Is social media zinvol voor horeca?',
+            answer:
+              'Ja, als het consistent is en doorlinkt naar reserveringen of aanbiedingen. We focussen op content die sfeer en actie combineert — geen losse posts zonder doel.'
+          },
+          {
+            question: 'Werken jullie ook voor cafés en lunchrooms?',
+            answer:
+              'Ja. De aanpak geldt voor restaurants, cafés, lunchrooms en vergelijkbare horecazaken die lokaal meer gasten willen aantrekken.'
+          }
+        ]
+      }
+    }
+  },
+
+  'branches-tandartsen': {
+    parents: ['home', 'branches'],
+    pageType: 'CollectionPage',
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Online marketing for dentists',
+      category: 'Digital Marketing',
+      offers: [
+        { name: 'Website design for dentists' },
+        { name: 'Local SEO for dentists' },
+        { name: 'Google Ads for dentists' },
+        { name: 'Social media for dentists' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Dentists',
+        serviceName: 'Online marketing for dentists',
+        serviceDescription:
+          'Online marketing for dental practices: websites, local SEO, Google Ads and social media focused on new patients and a fuller agenda.',
+        faqs: [
+          {
+            question: 'How much does a dental practice website cost?',
+            answer:
+              'Investment depends on scope: treatments, team pages, booking tools and integrations. After a short call we provide a fixed quote. We always build mobile-first and SEO-ready.'
+          },
+          {
+            question: 'How long does local SEO take for a dental practice?',
+            answer:
+              'Early improvements to Google Business Profile and on-page SEO often show within a few weeks. Stable rankings for local search terms usually need several months of consistent optimisation and reviews.'
+          },
+          {
+            question: 'Can you help us attract new patients?',
+            answer:
+              'Yes. We combine a clear website CTA, local visibility and targeted ads or social so searchers book or call instead of only browsing.'
+          },
+          {
+            question: 'Is Google Ads worth it for a dental practice?',
+            answer:
+              'Yes, when campaigns target high-intent searches such as new patients, implants or emergency care — with clear landing pages and tracking so you see cost per booking.'
+          },
+          {
+            question: 'Do you work with multi-location dental practices?',
+            answer:
+              'Yes. We can structure local pages, Google Business Profiles and campaigns for multiple locations while keeping one clear brand.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Tandartsen',
+        serviceName: 'Online marketing voor tandartsen',
+        serviceDescription:
+          'Online marketing voor tandartspraktijken: websites, lokale SEO, Google Ads en social media gericht op nieuwe patiënten en een vollere agenda.',
+        faqs: [
+          {
+            question: 'Wat kost een website voor een tandartspraktijk?',
+            answer:
+              'De investering hangt af van scope: behandelingen, teampagina’s, afspraaktools en koppelingen. Na een kort gesprek geven we een vaste offerte. We bouwen altijd mobile-first en SEO-klaar op.'
+          },
+          {
+            question: 'Hoe lang duurt lokale SEO voor een tandartspraktijk?',
+            answer:
+              'Eerste verbeteringen aan Google Bedrijfsprofiel en on-page SEO zie je vaak binnen enkele weken. Stabiele rankings voor lokale zoektermen vragen meestal enkele maanden consistente optimalisatie en reviews.'
+          },
+          {
+            question: 'Kunnen jullie helpen met nieuwe patiënten?',
+            answer:
+              'Ja. We combineren een duidelijke website-CTA, lokale vindbaarheid en gerichte ads of social, zodat zoekers sneller boeken of bellen in plaats van alleen te kijken.'
+          },
+          {
+            question: 'Is Google Ads de moeite waard voor een tandartspraktijk?',
+            answer:
+              'Ja, als campagnes mikken op zoekopdrachten met hoge intentie — zoals nieuwe patiënten, implantaten of spoedzorg — met duidelijke landingspagina’s en tracking zodat je kostprijs per afspraak ziet.'
+          },
+          {
+            question: 'Werken jullie ook met praktijken op meerdere locaties?',
+            answer:
+              'Ja. We kunnen lokale pagina’s, Google Bedrijfsprofielen en campagnes structureren voor meerdere locaties, met één duidelijke merkuitstraling.'
+          }
+        ]
+      }
+    }
+  },
+
+  'branches-fysiotherapeuten': {
+    parents: ['home', 'branches'],
+    pageType: 'CollectionPage',
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Online marketing for physiotherapists',
+      category: 'Digital Marketing',
+      offers: [
+        { name: 'Website design for physiotherapists' },
+        { name: 'Local SEO for physiotherapists' },
+        { name: 'Google Ads for physiotherapists' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Physiotherapists',
+        serviceName: 'Online marketing for physiotherapists',
+        serviceDescription:
+          'Online marketing for physiotherapy practices: websites, local SEO and Google Ads focused on new clients and a fuller agenda.',
+        faqs: [
+          {
+            question: 'How much does a physiotherapy website cost?',
+            answer:
+              'Investment depends on scope: treatments, team pages, booking tools and integrations. After a short call we provide a fixed quote. We always build mobile-first and SEO-ready.'
+          },
+          {
+            question: 'How long does local SEO take for a physio practice?',
+            answer:
+              'Early improvements to Google Business Profile and on-page SEO often show within a few weeks. Stable rankings for local search terms usually need several months of consistent optimisation and reviews.'
+          },
+          {
+            question: 'Can you help us attract new clients?',
+            answer:
+              'Yes. We combine a clear website CTA, local visibility and targeted ads so searchers book or call instead of only browsing.'
+          },
+          {
+            question: 'Does local SEO matter for a physiotherapy practice?',
+            answer:
+              'Yes. Most clients search nearby for a physiotherapist. Strong local SEO and a well-managed Google Business Profile help you show up when they need care.'
+          },
+          {
+            question: 'Do you work with multi-location physio practices?',
+            answer:
+              'Yes. We can structure local pages, Google Business Profiles and campaigns for multiple locations while keeping one clear brand.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Fysiotherapeuten',
+        serviceName: 'Online marketing voor fysiotherapeuten',
+        serviceDescription:
+          'Online marketing voor fysiotherapiepraktijken: websites, lokale SEO en Google Ads gericht op nieuwe cliënten en een vollere agenda.',
+        faqs: [
+          {
+            question: 'Wat kost een website voor een fysiotherapiepraktijk?',
+            answer:
+              'De investering hangt af van scope: behandelingen, teampagina’s, afspraaktools en koppelingen. Na een kort gesprek geven we een vaste offerte. We bouwen altijd mobile-first en SEO-klaar op.'
+          },
+          {
+            question: 'Hoe lang duurt lokale SEO voor een fysiopraktijk?',
+            answer:
+              'Eerste verbeteringen aan Google Bedrijfsprofiel en on-page SEO zie je vaak binnen enkele weken. Stabiele rankings voor lokale zoektermen vragen meestal enkele maanden consistente optimalisatie en reviews.'
+          },
+          {
+            question: 'Kunnen jullie helpen met nieuwe cliënten?',
+            answer:
+              'Ja. We combineren een duidelijke website-CTA, lokale vindbaarheid en gerichte ads, zodat zoekers sneller boeken of bellen in plaats van alleen te kijken.'
+          },
+          {
+            question: 'Is lokale SEO belangrijk voor een fysiotherapiepraktijk?',
+            answer:
+              'Ja. De meeste cliënten zoeken dichtbij naar een fysiotherapeut. Sterke lokale SEO en een goed Google Bedrijfsprofiel helpen je zichtbaar te zijn wanneer zij zorg nodig hebben.'
+          },
+          {
+            question: 'Werken jullie ook met praktijken op meerdere locaties?',
+            answer:
+              'Ja. We kunnen lokale pagina’s, Google Bedrijfsprofielen en campagnes structureren voor meerdere locaties, met één duidelijke merkuitstraling.'
+          }
+        ]
+      }
+    }
+  },
+
+  'branches-kappers-schoonheidssalons': {
+    parents: ['home', 'branches'],
+    pageType: 'CollectionPage',
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Online marketing for hair & beauty salons',
+      category: 'Digital Marketing',
+      offers: [
+        { name: 'Website design for hair & beauty salons' },
+        { name: 'Local SEO for hair & beauty salons' },
+        { name: 'Social media for hair & beauty salons' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Hairdressers & beauty salons',
+        serviceName: 'Online marketing for hairdressers & beauty salons',
+        serviceDescription:
+          'Online marketing for hair and beauty salons: websites, local SEO and social media focused on more bookings and a fuller agenda.',
+        faqs: [
+          {
+            question: 'How much does a salon website cost?',
+            answer:
+              'Investment depends on scope: services, portfolio, booking tools and integrations. After a short call we provide a fixed quote. We always build mobile-first and SEO-ready.'
+          },
+          {
+            question: 'Can you help us get more bookings?',
+            answer:
+              'Yes. We combine a clear website CTA, local visibility on Google Maps and social content that drives clients to book instead of only browsing.'
+          },
+          {
+            question: 'Is social media worth it for a salon?',
+            answer:
+              'Yes — especially for a visual industry. Consistent Instagram and social content that shows your work and links to booking converts followers into appointments.'
+          },
+          {
+            question: 'How do we show up on Google Maps locally?',
+            answer:
+              'Through local SEO and a well-optimised Google Business Profile: correct NAP details, categories, photos, reviews and posts so nearby clients find you when they search.'
+          },
+          {
+            question: 'Do you work with both hairdressers and beauty salons?',
+            answer:
+              'Yes. The approach fits hair salons, beauty salons and combined concepts that want more local bookings online.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Kappers & schoonheidssalons',
+        serviceName: 'Online marketing voor kappers & schoonheidssalons',
+        serviceDescription:
+          'Online marketing voor kappers en schoonheidssalons: websites, lokale SEO en social media gericht op meer boekingen en een vollere agenda.',
+        faqs: [
+          {
+            question: 'Wat kost een website voor een salon?',
+            answer:
+              'De investering hangt af van scope: diensten, portfolio, afspraaktools en koppelingen. Na een kort gesprek geven we een vaste offerte. We bouwen altijd mobile-first en SEO-klaar op.'
+          },
+          {
+            question: 'Kunnen jullie helpen met meer boekingen?',
+            answer:
+              'Ja. We combineren een duidelijke website-CTA, lokale vindbaarheid op Google Maps en social content die klanten aanzet tot boeken in plaats van alleen kijken.'
+          },
+          {
+            question: 'Is social media de moeite waard voor een salon?',
+            answer:
+              'Ja — vooral in een visuele branche. Consistente Instagram- en social content die je werk laat zien en doorlinkt naar boeken, zet volgers om in afspraken.'
+          },
+          {
+            question: 'Hoe komen we lokaal in Google Maps?',
+            answer:
+              'Via lokale SEO en een goed geoptimaliseerd Google Bedrijfsprofiel: juiste NAP-gegevens, categorieën, foto’s, reviews en posts, zodat klanten in de buurt je vinden als ze zoeken.'
+          },
+          {
+            question: 'Werken jullie voor kappers én schoonheidssalons?',
+            answer:
+              'Ja. De aanpak past bij kapperszaken, schoonheidssalons en combinatieconcepten die lokaal meer boekingen online willen.'
+          }
+        ]
+      }
+    }
+  },
+
+  'branches-makelaars': {
+    parents: ['home', 'branches'],
+    pageType: 'CollectionPage',
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Online marketing for real estate agents',
+      category: 'Digital Marketing',
+      offers: [
+        { name: 'Website design for real estate agents' },
+        { name: 'Local SEO for real estate agents' },
+        { name: 'Google Ads for real estate agents' },
+        { name: 'Social media for real estate agents' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Real estate agents',
+        serviceName: 'Online marketing for real estate agents',
+        serviceDescription:
+          'Online marketing for estate agents: websites, local SEO, Google Ads and social media focused on more listings and buyer/seller leads.',
+        faqs: [
+          {
+            question: 'How much does a real estate agency website cost?',
+            answer:
+              'Investment depends on scope: listings, valuations, CRM integrations and lead forms. After a short call we provide a fixed quote. We always build mobile-first and SEO-ready.'
+          },
+          {
+            question: 'Can you help us generate listing and seller leads?',
+            answer:
+              'Yes. We combine a clear website CTA, local rankings for “estate agent [city]” and targeted ads or social so sellers enquire with you first.'
+          },
+          {
+            question: 'Is Google Ads worth it for an estate agent?',
+            answer:
+              'Yes, when campaigns target high-intent searches such as valuations and selling a home — with clear landing pages and tracking so you see cost per lead.'
+          },
+          {
+            question: 'How do we rank locally for “makelaar [city]”?',
+            answer:
+              'Through local SEO: city and neighbourhood pages, Google Business Profile optimisation, reviews and content that match how buyers and sellers search in your market.'
+          },
+          {
+            question: 'Do you work with multi-office agencies?',
+            answer:
+              'Yes. We can structure local pages, profiles and campaigns for multiple offices while keeping one clear brand.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Makelaars',
+        serviceName: 'Online marketing voor makelaars',
+        serviceDescription:
+          'Online marketing voor makelaars: websites, lokale SEO, Google Ads en social media gericht op meer opdrachten en koper-/verkoperleads.',
+        faqs: [
+          {
+            question: 'Wat kost een website voor een makelaarskantoor?',
+            answer:
+              'De investering hangt af van scope: woningen, taxaties, CRM-koppelingen en leadformulieren. Na een kort gesprek geven we een vaste offerte. We bouwen altijd mobile-first en SEO-klaar op.'
+          },
+          {
+            question: 'Kunnen jullie helpen met opdracht- en verkoperleads?',
+            answer:
+              'Ja. We combineren een duidelijke website-CTA, lokale rankings op “makelaar [stad]” en gerichte ads of social, zodat verkopers eerder bij jou aankloppen.'
+          },
+          {
+            question: 'Is Google Ads de moeite waard voor een makelaar?',
+            answer:
+              'Ja, als campagnes mikken op zoekopdrachten met hoge intentie — zoals taxatie of huis verkopen — met duidelijke landingspagina’s en tracking zodat je kostprijs per lead ziet.'
+          },
+          {
+            question: 'Hoe scoren we lokaal op “makelaar [stad]”?',
+            answer:
+              'Via lokale SEO: stads- en buurtpagina’s, Google Bedrijfsprofiel-optimalisatie, reviews en content die aansluit op hoe kopers en verkopers in jouw markt zoeken.'
+          },
+          {
+            question: 'Werken jullie ook met kantoren op meerdere locaties?',
+            answer:
+              'Ja. We kunnen lokale pagina’s, profielen en campagnes structureren voor meerdere vestigingen, met één duidelijke merkuitstraling.'
+          }
+        ]
+      }
+    }
+  },
+
+  'branches-restaurants-lokale-seo': {
+    parents: ['home', 'branches', 'branches-restaurants'],
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Local SEO for restaurants',
+      category: 'Digital Marketing',
+      offers: [
+        { name: 'Google Business Profile for restaurants' },
+        { name: 'Google Maps / local pack optimisation' },
+        { name: 'Restaurant review growth' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Local SEO for restaurants',
+        serviceName: 'Local SEO for restaurants',
+        serviceDescription:
+          'Local SEO for restaurants focused on Google Business Profile, Google Maps, reviews, menu signals and neighbourhood keywords that help diners find and choose your venue — without ranking guarantees.',
+        faqs: [
+          {
+            question: 'How do I rank higher on Google Maps as a restaurant?',
+            answer:
+              'Strengthen Google Business Profile with correct hospitality categories, accurate kitchen hours, fresh dish photos, menu links and a Reserve button, then grow recent Google reviews and keep NAP consistent. Local SEO improves map visibility over time; we do not promise a specific Maps position.'
+          },
+          {
+            question: 'How long does local SEO take for a restaurant?',
+            answer:
+              'GBP and review improvements often show within a few weeks. Stable presence in the local pack for competitive “restaurant [city]” or cuisine terms usually needs several months of consistent work. Timelines depend on competition, review velocity and how complete your profile is today.'
+          },
+          {
+            question: 'How do I get more Google reviews for my restaurant?',
+            answer:
+              'Ask after a strong service moment — when the bill is settled or a regular leaves happy — with a short, direct Google review link. We help set a simple floor process so requests are consistent without pressuring guests during peak dinner.'
+          },
+          {
+            question: 'Does local SEO work for a single restaurant location?',
+            answer:
+              'Yes. Most restaurant local SEO engagements start with one venue and its catchment: city, neighbourhood and cuisine queries. Multi-location brands need separate profiles and local pages per kitchen.'
+          },
+          {
+            question: 'What is the difference between restaurant local SEO and a restaurant website?',
+            answer:
+              'Local SEO is about being found in Maps and local search. A restaurant website converts that traffic with menu, reservations and photos. They support each other; this page covers findability, while our restaurant website spoke covers the site build.'
+          },
+          {
+            question: 'Should my restaurant use the Reserve button in Google?',
+            answer:
+              'If you take table bookings, yes when it connects cleanly to your reservation flow. It turns a Maps tap into booking intent. We only enable it when hours and booking capacity match what guests will experience tonight.'
+          },
+          {
+            question: 'Can local SEO help with “Italian restaurant near me” type searches?',
+            answer:
+              'That is exactly the query class we target: cuisine + near-me and “restaurant [city/district]”. We align GBP categories, on-site local signals and content with how diners search for your kitchen — not generic business keywords.'
+          },
+          {
+            question: 'Do you guarantee first place in the Google local pack?',
+            answer:
+              'No. No ethical local SEO provider can guarantee rankings. We set realistic expectations, improve the signals Google uses for restaurants, and report on impressions, calls, routes and clicks toward more covers.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Lokale SEO voor restaurants',
+        serviceName: 'Lokale SEO voor restaurants',
+        serviceDescription:
+          'Lokale SEO voor restaurants gericht op Google Bedrijfsprofiel, Google Maps, reviews, menusignalen en buurtzoekwoorden die diners helpen jouw zaak te vinden en te kiezen — zonder rankinggaranties.',
+        faqs: [
+          {
+            question: 'Hoe kom ik hoger in Google Maps als restaurant?',
+            answer:
+              'Versterk Google Bedrijfsprofiel met juiste horecacategorieën, kloppende keukentijden, verse gerechtfoto’s, menulinks en een Reserveer-knop, en groei recente Google-reviews met consistente NAP. Lokale SEO verbetert kaartzichtbaarheid over tijd; we beloven geen vaste Maps-positie.'
+          },
+          {
+            question: 'Hoe lang duurt lokale SEO voor een restaurant?',
+            answer:
+              'GBP- en reviewverbeteringen zie je vaak binnen enkele weken. Stabiele aanwezigheid in de local pack voor concurrerende “restaurant [stad]”- of keukentermen vraagt meestal enkele maanden consistent werk. Doorlooptijd hangt af van concurrentie, reviewtempo en hoe compleet je profiel nu is.'
+          },
+          {
+            question: 'Hoe krijg ik meer Google-reviews voor mijn restaurant?',
+            answer:
+              'Vraag na een sterk servicemoment — na de rekening of als een stamgast blij vertrekt — met een korte, directe Google-reviewlink. We helpen een eenvoudig vloerenproces opzetten zodat verzoeken consistent zijn zonder gasten tijdens piekdiner te pushen.'
+          },
+          {
+            question: 'Werkt lokale SEO voor één restaurantlocatie?',
+            answer:
+              'Ja. De meeste lokale SEO-trajecten voor restaurants starten met één zaak en het verzorgingsgebied: stad, wijk en keukenqueries. Multi-locatiemerken hebben aparte profielen en lokale pagina’s per keuken nodig.'
+          },
+          {
+            question: 'Wat is het verschil tussen lokale SEO en een restaurantwebsite?',
+            answer:
+              'Lokale SEO gaat over gevonden worden in Maps en lokaal zoeken. Een restaurantwebsite converteert dat verkeer met menu, reserveringen en foto’s. Ze versterken elkaar; deze pagina gaat over vindbaarheid, de restaurantwebsite-spoke over de sitebouw.'
+          },
+          {
+            question: 'Moet mijn restaurant de Reserveer-knop in Google gebruiken?',
+            answer:
+              'Als je tafelboekingen aanneemt: ja, wanneer die netjes aansluit op je reserveringsflow. Zo wordt een Maps-tik boekingsintentie. We zetten hem alleen aan als tijden en capaciteit kloppen met wat gasten vanavond ervaren.'
+          },
+          {
+            question: 'Helpt lokale SEO bij zoekopdrachten zoals “Italiaans restaurant bij mij”?',
+            answer:
+              'Dat is precies de queryklasse waarop we mikken: keuken + bij mij en “restaurant [stad/wijk]”. We stemmen GBP-categorieën, on-site lokale signalen en content af op hoe diners naar jouw keuken zoeken — geen generieke bedrijfszoekwoorden.'
+          },
+          {
+            question: 'Garanderen jullie een eerste plek in de Google local pack?',
+            answer:
+              'Nee. Geen ethische lokale SEO-partij kan rankings garanderen. We zetten realistische verwachtingen, verbeteren de signalen die Google voor restaurants gebruikt, en rapporteren over impressies, belacties, routes en klikken richting meer covers.'
+          }
+        ]
+      }
+    }
+  },
+
+  'branches-restaurants-website-laten-maken': {
+    parents: ['home', 'branches', 'branches-restaurants'],
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Website design for restaurants',
+      category: 'Web Development',
+      offers: [
+        { name: 'Restaurant website with reservations' },
+        { name: 'Digital menu website' },
+        { name: 'Mobile booking path for hospitality' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Website design for restaurants',
+        serviceName: 'Website design for restaurants',
+        serviceDescription:
+          'Restaurant website design with online reservations, digital menu, dish photography layouts, Google Maps findability and mobile booking — built to fill tables, not look like a corporate brochure.',
+        faqs: [
+          {
+            question: 'How much does a website for a restaurant cost?',
+            answer:
+              'Cost depends on menu complexity, whether you need an integrated online reservation system, multilingual pages, takeaway flows and photo production. After a short intake we send a fixed quote by package — Essential, reservation-ready or multi-location — not open-ended hourly billing mid-build.'
+          },
+          {
+            question: 'Do I need an online reservation system on my restaurant website?',
+            answer:
+              'If guests already book by phone or Instagram DM during service, yes — an online reservation system frees the floor team and captures bookings outside opening hours. Smaller lunch spots sometimes start with a strong call button and a simple form; full table booking pays off when dinner covers matter most.'
+          },
+          {
+            question: 'How long does a restaurant website project take?',
+            answer:
+              'Most restaurant websites launch in about four to eight weeks, depending on how ready the menu content and food photography are, and which reservation tool we integrate. Discovery covers your service flow first so we do not rebuild a generic brochure site.'
+          },
+          {
+            question: 'Can I update the digital menu myself?',
+            answer:
+              'Yes. We set up an editable digital menu so your team can change dishes, prices, allergens and seasonal specials after a chalkboard update — without waiting on a developer for every lunch deal.'
+          },
+          {
+            question: 'Should restaurant websites include takeaway and delivery links?',
+            answer:
+              'When takeaway or delivery is part of your revenue, yes — with clear buttons to your pickup flow or delivery platforms. We keep the dine-in “Reserve a table” CTA prominent so marketplace links do not bury the bookings that fill seats in the dining room.'
+          },
+          {
+            question: 'How does a restaurant website help with Google Maps and local search?',
+            answer:
+              'We structure address, map, opening hours and LocalBusiness signals so neighbourhood and “near me” searches point to your venue. The website supports Google Maps clicks with a clear menu and reservation path, not a dead-end homepage.'
+          },
+          {
+            question: 'Do you also design websites for cafés and lunchrooms?',
+            answer:
+              'Yes. The same hospitality approach applies to restaurants, cafés, lunchrooms and similar venues that need menu clarity, kitchen hours and a booking or visit path built for local guests.'
+          },
+          {
+            question: 'What makes a restaurant website different from a normal business website?',
+            answer:
+              'Guests decide in seconds based on dishes, hours and how easy it is to reserve. We prioritise digital menu, allergen info, food photography, peak-service booking and local findability — not a corporate “Services” page with a contact form at the bottom.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Website laten maken voor restaurants',
+        serviceName: 'Website laten maken voor restaurants',
+        serviceDescription:
+          'Restaurantwebsite laten maken met online reserveringen, digitale menukaart, layouts voor foodfotografie, Google Maps-vindbaarheid en mobiel boeken — gebouwd om tafels te vullen, geen corporate brochure.',
+        faqs: [
+          {
+            question: 'Wat kost een website voor een restaurant?',
+            answer:
+              'De kosten hangen af van menukaartcomplexiteit, of je een geïntegreerd online reserveringssysteem nodig hebt, meertalige pagina’s, afhaalflows en fotografie. Na een korte intake sturen we een vaste offerte per package — Essential, reserveringsklaar of multi-locatie — geen open uurtje-factuurtje halverwege de bouw.'
+          },
+          {
+            question: 'Heb ik een reserveringssysteem nodig op mijn restaurantwebsite?',
+            answer:
+              'Als gasten nu via telefoon of Instagram-DM boeken tijdens de service: ja — een online reserveringssysteem ontlast de vloer en vangt boekingen buiten openingstijden. Kleine lunchzaken starten soms met een sterke belknop en een eenvoudig formulier; volledige tafelboeking loont vooral als dinercovers het verschil maken.'
+          },
+          {
+            question: 'Hoe lang duurt het om een restaurantwebsite te laten maken?',
+            answer:
+              'De meeste restaurantwebsites gaan in ongeveer vier tot acht weken live, afhankelijk van hoe klaar menucontent en foodfotografie zijn en welk reserveringssysteem we koppelen. Discovery begint bij jouw serviceflow, zodat we geen generieke brochure-site bouwen.'
+          },
+          {
+            question: 'Kan ik zelf de menukaart aanpassen?',
+            answer:
+              'Ja. We richten een bewerkbare digitale menukaart in, zodat je team gerechten, prijzen, allergenen en seizoensspecials kan wijzigen na een bordupdate — zonder voor elke lunchdeal op een developer te wachten.'
+          },
+          {
+            question: 'Moet een restaurantwebsite afhalen en bezorgplatforms tonen?',
+            answer:
+              'Als afhalen of bezorgen bij je omzet hoort: ja — met duidelijke knoppen naar je afhaalflow of bezorgplatforms. We houden de dine-in-CTA “Reserveer een tafel” prominent, zodat marketplace-links de boekingen die stoelen in de zaak vullen niet begraven.'
+          },
+          {
+            question: 'Hoe helpt een restaurantwebsite bij Google Maps en lokaal zoeken?',
+            answer:
+              'We structureren adres, kaart, openingstijden en LocalBusiness-signalen zodat buurt- en “bij mij in de buurt”-zoekopdrachten naar jouw zaak wijzen. De website ondersteunt Google Maps-klikken met een duidelijke menukaart en reserveringspad, geen doodlopende homepage.'
+          },
+          {
+            question: 'Maken jullie ook websites voor cafés en lunchrooms?',
+            answer:
+              'Ja. Dezelfde horeca-aanpak geldt voor restaurants, cafés, lunchrooms en vergelijkbare zaken die menuduidelijkheid, keukentijden en een boek- of bezoekpad voor lokale gasten nodig hebben.'
+          },
+          {
+            question: 'Wat maakt een restaurantwebsite anders dan een gewone bedrijfswebsite?',
+            answer:
+              'Gasten beslissen in seconden op basis van gerechten, tijden en hoe makkelijk ze reserveren. Wij zetten digitale menukaart, allergeneninfo, foodfotografie, piekservice-boekingen en lokale vindbaarheid voorop — geen corporate “Diensten”-pagina met onderaan een contactformulier.'
+          }
+        ]
+      }
+    }
+  },
+
+  'branches-tandartsen-lokale-seo': {
+    parents: ['home', 'branches', 'branches-tandartsen'],
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Local SEO for dentists',
+      category: 'Digital Marketing',
+      offers: [
+        { name: 'Google Business Profile for dental practices' },
+        { name: 'Google Maps / local pack for dentists' },
+        { name: 'Patient review growth for dental practices' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Local SEO for dentists',
+        serviceName: 'Local SEO for dentists',
+        serviceDescription:
+          'Local SEO for dental practices focused on Google Business Profile, Google Maps, patient reviews, new-patient city keywords and emergency-intent search — without ranking guarantees.',
+        faqs: [
+          {
+            question: 'How do I rank higher on Google as a dentist?',
+            answer:
+              'Strengthen Google Business Profile with correct dental categories, accurate clinic hours, fresh practice photos, clear “accepting new patients” signals and a booking or call action, then grow recent patient reviews and keep NAP consistent. Local SEO improves visibility over time; we do not promise a specific ranking.'
+          },
+          {
+            question: 'How do I get more patient reviews?',
+            answer:
+              'Set up a simple, ethical request habit after check-ups or completed treatment, make the Google review link easy for reception to share, and reply to reviews with a professional tone. Volume and recency matter for how new patients choose a practice in the map pack.'
+          },
+          {
+            question: 'How long does local SEO take for a dental practice?',
+            answer:
+              'Early GBP and review improvements often show within a few weeks. Stable map-pack presence for competitive “dentist [city]” terms usually needs several months of consistent optimisation. Timelines depend on competition and how complete your profile already is.'
+          },
+          {
+            question: 'Does local SEO work for practices with multiple locations?',
+            answer:
+              'Yes. We structure separate profiles, local pages and review flows per site so each practice competes in its own catchment, instead of one address cannibalising another.'
+          },
+          {
+            question: 'Can local SEO help with emergency dentist searches?',
+            answer:
+              'Where emergency or urgent care is part of how you work, we align GBP categories, hours notes and on-site signals so pain-related local searches can find you — without overselling services you do not offer out of hours.'
+          },
+          {
+            question: 'Do you guarantee first place in the Google local pack?',
+            answer:
+              'No. No ethical local SEO partner can guarantee rankings. We set realistic expectations, improve the signals Google uses for dental practices, and report on impressions, calls, routes and clicks toward more new-patient enquiries.'
+          },
+          {
+            question: 'How is this different from building a dental website?',
+            answer:
+              'The website spoke is about converting visitors with treatments, booking and registration. This local SEO spoke is about being found in Maps and local search first. They work best together, but they are different engagements.'
+          },
+          {
+            question: 'Should we target insurance or reimbursement keywords?',
+            answer:
+              'When it matches how patients search in your area, yes — paired with clear on-site explanations. We avoid thin doorway pages and keep intent tied to real services your practice offers.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Lokale SEO voor tandartsen',
+        serviceName: 'Lokale SEO voor tandartsen',
+        serviceDescription:
+          'Lokale SEO voor tandartspraktijken gericht op Google Bedrijfsprofiel, Google Maps, patiëntreviews, nieuw-patiënt stadszoekwoorden en spoedintentie — zonder rankinggaranties.',
+        faqs: [
+          {
+            question: 'Hoe kom ik hoger in Google als tandarts?',
+            answer:
+              'Versterk Google Bedrijfsprofiel met juiste tandheelkundige categorieën, accurate praktijktijden, verse praktijkfoto’s, duidelijke signalen of jullie nieuwe patiënten aannemen en een boek- of belactie, groei daarna recente patiëntreviews en houd NAP consistent. Lokale SEO verbetert zichtbaarheid in de tijd; we beloven geen specifieke ranking.'
+          },
+          {
+            question: 'Hoe krijg ik meer patiëntreviews?',
+            answer:
+              'Zet een eenvoudige, ethische verzoekgewoonte op na controles of afgeronde behandeling, maak de Google-reviewlink makkelijk deelbaar voor de balie, en beantwoord reviews professioneel. Volume en recentheid tellen mee bij hoe nieuwe patiënten een praktijk in de kaartpack kiezen.'
+          },
+          {
+            question: 'Hoe lang duurt lokale SEO voor een tandartspraktijk?',
+            answer:
+              'Eerste GBP- en reviewverbeteringen zie je vaak binnen enkele weken. Stabiele kaartpack-aanwezigheid op concurrerende “tandarts [stad]”-termen vraagt meestal enkele maanden consistente optimalisatie. Doorlooptijd hangt af van concurrentie en hoe compleet je profiel al is.'
+          },
+          {
+            question: 'Werkt lokale SEO voor meerdere locaties?',
+            answer:
+              'Ja. We structureren aparte profielen, lokale pagina’s en reviewflows per vestiging zodat elke praktijk in het eigen verzorgingsgebied concurreert, in plaats van dat één adres een ander kannibaliseert.'
+          },
+          {
+            question: 'Helpt lokale SEO bij spoedtandarts-zoekopdrachten?',
+            answer:
+              'Als spoed- of urgente zorg bij hoe jullie werken hoort, stemmen we GBP-categorieën, tijdsnotities en on-site signalen af zodat pijn-gerelateerde lokale zoekopdrachten jullie kunnen vinden — zonder diensten te beloven die jullie buiten openingstijden niet bieden.'
+          },
+          {
+            question: 'Garanderen jullie een eerste plek in de Google local pack?',
+            answer:
+              'Nee. Geen ethische lokale SEO-partij kan rankings garanderen. We zetten realistische verwachtingen, verbeteren de signalen die Google voor tandartspraktijken gebruikt, en rapporteren over impressies, belacties, routes en klikken richting meer nieuw-patiëntaanvragen.'
+          },
+          {
+            question: 'Wat is het verschil met een tandartswebsite laten maken?',
+            answer:
+              'De website-spoke gaat over converteren met behandelingen, boeken en inschrijven. Deze lokale SEO-spoke gaat over eerst gevonden worden in Maps en lokaal zoeken. Samen werken ze het best, maar het zijn verschillende trajecten.'
+          },
+          {
+            question: 'Moeten we mikken op verzekering- of vergoedingszoekwoorden?',
+            answer:
+              'Als dat past bij hoe patiënten in jouw regio zoeken: ja — gekoppeld aan duidelijke uitleg op de site. We vermijden dunne doorway-pagina’s en houden intentie gekoppeld aan diensten die jullie écht aanbieden.'
+          }
+        ]
+      }
+    }
+  },
+
+  'branches-tandartsen-website-laten-maken': {
+    parents: ['home', 'branches', 'branches-tandartsen'],
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Website design for dentists',
+      category: 'Web Development',
+      offers: [
+        { name: 'Dental practice website with online appointments' },
+        { name: 'New patient registration website' },
+        { name: 'Treatments and fees pages for dentists' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Website design for dentists',
+        serviceName: 'Website design for dentists',
+        serviceDescription:
+          'Dental practice website design with online appointments, treatment and fee pages, new-patient registration, anxiety and emergency info, and privacy-aware patient journeys — built to fill the agenda, not look like a generic brochure.',
+        faqs: [
+          {
+            question: 'How much does a website for a dental practice cost?',
+            answer:
+              'Cost depends on treatment complexity, whether you need an integrated online appointment planner, new-patient registration, multilingual pages and practice photography. After a short intake we send a fixed quote by package — Essential, booking-ready or multi-location — not open-ended hourly billing mid-build.'
+          },
+          {
+            question: 'Can patients book an appointment online?',
+            answer:
+              'Yes. We connect the appointment planner your practice already uses, or set up a clear booking path for check-ups, hygienist visits and follow-ups so patients book without calling reception during clinic hours.'
+          },
+          {
+            question: 'How do I attract new patients through a dental website?',
+            answer:
+              'Show clearly whether you accept new patients, explain key treatments and fees where appropriate, add patient reviews, and make registration and booking one tap away. Local SEO and ads can bring traffic later; the website must convert that traffic into agenda slots.'
+          },
+          {
+            question: 'Is a dental practice website AVG / GDPR compliant?',
+            answer:
+              'We design forms and booking journeys with privacy in mind: clear consent, collecting only what intake needs, and language that reassures patients about how medical details are handled. Your practice remains responsible for clinical systems and data processing agreements with software vendors.'
+          },
+          {
+            question: 'How long does a dental website project take?',
+            answer:
+              'Most practice websites launch in about four to eight weeks, depending on how ready treatment content and team photos are, and which booking tool we integrate. Discovery starts with your intake and agenda so we do not build a generic clinic template.'
+          },
+          {
+            question: 'Can we update treatments and “accepting new patients” ourselves?',
+            answer:
+              'Yes. Reception can update treatment copy, fee notes and whether you accept new patients — without waiting on a developer when the agenda is full or a hygienist joins the team.'
+          },
+          {
+            question: 'Do you also build sites for practices with a dental hygienist?',
+            answer:
+              'Yes. We create clear paths for hygienist appointments alongside dentist bookings and referral information, so patients and referring colleagues reach the right agenda.'
+          },
+          {
+            question: 'Should the website include emergency and dental anxiety information?',
+            answer:
+              'Yes when it matches how you work. Clear emergency or on-call guidance and calm anxiety-friendly copy help patients in pain or with fear choose you — and reduce wrong calls to reception.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Website laten maken voor tandartsen',
+        serviceName: 'Website laten maken voor tandartsen',
+        serviceDescription:
+          'Praktijkwebsite laten maken voor tandartsen met online afspraken, behandel- en tariefpagina’s, inschrijving nieuwe patiënten, angst- en spoedinfo, en AVG-bewuste patiëntreizen — gebouwd om de agenda te vullen, geen generieke brochure.',
+        faqs: [
+          {
+            question: 'Wat kost een website voor een tandartspraktijk?',
+            answer:
+              'De kosten hangen af van behandelcomplexiteit, of je een geïntegreerde online afsprakenplanner nodig hebt, inschrijving voor nieuwe patiënten, meertalige pagina’s en praktijksfotografie. Na een korte intake sturen we een vaste offerte per package — Essential, boekingsklaar of multi-locatie — geen open uurtje-factuurtje halverwege de bouw.'
+          },
+          {
+            question: 'Kunnen patiënten online een afspraak maken?',
+            answer:
+              'Ja. We koppelen de afsprakenplanner die jullie al gebruiken, of richten een duidelijk boekpad in voor controles, mondhygiëne en vervolgafspraken, zodat patiënten boeken zonder te bellen tijdens spreekuur.'
+          },
+          {
+            question: 'Hoe trek ik nieuwe patiënten aan via een tandartswebsite?',
+            answer:
+              'Toon duidelijk of jullie nieuwe patiënten aannemen, leg kernbehandelingen en tarieven waar passend uit, voeg patiëntreviews toe, en maak inschrijven en boeken één tik verwijderd. Lokale SEO en ads brengen later verkeer; de website moet dat verkeer omzetten in agendaplekken.'
+          },
+          {
+            question: 'Is de website AVG-proof?',
+            answer:
+              'We ontwerpen formulieren en boekflows met privacy in gedachten: duidelijke toestemming, alleen verzamelen wat intake nodig heeft, en taal die patiënten geruststelt over medische gegevens. Jullie praktijk blijft verantwoordelijk voor klinische systemen en verwerkersafspraken met softwareleveranciers.'
+          },
+          {
+            question: 'Hoe lang duurt het om een tandartswebsite te laten maken?',
+            answer:
+              'De meeste praktijkwebsites gaan in ongeveer vier tot acht weken live, afhankelijk van hoe klaar behandelcontent en teamfoto’s zijn en welk boekingssysteem we koppelen. Discovery begint bij jullie intake en agenda, zodat we geen generiek kliniektemplate bouwen.'
+          },
+          {
+            question: 'Kunnen we zelf behandelingen en “nieuwe patiënten aannemen” aanpassen?',
+            answer:
+              'Ja. De balie kan behandelteksten, tariefnotities en of jullie nieuwe patiënten aannemen bijwerken — zonder op een developer te wachten wanneer de agenda vol is of er een mondhygiënist bijkomt.'
+          },
+          {
+            question: 'Maken jullie ook sites voor praktijken met een mondhygiënist?',
+            answer:
+              'Ja. We maken duidelijke paden voor mondhygiënist-afspraken naast tandartsboekingen en verwijsinfo, zodat patiënten en verwijzende collega’s de juiste agenda bereiken.'
+          },
+          {
+            question: 'Moet de website spoed- en angstinformatie bevatten?',
+            answer:
+              'Ja als dat past bij hoe jullie werken. Duidelijke spoed- of nooddienstinfo en rustige angstvriendelijke copy helpen patiënten met pijn of angst voor jullie te kiezen — en verminderen verkeerde belletjes naar de balie.'
+          }
+        ]
+      }
+    }
+  },
+
+  'branches-fysiotherapeuten-website-laten-maken': {
+    parents: ['home', 'branches', 'branches-fysiotherapeuten'],
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Website design for physiotherapists',
+      category: 'Web Development',
+      offers: [
+        { name: 'Physiotherapy website with online booking' },
+        { name: 'Specialisations and DTF explanation pages' },
+        { name: 'Insurance and reimbursement info for physio practices' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Website design for physiotherapists',
+        serviceName: 'Website design for physiotherapists',
+        serviceDescription:
+          'Physiotherapy website design with online appointments, specialisation pages, direct-access (DTF) and insurance answers, body-area complaint paths and mobile booking — built to fill treatment rooms, not look like a generic clinic brochure.',
+        faqs: [
+          {
+            question: 'How much does a website for a physio practice cost?',
+            answer:
+              'Cost depends on how many specialisations you present, whether you need an integrated online planner, DTF and reimbursement pages, multilingual content and practice photography. After a short intake we send a fixed quote by package — Essential, booking-ready or multi-location — not open-ended hourly billing mid-build.'
+          },
+          {
+            question: 'Can clients book an appointment online?',
+            answer:
+              'Yes. We connect the appointment planner your practice already uses, or set up a clear booking path for intakes and follow-ups so clients book without calling during treatment hours.'
+          },
+          {
+            question: 'How do I attract new clients through a physio website?',
+            answer:
+              'Show specialisations clearly, explain direct access and reimbursement, add client reviews, and make booking one tap away. Local SEO and ads can bring traffic later; the website must convert that traffic into agenda slots.'
+          },
+          {
+            question: 'Can I show my specialisations on the website?',
+            answer:
+              'Yes — and you should. We build dedicated paths for manual therapy, sports physio, dry needling, rehabilitation and other specialisations so clients and referring GPs find the right therapist fast.'
+          },
+          {
+            question: 'Should the site explain direct access without a referral (DTF)?',
+            answer:
+              'Yes when you offer it. Clear DTF copy reduces confusion at reception and helps clients who search after an injury understand they can often start without a GP letter — while still noting when medical advice comes first.'
+          },
+          {
+            question: 'How long does a physiotherapy website project take?',
+            answer:
+              'Most practice websites launch in about four to eight weeks, depending on how ready specialisation content and team photos are, and which booking tool we integrate. Discovery starts with your intake and caseload so we do not build a generic clinic template.'
+          },
+          {
+            question: 'Can we update treatments and “accepting new clients” ourselves?',
+            answer:
+              'Yes. Your team can update specialisation copy, insurance notes and whether you accept new clients — without waiting on a developer when the agenda is full or a new therapist joins.'
+          },
+          {
+            question: 'Do you also support content like exercises or blogs?',
+            answer:
+              'Yes. We can structure exercise tips or recovery articles that support trust and search, while keeping the book appointment CTA prominent so content never replaces conversion.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Website laten maken voor fysiotherapeuten',
+        serviceName: 'Website laten maken voor fysiotherapeuten',
+        serviceDescription:
+          'Fysiotherapiewebsite laten maken met online afspraken, specialisatiepagina’s, uitleg over directe toegang (DTF) en vergoeding, klachtpaden per lichaamsdeel en mobiel boeken — gebouwd om behandelkamers te vullen, geen generieke kliniekbrochure.',
+        faqs: [
+          {
+            question: 'Wat kost een website voor een fysiopraktijk?',
+            answer:
+              'De kosten hangen af van hoeveel specialisaties je presenteert, of je een geïntegreerde online planner nodig hebt, DTF- en vergoedingspagina’s, meertalige content en praktijksfotografie. Na een korte intake sturen we een vaste offerte per package — Essential, boekingsklaar of multi-locatie — geen open uurtje-factuurtje halverwege de bouw.'
+          },
+          {
+            question: 'Kunnen cliënten online een afspraak maken?',
+            answer:
+              'Ja. We koppelen de afsprakenplanner die jullie al gebruiken, of richten een duidelijk boekpad in voor intakes en vervolgafspraken, zodat cliënten boeken zonder te bellen tijdens behandeluren.'
+          },
+          {
+            question: 'Hoe trek ik nieuwe cliënten aan via een fysiowebsite?',
+            answer:
+              'Toon specialisaties duidelijk, leg directe toegang en vergoeding uit, voeg cliëntreviews toe, en maak boeken één tik verwijderd. Lokale SEO en ads brengen later verkeer; de website moet dat verkeer omzetten in agendaplekken.'
+          },
+          {
+            question: 'Kan ik mijn specialisaties tonen?',
+            answer:
+              'Ja — en dat moet ook. We bouwen aparte paden voor manuele therapie, sportfysio, dry needling, revalidatie en andere specialisaties, zodat cliënten en verwijzende huisartsen snel de juiste therapeut vinden.'
+          },
+          {
+            question: 'Moet de site directe toegang zonder verwijzing (DTF) uitleggen?',
+            answer:
+              'Ja als jullie dat aanbieden. Duidelijke DTF-tekst vermindert verwarring aan de balie en helpt cliënten die na een blessure zoeken te begrijpen dat ze vaak zonder huisartsbrief kunnen starten — met vermelding wanneer medisch advies eerst komt.'
+          },
+          {
+            question: 'Hoe lang duurt het om een fysiowebsite te laten maken?',
+            answer:
+              'De meeste praktijkwebsites gaan in ongeveer vier tot acht weken live, afhankelijk van hoe klaar specialisatiecontent en teamfoto’s zijn en welk boekingssysteem we koppelen. Discovery begint bij jullie intake en caseload, zodat we geen generiek kliniektemplate bouwen.'
+          },
+          {
+            question: 'Kunnen we zelf behandelingen en “nieuwe cliënten aannemen” aanpassen?',
+            answer:
+              'Ja. Jullie team kan specialisatieteksten, verzekeringsnotities en of jullie nieuwe cliënten aannemen bijwerken — zonder op een developer te wachten wanneer de agenda vol is of er een therapeut bijkomt.'
+          },
+          {
+            question: 'Ondersteunen jullie ook content zoals oefeningen of blogs?',
+            answer:
+              'Ja. We kunnen oefentips of herstelartikelen structureren die vertrouwen en zoeken steunen, terwijl de boekings-CTA prominent blijft zodat content conversie nooit vervangt.'
+          }
+        ]
+      }
+    }
+  },
+
   'royal-casino-hub': {
     parents: ['home'],
     pageType: 'ItemPage',
