@@ -1756,8 +1756,7 @@ export const pageSeoByKey: Record<RouteKey, PageSeoConfig> = {
     pageType: 'ItemPage',
     product: {
       applicationCategory: 'BusinessApplication',
-      category: 'CRM Software',
-      offers: { availability: 'https://schema.org/PreOrder' }
+      category: 'CRM Software'
     },
     locales: {
       en: {

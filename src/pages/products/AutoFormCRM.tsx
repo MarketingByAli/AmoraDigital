@@ -1,18 +1,20 @@
 import { Link, useLocation } from 'react-router-dom'
 import {
-  ArrowRight, CheckCircle2, Sparkles, Code2, Users, BarChart3, Mail, Zap, MessageSquare,
-  Bell, Database, Settings
+  CheckCircle2, Sparkles, Code2, Users, BarChart3, Mail, Zap, MessageSquare,
+  Bell, Database, ExternalLink, Globe
 } from 'lucide-react'
 import { ROUTES, localeFromPath, type Locale } from '../../i18n/routes'
+
+const PRODUCT_URL = 'https://autoformcrm.com/'
 
 const T = {
   en: {
     crumbHome: 'Home', crumbProducts: 'Products', crumbCurrent: 'Auto Form CRM',
-    badge: 'Coming Soon - Under Development',
+    badge: 'WordPress CRM Plugin',
     headPre: 'CRM Made Simple, ', headHighlight: 'Built for WordPress',
-    sub: "We're building Auto Form CRM\u2014a powerful customer relationship management plugin designed specifically for WordPress. Manage leads, track interactions, and grow your business without leaving your WordPress dashboard.",
-    statusTitle: 'In Development', statusSub: 'Building something amazing for you',
-    buildSection: { badge: "What We're Building", headPre: 'WordPress CRM ', headHighlight: 'Done Right', sub: 'Auto Form CRM will bring enterprise-level customer relationship management features directly into WordPress, making it easy to manage and grow your business.' },
+    sub: 'Auto Form CRM is a powerful customer relationship management plugin for WordPress. Manage leads, track interactions, and grow your business\u2014all from your WordPress dashboard.',
+    ctaVisit: 'Visit Auto Form CRM', ctaDemo: 'Explore Features',
+    buildSection: { badge: 'What You Get', headPre: 'WordPress CRM ', headHighlight: 'Done Right', sub: 'Auto Form CRM brings enterprise-level customer relationship management features directly into WordPress, making it easy to manage and grow your business.' },
     features: [
       { title: 'Contact Management', description: 'Centralized database to manage all your leads and customers in one place.' },
       { title: 'Lead Tracking', description: 'Track every interaction and monitor your sales pipeline from first contact to close.' },
@@ -21,7 +23,7 @@ const T = {
       { title: 'Smart Notifications', description: 'Automated reminders for follow-ups, tasks, and important customer milestones.' },
       { title: 'Auto Form Integration', description: 'Seamless integration with Auto Form Builder to capture and manage leads automatically.' }
     ],
-    whySection: { badge: "Why We're Building This", headPre: 'CRM Without the ', headHighlight: 'Complexity', p1: "Most CRM solutions are either too expensive, too complicated, or require you to leave WordPress. We're building Auto Form CRM to solve these problems\u2014giving you powerful CRM features right inside your WordPress dashboard.", p2: 'Perfect for small businesses, agencies, and entrepreneurs who want to manage customer relationships without the hassle of external tools and monthly subscriptions.' },
+    whySection: { badge: 'Why Auto Form CRM', headPre: 'CRM Without the ', headHighlight: 'Complexity', p1: 'Most CRM solutions are either too expensive, too complicated, or require you to leave WordPress. Auto Form CRM solves these problems\u2014giving you powerful CRM features right inside your WordPress dashboard.', p2: 'Perfect for small businesses, agencies, and entrepreneurs who want to manage customer relationships without the hassle of external tools and monthly subscriptions.' },
     benefitsCard: "What You'll Get",
     benefits: [
       'Manage customer relationships directly in WordPress',
@@ -31,22 +33,22 @@ const T = {
       'Built with WordPress best practices',
       'GDPR compliant data management'
     ],
-    timeline: { heading: 'Crafted with Care', sub: "We're taking our time to build Auto Form CRM the right way\u2014following WordPress best practices, ensuring top-notch security, and creating an intuitive user experience. Quality takes time, and we're committed to delivering a CRM solution you'll love.", status: 'Development in Progress' },
+    liveSection: { heading: 'Available Now', sub: 'Auto Form CRM is live. Replace your expensive SaaS stack with one WordPress plugin\u2014contacts, pipeline, email, automation, and more\u2014running on your own server.', status: 'Live at autoformcrm.com' },
     cta: {
-      heading: 'Need a Custom CRM Solution Now?',
-      sub: "Can't wait for Auto Form CRM? We can build a custom CRM solution tailored to your specific business needs today. From simple lead tracking to complex customer management systems\u2014we've got you covered.",
-      btn1: 'Build Custom CRM Solution', btn2: 'View CRM Services',
-      footnote: 'We specialize in custom WordPress development and CRM integrations'
+      heading: 'Ready to Run CRM in WordPress?',
+      sub: 'Visit Auto Form CRM to explore features, try the live demo, or start a free trial. Need something custom? We also build CRM solutions tailored to your business.',
+      btn1: 'Visit Auto Form CRM', btn2: 'View CRM Services',
+      footnote: 'Built by Amora Digital \u2014 WordPress plugins and CRM integrations'
     },
-    quick: { heading: 'Interested in Auto Form CRM?', sub: "Let's discuss your CRM needs and find the perfect solution.", contact: 'Contact Us' }
+    quick: { heading: 'Interested in Auto Form CRM?', sub: 'Explore the product or talk with us about your CRM needs.', visit: 'Visit Website', contact: 'Contact Us' }
   },
   nl: {
     crumbHome: 'Home', crumbProducts: 'Producten', crumbCurrent: 'Auto Form CRM',
-    badge: 'Binnenkort beschikbaar \u2013 in ontwikkeling',
+    badge: 'WordPress CRM-plugin',
     headPre: 'CRM eenvoudig gemaakt, ', headHighlight: 'gebouwd voor WordPress',
-    sub: 'We bouwen Auto Form CRM \u2014 een krachtige CRM-plugin speciaal voor WordPress. Beheer leads, volg interacties en laat je bedrijf groeien zonder je WordPress-dashboard te verlaten.',
-    statusTitle: 'In ontwikkeling', statusSub: 'We bouwen iets fantastisch voor jou',
-    buildSection: { badge: 'Wat we bouwen', headPre: 'WordPress-CRM ', headHighlight: 'goed gedaan', sub: 'Auto Form CRM brengt enterprise-grade CRM-functionaliteit direct in WordPress, waardoor je je business eenvoudig kunt beheren en laten groeien.' },
+    sub: 'Auto Form CRM is een krachtige CRM-plugin voor WordPress. Beheer leads, volg interacties en laat je bedrijf groeien\u2014allemaal vanuit je WordPress-dashboard.',
+    ctaVisit: 'Bezoek Auto Form CRM', ctaDemo: 'Bekijk features',
+    buildSection: { badge: 'Wat je krijgt', headPre: 'WordPress-CRM ', headHighlight: 'goed gedaan', sub: 'Auto Form CRM brengt enterprise-grade CRM-functionaliteit direct in WordPress, waardoor je je business eenvoudig kunt beheren en laten groeien.' },
     features: [
       { title: 'Contactbeheer', description: 'Gecentraliseerde database om al je leads en klanten op één plek te beheren.' },
       { title: 'Lead-tracking', description: 'Volg elke interactie en monitor je sales-pipeline van eerste contact tot afsluiting.' },
@@ -55,7 +57,7 @@ const T = {
       { title: 'Slimme notificaties', description: 'Geautomatiseerde reminders voor follow-ups, taken en belangrijke klant-mijlpalen.' },
       { title: 'Auto Form-integratie', description: 'Naadloze integratie met Auto Form Builder om leads automatisch te vangen en te beheren.' }
     ],
-    whySection: { badge: 'Waarom wij dit bouwen', headPre: 'CRM zonder de ', headHighlight: 'complexiteit', p1: "De meeste CRM's zijn óf te duur, óf te ingewikkeld, óf vereisen dat je WordPress verlaat. Auto Form CRM lost dit op door krachtige CRM-features direct in je WordPress-dashboard te bieden.", p2: 'Perfect voor kleine bedrijven, agencies en ondernemers die klantrelaties willen beheren zonder gedoe met externe tools en maandelijkse abonnementen.' },
+    whySection: { badge: 'Waarom Auto Form CRM', headPre: 'CRM zonder de ', headHighlight: 'complexiteit', p1: "De meeste CRM's zijn óf te duur, óf te ingewikkeld, óf vereisen dat je WordPress verlaat. Auto Form CRM lost dit op door krachtige CRM-features direct in je WordPress-dashboard te bieden.", p2: 'Perfect voor kleine bedrijven, agencies en ondernemers die klantrelaties willen beheren zonder gedoe met externe tools en maandelijkse abonnementen.' },
     benefitsCard: 'Wat je krijgt',
     benefits: [
       'Beheer klantrelaties direct in WordPress',
@@ -65,14 +67,14 @@ const T = {
       'Gebouwd volgens WordPress-best-practices',
       'AVG-conform databeheer'
     ],
-    timeline: { heading: 'Met zorg gemaakt', sub: "We nemen de tijd om Auto Form CRM goed te bouwen \u2014 volgens WordPress-best-practices, met topsecurity en een intuïtieve gebruikerservaring. Kwaliteit kost tijd, en we zijn vastberaden om een CRM te leveren waar je écht blij van wordt.", status: 'Ontwikkeling loopt' },
+    liveSection: { heading: 'Nu beschikbaar', sub: 'Auto Form CRM is live. Vervang je dure SaaS-stack door één WordPress-plugin\u2014contacten, pipeline, e-mail, automatisering en meer\u2014draaiend op je eigen server.', status: 'Live op autoformcrm.com' },
     cta: {
-      heading: 'Direct een CRM-oplossing op maat nodig?',
-      sub: 'Wacht je niet op Auto Form CRM? Wij kunnen vandaag al een CRM bouwen die aansluit bij jouw specifieke business. Van simpele lead-tracking tot complexe customer-management-systemen \u2014 wij regelen het.',
-      btn1: 'Bouw een CRM op maat', btn2: 'Bekijk CRM-diensten',
-      footnote: 'Wij zijn gespecialiseerd in maatwerk WordPress-development en CRM-integraties'
+      heading: 'Klaar om CRM in WordPress te draaien?',
+      sub: 'Bezoek Auto Form CRM voor features, de live demo of een gratis proefperiode. Iets op maat nodig? Wij bouwen ook CRM-oplossingen die aansluiten bij jouw business.',
+      btn1: 'Bezoek Auto Form CRM', btn2: 'Bekijk CRM-diensten',
+      footnote: 'Gebouwd door Amora Digital \u2014 WordPress-plugins en CRM-integraties'
     },
-    quick: { heading: 'Interesse in Auto Form CRM?', sub: 'Laten we je CRM-behoeften bespreken en de perfecte oplossing vinden.', contact: 'Contact' }
+    quick: { heading: 'Interesse in Auto Form CRM?', sub: 'Bekijk het product of bespreek je CRM-behoeften met ons.', visit: 'Bezoek website', contact: 'Contact' }
   }
 } as const
 
@@ -109,17 +111,16 @@ export default function AutoFormCRM() {
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
               {t.headPre}<span className="text-rose-200">{t.headHighlight}</span>
             </h1>
-            <p className="text-lg sm:text-xl text-white/80 mb-12 max-w-3xl mx-auto">{t.sub}</p>
+            <p className="text-lg sm:text-xl text-white/80 mb-10 max-w-3xl mx-auto">{t.sub}</p>
 
-            <div className="inline-flex items-center gap-3 px-6 py-4 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20">
-              <div className="relative">
-                <div className="w-3 h-3 rounded-full bg-yellow-400 animate-pulse" />
-                <div className="absolute inset-0 w-3 h-3 rounded-full bg-yellow-400 animate-ping" />
-              </div>
-              <div className="text-left">
-                <div className="text-sm font-semibold text-white">{t.statusTitle}</div>
-                <div className="text-xs text-white/70">{t.statusSub}</div>
-              </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href={PRODUCT_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-rose-700 bg-white rounded-xl hover:bg-slate-100 transition-all shadow-lg group">
+                {t.ctaVisit}
+                <ExternalLink className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden />
+              </a>
+              <a href={`${PRODUCT_URL}features`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white border-2 border-white/30 rounded-xl hover:bg-white/10 transition-all">
+                {t.ctaDemo}
+              </a>
             </div>
           </div>
         </div>
@@ -190,17 +191,14 @@ export default function AutoFormCRM() {
       <section className="py-20 bg-slate-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <Settings className="w-16 h-16 text-rose-400 mx-auto mb-6 animate-spin" style={{ animationDuration: '3s' }} aria-hidden />
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-6">{t.timeline.heading}</h2>
-            <p className="text-lg text-white/80 mb-8">{t.timeline.sub}</p>
-            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
-              <div className="flex gap-1">
-                {[...Array(3)].map((_, i) => (
-                  <div key={i} className="w-2 h-2 rounded-full bg-rose-400 animate-pulse" style={{ animationDelay: `${i * 0.2}s` }} />
-                ))}
-              </div>
-              <span className="text-sm font-medium text-white/90">{t.timeline.status}</span>
-            </div>
+            <Globe className="w-16 h-16 text-rose-400 mx-auto mb-6" aria-hidden />
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-6">{t.liveSection.heading}</h2>
+            <p className="text-lg text-white/80 mb-8">{t.liveSection.sub}</p>
+            <a href={PRODUCT_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/15 transition-colors">
+              <div className="w-2 h-2 rounded-full bg-emerald-400" />
+              <span className="text-sm font-medium text-white/90">{t.liveSection.status}</span>
+              <ExternalLink className="w-4 h-4 text-white/70" aria-hidden />
+            </a>
           </div>
         </div>
       </section>
@@ -218,10 +216,10 @@ export default function AutoFormCRM() {
               <p className="text-lg md:text-xl text-white/90 mb-8">{t.cta.sub}</p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-                <Link to={ROUTES.contact[locale]} className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-rose-700 bg-white rounded-xl hover:bg-slate-100 transition-all shadow-lg group">
+                <a href={PRODUCT_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-rose-700 bg-white rounded-xl hover:bg-slate-100 transition-all shadow-lg group">
                   {t.cta.btn1}
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden />
-                </Link>
+                  <ExternalLink className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden />
+                </a>
                 <Link to={ROUTES['crm-solutions'][locale]} className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white border-2 border-white/30 rounded-xl hover:bg-white/10 transition-all">
                   {t.cta.btn2}
                 </Link>
@@ -241,6 +239,10 @@ export default function AutoFormCRM() {
               <p className="text-slate-400">{t.quick.sub}</p>
             </div>
             <div className="flex items-center gap-4">
+              <a href={PRODUCT_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-white border border-white/20 rounded-full hover:bg-white/10 transition-colors">
+                <ExternalLink className="w-4 h-4" aria-hidden />
+                {t.quick.visit}
+              </a>
               <Link to={ROUTES.contact[locale]} className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-slate-900 bg-white rounded-full hover:bg-slate-100 transition-colors">
                 <Mail className="w-4 h-4" aria-hidden />
                 {t.quick.contact}
