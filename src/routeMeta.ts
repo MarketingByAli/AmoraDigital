@@ -910,6 +910,136 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
       ],
       ogImage: ogAssetPng('Home')
     }
+  },
+  'branches-fysiotherapeuten-lokale-seo': {
+    en: {
+      title: `Local SEO for physiotherapists | Amora`,
+      description:
+        'Local SEO for physiotherapists: Google Business Profile, Maps, reviews and specialisation keywords. 1,500+ projects.',
+      keywords: [
+        'local SEO for physiotherapists',
+        'physiotherapist Google Maps',
+        'Google Business Profile physio',
+        'sports physio SEO'
+      ],
+      ogImage: ogAssetPng('Home')
+    },
+    nl: {
+      title: `Lokale SEO voor fysiotherapeuten | Amora`,
+      description:
+        'Lokale SEO voor fysiotherapeuten: Google Bedrijfsprofiel, Maps, reviews en specialisatiezoekwoorden. 1.500+ projecten.',
+      keywords: [
+        'lokale SEO voor fysiotherapeuten',
+        'fysiotherapeut Google Maps',
+        'Google Bedrijfsprofiel fysio',
+        'sportfysio SEO'
+      ],
+      ogImage: ogAssetPng('Home')
+    }
+  },
+  'branches-kappers-schoonheidssalons-website-laten-maken': {
+    en: {
+      title: `Website design for hair & beauty salons | Amora`,
+      description:
+        'Salon website with 24/7 online booking, price list, portfolio gallery and mobile path. Built for chairs. 1,500+ projects.',
+      keywords: [
+        'website design for hair & beauty salons',
+        'salon website',
+        'hairdresser online booking',
+        'beauty salon website'
+      ],
+      ogImage: ogAssetPng('Home')
+    },
+    nl: {
+      title: `Website laten maken voor kappers | Amora`,
+      description:
+        'Salonwebsite met 24/7 online boeken, prijslijst, portfoliogalerij en mobiel pad. Gebouwd voor volle stoelen. 1.500+ projecten.',
+      keywords: [
+        'website laten maken voor kappers',
+        'website kapsalon',
+        'online afspraak kapper',
+        'schoonheidssalon website'
+      ],
+      ogImage: ogAssetPng('Home')
+    }
+  },
+  'branches-kappers-schoonheidssalons-lokale-seo': {
+    en: {
+      title: `Local SEO for hair & beauty salons | Amora`,
+      description:
+        'Local SEO for salons: Google Business Profile, Maps, reviews, result photos and treatment keywords. 1,500+ projects.',
+      keywords: [
+        'local SEO for hair & beauty salons',
+        'hairdresser Google Maps',
+        'salon Google Business Profile',
+        'beauty salon reviews'
+      ],
+      ogImage: ogAssetPng('Home')
+    },
+    nl: {
+      title: `Lokale SEO voor kappers | Amora`,
+      description:
+        'Lokale SEO voor kappers: Google Bedrijfsprofiel, Maps, reviews, resultaatfoto’s en behandelzoekwoorden. 1.500+ projecten.',
+      keywords: [
+        'lokale SEO voor kappers',
+        'kapper Google Maps',
+        'Google Bedrijfsprofiel salon',
+        'reviews kapsalon'
+      ],
+      ogImage: ogAssetPng('Home')
+    }
+  },
+  'branches-makelaars-website-laten-maken': {
+    en: {
+      title: `Website design for real estate agents | Amora`,
+      description:
+        'Estate agent website with listings, Funda/Realworks feeds, free valuation forms and mobile buyer paths. 1,500+ projects.',
+      keywords: [
+        'website design for real estate agents',
+        'estate agent website',
+        'real estate listings website',
+        'property valuation form'
+      ],
+      ogImage: ogAssetPng('Home')
+    },
+    nl: {
+      title: `Website laten maken voor makelaars | Amora`,
+      description:
+        'Makelaarswebsite met woningaanbod, Funda/Realworks-feeds, gratis waardebepaling en mobiel pad voor kopers. 1.500+ projecten.',
+      keywords: [
+        'website laten maken voor makelaars',
+        'website makelaarskantoor',
+        'woningaanbod website',
+        'gratis waardebepaling'
+      ],
+      ogImage: ogAssetPng('Home')
+    }
+  },
+  'branches-makelaars-lokale-seo': {
+    en: {
+      title: `Local SEO for real estate agents | Amora`,
+      description:
+        'Local SEO for estate agents: Google Business Profile, Maps, district pages and valuation keywords. 1,500+ projects.',
+      keywords: [
+        'local SEO for real estate agents',
+        'estate agent Google Maps',
+        'makelaar local SEO',
+        'sell house city SEO'
+      ],
+      ogImage: ogAssetPng('Home')
+    },
+    nl: {
+      title: `Lokale SEO voor makelaars | Amora`,
+      description:
+        'Lokale SEO voor makelaars: Google Bedrijfsprofiel, Maps, wijkpagina’s en waardebepalingzoekwoorden. 1.500+ projecten.',
+      keywords: [
+        'lokale SEO voor makelaars',
+        'makelaar Google Maps',
+        'wijkpagina’s makelaar',
+        'gratis waardebepaling SEO'
+      ],
+      ogImage: ogAssetPng('Home')
+    }
   }
 }
 

@@ -68,7 +68,12 @@ const EN_ROUTES = [
   '/branches/restaurants/lokale-seo',
   '/branches/tandartsen/website-laten-maken',
   '/branches/tandartsen/lokale-seo',
-  '/branches/fysiotherapeuten/website-laten-maken'
+  '/branches/fysiotherapeuten/website-laten-maken',
+  '/branches/fysiotherapeuten/lokale-seo',
+  '/branches/kappers-schoonheidssalons/website-laten-maken',
+  '/branches/kappers-schoonheidssalons/lokale-seo',
+  '/branches/makelaars/website-laten-maken',
+  '/branches/makelaars/lokale-seo'
 ]
 
 const NL_ROUTES = [
@@ -112,7 +117,12 @@ const NL_ROUTES = [
   '/nl/branches/restaurants/lokale-seo',
   '/nl/branches/tandartsen/website-laten-maken',
   '/nl/branches/tandartsen/lokale-seo',
-  '/nl/branches/fysiotherapeuten/website-laten-maken'
+  '/nl/branches/fysiotherapeuten/website-laten-maken',
+  '/nl/branches/fysiotherapeuten/lokale-seo',
+  '/nl/branches/kappers-schoonheidssalons/website-laten-maken',
+  '/nl/branches/kappers-schoonheidssalons/lokale-seo',
+  '/nl/branches/makelaars/website-laten-maken',
+  '/nl/branches/makelaars/lokale-seo'
 ]
 
 const ROUTES = [...EN_ROUTES, ...NL_ROUTES]

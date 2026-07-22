@@ -66,6 +66,21 @@ const BranchesTandartsenLokaleSeo = lazy(
 const BranchesFysiotherapeutenWebsiteLatenMaken = lazy(
   () => import('./pages/branches/fysiotherapeuten/WebsiteLatenMaken')
 )
+const BranchesFysiotherapeutenLokaleSeo = lazy(
+  () => import('./pages/branches/fysiotherapeuten/LokaleSeo')
+)
+const BranchesKappersWebsiteLatenMaken = lazy(
+  () => import('./pages/branches/kappers-schoonheidssalons/WebsiteLatenMaken')
+)
+const BranchesKappersLokaleSeo = lazy(
+  () => import('./pages/branches/kappers-schoonheidssalons/LokaleSeo')
+)
+const BranchesMakelaarsWebsiteLatenMaken = lazy(
+  () => import('./pages/branches/makelaars/WebsiteLatenMaken')
+)
+const BranchesMakelaarsLokaleSeo = lazy(
+  () => import('./pages/branches/makelaars/LokaleSeo')
+)
 
 function PageLoader() {
   const { pathname } = useLocation()
@@ -180,6 +195,26 @@ function App() {
                 path={ROUTES['branches-fysiotherapeuten-website-laten-maken'].en}
                 element={<BranchesFysiotherapeutenWebsiteLatenMaken />}
               />
+              <Route
+                path={ROUTES['branches-fysiotherapeuten-lokale-seo'].en}
+                element={<BranchesFysiotherapeutenLokaleSeo />}
+              />
+              <Route
+                path={ROUTES['branches-kappers-schoonheidssalons-website-laten-maken'].en}
+                element={<BranchesKappersWebsiteLatenMaken />}
+              />
+              <Route
+                path={ROUTES['branches-kappers-schoonheidssalons-lokale-seo'].en}
+                element={<BranchesKappersLokaleSeo />}
+              />
+              <Route
+                path={ROUTES['branches-makelaars-website-laten-maken'].en}
+                element={<BranchesMakelaarsWebsiteLatenMaken />}
+              />
+              <Route
+                path={ROUTES['branches-makelaars-lokale-seo'].en}
+                element={<BranchesMakelaarsLokaleSeo />}
+              />
 
               {/* Dutch routes (/nl/...) */}
               <Route path={ROUTES.home.nl} element={<HomePage />} />
@@ -240,6 +275,26 @@ function App() {
               <Route
                 path={ROUTES['branches-fysiotherapeuten-website-laten-maken'].nl}
                 element={<BranchesFysiotherapeutenWebsiteLatenMaken />}
+              />
+              <Route
+                path={ROUTES['branches-fysiotherapeuten-lokale-seo'].nl}
+                element={<BranchesFysiotherapeutenLokaleSeo />}
+              />
+              <Route
+                path={ROUTES['branches-kappers-schoonheidssalons-website-laten-maken'].nl}
+                element={<BranchesKappersWebsiteLatenMaken />}
+              />
+              <Route
+                path={ROUTES['branches-kappers-schoonheidssalons-lokale-seo'].nl}
+                element={<BranchesKappersLokaleSeo />}
+              />
+              <Route
+                path={ROUTES['branches-makelaars-website-laten-maken'].nl}
+                element={<BranchesMakelaarsWebsiteLatenMaken />}
+              />
+              <Route
+                path={ROUTES['branches-makelaars-lokale-seo'].nl}
+                element={<BranchesMakelaarsLokaleSeo />}
               />
 
               <Route path="*" element={<NotFound />} />

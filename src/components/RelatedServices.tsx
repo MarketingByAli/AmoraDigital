@@ -307,6 +307,41 @@ const RELATED_BY_KEY: Partial<Record<RouteKey, RouteKey[]>> = {
     'paid-advertising',
     'seo-services',
     'conversion-optimization'
+  ],
+  'branches-fysiotherapeuten-lokale-seo': [
+    'local-seo',
+    'seo-services',
+    'website-design',
+    'paid-advertising',
+    'conversion-optimization'
+  ],
+  'branches-kappers-schoonheidssalons-website-laten-maken': [
+    'website-design',
+    'local-seo',
+    'social-media-marketing',
+    'seo-services',
+    'brand-strategy'
+  ],
+  'branches-kappers-schoonheidssalons-lokale-seo': [
+    'local-seo',
+    'seo-services',
+    'website-design',
+    'social-media-marketing',
+    'brand-strategy'
+  ],
+  'branches-makelaars-website-laten-maken': [
+    'website-design',
+    'local-seo',
+    'paid-advertising',
+    'social-media-marketing',
+    'seo-services'
+  ],
+  'branches-makelaars-lokale-seo': [
+    'local-seo',
+    'seo-services',
+    'website-design',
+    'paid-advertising',
+    'social-media-marketing'
   ]
 }
 

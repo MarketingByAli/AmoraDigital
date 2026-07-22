@@ -81,6 +81,11 @@ export type RouteKey =
   | 'branches-tandartsen-website-laten-maken'
   | 'branches-tandartsen-lokale-seo'
   | 'branches-fysiotherapeuten-website-laten-maken'
+  | 'branches-fysiotherapeuten-lokale-seo'
+  | 'branches-kappers-schoonheidssalons-website-laten-maken'
+  | 'branches-kappers-schoonheidssalons-lokale-seo'
+  | 'branches-makelaars-website-laten-maken'
+  | 'branches-makelaars-lokale-seo'
 
 /**
  * Localized pathnames per route. English keeps the current URLs verbatim
@@ -178,6 +183,26 @@ export const ROUTES: Record<RouteKey, Record<Locale, string>> = {
   'branches-fysiotherapeuten-website-laten-maken': {
     en: '/branches/fysiotherapeuten/website-laten-maken',
     nl: '/nl/branches/fysiotherapeuten/website-laten-maken'
+  },
+  'branches-fysiotherapeuten-lokale-seo': {
+    en: '/branches/fysiotherapeuten/lokale-seo',
+    nl: '/nl/branches/fysiotherapeuten/lokale-seo'
+  },
+  'branches-kappers-schoonheidssalons-website-laten-maken': {
+    en: '/branches/kappers-schoonheidssalons/website-laten-maken',
+    nl: '/nl/branches/kappers-schoonheidssalons/website-laten-maken'
+  },
+  'branches-kappers-schoonheidssalons-lokale-seo': {
+    en: '/branches/kappers-schoonheidssalons/lokale-seo',
+    nl: '/nl/branches/kappers-schoonheidssalons/lokale-seo'
+  },
+  'branches-makelaars-website-laten-maken': {
+    en: '/branches/makelaars/website-laten-maken',
+    nl: '/nl/branches/makelaars/website-laten-maken'
+  },
+  'branches-makelaars-lokale-seo': {
+    en: '/branches/makelaars/lokale-seo',
+    nl: '/nl/branches/makelaars/lokale-seo'
   }
 }
 

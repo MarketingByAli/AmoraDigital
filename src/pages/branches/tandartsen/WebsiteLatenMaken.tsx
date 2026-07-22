@@ -14,6 +14,7 @@ import {
 } from 'lucide-react'
 import { ROUTES, localeFromPath, type Locale } from '../../../i18n/routes'
 import { BRANCH_SPOKES } from '../../../data/branchSpokes'
+import BranchSpokeCard from '../../../components/BranchSpokeCard'
 
 const FEATURE_ICONS = [
   CalendarCheck,
@@ -559,20 +560,14 @@ export default function TandartsenWebsiteLatenMaken() {
 
           <div className="grid sm:grid-cols-3 gap-6 lg:gap-8 mb-10">
             {siblings.map((spoke) => (
-              <Link
+              <BranchSpokeCard
                 key={spoke.slug}
-                to={`${hubPath}/${spoke.slug}`}
-                className="card group p-6 hover:-translate-y-1"
-              >
-                <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-primary-600 transition-colors">
-                  {spoke.name[locale]}
-                </h3>
-                <p className="text-slate-600 text-sm leading-relaxed mb-4">{spoke.benefit[locale]}</p>
-                <div className="flex items-center gap-2 text-sm font-medium text-primary-600">
-                  <span>{t.siblingsCta}</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden />
-                </div>
-              </Link>
+                industrySlug="tandartsen"
+                hubPath={hubPath}
+                spoke={spoke}
+                locale={locale}
+                ctaLabel={t.siblingsCta}
+              />
             ))}
           </div>
 

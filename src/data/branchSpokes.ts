@@ -1,6 +1,7 @@
 /**
  * Spoke services per industry hub in the /branches SEO silo.
- * Hubs map over these arrays; spoke pages are linked now and built later.
+ * Copy lives here for all planned spokes; only entries in LIVE_BRANCH_SPOKES
+ * get routed/linked. Add a slug to LIVE_BRANCH_SPOKES when that page ships.
  */
 import type { Locale } from '../i18n/routes'
 
@@ -10,6 +11,19 @@ export type BranchSpoke = {
   slug: string
   name: LocalizedString
   benefit: LocalizedString
+}
+
+/** Live spoke slugs per industry. Add a slug here when the spoke page ships. */
+export const LIVE_BRANCH_SPOKES: Readonly<Record<string, readonly string[]>> = {
+  restaurants: ['website-laten-maken', 'lokale-seo'],
+  tandartsen: ['website-laten-maken', 'lokale-seo'],
+  fysiotherapeuten: ['website-laten-maken', 'lokale-seo'],
+  'kappers-schoonheidssalons': ['website-laten-maken', 'lokale-seo'],
+  makelaars: ['website-laten-maken', 'lokale-seo']
+}
+
+export function isLiveBranchSpoke(industrySlug: string, slug: string): boolean {
+  return (LIVE_BRANCH_SPOKES[industrySlug] ?? []).includes(slug)
 }
 
 export const BRANCH_SPOKES: Record<string, readonly BranchSpoke[]> = {

@@ -137,6 +137,46 @@ const PAGES = [
     changefreq: 'weekly',
     priority: '0.8',
     image: '/og/Home.png'
+  },
+  {
+    key: 'branches-fysiotherapeuten-lokale-seo',
+    en: '/branches/fysiotherapeuten/lokale-seo',
+    nl: '/nl/branches/fysiotherapeuten/lokale-seo',
+    changefreq: 'weekly',
+    priority: '0.8',
+    image: '/og/Home.png'
+  },
+  {
+    key: 'branches-kappers-schoonheidssalons-website-laten-maken',
+    en: '/branches/kappers-schoonheidssalons/website-laten-maken',
+    nl: '/nl/branches/kappers-schoonheidssalons/website-laten-maken',
+    changefreq: 'weekly',
+    priority: '0.8',
+    image: '/og/Home.png'
+  },
+  {
+    key: 'branches-kappers-schoonheidssalons-lokale-seo',
+    en: '/branches/kappers-schoonheidssalons/lokale-seo',
+    nl: '/nl/branches/kappers-schoonheidssalons/lokale-seo',
+    changefreq: 'weekly',
+    priority: '0.8',
+    image: '/og/Home.png'
+  },
+  {
+    key: 'branches-makelaars-website-laten-maken',
+    en: '/branches/makelaars/website-laten-maken',
+    nl: '/nl/branches/makelaars/website-laten-maken',
+    changefreq: 'weekly',
+    priority: '0.8',
+    image: '/og/Home.png'
+  },
+  {
+    key: 'branches-makelaars-lokale-seo',
+    en: '/branches/makelaars/lokale-seo',
+    nl: '/nl/branches/makelaars/lokale-seo',
+    changefreq: 'weekly',
+    priority: '0.8',
+    image: '/og/Home.png'
   }
 ]
 

@@ -3034,6 +3034,566 @@ export const pageSeoByKey: Record<RouteKey, PageSeoConfig> = {
     }
   },
 
+  'branches-fysiotherapeuten-lokale-seo': {
+    parents: ['home', 'branches', 'branches-fysiotherapeuten'],
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Local SEO for physiotherapists',
+      category: 'Digital Marketing',
+      offers: [
+        { name: 'Google Business Profile for physio practices' },
+        { name: 'Specialisation and city keyword optimisation' },
+        { name: 'Client review growth for physiotherapy' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Local SEO for physiotherapists',
+        serviceName: 'Local SEO for physiotherapists',
+        serviceDescription:
+          'Local SEO for physiotherapy practices focused on Google Business Profile, Google Maps, client reviews, city and specialisation keywords, and direct-access search behaviour — without ranking guarantees.',
+        faqs: [
+          {
+            question: 'How do I rank higher on Google as a physiotherapist?',
+            answer:
+              'Strengthen Google Business Profile with correct physio categories, accurate hours, fresh practice photos, clear services and a booking or call action, then grow recent client reviews and keep NAP consistent. Local SEO improves visibility over time; we do not promise a specific ranking.'
+          },
+          {
+            question: 'How do I get more client reviews?',
+            answer:
+              'Set up a simple, ethical request habit after a treatment block, make the Google review link easy for reception to share, and reply to reviews with a professional tone. Volume and recency matter for how new clients choose a physio in the map pack.'
+          },
+          {
+            question: 'How long does local SEO take for a physio practice?',
+            answer:
+              'Early GBP and review improvements often show within a few weeks. Stable map-pack presence for competitive “physiotherapist [city]” terms usually needs several months of consistent optimisation. Timelines depend on competition and how complete your profile already is.'
+          },
+          {
+            question: 'Can I rank for my specialisation, such as sports physio or manual therapy?',
+            answer:
+              'Yes, when the specialisation matches therapists on your team and is supported by GBP services, on-site pages and local content. We target specialisation + city intent without building thin doorway pages.'
+          },
+          {
+            question: 'Does local SEO work for practices with multiple locations?',
+            answer:
+              'Yes. We structure separate profiles, local pages and review flows per site so each practice competes in its own catchment, instead of one address cannibalising another.'
+          },
+          {
+            question: 'Do you guarantee first place in the Google local pack?',
+            answer:
+              'No. No ethical local SEO partner can guarantee rankings. We set realistic expectations, improve the signals Google uses for physio practices, and report on impressions, calls, routes and clicks toward more new-client enquiries.'
+          },
+          {
+            question: 'How is this different from building a physio website?',
+            answer:
+              'The website spoke is about converting visitors with specialisations, DTF, insurance info and booking. This local SEO spoke is about being found in Maps and local search first. They work best together, but they are different engagements.'
+          },
+          {
+            question: 'Can local SEO support referrals from GPs?',
+            answer:
+              'Indirectly, yes. Clear specialisation signals, consistent NAP and a trustworthy Maps presence make it easier for referring GPs and coaches to find and recommend you — while your website still carries the full referral story.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Lokale SEO voor fysiotherapeuten',
+        serviceName: 'Lokale SEO voor fysiotherapeuten',
+        serviceDescription:
+          'Lokale SEO voor fysiopraktijken gericht op Google Bedrijfsprofiel, Google Maps, cliëntreviews, stads- en specialisatiezoekwoorden, en zoekgedrag rond directe toegang — zonder rankinggaranties.',
+        faqs: [
+          {
+            question: 'Hoe kom ik hoger in Google als fysiotherapeut?',
+            answer:
+              'Versterk Google Bedrijfsprofiel met juiste fysiocategorieën, accurate tijden, verse praktijkfoto’s, duidelijke diensten en een boek- of belactie, groei daarna recente cliëntreviews en houd NAP consistent. Lokale SEO verbetert zichtbaarheid in de tijd; we beloven geen specifieke ranking.'
+          },
+          {
+            question: 'Hoe krijg ik meer cliëntreviews?',
+            answer:
+              'Zet een eenvoudige, ethische verzoekgewoonte op na een behandeltraject, maak de Google-reviewlink makkelijk deelbaar voor de balie, en beantwoord reviews professioneel. Volume en recentheid tellen mee bij hoe nieuwe cliënten een fysio in de kaartpack kiezen.'
+          },
+          {
+            question: 'Hoe lang duurt lokale SEO voor een fysiopraktijk?',
+            answer:
+              'Eerste GBP- en reviewverbeteringen zie je vaak binnen enkele weken. Stabiele kaartpack-aanwezigheid op concurrerende “fysiotherapeut [stad]”-termen vraagt meestal enkele maanden consistente optimalisatie. Doorlooptijd hangt af van concurrentie en hoe compleet je profiel al is.'
+          },
+          {
+            question: 'Kan ik ranken op mijn specialisatie, zoals sportfysio of manuele therapie?',
+            answer:
+              'Ja, als de specialisatie past bij therapeuten in je team en wordt ondersteund door GBP-diensten, on-site pagina’s en lokale content. We mikken op specialisatie + stad-intentie zonder dunne doorway-pagina’s te bouwen.'
+          },
+          {
+            question: 'Werkt lokale SEO voor meerdere locaties?',
+            answer:
+              'Ja. We structureren aparte profielen, lokale pagina’s en reviewflows per vestiging zodat elke praktijk in het eigen verzorgingsgebied concurreert, in plaats van dat één adres een ander kannibaliseert.'
+          },
+          {
+            question: 'Garanderen jullie een eerste plek in de Google local pack?',
+            answer:
+              'Nee. Geen ethische lokale SEO-partij kan rankings garanderen. We zetten realistische verwachtingen, verbeteren de signalen die Google voor fysiopraktijken gebruikt, en rapporteren over impressies, belacties, routes en klikken richting meer nieuw-cliëntaanvragen.'
+          },
+          {
+            question: 'Wat is het verschil met een fysiowebsite laten maken?',
+            answer:
+              'De website-spoke gaat over converteren met specialisaties, DTF, vergoedingsinfo en boeken. Deze lokale SEO-spoke gaat over eerst gevonden worden in Maps en lokaal zoeken. Samen werken ze het best, maar het zijn verschillende trajecten.'
+          },
+          {
+            question: 'Kan lokale SEO verwijzingen van huisartsen ondersteunen?',
+            answer:
+              'Indirect wel. Duidelijke specialisatiesignalen, consistente NAP en een betrouwbare Maps-aanwezigheid maken het voor verwijzende huisartsen en coaches makkelijker om je te vinden en aan te bevelen — terwijl je website het volledige verhaal voor verwijzers draagt.'
+          }
+        ]
+      }
+    }
+  },
+
+  'branches-kappers-schoonheidssalons-website-laten-maken': {
+    parents: ['home', 'branches', 'branches-kappers-schoonheidssalons'],
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Website design for hair & beauty salons',
+      category: 'Web Development',
+      offers: [
+        { name: 'Salon website with online booking' },
+        { name: 'Price list and portfolio gallery' },
+        { name: 'Gift vouchers and Instagram connection' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Website design for hair & beauty salons',
+        serviceName: 'Website design for hair & beauty salons',
+        serviceDescription:
+          'Hair and beauty salon website design with 24/7 online booking, treatments and price list, portfolio gallery, stylist pages, gift vouchers and mobile booking — built to fill chairs, not look like a generic brochure.',
+        faqs: [
+          {
+            question: 'How much does a website for a hair salon cost?',
+            answer:
+              'Cost depends on how many services and stylists you present, whether you need integrated online booking, gift vouchers, Instagram integration and portfolio photography. After a short intake we send a fixed quote by package — Essential, booking-ready or multi-location — not open-ended hourly billing mid-build.'
+          },
+          {
+            question: 'Can clients book online?',
+            answer:
+              'Yes. We connect the booking tool your salon already uses, or set up a clear booking path for cuts, colour and beauty treatments so clients book 24/7 without calling during a busy Saturday.'
+          },
+          {
+            question: 'Can I update the price list myself?',
+            answer:
+              'Yes. Your team can change treatments, prices and seasonal packages after a menu update — without waiting on a developer every time colour pricing shifts.'
+          },
+          {
+            question: 'Can I show my Instagram on the website?',
+            answer:
+              'Yes. We can surface recent salon work from Instagram so your feed and booking path stay in sync. Social proves the look; the website captures the appointment.'
+          },
+          {
+            question: 'How long does a salon website project take?',
+            answer:
+              'Most salon websites launch in about four to eight weeks, depending on how ready portfolio content and the price list are, and which booking tool we integrate. Discovery starts with your booking flow so we do not build a generic brochure site.'
+          },
+          {
+            question: 'Do you support gift vouchers on the site?',
+            answer:
+              'Yes, where it fits your operations. Digital gift cards for cuts, colour packages or treatments become a clear revenue path that does not depend on someone calling reception at lunch.'
+          },
+          {
+            question: 'Can clients book a specific stylist?',
+            answer:
+              'Yes. We build stylist pages with specialties and booking links so clients who follow someone on Instagram can book that person — not a random open slot.'
+          },
+          {
+            question: 'How does the website help reduce no-shows?',
+            answer:
+              'Online booking with automatic confirmations and reminders reduces forgotten appointments compared with phone-only or Instagram-DM booking. Exact reminder setup depends on the booking software you use.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Website laten maken voor kappers',
+        serviceName: 'Website laten maken voor kappers',
+        serviceDescription:
+          'Website laten maken voor kappers en schoonheidssalons met 24/7 online boeken, behandelingen en prijslijst, portfoliogalerij, stylistpagina’s, cadeaubonnen en mobiel boeken — gebouwd om stoelen te vullen, geen generieke brochure.',
+        faqs: [
+          {
+            question: 'Wat kost een website voor een kapsalon?',
+            answer:
+              'De kosten hangen af van hoeveel diensten en stylisten je presenteert, of je geïntegreerd online boeken nodig hebt, cadeaubonnen, Instagram-integratie en portfoliofotografie. Na een korte intake sturen we een vaste offerte per package — Essential, boekingsklaar of multi-locatie — geen open uurtje-factuurtje halverwege de bouw.'
+          },
+          {
+            question: 'Kunnen klanten online boeken?',
+            answer:
+              'Ja. We koppelen de boekingssoftware die jullie al gebruiken, of richten een duidelijk boekpad in voor knippen, kleuren en beautybehandelingen, zodat klanten 24/7 boeken zonder te bellen op een drukke zaterdag.'
+          },
+          {
+            question: 'Kan ik mijn prijslijst zelf aanpassen?',
+            answer:
+              'Ja. Jullie team kan behandelingen, prijzen en seizoenspakketten wijzigen na een menukaartupdate — zonder voor elke kleurprijswijziging op een developer te wachten.'
+          },
+          {
+            question: 'Kan ik mijn Instagram tonen?',
+            answer:
+              'Ja. We kunnen recent salonwerk van Instagram tonen zodat feed en boekpad synchroon blijven. Social bewijst de look; de website vangt de afspraak.'
+          },
+          {
+            question: 'Hoe lang duurt het om een salonwebsite te laten maken?',
+            answer:
+              'De meeste salonwebsites gaan in ongeveer vier tot acht weken live, afhankelijk van hoe klaar portfoliocontent en de prijslijst zijn en welk boekingssysteem we koppelen. Discovery begint bij jullie boekflow, zodat we geen generieke brochuresite bouwen.'
+          },
+          {
+            question: 'Ondersteunen jullie cadeaubonnen op de site?',
+            answer:
+              'Ja, als dat past bij jullie operatie. Digitale cadeaubonnen voor knipbeurten, kleurpakketten of behandelingen worden een duidelijk omzetpad dat niet afhangt van iemand die op de lunchpauze de balie belt.'
+          },
+          {
+            question: 'Kunnen klanten een specifieke stylist boeken?',
+            answer:
+              'Ja. We bouwen stylistpagina’s met specialiteiten en boeklinks, zodat klanten die iemand op Instagram volgen die persoon boeken — geen willekeurig open slot.'
+          },
+          {
+            question: 'Hoe helpt de website no-shows te verminderen?',
+            answer:
+              'Online boeken met automatische bevestigingen en herinneringen vermindert vergeten afspraken vergeleken met alleen telefoon of Instagram-DM. Exacte herinneringen hangen af van de boekingssoftware die jullie gebruiken.'
+          }
+        ]
+      }
+    }
+  },
+
+  'branches-kappers-schoonheidssalons-lokale-seo': {
+    parents: ['home', 'branches', 'branches-kappers-schoonheidssalons'],
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Local SEO for hair & beauty salons',
+      category: 'Digital Marketing',
+      offers: [
+        { name: 'Google Business Profile for salons' },
+        { name: 'Service and city keyword optimisation' },
+        { name: 'Salon review growth and result photos' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Local SEO for hair & beauty salons',
+        serviceName: 'Local SEO for hair & beauty salons',
+        serviceDescription:
+          'Local SEO for hair and beauty salons focused on Google Business Profile, Google Maps, reviews, result photos, city and treatment keywords, and Book actions — without ranking guarantees.',
+        faqs: [
+          {
+            question: 'How do I rank higher on Google as a hairdresser?',
+            answer:
+              'Strengthen Google Business Profile with correct salon categories, accurate hours, fresh result photos, clear services and a Book or call action, then grow recent client reviews and keep NAP consistent. Local SEO improves visibility over time; we do not promise a specific ranking.'
+          },
+          {
+            question: 'How do I get more reviews for my salon?',
+            answer:
+              'Set up a simple, ethical request habit after colour, cut or nail appointments, make the Google review link easy for the front desk to share, and reply to reviews with a professional tone. In beauty, volume and recency heavily influence which salon clients choose in the map pack.'
+          },
+          {
+            question: 'How long does local SEO take for a salon?',
+            answer:
+              'Early GBP and review improvements often show within a few weeks. Stable map-pack presence for competitive “hairdresser [city]” terms usually needs several months of consistent optimisation. Timelines depend on competition and how complete your profile already is.'
+          },
+          {
+            question: 'Can I rank for a specific treatment, such as balayage or gel nails?',
+            answer:
+              'Yes, when the treatment matches services you offer and is supported by GBP services, on-site pages and local content. We target treatment + city intent without building thin doorway pages.'
+          },
+          {
+            question: 'Does local SEO work for nail studios and beauty salons too?',
+            answer:
+              'Yes. The same Maps, review and service-keyword approach applies to hairdressers, beauty salons and nail studios that want more local bookings.'
+          },
+          {
+            question: 'Do you guarantee first place in the Google local pack?',
+            answer:
+              'No. No ethical local SEO partner can guarantee rankings. We set realistic expectations, improve the signals Google uses for salons, and report on impressions, calls, routes and booking clicks toward more chairs filled.'
+          },
+          {
+            question: 'How is this different from building a salon website?',
+            answer:
+              'The website spoke is about converting visitors with booking, price list and portfolio. This local SEO spoke is about being found in Maps and local search first. They work best together, but they are different engagements.'
+          },
+          {
+            question: 'How does Instagram fit into local SEO for salons?',
+            answer:
+              'Instagram is often how beauty clients discover you. We keep names, NAP and discovery paths consistent so social interest can convert into a Google booking — without replacing a full social media retainer.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Lokale SEO voor kappers',
+        serviceName: 'Lokale SEO voor kappers',
+        serviceDescription:
+          'Lokale SEO voor kappers en schoonheidssalons gericht op Google Bedrijfsprofiel, Google Maps, reviews, resultaatfoto’s, stads- en behandelzoekwoorden, en Boek-acties — zonder rankinggaranties.',
+        faqs: [
+          {
+            question: 'Hoe kom ik hoger in Google als kapper?',
+            answer:
+              'Versterk Google Bedrijfsprofiel met juiste saloncategorieën, accurate tijden, verse resultaatfoto’s, duidelijke diensten en een Boek- of belactie, groei daarna recente klantreviews en houd NAP consistent. Lokale SEO verbetert zichtbaarheid in de tijd; we beloven geen specifieke ranking.'
+          },
+          {
+            question: 'Hoe krijg ik meer reviews voor mijn salon?',
+            answer:
+              'Zet een eenvoudige, ethische verzoekgewoonte op na kleur-, knip- of nagelafspraken, maak de Google-reviewlink makkelijk deelbaar voor de balie, en beantwoord reviews professioneel. In beauty bepalen volume en recentheid sterk welke salon klanten in de kaartpack kiezen.'
+          },
+          {
+            question: 'Hoe lang duurt lokale SEO voor een salon?',
+            answer:
+              'Eerste GBP- en reviewverbeteringen zie je vaak binnen enkele weken. Stabiele kaartpack-aanwezigheid op concurrerende “kapper [stad]”-termen vraagt meestal enkele maanden consistente optimalisatie. Doorlooptijd hangt af van concurrentie en hoe compleet je profiel al is.'
+          },
+          {
+            question: 'Kan ik ranken op een specifieke behandeling, zoals balayage of gelnagels?',
+            answer:
+              'Ja, als de behandeling past bij diensten die jullie aanbieden en wordt ondersteund door GBP-diensten, on-site pagina’s en lokale content. We mikken op behandeling + stad-intentie zonder dunne doorway-pagina’s te bouwen.'
+          },
+          {
+            question: 'Werkt lokale SEO ook voor nagelstudio’s en schoonheidssalons?',
+            answer:
+              'Ja. Dezelfde Maps-, review- en dienstzoekwoordaanpak geldt voor kappers, schoonheidssalons en nagelstudio’s die lokaal meer boekingen willen.'
+          },
+          {
+            question: 'Garanderen jullie een eerste plek in de Google local pack?',
+            answer:
+              'Nee. Geen ethische lokale SEO-partij kan rankings garanderen. We zetten realistische verwachtingen, verbeteren de signalen die Google voor salons gebruikt, en rapporteren over impressies, belacties, routes en boekingsklikken richting meer volle stoelen.'
+          },
+          {
+            question: 'Wat is het verschil met een salonwebsite laten maken?',
+            answer:
+              'De website-spoke gaat over converteren met boeken, prijslijst en portfolio. Deze lokale SEO-spoke gaat over eerst gevonden worden in Maps en lokaal zoeken. Samen werken ze het best, maar het zijn verschillende trajecten.'
+          },
+          {
+            question: 'Hoe past Instagram in lokale SEO voor salons?',
+            answer:
+              'Instagram is vaak hoe beautyklanten je ontdekken. We houden namen, NAP en ontdekkingspaden consistent zodat social interesse kan omzetten in een Google-boeking — zonder een volledig social media-retainer te vervangen.'
+          }
+        ]
+      }
+    }
+  },
+
+  'branches-makelaars-website-laten-maken': {
+    parents: ['home', 'branches', 'branches-makelaars'],
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Website design for real estate agents',
+      category: 'Web Development',
+      offers: [
+        { name: 'Estate agent website with listings' },
+        { name: 'Funda / Realworks listing feed' },
+        { name: 'Free valuation lead form' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Website design for real estate agents',
+        serviceName: 'Website design for real estate agents',
+        serviceDescription:
+          'Estate agent website design with searchable listings, Funda/NVM/Realworks feed integration where possible, free valuation forms, sold portfolio, neighbourhood pages and viewing requests — built to win instructions, not look like a generic brochure.',
+        faqs: [
+          {
+            question: 'How much does a website for an estate agent cost?',
+            answer:
+              'Cost depends on listing volume, Funda/Realworks feed complexity, valuation and viewing forms, neighbourhood pages and photography. After a short intake we send a fixed quote by package — Essential, listing-ready or multi-office — not open-ended hourly billing mid-build.'
+          },
+          {
+            question: 'Can the listings sync with Funda or Realworks?',
+            answer:
+              'Where your stack allows, yes. We connect listing feeds so homes on your site stay aligned with your CRM and portal publications — reducing double entry after every open house. Exact connectors depend on your software.'
+          },
+          {
+            question: 'How do I generate seller leads from the website?',
+            answer:
+              'Put a clear free valuation form front and centre, back it with sold proof and neighbourhood pages, and make the path mobile-friendly. Local SEO and ads can bring traffic later; the website must convert sellers into valuation requests.'
+          },
+          {
+            question: 'Can we add properties ourselves?',
+            answer:
+              'With a feed integration, new listings typically flow from your CRM. For manual content such as neighbourhood pages or sold stories, we train your team so everyday updates do not need a developer.'
+          },
+          {
+            question: 'How long does an estate agent website project take?',
+            answer:
+              'Most agency websites launch in about four to eight weeks, depending on feed complexity and content readiness. Discovery starts with your listing and lead flow so we do not build a generic clinic-style template.'
+          },
+          {
+            question: 'Do you build neighbourhood or district pages?',
+            answer:
+              'Yes. Local pages for the areas you cover support SEO and help buyers and sellers trust your market knowledge before they call.'
+          },
+          {
+            question: 'Can buyers request a viewing from a listing page?',
+            answer:
+              'Yes. Each property can include a viewing request or question form that lands in your process with the listing reference attached.'
+          },
+          {
+            question: 'Should the site show a sold portfolio?',
+            answer:
+              'Yes. Recently sold homes with neighbourhood context help sellers see you close deals on streets like theirs — a stronger trust signal than stock living-room photos.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Website laten maken voor makelaars',
+        serviceName: 'Website laten maken voor makelaars',
+        serviceDescription:
+          'Makelaarswebsite laten maken met doorzoekbaar woningaanbod, Funda/NVM/Realworks-feedkoppeling waar mogelijk, gratis waardebepaling, verkochtportfolio, wijkpagina’s en bezichtigingsaanvragen — gebouwd om opdrachten te winnen, geen generieke brochure.',
+        faqs: [
+          {
+            question: 'Wat kost een website voor een makelaar?',
+            answer:
+              'De kosten hangen af van aanbodvolume, complexiteit van Funda/Realworks-feed, waardebepaling- en bezichtigingsforms, wijkpagina’s en fotografie. Na een korte intake sturen we een vaste offerte per package — Essential, aanbodklaar of multi-kantoor — geen open uurtje-factuurtje halverwege de bouw.'
+          },
+          {
+            question: 'Kan het aanbod koppelen met Funda of Realworks?',
+            answer:
+              'Waar je stack het toelaat: ja. We koppelen aanbodfeeds zodat woningen op je site synchroon blijven met CRM en portalpublicaties — minder dubbel invoeren na elke open dag. Exacte koppelingen hangen af van je software.'
+          },
+          {
+            question: 'Hoe genereer ik verkoopleads via de website?',
+            answer:
+              'Zet een duidelijk gratis-waardebepalingformulier centraal, ondersteun het met verkochtbewijs en wijkpagina’s, en maak het pad mobielvriendelijk. Lokale SEO en ads brengen later verkeer; de website moet verkopers omzetten in waardebepalingaanvragen.'
+          },
+          {
+            question: 'Kan ik zelf woningen toevoegen?',
+            answer:
+              'Met een feedintegratie stromen nieuwe woningen meestal vanuit je CRM. Voor handmatige content zoals wijkpagina’s of verkochtverhalen trainen we je team, zodat dagelijkse updates geen developer nodig hebben.'
+          },
+          {
+            question: 'Hoe lang duurt het om een makelaarswebsite te laten maken?',
+            answer:
+              'De meeste kantoorwebsites gaan in ongeveer vier tot acht weken live, afhankelijk van feedcomplexiteit en contentklaarheid. Discovery begint bij je aanbod- en leadflow, zodat we geen generiek kliniektemplate bouwen.'
+          },
+          {
+            question: 'Maken jullie ook buurt- of wijkpagina’s?',
+            answer:
+              'Ja. Lokale pagina’s voor de gebieden die je dekt steunen SEO en helpen kopers en verkopers je marktkennis te vertrouwen vóór ze bellen.'
+          },
+          {
+            question: 'Kunnen kopers vanaf een woningpagina een bezichtiging aanvragen?',
+            answer:
+              'Ja. Elke woning kan een bezichtigings- of vraagformulier hebben dat in je proces landt met de woningreferentie erbij.'
+          },
+          {
+            question: 'Moet de site een verkochtportfolio tonen?',
+            answer:
+              'Ja. Recent verkochte woningen met buurtcontext helpen verkopers zien dat je deals sluit in straten zoals die van hen — een sterker vertrouwenssignaal dan stockfoto’s van woonkamers.'
+          }
+        ]
+      }
+    }
+  },
+
+  'branches-makelaars-lokale-seo': {
+    parents: ['home', 'branches', 'branches-makelaars'],
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Local SEO for real estate agents',
+      category: 'Digital Marketing',
+      offers: [
+        { name: 'Google Business Profile for estate agents' },
+        { name: 'City and neighbourhood landing pages' },
+        { name: 'Seller and buyer review growth' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Local SEO for real estate agents',
+        serviceName: 'Local SEO for real estate agents',
+        serviceDescription:
+          'Local SEO for estate agents focused on Google Business Profile, Google Maps, city and neighbourhood pages, seller reviews and valuation search intent — without ranking guarantees.',
+        faqs: [
+          {
+            question: 'How do I rank higher on Google as an estate agent?',
+            answer:
+              'Strengthen Google Business Profile with correct agency categories, clear service areas, accurate hours, fresh office or sold-proof photos and a call or website action, then grow recent seller and buyer reviews and keep NAP consistent. Local SEO improves visibility over time; we do not promise a specific ranking.'
+          },
+          {
+            question: 'How do I rank for my city or neighbourhood?',
+            answer:
+              'Combine a complete GBP service area with dedicated city and district landing pages that show real local knowledge and sold context. Thin doorway pages do not work; useful neighbourhood pages plus consistent local signals do.'
+          },
+          {
+            question: 'How do I get more reviews as an estate agent?',
+            answer:
+              'Set up a simple, ethical request habit after completion of a sale or purchase, make the Google review link easy for colleagues to share, and reply professionally. Seller reviews heavily influence which agent the next seller chooses in the map pack.'
+          },
+          {
+            question: 'How long does local SEO take for an estate agency?',
+            answer:
+              'Early GBP and review improvements often show within a few weeks. Stable map-pack and district visibility for competitive city terms usually needs several months of consistent optimisation. Timelines depend on competition and how complete your profile already is.'
+          },
+          {
+            question: 'Can local SEO help with “free valuation [city]” searches?',
+            answer:
+              'Yes. We align GBP and on-site signals with valuation search intent so map and organic clicks land on a clear request path — without promising a specific ranking for that phrase.'
+          },
+          {
+            question: 'Do you guarantee first place in the Google local pack?',
+            answer:
+              'No. No ethical local SEO partner can guarantee rankings. We set realistic expectations, improve the signals Google uses for agencies, and report on impressions, calls, routes and clicks toward more valuation enquiries.'
+          },
+          {
+            question: 'How is this different from building an estate agent website?',
+            answer:
+              'The website spoke is about converting visitors with listings, feeds and valuation forms. This local SEO spoke is about being found in Maps and local search first. They work best together, but they are different engagements.'
+          },
+          {
+            question: 'Does local SEO work for agencies with multiple offices?',
+            answer:
+              'Yes. We structure separate profiles, local pages and review flows per branch so each office competes in its own catchment, instead of one address cannibalising another.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Lokale SEO voor makelaars',
+        serviceName: 'Lokale SEO voor makelaars',
+        serviceDescription:
+          'Lokale SEO voor makelaars gericht op Google Bedrijfsprofiel, Google Maps, stads- en wijkpagina’s, verkoperreviews en zoekintentie rond waardebepaling — zonder rankinggaranties.',
+        faqs: [
+          {
+            question: 'Hoe kom ik hoger in Google als makelaar?',
+            answer:
+              'Versterk Google Bedrijfsprofiel met juiste makelaarscategorieën, duidelijk verzorgingsgebied, accurate tijden, verse kantoor- of verkochtbewijsfoto’s en een bel- of website-actie, groei daarna recente verkoper- en kopersreviews en houd NAP consistent. Lokale SEO verbetert zichtbaarheid in de tijd; we beloven geen specifieke ranking.'
+          },
+          {
+            question: 'Hoe rank ik voor mijn stad of wijk?',
+            answer:
+              'Combineer een compleet GBP-verzorgingsgebied met dedicated stads- en wijklandingspagina’s die echte lokale kennis en verkochtcontext tonen. Dunne doorway-pagina’s werken niet; nuttige wijkpagina’s plus consistente lokale signalen wel.'
+          },
+          {
+            question: 'Hoe krijg ik meer reviews als makelaar?',
+            answer:
+              'Zet een eenvoudige, ethische verzoekgewoonte op na overdracht van een verkoop of aankoop, maak de Google-reviewlink makkelijk deelbaar voor collega’s, en beantwoord professioneel. Verkoperreviews bepalen sterk welke makelaar de volgende verkoper in de kaartpack kiest.'
+          },
+          {
+            question: 'Hoe lang duurt lokale SEO voor een makelaarskantoor?',
+            answer:
+              'Eerste GBP- en reviewverbeteringen zie je vaak binnen enkele weken. Stabiele kaartpack- en wijkzichtbaarheid op concurrerende stadstermen vraagt meestal enkele maanden consistente optimalisatie. Doorlooptijd hangt af van concurrentie en hoe compleet je profiel al is.'
+          },
+          {
+            question: 'Helpt lokale SEO bij zoekopdrachten op “gratis waardebepaling [stad]”?',
+            answer:
+              'Ja. We stemmen GBP- en on-site signalen af op waardebepalingintentie, zodat kaart- en organische klikken op een duidelijk aanvraagpad landen — zonder een specifieke ranking voor die frase te beloven.'
+          },
+          {
+            question: 'Garanderen jullie een eerste plek in de Google local pack?',
+            answer:
+              'Nee. Geen ethische lokale SEO-partij kan rankings garanderen. We zetten realistische verwachtingen, verbeteren de signalen die Google voor makelaars gebruikt, en rapporteren over impressies, belacties, routes en klikken richting meer waardebepalingaanvragen.'
+          },
+          {
+            question: 'Wat is het verschil met een makelaarswebsite laten maken?',
+            answer:
+              'De website-spoke gaat over converteren met aanbod, feeds en waardebepalingforms. Deze lokale SEO-spoke gaat over eerst gevonden worden in Maps en lokaal zoeken. Samen werken ze het best, maar het zijn verschillende trajecten.'
+          },
+          {
+            question: 'Werkt lokale SEO voor kantoren met meerdere vestigingen?',
+            answer:
+              'Ja. We structureren aparte profielen, lokale pagina’s en reviewflows per vestiging zodat elk kantoor in het eigen verzorgingsgebied concurreert, in plaats van dat één adres een ander kannibaliseert.'
+          }
+        ]
+      }
+    }
+  },
+
   'royal-casino-hub': {
     parents: ['home'],
     pageType: 'ItemPage',

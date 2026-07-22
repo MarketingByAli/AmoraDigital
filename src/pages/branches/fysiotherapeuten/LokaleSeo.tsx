@@ -1,15 +1,15 @@
 import { Link, useLocation } from 'react-router-dom'
 import {
   ArrowRight,
+  Activity,
   Building2,
   Camera,
   CheckCircle2,
-  Clock,
+  Handshake,
   MapPin,
   Search,
   Sparkles,
   Star,
-  Stethoscope,
   UserPlus
 } from 'lucide-react'
 import { ROUTES, localeFromPath, type Locale } from '../../../i18n/routes'
@@ -19,109 +19,109 @@ import BranchSpokeCard from '../../../components/BranchSpokeCard'
 const FEATURE_ICONS = [
   MapPin,
   Search,
+  Activity,
   Star,
-  UserPlus,
   Camera,
-  Clock,
+  UserPlus,
   Building2,
-  Stethoscope
+  Handshake
 ] as const
 
 const FEATURES = [
   {
     en: {
-      title: 'Google Business Profile for dental practices',
+      title: 'Google Business Profile for physio practices',
       description:
-        'Categories, attributes, services and a Book appointment action tuned for dentistry — so people searching for a new dentist see opening hours, whether you accept patients and how to call, not a half-empty profile.'
+        'Categories, attributes, services and a Book appointment action tuned for physiotherapy — so people searching after an injury see hours, specialisations and how to start, not a half-empty profile.'
     },
     nl: {
-      title: 'Google Bedrijfsprofiel voor tandartspraktijken',
+      title: 'Google Bedrijfsprofiel voor fysiopraktijken',
       description:
-        'Categorieën, attributen, diensten en een Maak-afspraak-actie afgestemd op tandheelkunde — zodat mensen die een nieuwe tandarts zoeken openingstijden, of jullie patiënten aannemen en hoe ze bellen zien, geen halfleeg profiel.'
+        'Categorieën, attributen, diensten en een Maak-afspraak-actie afgestemd op fysiotherapie — zodat mensen die na een blessure zoeken tijden, specialisaties en hoe ze starten zien, geen halfleeg profiel.'
     }
   },
   {
     en: {
       title: 'Local keywords that fill the agenda',
       description:
-        'We target “dentist [city]”, “dentist near me”, “dentist accepting new patients [city]” and neighbourhood phrases movers actually type — not generic “best SEO” keywords that never become registrations.'
+        'We target “physiotherapist [city]”, “physio near me” and neighbourhood phrases clients type when pain starts — not generic “best SEO” keywords that never become intakes.'
     },
     nl: {
       title: 'Lokale zoekwoorden die de agenda vullen',
       description:
-        'We mikken op “tandarts [stad]”, “tandarts bij mij in de buurt”, “nieuwe patiënten aannemen [stad]” en buurtfrases die verhuizers echt typen — geen generieke “beste SEO”-termen die nooit inschrijvingen worden.'
+        'We mikken op “fysiotherapeut [stad]”, “fysio bij mij in de buurt” en buurtfrases die cliënten typen als pijn begint — geen generieke “beste SEO”-termen die nooit intakes worden.'
     }
   },
   {
     en: {
-      title: 'Google Maps & local pack',
+      title: 'Specialisation + city keywords',
       description:
-        'Visibility in the map pack when someone needs a dentist nearby. NAP consistency, pin accuracy and signals that help your practice appear next to competing practices in the same district.'
+        'Rank intent around “sports physiotherapist [city]”, “manual therapy [city]”, dry needling and rehab phrases — matched to real therapists on your team, not thin doorway pages.'
     },
     nl: {
-      title: 'Google Maps & local pack',
+      title: 'Specialisatie- + stadszoekwoorden',
       description:
-        'Zichtbaarheid in de kaartpack wanneer iemand een tandarts in de buurt nodig heeft. Consistente NAP, juiste pin en signalen die jouw praktijk naast concurrerende praktijken in dezelfde wijk laten verschijnen.'
+        'Intentie rond “sportfysiotherapeut [stad]”, “manuele therapie [stad]”, dry needling en revalidatiefrases — gekoppeld aan echte therapeuten in je team, geen dunne doorway-pagina’s.'
     }
   },
   {
     en: {
-      title: 'Patient review generation & replies',
+      title: 'Client review generation & replies',
       description:
-        'A steady stream of Google reviews is how new patients choose a practice after moving. We set up ethical request habits after check-ups and reply frameworks that protect your rating without pressure that feels clinical.'
+        'A steady stream of Google reviews is how new clients choose a physio after a GP tip or a sports injury. We set up ethical request habits after treatment blocks and reply frameworks that protect your rating.'
     },
     nl: {
-      title: 'Patiëntreviews verzamelen & beantwoorden',
+      title: 'Cliëntreviews verzamelen & beantwoorden',
       description:
-        'Een gestage stroom Google-reviews is hoe nieuwe patiënten een praktijk kiezen na een verhuizing. We zetten ethische verzoekgewoontes na controles op en antwoordkaders die je rating beschermen zonder druk die klinisch voelt.'
+        'Een gestage stroom Google-reviews is hoe nieuwe cliënten een fysio kiezen na een huisartstip of sportblessure. We zetten ethische verzoekgewoontes na behandeltrajecten op en antwoordkaders die je rating beschermen.'
     }
   },
   {
     en: {
       title: 'Practice photos that build trust',
       description:
-        'Team, treatment room and reception photos in Google Business Profile — not stock smiles. Anxious patients and parents often decide from the photo strip before they open your website.'
+        'Treatment room, exercise area and team photos in Google Business Profile — not stock gym shots. Clients deciding between two map pins often choose from the photo strip first.'
     },
     nl: {
       title: 'Praktijkfoto’s die vertrouwen wekken',
       description:
-        'Team-, behandelkamer- en baliefoto’s in Google Bedrijfsprofiel — geen stockglimlachen. Angstige patiënten en ouders beslissen vaak vanuit de fotostrip vóór ze je website openen.'
+        'Behandelkamer-, oefenzaal- en teamfoto’s in Google Bedrijfsprofiel — geen stockgymbeelden. Cliënten die tussen twee kaartpins kiezen, kiezen vaak eerst vanuit de fotostrip.'
     }
   },
   {
     en: {
-      title: 'Hours, holidays & emergency signals',
+      title: 'DTF & new-client search signals',
       description:
-        'Clinic hours, holiday closures and, where relevant, emergency or on-call notes kept current in Google so patients in pain do not call a closed practice — or assume you never take urgent cases.'
+        'Align profile and on-site signals with how people search for direct access without a referral — and whether you still accept new clients — so Maps traffic matches what reception can actually take.'
     },
     nl: {
-      title: 'Openingstijden, feestdagen & spoedsignalen',
+      title: 'DTF- & nieuw-cliëntzoeksignalen',
       description:
-        'Praktijktijden, feestdagen en waar relevant spoed- of nooddienstnotities actueel in Google, zodat patiënten met pijn niet een gesloten praktijk bellen — of aannemen dat jullie nooit spoed aannemen.'
+        'Stem profiel- en on-site signalen af op hoe mensen zoeken naar directe toegang zonder verwijzing — en of jullie nog nieuwe cliënten aannemen — zodat Maps-verkeer past bij wat de balie écht aankan.'
     }
   },
   {
     en: {
-      title: 'Multi-practitioner & multi-location signals',
+      title: 'Multi-therapist & multi-location signals',
       description:
-        'When you have several dentists, hygienists or sites, we structure profiles and local pages so each catchment ranks cleanly — without one address stealing visibility from another.'
+        'When you have several physiotherapists or sites, we structure profiles and local pages so each catchment ranks cleanly — without one address stealing visibility from another.'
     },
     nl: {
       title: 'Meerdere behandelaars & locaties',
       description:
-        'Bij meerdere tandartsen, mondhygiënisten of vestigingen structureren we profielen en lokale pagina’s zodat elk verzorgingsgebied schoon rankt — zonder dat één adres zichtbaarheid van een ander steelt.'
+        'Bij meerdere fysiotherapeuten of vestigingen structureren we profielen en lokale pagina’s zodat elk verzorgingsgebied schoon rankt — zonder dat één adres zichtbaarheid van een ander steelt.'
     }
   },
   {
     en: {
-      title: 'Insurance & treatment intent keywords',
+      title: 'GP referral & local consistency',
       description:
-        'Where it fits your offer: local queries around implants, children’s dentistry, emergency dentist and insurance/reimbursement phrasing — aligned to pages that convert, not thin doorway content.'
+        'NAP consistency across directories and healthcare listings, plus clear specialisation signals that referring GPs and coaches can trust when they send clients your way.'
     },
     nl: {
-      title: 'Verzekering- & behandelintentie-zoekwoorden',
+      title: 'Huisartsverwijzingen & lokale consistentie',
       description:
-        'Waar het bij jullie aanbod past: lokale queries rond implantaten, kindertandheelkunde, spoedtandarts en verzekering/vergoeding — gekoppeld aan pagina’s die converteren, geen dunne doorway-content.'
+        'Consistente NAP over directories en zorgvermeldingen, plus duidelijke specialisatiesignalen die verwijzende huisartsen en coaches kunnen vertrouwen wanneer ze cliënten jouw kant op sturen.'
     }
   }
 ] as const
@@ -132,13 +132,13 @@ const PROCESS_STEPS = [
       step: '01',
       title: 'Local visibility audit',
       description:
-        'We check how you appear for “dentist [your city]”, near-me queries, “accepting new patients” and the map pack against nearby practices. We also audit GBP completeness, hours, photos, Q&A and review velocity.'
+        'We check how you appear for “physiotherapist [your city]”, near-me queries, specialisation + city terms and the map pack against nearby practices. We also audit GBP completeness, hours, photos, services and review velocity.'
     },
     nl: {
       step: '01',
       title: 'Lokale zichtbaarheidsaudit',
       description:
-        'We checken hoe je verschijnt op “tandarts [jouw stad]”, bij-mij-queries, “nieuwe patiënten aannemen” en de kaartpack tegen buurtpraktijken. Ook GBP-volledigheid, tijden, foto’s, Q&A en reviewtempo.'
+        'We checken hoe je verschijnt op “fysiotherapeut [jouw stad]”, bij-mij-queries, specialisatie + stad-termen en de kaartpack tegen buurtpraktijken. Ook GBP-volledigheid, tijden, foto’s, diensten en reviewtempo.'
     }
   },
   {
@@ -146,13 +146,13 @@ const PROCESS_STEPS = [
       step: '02',
       title: 'GBP & keyword foundation',
       description:
-        'We optimise Google Business Profile for dental categories, services and booking actions, then lock a city/neighbourhood keyword set tied to the new-patient and treatment intent you want to win.'
+        'We optimise Google Business Profile for physio categories, services and booking actions, then lock a city/neighbourhood and specialisation keyword set tied to the intakes you want to win.'
     },
     nl: {
       step: '02',
       title: 'GBP- & zoekwoordfundament',
       description:
-        'We optimaliseren Google Bedrijfsprofiel voor tandheelkundige categorieën, diensten en boekingsacties, en zetten een stad-/wijkzoekwoordenset vast gekoppeld aan de nieuw-patiënt- en behandelintentie die je wilt winnen.'
+        'We optimaliseren Google Bedrijfsprofiel voor fysiocategorieën, diensten en boekingsacties, en zetten een stad-/wijk- en specialisatiezoekwoordenset vast gekoppeld aan de intakes die je wilt winnen.'
     }
   },
   {
@@ -160,13 +160,13 @@ const PROCESS_STEPS = [
       step: '03',
       title: 'On-site local signals',
       description:
-        'Location pages, LocalBusiness markup and NAP alignment so your website supports Maps — without turning this engagement into a full website redesign (that lives on the dentist website spoke).'
+        'Location pages, LocalBusiness markup and NAP alignment so your website supports Maps — without turning this engagement into a full website redesign (that lives on the physio website spoke).'
     },
     nl: {
       step: '03',
       title: 'On-site lokale signalen',
       description:
-        'Locatiepagina’s, LocalBusiness-markup en NAP-afstemming zodat je website Maps ondersteunt — zonder dit traject tot een volledige redesign te maken (dat hoort bij de tandartswebsite-spoke).'
+        'Locatiepagina’s, LocalBusiness-markup en NAP-afstemming zodat je website Maps ondersteunt — zonder dit traject tot een volledige redesign te maken (dat hoort bij de fysiowebsite-spoke).'
     }
   },
   {
@@ -174,209 +174,209 @@ const PROCESS_STEPS = [
       step: '04',
       title: 'Reviews, photos & citations',
       description:
-        'We launch post-appointment review habits, a photo refresh cadence for team and rooms, and citation cleanup so directories do not contradict your clinic hours or “new patients” status.'
+        'We launch post-treatment review habits, a photo refresh cadence for rooms and team, and citation cleanup so directories do not contradict your clinic hours or specialisations.'
     },
     nl: {
       step: '04',
       title: 'Reviews, foto’s & citations',
       description:
-        'We starten reviewgewoontes na afspraken, een fotoverversingsritme voor team en kamers, en citation-opschoning zodat directories je praktijktijden of “nieuwe patiënten”-status niet tegenspreken.'
+        'We starten reviewgewoontes na behandeltrajecten, een fotoverversingsritme voor kamers en team, en citation-opschoning zodat directories je praktijktijden of specialisaties niet tegenspreken.'
     }
   },
   {
     en: {
       step: '05',
-      title: 'Measure registrations, not vanity',
+      title: 'Measure intakes, not vanity',
       description:
-        'Monthly reporting on map impressions, profile actions (calls, direction requests, website clicks) and keyword movement — framed as progress toward more new-patient enquiries, never guaranteed rankings.'
+        'Monthly reporting on map impressions, profile actions (calls, direction requests, website clicks) and keyword movement — framed as progress toward more new-client enquiries, never guaranteed rankings.'
     },
     nl: {
       step: '05',
-      title: 'Meet inschrijvingen, geen vanity',
+      title: 'Meet intakes, geen vanity',
       description:
-        'Maandelijkse rapportage over kaartimpressies, profielacties (bellen, route, websiteklikken) en zoekwoordbeweging — als voortgang naar meer nieuw-patiëntaanvragen, nooit als gegarandeerde rankings.'
+        'Maandelijkse rapportage over kaartimpressies, profielacties (bellen, route, websiteklikken) en zoekwoordbeweging — als voortgang naar meer nieuw-cliëntaanvragen, nooit als gegarandeerde rankings.'
     }
   }
 ] as const
 
-const SIBLING_SLUGS = ['website-laten-maken', 'google-ads', 'social-media'] as const
+const SIBLING_SLUGS = ['website-laten-maken', 'google-ads'] as const
 
 const T = {
   en: {
     crumbHome: 'Home',
     crumbBranches: 'Industries',
-    crumbHub: 'Dentists',
-    crumbCurrent: 'Local SEO for dentists',
-    badge: 'Dental local SEO',
-    h1: 'Local SEO for dentists',
+    crumbHub: 'Physiotherapists',
+    crumbCurrent: 'Local SEO for physiotherapists',
+    badge: 'Physio local SEO',
+    h1: 'Local SEO for physiotherapists',
     heroSub:
-      'Get found when new patients search Google Maps and “dentist near me” — with Google Business Profile optimisation, patient review growth and city keywords that fill the agenda. With 1,500+ completed projects, we know how practices win locally.',
+      'Get found when new clients search Google Maps and “physio near me” — with Google Business Profile optimisation, specialisation keywords, client review growth and neighbourhood search that fills the agenda. With 1,500+ completed projects, we know how practices win locally.',
     trust: '1,500+ completed projects',
     ctaPrimary: 'Request a quote',
     problemBadge: 'The real cost',
-    problemHead: 'Invisible in local search means nearby practices fill first',
+    problemHead: 'Invisible in local search means nearby physio practices fill first',
     problemP1:
-      'When someone types “dentist Utrecht centre” or “dentist accepting new patients near me”, Google shows a map pack of practices before most websites. If your practice is missing, incomplete or buried under better-reviewed neighbours, those registrations walk into someone else’s waiting room — even if your care is stronger.',
+      'When someone types “physiotherapist Rotterdam West” or “sports physio near me”, Google shows a map pack of practices before most websites. If your practice is missing, incomplete or buried under better-reviewed neighbours, those intakes walk into someone else’s treatment room — even if your specialisations fit better.',
     problemP2:
-      'Dental practices compete on proximity, stars, photos, clear hours and whether Google signals that you still take new patients. A restaurant ranking for “dinner near me” is a different game. Local SEO for dentists is about city + neighbourhood queries, emergency intent, insurance-aware phrasing and a Book action that turns a map tap into a call or booking before the patient opens Instagram.',
+      'Physio practices compete on proximity, stars, photos, clear hours and whether Google understands your specialisations. A dentist ranking for “dentist near me” is a different game. Local SEO for physiotherapists is about city + specialisation queries, direct-access search behaviour, review velocity and a Book action that turns a map tap into a call or intake before the client opens Instagram.',
     problemP3:
-      'Paid ads can buy short-term new-patient traffic, but organic map visibility compounds month after month as people move into your catchment. Without local SEO, you keep paying for clicks while the practice with fresher photos and more recent reviews owns the pack.',
+      'Paid ads can buy short-term new-client traffic, but organic map visibility compounds as people search after injuries, training loads and GP tips. Without local SEO, you keep paying for clicks while the practice with fresher photos and stronger specialisation signals owns the pack.',
     featuresBadge: 'What we do',
-    featuresHead: 'What is included in local SEO for dentists',
+    featuresHead: 'What is included in local SEO for physiotherapists',
     featuresSub:
-      'Every deliverable below is about getting new patients to find and choose your practice locally. Nothing here is a generic citation checklist with “dentist” pasted on.',
+      'Every deliverable below is about getting new clients to find and choose your practice locally. Nothing here is a generic citation checklist with “physio” pasted on.',
     processBadge: 'How we work',
-    processHead: 'How a dental local SEO engagement runs',
+    processHead: 'How a physio local SEO engagement runs',
     processSub:
-      'From auditing the map pack around your street to measuring calls, routes and website clicks that lead to registrations.',
+      'From auditing the map pack around your street to measuring calls, routes and website clicks that lead to intakes.',
     whyBadge: 'Why Amora Digital',
-    whyHead: 'Why dental practices trust us with local findability',
+    whyHead: 'Why physio practices trust us with local findability',
     whySub: 'Practice-aware local SEO, clear reporting and growth you can feel in the agenda.',
     whyItems: [
       {
-        title: 'Dental local focus',
-        desc: 'We optimise for dentist + city, new-patient and emergency-intent searches — not generic “near me” playbooks from hospitality or retail.'
+        title: 'Physio local focus',
+        desc: 'We optimise for physio + city, specialisation and direct-access search behaviour — not generic “near me” playbooks from dentistry or hospitality.'
       },
       {
         title: 'Maps & GBP expertise',
         desc: 'Google Business Profile, photos, hours and booking actions treated as the front door of local discovery for practices.'
       },
       {
-        title: 'Measurable patient actions',
+        title: 'Measurable client actions',
         desc: 'We track map impressions, calls, direction requests and website clicks from local search — signals tied to enquiries, not vanity rankings alone.'
       },
       {
         title: 'Everything under one roof',
-        desc: 'Local SEO today; practice website, Google Ads and social when you need them — without splitting the patient journey across five agencies.'
+        desc: 'Local SEO today; practice website and Google Ads when you need them — without splitting the client journey across five agencies.'
       }
     ],
     costsBadge: 'Timeframe & expectations',
-    costsHead: 'What to expect from local SEO for dentists',
+    costsHead: 'What to expect from local SEO for physiotherapists',
     costsIntro:
-      'Local SEO for dental practices is ongoing work, not a one-week flip. Early GBP and review improvements often show within weeks; stable map-pack presence for competitive city terms usually needs months of consistent optimisation. We never promise specific rankings — competitors, seasonality and review velocity all move the pack.',
+      'Local SEO for physio practices is ongoing work, not a one-week flip. Early GBP and review improvements often show within weeks; stable map-pack presence for competitive city and specialisation terms usually needs months of consistent optimisation. We never promise specific rankings — competitors, seasonality and review velocity all move the pack.',
     costsItems: [
       {
         title: 'Foundation (single practice)',
-        desc: 'GBP overhaul, hours/services/Book setup, citation cleanup, review process and a neighbourhood keyword set. Ideal for one location that needs to appear properly in Maps first.'
+        desc: 'GBP overhaul, hours/services/Book setup, citation cleanup, review process and a neighbourhood plus specialisation keyword set. Ideal for one location that needs to appear properly in Maps first.'
       },
       {
         title: 'Growth (competitive catchment)',
-        desc: 'Ongoing monthly optimisation: photo cadence, review replies, local content for city and treatment intent, competitor monitoring and reporting on profile actions that lead to new-patient enquiries.'
+        desc: 'Ongoing monthly optimisation: photo cadence, review replies, local content for city and specialisation intent, competitor monitoring and reporting on profile actions that lead to new-client enquiries.'
       },
       {
         title: 'Multi-location practices',
         desc: 'Separate profiles, local pages and review flows per site so each practice ranks in its own catchment — scoped after we map your cities and brands.'
       }
     ],
-    // TODO(Ali): Confirm monthly retainer / package price bands for dental local SEO and replace this note with approved figures.
+    // TODO(Ali): Confirm monthly retainer / package price bands for physio local SEO and replace this note with approved figures.
     costsNote:
-      'Exact investment depends on competition in your city, number of locations and how much GBP/review work is needed. Ask for a dental local SEO proposal and we will send a clear scope with realistic timelines — without ranking guarantees.',
-    siblingsBadge: 'Also for dentists',
+      'Exact investment depends on competition in your city, number of locations and how much GBP/review work is needed. Ask for a physio local SEO proposal and we will send a clear scope with realistic timelines — without ranking guarantees.',
+    siblingsBadge: 'Also for physiotherapists',
     siblingsHead: 'Pair local SEO with conversion and demand',
     siblingsSub:
-      'Local SEO gets you found. These dental services help convert and amplify that demand.',
+      'Local SEO gets you found. These physio services help convert and amplify that demand.',
     siblingsCta: 'View service',
-    hubLink: 'Back to dentist marketing',
+    hubLink: 'Back to physiotherapist marketing',
     supportLinkLabel: 'Also see our general local SEO service',
     supportLinkNote:
-      'For businesses outside dentistry we offer broader local SEO. Practice engagements follow the dental process on this page.',
-    ctaHeading: 'Ready to show up when new patients search nearby?',
+      'For businesses outside physiotherapy we offer broader local SEO. Practice engagements follow the physio process on this page.',
+    ctaHeading: 'Ready to show up when new clients search nearby?',
     ctaSub:
-      'Tell us your city, whether you accept new patients and how people find you today. We will propose a local SEO scope built around Google Maps, reviews and neighbourhood search — with honest timelines.',
+      'Tell us your city, specialisations and how people find you today. We will propose a local SEO scope built around Google Maps, reviews and neighbourhood search — with honest timelines.',
     ctaButton: 'Request a quote'
   },
   nl: {
     crumbHome: 'Home',
     crumbBranches: 'Branches',
-    crumbHub: 'Tandartsen',
-    crumbCurrent: 'Lokale SEO voor tandartsen',
-    badge: 'Lokale SEO voor tandartsen',
-    h1: 'Lokale SEO voor tandartsen',
+    crumbHub: 'Fysiotherapeuten',
+    crumbCurrent: 'Lokale SEO voor fysiotherapeuten',
+    badge: 'Lokale SEO voor fysiotherapeuten',
+    h1: 'Lokale SEO voor fysiotherapeuten',
     heroSub:
-      'Word gevonden wanneer nieuwe patiënten Google Maps en “tandarts bij mij in de buurt” openen — met Google Bedrijfsprofiel-optimalisatie, patiëntreviewgroei en stadszoekwoorden die de agenda vullen. Met 1.500+ afgeronde projecten weten we hoe praktijken lokaal winnen.',
+      'Word gevonden wanneer nieuwe cliënten Google Maps en “fysio bij mij in de buurt” openen — met Google Bedrijfsprofiel-optimalisatie, specialisatiezoekwoorden, cliëntreviewgroei en buurtzoekopdrachten die de agenda vullen. Met 1.500+ afgeronde projecten weten we hoe praktijken lokaal winnen.',
     trust: '1.500+ afgeronde projecten',
     ctaPrimary: 'Vraag een offerte aan',
     problemBadge: 'De echte kosten',
-    problemHead: 'Onzichtbaar in lokaal zoeken betekent dat buurtpraktijken eerst vol raken',
+    problemHead: 'Onzichtbaar in lokaal zoeken betekent dat buurtfysio’s eerst vol raken',
     problemP1:
-      'Als iemand “tandarts Utrecht centrum” of “tandarts die nieuwe patiënten aanneemt bij mij” typt, toont Google eerst een kaartpack van praktijken. Ontbreekt jouw praktijk, is het profiel incompleet of lig je onder beter beoordeelde buren, dan lopen die inschrijvingen bij iemand anders binnen — ook als jouw zorg sterker is.',
+      'Als iemand “fysiotherapeut Rotterdam West” of “sportfysio bij mij in de buurt” typt, toont Google eerst een kaartpack van praktijken. Ontbreekt jouw praktijk, is het profiel incompleet of lig je onder beter beoordeelde buren, dan lopen die intakes bij iemand anders binnen — ook als jouw specialisaties beter passen.',
     problemP2:
-      'Tandartspraktijken concurreren op nabijheid, sterren, foto’s, duidelijke tijden en of Google signaleert dat jullie nog nieuwe patiënten aannemen. Een restaurant dat rankt op “diner bij mij” speelt een ander spel. Lokale SEO voor tandartsen draait om stads- en wijkqueries, spoedintentie, verzekeringsbewuste formuleringen en een Boek-actie die een kaarttik omzet in een belletje of afspraak vóór de patiënt Instagram opent.',
+      'Fysiopraktijken concurreren op nabijheid, sterren, foto’s, duidelijke tijden en of Google je specialisaties begrijpt. Een tandarts die rankt op “tandarts bij mij” speelt een ander spel. Lokale SEO voor fysiotherapeuten draait om stads- + specialisatiequeries, zoekgedrag rond directe toegang, reviewtempo en een Boek-actie die een kaarttik omzet in een belletje of intake vóór de cliënt Instagram opent.',
     problemP3:
-      'Betaalde ads kopen kortetermijn nieuw-patiëntverkeer, maar organische kaartzichtbaarheid stapelt maand na maand als mensen in jouw verzorgingsgebied komen wonen. Zonder lokale SEO blijf je betalen voor klikken terwijl de praktijk met frissere foto’s en recentere reviews de pack bezit.',
+      'Betaalde ads kopen kortetermijn nieuw-cliëntverkeer, maar organische kaartzichtbaarheid stapelt naarmate mensen zoeken na blessures, trainingsbelasting en huisartstips. Zonder lokale SEO blijf je betalen voor klikken terwijl de praktijk met frissere foto’s en sterkere specialisatiesignalen de pack bezit.',
     featuresBadge: 'Wat we doen',
-    featuresHead: 'Wat zit er in lokale SEO voor tandartsen',
+    featuresHead: 'Wat zit er in lokale SEO voor fysiotherapeuten',
     featuresSub:
-      'Elke deliverable hieronder gaat over nieuwe patiënten die jouw praktijk lokaal vinden en kiezen. Niets is een generieke citation-checklist met “tandarts” erop geplakt.',
+      'Elke deliverable hieronder gaat over nieuwe cliënten die jouw praktijk lokaal vinden en kiezen. Niets is een generieke citation-checklist met “fysio” erop geplakt.',
     processBadge: 'Hoe we werken',
-    processHead: 'Hoe een lokaal SEO-traject voor tandartsen verloopt',
+    processHead: 'Hoe een lokaal SEO-traject voor fysiotherapeuten verloopt',
     processSub:
-      'Van een audit van de kaartpack rond jouw straat tot meten van belacties, routes en websiteklikken die tot inschrijvingen leiden.',
+      'Van een audit van de kaartpack rond jouw straat tot meten van belacties, routes en websiteklikken die tot intakes leiden.',
     whyBadge: 'Waarom Amora Digital',
-    whyHead: 'Waarom tandartspraktijken hun lokale vindbaarheid aan ons toevertrouwen',
+    whyHead: 'Waarom fysiopraktijken hun lokale vindbaarheid aan ons toevertrouwen',
     whySub: 'Praktijkbewuste lokale SEO, heldere rapportage en groei die je in de agenda voelt.',
     whyItems: [
       {
-        title: 'Focus op tandheelkunde lokaal',
-        desc: 'We optimaliseren voor tandarts + stad, nieuw-patiënt- en spoedintentie — geen generieke “bij mij”-playbooks uit horeca of retail.'
+        title: 'Focus op fysio lokaal',
+        desc: 'We optimaliseren voor fysio + stad, specialisatie en zoekgedrag rond directe toegang — geen generieke “bij mij”-playbooks uit tandheelkunde of horeca.'
       },
       {
         title: 'Maps- & GBP-expertise',
         desc: 'Google Bedrijfsprofiel, foto’s, tijden en boekingsacties als voordeur van lokale ontdekking voor praktijken.'
       },
       {
-        title: 'Meetbare patiëntacties',
+        title: 'Meetbare cliëntacties',
         desc: 'We volgen kaartimpressies, belacties, routeverzoeken en websiteklikken uit lokaal zoeken — signalen gekoppeld aan aanvragen, niet alleen vanity-rankings.'
       },
       {
         title: 'Alles onder één dak',
-        desc: 'Lokale SEO nu; praktijkwebsite, Google Ads en social wanneer je ze nodig hebt — zonder de patiëntreis over vijf bureaus te splitsen.'
+        desc: 'Lokale SEO nu; praktijkwebsite en Google Ads wanneer je ze nodig hebt — zonder de cliëntreis over vijf bureaus te splitsen.'
       }
     ],
     costsBadge: 'Doorlooptijd & verwachtingen',
-    costsHead: 'Wat je mag verwachten van lokale SEO voor tandartsen',
+    costsHead: 'Wat je mag verwachten van lokale SEO voor fysiotherapeuten',
     costsIntro:
-      'Lokale SEO voor tandartspraktijken is doorlopend werk, geen flip van één week. Eerste GBP- en reviewverbeteringen zie je vaak binnen enkele weken; stabiele kaartpack-aanwezigheid op concurrerende stadstermen vraagt meestal maanden consistente optimalisatie. We beloven nooit specifieke rankings — concurrenten, seizoen en reviewtempo bewegen de pack mee.',
+      'Lokale SEO voor fysiopraktijken is doorlopend werk, geen flip van één week. Eerste GBP- en reviewverbeteringen zie je vaak binnen enkele weken; stabiele kaartpack-aanwezigheid op concurrerende stads- en specialisatietermen vraagt meestal maanden consistente optimalisatie. We beloven nooit specifieke rankings — concurrenten, seizoen en reviewtempo bewegen de pack mee.',
     costsItems: [
       {
         title: 'Foundation (één praktijk)',
-        desc: 'GBP-overhaul, tijden/diensten/Boek, citation-opschoning, reviewproces en een wijkzoekwoordenset. Ideaal voor één locatie die eerst fatsoenlijk in Maps moet staan.'
+        desc: 'GBP-overhaul, tijden/diensten/Boek, citation-opschoning, reviewproces en een wijk- plus specialisatiezoekwoordenset. Ideaal voor één locatie die eerst fatsoenlijk in Maps moet staan.'
       },
       {
         title: 'Growth (concurrerend verzorgingsgebied)',
-        desc: 'Doorlopende maandelijkse optimalisatie: fotoritme, reviewantwoorden, lokale content voor stads- en behandelintentie, concurrentiemonitoring en rapportage op profielacties die tot nieuw-patiëntaanvragen leiden.'
+        desc: 'Doorlopende maandelijkse optimalisatie: fotoritme, reviewantwoorden, lokale content voor stads- en specialisatie-intentie, concurrentiemonitoring en rapportage op profielacties die tot nieuw-cliëntaanvragen leiden.'
       },
       {
         title: 'Meerdere locaties',
         desc: 'Aparte profielen, lokale pagina’s en reviewflows per vestiging zodat elke praktijk in het eigen verzorgingsgebied rankt — scope na mapping van steden en merken.'
       }
     ],
-    // TODO(Ali): Confirm monthly retainer / package price bands for dental local SEO and replace this note with approved figures.
+    // TODO(Ali): Confirm monthly retainer / package price bands for physio local SEO and replace this note with approved figures.
     costsNote:
-      'De exacte investering hangt af van concurrentie in jouw stad, aantal locaties en hoeveel GBP-/reviewwerk nodig is. Vraag een voorstel voor lokale SEO voor tandartsen aan en je ontvangt een duidelijke scope met realistische planning — zonder rankinggaranties.',
-    siblingsBadge: 'Ook voor tandartsen',
+      'De exacte investering hangt af van concurrentie in jouw stad, aantal locaties en hoeveel GBP-/reviewwerk nodig is. Vraag een voorstel voor lokale SEO voor fysiotherapeuten aan en je ontvangt een duidelijke scope met realistische planning — zonder rankinggaranties.',
+    siblingsBadge: 'Ook voor fysiotherapeuten',
     siblingsHead: 'Combineer lokale SEO met conversie en vraag',
     siblingsSub:
-      'Lokale SEO zorgt dat je gevonden wordt. Deze tandartsdiensten helpen die vraag converteren en versterken.',
+      'Lokale SEO zorgt dat je gevonden wordt. Deze fysiodiensten helpen die vraag converteren en versterken.',
     siblingsCta: 'Bekijk dienst',
-    hubLink: 'Terug naar tandartsmarketing',
+    hubLink: 'Terug naar fysiomarketing',
     supportLinkLabel: 'Bekijk ook onze algemene lokale SEO-dienst',
     supportLinkNote:
-      'Voor bedrijven buiten de tandheelkunde bieden we bredere lokale SEO. Praktijktrajecten volgen het proces op deze pagina.',
-    ctaHeading: 'Klaar om te verschijnen wanneer nieuwe patiënten in de buurt zoeken?',
+      'Voor bedrijven buiten de fysiotherapie bieden we bredere lokale SEO. Praktijktrajecten volgen het fysioproces op deze pagina.',
+    ctaHeading: 'Klaar om te verschijnen wanneer nieuwe cliënten in de buurt zoeken?',
     ctaSub:
-      'Vertel ons je stad, of jullie nieuwe patiënten aannemen en hoe mensen je nu vinden. We stellen een lokale SEO-scope voor rond Google Maps, reviews en buurtzoekopdrachten — met eerlijke doorlooptijden.',
+      'Vertel ons je stad, specialisaties en hoe mensen je nu vinden. We stellen een lokale SEO-scope voor rond Google Maps, reviews en buurtzoekopdrachten — met eerlijke doorlooptijden.',
     ctaButton: 'Vraag een offerte aan'
   }
 } as const
 
-export default function TandartsenLokaleSeo() {
+export default function FysiotherapeutenLokaleSeo() {
   const { pathname } = useLocation()
   const locale: Locale = localeFromPath(pathname)
   const t = T[locale]
-  const hubPath = ROUTES['branches-tandartsen'][locale]
-  const dentistSpokes = BRANCH_SPOKES.tandartsen
-  const siblings = dentistSpokes.filter((spoke) =>
+  const hubPath = ROUTES['branches-fysiotherapeuten'][locale]
+  const physioSpokes = BRANCH_SPOKES.fysiotherapeuten
+  const siblings = physioSpokes.filter((spoke) =>
     (SIBLING_SLUGS as readonly string[]).includes(spoke.slug)
   )
 
@@ -558,11 +558,11 @@ export default function TandartsenLokaleSeo() {
             <p className="section-subheading mx-auto">{t.siblingsSub}</p>
           </div>
 
-          <div className="grid sm:grid-cols-3 gap-6 lg:gap-8 mb-10">
+          <div className="grid sm:grid-cols-2 gap-6 lg:gap-8 mb-10 max-w-4xl mx-auto">
             {siblings.map((spoke) => (
               <BranchSpokeCard
                 key={spoke.slug}
-                industrySlug="tandartsen"
+                industrySlug="fysiotherapeuten"
                 hubPath={hubPath}
                 spoke={spoke}
                 locale={locale}

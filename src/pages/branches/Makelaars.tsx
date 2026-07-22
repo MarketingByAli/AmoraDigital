@@ -11,6 +11,7 @@ import {
 } from 'lucide-react'
 import { ROUTES, localeFromPath, type Locale } from '../../i18n/routes'
 import { BRANCH_SPOKES } from '../../data/branchSpokes'
+import BranchSpokeCard from '../../components/BranchSpokeCard'
 
 const SPOKES = BRANCH_SPOKES.makelaars
 const SPOKE_ICONS = [Globe, MapPin, Target, Megaphone] as const
@@ -156,28 +157,18 @@ export default function Makelaars() {
           </div>
 
           <div className="grid sm:grid-cols-2 gap-6 lg:gap-8">
-            {SPOKES.map((spoke, i) => {
-              const Icon = SPOKE_ICONS[i] ?? Globe
-              return (
-                <Link
-                  key={spoke.slug}
-                  to={`${hubPath}/${spoke.slug}`}
-                  className="card group p-6 lg:p-8 hover:-translate-y-1"
-                >
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform">
-                    <Icon className="w-6 h-6 text-white" aria-hidden />
-                  </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-primary-600 transition-colors">
-                    {spoke.name[locale]}
-                  </h3>
-                  <p className="text-slate-600 text-sm leading-relaxed mb-6">{spoke.benefit[locale]}</p>
-                  <div className="flex items-center gap-2 text-sm font-medium text-primary-600">
-                    <span>{t.learnMore}</span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden />
-                  </div>
-                </Link>
-              )
-            })}
+            {SPOKES.map((spoke, i) => (
+              <BranchSpokeCard
+                key={spoke.slug}
+                industrySlug="makelaars"
+                hubPath={hubPath}
+                spoke={spoke}
+                locale={locale}
+                ctaLabel={t.learnMore}
+                icon={SPOKE_ICONS[i] ?? Globe}
+                variant="hub"
+              />
+            ))}
           </div>
         </div>
       </section>
