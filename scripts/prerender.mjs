@@ -66,6 +66,7 @@ const EN_ROUTES = [
   '/branches/makelaars',
   '/branches/restaurants/website-laten-maken',
   '/branches/restaurants/lokale-seo',
+  '/branches/restaurants/social-media',
   '/branches/tandartsen/website-laten-maken',
   '/branches/tandartsen/lokale-seo',
   '/branches/fysiotherapeuten/website-laten-maken',
@@ -73,7 +74,8 @@ const EN_ROUTES = [
   '/branches/kappers-schoonheidssalons/website-laten-maken',
   '/branches/kappers-schoonheidssalons/lokale-seo',
   '/branches/makelaars/website-laten-maken',
-  '/branches/makelaars/lokale-seo'
+  '/branches/makelaars/lokale-seo',
+  '/branches/makelaars/social-media'
 ]
 
 const NL_ROUTES = [
@@ -115,6 +117,7 @@ const NL_ROUTES = [
   '/nl/branches/makelaars',
   '/nl/branches/restaurants/website-laten-maken',
   '/nl/branches/restaurants/lokale-seo',
+  '/nl/branches/restaurants/social-media',
   '/nl/branches/tandartsen/website-laten-maken',
   '/nl/branches/tandartsen/lokale-seo',
   '/nl/branches/fysiotherapeuten/website-laten-maken',
@@ -122,7 +125,8 @@ const NL_ROUTES = [
   '/nl/branches/kappers-schoonheidssalons/website-laten-maken',
   '/nl/branches/kappers-schoonheidssalons/lokale-seo',
   '/nl/branches/makelaars/website-laten-maken',
-  '/nl/branches/makelaars/lokale-seo'
+  '/nl/branches/makelaars/lokale-seo',
+  '/nl/branches/makelaars/social-media'
 ]
 
 const ROUTES = [...EN_ROUTES, ...NL_ROUTES]

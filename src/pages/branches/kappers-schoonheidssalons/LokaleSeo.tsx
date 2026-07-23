@@ -160,13 +160,13 @@ const PROCESS_STEPS = [
       step: '03',
       title: 'On-site local signals',
       description:
-        'Location pages, LocalBusiness markup and NAP alignment so your website supports Maps — without turning this engagement into a full website redesign (that lives on the salon website spoke).'
+        'Treatment and neighbourhood cues on-site so “balayage [city]” Maps clicks match the booking path on your site — coordination work, not a full salon redesign.'
     },
     nl: {
       step: '03',
       title: 'On-site lokale signalen',
       description:
-        'Locatiepagina’s, LocalBusiness-markup en NAP-afstemming zodat je website Maps ondersteunt — zonder dit traject tot een volledige redesign te maken (dat hoort bij de salonwebsite-spoke).'
+        'Behandel- en buurtsignalen on-site zodat Maps-klikken op “balayage [stad]” aansluiten op je boekingspad — afstemming, geen volledige salonredesign.'
     }
   },
   {
@@ -188,13 +188,13 @@ const PROCESS_STEPS = [
       step: '05',
       title: 'Measure bookings, not vanity',
       description:
-        'Monthly reporting on map impressions, profile actions (calls, direction requests, website clicks, bookings) and keyword movement — framed as progress toward more chair bookings, never guaranteed rankings.'
+        'Monthly reporting on map views, Book/call/direction actions and balayage, gel-nail and “kapper [city]” keyword shifts — read as progress toward chair bookings and Saturday fill, without claiming a fixed map-pack rank.'
     },
     nl: {
       step: '05',
       title: 'Meet boekingen, geen vanity',
       description:
-        'Maandelijkse rapportage over kaartimpressies, profielacties (bellen, route, websiteklikken, boekingen) en zoekwoordbeweging — als voortgang naar meer stoelboekingen, nooit als gegarandeerde rankings.'
+        'Maandelijkse rapportage over kaartweergaven, Boek/bel/route-acties en verschuivingen op balayage-, gelnagel- en “kapper [stad]”-zoekwoorden — gelezen als voortgang naar stoelboekingen en zaterdagvulling, zonder een vaste kaartrank te claimen.'
     }
   }
 ] as const
@@ -216,22 +216,22 @@ const T = {
     problemBadge: 'The real cost',
     problemHead: 'Invisible in local search means nearby salons fill first',
     problemP1:
-      'When someone types “hairdresser Utrecht centre” or “gel nails near me”, Google shows a map pack of salons before most websites. If your salon is missing, incomplete or buried under better-reviewed neighbours with fresher result photos, those clients book elsewhere — even if your colour work is stronger.',
+      'When someone searches “balayage Utrecht” or “gel nails Saturday near me”, Google shows three salons in the map pack before Instagram loads. A GBP without result photos, Saturday hours or a working Book button sends that chair booking to the salon with fresher colour shots — even if your technique is stronger.',
     problemP2:
-      'Salons compete on proximity, stars, before-after photos, clear hours and whether Google understands treatments like balayage or gel nails. A dentist ranking for “dentist near me” is a different game. Local SEO for hair and beauty is about city + service queries, review velocity, a Book button on Google and Instagram discovery that still lands on a bookable Maps listing.',
+      'Salon local search mixes service + city queries, Saturday peak hours, before-after photos and the path from Instagram discovery back to a bookable Maps listing. A dentist’s “new patients accepting” signals or a makelaar’s district landing pages solve different problems — beauty clients pick from stars and finish shots in the photo strip.',
     problemP3:
       'Paid ads and boosted posts can buy short-term attention, but organic map visibility compounds every time someone searches after a move, a wedding or a bad bleach experience. Without local SEO, you keep paying for clicks while the salon with more recent reviews and better result photos owns the pack.',
     featuresBadge: 'What we do',
     featuresHead: 'What is included in local SEO for salons',
     featuresSub:
-      'Every deliverable below is about getting new clients to find and choose your salon locally. Nothing here is a generic citation checklist with “salon” pasted on.',
+      'Each deliverable serves clients searching balayage, gel nails and “kapper [city]” — result photos, Book actions and Saturday-ready hours, not a renamed salon checklist.',
     processBadge: 'How we work',
     processHead: 'How a salon local SEO engagement runs',
     processSub:
       'From auditing the map pack around your street to measuring calls, routes and booking clicks that fill chairs.',
     whyBadge: 'Why Amora Digital',
     whyHead: 'Why salons trust us with local findability',
-    whySub: 'Salon-aware local SEO, clear reporting and growth you can feel in the chair.',
+    whySub: 'Salon-aware local SEO: service + city keywords, result photos and reporting tied to chair bookings — especially on Saturday peaks.',
     whyItems: [
       {
         title: 'Beauty local focus',
@@ -243,17 +243,17 @@ const T = {
       },
       {
         title: 'Measurable client actions',
-        desc: 'We track map impressions, calls, direction requests, website clicks and bookings from local search — signals tied to chairs, not vanity rankings alone.'
+        desc: 'We track map impressions, Book and call actions, direction requests and service-keyword clicks — read against chair bookings and Saturday fill, not vanity rankings.'
       },
       {
         title: 'Everything under one roof',
-        desc: 'Local SEO today; salon website and social when you need them — without splitting the client journey across five agencies.'
+        desc: 'Local SEO for your salon first; salon website and social when you need more Saturday chairs filled — one team from Instagram scroll to Google Book click.'
       }
     ],
     costsBadge: 'Timeframe & expectations',
     costsHead: 'What to expect from local SEO for salons',
     costsIntro:
-      'Local SEO for salons is ongoing work, not a one-week flip. Early GBP and review improvements often show within weeks; stable map-pack presence for competitive city and treatment terms usually needs months of consistent optimisation. We never promise specific rankings — competitors, seasonality and review velocity all move the pack.',
+      'Salon local SEO means fresh result photos, review cadence after colour and nail appointments, and service + city terms — especially around Saturday peaks. GBP action lifts often appear within weeks; competing for “balayage [city]” in a busy high street takes months. We plan for chair bookings, not promised pack slots.',
     costsItems: [
       {
         title: 'Foundation (single salon)',
@@ -265,16 +265,15 @@ const T = {
       },
       {
         title: 'Multi-location salons',
-        desc: 'Separate profiles, local pages and review flows per site so each salon ranks in its own catchment — scoped after we map your cities and brands.'
+        desc: 'A colour bar downtown and a neighbourhood cut shop get separate GBPs, hours and result-photo streams so Saturday seekers land on the right chair.'
       }
     ],
-    // TODO(Ali): Confirm monthly retainer / package price bands for salon local SEO and replace this note with approved figures.
     costsNote:
-      'Exact investment depends on competition in your city, number of locations and how much GBP/review work is needed. Ask for a salon local SEO proposal and we will send a clear scope with realistic timelines — without ranking guarantees.',
+      'Scope depends on services offered, locations and how much GBP needs result-photo and Book setup. Request a salon local-SEO quote — we outline treatment keywords, Instagram-to-Maps alignment and review habits with honest timelines, without ranking guarantees.',
     siblingsBadge: 'Also for salons',
     siblingsHead: 'Pair local SEO with conversion and social',
     siblingsSub:
-      'Local SEO gets you found. These salon services help convert and amplify that demand.',
+      'Maps puts your salon on the shortlist when someone searches a treatment; these services turn that glance into a booked chair and Instagram-quality proof in Google.',
     siblingsCta: 'View service',
     hubLink: 'Back to salon marketing',
     supportLinkLabel: 'Also see our general local SEO service',
@@ -282,7 +281,7 @@ const T = {
       'For businesses outside hair and beauty we offer broader local SEO. Salon engagements follow the process on this page.',
     ctaHeading: 'Ready to show up when new clients search nearby?',
     ctaSub:
-      'Tell us your city, services and how clients find you today. We will propose a local SEO scope built around Google Maps, reviews and treatment search — with honest timelines.',
+      'Share your city, top treatments and how clients book — walk-in, app or Instagram DM. We scope GBP result photos, service keywords and Saturday peak visibility with honest timelines.',
     ctaButton: 'Request a quote'
   },
   nl: {
@@ -299,22 +298,23 @@ const T = {
     problemBadge: 'De echte kosten',
     problemHead: 'Onzichtbaar in lokaal zoeken betekent dat buurtsalons eerst vol raken',
     problemP1:
-      'Als iemand “kapper Utrecht centrum” of “gelnagels bij mij in de buurt” typt, toont Google eerst een kaartpack van salons. Ontbreekt jouw salon, is het profiel incompleet of lig je onder beter beoordeelde buren met frissere resultaatfoto’s, dan boeken die klanten elders — ook als jouw kleurwerk sterker is.',
+      'Als iemand “balayage Utrecht” of “gelnagels zaterdag bij mij” zoekt, toont Google drie salons in de kaartpack vóór Instagram laadt. Een GBP zonder resultaatfoto’s, zaterdagtijden of werkende Boek-knop stuurt die stoelboeking naar de salon met frissere kleurfoto’s — ook als jouw techniek sterker is.',
     problemP2:
-      'Salons concurreren op nabijheid, sterren, before-afterfoto’s, duidelijke tijden en of Google behandelingen zoals balayage of gelnagels begrijpt. Een tandarts die rankt op “tandarts bij mij” speelt een ander spel. Lokale SEO voor kappers en beauty draait om stads- + dienstqueries, reviewtempo, een Boek-knop in Google en Instagram-ontdekking die nog steeds op een boekbare Maps-vermelding landt.',
+      'Lokaal salonzoeken mengt dienst- + stadqueries, zaterdagpieken, before-afterfoto’s en het pad van Instagram-ontdekking terug naar een boekbare Maps-vermelding. De “nieuwe patiënten”-signalen van een tandarts of wijklandingspagina’s van een makelaar lossen andere problemen op — beautyklanten kiezen op sterren en eindresultaten in de fotostrip.',
     problemP3:
-      'Betaalde ads en boosted posts kopen kortetermijnaandacht, maar organische kaartzichtbaarheid stapelt elke keer dat iemand zoekt na een verhuizing, een bruiloft of een mislukte bleach. Zonder lokale SEO blijf je betalen voor klikken terwijl de salon met recentere reviews en betere resultaatfoto’s de pack bezit.',
+      'Betaalde ads en boosted posts kopen kortetermijnaandacht, maar organische kaartzichtbaarheid stapelt elke keer dat iemand zoekt na een verhuizing, een bruiloft of een mislukte bleach — vaak op vrijdagavond voor een zaterdagblok. Zonder lokale SEO blijf je betalen voor klikken terwijl de salon met recentere reviews, betere resultaatfoto’s in de fotostrip en een werkende Boek-knop de pack bezit wanneer Instagram-volgers alsnog “kapper bij mij” googelen.',
     featuresBadge: 'Wat we doen',
     featuresHead: 'Wat zit er in lokale SEO voor kappers & salons',
     featuresSub:
-      'Elke deliverable hieronder gaat over nieuwe klanten die jouw salon lokaal vinden en kiezen. Niets is een generieke citation-checklist met “salon” erop geplakt.',
+      'Elke deliverable dient klanten die balayage, gelnagels en “kapper [stad]” zoeken — resultaatfoto’s, Boek-acties en zaterdagklare tijden, geen hernoemde salonchecklist. We denken vanuit stoelplanning en stylistportfolio’s, niet vanuit een generieke retail-GBP — zodat Maps-tiks naar geboekte stoelen leiden.',
     processBadge: 'Hoe we werken',
     processHead: 'Hoe een lokaal SEO-traject voor salons verloopt',
     processSub:
-      'Van een audit van de kaartpack rond jouw straat tot meten van belacties, routes en boekingsklikken die stoelen vullen.',
+      'Van een audit van de kaartpack rond jouw straat tot meten van belacties, routes en Boek-klikken die stoelen vullen — inclusief hoe Instagram-ontdekking terugkomt in een boekbare Maps-vermelding met resultaatfoto’s die bij balayage of gelnagels passen.',
     whyBadge: 'Waarom Amora Digital',
     whyHead: 'Waarom salons hun lokale vindbaarheid aan ons toevertrouwen',
-    whySub: 'Salonbewuste lokale SEO, heldere rapportage en groei die je in de stoel voelt.',
+    whySub:
+      'Salonbewuste lokale SEO: dienst- + stadzoekwoorden, resultaatfoto’s en rapportage gekoppeld aan stoelboekingen — vooral rond zaterdagpieken en bruiloftsperiodes wanneer de agenda het hardst loopt.',
     whyItems: [
       {
         title: 'Focus op beauty lokaal',
@@ -326,17 +326,17 @@ const T = {
       },
       {
         title: 'Meetbare klantacties',
-        desc: 'We volgen kaartimpressies, belacties, routeverzoeken, websiteklikken en boekingen uit lokaal zoeken — signalen gekoppeld aan stoelen, niet alleen vanity-rankings.'
+        desc: 'We volgen kaartimpressies, Boek- en belacties, routeverzoeken en klikken op dienstzoekwoorden — afgezet tegen stoelboekingen en zaterdagvulling, niet vanity-rankings.'
       },
       {
         title: 'Alles onder één dak',
-        desc: 'Lokale SEO nu; salonwebsite en social wanneer je ze nodig hebt — zonder de klantreis over vijf bureaus te splitsen.'
+        desc: 'Eerst lokale SEO voor je salon; salonwebsite en social wanneer je meer zaterdagstoelen gevuld wilt — één team van Instagram-scroll tot Google Boek-klik.'
       }
     ],
     costsBadge: 'Doorlooptijd & verwachtingen',
     costsHead: 'Wat je mag verwachten van lokale SEO voor salons',
     costsIntro:
-      'Lokale SEO voor salons is doorlopend werk, geen flip van één week. Eerste GBP- en reviewverbeteringen zie je vaak binnen enkele weken; stabiele kaartpack-aanwezigheid op concurrerende stads- en behandeltermen vraagt meestal maanden consistente optimalisatie. We beloven nooit specifieke rankings — concurrenten, seizoen en reviewtempo bewegen de pack mee.',
+      'Lokale SEO voor salons betekent verse resultaatfoto’s, reviewritme na kleur- en nagelafspraken en dienst- + stadtermen — rond zaterdagpieken en bruiloftsperiodes. GBP-acties stijgen vaak binnen enkele weken; concurreren op “balayage [stad]” of “gelnagels [wijk]” in een drukke winkelstraat vraagt maanden consistent fotowerk. We plannen op stoelboekingen en herbezoek, niet op beloofde packplekken.',
     costsItems: [
       {
         title: 'Foundation (één salon)',
@@ -348,16 +348,15 @@ const T = {
       },
       {
         title: 'Meerdere locaties',
-        desc: 'Aparte profielen, lokale pagina’s en reviewflows per vestiging zodat elke salon in het eigen verzorgingsgebied rankt — scope na mapping van steden en merken.'
+        desc: 'Een colour bar in het centrum en een knipzaak in de wijk krijgen eigen GBP’s, tijden en resultaatfoto-streams, zodat zaterdagzoekers op de juiste stoel landen.'
       }
     ],
-    // TODO(Ali): Confirm monthly retainer / package price bands for salon local SEO and replace this note with approved figures.
     costsNote:
-      'De exacte investering hangt af van concurrentie in jouw stad, aantal locaties en hoeveel GBP-/reviewwerk nodig is. Vraag een voorstel voor lokale SEO voor kappers aan en je ontvangt een duidelijke scope met realistische planning — zonder rankinggaranties.',
+      'Scope hangt af van diensten, locaties en hoeveel GBP resultaatfoto- en Boek-setup nodig heeft. Vraag een lokale-SEO-offerte voor salons aan — we schetsen behandelzoekwoorden, Instagram-naar-Maps-afstemming en reviewgewoontes met eerlijke planning, zonder rankinggaranties.',
     siblingsBadge: 'Ook voor salons',
     siblingsHead: 'Combineer lokale SEO met conversie en social',
     siblingsSub:
-      'Lokale SEO zorgt dat je gevonden wordt. Deze salondiensten helpen die vraag converteren en versterken.',
+      'Maps zet je salon op de shortlist wanneer iemand een behandeling zoekt; deze diensten maken van die blik een geboekte stoel en Instagram-waardig bewijs in Google.',
     siblingsCta: 'Bekijk dienst',
     hubLink: 'Terug naar salonmarketing',
     supportLinkLabel: 'Bekijk ook onze algemene lokale SEO-dienst',
@@ -365,7 +364,7 @@ const T = {
       'Voor bedrijven buiten hair & beauty bieden we bredere lokale SEO. Salontrajecten volgen het proces op deze pagina.',
     ctaHeading: 'Klaar om te verschijnen wanneer nieuwe klanten in de buurt zoeken?',
     ctaSub:
-      'Vertel ons je stad, diensten en hoe klanten je nu vinden. We stellen een lokale SEO-scope voor rond Google Maps, reviews en behandelzoekopdrachten — met eerlijke doorlooptijden.',
+      'Deel je stad, toptreatments en hoe klanten boeken — inlopen, app of Instagram-DM. We scopen GBP-resultaatfoto’s, dienstzoekwoorden en zichtbaarheid rond zaterdagpieken met eerlijke doorlooptijden.',
     ctaButton: 'Vraag een offerte aan'
   }
 } as const

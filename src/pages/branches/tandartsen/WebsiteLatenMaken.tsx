@@ -146,13 +146,13 @@ const PROCESS_STEPS = [
       step: '02',
       title: 'Treatments & booking structure',
       description:
-        'Information architecture around treatments, team, fees and book/register flows — not a generic “Services” page. Every key treatment and new-patient path gets a clear place.'
+        'Structure follows patient journeys: routine check-up vs implant intake vs hygienist-only booking. Treatment pages, team bios, fee transparency and registration each land where anxious patients expect them — not under one vague “Services” menu.'
     },
     nl: {
       step: '02',
       title: 'Behandel- & boekingsstructuur',
       description:
-        'Informatiearchitectuur rond behandelingen, team, tarieven en boek-/inschrijfflows — geen generieke “Diensten”-pagina. Elke kernbehandeling en nieuw-patiëntroute krijgt een duidelijke plek.'
+        'Structuur volgt patiëntreizen: controle versus implantaat-intake versus alleen mondhygiënist. Behandelpagina’s, team, tarieftransparantie en inschrijving staan waar angstige patiënten ze verwachten — niet onder één vaag “Diensten”-menu.'
     }
   },
   {
@@ -188,13 +188,13 @@ const PROCESS_STEPS = [
       step: '05',
       title: 'Launch & measure registrations',
       description:
-        'Go live with analytics on appointment starts, registration completions and call taps. You see which treatments and traffic sources fill the agenda — not just pageviews.'
+        'After launch we track appointment form starts, completed new-patient registrations and emergency-line taps. You see whether “children’s dentistry” or “whitening” pages drive agenda fills — not anonymous visits from people who never intended to book.'
     },
     nl: {
       step: '05',
       title: 'Live & inschrijvingen meten',
       description:
-        'Livegang met analytics op afspraakstarts, voltooide inschrijvingen en belacties. Je ziet welke behandelingen en verkeersbronnen de agenda vullen — niet alleen pageviews.'
+        'Na livegang meten we afspraakformulier-starts, voltooide nieuw-patiëntinschrijvingen en spoedlijn-klikken. Je ziet of “kinderzorg” of “bleken” de agenda vult — geen anonieme bezoeken van mensen die nooit wilden boeken.'
     }
   }
 ] as const
@@ -216,7 +216,7 @@ const T = {
     problemBadge: 'The real cost',
     problemHead: 'A weak practice website loses new patient registrations before the chair is free',
     problemP1:
-      'When someone searches “dentist Amsterdam West” or “dentist accepting new patients near me”, they open a few tabs. The first site that shows treatments, whether you take new patients, fees context and a one-tap book button usually wins. If your site is a PDF folder from years ago, a Facebook page only, or a template that hides the phone number, those patients register elsewhere — or call the practice with the clearer emergency info.',
+      'Someone comparing practices after a move reads whether you accept new patients, how implants are explained and whether the booking form looks privacy-aware — all before calling. A site that hides treatment fees, buries the agenda link or feels like a generic template sends that patient to the practice whose hygienist hours are visible on page one.',
     problemP2:
       'Dental practices do not need a restaurant-style brochure. They need a digital front desk: treatment pages, hygienist paths, anxiety reassurance, emergency guidance and a registration flow that works while someone is still deciding after a bad experience elsewhere. Miss that, and you pay in empty slots mid-week and overloaded phones after holidays.',
     problemP3:
@@ -224,7 +224,7 @@ const T = {
     featuresBadge: 'What we build',
     featuresHead: 'What is included in a dental practice website',
     featuresSub:
-      'Every feature below answers a patient or reception need. Nothing here is a generic “About us” block renamed for healthcare.',
+      'Each item maps to what patients ask reception or worry about before sharing medical details — appointment types, new-patient intake, privacy — not a healthcare template with your logo swapped in.',
     processBadge: 'How we work',
     processHead: 'How a dental practice website project runs',
     processSub:
@@ -239,7 +239,7 @@ const T = {
       },
       {
         title: 'Local findability support',
-        desc: 'Site structure and LocalBusiness signals that support Google Maps and “dentist near me” — not just a pretty homepage.'
+        desc: 'Treatment URLs, practice address markup and a clear “register as new patient” path that supports how people find you on Maps after they leave your site.'
       },
       {
         title: 'Measurable bookings',
@@ -247,13 +247,13 @@ const T = {
       },
       {
         title: 'Everything under one roof',
-        desc: 'Website today; local SEO, Google Ads and social when you are ready — without handing patients to five agencies.'
+        desc: 'Website first; local SEO, Google Ads and social when the agenda needs more new patients — same team that already knows your treatment pages and AVG-sensitive forms.'
       }
     ],
     costsBadge: 'Investment',
     costsHead: 'What does a website for a dental practice cost?',
     costsIntro:
-      'Price depends on scope: how many treatments you present, whether you need online appointment booking, new-patient registration, multilingual pages and photo or video of the practice. We quote fixed packages after a short intake — not hourly surprises mid-build.',
+      'Scope follows your practice setup: number of treatment pages, online agenda link, new-patient registration flow, hygienist paths and whether you need explicit AVG messaging on forms. Fixed deliverables after a short intake — no open-ended build while patients wait in the chair.',
     costsItems: [
       {
         title: 'Essential practice site',
@@ -268,13 +268,12 @@ const T = {
         desc: 'Multiple practices, implant or orthodontic landing paths, referral pages or language variants. Scoped per brand after we map how patients and referring dentists move through your organisation.'
       }
     ],
-    // TODO(Ali): Confirm package price bands for dental practice websites and replace this note with approved figures.
     costsNote:
-      'Exact package prices are confirmed in your quote after we see treatment complexity and booking needs. Ask for a dental website proposal and we will send a fixed scope with timelines.',
+      'We lock the build scope after reviewing treatment pages, agenda integration and registration steps. Ask for a dental website quote with a fixed deliverable list and timelines — that is how you get a figure tailored to your practice, not a published band here.',
     siblingsBadge: 'Also for dentists',
     siblingsHead: 'Pair your website with practice growth',
     siblingsSub:
-      'A strong site converts traffic. These dental services bring more of the right patients to it.',
+      'Patients who find you on Maps still need treatment clarity and a safe booking path before they trust a new practice. These services bring searchers to a site that answers clinical questions, not just ranks.',
     siblingsCta: 'View service',
     hubLink: 'Back to dentist marketing',
     webDesignLinkLabel: 'Also see our general website design service',
@@ -299,7 +298,7 @@ const T = {
     problemBadge: 'De echte kosten',
     problemHead: 'Een zwakke praktijkwebsite kost nieuwe patiëntinschrijvingen vóór de stoel vrij is',
     problemP1:
-      'Als iemand zoekt op “tandarts Amsterdam West” of “tandarts die nieuwe patiënten aanneemt bij mij”, openen ze een paar tabbladen. De eerste site die behandelingen toont, of jullie nieuwe patiënten aannemen, tariefcontext en een één-tap-boekknop heeft, wint meestal. Is jouw site een PDF-map van jaren geleden, alleen Facebook, of een template die het telefoonnummer verbergt, dan schrijven die patiënten zich elders in — of bellen ze de praktijk met duidelijkere spoedinfo.',
+      'Iemand die na een verhuizing praktijken vergelijkt, leest eerst of jullie nieuwe patiënten aannemen, hoe implantaten worden uitgelegd en of het boekingsformulier AVG-bewust oogt — vóór ze bellen. Een site die tarieven verbergt, de agenda-link begraaft of als generieke template voelt, stuurt die patiënt naar de praktijk waar mondhygiëne-uren op pagina één staan.',
     problemP2:
       'Tandartspraktijken hebben geen restaurantbrochure nodig. Ze hebben een digitale balie nodig: behandelpagina’s, mondhygiënist-paden, angstgeruststelling, spoedinformatie en een inschrijfflow die werkt terwijl iemand nog twijfelt na een slechte ervaring elders. Mis je dat, dan betaal je met lege slots midden in de week en overvolle telefoons na vakanties.',
     problemP3:
@@ -307,7 +306,7 @@ const T = {
     featuresBadge: 'Wat we bouwen',
     featuresHead: 'Wat zit er in een website voor tandartsen',
     featuresSub:
-      'Elke feature hieronder beantwoordt een behoefte van patiënt of balie. Niets is een generiek “Over ons”-blok met een zorglabel erop.',
+      'Elk onderdeel sluit aan op wat patiënten aan de balie vragen of waar ze over twijfelen vóór ze medische gegevens delen — afspraaktypes, inschrijving, privacy — geen zorgsjabloon met jullie logo erop.',
     processBadge: 'Hoe we werken',
     processHead: 'Hoe een website-traject voor een tandartspraktijk verloopt',
     processSub:
@@ -322,7 +321,7 @@ const T = {
       },
       {
         title: 'Steun voor lokale vindbaarheid',
-        desc: 'Sitestructuur en LocalBusiness-signalen die Google Maps en “tandarts bij mij” ondersteunen — niet alleen een mooie homepage.'
+        desc: 'Behandel-URL’s, praktijkschema-markup en een duidelijk “inschrijven als nieuwe patiënt”-pad dat steunt hoe mensen je op Maps vinden nadat ze je site verlaten.'
       },
       {
         title: 'Meetbare boekingen',
@@ -330,13 +329,13 @@ const T = {
       },
       {
         title: 'Alles onder één dak',
-        desc: 'Website nu; lokale SEO, Google Ads en social wanneer je er klaar voor bent — zonder patiënten aan vijf bureaus over te dragen.'
+        desc: 'Website eerst; lokale SEO, Google Ads en social wanneer de agenda meer nieuwe patiënten nodig heeft — hetzelfde team dat je behandelpagina’s en AVG-gevoelige formulieren al kent.'
       }
     ],
     costsBadge: 'Investering',
     costsHead: 'Wat kost een website voor een tandartspraktijk?',
     costsIntro:
-      'De prijs hangt af van scope: hoeveel behandelingen je presenteert, of je online afspraken nodig hebt, inschrijving voor nieuwe patiënten, meertalige pagina’s en foto of video van de praktijk. Na een korte intake geven we vaste packages — geen uurtje-factuurtje halverwege de bouw.',
+      'Scope volgt je praktijkopzet: aantal behandelpagina’s, online agenda-koppeling, inschrijfflow voor nieuwe patiënten, mondhygiënist-paden en expliciete AVG-taal op formulieren. Na een korte intake vaste deliverables — geen open bouw terwijl patiënten in de stoel wachten.',
     costsItems: [
       {
         title: 'Essentiële praktijksite',
@@ -351,13 +350,12 @@ const T = {
         desc: 'Meerdere praktijken, implantaat- of orthodontie-landingspaden, verwijspagina’s of taalvarianten. Scope per merk nadat we in kaart hebben hoe patiënten en verwijzers door je organisatie bewegen.'
       }
     ],
-    // TODO(Ali): Confirm package price bands for dental practice websites and replace this note with approved figures.
     costsNote:
-      'Exacte packageprijzen bevestigen we in je offerte nadat we behandelcomplexiteit en boekingsbehoeften hebben gezien. Vraag een voorstel voor een tandartswebsite aan en je ontvangt een vaste scope met planning.',
+      'We zetten de bouwscope vast na review van behandelpagina’s, agenda-integratie en inschrijfstappen. Vraag een tandartswebsite-offerte aan met vaste deliverables en planning — zo krijg je een bedrag dat bij jouw praktijk past, geen gepubliceerde band hier.',
     siblingsBadge: 'Ook voor tandartsen',
     siblingsHead: 'Combineer je website met praktijkgroei',
     siblingsSub:
-      'Een sterke site converteert verkeer. Deze tandartsdiensten brengen meer van de juiste patiënten ernaartoe.',
+      'Patiënten die je via Maps vinden, hebben nog behandelduidelijkheid en een veilig boekpad nodig vóór ze een nieuwe praktijk vertrouwen. Deze diensten brengen zoekers naar een site die klinische vragen beantwoordt, niet alleen rankt.',
     siblingsCta: 'Bekijk dienst',
     hubLink: 'Terug naar tandartsmarketing',
     webDesignLinkLabel: 'Bekijk ook onze algemene webdesign-dienst',

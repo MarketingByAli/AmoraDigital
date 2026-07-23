@@ -147,13 +147,13 @@ const PROCESS_STEPS = [
       step: '02',
       title: 'Services & booking structure',
       description:
-        'Information architecture around treatments, price list, portfolio and book-by-stylist flows — not a generic “Services” page. Every key treatment and stylist path gets a clear place.'
+        'Site map mirrors how clients choose: cuts vs colour packages, stylist portfolios, gift cards and walk-in vs appointment rules. Every core service and “book with Emma” path gets its own clear entry — not one lumped price PDF.'
     },
     nl: {
       step: '02',
       title: 'Diensten- & boekingsstructuur',
       description:
-        'Informatiearchitectuur rond behandelingen, prijslijst, portfolio en boek-per-stylist-flows — geen generieke “Diensten”-pagina. Elke kerndienst en stylistroute krijgt een duidelijke plek.'
+        'De sitestructuur volgt hoe klanten kiezen: knippen versus kleurpakketten, stylistportfolio’s, cadeaubonnen en inlopen versus afspraak. Elke kerndienst en elk “boek bij Emma”-pad krijgt een eigen ingang — geen enkele prijs-PDF.'
     }
   },
   {
@@ -189,13 +189,13 @@ const PROCESS_STEPS = [
       step: '05',
       title: 'Launch & measure bookings',
       description:
-        'Go live with analytics on booking starts, gift-card sales and call taps. You see which services and stylists fill the chair — not just pageviews.'
+        'We track booking starts, gift-voucher purchases and which stylist pages get the last click before appointment. You see if Maps or Instagram fills Tuesday colour blocks — not traffic from people who only wanted to save a mood board.'
     },
     nl: {
       step: '05',
       title: 'Live & afspraken meten',
       description:
-        'Livegang met analytics op boekingsstarts, cadeaubonverkopen en belacties. Je ziet welke diensten en stylisten de stoel vullen — niet alleen pageviews.'
+        'We meten boekingsstarts, cadeaubonverkopen en welke stylistpagina de laatste klik vóór afspraak krijgt. Je ziet of Maps of Instagram dinsdagkleurblokken vult — geen verkeer van mensen die alleen een moodboard wilden opslaan.'
     }
   }
 ] as const
@@ -217,7 +217,7 @@ const T = {
     problemBadge: 'The real cost',
     problemHead: 'A weak salon website loses appointments before the chair is free',
     problemP1:
-      'When someone searches “hairdresser Amsterdam centre” or “balayage near me”, they open a few tabs. The first site with a clear price list, recent portfolio shots and a one-tap book button usually wins. If your salon only lives on Instagram DMs, a Facebook page, or a template that buries the booking link, those clients book elsewhere — or message the salon with the brighter before-after photos.',
+      'Someone scrolling for balayage at 22:30 compares price lists, recent before-after shots and whether they can book their favourite stylist — not message three salons on WhatsApp. Salons that live only in DMs or hide the booking link behind a Facebook tab lose the chair to the competitor whose Saturday slots are visible without a 15-minute chat.',
     problemP2:
       'Salons do not need a dentist intake form or a restaurant menu. They need a digital front desk: treatments and prices, stylist pages, a gallery that sells colour work, gift vouchers and a booking flow that works at 23:00 when someone finally decides on a cut. Miss that, and you pay in empty Tuesday slots and overloaded phones on Friday afternoon.',
     problemP3:
@@ -225,7 +225,7 @@ const T = {
     featuresBadge: 'What we build',
     featuresHead: 'What is included in a salon website',
     featuresSub:
-      'Every feature below answers a client or salon-floor need. Nothing here is a generic “About us” block renamed for beauty.',
+      'Each feature ties to what clients decide in the chair mirror: stylist choice, before-after proof, Saturday slot — not rebranded “About us” filler for beauty.',
     processBadge: 'How we work',
     processHead: 'How a salon website project runs',
     processSub:
@@ -240,7 +240,7 @@ const T = {
       },
       {
         title: 'Local findability support',
-        desc: 'Site structure and LocalBusiness signals that support Google Maps and “hairdresser near me” — not just a pretty homepage.'
+        desc: 'Stylist and treatment URLs plus salon address markup so a “balayage near me” Maps visit can jump straight into the right booking slot.'
       },
       {
         title: 'Measurable bookings',
@@ -248,13 +248,13 @@ const T = {
       },
       {
         title: 'Everything under one roof',
-        desc: 'Website today; local SEO and social when you are ready — without handing clients to five agencies.'
+        desc: 'Website today; local SEO and social when the chair needs filling between colour days — one crew that knows your stylist pages and booking tool, not five vendors who never set foot in the salon.'
       }
     ],
     costsBadge: 'Investment',
     costsHead: 'What does a website for a hair or beauty salon cost?',
     costsIntro:
-      'Price depends on scope: how many services and stylists you present, whether you need online booking, gift vouchers, Instagram integration and portfolio production. We quote fixed packages after a short intake — not hourly surprises mid-build.',
+      'Scope depends on service count, stylist-level booking, portfolio size, gift vouchers and whether walk-ins and appointments share one agenda. Fixed deliverables after a short salon intake — no open-ended build while chairs are turning.',
     costsItems: [
       {
         title: 'Essential salon site',
@@ -269,13 +269,12 @@ const T = {
         desc: 'Multiple salons, gift vouchers, product retail or language variants. Scoped per brand after we map how clients book and buy.'
       }
     ],
-    // TODO(Ali): Confirm package price bands for salon websites and replace this note with approved figures.
     costsNote:
-      'Exact package prices are confirmed in your quote after we see service complexity and booking needs. Ask for a salon website proposal and we will send a fixed scope with timelines.',
+      'We lock scope once we know your treatment-list depth, booking software and portfolio needs. Ask for a salon website quote — fixed deliverables and go-live date, without extra rounds per stylist page. That quote is where the figure for your chairs lives.',
     siblingsBadge: 'Also for salons',
     siblingsHead: 'Pair your website with local growth',
     siblingsSub:
-      'A strong site converts traffic. These salon services bring more of the right clients to it.',
+      'Fresh Instagram traffic is wasted if prices and stylist calendars are still buried in DMs. These services feed browsers to a site where they can pick a colourist and book before closing time.',
     siblingsCta: 'View service',
     hubLink: 'Back to salon marketing',
     webDesignLinkLabel: 'Also see our general website design service',
@@ -300,7 +299,7 @@ const T = {
     problemBadge: 'De echte kosten',
     problemHead: 'Een zwakke salonwebsite kost afspraken vóór de stoel vrij is',
     problemP1:
-      'Als iemand zoekt op “kapper Amsterdam centrum” of “balayage bij mij in de buurt”, openen ze een paar tabbladen. De eerste site met een duidelijke prijslijst, recente portfoliofoto’s en een één-tap-boekknop wint meestal. Leeft jouw salon alleen in Instagram-DM’s, op Facebook, of in een template die de boeklink begraaft, dan boeken die klanten elders — of appen ze de salon met de betere before-afterfoto’s.',
+      'Iemand die om 22:30 naar balayage zoekt, vergelijkt prijslijsten, recente before-afters en of ze hun favoriete stylist kunnen boeken — niet drie salons via WhatsApp. Salons die alleen in DM’s leven of de boeklink achter Facebook verstoppen, verliezen de stoel aan de concurrent waar zaterdagslots zichtbaar zijn zonder kwartier chat.',
     problemP2:
       'Salons hebben geen tandartsintake of restaurantmenu nodig. Ze hebben een digitale balie nodig: behandelingen en prijzen, stylistpagina’s, een galerij die kleurwerk verkoopt, cadeaubonnen en een boekflow die om 23:00 werkt wanneer iemand eindelijk een knipbeurt plant. Mis je dat, dan betaal je met lege dinsdagslots en overvolle telefoons op vrijdagmiddag.',
     problemP3:
@@ -308,7 +307,7 @@ const T = {
     featuresBadge: 'Wat we bouwen',
     featuresHead: 'Wat zit er in een website voor kappers & salons',
     featuresSub:
-      'Elke feature hieronder beantwoordt een behoefte van klant of salonvloer. Niets is een generiek “Over ons”-blok met een beautylabel erop.',
+      'Elke feature hangt samen met wat klanten in de spiegel beslissen: stylistkeuze, before-after-bewijs, zaterdagslot — geen hernoemd “Over ons”-vulsel voor beauty.',
     processBadge: 'Hoe we werken',
     processHead: 'Hoe een website-traject voor een salon verloopt',
     processSub:
@@ -323,7 +322,7 @@ const T = {
       },
       {
         title: 'Steun voor lokale vindbaarheid',
-        desc: 'Sitestructuur en LocalBusiness-signalen die Google Maps en “kapper bij mij” ondersteunen — niet alleen een mooie homepage.'
+        desc: 'Stylist- en behandel-URL’s plus salonadres-markup zodat een Maps-bezoek op “balayage bij mij” meteen in het juiste boekingsblok kan springen.'
       },
       {
         title: 'Meetbare boekingen',
@@ -331,13 +330,13 @@ const T = {
       },
       {
         title: 'Alles onder één dak',
-        desc: 'Website nu; lokale SEO en social wanneer je er klaar voor bent — zonder klanten aan vijf bureaus over te dragen.'
+        desc: 'Website nu; lokale SEO en social wanneer de stoel tussen kleurdagen leeg staat — één team dat je stylistpagina’s en boekingssoftware kent, geen vijf leveranciers die nooit in de salon zijn geweest.'
       }
     ],
     costsBadge: 'Investering',
     costsHead: 'Wat kost een website voor een kapsalon?',
     costsIntro:
-      'De prijs hangt af van scope: hoeveel diensten en stylisten je presenteert, of je online boeken nodig hebt, cadeaubonnen, Instagram-integratie en portfolioproductie. Na een korte intake geven we vaste packages — geen uurtje-factuurtje halverwege de bouw.',
+      'De scope hangt af van aantal diensten, boeken per stylist, portfoliomvang, cadeaubonnen en of inlopen en afspraken één agenda delen. Vaste deliverables na een korte salonintake — geen open bouw terwijl de stoelen draaien.',
     costsItems: [
       {
         title: 'Essentiële salonsite',
@@ -352,13 +351,12 @@ const T = {
         desc: 'Meerdere salons, cadeaubonnen, productverkoop of taalvarianten. Scope per merk nadat we in kaart hebben hoe klanten boeken en kopen.'
       }
     ],
-    // TODO(Ali): Confirm package price bands for salon websites and replace this note with approved figures.
     costsNote:
-      'Exacte packageprijzen bevestigen we in je offerte nadat we dienstencomplexiteit en boekingsbehoeften hebben gezien. Vraag een voorstel voor een salonwebsite aan en je ontvangt een vaste scope met planning.',
+      'We zetten de scope vast zodra behandellijstdiepte, boekingssoftware en portfoliobehoefte duidelijk zijn. Vraag een salonwebsite-offerte aan — vaste deliverables en livegang, zonder extra rondes per stylistpagina. In die offerte staat het bedrag voor jouw stoelen.',
     siblingsBadge: 'Ook voor salons',
     siblingsHead: 'Combineer je website met lokale groei',
     siblingsSub:
-      'Een sterke site converteert verkeer. Deze salondiensten brengen meer van de juiste klanten ernaartoe.',
+      'Vers Instagram-verkeer is zinloos als prijzen en stylistagenda’s nog in DM’s zitten. Deze diensten sturen browsers naar een site waar ze een colorist kiezen en boeken vóór sluitingstijd.',
     siblingsCta: 'Bekijk dienst',
     hubLink: 'Terug naar salonmarketing',
     webDesignLinkLabel: 'Bekijk ook onze algemene webdesign-dienst',

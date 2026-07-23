@@ -57,6 +57,9 @@ const BranchesRestaurantsWebsiteLatenMaken = lazy(
 const BranchesRestaurantsLokaleSeo = lazy(
   () => import('./pages/branches/restaurants/LokaleSeo')
 )
+const BranchesRestaurantsSocialMedia = lazy(
+  () => import('./pages/branches/restaurants/SocialMedia')
+)
 const BranchesTandartsenWebsiteLatenMaken = lazy(
   () => import('./pages/branches/tandartsen/WebsiteLatenMaken')
 )
@@ -80,6 +83,9 @@ const BranchesMakelaarsWebsiteLatenMaken = lazy(
 )
 const BranchesMakelaarsLokaleSeo = lazy(
   () => import('./pages/branches/makelaars/LokaleSeo')
+)
+const BranchesMakelaarsSocialMedia = lazy(
+  () => import('./pages/branches/makelaars/SocialMedia')
 )
 
 function PageLoader() {
@@ -184,6 +190,10 @@ function App() {
                 element={<BranchesRestaurantsLokaleSeo />}
               />
               <Route
+                path={ROUTES['branches-restaurants-social-media'].en}
+                element={<BranchesRestaurantsSocialMedia />}
+              />
+              <Route
                 path={ROUTES['branches-tandartsen-website-laten-maken'].en}
                 element={<BranchesTandartsenWebsiteLatenMaken />}
               />
@@ -214,6 +224,10 @@ function App() {
               <Route
                 path={ROUTES['branches-makelaars-lokale-seo'].en}
                 element={<BranchesMakelaarsLokaleSeo />}
+              />
+              <Route
+                path={ROUTES['branches-makelaars-social-media'].en}
+                element={<BranchesMakelaarsSocialMedia />}
               />
 
               {/* Dutch routes (/nl/...) */}
@@ -265,6 +279,10 @@ function App() {
                 element={<BranchesRestaurantsLokaleSeo />}
               />
               <Route
+                path={ROUTES['branches-restaurants-social-media'].nl}
+                element={<BranchesRestaurantsSocialMedia />}
+              />
+              <Route
                 path={ROUTES['branches-tandartsen-website-laten-maken'].nl}
                 element={<BranchesTandartsenWebsiteLatenMaken />}
               />
@@ -295,6 +313,10 @@ function App() {
               <Route
                 path={ROUTES['branches-makelaars-lokale-seo'].nl}
                 element={<BranchesMakelaarsLokaleSeo />}
+              />
+              <Route
+                path={ROUTES['branches-makelaars-social-media'].nl}
+                element={<BranchesMakelaarsSocialMedia />}
               />
 
               <Route path="*" element={<NotFound />} />

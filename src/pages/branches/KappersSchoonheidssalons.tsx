@@ -28,11 +28,11 @@ const T = {
     servicesBadge: 'Our services',
     servicesHead: 'What we do for salons',
     servicesSub:
-      'Practical services that match how clients discover you, book and return. Choose a service for more detail.',
+      'Services for photo-led discovery, online booking and rebooking reminders — built for salon traffic patterns. Choose a service for detail.',
     learnMore: 'Learn more',
     whyBadge: 'Why Amora Digital',
     whyHead: 'Why salons choose us',
-    whySub: 'No generic marketing. An approach built for hair and beauty.',
+    whySub: 'Salons sell looks and moments. We match messaging to portfolios, promotions and chair time.',
     whyItems: [
       {
         title: 'Industry experience',
@@ -48,12 +48,12 @@ const T = {
       },
       {
         title: 'Everything under one roof',
-        desc: 'Website, local SEO and social in one plan so channels reinforce each other.'
+        desc: 'Booking site, before-and-after feeds, Maps and retargeting ads follow one style guide — so a colour post and your booking page feel like the same salon.'
       }
     ],
-    ctaHeading: 'Ready to fill more appointments?',
+    ctaHeading: 'Ready for fuller chairs and more rebookings?',
     ctaSub:
-      'Tell us about your salon. We will review your website, visibility and social that fit your brand.',
+      'Tell us about your services, stylists and booking tool. We will see where clients drop off between browse and confirmed appointment.',
     ctaButton: 'Request a quote'
   },
   nl: {
@@ -68,11 +68,11 @@ const T = {
     servicesBadge: 'Onze diensten',
     servicesHead: 'Wat we doen voor salons',
     servicesSub:
-      'Concrete diensten die aansluiten op hoe klanten je ontdekken, boeken en terugkomen. Kies een dienst voor meer detail.',
+      'Diensten voor visuele ontdekking, online boeken en herinneringen voor herbezoek — passend bij drukte in de salon. Kies een dienst voor details.',
     learnMore: 'Meer informatie',
     whyBadge: 'Waarom Amora Digital',
     whyHead: 'Waarom salons voor ons kiezen',
-    whySub: 'Geen generieke marketing. Wel aanpak die past bij hair & beauty.',
+    whySub: 'Salons verkopen een look en een moment. Wij sluiten teksten aan op portfolio, acties en stoeltijd.',
     whyItems: [
       {
         title: 'Branche-ervaring',
@@ -88,12 +88,12 @@ const T = {
       },
       {
         title: 'Alles onder één dak',
-        desc: 'Website, lokale SEO en social in één plan, zodat kanalen elkaar versterken.'
+        desc: 'Boekingssite, before-and-after feeds, Maps en retargeting volgen één stijl — kleurpost en boekingspagina voelen als dezelfde salon.'
       }
     ],
-    ctaHeading: 'Klaar voor meer afspraken in de agenda?',
+    ctaHeading: 'Klaar voor voller bezette stoelen en meer herbezoek?',
     ctaSub:
-      'Vertel ons over je salon. We kijken mee naar website, vindbaarheid en social die bij jouw merk passen.',
+      'Vertel over behandelingen, stylisten en boekingstool. We bekijken waar klanten afhaken tussen browsen en bevestigde afspraak.',
     ctaButton: 'Vraag een offerte aan'
   }
 } as const

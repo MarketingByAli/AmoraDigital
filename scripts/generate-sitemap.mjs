@@ -115,6 +115,14 @@ const PAGES = [
     image: '/og/Home.png'
   },
   {
+    key: 'branches-restaurants-social-media',
+    en: '/branches/restaurants/social-media',
+    nl: '/nl/branches/restaurants/social-media',
+    changefreq: 'weekly',
+    priority: '0.8',
+    image: '/og/Home.png'
+  },
+  {
     key: 'branches-tandartsen-website-laten-maken',
     en: '/branches/tandartsen/website-laten-maken',
     nl: '/nl/branches/tandartsen/website-laten-maken',
@@ -174,6 +182,14 @@ const PAGES = [
     key: 'branches-makelaars-lokale-seo',
     en: '/branches/makelaars/lokale-seo',
     nl: '/nl/branches/makelaars/lokale-seo',
+    changefreq: 'weekly',
+    priority: '0.8',
+    image: '/og/Home.png'
+  },
+  {
+    key: 'branches-makelaars-social-media',
+    en: '/branches/makelaars/social-media',
+    nl: '/nl/branches/makelaars/social-media',
     changefreq: 'weekly',
     priority: '0.8',
     image: '/og/Home.png'

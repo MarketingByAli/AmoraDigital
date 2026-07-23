@@ -159,13 +159,13 @@ const PROCESS_STEPS = [
       step: '03',
       title: 'On-site local signals',
       description:
-        'Location pages, LocalBusiness markup and NAP alignment so your website supports Maps — without turning this engagement into a full website redesign (that lives on the restaurant website spoke).'
+        'Menu URL, opening hours and Restaurant markup stay consistent with GBP so a Maps Reserve tap does not land on a stale homepage — small alignment, not a full site rebuild.'
     },
     nl: {
       step: '03',
       title: 'On-site lokale signalen',
       description:
-        'Locatiepagina’s, LocalBusiness-markup en NAP-afstemming zodat je website Maps ondersteunt — zonder dit traject tot een volledige redesign te maken (dat hoort bij de restaurantwebsite-spoke).'
+        'Menu-URL, openingstijden en Restaurant-markup blijven gelijk aan GBP, zodat een Maps-Reserveer-tik niet op een verouderde homepage landt — kleine afstemming, geen volledige siterebuild.'
     }
   },
   {
@@ -187,13 +187,13 @@ const PROCESS_STEPS = [
       step: '05',
       title: 'Measure covers, not vanity',
       description:
-        'Monthly reporting on map impressions, profile actions (calls, direction requests, website clicks) and keyword movement — framed as progress toward more walk-ins and reservations, never guaranteed rankings.'
+        'Monthly dashboards on map views, Reserve/call/direction actions and cuisine + city keyword shifts — read as progress toward walk-ins and pre-dinner bookings, without claiming a permanent map-pack slot.'
     },
     nl: {
       step: '05',
       title: 'Meet covers, geen vanity',
       description:
-        'Maandelijkse rapportage over kaartimpressies, profielacties (bellen, route, websiteklikken) en zoekwoordbeweging — als voortgang naar meer inlopen en reserveringen, nooit als gegarandeerde rankings.'
+        'Maandelijkse dashboards over kaartweergaven, Reserveer/bel/route-acties en verschuivingen op keuken- + stadzoekwoorden — gelezen als voortgang naar inlopen en boekingen, zonder een vaste kaartpackplek te claimen.'
     }
   }
 ] as const
@@ -215,22 +215,22 @@ const T = {
     problemBadge: 'The real cost',
     problemHead: 'Invisible in local search means empty tables two streets away fill first',
     problemP1:
-      'When someone types “Thai restaurant Utrecht centre” or “best steak near me”, Google shows a map pack of three venues before most websites. If your restaurant is missing, incomplete or buried under better-reviewed neighbours, those covers walk into someone else’s dining room — even if your food is stronger.',
+      'When someone searches “Thai restaurant Utrecht centre” or “steakhouse open tonight near me”, Google serves a three-pin map pack before any menu page loads. Missing from that pack — or showing stale hours, stock food photos and no Reserve button — sends tonight’s covers to the place with fresher dish shots next door.',
     problemP2:
-      'Restaurants compete on proximity, stars, photos and whether tonight’s hours look trustworthy. A dentist ranking for “practice near me” is a different game. Hospitality local SEO is about cuisine + city queries, dish photos in GBP, menu signals and a Reserve button that turns a map tap into a booking intent before the guest opens Instagram.',
+      'Restaurants win or lose on cuisine + city relevance, appetite-building GBP photos and a Reserve path that works on mobile. A physiotherapist competing for “sport physio [city]” or a makelaar for “free valuation [district]” faces entirely different intent — copying their local SEO template onto your dining room leaves hungry map searchers elsewhere.',
     problemP3:
-      'Delivery apps and paid ads can buy short-term traffic, but organic map visibility compounds night after night. Without local SEO, you keep paying platforms for guests who already searched for a place like yours — while the competitor with fresher photos and more recent reviews owns the pack.',
+      'Delivery apps and paid ads can buy short-term traffic, but organic map visibility compounds night after night — including the Tuesday lunch covers platforms rarely fill for you. Without local SEO, you keep paying for guests who already searched for a place like yours, while the competitor with fresher dish photos and more recent reviews owns the pack when someone is standing on the pavement deciding where to walk in.',
     featuresBadge: 'What we do',
     featuresHead: 'What is included in restaurant local SEO',
     featuresSub:
-      'Every deliverable below is about getting diners to find and choose your venue locally. Nothing here is a generic citation checklist with “restaurant” pasted on.',
+      'Everything here serves diners choosing where to eat tonight — cuisine keywords, dish photos, menu links and Reserve setup, not a renamed generic citation audit.',
     processBadge: 'How we work',
     processHead: 'How a restaurant local SEO engagement runs',
     processSub:
-      'From auditing the map pack around your street to measuring calls, routes and reservation-ready clicks.',
+      'From auditing the map pack on your street and cuisine category to measuring calls, routes and Reserve taps that turn into seated covers.',
     whyBadge: 'Why Amora Digital',
     whyHead: 'Why restaurants trust us with local findability',
-    whySub: 'Hospitality-aware local SEO, clear reporting and growth you can feel at the door.',
+    whySub: 'Hospitality-first local SEO: GBP tuned for cuisine and city, with reporting that shows up in reservation-ready map actions.',
     whyItems: [
       {
         title: 'Hospitality local focus',
@@ -242,17 +242,17 @@ const T = {
       },
       {
         title: 'Measurable guest actions',
-        desc: 'We track map impressions, calls, direction requests and website clicks from local search — signals tied to covers, not vanity rankings alone.'
+        desc: 'We track map impressions, Reserve and call actions, direction requests and cuisine-keyword movement — read against covers booked, not vanity rankings.'
       },
       {
         title: 'Everything under one roof',
-        desc: 'Local SEO today; restaurant website, social and Google Ads when you need them — without splitting your guest journey across five agencies.'
+        desc: 'Local SEO for your venue first; restaurant website, social and Google Ads when you need Tuesday fill — one partner from map tap to seated guest.'
       }
     ],
     costsBadge: 'Timeframe & expectations',
     costsHead: 'What to expect from restaurant local SEO',
     costsIntro:
-      'Local SEO for restaurants is ongoing work, not a one-week flip. Early GBP and review improvements often show within weeks; stable map-pack presence for competitive city and cuisine terms usually needs months of consistent optimisation. We never promise specific rankings — competitors, seasonality and review velocity all move the pack.',
+      'Restaurant local SEO means keeping GBP, reviews and cuisine + neighbourhood terms current — especially around holidays and seasonal menus. Profile action lifts often appear within weeks; holding ground in a competitive dining strip takes months of photo and review cadence. We plan for progress, not promised rankings.',
     costsItems: [
       {
         title: 'Foundation (single location)',
@@ -264,16 +264,15 @@ const T = {
       },
       {
         title: 'Multi-location hospitality',
-        desc: 'Separate profiles, local pages and review flows per venue so each kitchen ranks in its own catchment — scoped after we map your cities and brands.'
+        desc: 'Brasserie and sister lunch concept each keep their own Reserve button, cuisine categories and dish-photo stream — so Maps does not mix two kitchens into one confused pin.'
       }
     ],
-    // TODO(Ali): Confirm monthly retainer / package price bands for restaurant local SEO and replace this note with approved figures.
     costsNote:
-      'Exact investment depends on competition in your city, number of locations and how much GBP/review work is needed. Ask for a restaurant local SEO proposal and we will send a clear scope with realistic timelines — without ranking guarantees.',
+      'What you need depends on city competition, number of venues and how incomplete your GBP is today. Request a restaurant local-SEO quote — we outline Reserve setup, dish-photo cadence and review flows with realistic timing, without ranking guarantees.',
     siblingsBadge: 'Also for restaurants',
     siblingsHead: 'Pair local SEO with conversion and demand',
     siblingsSub:
-      'Local SEO gets you found. These restaurant services help convert and amplify that demand.',
+      'Map visibility brings diners to your street; these services turn that glance into a reserved table and a return visit.',
     siblingsCta: 'View service',
     hubLink: 'Back to restaurant marketing',
     supportLinkLabel: 'Also see our general local SEO service',
@@ -281,7 +280,7 @@ const T = {
       'For businesses outside hospitality we offer broader local SEO. Restaurant engagements follow the hospitality process on this page.',
     ctaHeading: 'Ready to show up when guests search nearby?',
     ctaSub:
-      'Tell us your city, cuisine and how guests find you today. We will propose a local SEO scope built around Google Maps, reviews and neighbourhood search — with honest timelines.',
+      'Tell us your city, cuisine and how guests book tonight. We propose GBP, dish-photo and neighbourhood keyword work aimed at covers — with honest timing, not pack promises.',
     ctaButton: 'Request a quote'
   },
   nl: {
@@ -298,22 +297,23 @@ const T = {
     problemBadge: 'De echte kosten',
     problemHead: 'Onzichtbaar in lokaal zoeken betekent dat tafels twee straten verder eerst vol raken',
     problemP1:
-      'Als iemand “Thais restaurant Utrecht centrum” of “beste steak bij mij in de buurt” typt, toont Google eerst een kaartpack van drie zaken. Ontbreekt jouw restaurant, is het profiel incompleet of lig je onder beter beoordeelde buren, dan lopen die covers bij iemand anders binnen — ook als jouw eten sterker is.',
+      'Als iemand “Thais restaurant Utrecht centrum” of “steakhouse vanavond open bij mij” zoekt, toont Google eerst een kaartpack van drie pins vóór een menupagina laadt. Ontbreekt jouw zaak — of staan verouderde tijden, stockfood en geen Reserveer-knop op GBP — dan gaan vanavonds covers naar de buurman met frissere gerechtfoto’s.',
     problemP2:
-      'Restaurants concurreren op nabijheid, sterren, foto’s en of de openingstijden vanavond betrouwbaar ogen. Een tandarts die rankt op “praktijk bij mij” speelt een ander spel. Lokale SEO voor horeca draait om keuken + stad-queries, gerechtfoto’s in GBP, menusignalen en een Reserveer-knop die een kaarttik omzet in boekingsintentie vóór de gast Instagram opent.',
+      'Restaurants winnen of verliezen op keuken + stad, GBP-foto’s die trek geven en een Reserveer-pad dat op mobiel werkt. Een fysio die concurreert op “sportfysio [stad]” of een makelaar op “gratis waardebepaling [wijk]” heeft andere intentie — hun lokale SEO-sjabloon op jouw zaak plakken laat hongerige kaartzoekers elders.',
     problemP3:
-      'Bezorgapps en betaalde ads kopen kortetermijnverkeer, maar organische kaartzichtbaarheid stapelt avond na avond. Zonder lokale SEO blijf je platforms betalen voor gasten die al een zaak zoals die van jou zochten — terwijl de concurrent met frissere foto’s en recentere reviews de pack bezit.',
+      'Bezorgapps en betaalde ads kopen kortetermijnverkeer, maar organische kaartzichtbaarheid stapelt avond na avond — inclusief de dinsdaglunchcovers die platforms zelden voor je vullen. Zonder lokale SEO blijf je betalen voor gasten die al een zaak zoals die van jou zochten, terwijl de concurrent met frissere gerechtfoto’s en recentere reviews de pack bezit wanneer iemand op de stoep staat te beslissen waar hij binnenloopt. Wie wél in Maps staat met actuele keukentijden en een werkende Reserveer-knop, vangt die last-minute keuze vóór de bezorgapp.',
     featuresBadge: 'Wat we doen',
     featuresHead: 'Wat zit er in lokale SEO voor restaurants',
     featuresSub:
-      'Elke deliverable hieronder gaat over diners die jouw zaak lokaal vinden en kiezen. Niets is een generieke citation-checklist met “restaurant” erop geplakt.',
+      'Alles hier dient diners die vanavond kiezen waar ze eten — keukenzoekwoorden, gerechtfoto’s, menulinks en Reserveer-setup, geen hernoemde generieke citation-audit. We denken mee vanuit de passe en de reserveringslijst, niet vanuit een generieke “lokale SEO checklist” voor willekeurige winkels. Elke deliverable moet terug te leiden zijn naar een bel, route of Reserveer-tik die tot een zittende gast kan leiden.',
     processBadge: 'Hoe we werken',
     processHead: 'Hoe een lokaal SEO-traject voor restaurants verloopt',
     processSub:
-      'Van een audit van de kaartpack rond jouw straat tot meten van belacties, routes en reserveringsklare klikken.',
+      'Van een audit van de kaartpack op jouw straat en keukencategorie tot meten van belacties, routes en Reserveer-tiks die tot zittende covers leiden — inclusief hoe feestdagen, terrasseizoen en seizoensmenu’s in GBP, gerechtfoto’s en reviewantwoorden meelopen wanneer gasten “open vanavond” zoeken.',
     whyBadge: 'Waarom Amora Digital',
     whyHead: 'Waarom restaurants hun lokale vindbaarheid aan ons toevertrouwen',
-    whySub: 'Horeca-bewuste lokale SEO, heldere rapportage en groei die je aan de deur voelt.',
+    whySub:
+      'Horeca-eerst lokale SEO: GBP afgestemd op keuken en stad, met rapportage die terugkomt in reserveringsklare kaartacties — bel, route en Reserveer — die je kunt afzetten tegen zittende covers op piekavonden en lunchen.',
     whyItems: [
       {
         title: 'Focus op horeca lokaal',
@@ -325,17 +325,17 @@ const T = {
       },
       {
         title: 'Meetbare gastacties',
-        desc: 'We volgen kaartimpressies, belacties, routeverzoeken en websiteklikken uit lokaal zoeken — signalen gekoppeld aan covers, niet alleen vanity-rankings.'
+        desc: 'We volgen kaartimpressies, Reserveer- en belacties, routeverzoeken en beweging op keukenzoekwoorden — afgezet tegen geboekte covers, niet vanity-rankings.'
       },
       {
         title: 'Alles onder één dak',
-        desc: 'Lokale SEO nu; restaurantwebsite, social en Google Ads wanneer je ze nodig hebt — zonder je gastjourney over vijf bureaus te splitsen.'
+        desc: 'Eerst lokale SEO voor je zaak; restaurantwebsite, social en Google Ads wanneer je dinsdagvulling nodig hebt — één partner van kaarttik tot zittende gast.'
       }
     ],
     costsBadge: 'Doorlooptijd & verwachtingen',
     costsHead: 'Wat je mag verwachten van lokale SEO voor restaurants',
     costsIntro:
-      'Lokale SEO voor restaurants is doorlopend werk, geen flip van één week. Eerste GBP- en reviewverbeteringen zie je vaak binnen enkele weken; stabiele kaartpack-aanwezigheid op concurrerende stads- en keukentermen vraagt meestal maanden consistente optimalisatie. We beloven nooit specifieke rankings — concurrenten, seizoen en reviewtempo bewegen de pack mee.',
+      'Lokale SEO voor restaurants betekent GBP, reviews en keuken- + buurttermen actueel houden — rond feestdagen, terrasseizoen en seizoensmenu’s. Profielacties stijgen vaak binnen enkele weken; voet aan de grond houden in een concurrerende eetstraat vraagt maanden foto- en reviewritme, vooral als buren elke week verse gerechtshots posten. We plannen op voortgang richting meer inlopen en reserveringen, niet op beloofde rankings.',
     costsItems: [
       {
         title: 'Foundation (één locatie)',
@@ -347,16 +347,15 @@ const T = {
       },
       {
         title: 'Meerdere horecalocaties',
-        desc: 'Aparte profielen, lokale pagina’s en reviewflows per vestiging zodat elke keuken in het eigen verzorgingsgebied rankt — scope na mapping van steden en merken.'
+        desc: 'Brasserie en zuster-lunchconcept houden elk hun eigen Reserveer-knop, keukencategorieën en gerechtfoto-stroom — zodat Maps twee keukens niet tot één verwarrende pin mengt.'
       }
     ],
-    // TODO(Ali): Confirm monthly retainer / package price bands for restaurant local SEO and replace this note with approved figures.
     costsNote:
-      'De exacte investering hangt af van concurrentie in jouw stad, aantal locaties en hoeveel GBP-/reviewwerk nodig is. Vraag een voorstel voor lokale SEO voor restaurants aan en je ontvangt een duidelijke scope met realistische planning — zonder rankinggaranties.',
+      'Wat je nodig hebt hangt af van stadconcurrentie, aantal zaken en hoe incompleet je GBP vandaag is. Vraag een lokale-SEO-offerte voor restaurants aan — we schetsen Reserveer-setup, gerechtfotoritme en reviewflows met realistische timing, zonder rankinggaranties.',
     siblingsBadge: 'Ook voor restaurants',
     siblingsHead: 'Combineer lokale SEO met conversie en vraag',
     siblingsSub:
-      'Lokale SEO zorgt dat je gevonden wordt. Deze restaurantdiensten helpen die vraag converteren en versterken.',
+      'Kaartzichtbaarheid brengt diners naar je straat; deze diensten maken van die blik een gereserveerde tafel, een snellere menukeuze en een herhaalbezoek volgende week.',
     siblingsCta: 'Bekijk dienst',
     hubLink: 'Terug naar restaurantmarketing',
     supportLinkLabel: 'Bekijk ook onze algemene lokale SEO-dienst',
@@ -364,7 +363,7 @@ const T = {
       'Voor bedrijven buiten de horeca bieden we bredere lokale SEO. Restauranttrajecten volgen het horecaproces op deze pagina.',
     ctaHeading: 'Klaar om te verschijnen wanneer gasten in de buurt zoeken?',
     ctaSub:
-      'Vertel ons je stad, keuken en hoe gasten je nu vinden. We stellen een lokale SEO-scope voor rond Google Maps, reviews en buurtzoekopdrachten — met eerlijke doorlooptijden.',
+      'Vertel je stad, keuken en hoe gasten vanavond boeken. We stellen GBP-, gerechtfoto- en buurtzoekwoordwerk voor op covers — met eerlijke timing, geen packbeloftes.',
     ctaButton: 'Vraag een offerte aan'
   }
 } as const

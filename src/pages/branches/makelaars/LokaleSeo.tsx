@@ -187,13 +187,13 @@ const PROCESS_STEPS = [
       step: '05',
       title: 'Measure valuations, not vanity',
       description:
-        'Monthly reporting on map impressions, profile actions (calls, direction requests, website clicks) and keyword movement — framed as progress toward more valuation and listing enquiries, never guaranteed rankings.'
+        'Monthly reporting on map views, valuation/call/direction actions and makelaar + district keyword shifts — read as progress toward valuation requests and instructions, without promising a permanent map-pack rank.'
     },
     nl: {
       step: '05',
       title: 'Meet waardebepalingen, geen vanity',
       description:
-        'Maandelijkse rapportage over kaartimpressies, profielacties (bellen, route, websiteklikken) en zoekwoordbeweging — als voortgang naar meer waardebepaling- en opdrachtvragen, nooit als gegarandeerde rankings.'
+        'Maandelijkse rapportage over kaartweergaven, waardebepaling/bel/route-acties en verschuivingen op makelaar- + wijkzoekwoorden — gelezen als voortgang naar waardebepalingaanvragen en opdrachten, zonder een vaste kaartrank te beloven.'
     }
   }
 ] as const
@@ -215,22 +215,22 @@ const T = {
     problemBadge: 'The real cost',
     problemHead: 'Invisible in local search means nearby agents win the listing first',
     problemP1:
-      'When someone types “estate agent Rotterdam West” or “sell house Utrecht”, Google shows a map pack of agencies before most websites. If your office is missing, incomplete or buried under better-reviewed neighbours with clearer service areas, those sellers instruct someone else — even if your sold results are stronger.',
+      'When a seller searches “estate agent Rotterdam West” or “free valuation Utrecht”, Google shows three agencies in the map pack before Funda opens. An unclear service area, stale office photos or weak “sell my house” signals send that valuation request to the neighbour with clearer district pages — even if your sold stock is stronger.',
     problemP2:
-      'Estate agents compete on proximity, stars, service area clarity and whether Google understands the districts you cover. A dentist ranking for “dentist near me” is a different game. Local SEO for makelaars is about city + neighbourhood intent, “free valuation” search behaviour, seller reviews and winning discovery next to portals — not trying to replace Funda for every listing click.',
+      'Estate agent local search is about makelaar + city intent, free-valuation queries, district credibility and discovery beside portals — not listing clicks on Funda. A restaurant optimising dish photos or a physio highlighting DTF access solves unrelated problems; sellers shortlist agents from map pins, service areas and seller reviews.',
     problemP3:
       'Paid ads can buy short-term valuation traffic, but organic map and local search visibility compounds every time a seller starts looking for an agent. Without local SEO, you keep paying for clicks while the office with fresher reviews and better district pages owns the pack.',
     featuresBadge: 'What we do',
     featuresHead: 'What is included in local SEO for estate agents',
     featuresSub:
-      'Every deliverable below is about getting sellers and buyers to find and choose your agency locally. Nothing here is a generic citation checklist with “estate agent” pasted on.',
+      'Each deliverable targets sellers searching makelaar + city, free valuations and district intent — service areas, valuation paths and seller reviews, not a renamed agency checklist.',
     processBadge: 'How we work',
     processHead: 'How an estate agent local SEO engagement runs',
     processSub:
       'From auditing the map pack around your office to measuring calls, routes and website clicks that lead to valuations.',
     whyBadge: 'Why Amora Digital',
     whyHead: 'Why agencies trust us with local findability',
-    whySub: 'Real-estate-aware local SEO, clear reporting and growth you can feel in instructions.',
+    whySub: 'Real-estate-aware local SEO: makelaar + city discovery, valuation intent and reporting tied to instructions — beside Funda, not instead of it.',
     whyItems: [
       {
         title: 'Agency local focus',
@@ -242,17 +242,17 @@ const T = {
       },
       {
         title: 'Measurable seller actions',
-        desc: 'We track map impressions, calls, direction requests and website clicks from local search — signals tied to enquiries, not vanity rankings alone.'
+        desc: 'We track map impressions, valuation and call actions, direction requests and district-keyword clicks — tied to valuation requests and listing instructions, not vanity map rank.'
       },
       {
         title: 'Everything under one roof',
-        desc: 'Local SEO today; agency website, Google Ads and social when you need them — without splitting the seller journey across five agencies.'
+        desc: 'Local SEO for your office first; agency website, Google Ads and social when you need more valuation flow — one team from map search to signed instruction, without duplicating Funda’s listing role.'
       }
     ],
     costsBadge: 'Timeframe & expectations',
     costsHead: 'What to expect from local SEO for estate agents',
     costsIntro:
-      'Local SEO for agencies is ongoing work, not a one-week flip. Early GBP and review improvements often show within weeks; stable map-pack and district visibility for competitive city terms usually needs months of consistent optimisation. We never promise specific rankings — competitors, seasonality and review velocity all move the pack.',
+      'Estate agent local SEO is ongoing GBP, district-page and valuation-keyword work — competing for seller discovery beside portals, not listing traffic. Profile and enquiry lifts often appear within weeks; stable visibility for “estate agent [city]” and district terms usually needs months. We report instruction-ready trends, not promised rankings.',
     costsItems: [
       {
         title: 'Foundation (single office)',
@@ -264,16 +264,15 @@ const T = {
       },
       {
         title: 'Multi-office agencies',
-        desc: 'Separate profiles, local pages and review flows per branch so each office ranks in its own catchment — scoped after we map your cities and brands.'
+        desc: 'Each office keeps its own service area, seller-review stream and district pages — so West does not steal valuation calls meant for South.'
       }
     ],
-    // TODO(Ali): Confirm monthly retainer / package price bands for estate agent local SEO and replace this note with approved figures.
     costsNote:
-      'Exact investment depends on competition in your city, number of offices and how much GBP/review and district-page work is needed. Ask for an estate agent local SEO proposal and we will send a clear scope with realistic timelines — without ranking guarantees.',
+      'Scope depends on districts covered, office count and how much GBP and neighbourhood-page work is needed versus Funda-led discovery. Request an agency local-SEO quote — we outline valuation paths, district signals and seller review flows with honest timelines, without ranking guarantees.',
     siblingsBadge: 'Also for estate agents',
     siblingsHead: 'Pair local SEO with conversion and demand',
     siblingsSub:
-      'Local SEO gets you found. These agency services help convert and amplify that demand.',
+      'Maps puts you on the seller shortlist; these services turn valuation interest into signed instructions and stronger local presence beside portals.',
     siblingsCta: 'View service',
     hubLink: 'Back to estate agent marketing',
     supportLinkLabel: 'Also see our general local SEO service',
@@ -281,7 +280,7 @@ const T = {
       'For businesses outside real estate we offer broader local SEO. Agency engagements follow the process on this page.',
     ctaHeading: 'Ready to show up when sellers search nearby?',
     ctaSub:
-      'Tell us your city, catchment and how sellers find you today. We will propose a local SEO scope built around Google Maps, district pages and valuation search — with honest timelines.',
+      'Tell us your city, districts you cover and how sellers find you today — Funda, referral or Google. We scope GBP service areas, valuation keywords and district pages with honest timelines.',
     ctaButton: 'Request a quote'
   },
   nl: {
@@ -298,22 +297,22 @@ const T = {
     problemBadge: 'De echte kosten',
     problemHead: 'Onzichtbaar in lokaal zoeken betekent dat buurtmakelaars eerst de opdracht winnen',
     problemP1:
-      'Als iemand “makelaar Rotterdam West” of “huis verkopen Utrecht” typt, toont Google eerst een kaartpack van kantoren. Ontbreekt jouw kantoor, is het profiel incompleet of lig je onder beter beoordeelde buren met duidelijker verzorgingsgebied, dan geven die verkopers iemand anders opdracht — ook als jouw verkoopresultaten sterker zijn.',
+      'Als een verkoper “makelaar Rotterdam West” of “gratis waardebepaling Utrecht” zoekt, toont Google drie kantoren in de kaartpack vóór Funda opent. Onduidelijk verzorgingsgebied, verouderde kantoorfoto’s of zwakke “huis verkopen”-signalen sturen die waardebepalingaanvraag naar de buur met duidelijkere wijkpagina’s — ook als jouw verkochtbewijs sterker is.',
     problemP2:
-      'Makelaars concurreren op nabijheid, sterren, duidelijkheid van verzorgingsgebied en of Google de wijken die je dekt begrijpt. Een tandarts die rankt op “tandarts bij mij” speelt een ander spel. Lokale SEO voor makelaars draait om stads- + wijkintentie, zoekgedrag rond “gratis waardebepaling”, verkoperreviews en ontdekking naast portals — niet om Funda te vervangen voor elke aanbodklik.',
+      'Lokaal makelaarszoeken draait om makelaar + stad-intentie, gratis-waardebepaling-queries, wijkgeloofwaardigheid en ontdekking naast portals — niet aanbodklikken op Funda. Een restaurant dat gerechtfoto’s optimaliseert of een fysio die DTF benadrukt, lost andere problemen op; verkopers shortlisten makelaars op kaartpins, verzorgingsgebied en verkoperreviews.',
     problemP3:
       'Betaalde ads kopen kortetermijn waardebepalingverkeer, maar organische kaart- en lokale zoekzichtbaarheid stapelt elke keer dat een verkoper een makelaar zoekt. Zonder lokale SEO blijf je betalen voor klikken terwijl het kantoor met frissere reviews en betere wijkpagina’s de pack bezit.',
     featuresBadge: 'Wat we doen',
     featuresHead: 'Wat zit er in lokale SEO voor makelaars',
     featuresSub:
-      'Elke deliverable hieronder gaat over verkopers en kopers die jouw kantoor lokaal vinden en kiezen. Niets is een generieke citation-checklist met “makelaar” erop geplakt.',
+      'Elke deliverable richt zich op verkopers die makelaar + stad, gratis waardebepaling en wijkintentie zoeken — verzorgingsgebied, waardebepalingpaden en verkoperreviews, geen hernoemde kantoorchecklist.',
     processBadge: 'Hoe we werken',
     processHead: 'Hoe een lokaal SEO-traject voor makelaars verloopt',
     processSub:
       'Van een audit van de kaartpack rond jouw kantoor tot meten van belacties, routes en websiteklikken die tot waardebepalingen leiden.',
     whyBadge: 'Waarom Amora Digital',
     whyHead: 'Waarom kantoren hun lokale vindbaarheid aan ons toevertrouwen',
-    whySub: 'Vastgoedbewuste lokale SEO, heldere rapportage en groei die je in opdrachten voelt.',
+    whySub: 'Vastgoedbewuste lokale SEO: makelaar + stad-ontdekking, waardebepalingintentie en rapportage gekoppeld aan opdrachten — naast Funda, niet in plaats daarvan.',
     whyItems: [
       {
         title: 'Focus op makelaars lokaal',
@@ -325,17 +324,17 @@ const T = {
       },
       {
         title: 'Meetbare verkoperacties',
-        desc: 'We volgen kaartimpressies, belacties, routeverzoeken en websiteklikken uit lokaal zoeken — signalen gekoppeld aan aanvragen, niet alleen vanity-rankings.'
+        desc: 'We volgen kaartimpressies, waardebepaling- en belacties, routeverzoeken en klikken op wijkzoekwoorden — gekoppeld aan waardebepalingaanvragen en verkoopopdrachten, niet vanity-kaartrank.'
       },
       {
         title: 'Alles onder één dak',
-        desc: 'Lokale SEO nu; kantoorwebsite, Google Ads en social wanneer je ze nodig hebt — zonder de verkoperreis over vijf bureaus te splitsen.'
+        desc: 'Eerst lokale SEO voor je kantoor; kantoorwebsite, Google Ads en social wanneer je meer waardebepalingstroom nodig hebt — één team van kaartzoeken tot getekende opdracht, zonder Funda’s aanbodrol te dupliceren.'
       }
     ],
     costsBadge: 'Doorlooptijd & verwachtingen',
     costsHead: 'Wat je mag verwachten van lokale SEO voor makelaars',
     costsIntro:
-      'Lokale SEO voor makelaarskantoren is doorlopend werk, geen flip van één week. Eerste GBP- en reviewverbeteringen zie je vaak binnen enkele weken; stabiele kaartpack- en wijkzichtbaarheid op concurrerende stadstermen vraagt meestal maanden consistente optimalisatie. We beloven nooit specifieke rankings — concurrenten, seizoen en reviewtempo bewegen de pack mee.',
+      'Lokale SEO voor makelaarskantoren is doorlopend GBP-, wijkpagina- en waardebepalingzoekwoordwerk — concurreren om verkopers naast portals, niet om aanbodverkeer. Profiel- en aanvragenstijging zie je vaak binnen enkele weken; stabiele zichtbaarheid op “makelaar [stad]” en wijktermen vraagt meestal maanden. We rapporteren opdrachtklare trends, geen beloofde rankings.',
     costsItems: [
       {
         title: 'Foundation (één kantoor)',
@@ -347,16 +346,15 @@ const T = {
       },
       {
         title: 'Meerdere vestigingen',
-        desc: 'Aparte profielen, lokale pagina’s en reviewflows per vestiging zodat elk kantoor in het eigen verzorgingsgebied rankt — scope na mapping van steden en merken.'
+        desc: 'Elk kantoor houdt eigen verzorgingsgebied, verkoperreviewstroom en wijkpagina’s — zodat West geen taxatiebelacties steelt die voor Zuid bedoeld zijn.'
       }
     ],
-    // TODO(Ali): Confirm monthly retainer / package price bands for estate agent local SEO and replace this note with approved figures.
     costsNote:
-      'De exacte investering hangt af van concurrentie in jouw stad, aantal vestigingen en hoeveel GBP-/review- en wijkpaginawerk nodig is. Vraag een voorstel voor lokale SEO voor makelaars aan en je ontvangt een duidelijke scope met realistische planning — zonder rankinggaranties.',
+      'Scope hangt af van gedekte wijken, aantal vestigingen en hoeveel GBP- en wijkpaginawerk nodig is naast Funda-gedreven ontdekking. Vraag een lokale-SEO-offerte voor makelaars aan — we schetsen waardebepalingpaden, wijksignalen en verkoperreviewflows met eerlijke planning, zonder rankinggaranties.',
     siblingsBadge: 'Ook voor makelaars',
     siblingsHead: 'Combineer lokale SEO met conversie en vraag',
     siblingsSub:
-      'Lokale SEO zorgt dat je gevonden wordt. Deze makelaarsdiensten helpen die vraag converteren en versterken.',
+      'Maps zet je op de verkopersshortlist; deze diensten maken waardebepalinginteresse om in getekende opdrachten en sterkere lokale aanwezigheid naast portals.',
     siblingsCta: 'Bekijk dienst',
     hubLink: 'Terug naar makelaarsmarketing',
     supportLinkLabel: 'Bekijk ook onze algemene lokale SEO-dienst',
@@ -364,7 +362,7 @@ const T = {
       'Voor bedrijven buiten vastgoed bieden we bredere lokale SEO. Kantoortrajecten volgen het proces op deze pagina.',
     ctaHeading: 'Klaar om te verschijnen wanneer verkopers in de buurt zoeken?',
     ctaSub:
-      'Vertel ons je stad, verzorgingsgebied en hoe verkopers je nu vinden. We stellen een lokale SEO-scope voor rond Google Maps, wijkpagina’s en waardebepalingzoekopdrachten — met eerlijke doorlooptijden.',
+      'Vertel je stad, wijken die je dekt en hoe verkopers je vandaag vinden — Funda, via-via of Google. We scopen GBP-verzorgingsgebied, waardebepalingzoekwoorden en wijkpagina’s met eerlijke doorlooptijden.',
     ctaButton: 'Vraag een offerte aan'
   }
 } as const

@@ -15,11 +15,11 @@ export type BranchSpoke = {
 
 /** Live spoke slugs per industry. Add a slug here when the spoke page ships. */
 export const LIVE_BRANCH_SPOKES: Readonly<Record<string, readonly string[]>> = {
-  restaurants: ['website-laten-maken', 'lokale-seo'],
+  restaurants: ['website-laten-maken', 'lokale-seo', 'social-media'],
   tandartsen: ['website-laten-maken', 'lokale-seo'],
   fysiotherapeuten: ['website-laten-maken', 'lokale-seo'],
   'kappers-schoonheidssalons': ['website-laten-maken', 'lokale-seo'],
-  makelaars: ['website-laten-maken', 'lokale-seo']
+  makelaars: ['website-laten-maken', 'lokale-seo', 'social-media']
 }
 
 export function isLiveBranchSpoke(industrySlug: string, slug: string): boolean {
@@ -54,7 +54,7 @@ export const BRANCH_SPOKES: Record<string, readonly BranchSpoke[]> = {
       slug: 'social-media',
       name: {
         en: 'Social media management for restaurants',
-        nl: 'Social media beheer voor restaurants'
+        nl: 'Social media voor restaurants'
       },
       benefit: {
         en: 'Stay consistently visible with content that shares atmosphere, offers and events — and drives traffic to reservations.',
@@ -226,8 +226,8 @@ export const BRANCH_SPOKES: Record<string, readonly BranchSpoke[]> = {
     {
       slug: 'social-media',
       name: {
-        en: 'Social media for real estate agents',
-        nl: 'Social media beheer voor makelaars'
+        en: 'Social media management for real estate agents',
+        nl: 'Social media voor makelaars'
       },
       benefit: {
         en: 'Build authority with listings, neighbourhood content and proof that drives valuations and viewings.',

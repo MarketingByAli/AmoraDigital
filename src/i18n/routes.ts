@@ -78,6 +78,7 @@ export type RouteKey =
   | 'branches-makelaars'
   | 'branches-restaurants-website-laten-maken'
   | 'branches-restaurants-lokale-seo'
+  | 'branches-restaurants-social-media'
   | 'branches-tandartsen-website-laten-maken'
   | 'branches-tandartsen-lokale-seo'
   | 'branches-fysiotherapeuten-website-laten-maken'
@@ -86,6 +87,7 @@ export type RouteKey =
   | 'branches-kappers-schoonheidssalons-lokale-seo'
   | 'branches-makelaars-website-laten-maken'
   | 'branches-makelaars-lokale-seo'
+  | 'branches-makelaars-social-media'
 
 /**
  * Localized pathnames per route. English keeps the current URLs verbatim
@@ -172,6 +174,10 @@ export const ROUTES: Record<RouteKey, Record<Locale, string>> = {
     en: '/branches/restaurants/lokale-seo',
     nl: '/nl/branches/restaurants/lokale-seo'
   },
+  'branches-restaurants-social-media': {
+    en: '/branches/restaurants/social-media',
+    nl: '/nl/branches/restaurants/social-media'
+  },
   'branches-tandartsen-website-laten-maken': {
     en: '/branches/tandartsen/website-laten-maken',
     nl: '/nl/branches/tandartsen/website-laten-maken'
@@ -203,6 +209,10 @@ export const ROUTES: Record<RouteKey, Record<Locale, string>> = {
   'branches-makelaars-lokale-seo': {
     en: '/branches/makelaars/lokale-seo',
     nl: '/nl/branches/makelaars/lokale-seo'
+  },
+  'branches-makelaars-social-media': {
+    en: '/branches/makelaars/social-media',
+    nl: '/nl/branches/makelaars/social-media'
   }
 }
 

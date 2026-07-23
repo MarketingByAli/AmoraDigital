@@ -833,6 +833,32 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
       ogImage: ogAssetPng('Home')
     }
   },
+  'branches-restaurants-social-media': {
+    en: {
+      title: `Social media for restaurants | Amora`,
+      description:
+        'Social media management for restaurants: food posts, kitchen Reels, specials and local ads. 1,500+ projects.',
+      keywords: [
+        'social media management for restaurants',
+        'restaurant Instagram',
+        'restaurant social media',
+        'hospitality social media'
+      ],
+      ogImage: ogAssetPng('Home')
+    },
+    nl: {
+      title: `Social media voor restaurants | Amora`,
+      description:
+        'Social media voor restaurants: foodposts, keuken-Reels, specials en lokale ads. 1.500+ projecten.',
+      keywords: [
+        'social media voor restaurants',
+        'social media restaurant',
+        'social media beheer horeca',
+        'Instagram restaurant'
+      ],
+      ogImage: ogAssetPng('Home')
+    }
+  },
   'branches-tandartsen-website-laten-maken': {
     en: {
       title: `Website design for dentists | Amora`,
@@ -1037,6 +1063,32 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
         'makelaar Google Maps',
         'wijkpagina’s makelaar',
         'gratis waardebepaling SEO'
+      ],
+      ogImage: ogAssetPng('Home')
+    }
+  },
+  'branches-makelaars-social-media': {
+    en: {
+      title: `Social media for real estate agents | Amora`,
+      description:
+        'Social media management for estate agents: listings, sold proof, Reels and local ads. 1,500+ projects.',
+      keywords: [
+        'social media management for real estate agents',
+        'estate agent Instagram',
+        'real estate social media',
+        'makelaar social media'
+      ],
+      ogImage: ogAssetPng('Home')
+    },
+    nl: {
+      title: `Social media voor makelaars | Amora`,
+      description:
+        'Social media voor makelaars: woningposts, net verkocht, Reels en lokale ads. 1.500+ projecten.',
+      keywords: [
+        'social media voor makelaars',
+        'social media makelaar',
+        'social media beheer makelaar',
+        'Instagram makelaar'
       ],
       ogImage: ogAssetPng('Home')
     }

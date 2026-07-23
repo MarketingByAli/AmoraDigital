@@ -287,6 +287,13 @@ const RELATED_BY_KEY: Partial<Record<RouteKey, RouteKey[]>> = {
     'paid-advertising',
     'social-media-marketing'
   ],
+  'branches-restaurants-social-media': [
+    'social-media-marketing',
+    'website-design',
+    'local-seo',
+    'paid-advertising',
+    'brand-strategy'
+  ],
   'branches-tandartsen-website-laten-maken': [
     'website-design',
     'local-seo',
@@ -342,6 +349,13 @@ const RELATED_BY_KEY: Partial<Record<RouteKey, RouteKey[]>> = {
     'website-design',
     'paid-advertising',
     'social-media-marketing'
+  ],
+  'branches-makelaars-social-media': [
+    'social-media-marketing',
+    'website-design',
+    'local-seo',
+    'paid-advertising',
+    'brand-strategy'
   ]
 }
 

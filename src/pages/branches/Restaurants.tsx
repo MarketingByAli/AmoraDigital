@@ -29,11 +29,11 @@ const T = {
     servicesBadge: 'Our services',
     servicesHead: 'What we do for restaurants',
     servicesSub:
-      'Practical services that match how guests search, book and return. Choose a service for more detail.',
+      'From menu-led websites to reservation-focused ads — services shaped around how diners choose where to eat. Pick a service for detail.',
     learnMore: 'Learn more',
     whyBadge: 'Why Amora Digital',
     whyHead: 'Why restaurants choose us',
-    whySub: 'No generic marketing. An approach built for hospitality.',
+    whySub: 'Hospitality moves fast: lunch rushes, menu changes and review replies. We market around that rhythm.',
     whyItems: [
       {
         title: 'Industry experience',
@@ -49,12 +49,12 @@ const T = {
       },
       {
         title: 'Everything under one roof',
-        desc: 'Website, SEO, social and ads in one plan so channels reinforce each other.'
+        desc: 'Your menu site, local listings, Instagram and reservation ads stay aligned — one team, one calendar for launches and peak nights.'
       }
     ],
-    ctaHeading: 'Ready for more guests at the table?',
+    ctaHeading: 'Ready for fuller tables and more reservations?',
     ctaSub:
-      'Tell us about your venue. We will review your website, visibility and campaigns that fit your restaurant.',
+      'Share your venue type, seating and booking setup. We will look at what drives covers on quiet nights and busy weekends.',
     ctaButton: 'Request a quote'
   },
   nl: {
@@ -69,11 +69,11 @@ const T = {
     servicesBadge: 'Onze diensten',
     servicesHead: 'Wat we doen voor restaurants',
     servicesSub:
-      'Concrete diensten die aansluiten op hoe gasten zoeken, boeken en terugkomen. Kies een dienst voor meer detail.',
+      'Van menu-gedreven websites tot campagnes op reserveringen — diensten afgestemd op hoe gasten een restaurant kiezen. Kies een dienst voor details.',
     learnMore: 'Meer informatie',
     whyBadge: 'Waarom Amora Digital',
     whyHead: 'Waarom restaurants voor ons kiezen',
-    whySub: 'Geen generieke marketing. Wel aanpak die past bij de horeca.',
+    whySub: 'In de horeca telt timing: lunchdrukte, nieuwe kaarten en reviews. Wij marketen vanuit dat ritme.',
     whyItems: [
       {
         title: 'Branche-ervaring',
@@ -89,12 +89,12 @@ const T = {
       },
       {
         title: 'Alles onder één dak',
-        desc: 'Website, SEO, social en ads in één plan, zodat kanalen elkaar versterken.'
+        desc: 'Menu-site, lokale vermeldingen, Instagram en reserveringscampagnes blijven op één lijn — één team, één planning rond piekmomenten.'
       }
     ],
-    ctaHeading: 'Klaar voor meer gasten aan tafel?',
+    ctaHeading: 'Klaar voor voller bezette tafels en meer reserveringen?',
     ctaSub:
-      'Vertel ons over je zaak. We kijken mee naar website, vindbaarheid en campagnes die bij jouw restaurant passen.',
+      'Vertel over je concept, zitplaatsen en boekingssysteem. We bekijken wat covers oplevert op rustige en drukke avonden.',
     ctaButton: 'Vraag een offerte aan'
   }
 } as const

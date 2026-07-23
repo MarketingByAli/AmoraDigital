@@ -29,11 +29,11 @@ const T = {
     servicesBadge: 'Our services',
     servicesHead: 'What we do for estate agents',
     servicesSub:
-      'Practical services that match how sellers and buyers search, choose an agent and enquire. Choose a service for more detail.',
+      'Services for seller valuations, neighbourhood pages and buyer intent searches — shaped around local property markets. Choose a service for detail.',
     learnMore: 'Learn more',
     whyBadge: 'Why Amora Digital',
     whyHead: 'Why estate agents choose us',
-    whySub: 'No generic marketing. An approach built for real estate.',
+    whySub: 'Estate agency is neighbourhood-led and timing-sensitive. We plan around listing cycles and valuation requests.',
     whyItems: [
       {
         title: 'Industry experience',
@@ -49,12 +49,12 @@ const T = {
       },
       {
         title: 'Everything under one roof',
-        desc: 'Website, SEO, ads and social in one plan so channels reinforce each other.'
+        desc: 'Property pages, valuation funnels, local SEO and seller ads share one market brief — so your office looks equally sharp on property portals and Google.'
       }
     ],
-    ctaHeading: 'Ready for more listing leads?',
+    ctaHeading: 'Ready for more listings and valuation requests?',
     ctaSub:
-      'Tell us about your agency. We will review your website, visibility and campaigns that fit your market.',
+      'Share your focus areas, average price segment and current stock. We will review how sellers and owners find you before they call.',
     ctaButton: 'Request a quote'
   },
   nl: {
@@ -69,11 +69,11 @@ const T = {
     servicesBadge: 'Onze diensten',
     servicesHead: 'Wat we doen voor makelaars',
     servicesSub:
-      'Concrete diensten die aansluiten op hoe verkopers en kopers zoeken, een makelaar kiezen en contact opnemen. Kies een dienst voor meer detail.',
+      'Diensten voor taxatie-aanvragen, buurtpagina’s en kopers-/verkopersintentie — afgestemd op lokale markten. Kies een dienst voor details.',
     learnMore: 'Meer informatie',
     whyBadge: 'Waarom Amora Digital',
     whyHead: 'Waarom makelaars voor ons kiezen',
-    whySub: 'Geen generieke marketing. Wel aanpak die past bij vastgoed.',
+    whySub: 'Makelaarswerk is buurtgebonden en timinggevoelig. Wij plannen rond listing-cycli en taxatie-aanvragen.',
     whyItems: [
       {
         title: 'Branche-ervaring',
@@ -89,12 +89,12 @@ const T = {
       },
       {
         title: 'Alles onder één dak',
-        desc: 'Website, SEO, ads en social in één plan, zodat kanalen elkaar versterken.'
+        desc: 'Woningpresentatie, taxatiefunnels, lokale SEO en verkopercampagnes delen één marktbriefing — scherp op Funda-achtige zoekopdrachten én Google.'
       }
     ],
-    ctaHeading: 'Klaar voor meer opdrachtleads?',
+    ctaHeading: 'Klaar voor meer opdrachten en taxatie-aanvragen?',
     ctaSub:
-      'Vertel ons over je kantoor. We kijken mee naar website, vindbaarheid en campagnes die bij jouw markt passen.',
+      'Vertel over werkgebied, prijssegment en voorraad. We bekijken hoe verkopers en eigenaren je vinden vóór ze bellen.',
     ctaButton: 'Vraag een offerte aan'
   }
 } as const

@@ -1,0 +1,603 @@
+import { Link, useLocation } from 'react-router-dom'
+import {
+  ArrowRight,
+  CalendarDays,
+  Camera,
+  CheckCircle2,
+  Clapperboard,
+  Home,
+  Linkedin,
+  Megaphone,
+  Share2,
+  Sparkles,
+  Target
+} from 'lucide-react'
+import { ROUTES, localeFromPath, type Locale } from '../../../i18n/routes'
+import { BRANCH_SPOKES } from '../../../data/branchSpokes'
+import BranchSpokeCard from '../../../components/BranchSpokeCard'
+
+const FEATURE_ICONS = [
+  CalendarDays,
+  Home,
+  Clapperboard,
+  Share2,
+  Target,
+  Camera,
+  Linkedin,
+  Megaphone
+] as const
+
+const FEATURES = [
+  {
+    en: {
+      title: 'Content planning for listing cycles',
+      description:
+        'A monthly calendar built around new instructions, open-house weeks, “just sold” moments and neighbourhood stories — so your feed stays useful when inventory is quiet and busy, not random lifestyle filler.'
+    },
+    nl: {
+      title: 'Contentplanning rond de opdrachtcyclus',
+      description:
+        'Een maandkalender rond nieuwe opdrachten, bezichtigingsweken, “net verkocht”-momenten en buurtverhalen — zodat je feed nuttig blijft bij stilte én drukte, geen willekeurige lifestyle-filler.'
+    }
+  },
+  {
+    en: {
+      title: 'Listing & “just sold” posts',
+      description:
+        'Structured posts for new homes on the market and recently sold results: address context, key specs, a clear CTA to book a valuation or viewing. Social proof that sellers notice before they pick an agent.'
+    },
+    nl: {
+      title: 'Woning- & “net verkocht”-posts',
+      description:
+        'Gestructureerde posts voor nieuw aanbod en recent verkochte resultaten: adrescontext, kernspecs, een duidelijke CTA voor waardebepaling of bezichtiging. Sociaal bewijs dat verkopers zien vóór ze een makelaar kiezen.'
+    }
+  },
+  {
+    en: {
+      title: 'Video tours & Reels',
+      description:
+        'Short vertical clips and walkthroughs that show layout, light and neighbourhood feel — the format sellers and buyers actually stop for on Instagram and Facebook, not static brochure dumps.'
+    },
+    nl: {
+      title: 'Video-rondleidingen & Reels',
+      description:
+        'Korte verticale clips en walkthroughs die indeling, licht en buurtgevoel tonen — het formaat waar verkopers en kopers op Instagram en Facebook voor stoppen, geen statische brochuredumps.'
+    }
+  },
+  {
+    en: {
+      title: 'Community management for agencies',
+      description:
+        'Timely replies to questions about viewings, valuations and sold homes. We protect tone of voice and escalate serious seller or buyer enquiries to your team — so DMs do not sit unanswered during a busy open house.'
+    },
+    nl: {
+      title: 'Community management voor kantoren',
+      description:
+        'Tijdige antwoorden op vragen over bezichtigingen, waardebepalingen en verkochte woningen. We bewaken de tone of voice en escaleren serieuze verkoper- of koperberichten naar jouw team — zodat DM’s niet blijven liggen tijdens een drukke open huis.'
+    }
+  },
+  {
+    en: {
+      title: 'Local ads aimed at homeowners',
+      description:
+        'Paid reach targeted at homeowners in your postcode catchment — not broad “interest” audiences. Used to put listings, sold proof and valuation offers in front of people who may instruct next.'
+    },
+    nl: {
+      title: 'Lokale ads gericht op huiseigenaren',
+      description:
+        'Betaald bereik gericht op huiseigenaren in jouw postcodegebied — geen brede “interesse”-doelgroepen. Gebruikt om aanbod, verkochtbewijs en waardebepalingaanbiedingen voor mensen te zetten die mogelijk de volgende opdracht geven.'
+    }
+  },
+  {
+    en: {
+      title: 'Personal brand of the makelaar',
+      description:
+        'You are the product. We plan face-to-camera tips, market updates and behind-the-deal moments so sellers choose a person they recognise — not only a logo on a portal listing.'
+    },
+    nl: {
+      title: 'Persoonlijk merk van de makelaar',
+      description:
+        'Jij bent het product. We plannen face-to-camera tips, marktupdates en behind-the-deal momenten zodat verkopers een herkenbaar persoon kiezen — niet alleen een logo op een portallisting.'
+    }
+  },
+  {
+    en: {
+      title: 'LinkedIn for commercial & investors',
+      description:
+        'Separate cadence for B2B: investment stock, commercial space and network updates that reach landlords and buyers who rarely scroll Instagram for an agent.'
+    },
+    nl: {
+      title: 'LinkedIn voor zakelijk & beleggers',
+      description:
+        'Apart ritme voor B2B: beleggingsaanbod, commercieel vastgoed en netwerkupdates die verhuurders en kopers bereiken die zelden op Instagram een makelaar zoeken.'
+    }
+  },
+  {
+    en: {
+      title: 'Reporting tied to agency goals',
+      description:
+        'Monthly reporting on reach, engagement, profile actions and enquiry signals from social — framed as progress toward more valuation conversations, never as guaranteed followers or leads.'
+    },
+    nl: {
+      title: 'Rapportage gekoppeld aan kantoordoelen',
+      description:
+        'Maandelijkse rapportage over bereik, engagement, profielacties en aanvraagsignalen uit social — als voortgang naar meer waardebepalinggesprekken, nooit als gegarandeerde volgers of leads.'
+    }
+  }
+] as const
+
+const PROCESS_STEPS = [
+  {
+    en: {
+      step: '01',
+      title: 'Content intake',
+      description:
+        'We collect brand guidelines, photo/video access (Realworks, photographer folders, phone clips), voice preferences and which districts or property types you want to be known for. We also map which listings and recent sales can go live first.'
+    },
+    nl: {
+      step: '01',
+      title: 'Content intake',
+      description:
+        'We verzamelen huisstijl, foto-/videotoegang (Realworks, fotografenmappen, telefoonclips), stemvoorkeuren en voor welke wijken of woningtypen je bekend wilt staan. We mappen ook welk aanbod en recente verkopen als eerste live kunnen.'
+    }
+  },
+  {
+    en: {
+      step: '02',
+      title: 'Calendar & channel plan',
+      description:
+        'New instructions go live the day the photographer delivers; “just sold” posts follow completion; midweek face-to-camera market tips keep the makelaar visible when inventory is thin; LinkedIn carries investment stock separately from Instagram.'
+    },
+    nl: {
+      step: '02',
+      title: 'Kalender & kanalenplan',
+      description:
+        'Nieuwe opdrachten gaan live zodra de fotograaf levert; “net verkocht”-posts volgen na overdracht; midweek face-to-camera markttips houden de makelaar zichtbaar bij stil aanbod; LinkedIn draagt beleggingsaanbod apart van Instagram.'
+    }
+  },
+  {
+    en: {
+      step: '03',
+      title: 'Production',
+      description:
+        'We cut walkthrough Reels from viewing-day phone clips, build listing carousels from Realworks stills, and draft sold posts that protect client privacy. Address-level or client-named content only publishes after you approve.'
+    },
+    nl: {
+      step: '03',
+      title: 'Productie',
+      description:
+        'We knippen walkthrough-Reels uit telefoonclips van bezichtigingsdagen, bouwen woningcarrousels uit Realworks-stills en schrijven verkochtposts die privacy van klanten beschermen. Adres- of klantgerichte content gaat pas live na jouw akkoord.'
+    }
+  },
+  {
+    en: {
+      step: '04',
+      title: 'Publishing & community',
+      description:
+        'Listings and sold posts publish on the agreed channels. We answer “what is this house worth?” style DMs in your tone and escalate valuation or viewing requests so a colleague can call while the seller is still deciding.'
+    },
+    nl: {
+      step: '04',
+      title: 'Publicatie & community',
+      description:
+        'Aanbod- en verkochtposts gaan live op de afgesproken kanalen. We beantwoorden DM’s in de trant van “wat is dit huis waard?” in jouw toon en escaleren taxatie- of bezichtigingsverzoeken zodat een collega kan bellen terwijl de verkoper nog beslist.'
+    }
+  },
+  {
+    en: {
+      step: '05',
+      title: 'Measure & refine',
+      description:
+        'We check which neighbourhood Reels drove profile visits, which sold posts got shares in local groups, and whether postcode ads brought valuation-form clicks — then weight next month toward the streets where sellers are warming up.'
+    },
+    nl: {
+      step: '05',
+      title: 'Meten & bijsturen',
+      description:
+        'We checken welke wijk-Reels profielbezoeken opleverden, welke verkochtposts in buurtgroepen werden gedeeld, en of postcode-ads klikken op het waardebepalingformulier brachten — en leggen volgende maand meer gewicht op de straten waar verkopers warmlopen.'
+    }
+  }
+] as const
+
+const SIBLING_SLUGS = ['website-laten-maken', 'lokale-seo', 'google-ads'] as const
+
+const T = {
+  en: {
+    crumbHome: 'Home',
+    crumbBranches: 'Industries',
+    crumbHub: 'Real estate agents',
+    crumbCurrent: 'Social media management for real estate agents',
+    badge: 'Estate agent social media',
+    h1: 'Social media management for real estate agents',
+    heroSub:
+      'Present listings, video tours and “just sold” proof on Instagram and Facebook — so sellers in your catchment already know your name before they choose an agent. With 1,500+ completed projects, we run social media management for real estate agents who need consistency without living in the apps.',
+    trust: '1,500+ completed projects',
+    ctaPrimary: 'Request a quote',
+    problemBadge: 'The real cost',
+    problemHead: 'Sellers pick the agent they already recognise — silence on social means losing listings',
+    problemP1:
+      'When a homeowner finally decides to sell, they rarely open a cold directory. They remember the makelaar whose Reels they watched, whose “just sold” posts they saw in the neighbourhood group, or who answered a DM about a similar house last spring. If your office is quiet on social while a competitor posts every instruction and sale, that competitor owns the shortlist before your valuation pitch starts.',
+    problemP2:
+      'Social for estate agents is not restaurant “behind the kitchen” content with a logo swap. It is showing stock professionally, proving results with sold moments, building local authority street by street, and making the individual agent memorable — while LinkedIn catches investors and commercial landlords who never scroll Instagram for a makelaar.',
+    problemP3:
+      'You also do not have spare hours between viewings, negotiations and Funda uploads. Without a managed cadence, profiles go stale between busy listing weeks. Stale profiles lose trust: sellers assume the agent who posts consistently is the one winning instructions.',
+    featuresBadge: 'What we do',
+    featuresHead: 'What is included in social media for estate agents',
+    featuresSub:
+      'Listing carousels, sold proof, walkthrough Reels and LinkedIn for investors — each piece is aimed at the seller who has not picked an agent yet, not at empty engagement metrics.',
+    processBadge: 'How we work',
+    processHead: 'How an estate agent social engagement runs',
+    processSub:
+      'From content intake and calendar to production, publishing and measuring what moves sellers closer to a valuation call.',
+    whyBadge: 'Why Amora Digital',
+    whyHead: 'Why agencies trust us with their social presence',
+    whySub: 'Real-estate-aware content, clear reporting and growth you can feel in conversations — not empty follower counts.',
+    whyItems: [
+      {
+        title: 'Agency social focus',
+        desc: 'Listings, sold proof, video tours and neighbourhood authority — not salon or restaurant playbooks relabelled for makelaars.'
+      },
+      {
+        title: 'Consistency without your hours',
+        desc: 'We plan, produce and publish so you stay visible between viewings — you approve sensitive posts and handle high-intent seller follow-up.'
+      },
+      {
+        title: 'Measurable agency signals',
+        desc: 'We track reach, engagement, profile actions and enquiry clicks from social — progress toward more valuation talks, never guaranteed leads.'
+      },
+      {
+        title: 'Everything under one roof',
+        desc: 'The feed that shows your latest sale can sit next to district landing pages and valuation-form ads — so a homeowner who saw you on Instagram meets the same agency story on Google and your site.'
+      }
+    ],
+    costsBadge: 'Timeframe & expectations',
+    costsHead: 'What to expect from social media for estate agents',
+    costsIntro:
+      'Agency social builds recognition across listing cycles: a steadier sold-proof rhythm can show within weeks, while becoming the makelaar sellers already know in a competitive city usually needs months of street-level posts. We frame progress around valuation conversations — never promised follower counts or lead volumes.',
+    costsItems: [
+      {
+        title: 'Foundation (single office)',
+        desc: 'Channel audit, content pillars, first calendar, listing and sold templates, and a reply framework. Ideal when profiles exist but posting is irregular between instructions.'
+      },
+      {
+        title: 'Growth (active marketing)',
+        desc: 'Full monthly production: listings, sold posts, Reels, community management, optional homeowner ads in your postcodes, and reporting tied to enquiry signals.'
+      },
+      {
+        title: 'Multi-agent or multi-office',
+        desc: 'Separate personal brands and office channels so each makelaar stays recognisable in their streets — scoped after we map roles, catchments and approval flows.'
+      }
+    ],
+    costsNote:
+      'Scope depends on how many agents need a personal brand, how often new stock arrives from Realworks, and whether homeowner ads in your postcodes are included. Request an estate-agent social quote with channel mix and timelines — without follower or lead guarantees.',
+    siblingsBadge: 'Also for estate agents',
+    siblingsHead: 'Pair social with findability and conversion',
+    siblingsSub:
+      'Social makes sellers recognise you; your website and local search still have to catch the valuation request when they act.',
+    siblingsCta: 'View service',
+    hubLink: 'Back to estate agent marketing',
+    supportLinkLabel: 'Also see our general social media marketing service',
+    supportLinkNote:
+      'The general social page is for brands outside real estate. Here we only describe how we run listing, sold and personal-brand feeds for agencies.',
+    ctaHeading: 'Ready to be the agent sellers already know?',
+    ctaSub:
+      'Tell us your catchment, channels and how you show listings today. We will propose a social scope built around stock, sold proof and personal brand — with honest timelines.',
+    ctaButton: 'Request a quote'
+  },
+  nl: {
+    crumbHome: 'Home',
+    crumbBranches: 'Branches',
+    crumbHub: 'Makelaars',
+    crumbCurrent: 'Social media voor makelaars',
+    badge: 'Social media voor makelaars',
+    h1: 'Social media voor makelaars',
+    heroSub:
+      'Presenteer woningaanbod, video-rondleidingen en “net verkocht”-bewijs op Instagram en Facebook — zodat verkopers in jouw gebied jouw naam al kennen vóór ze een makelaar kiezen. Met 1.500+ afgeronde projecten verzorgen wij social media beheer voor makelaars die consistentie willen zonder zelf in de apps te leven.',
+    trust: '1.500+ afgeronde projecten',
+    ctaPrimary: 'Vraag een offerte aan',
+    problemBadge: 'De echte kosten',
+    problemHead: 'Verkopers kiezen de makelaar die ze al kennen — stilte op social betekent opdrachten mislopen',
+    problemP1:
+      'Wanneer een huiseigenaar eindelijk besluit te verkopen, opent hij zelden een koude gids. Hij herinnert zich de makelaar wiens Reels hij zag, wiens “net verkocht”-posts in de buurtgroep verschenen, of die vorig voorjaar een DM over een vergelijkbaar huis beantwoordde. Is jouw kantoor stil op social terwijl een concurrent elke opdracht en verkoop post, dan staat die concurrent al op de shortlist vóór jouw waardebepaling begint.',
+    problemP2:
+      'Social media voor makelaars is geen restaurant-“behind the kitchen”-content met een logo erop. Het is aanbod professioneel tonen, resultaat bewijzen met verkochtmomenten, lokale autoriteit straat voor straat opbouwen en de persoonlijke makelaar memorabel maken — terwijl LinkedIn beleggers en zakelijke verhuurders vangt die nooit op Instagram een makelaar zoeken.',
+    problemP3:
+      'Je hebt ook geen uren over tussen bezichtigingen, onderhandelingen en Funda-uploads. Zonder beheerd ritme raken profielen stil tussen drukke aanbodweken. Stille profielen verliezen vertrouwen: verkopers nemen aan dat de makelaar die consistent post, ook de opdrachten wint.',
+    featuresBadge: 'Wat we doen',
+    featuresHead: 'Wat zit er in social media voor makelaars',
+    featuresSub:
+      'Woningcarrousels, verkochtbewijs, walkthrough-Reels en LinkedIn voor beleggers — elk stuk mikte op de verkoper die nog geen makelaar koos, niet op lege engagementcijfers.',
+    processBadge: 'Hoe we werken',
+    processHead: 'Hoe een social-media-traject voor makelaars verloopt',
+    processSub:
+      'Van content intake en kalender tot productie, publicatie en meten wat verkopers dichter bij een waardebepaling brengt.',
+    whyBadge: 'Waarom Amora Digital',
+    whyHead: 'Waarom kantoren hun social presence aan ons toevertrouwen',
+    whySub: 'Vastgoedbewuste content, heldere rapportage en groei die je in gesprekken voelt — geen lege volgertellers.',
+    whyItems: [
+      {
+        title: 'Focus op social media makelaar',
+        desc: 'Aanbod, verkochtbewijs, video-rondleidingen en buurtautoriteit — geen salon- of restaurantplaybooks met een makelaarslabel.'
+      },
+      {
+        title: 'Consistentie zonder jouw uren',
+        desc: 'Wij plannen, produceren en publiceren zodat je zichtbaar blijft tussen bezichtigingen — jij keurt gevoelige posts goed en handelt opvolging met hoge intentie af.'
+      },
+      {
+        title: 'Meetbare kantoorsignalen',
+        desc: 'We volgen bereik, engagement, profielacties en aanvraagklikken uit social — voortgang naar meer waardebepalinggesprekken, nooit gegarandeerde leads.'
+      },
+      {
+        title: 'Alles onder één dak',
+        desc: 'De feed die je laatste verkoop toont, kan naast wijklandingspagina’s en ads voor waardebepalingforms staan — zodat een huiseigenaar die je op Instagram zag hetzelfde kantoorverhaal op Google en je site tegenkomt.'
+      }
+    ],
+    costsBadge: 'Doorlooptijd & verwachtingen',
+    costsHead: 'Wat je mag verwachten van social media voor makelaars',
+    costsIntro:
+      'Makelaarssocial bouwt herkenning over opdrachtcycli: een stabieler verkochtbewijsritme kan binnen weken zichtbaar worden, terwijl de makelaar zijn die verkopers in een concurrerende stad al kennen meestal maanden straatgerichte posts vraagt. We framen voortgang rond waardebepalinggesprekken — nooit beloofde volgeraantallen of leadvolumes.',
+    costsItems: [
+      {
+        title: 'Foundation (één kantoor)',
+        desc: 'Kanaalaudit, contentpijlers, eerste kalender, templates voor aanbod en verkocht, en een antwoordkader. Ideaal wanneer profielen bestaan maar posten tussen opdrachten door onregelmatig is.'
+      },
+      {
+        title: 'Growth (actieve marketing)',
+        desc: 'Volledige maandelijkse productie: aanbod, verkochtposts, Reels, community management, optionele ads op huiseigenaren in jouw postcodes, en rapportage gekoppeld aan aanvraagsignalen.'
+      },
+      {
+        title: 'Meerdere makelaars of vestigingen',
+        desc: 'Aparte persoonlijke merken en kantoorkanalen zodat elke makelaar herkenbaar blijft in de eigen straten — scope na mapping van rollen, verzorgingsgebieden en goedkeuringsflows.'
+      }
+    ],
+    costsNote:
+      'De scope hangt af van hoeveel makelaars een persoonlijk merk nodig hebben, hoe vaak nieuw aanbod uit Realworks komt, en of ads op huiseigenaren in jouw postcodes meedoen. Vraag een makelaar-socialofferte aan met kanalenmix en planning — zonder volger- of leadgaranties.',
+    siblingsBadge: 'Ook voor makelaars',
+    siblingsHead: 'Combineer social met vindbaarheid en conversie',
+    siblingsSub:
+      'Social zorgt dat verkopers je herkennen; je website en lokaal zoeken moeten de waardebepalingaanvraag nog kunnen vangen wanneer ze handelen.',
+    siblingsCta: 'Bekijk dienst',
+    hubLink: 'Terug naar makelaarsmarketing',
+    supportLinkLabel: 'Bekijk ook onze algemene social-media-marketingdienst',
+    supportLinkNote:
+      'De algemene socialpagina is voor merken buiten vastgoed. Hier beschrijven we alleen hoe we aanbod-, verkocht- en persoonlijke feeds voor kantoren draaien.',
+    ctaHeading: 'Klaar om de makelaar te zijn die verkopers al kennen?',
+    ctaSub:
+      'Vertel ons je verzorgingsgebied, kanalen en hoe je aanbod nu toont. We stellen een social-scope voor rond woningen, verkochtbewijs en persoonlijk merk — met eerlijke doorlooptijden.',
+    ctaButton: 'Vraag een offerte aan'
+  }
+} as const
+
+export default function MakelaarsSocialMedia() {
+  const { pathname } = useLocation()
+  const locale: Locale = localeFromPath(pathname)
+  const t = T[locale]
+  const hubPath = ROUTES['branches-makelaars'][locale]
+  const agentSpokes = BRANCH_SPOKES.makelaars
+  const siblings = agentSpokes.filter((spoke) =>
+    (SIBLING_SLUGS as readonly string[]).includes(spoke.slug)
+  )
+
+  return (
+    <div>
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary-600 via-primary-700 to-secondary-600 text-white">
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-white/10 rounded-full blur-3xl" />
+          <div className="absolute top-60 -left-20 w-60 h-60 bg-white/10 rounded-full blur-3xl" />
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-24 lg:pt-28 lg:pb-32">
+          <div className="max-w-3xl mx-auto text-center">
+            <nav className="flex items-center justify-center gap-2 text-sm mb-8 flex-wrap" aria-label="Breadcrumb">
+              <Link to={ROUTES.home[locale]} className="text-white/60 hover:text-white transition-colors">
+                {t.crumbHome}
+              </Link>
+              <span className="text-white/40" aria-hidden>/</span>
+              <Link to={ROUTES.branches[locale]} className="text-white/60 hover:text-white transition-colors">
+                {t.crumbBranches}
+              </Link>
+              <span className="text-white/40" aria-hidden>/</span>
+              <Link to={hubPath} className="text-white/60 hover:text-white transition-colors">
+                {t.crumbHub}
+              </Link>
+              <span className="text-white/40" aria-hidden>/</span>
+              <span className="text-white">{t.crumbCurrent}</span>
+            </nav>
+
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-medium mb-6">
+              <Share2 className="w-4 h-4" aria-hidden />
+              <span>{t.badge}</span>
+            </div>
+
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+              {t.h1}
+            </h1>
+            <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto mb-8">{t.heroSub}</p>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+              <Link
+                to={ROUTES.contact[locale]}
+                className="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-primary-700 bg-white rounded-lg hover:bg-slate-100 transition-all shadow-lg group"
+              >
+                {t.ctaPrimary}
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden />
+              </Link>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm text-white/90">
+                <Sparkles className="w-4 h-4 text-secondary-300" aria-hidden />
+                <span>{t.trust}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary-100 text-secondary-700 text-sm font-medium mb-4">
+            <span>{t.problemBadge}</span>
+          </div>
+          <h2 className="section-heading text-slate-900 mb-6">{t.problemHead}</h2>
+          <div className="space-y-5 text-lg text-slate-600 leading-relaxed">
+            <p>{t.problemP1}</p>
+            <p>{t.problemP2}</p>
+            <p>{t.problemP3}</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 lg:py-28 bg-gradient-to-b from-slate-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-100 text-primary-700 text-sm font-medium mb-4">
+              <Share2 className="w-4 h-4" aria-hidden />
+              <span>{t.featuresBadge}</span>
+            </div>
+            <h2 className="section-heading text-slate-900 mb-4">{t.featuresHead}</h2>
+            <p className="section-subheading mx-auto">{t.featuresSub}</p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            {FEATURES.map((feature, i) => {
+              const Icon = FEATURE_ICONS[i] ?? CheckCircle2
+              const copy = feature[locale]
+              return (
+                <div key={copy.title} className="card p-6">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center mb-4 shadow-lg">
+                    <Icon className="w-6 h-6 text-white" aria-hidden />
+                  </div>
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">{copy.title}</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">{copy.description}</p>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent-100 text-accent-700 text-sm font-medium mb-4">
+              <span>{t.processBadge}</span>
+            </div>
+            <h2 className="section-heading text-slate-900 mb-4">{t.processHead}</h2>
+            <p className="section-subheading mx-auto">{t.processSub}</p>
+          </div>
+
+          <div className="max-w-3xl mx-auto space-y-6">
+            {PROCESS_STEPS.map((item) => {
+              const copy = item[locale]
+              return (
+                <div key={copy.step} className="card p-6 sm:p-8 flex gap-5">
+                  <div className="text-2xl font-display font-bold text-primary-600 flex-shrink-0">{copy.step}</div>
+                  <div>
+                    <h3 className="text-xl font-bold text-slate-900 mb-2">{copy.title}</h3>
+                    <p className="text-slate-600 leading-relaxed">{copy.description}</p>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 lg:py-28 bg-gradient-to-b from-slate-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary-100 text-secondary-700 text-sm font-medium mb-4">
+              <CheckCircle2 className="w-4 h-4" aria-hidden />
+              <span>{t.whyBadge}</span>
+            </div>
+            <h2 className="section-heading text-slate-900 mb-4">{t.whyHead}</h2>
+            <p className="section-subheading mx-auto">{t.whySub}</p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            {t.whyItems.map((item) => (
+              <div key={item.title} className="card p-6">
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center mb-4">
+                  <CheckCircle2 className="w-5 h-5 text-white" aria-hidden />
+                </div>
+                <h3 className="text-lg font-bold text-slate-900 mb-2">{item.title}</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-100 text-primary-700 text-sm font-medium mb-4">
+            <span>{t.costsBadge}</span>
+          </div>
+          <h2 className="section-heading text-slate-900 mb-4">{t.costsHead}</h2>
+          <p className="text-lg text-slate-600 leading-relaxed mb-10">{t.costsIntro}</p>
+
+          <div className="space-y-4 mb-8">
+            {t.costsItems.map((item) => (
+              <div key={item.title} className="card p-6">
+                <h3 className="text-lg font-bold text-slate-900 mb-2">{item.title}</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-sm text-slate-500 leading-relaxed">{t.costsNote}</p>
+        </div>
+      </section>
+
+      <section className="py-20 lg:py-28 bg-gradient-to-b from-slate-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-100 text-primary-700 text-sm font-medium mb-4">
+              <span>{t.siblingsBadge}</span>
+            </div>
+            <h2 className="section-heading text-slate-900 mb-4">{t.siblingsHead}</h2>
+            <p className="section-subheading mx-auto">{t.siblingsSub}</p>
+          </div>
+
+          <div className="grid sm:grid-cols-3 gap-6 lg:gap-8 mb-10">
+            {siblings.map((spoke) => (
+              <BranchSpokeCard
+                key={spoke.slug}
+                industrySlug="makelaars"
+                hubPath={hubPath}
+                spoke={spoke}
+                locale={locale}
+                ctaLabel={t.siblingsCta}
+              />
+            ))}
+          </div>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-center">
+            <Link to={hubPath} className="text-primary-600 font-semibold hover:text-primary-700 inline-flex items-center gap-2">
+              {t.hubLink}
+              <ArrowRight className="w-4 h-4" aria-hidden />
+            </Link>
+            <span className="hidden sm:inline text-slate-300" aria-hidden>|</span>
+            <div className="text-sm text-slate-500 max-w-md">
+              <Link
+                to={ROUTES['social-media-marketing'][locale]}
+                className="text-primary-600 font-medium hover:text-primary-700"
+              >
+                {t.supportLinkLabel}
+              </Link>
+              <span className="block mt-1">{t.supportLinkNote}</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="section-heading text-slate-900 mb-4">{t.ctaHeading}</h2>
+          <p className="section-subheading mx-auto mb-8">{t.ctaSub}</p>
+          <Link to={ROUTES.contact[locale]} className="btn-primary group">
+            {t.ctaButton}
+            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden />
+          </Link>
+        </div>
+      </section>
+    </div>
+  )
+}

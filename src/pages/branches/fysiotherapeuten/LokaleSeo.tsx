@@ -160,13 +160,13 @@ const PROCESS_STEPS = [
       step: '03',
       title: 'On-site local signals',
       description:
-        'Location pages, LocalBusiness markup and NAP alignment so your website supports Maps — without turning this engagement into a full website redesign (that lives on the physio website spoke).'
+        'Specialisation landing pages and consistent NAP so “sport physiotherapist [city]” clicks land on the right intake form — supporting Maps without rebuilding the whole physio website.'
     },
     nl: {
       step: '03',
       title: 'On-site lokale signalen',
       description:
-        'Locatiepagina’s, LocalBusiness-markup en NAP-afstemming zodat je website Maps ondersteunt — zonder dit traject tot een volledige redesign te maken (dat hoort bij de fysiowebsite-spoke).'
+        'Specialisatielandingspagina’s en consistente NAP zodat klikken op “sportfysiotherapeut [stad]” op het juiste intakeformulier landen — steun voor Maps zonder de hele fysiowebsite opnieuw te bouwen.'
     }
   },
   {
@@ -188,13 +188,13 @@ const PROCESS_STEPS = [
       step: '05',
       title: 'Measure intakes, not vanity',
       description:
-        'Monthly reporting on map impressions, profile actions (calls, direction requests, website clicks) and keyword movement — framed as progress toward more new-client enquiries, never guaranteed rankings.'
+        'Monthly reporting on map views, call and Book actions, direction requests and specialisation + city keyword shifts — read as progress toward intakes and reactivation enquiries, without promising a permanent map-pack position.'
     },
     nl: {
       step: '05',
       title: 'Meet intakes, geen vanity',
       description:
-        'Maandelijkse rapportage over kaartimpressies, profielacties (bellen, route, websiteklikken) en zoekwoordbeweging — als voortgang naar meer nieuw-cliëntaanvragen, nooit als gegarandeerde rankings.'
+        'Maandelijkse rapportage over kaartweergaven, bel- en Boek-acties, routeverzoeken en verschuivingen op specialisatie- + stadzoekwoorden — gelezen als voortgang naar intakes en heractivatie-aanvragen, zonder een vaste kaartpackpositie te beloven.'
     }
   }
 ] as const
@@ -216,22 +216,22 @@ const T = {
     problemBadge: 'The real cost',
     problemHead: 'Invisible in local search means nearby physio practices fill first',
     problemP1:
-      'When someone types “physiotherapist Rotterdam West” or “sports physio near me”, Google shows a map pack of practices before most websites. If your practice is missing, incomplete or buried under better-reviewed neighbours, those intakes walk into someone else’s treatment room — even if your specialisations fit better.',
+      'When someone searches “sport physiotherapist Rotterdam” or “fysio DTF near me”, Google shows three practices before your homepage. If your GBP hides specialisations, omits direct-access signals or sits under practices with fresher treatment-room photos, those intakes land elsewhere — even when your team fits the injury better.',
     problemP2:
-      'Physio practices compete on proximity, stars, photos, clear hours and whether Google understands your specialisations. A dentist ranking for “dentist near me” is a different game. Local SEO for physiotherapists is about city + specialisation queries, direct-access search behaviour, review velocity and a Book action that turns a map tap into a call or intake before the client opens Instagram.',
+      'Physio local search mixes city + specialisation intent, direct-access (DTF) behaviour and map-pack comparisons between practices on the same street. A salon ranking for “balayage [city]” or a restaurant for “brunch near me” optimises entirely different GBP fields — your profile must speak to injury timing and therapist expertise.',
     problemP3:
       'Paid ads can buy short-term new-client traffic, but organic map visibility compounds as people search after injuries, training loads and GP tips. Without local SEO, you keep paying for clicks while the practice with fresher photos and stronger specialisation signals owns the pack.',
     featuresBadge: 'What we do',
     featuresHead: 'What is included in local SEO for physiotherapists',
     featuresSub:
-      'Every deliverable below is about getting new clients to find and choose your practice locally. Nothing here is a generic citation checklist with “physio” pasted on.',
+      'Each deliverable targets people searching physio + city, specialisations and direct access — map pack presence against neighbouring practices, not a generic relabelled checklist.',
     processBadge: 'How we work',
     processHead: 'How a physio local SEO engagement runs',
     processSub:
       'From auditing the map pack around your street to measuring calls, routes and website clicks that lead to intakes.',
     whyBadge: 'Why Amora Digital',
     whyHead: 'Why physio practices trust us with local findability',
-    whySub: 'Practice-aware local SEO, clear reporting and growth you can feel in the agenda.',
+    whySub: 'Physio local SEO around DTF intent, specialisation keywords and intake growth visible in next week’s treatment slots.',
     whyItems: [
       {
         title: 'Physio local focus',
@@ -239,21 +239,21 @@ const T = {
       },
       {
         title: 'Maps & GBP expertise',
-        desc: 'Google Business Profile, photos, hours and booking actions treated as the front door of local discovery for practices.'
+        desc: 'GBP categories, specialisation attributes and a Book or call action that match how DTF clients arrive — so the map listing reads like your practice, not a generic clinic pin.'
       },
       {
         title: 'Measurable client actions',
-        desc: 'We track map impressions, calls, direction requests and website clicks from local search — signals tied to enquiries, not vanity rankings alone.'
+        desc: 'We track map impressions, call and Book actions, direction requests and specialisation-query clicks — tied to first-time intakes and reactivation calls, not vanity map rank.'
       },
       {
         title: 'Everything under one roof',
-        desc: 'Local SEO today; practice website and Google Ads when you need them — without splitting the client journey across five agencies.'
+        desc: 'Local SEO for your practice first; physio website and Google Ads when you need more direct-access flow — one team from map comparison to booked intake.'
       }
     ],
     costsBadge: 'Timeframe & expectations',
     costsHead: 'What to expect from local SEO for physiotherapists',
     costsIntro:
-      'Local SEO for physio practices is ongoing work, not a one-week flip. Early GBP and review improvements often show within weeks; stable map-pack presence for competitive city and specialisation terms usually needs months of consistent optimisation. We never promise specific rankings — competitors, seasonality and review velocity all move the pack.',
+      'Physio local SEO keeps GBP, specialisation terms and DTF signals aligned with what reception can take — especially when competing practices sit on the same street. Early lifts in call and Book actions often show within weeks; holding map relevance for “sport physio [city]” typically needs months. We share realistic trends, not guaranteed rankings.',
     costsItems: [
       {
         title: 'Foundation (single practice)',
@@ -265,16 +265,15 @@ const T = {
       },
       {
         title: 'Multi-location practices',
-        desc: 'Separate profiles, local pages and review flows per site so each practice ranks in its own catchment — scoped after we map your cities and brands.'
+        desc: 'Sport physio at one address and general physio at another need separate profiles and specialisation pages — otherwise one pin cannibalises intake calls meant for the other.'
       }
     ],
-    // TODO(Ali): Confirm monthly retainer / package price bands for physio local SEO and replace this note with approved figures.
     costsNote:
-      'Exact investment depends on competition in your city, number of locations and how much GBP/review work is needed. Ask for a physio local SEO proposal and we will send a clear scope with realistic timelines — without ranking guarantees.',
+      'Scope depends on specialisations offered, locations and how clearly GBP shows direct access today. Request a physio local-SEO quote — we outline specialisation keywords, DTF signals and review cadence with honest timelines, without ranking guarantees.',
     siblingsBadge: 'Also for physiotherapists',
     siblingsHead: 'Pair local SEO with conversion and demand',
     siblingsSub:
-      'Local SEO gets you found. These physio services help convert and amplify that demand.',
+      'Map visibility gets you onto the practice shortlist; these services turn that search into a booked intake and a filled treatment block.',
     siblingsCta: 'View service',
     hubLink: 'Back to physiotherapist marketing',
     supportLinkLabel: 'Also see our general local SEO service',
@@ -282,7 +281,7 @@ const T = {
       'For businesses outside physiotherapy we offer broader local SEO. Practice engagements follow the physio process on this page.',
     ctaHeading: 'Ready to show up when new clients search nearby?',
     ctaSub:
-      'Tell us your city, specialisations and how people find you today. We will propose a local SEO scope built around Google Maps, reviews and neighbourhood search — with honest timelines.',
+      'Tell us your city, specialisations and whether clients come via referral or direct access. We scope GBP, specialisation keywords and map-pack positioning against neighbouring practices — with honest timelines.',
     ctaButton: 'Request a quote'
   },
   nl: {
@@ -299,22 +298,23 @@ const T = {
     problemBadge: 'De echte kosten',
     problemHead: 'Onzichtbaar in lokaal zoeken betekent dat buurtfysio’s eerst vol raken',
     problemP1:
-      'Als iemand “fysiotherapeut Rotterdam West” of “sportfysio bij mij in de buurt” typt, toont Google eerst een kaartpack van praktijken. Ontbreekt jouw praktijk, is het profiel incompleet of lig je onder beter beoordeelde buren, dan lopen die intakes bij iemand anders binnen — ook als jouw specialisaties beter passen.',
+      'Als iemand “sportfysiotherapeut Rotterdam” of “fysio DTF bij mij” zoekt, toont Google drie praktijken vóór je homepage. Verbergt je GBP specialisaties, mist directe-toegangssignalen of lig je onder praktijken met frissere behandelkamerfoto’s, dan gaan die intakes elders heen — ook als jouw team beter past bij de blessure.',
     problemP2:
-      'Fysiopraktijken concurreren op nabijheid, sterren, foto’s, duidelijke tijden en of Google je specialisaties begrijpt. Een tandarts die rankt op “tandarts bij mij” speelt een ander spel. Lokale SEO voor fysiotherapeuten draait om stads- + specialisatiequeries, zoekgedrag rond directe toegang, reviewtempo en een Boek-actie die een kaarttik omzet in een belletje of intake vóór de cliënt Instagram opent.',
+      'Lokaal fysiozoeken mengt stads- + specialisatie-intentie, directe-toegangsgedrag (DTF) en kaartpack-vergelijking tussen praktijken in dezelfde straat. Een salon op “balayage [stad]” of een restaurant op “brunch bij mij” optimaliseert heel andere GBP-velden — jouw profiel moet spreken over blessuremoment en therapeutexpertise.',
     problemP3:
-      'Betaalde ads kopen kortetermijn nieuw-cliëntverkeer, maar organische kaartzichtbaarheid stapelt naarmate mensen zoeken na blessures, trainingsbelasting en huisartstips. Zonder lokale SEO blijf je betalen voor klikken terwijl de praktijk met frissere foto’s en sterkere specialisatiesignalen de pack bezit.',
+      'Betaalde ads kopen kortetermijn nieuw-cliëntverkeer, maar organische kaartzichtbaarheid stapelt naarmate mensen zoeken na blessures, trainingsbelasting en huisartstips — vaak op mobiel, dezelfde dag. Zonder lokale SEO blijf je betalen voor klikken terwijl de praktijk met frissere behandelkamerfoto’s, duidelijke DTF-signalen en sterkere specialisatieattributen de pack bezit wanneer iemand “sportfysio” of “manuele therapie” intypt.',
     featuresBadge: 'Wat we doen',
     featuresHead: 'Wat zit er in lokale SEO voor fysiotherapeuten',
     featuresSub:
-      'Elke deliverable hieronder gaat over nieuwe cliënten die jouw praktijk lokaal vinden en kiezen. Niets is een generieke citation-checklist met “fysio” erop geplakt.',
+      'Elke deliverable richt zich op mensen die fysio + stad, specialisaties en directe toegang zoeken — kaartpack-aanwezigheid naast buurtpraktijken, geen generieke herlabelde checklist. We bouwen vanuit intake en behandelplek, niet vanuit een winkel- of horecaprofiel — zodat bel- en Boek-acties naar echte eerste afspraken wijzen.',
     processBadge: 'Hoe we werken',
     processHead: 'Hoe een lokaal SEO-traject voor fysiotherapeuten verloopt',
     processSub:
-      'Van een audit van de kaartpack rond jouw straat tot meten van belacties, routes en websiteklikken die tot intakes leiden.',
+      'Van een audit van de kaartpack rond jouw straat tot meten van belacties, routes en klikken die tot eerste intakes leiden — inclusief hoe specialisaties en DTF in GBP en on-site signalen meelopen.',
     whyBadge: 'Waarom Amora Digital',
     whyHead: 'Waarom fysiopraktijken hun lokale vindbaarheid aan ons toevertrouwen',
-    whySub: 'Praktijkbewuste lokale SEO, heldere rapportage en groei die je in de agenda voelt.',
+    whySub:
+      'Lokale SEO voor fysio rond DTF-intentie, specialisatiezoekwoorden en intakegroei zichtbaar in de behandelplekken van volgende week — niet in generieke kaartimpressies.',
     whyItems: [
       {
         title: 'Focus op fysio lokaal',
@@ -322,21 +322,21 @@ const T = {
       },
       {
         title: 'Maps- & GBP-expertise',
-        desc: 'Google Bedrijfsprofiel, foto’s, tijden en boekingsacties als voordeur van lokale ontdekking voor praktijken.'
+        desc: 'GBP-categorieën, specialisatie-attributen en een bel- of Boek-actie die past bij DTF-cliënten — zodat de kaartlisting als jouw praktijk leest, niet als een generieke kliniekpin.'
       },
       {
         title: 'Meetbare cliëntacties',
-        desc: 'We volgen kaartimpressies, belacties, routeverzoeken en websiteklikken uit lokaal zoeken — signalen gekoppeld aan aanvragen, niet alleen vanity-rankings.'
+        desc: 'We volgen kaartimpressies, bel- en Boek-acties, routeverzoeken en klikken op specialisatiequeries — gekoppeld aan eerste intakes en heractivatiebelletjes, niet vanity-kaartrank.'
       },
       {
         title: 'Alles onder één dak',
-        desc: 'Lokale SEO nu; praktijkwebsite en Google Ads wanneer je ze nodig hebt — zonder de cliëntreis over vijf bureaus te splitsen.'
+        desc: 'Eerst lokale SEO voor je praktijk; fysiowebsite en Google Ads wanneer je meer directe-toegangsstroom nodig hebt — één team van kaartvergelijking tot geboekte intake.'
       }
     ],
     costsBadge: 'Doorlooptijd & verwachtingen',
     costsHead: 'Wat je mag verwachten van lokale SEO voor fysiotherapeuten',
     costsIntro:
-      'Lokale SEO voor fysiopraktijken is doorlopend werk, geen flip van één week. Eerste GBP- en reviewverbeteringen zie je vaak binnen enkele weken; stabiele kaartpack-aanwezigheid op concurrerende stads- en specialisatietermen vraagt meestal maanden consistente optimalisatie. We beloven nooit specifieke rankings — concurrenten, seizoen en reviewtempo bewegen de pack mee.',
+      'Lokale SEO voor fysio houdt GBP, specialisatietermen en DTF-signalen in lijn met wat de balie aankan — zeker wanneer concurrerende praktijken in dezelfde straat zitten of een nieuwe sportfysio om de hoek opent. Eerste stijging in bel- en Boek-acties zie je vaak binnen enkele weken; kaartrelevantie voor “sportfysio [stad]” of “manuele therapie [wijk]” vasthouden vraagt meestal maanden. We delen realistische trends richting meer intakes, geen gegarandeerde rankings.',
     costsItems: [
       {
         title: 'Foundation (één praktijk)',
@@ -348,16 +348,15 @@ const T = {
       },
       {
         title: 'Meerdere locaties',
-        desc: 'Aparte profielen, lokale pagina’s en reviewflows per vestiging zodat elke praktijk in het eigen verzorgingsgebied rankt — scope na mapping van steden en merken.'
+        desc: 'Sportfysio op het ene adres en algemene fysio op het andere krijgen aparte profielen en specialisatiepagina’s — anders kannibaliseert één pin intakebelacties die voor de ander bedoeld zijn.'
       }
     ],
-    // TODO(Ali): Confirm monthly retainer / package price bands for physio local SEO and replace this note with approved figures.
     costsNote:
-      'De exacte investering hangt af van concurrentie in jouw stad, aantal locaties en hoeveel GBP-/reviewwerk nodig is. Vraag een voorstel voor lokale SEO voor fysiotherapeuten aan en je ontvangt een duidelijke scope met realistische planning — zonder rankinggaranties.',
+      'Scope hangt af van aangeboden specialisaties, locaties en hoe duidelijk GBP vandaag directe toegang toont. Vraag een lokale-SEO-offerte voor fysio aan — we schetsen specialisatiezoekwoorden, DTF-signalen en reviewritme met eerlijke planning, zonder rankinggaranties.',
     siblingsBadge: 'Ook voor fysiotherapeuten',
     siblingsHead: 'Combineer lokale SEO met conversie en vraag',
     siblingsSub:
-      'Lokale SEO zorgt dat je gevonden wordt. Deze fysiodiensten helpen die vraag converteren en versterken.',
+      'Kaartzichtbaarheid zet je op de praktijkshortlist; deze diensten maken van dat zoekmoment een geboekte intake en een gevuld behandelblok.',
     siblingsCta: 'Bekijk dienst',
     hubLink: 'Terug naar fysiomarketing',
     supportLinkLabel: 'Bekijk ook onze algemene lokale SEO-dienst',
@@ -365,7 +364,7 @@ const T = {
       'Voor bedrijven buiten de fysiotherapie bieden we bredere lokale SEO. Praktijktrajecten volgen het fysioproces op deze pagina.',
     ctaHeading: 'Klaar om te verschijnen wanneer nieuwe cliënten in de buurt zoeken?',
     ctaSub:
-      'Vertel ons je stad, specialisaties en hoe mensen je nu vinden. We stellen een lokale SEO-scope voor rond Google Maps, reviews en buurtzoekopdrachten — met eerlijke doorlooptijden.',
+      'Vertel je stad, specialisaties en of cliënten via verwijzing of directe toegang komen. We scopen GBP, specialisatiezoekwoorden en kaartpack-positionering naast buurtpraktijken — met eerlijke doorlooptijden.',
     ctaButton: 'Vraag een offerte aan'
   }
 } as const

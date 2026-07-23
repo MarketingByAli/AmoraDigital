@@ -138,13 +138,13 @@ const PROCESS_STEPS = [
       step: '02',
       title: 'Menu & booking structure',
       description:
-        'Information architecture around the menu, events and reserve flow — not a generic “Services” page. Every important dish category and booking path gets a clear place.'
+        'We wire the site around how guests actually book: lunch vs dinner menus, event pages, allergen labels and the reserve flow — not a flat “About us” hierarchy. Private dining and weekly specials each get a route from homepage to confirmed table.'
     },
     nl: {
       step: '02',
       title: 'Menu- & boekingsstructuur',
       description:
-        'Informatiearchitectuur rond menu, events en reserveren — geen generieke “Diensten”-pagina. Elke belangrijke menucategorie en boekingsroute krijgt een duidelijke plek.'
+        'We structureren rond hoe gasten echt boeken: lunch- vs dinermenu, eventpagina’s, allergenen en het reserveringspad — geen platte “Over ons”-hiërarchie. Privé dining en week specials krijgen elk een route van homepage tot bevestigde tafel.'
     }
   },
   {
@@ -180,13 +180,13 @@ const PROCESS_STEPS = [
       step: '05',
       title: 'Launch & measure reservations',
       description:
-        'Go live with analytics on reservation clicks, phone taps and menu views. You see which dishes and which traffic sources fill tables — not just pageviews.'
+        'Launch with tracking on reservation clicks, “call now” taps and which menu sections people read before booking. You see whether Instagram or Google Maps fills Friday covers — not vanity traffic from people who never wanted a table.'
     },
     nl: {
       step: '05',
       title: 'Live & reserveringen meten',
       description:
-        'Livegang met analytics op reserveringsklikken, belacties en menuweergaven. Je ziet welke gerechten en verkeersbronnen tafels vullen — niet alleen pageviews.'
+        'Livegang met meting van reserveringsklikken, belacties en welke menusecties mensen lezen vóór ze boeken. Je ziet of Instagram of Google Maps vrijdagavond vult — geen vanity-verkeer van mensen die nooit een tafel wilden.'
     }
   }
 ] as const
@@ -208,7 +208,7 @@ const T = {
     problemBadge: 'The real cost',
     problemHead: 'A weak restaurant website loses reservations before the kitchen opens',
     problemP1:
-      'When someone searches “Italian restaurant Amsterdam centre” or “best brunch near me”, they open three tabs. The first site with a clear menu, tonight’s hours and a one-tap reserve button usually wins. If your site is a PDF menu from 2019, a Facebook page, or a template that buries the phone number, those guests book elsewhere — or walk into the place with the brighter photos.',
+      'When an owner compares website quotes between lunch prep and service, they look for proof the builder understands menus and covers — not another brochure. Meanwhile guests planning tonight open three tabs: the first with a scannable menu, clear hours and a mobile reserve button wins. A PDF-only site or buried phone number sends both parties to the competitor whose kitchen photos already look full.',
     problemP2:
       'Restaurants do not need a corporate brochure. They need a digital front-of-house: opening hours that match the kitchen, allergen-aware menu pages, dish photography that creates appetite, and a reservation flow that works while someone is already standing on the pavement. Miss that, and you pay in empty tables on Tuesday and overloaded phones on Friday.',
     problemP3:
@@ -216,7 +216,7 @@ const T = {
     featuresBadge: 'What we build',
     featuresHead: 'What is included in a restaurant website',
     featuresSub:
-      'Every feature below answers a guest or kitchen need. Nothing here is a generic “About us” block renamed for hospitality.',
+      'From the reservation widget to allergen labels on the menu — each block is built for how guests choose between two bistro tabs, not for a generic brochure.',
     processBadge: 'How we work',
     processHead: 'How a restaurant website project runs',
     processSub:
@@ -231,7 +231,7 @@ const T = {
       },
       {
         title: 'Local findability',
-        desc: 'Site structure and LocalBusiness signals that support Google Maps and neighbourhood search — not just a pretty homepage.'
+        desc: 'Reserve path, kitchen hours and Restaurant markup that match what guests see in Maps — so a neighbourhood search ends in a table request, not a dead brochure page.'
       },
       {
         title: 'Measurable bookings',
@@ -239,13 +239,13 @@ const T = {
       },
       {
         title: 'Everything under one roof',
-        desc: 'Website today; local SEO, social and Google Ads when you are ready — without handing guests to five agencies.'
+        desc: 'Start with the site; add local SEO, social and paid ads when reservations need a push — one team that knows your menu and booking stack, not a separate freelancer for each channel.'
       }
     ],
     costsBadge: 'Investment',
     costsHead: 'What does a restaurant website cost?',
     costsIntro:
-      'Price depends on scope: how complex the menu is, whether you need an online reservation system, multilingual pages, takeaway flows and photo production. We quote fixed packages after a short intake — not hourly surprises mid-build.',
+      'Your quote reflects how you run the room: chalkboard menu vs full digital card, table booking tool, takeaway links and how many locations share the same hours. We confirm a fixed scope after a short call — not open-ended builder hours while service is on.',
     costsItems: [
       {
         title: 'Essential restaurant site',
@@ -260,13 +260,12 @@ const T = {
         desc: 'Multiple venues, language variants, pickup flows or delivery-platform links alongside dine-in reservations. Scoped per brand after we map your operations.'
       }
     ],
-    // TODO(Ali): Confirm package price bands for restaurant websites and replace this note with approved figures.
     costsNote:
-      'Exact package prices are confirmed in your quote after we see your menu complexity and reservation needs. Ask for a restaurant website proposal and we will send a fixed scope with timelines.',
+      'We lock the build scope once we have seen your menu setup and how reservations land online. Request a restaurant website quote for a fixed deliverable list and launch date — that is the next step when you want numbers tied to your kitchen, not a generic band on this page.',
     siblingsBadge: 'Also for restaurants',
     siblingsHead: 'Pair your website with local growth',
     siblingsSub:
-      'A strong site converts traffic. These restaurant services bring more of the right guests to it.',
+      'More Google and social traffic only helps if the site still shows tonight’s menu and a reserve button. These services send hungry guests to a front door that actually converts.',
     siblingsCta: 'View service',
     hubLink: 'Back to restaurant marketing',
     webDesignLinkLabel: 'Also see our general website design service',
@@ -291,7 +290,7 @@ const T = {
     problemBadge: 'De echte kosten',
     problemHead: 'Een zwakke restaurantwebsite kost reserveringen vóór de keuken opent',
     problemP1:
-      'Als iemand zoekt op “Italiaans restaurant Amsterdam centrum” of “beste brunch bij mij in de buurt”, openen ze drie tabbladen. De eerste site met een duidelijke menukaart, openingstijden vanavond en een één-tap-reserveringsknop wint meestal. Is jouw site een PDF-menu uit 2019, alleen een Facebookpagina, of een template die het telefoonnummer begraaft, dan boeken die gasten elders — of lopen ze naar de zaak met de betere foto’s.',
+      'Als een eigenaar tussen lunchprep en service website-offertes vergelijkt, zoekt hij bewijs dat de bouwer menu’s en couverts snapt — geen nieuwe brochure. Ondertussen openen gasten die vanavond willen eten drie tabbladen: wie een scanbare menukaart, duidelijke uren en mobiel reserveren toont, wint. Alleen een PDF of een verborgen telefoonnummer stuurt beide kanten naar de concurrent waar de keukenfoto’s al vol ogen.',
     problemP2:
       'Restaurants hebben geen corporate brochure nodig. Ze hebben een digitaal front-of-house nodig: openingstijden die kloppen met de keuken, menupagina’s met allergenen, foodfotografie die trek geeft, en een reserveringsflow die werkt terwijl iemand al op de stoep staat. Mis je dat, dan betaal je met lege tafels op dinsdag en overvolle telefoons op vrijdag.',
     problemP3:
@@ -299,7 +298,7 @@ const T = {
     featuresBadge: 'Wat we bouwen',
     featuresHead: 'Wat zit er in een restaurantwebsite',
     featuresSub:
-      'Elke feature hieronder beantwoordt een behoefte van gast of keuken. Niets is een generiek “Over ons”-blok met een horecalabel erop.',
+      'Van het reserveringswidget tot allergenen op de menukaart — elk blok is gemaakt voor hoe gasten kiezen tussen twee bistrotabbladen, niet voor een generieke brochure.',
     processBadge: 'Hoe we werken',
     processHead: 'Hoe een restaurantwebsite-traject verloopt',
     processSub:
@@ -314,7 +313,7 @@ const T = {
       },
       {
         title: 'Lokale vindbaarheid',
-        desc: 'Sitestructuur en LocalBusiness-signalen die Google Maps en buurtzoekopdrachten ondersteunen — niet alleen een mooie homepage.'
+        desc: 'Reserveerpad, keukentijden en Restaurant-markup die kloppen met wat gasten in Maps zien — zodat een buurtzoekopdracht eindigt in een tafelverzoek, niet op een dode brochurepagina.'
       },
       {
         title: 'Meetbare boekingen',
@@ -322,13 +321,13 @@ const T = {
       },
       {
         title: 'Alles onder één dak',
-        desc: 'Website nu; lokale SEO, social en Google Ads wanneer je er klaar voor bent — zonder gasten aan vijf bureaus over te dragen.'
+        desc: 'Begin met de site; voeg lokale SEO, social en ads toe wanneer reserveringen een duwtje nodig hebben — één team dat je menu en boekingssysteem kent, geen aparte freelancer per kanaal.'
       }
     ],
     costsBadge: 'Investering',
     costsHead: 'Wat kost een website voor een restaurant?',
     costsIntro:
-      'De prijs hangt af van scope: hoe complex de menukaart is, of je een online reserveringssysteem nodig hebt, meertalige pagina’s, afhaalflows en fotografie. Na een korte intake geven we vaste packages — geen uurtje-factuurtje halverwege de bouw.',
+      'Je offerte volgt hoe je de zaak draait: bordmenu versus volledige digitale kaart, tafelreservering, afhalen en hoeveel locaties dezelfde openingstijden delen. Na een kort gesprek bevestigen we een vaste scope — geen open urennota’s terwijl de service loopt.',
     costsItems: [
       {
         title: 'Essentiële restaurantsite',
@@ -343,13 +342,12 @@ const T = {
         desc: 'Meerdere vestigingen, taalvarianten, afhaalflows of koppelingen met bezorgplatforms naast dine-in-reserveringen. Scope per merk nadat we je operatie in kaart hebben.'
       }
     ],
-    // TODO(Ali): Confirm package price bands for restaurant websites and replace this note with approved figures.
     costsNote:
-      'Exacte packageprijzen bevestigen we in je offerte nadat we menukaartcomplexiteit en reserveringsbehoeften hebben gezien. Vraag een restaurantwebsite-voorstel aan en je ontvangt een vaste scope met planning.',
+      'We zetten de bouwscope vast zodra menuopzet en online reserveringen duidelijk zijn. Vraag een restaurantwebsite-offerte aan voor een vaste deliverablelijst en lanceringsdatum — dat is de volgende stap als je cijfers wilt die bij jouw keuken passen, niet een generieke band op deze pagina.',
     siblingsBadge: 'Ook voor restaurants',
     siblingsHead: 'Combineer je website met lokale groei',
     siblingsSub:
-      'Een sterke site converteert verkeer. Deze restaurantdiensten brengen meer van de juiste gasten ernaartoe.',
+      'Meer Google- en socialverkeer helpt alleen als de site vanavond nog menukaart en reserveringsknop toont. Deze diensten sturen hongerige gasten naar een digitale voordeur die écht converteert.',
     siblingsCta: 'Bekijk dienst',
     hubLink: 'Terug naar restaurantmarketing',
     webDesignLinkLabel: 'Bekijk ook onze algemene webdesign-dienst',

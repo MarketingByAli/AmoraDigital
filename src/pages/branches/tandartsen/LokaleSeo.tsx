@@ -160,13 +160,13 @@ const PROCESS_STEPS = [
       step: '03',
       title: 'On-site local signals',
       description:
-        'Location pages, LocalBusiness markup and NAP alignment so your website supports Maps — without turning this engagement into a full website redesign (that lives on the dentist website spoke).'
+        'We align address, phone and DentalLocalBusiness markup so Google trusts the same practice patients see on your site — light on-page work, not a full redesign (that is the dentist website spoke).'
     },
     nl: {
       step: '03',
       title: 'On-site lokale signalen',
       description:
-        'Locatiepagina’s, LocalBusiness-markup en NAP-afstemming zodat je website Maps ondersteunt — zonder dit traject tot een volledige redesign te maken (dat hoort bij de tandartswebsite-spoke).'
+        'We stemmen adres, telefoon en DentalLocalBusiness-markup af zodat Google dezelfde praktijk vertrouwt die patiënten op je site zien — lichte on-page steun, geen volledige redesign (dat is de tandartswebsite-spoke).'
     }
   },
   {
@@ -188,13 +188,13 @@ const PROCESS_STEPS = [
       step: '05',
       title: 'Measure registrations, not vanity',
       description:
-        'Monthly reporting on map impressions, profile actions (calls, direction requests, website clicks) and keyword movement — framed as progress toward more new-patient enquiries, never guaranteed rankings.'
+        'Monthly reporting on map views, call and Book actions, direction requests and dentist + city keyword shifts — read as progress toward new-patient enquiries and filled agenda blocks, without promising a fixed map-pack rank.'
     },
     nl: {
       step: '05',
       title: 'Meet inschrijvingen, geen vanity',
       description:
-        'Maandelijkse rapportage over kaartimpressies, profielacties (bellen, route, websiteklikken) en zoekwoordbeweging — als voortgang naar meer nieuw-patiëntaanvragen, nooit als gegarandeerde rankings.'
+        'Maandelijkse rapportage over kaartweergaven, bel- en Boek-acties, routeverzoeken en verschuivingen op tandarts- + stadzoekwoorden — gelezen als voortgang naar nieuw-patiëntaanvragen en gevulde agendablokken, zonder een vaste kaartrank te beloven.'
     }
   }
 ] as const
@@ -216,22 +216,22 @@ const T = {
     problemBadge: 'The real cost',
     problemHead: 'Invisible in local search means nearby practices fill first',
     problemP1:
-      'When someone types “dentist Utrecht centre” or “dentist accepting new patients near me”, Google shows a map pack of practices before most websites. If your practice is missing, incomplete or buried under better-reviewed neighbours, those registrations walk into someone else’s waiting room — even if your care is stronger.',
+      'When a mover searches “dentist accepting new patients Amsterdam” or “emergency dentist near me”, Google shows three practices in the map pack first. A half-finished GBP, no Book action or fewer recent post-treatment reviews sends those registrations to the practice that looks open and trustworthy — even if your chair-side care is stronger.',
     problemP2:
-      'Dental practices compete on proximity, stars, photos, clear hours and whether Google signals that you still take new patients. A restaurant ranking for “dinner near me” is a different game. Local SEO for dentists is about city + neighbourhood queries, emergency intent, insurance-aware phrasing and a Book action that turns a map tap into a call or booking before the patient opens Instagram.',
+      'Dental local search turns on “dentist near me”, new-patient availability, post-check-up review habits and a Book button that works on mobile. Restaurant diners choosing by cuisine photos or sellers comparing estate agents by district pages follow different paths — your practice needs clinical trust signals, not their templates.',
     problemP3:
       'Paid ads can buy short-term new-patient traffic, but organic map visibility compounds month after month as people move into your catchment. Without local SEO, you keep paying for clicks while the practice with fresher photos and more recent reviews owns the pack.',
     featuresBadge: 'What we do',
     featuresHead: 'What is included in local SEO for dentists',
     featuresSub:
-      'Every deliverable below is about getting new patients to find and choose your practice locally. Nothing here is a generic citation checklist with “dentist” pasted on.',
+      'Each item targets people searching for a dentist in your city — new-patient intent, Book actions, post-treatment reviews — not a relabelled generic local SEO package.',
     processBadge: 'How we work',
     processHead: 'How a dental local SEO engagement runs',
     processSub:
       'From auditing the map pack around your street to measuring calls, routes and website clicks that lead to registrations.',
     whyBadge: 'Why Amora Digital',
     whyHead: 'Why dental practices trust us with local findability',
-    whySub: 'Practice-aware local SEO, clear reporting and growth you can feel in the agenda.',
+    whySub: 'Dental local SEO built around new-patient search, Book actions and agenda fill you can trace to map-driven registrations.',
     whyItems: [
       {
         title: 'Dental local focus',
@@ -239,21 +239,21 @@ const T = {
       },
       {
         title: 'Maps & GBP expertise',
-        desc: 'Google Business Profile, photos, hours and booking actions treated as the front door of local discovery for practices.'
+        desc: 'We treat your Google profile like the reception desk online: correct dentist categories, new-patient notes, fresh surgery photos and a Book path that matches how you actually take registrations.'
       },
       {
         title: 'Measurable patient actions',
-        desc: 'We track map impressions, calls, direction requests and website clicks from local search — signals tied to enquiries, not vanity rankings alone.'
+        desc: 'We track map impressions, call and Book actions, direction requests and review velocity after check-ups — tied to new-patient registrations, not keyword charts alone.'
       },
       {
         title: 'Everything under one roof',
-        desc: 'Local SEO today; practice website, Google Ads and social when you need them — without splitting the patient journey across five agencies.'
+        desc: 'Local SEO for your practice first; practice website, Google Ads and social when you need more new-patient flow — one team from map search to booked chair time.'
       }
     ],
     costsBadge: 'Timeframe & expectations',
     costsHead: 'What to expect from local SEO for dentists',
     costsIntro:
-      'Local SEO for dental practices is ongoing work, not a one-week flip. Early GBP and review improvements often show within weeks; stable map-pack presence for competitive city terms usually needs months of consistent optimisation. We never promise specific rankings — competitors, seasonality and review velocity all move the pack.',
+      'Dental local SEO is ongoing GBP, review and new-patient keyword work — especially after team changes or catchment shifts. Early profile improvements often lift calls and Book actions within weeks; stable visibility for competitive “dentist [city]” terms usually needs months. We report realistic movement, not promised positions.',
     costsItems: [
       {
         title: 'Foundation (single practice)',
@@ -265,16 +265,15 @@ const T = {
       },
       {
         title: 'Multi-location practices',
-        desc: 'Separate profiles, local pages and review flows per site so each practice ranks in its own catchment — scoped after we map your cities and brands.'
+        desc: 'Each surgery gets its own GBP, review cadence and “new patients” signal so a city-centre practice does not steal map clicks from a suburban branch.'
       }
     ],
-    // TODO(Ali): Confirm monthly retainer / package price bands for dental local SEO and replace this note with approved figures.
     costsNote:
-      'Exact investment depends on competition in your city, number of locations and how much GBP/review work is needed. Ask for a dental local SEO proposal and we will send a clear scope with realistic timelines — without ranking guarantees.',
+      'Scope depends on city competition, locations and whether you still need to signal new-patient availability clearly. Request a dental local-SEO quote — we outline Book setup, review-after-treatment flows and neighbourhood keywords with honest timelines, without ranking guarantees.',
     siblingsBadge: 'Also for dentists',
     siblingsHead: 'Pair local SEO with conversion and demand',
     siblingsSub:
-      'Local SEO gets you found. These dental services help convert and amplify that demand.',
+      'Map visibility puts your practice on the shortlist; these services turn that search into a booked check-up and a filled hygiene block.',
     siblingsCta: 'View service',
     hubLink: 'Back to dentist marketing',
     supportLinkLabel: 'Also see our general local SEO service',
@@ -282,7 +281,7 @@ const T = {
       'For businesses outside dentistry we offer broader local SEO. Practice engagements follow the dental process on this page.',
     ctaHeading: 'Ready to show up when new patients search nearby?',
     ctaSub:
-      'Tell us your city, whether you accept new patients and how people find you today. We will propose a local SEO scope built around Google Maps, reviews and neighbourhood search — with honest timelines.',
+      'Share your city, whether you accept new patients and how people book today. We scope GBP, post-treatment reviews and dentist + city keywords around agenda growth — with timelines we can defend.',
     ctaButton: 'Request a quote'
   },
   nl: {
@@ -299,22 +298,22 @@ const T = {
     problemBadge: 'De echte kosten',
     problemHead: 'Onzichtbaar in lokaal zoeken betekent dat buurtpraktijken eerst vol raken',
     problemP1:
-      'Als iemand “tandarts Utrecht centrum” of “tandarts die nieuwe patiënten aanneemt bij mij” typt, toont Google eerst een kaartpack van praktijken. Ontbreekt jouw praktijk, is het profiel incompleet of lig je onder beter beoordeelde buren, dan lopen die inschrijvingen bij iemand anders binnen — ook als jouw zorg sterker is.',
+      'Als een verhuizer “tandarts nieuwe patiënten Amsterdam” of “spoedtandarts bij mij” zoekt, toont Google eerst drie praktijken in de kaartpack. Een half af GBP, geen Boek-actie of minder recente reviews na behandeling stuurt die inschrijvingen naar de praktijk die open en betrouwbaar oogt — ook als jouw stoelzorg sterker is.',
     problemP2:
-      'Tandartspraktijken concurreren op nabijheid, sterren, foto’s, duidelijke tijden en of Google signaleert dat jullie nog nieuwe patiënten aannemen. Een restaurant dat rankt op “diner bij mij” speelt een ander spel. Lokale SEO voor tandartsen draait om stads- en wijkqueries, spoedintentie, verzekeringsbewuste formuleringen en een Boek-actie die een kaarttik omzet in een belletje of afspraak vóór de patiënt Instagram opent.',
+      'Lokaal tandheelkundig zoeken draait om “tandarts bij mij”, beschikbaarheid voor nieuwe patiënten, reviewgewoontes na controle en een Boek-knop die op mobiel werkt. Restaurantgasten die kiezen op keukenfoto’s of verkopers die makelaars op wijkpagina’s vergelijken volgen andere paden — jouw praktijk heeft klinische vertrouwenssignalen nodig, niet hun sjablonen.',
     problemP3:
-      'Betaalde ads kopen kortetermijn nieuw-patiëntverkeer, maar organische kaartzichtbaarheid stapelt maand na maand als mensen in jouw verzorgingsgebied komen wonen. Zonder lokale SEO blijf je betalen voor klikken terwijl de praktijk met frissere foto’s en recentere reviews de pack bezit.',
+      'Betaalde ads kopen kortetermijn nieuw-patiëntverkeer, maar organische kaartzichtbaarheid stapelt maand na maand als mensen in jouw verzorgingsgebied komen wonen of hun oude praktijk kwijtraken na een verhuizing. Zonder lokale SEO blijf je betalen voor klikken terwijl de praktijk met frissere foto’s, duidelijkere “nieuwe patiënten”-status en recentere reviews na controle de pack bezit — precies wanneer iemand op mobiel een stoel wil vastleggen.',
     featuresBadge: 'Wat we doen',
     featuresHead: 'Wat zit er in lokale SEO voor tandartsen',
     featuresSub:
-      'Elke deliverable hieronder gaat over nieuwe patiënten die jouw praktijk lokaal vinden en kiezen. Niets is een generieke citation-checklist met “tandarts” erop geplakt.',
+      'Elk onderdeel richt zich op mensen die een tandarts in jouw stad zoeken — nieuw-patiëntintentie, Boek-acties, reviews na behandeling — geen herlabeld generiek lokale SEO-pakket. We denken vanuit inschrijving en spoedstoel, niet vanuit een willekeurige winkelchecklist.',
     processBadge: 'Hoe we werken',
     processHead: 'Hoe een lokaal SEO-traject voor tandartsen verloopt',
     processSub:
-      'Van een audit van de kaartpack rond jouw straat tot meten van belacties, routes en websiteklikken die tot inschrijvingen leiden.',
+      'Van een audit van de kaartpack rond jouw straat tot meten van belacties, routes en Boek-klikken die tot inschrijvingen leiden — inclusief hoe teamwissels en “nieuwe patiënten”-status in GBP meelopen.',
     whyBadge: 'Waarom Amora Digital',
     whyHead: 'Waarom tandartspraktijken hun lokale vindbaarheid aan ons toevertrouwen',
-    whySub: 'Praktijkbewuste lokale SEO, heldere rapportage en groei die je in de agenda voelt.',
+    whySub: 'Lokale SEO voor tandheelkunde rond nieuw-patiëntzoeken, Boek-acties en agendavulling die je terugvoert naar kaartgedreven inschrijvingen.',
     whyItems: [
       {
         title: 'Focus op tandheelkunde lokaal',
@@ -322,21 +321,21 @@ const T = {
       },
       {
         title: 'Maps- & GBP-expertise',
-        desc: 'Google Bedrijfsprofiel, foto’s, tijden en boekingsacties als voordeur van lokale ontdekking voor praktijken.'
+        desc: 'We behandelen je Google-profiel als de online balie: juiste tandartscategorieën, nieuw-patiëntnotities, verse praktijkfoto’s en een Boek-pad dat klopt met hoe je inschrijvingen echt aanneemt.'
       },
       {
         title: 'Meetbare patiëntacties',
-        desc: 'We volgen kaartimpressies, belacties, routeverzoeken en websiteklikken uit lokaal zoeken — signalen gekoppeld aan aanvragen, niet alleen vanity-rankings.'
+        desc: 'We volgen kaartimpressies, bel- en Boek-acties, routeverzoeken en reviewtempo na controles — gekoppeld aan nieuw-patiëntinschrijvingen, niet alleen zoekwoordgrafieken.'
       },
       {
         title: 'Alles onder één dak',
-        desc: 'Lokale SEO nu; praktijkwebsite, Google Ads en social wanneer je ze nodig hebt — zonder de patiëntreis over vijf bureaus te splitsen.'
+        desc: 'Eerst lokale SEO voor je praktijk; praktijkwebsite, Google Ads en social wanneer je meer nieuw-patiëntstroom nodig hebt — één team van kaartzoeken tot geboekte stoeltijd.'
       }
     ],
     costsBadge: 'Doorlooptijd & verwachtingen',
     costsHead: 'Wat je mag verwachten van lokale SEO voor tandartsen',
     costsIntro:
-      'Lokale SEO voor tandartspraktijken is doorlopend werk, geen flip van één week. Eerste GBP- en reviewverbeteringen zie je vaak binnen enkele weken; stabiele kaartpack-aanwezigheid op concurrerende stadstermen vraagt meestal maanden consistente optimalisatie. We beloven nooit specifieke rankings — concurrenten, seizoen en reviewtempo bewegen de pack mee.',
+      'Lokale SEO voor tandheelkunde is doorlopend GBP-, review- en nieuw-patiëntzoekwoordwerk — zeker na teamwissels, nieuwe hygiënisten of verschuiving in verzorgingsgebied. Eerste profielverbeteringen tillen bellen en Boek-acties vaak binnen enkele weken; stabiele zichtbaarheid op concurrerende “tandarts [stad]”-termen vraagt meestal maanden van reviewtempo na controles. We rapporteren realistische beweging richting meer inschrijvingen, geen beloofde posities.',
     costsItems: [
       {
         title: 'Foundation (één praktijk)',
@@ -348,16 +347,15 @@ const T = {
       },
       {
         title: 'Meerdere locaties',
-        desc: 'Aparte profielen, lokale pagina’s en reviewflows per vestiging zodat elke praktijk in het eigen verzorgingsgebied rankt — scope na mapping van steden en merken.'
+        desc: 'Elke vestiging krijgt eigen GBP, reviewritme en “nieuwe patiënten”-signaal, zodat een centrumpraktijk geen kaartklikken steelt van een buitenwijkfiliaal.'
       }
     ],
-    // TODO(Ali): Confirm monthly retainer / package price bands for dental local SEO and replace this note with approved figures.
     costsNote:
-      'De exacte investering hangt af van concurrentie in jouw stad, aantal locaties en hoeveel GBP-/reviewwerk nodig is. Vraag een voorstel voor lokale SEO voor tandartsen aan en je ontvangt een duidelijke scope met realistische planning — zonder rankinggaranties.',
+      'Scope hangt af van stadconcurrentie, locaties en of je nieuw-patiëntbeschikbaarheid nog duidelijk moet signaleren. Vraag een lokale-SEO-offerte voor tandartsen aan — we schetsen Boek-setup, reviewflows na behandeling en wijkzoekwoorden met eerlijke planning, zonder rankinggaranties.',
     siblingsBadge: 'Ook voor tandartsen',
     siblingsHead: 'Combineer lokale SEO met conversie en vraag',
     siblingsSub:
-      'Lokale SEO zorgt dat je gevonden wordt. Deze tandartsdiensten helpen die vraag converteren en versterken.',
+      'Kaartzichtbaarheid zet je praktijk op de shortlist; deze diensten maken van dat zoekmoment een geboekte controle en een gevuld hygieneblok.',
     siblingsCta: 'Bekijk dienst',
     hubLink: 'Terug naar tandartsmarketing',
     supportLinkLabel: 'Bekijk ook onze algemene lokale SEO-dienst',
@@ -365,7 +363,7 @@ const T = {
       'Voor bedrijven buiten de tandheelkunde bieden we bredere lokale SEO. Praktijktrajecten volgen het proces op deze pagina.',
     ctaHeading: 'Klaar om te verschijnen wanneer nieuwe patiënten in de buurt zoeken?',
     ctaSub:
-      'Vertel ons je stad, of jullie nieuwe patiënten aannemen en hoe mensen je nu vinden. We stellen een lokale SEO-scope voor rond Google Maps, reviews en buurtzoekopdrachten — met eerlijke doorlooptijden.',
+      'Deel je stad, of jullie nieuwe patiënten aannemen en hoe mensen vandaag boeken. We scopen GBP, reviews na behandeling en tandarts- + stadzoekwoorden rond agendagroei — met verdedigbare doorlooptijden.',
     ctaButton: 'Vraag een offerte aan'
   }
 } as const

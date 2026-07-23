@@ -146,13 +146,13 @@ const PROCESS_STEPS = [
       step: '02',
       title: 'Specialisations & booking structure',
       description:
-        'Information architecture around treatments, body-area complaints, reimbursement and book flows — not a generic clinic homepage. Every key specialisation gets a clear place.'
+        'We organise by complaint and specialisation: sports shoulder, chronic back, post-surgery rehab — each with its own path to intake booking and DTF explanation. Insurance and reimbursement sit where clients read before abandoning the form.'
     },
     nl: {
       step: '02',
       title: 'Specialisatie- & boekingsstructuur',
       description:
-        'Informatiearchitectuur rond behandelingen, klachten per lichaamsdeel, vergoeding en boekflows — geen generieke kliniekhomepage. Elke kernspecialisatie krijgt een duidelijke plek.'
+        'We ordenen op klacht en specialisatie: sport-schouder, chronische rug, revalidatie na operatie — elk met een eigen pad naar intake en DTF-uitleg. Vergoeding staat waar cliënten lezen vóór ze het formulier laten staan.'
     }
   },
   {
@@ -188,13 +188,13 @@ const PROCESS_STEPS = [
       step: '05',
       title: 'Launch & measure bookings',
       description:
-        'Go live with analytics on appointment starts, contact forms and call taps. You see which specialisations and traffic sources fill the agenda — not just pageviews.'
+        'Go live measuring intake form starts, insurance-page exits and which body-area landing pages fill Monday slots. You learn if club referrals or Maps searches drive treatment-room occupancy — not idle browsers who never needed a physio.'
     },
     nl: {
       step: '05',
       title: 'Live & afspraken meten',
       description:
-        'Livegang met analytics op afspraakstarts, contactformulieren en belacties. Je ziet welke specialisaties en verkeersbronnen de agenda vullen — niet alleen pageviews.'
+        'Livegang met meting van intake-starts, afhakers op vergoedingspagina’s en welke lichaamsdeel-landingspagina’s maandag vullen. Je ziet of clubverwijzingen of Maps zoekopdrachten behandelkamers vullen — geen browsers die nooit een fysio nodig hadden.'
     }
   }
 ] as const
@@ -216,7 +216,7 @@ const T = {
     problemBadge: 'The real cost',
     problemHead: 'A weak physio website loses new client bookings before the treatment room opens',
     problemP1:
-      'When someone searches “physiotherapist Amsterdam South” or “sports physio near me”, they compare a few practices fast. The first site that shows specialisations, whether you accept new clients, how reimbursement works and a one-tap book button usually wins. If your site is a PDF leaflet, a Facebook page only, or a template that hides DTF and insurance answers, those clients book elsewhere — or call the practice that explains dry needling and rehab clearly.',
+      'A runner with a knee twinge searches on the train and compares who explains sports rehab, direct access without a GP letter and insurance in plain language. Practices that bury DTF on a PDF or hide which therapist handles dry needling lose the intake to the site that shows treatment rooms and tomorrow’s slots on one scroll.',
     problemP2:
       'Physio practices do not need a dentist-style brochure or a restaurant menu. They need a digital front desk: specialisation pages, body-area complaint paths, direct-access explanation, reimbursement clarity and a booking flow that works while someone is still deciding after a training injury. Miss that, and you pay in empty mid-week slots and overloaded phones on Monday mornings.',
     problemP3:
@@ -224,7 +224,7 @@ const T = {
     featuresBadge: 'What we build',
     featuresHead: 'What is included in a physiotherapy website',
     featuresSub:
-      'Every feature below answers a client or practice need. Nothing here is a generic “About us” block renamed for healthcare.',
+      'Each block answers what clients ask before the first treatment room slot: DTF rules, insurance, which specialisation fits — not a clinic skin pasted over standard pages.',
     processBadge: 'How we work',
     processHead: 'How a physiotherapy website project runs',
     processSub:
@@ -239,7 +239,7 @@ const T = {
       },
       {
         title: 'Local findability support',
-        desc: 'Site structure and LocalBusiness signals that support Google Maps and “physiotherapist near me” — not just a pretty homepage.'
+        desc: 'Specialisation pages and intake CTAs structured so a Maps visitor who lands on sports physio can start DTF booking without hunting through a brochure homepage.'
       },
       {
         title: 'Measurable bookings',
@@ -247,13 +247,13 @@ const T = {
       },
       {
         title: 'Everything under one roof',
-        desc: 'Website today; local SEO and Google Ads when you are ready — without handing clients to five agencies.'
+        desc: 'Site now; local SEO and Google Ads when intakes slow — one partner who already mapped your specialisations and reimbursement FAQs, not a new vendor per channel.'
       }
     ],
     costsBadge: 'Investment',
     costsHead: 'What does a website for a physio practice cost?',
     costsIntro:
-      'Price depends on scope: how many specialisations you present, whether you need online booking, reimbursement and DTF pages, multilingual content and practice photography. We quote fixed packages after a short intake — not hourly surprises mid-build.',
+      'Scope reflects how many specialisations you publish, whether clients book online, how detailed DTF and reimbursement pages must be, and multi-room scheduling. Fixed deliverables after intake — no open-ended build between treatment blocks.',
     costsItems: [
       {
         title: 'Essential practice site',
@@ -268,13 +268,12 @@ const T = {
         desc: 'Multiple sites, sports-clinic or rehab landing paths, GP referral pages or language variants. Scoped per brand after we map how clients and referrers move through your organisation.'
       }
     ],
-    // TODO(Ali): Confirm package price bands for physiotherapy websites and replace this note with approved figures.
     costsNote:
-      'Exact package prices are confirmed in your quote after we see specialisation complexity and booking needs. Ask for a physio website proposal and we will send a fixed scope with timelines.',
+      'Scope follows our review of specialisation depth, planner integration and DTF copy needs. Request a physio website quote for a fixed deliverable list and timeline — that is the path to a practice-specific figure, not a rate card on this page.',
     siblingsBadge: 'Also for physiotherapists',
     siblingsHead: 'Pair your website with practice growth',
     siblingsSub:
-      'A strong site converts traffic. These physio services bring more of the right clients to it.',
+      'Sport club referrals and Maps clicks only convert when the site explains direct access and books an intake without five reception emails. These services send the right clients to pages built for that path.',
     siblingsCta: 'View service',
     hubLink: 'Back to physiotherapist marketing',
     webDesignLinkLabel: 'Also see our general website design service',
@@ -299,7 +298,7 @@ const T = {
     problemBadge: 'De echte kosten',
     problemHead: 'Een zwakke fysiowebsite kost nieuwe cliëntboekingen vóór de behandelkamer opent',
     problemP1:
-      'Als iemand zoekt op “fysiotherapeut Amsterdam Zuid” of “sportfysio bij mij in de buurt”, vergelijken ze snel een paar praktijken. De eerste site die specialisaties toont, of jullie nieuwe cliënten aannemen, hoe vergoeding werkt en een één-tap-boekknop heeft, wint meestal. Is jouw site een PDF-folder, alleen Facebook, of een template die DTF en verzekering verbergt, dan boeken die cliënten elders — of bellen ze de praktijk die dry needling en revalidatie wél helder uitlegt.',
+      'Een hardloper met een knieklacht zoekt in de trein en vergelijkt wie sportrevalidatie, directe toegang zonder huisartsbrief en vergoeding in begrijpelijke taal uitlegt. Praktijken die DTF in een PDF verstoppen of verbergen welke therapeut dry needling doet, verliezen de intake aan de site waar behandelkamers en morgen beschikbare slots op één scroll staan.',
     problemP2:
       'Fysiopraktijken hebben geen tandartsbrochure of restaurantmenu nodig. Ze hebben een digitale balie nodig: specialisatiepagina’s, klachtpaden per lichaamsdeel, uitleg over directe toegang, vergoedingsduidelijkheid en een boekflow die werkt terwijl iemand nog twijfelt na een trainingsblessure. Mis je dat, dan betaal je met lege slots midden in de week en overvolle telefoons op maandagochtend.',
     problemP3:
@@ -307,7 +306,7 @@ const T = {
     featuresBadge: 'Wat we bouwen',
     featuresHead: 'Wat zit er in een website voor fysiotherapeuten',
     featuresSub:
-      'Elke feature hieronder beantwoordt een behoefte van cliënt of praktijk. Niets is een generiek “Over ons”-blok met een zorglabel erop.',
+      'Elk blok beantwoordt wat cliënten vragen vóór de eerste behandelkamer: DTF-regels, vergoeding, welke specialisatie past — geen kliniekskin over standaardpagina’s heen.',
     processBadge: 'Hoe we werken',
     processHead: 'Hoe een website-traject voor een fysiopraktijk verloopt',
     processSub:
@@ -322,7 +321,7 @@ const T = {
       },
       {
         title: 'Steun voor lokale vindbaarheid',
-        desc: 'Sitestructuur en LocalBusiness-signalen die Google Maps en “fysiotherapeut bij mij” ondersteunen — niet alleen een mooie homepage.'
+        desc: 'Specialisatiepagina’s en intake-CTA’s zo gestructureerd dat een Maps-bezoeker op sportfysio DTF-boeking kan starten zonder een brochurehomepage uit te kammen.'
       },
       {
         title: 'Meetbare boekingen',
@@ -330,13 +329,13 @@ const T = {
       },
       {
         title: 'Alles onder één dak',
-        desc: 'Website nu; lokale SEO en Google Ads wanneer je er klaar voor bent — zonder cliënten aan vijf bureaus over te dragen.'
+        desc: 'Site nu; lokale SEO en Google Ads wanneer intakes tegenzitten — één partner die je specialisaties en vergoedings-FAQ’s al kent, geen nieuwe leverancier per kanaal.'
       }
     ],
     costsBadge: 'Investering',
     costsHead: 'Wat kost een website voor een fysiopraktijk?',
     costsIntro:
-      'De prijs hangt af van scope: hoeveel specialisaties je presenteert, of je online boeken nodig hebt, vergoedings- en DTF-pagina’s, meertalige content en praktijksfotografie. Na een korte intake geven we vaste packages — geen uurtje-factuurtje halverwege de bouw.',
+      'De scope volgt hoeveel specialisaties je publiceert, of cliënten online boeken, hoe uitgebreid DTF- en vergoedingspagina’s moeten zijn, en planning over meerdere kamers. Vaste deliverables na intake — geen open bouw tussen behandelblokken door.',
     costsItems: [
       {
         title: 'Essentiële praktijksite',
@@ -351,13 +350,12 @@ const T = {
         desc: 'Meerdere vestigingen, sportkliniek- of revalidatielandingspaden, huisartsverwijspagina’s of taalvarianten. Scope per merk nadat we in kaart hebben hoe cliënten en verwijzers door je organisatie bewegen.'
       }
     ],
-    // TODO(Ali): Confirm package price bands for physiotherapy websites and replace this note with approved figures.
     costsNote:
-      'Exacte packageprijzen bevestigen we in je offerte nadat we specialisatiecomplexiteit en boekingsbehoeften hebben gezien. Vraag een voorstel voor een fysiowebsite aan en je ontvangt een vaste scope met planning.',
+      'De scope volgt onze review van specialisatiediepte, planner-koppeling en DTF-copy. Vraag een fysiowebsite-offerte aan met vaste deliverables en planning — dat is de weg naar een praktijkgericht bedrag, geen tarievenkaart op deze pagina.',
     siblingsBadge: 'Ook voor fysiotherapeuten',
     siblingsHead: 'Combineer je website met praktijkgroei',
     siblingsSub:
-      'Een sterke site converteert verkeer. Deze fysiodiensten brengen meer van de juiste cliënten ernaartoe.',
+      'Verwijzingen van sportclubs en Maps-klikken converteren pas als de site directe toegang uitlegt en een intake boekt zonder vijf mails naar de balie. Deze diensten sturen de juiste cliënten naar pagina’s die voor dat pad zijn gebouwd.',
     siblingsCta: 'Bekijk dienst',
     hubLink: 'Terug naar fysiomarketing',
     webDesignLinkLabel: 'Bekijk ook onze algemene webdesign-dienst',

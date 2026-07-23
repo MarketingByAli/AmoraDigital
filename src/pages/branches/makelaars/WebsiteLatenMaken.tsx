@@ -147,13 +147,13 @@ const PROCESS_STEPS = [
       step: '02',
       title: 'Listings & lead structure',
       description:
-        'Information architecture around search, property detail, valuation, sold proof and neighbourhood pages — not a generic “Services” homepage. Every key seller and buyer path gets a clear place.'
+        'Architecture separates buyer search, seller valuation, sold proof and district expertise. Listing detail, viewing requests and office trust pages each have a defined slot — not a single “Our services” drop-down hiding the valuation form.'
     },
     nl: {
       step: '02',
       title: 'Aanbod- & leadstructuur',
       description:
-        'Informatiearchitectuur rond zoeken, woningdetail, waardebepaling, verkochtbewijs en wijkpagina’s — geen generieke “Diensten”-homepage. Elke kernroute voor verkoper en koper krijgt een duidelijke plek.'
+        'Architectuur scheidt koperszoeken, verkoper-waardebepaling, verkochtbewijs en wijkkennis. Woningdetail, bezichtigingsaanvragen en kantoorvertrouwen krijgen elk een vaste plek — geen enkel “Onze diensten”-menu dat het waardebepalingsformulier verstopt.'
     }
   },
   {
@@ -189,13 +189,13 @@ const PROCESS_STEPS = [
       step: '05',
       title: 'Launch & measure leads',
       description:
-        'Go live with analytics on valuation starts, viewing requests and listing engagement. You see which neighbourhoods and traffic sources fill the pipeline — not just pageviews.'
+        'Launch tracks valuation form submissions, viewing requests per listing and which neighbourhood pages sellers read longest. You see whether Google or referral traffic fills the instruction pipeline — not visitors who only browsed floor plans without leaving contact details.'
     },
     nl: {
       step: '05',
       title: 'Live & leads meten',
       description:
-        'Livegang met analytics op waardebepalingstarts, bezichtigingsaanvragen en aanbodengagement. Je ziet welke wijken en verkeersbronnen de pijplijn vullen — niet alleen pageviews.'
+        'Livegang volgt waardebepalingsformulieren, bezichtigingsaanvragen per woning en welke wijkpagina’s verkopers het langst lezen. Je ziet of Google of verwijzingen de opdrachtpijplijn vullen — geen bezoekers die alleen plattegronden bekeken zonder contactgegevens.'
     }
   }
 ] as const
@@ -217,7 +217,7 @@ const T = {
     problemBadge: 'The real cost',
     problemHead: 'A weak agency website loses listings and seller leads before the open house',
     problemP1:
-      'When a seller compares “estate agent Amsterdam South” or a buyer browses homes on their phone, the agency with clear listings, sold proof and a one-tap valuation form usually wins the conversation. If your site is a PDF brochure, a Funda-only presence, or a template that buries the valuation CTA, those sellers instruct someone else — or buyers bounce to the next agent’s search.',
+      'A seller shortlisting agents after a neighbour’s sale compares sold results on their street, how fast valuation requests respond and whether listings look current — not just which Funda profile loads first. An agency site stuck on a static brochure or missing synced inventory sends the instruction to the office whose Realworks feed and valuation form already look operational.',
     problemP2:
       'Estate agents do not need a salon booking page or a dentist intake. They need a digital sales floor: filtered listings, sold portfolio, neighbourhood pages, valuation and viewing requests, and a feed that stays in sync with Funda or Realworks. Miss that, and you pay in fewer instructions and buyers who never leave a lead.',
     problemP3:
@@ -225,7 +225,7 @@ const T = {
     featuresBadge: 'What we build',
     featuresHead: 'What is included in an estate agent website',
     featuresSub:
-      'Every feature below answers a seller, buyer or office need. Nothing here is a generic “About us” block renamed for real estate.',
+      'Each block serves sellers weighing instruction trust or buyers filtering listings — Funda sync, valuation forms, sold proof — not estate-agent boilerplate with your logo.',
     processBadge: 'How we work',
     processHead: 'How an estate agent website project runs',
     processSub:
@@ -240,7 +240,7 @@ const T = {
       },
       {
         title: 'Local findability support',
-        desc: 'Site structure and neighbourhood pages that support “estate agent [city]” and district search — not just a pretty homepage.'
+        desc: 'District pages and valuation CTAs wired so a seller who found you via “estate agent [city]” can request a valuation without bouncing back to Funda.'
       },
       {
         title: 'Measurable leads',
@@ -248,13 +248,13 @@ const T = {
       },
       {
         title: 'Everything under one roof',
-        desc: 'Website today; local SEO, Google Ads and social when you are ready — without handing leads to five agencies.'
+        desc: 'Website and listing hub first; local SEO, Google Ads and social when instructions need a boost — one team aligned on Funda feeds and valuation funnels, not five suppliers who never opened Realworks.'
       }
     ],
     costsBadge: 'Investment',
     costsHead: 'What does a website for an estate agent cost?',
     costsIntro:
-      'Price depends on scope: listing volume, Funda/Realworks feed complexity, valuation and viewing forms, neighbourhood pages and photography. We quote fixed packages after a short intake — not hourly surprises mid-build.',
+      'Scope scales with listing volume, Realworks or Funda feed complexity, valuation and viewing forms, neighbourhood page count and multi-office branding. Fixed deliverables after reviewing your CRM setup — not a rebuild every time a new street campaign launches.',
     costsItems: [
       {
         title: 'Essential agency site',
@@ -269,13 +269,12 @@ const T = {
         desc: 'Multiple offices, language variants or brand sites with shared feeds. Scoped per organisation after we map CRM, portals and catchment areas.'
       }
     ],
-    // TODO(Ali): Confirm package price bands for estate agent websites and replace this note with approved figures.
     costsNote:
-      'Exact package prices are confirmed in your quote after we see feed complexity and lead needs. Ask for an estate agent website proposal and we will send a fixed scope with timelines.',
+      'Scope is fixed after we understand feed setup, valuation funnel and sold-portfolio needs. Request an agency website quote with a clear deliverable list and delivery plan — that is where your figure is set, not on a public rate list here.',
     siblingsBadge: 'Also for estate agents',
     siblingsHead: 'Pair your website with local growth',
     siblingsSub:
-      'A strong site converts traffic. These agency services bring more of the right sellers and buyers to it.',
+      'Portal traffic alone does not prove you sold on their street. These services drive sellers and buyers to a site where listings, valuations and sold results tell your office story before the first viewing.',
     siblingsCta: 'View service',
     hubLink: 'Back to estate agent marketing',
     webDesignLinkLabel: 'Also see our general website design service',
@@ -300,7 +299,7 @@ const T = {
     problemBadge: 'De echte kosten',
     problemHead: 'Een zwakke website kost opdrachten en verkoperleads vóór de open dag',
     problemP1:
-      'Als een verkoper “makelaar Amsterdam Zuid” vergelijkt of een koper woningen op de telefoon scrolt, wint meestal het kantoor met duidelijk aanbod, verkochtbewijs en een één-tap-waardebepaling. Is jouw site een PDF-brochure, alleen Funda, of een template die de waardebepaling-CTA begraaft, dan geven die verkopers iemand anders opdracht — of bouncen kopers naar de volgende zoekopdracht.',
+      'Een verkoper die na de verkoop bij de buren makelaars vergelijkt, kijkt naar verkochte resultaten in de straat, hoe snel waardebepaling reageert en of aanbod actueel oogt — niet alleen welk Funda-profiel het snelst laadt. Een kantoorwebsite die op een statische brochure blijft hangen of gesynchroniseerd aanbod mist, geeft de opdracht aan het kantoor waar Realworks-feed en waardebepalingsformulier al operationeel ogen.',
     problemP2:
       'Makelaars hebben geen salonboekpagina of tandartsintake nodig. Ze hebben een digitale verkoopvloer nodig: gefilterd aanbod, verkochtportfolio, wijkpagina’s, waardebepaling en bezichtigingsaanvragen, en een feed die synchroon blijft met Funda of Realworks. Mis je dat, dan betaal je met minder opdrachten en kopers die nooit een lead achterlaten.',
     problemP3:
@@ -308,7 +307,7 @@ const T = {
     featuresBadge: 'Wat we bouwen',
     featuresHead: 'Wat zit er in een website voor makelaars',
     featuresSub:
-      'Elke feature hieronder beantwoordt een behoefte van verkoper, koper of kantoor. Niets is een generiek “Over ons”-blok met een vastgoedlabel erop.',
+      'Elk blok dient verkopers die vertrouwen in opdracht afwegen of kopers die aanbod filteren — Funda-sync, waardebepaling, verkochtbewijs — geen makelaarsboilerplate met jullie logo.',
     processBadge: 'Hoe we werken',
     processHead: 'Hoe een website-traject voor een makelaar verloopt',
     processSub:
@@ -323,7 +322,7 @@ const T = {
       },
       {
         title: 'Steun voor lokale vindbaarheid',
-        desc: 'Sitestructuur en wijkpagina’s die “makelaar [stad]” en buurtzoekopdrachten ondersteunen — niet alleen een mooie homepage.'
+        desc: 'Wijkpagina’s en waardebepaling-CTA’s zo gekoppeld dat een verkoper die je via “makelaar [stad]” vond een taxatie kan aanvragen zonder terug te stuiteren naar Funda.'
       },
       {
         title: 'Meetbare leads',
@@ -331,13 +330,13 @@ const T = {
       },
       {
         title: 'Alles onder één dak',
-        desc: 'Website nu; lokale SEO, Google Ads en social wanneer je er klaar voor bent — zonder leads aan vijf bureaus over te dragen.'
+        desc: 'Website en aanbodhub eerst; lokale SEO, Google Ads en social wanneer opdrachten een duwtje nodig hebben — één team op Funda-feeds en waardebepalingsfunnels, geen vijf leveranciers die Realworks nooit openden.'
       }
     ],
     costsBadge: 'Investering',
     costsHead: 'Wat kost een website voor een makelaar?',
     costsIntro:
-      'De prijs hangt af van scope: aanbodvolume, complexiteit van Funda/Realworks-feed, waardebepaling- en bezichtigingsforms, wijkpagina’s en fotografie. Na een korte intake geven we vaste packages — geen uurtje-factuurtje halverwege de bouw.',
+      'De scope schaalt met aanbodvolume, complexiteit van Realworks- of Funda-feed, waardebepaling- en bezichtigingsforms, aantal wijkpagina’s en branding over meerdere kantoren. Vaste deliverables na review van je CRM-setup — geen rebuild bij elke nieuwe straatcampagne.',
     costsItems: [
       {
         title: 'Essentiële kantoorsite',
@@ -352,13 +351,12 @@ const T = {
         desc: 'Meerdere vestigingen, taalvarianten of merksites met gedeelde feeds. Scope per organisatie nadat we CRM, portals en verzorgingsgebied in kaart hebben.'
       }
     ],
-    // TODO(Ali): Confirm package price bands for estate agent websites and replace this note with approved figures.
     costsNote:
-      'Exacte packageprijzen bevestigen we in je offerte nadat we feedcomplexiteit en leadbehoeften hebben gezien. Vraag een voorstel voor een makelaarswebsite aan en je ontvangt een vaste scope met planning.',
+      'De scope zetten we vast na inzicht in feed-setup, waardebepalingsfunnel en verkochtportfolio-behoefte. Vraag een makelaarswebsite-offerte aan met duidelijke deliverables en opleverplan — daar staat jouw bedrag, niet op een openbare tarievenlijst hier.',
     siblingsBadge: 'Ook voor makelaars',
     siblingsHead: 'Combineer je website met lokale groei',
     siblingsSub:
-      'Een sterke site converteert verkeer. Deze makelaarsdiensten brengen meer van de juiste verkopers en kopers ernaartoe.',
+      'Portalverkeer alleen bewijst niet dat jij in hun straat verkocht. Deze diensten sturen verkopers en kopers naar een site waar aanbod, waardebepaling en verkochte resultaten jullie kantoorverhaal vertellen vóór de eerste bezichtiging.',
     siblingsCta: 'Bekijk dienst',
     hubLink: 'Terug naar makelaarsmarketing',
     webDesignLinkLabel: 'Bekijk ook onze algemene webdesign-dienst',

@@ -28,11 +28,11 @@ const T = {
     servicesBadge: 'Our services',
     servicesHead: 'What we do for physiotherapists',
     servicesSub:
-      'Practical services that match how clients search, choose a practice and book. Choose a service for more detail.',
+      'Services for injury searches, referral partners and repeat treatment blocks — aligned with how people pick a physio. Choose a service for detail.',
     learnMore: 'Learn more',
     whyBadge: 'Why Amora Digital',
     whyHead: 'Why physio practices choose us',
-    whySub: 'No generic marketing. An approach built for physiotherapy.',
+    whySub: 'Physio clients often arrive in pain or via referral. We build visibility for both paths.',
     whyItems: [
       {
         title: 'Industry experience',
@@ -48,12 +48,12 @@ const T = {
       },
       {
         title: 'Everything under one roof',
-        desc: 'Website, SEO and ads in one plan so channels reinforce each other.'
+        desc: 'Condition pages, Maps presence, Google Ads and follow-up content share one brief — so someone who finds you for a shoulder issue sees the same story when they book.'
       }
     ],
-    ctaHeading: 'Ready to fill more appointments?',
+    ctaHeading: 'Ready to bring more clients through your door?',
     ctaSub:
-      'Tell us about your practice. We will review your website, visibility and campaigns that fit your clinic.',
+      'Share your specialisms, referral sources and availability gaps. We will map what fills empty slots in your week.',
     ctaButton: 'Request a quote'
   },
   nl: {
@@ -68,11 +68,11 @@ const T = {
     servicesBadge: 'Onze diensten',
     servicesHead: 'Wat we doen voor fysiotherapeuten',
     servicesSub:
-      'Concrete diensten die aansluiten op hoe cliënten zoeken, een praktijk kiezen en boeken. Kies een dienst voor meer detail.',
+      'Diensten voor klacht-zoekopdrachten, doorverwijzers en herhalingsblokken — afgestemd op hoe mensen een fysio kiezen. Kies een dienst voor details.',
     learnMore: 'Meer informatie',
     whyBadge: 'Waarom Amora Digital',
     whyHead: 'Waarom fysiotherapiepraktijken voor ons kiezen',
-    whySub: 'Geen generieke marketing. Wel aanpak die past bij fysiotherapie.',
+    whySub: 'Fysiopatiënten komen vaak met pijn of via verwijzing. Wij bouwen zichtbaarheid voor beide routes.',
     whyItems: [
       {
         title: 'Branche-ervaring',
@@ -88,12 +88,12 @@ const T = {
       },
       {
         title: 'Alles onder één dak',
-        desc: 'Website, SEO en ads in één plan, zodat kanalen elkaar versterken.'
+        desc: 'Klachtpagina’s, Maps, Google Ads en nazorgcontent delen één briefing — dezelfde boodschap van zoekmoment tot afspraak.'
       }
     ],
-    ctaHeading: 'Klaar voor meer afspraken in de agenda?',
+    ctaHeading: 'Klaar om meer cliënten binnen te halen?',
     ctaSub:
-      'Vertel ons over je praktijk. We kijken mee naar website, vindbaarheid en campagnes die bij jouw kliniek passen.',
+      'Vertel over specialisaties, verwijzers en lege uren. We bekijken wat lege plekken in je week vult.',
     ctaButton: 'Vraag een offerte aan'
   }
 } as const

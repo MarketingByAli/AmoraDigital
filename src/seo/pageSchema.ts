@@ -2586,6 +2586,118 @@ export const pageSeoByKey: Record<RouteKey, PageSeoConfig> = {
     }
   },
 
+  'branches-restaurants-social-media': {
+    parents: ['home', 'branches', 'branches-restaurants'],
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Social media management for restaurants',
+      category: 'Digital Marketing',
+      offers: [
+        { name: 'Food photography and dish posts' },
+        { name: 'Kitchen Reels and seasonal campaigns' },
+        { name: 'Local ads to fill quiet covers' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Social media management for restaurants',
+        serviceName: 'Social media management for restaurants',
+        serviceDescription:
+          'Social media management for restaurants focused on food photography, kitchen Reels, specials, guest UGC and local ads that support reservations — without follower or cover guarantees.',
+        faqs: [
+          {
+            question: 'Which social channels work best for restaurants?',
+            answer:
+              'Most venues get the strongest dinner decisions from Instagram and Facebook for dishes, Reels and specials. TikTok can help for younger neighbourhoods when you have kitchen video capacity. We choose channels based on your crowd and dayparts — not a one-size “be everywhere” plan.'
+          },
+          {
+            question: 'What does social media management for restaurants cost?',
+            answer:
+              'Investment depends on channels, posting volume, photography needs and whether local ads are included. We quote a clear monthly scope after intake. We do not publish fixed packages here; ask for a proposal with realistic timelines and no follower or reservation guarantees.'
+          },
+          {
+            question: 'How often should a restaurant post?',
+            answer:
+              'A sustainable mix is usually several posts per week — dishes, kitchen or team Reels, specials and occasional guest UGC — timed to lunch gaps, midweek dinners and seasonal booking windows. Volume without appetising food content rarely fills tables.'
+          },
+          {
+            question: 'Do you take the food photos yourselves?',
+            answer:
+              'We produce posts from kitchen-ready plating, phone clips and photographer sessions you already run. When shots are missing, we give a short shot list for the next plating window. You approve allergen claims and priced specials before they go live.'
+          },
+          {
+            question: 'How do I get more reservations via Instagram?',
+            answer:
+              'Keep a clear booking link in bio and stories, show dishes and atmosphere that sell the night, announce specials early enough to book, reply fast to reservation DMs, and optionally boost quiet slots to nearby diners. We improve those signals over time; we do not guarantee a set number of covers.'
+          },
+          {
+            question: 'How is this different from restaurant local SEO or a website?',
+            answer:
+              'Local SEO is about being found in Google Maps and local search. The website spoke converts visitors with menu and reservations. This social spoke makes the night look irresistible so guests already want your table before they search or click. They work best together but are separate engagements.'
+          },
+          {
+            question: 'Can you promote seasonal menus like Christmas dinner or Mother’s Day?',
+            answer:
+              'Yes. Seasonal campaigns are a core part of restaurant social — we plan lead time so guests can book before lists fill, with clear CTAs to your reservation path.'
+          },
+          {
+            question: 'Do you guarantee followers or booked tables from social?',
+            answer:
+              'No. No ethical partner can guarantee followers, viral Reels or a set number of reservations. We set a consistent cadence, improve food and atmosphere content, and report on reach, saves and reservation-link clicks over time.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Social media voor restaurants',
+        serviceName: 'Social media voor restaurants',
+        serviceDescription:
+          'Social media voor restaurants gericht op foodfotografie, keuken-Reels, specials, gast-UGC en lokale ads die reserveringen ondersteunen — zonder volger- of covergaranties.',
+        faqs: [
+          {
+            question: 'Welke kanalen werken voor horeca?',
+            answer:
+              'De meeste zaken halen de sterkste dinerbeslissingen uit Instagram en Facebook voor gerechten, Reels en specials. TikTok kan helpen in jongere buurten wanneer je keukenvideo-capaciteit hebt. We kiezen kanalen op basis van jouw publiek en dayparts — geen “overal tegelijk”-plan.'
+          },
+          {
+            question: 'Wat kost social media beheer voor restaurants?',
+            answer:
+              'De investering hangt af van kanalen, postvolume, fotografiebehoefte en of lokale ads meedoen. Na intake offreren we een duidelijke maandelijkse scope. We publiceren hier geen vaste pakketprijzen; vraag een voorstel met realistische planning en zonder volger- of reserveringsgaranties.'
+          },
+          {
+            question: 'Hoe vaak moet een restaurant posten?',
+            answer:
+              'Een houdbaar ritme is meestal meerdere posts per week — gerechten, keuken- of team-Reels, specials en af en toe gast-UGC — getimed op lunchgaten, midweekdiners en seizoensboekingsvensters. Volume zonder smakelijke foodcontent vult zelden tafels.'
+          },
+          {
+            question: 'Maken jullie de foto’s?',
+            answer:
+              'We maken posts van keukenklaar opmaken, telefoonclips en fotografensessies die je al draait. Ontbreken shots, dan geven we een korte shotlist voor het volgende opmaakmoment. Allergeenclaims en geprijsde specials keur je goed vóór publicatie.'
+          },
+          {
+            question: 'Hoe krijg ik meer reserveringen via Instagram?',
+            answer:
+              'Houd een duidelijke boekingslink in bio en stories, toon gerechten en sfeer die de avond verkopen, kondig specials vroeg genoeg aan om te boeken, beantwoord reserverings-DM’s snel, en boost optioneel rustige slots naar diners in de buurt. We verbeteren die signalen in de tijd; we garanderen geen vast aantal covers.'
+          },
+          {
+            question: 'Wat is het verschil met lokale SEO of een restaurantwebsite?',
+            answer:
+              'Lokale SEO gaat over gevonden worden in Google Maps en lokaal zoeken. De website-spoke converteert bezoekers met menu en reserveringen. Deze social-spoke maakt de avond onweerstaanbaar zodat gasten jouw tafel al willen vóór ze zoeken of klikken. Samen werken ze het best, maar het zijn aparte trajecten.'
+          },
+          {
+            question: 'Kunnen jullie seizoensmenu’s zoals kerstdiner of Moederdag promoten?',
+            answer:
+              'Ja. Seizoenscampagnes horen bij social media restaurant — we plannen lead time zodat gasten kunnen boeken vóór lijsten vol zijn, met duidelijke CTA’s naar jouw reserveringspad.'
+          },
+          {
+            question: 'Garanderen jullie volgers of geboekte tafels via social?',
+            answer:
+              'Nee. Geen ethische partij kan volgers, virale Reels of een vast aantal reserveringen garanderen. We zetten een consistent ritme, verbeteren food- en sfeercontent, en rapporteren over bereik, saves en klikken op reserveringslinks in de tijd.'
+          }
+        ]
+      }
+    }
+  },
+
   'branches-restaurants-website-laten-maken': {
     parents: ['home', 'branches', 'branches-restaurants'],
     extras: [buildProfessionalServiceSchema()],
@@ -3588,6 +3700,118 @@ export const pageSeoByKey: Record<RouteKey, PageSeoConfig> = {
             question: 'Werkt lokale SEO voor kantoren met meerdere vestigingen?',
             answer:
               'Ja. We structureren aparte profielen, lokale pagina’s en reviewflows per vestiging zodat elk kantoor in het eigen verzorgingsgebied concurreert, in plaats van dat één adres een ander kannibaliseert.'
+          }
+        ]
+      }
+    }
+  },
+
+  'branches-makelaars-social-media': {
+    parents: ['home', 'branches', 'branches-makelaars'],
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Social media management for real estate agents',
+      category: 'Digital Marketing',
+      offers: [
+        { name: 'Listing and just-sold social posts' },
+        { name: 'Video tours and Reels for agencies' },
+        { name: 'Local ads aimed at homeowners' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Social media management for real estate agents',
+        serviceName: 'Social media management for real estate agents',
+        serviceDescription:
+          'Social media management for estate agents focused on listing presentation, video tours, just-sold proof, personal brand and local homeowner ads — without follower or lead guarantees.',
+        faqs: [
+          {
+            question: 'Which social channels work best for estate agents?',
+            answer:
+              'Most agencies get the strongest seller recognition from Instagram and Facebook for listings, Reels and just-sold proof. LinkedIn helps when you sell commercial stock or speak to investors. We choose channels based on your catchment and instruction mix — not a one-size “be everywhere” plan.'
+          },
+          {
+            question: 'What does social media management for estate agents cost?',
+            answer:
+              'Investment depends on channels, posting volume, video needs and whether local ads are included. We quote a clear monthly scope after intake. We do not publish fixed packages here; ask for a proposal with realistic timelines and no follower or lead guarantees.'
+          },
+          {
+            question: 'How many times should an estate agent post per week?',
+            answer:
+              'A sustainable mix is usually several posts per week across agreed channels — listing updates, sold proof, neighbourhood or market tips and occasional video — timed to your instruction pipeline. Volume without useful stock or proof rarely helps sellers choose you.'
+          },
+          {
+            question: 'Do I need to supply the photos myself?',
+            answer:
+              'We work from what you already have: Realworks or photographer folders, phone clips from viewings and approved sold material. You approve sensitive client-facing posts. When shots are missing, we give a short shot list for the next photographer or open-house day.'
+          },
+          {
+            question: 'Does advertising to homeowners in a postcode area work?',
+            answer:
+              'Paid reach aimed at homeowners in your catchment can put listings, sold proof and valuation offers in front of people who may instruct next. Results vary by budget, creative and competition. We treat ads as optional amplification, never as a promised lead volume.'
+          },
+          {
+            question: 'How is this different from estate agent local SEO or a website?',
+            answer:
+              'Local SEO is about being found in Google Maps and local search. The website spoke converts visitors with listings and valuation forms. This social spoke builds recognition so sellers already know your name before they search or click. They work best together but are separate engagements.'
+          },
+          {
+            question: 'Can you build the personal brand of the makelaar, not only the office?',
+            answer:
+              'Yes. Sellers often instruct a person they recognise. We plan face-to-camera tips, market updates and behind-the-deal moments alongside office listing posts, with clear approval so tone stays professional.'
+          },
+          {
+            question: 'Do you guarantee followers or valuation leads from social?',
+            answer:
+              'No. No ethical partner can guarantee followers, viral Reels or a set number of valuation leads. We set a consistent cadence, improve content quality and report on reach, engagement and enquiry signals over time.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Social media voor makelaars',
+        serviceName: 'Social media voor makelaars',
+        serviceDescription:
+          'Social media voor makelaars gericht op woningaanbod presenteren, video-rondleidingen, net-verkochtbewijs, persoonlijk merk en lokale ads op huiseigenaren — zonder volger- of leadgaranties.',
+        faqs: [
+          {
+            question: 'Welke kanalen werken voor makelaars?',
+            answer:
+              'De meeste kantoren halen de sterkste verkoperherkenning uit Instagram en Facebook voor aanbod, Reels en net-verkochtposts. LinkedIn helpt bij commercieel vastgoed of beleggers. We kiezen kanalen op basis van jouw verzorgingsgebied en opdrachtenmix — geen “overal tegelijk”-plan.'
+          },
+          {
+            question: 'Wat kost social media beheer voor makelaars?',
+            answer:
+              'De investering hangt af van kanalen, postvolume, videobehoefte en of lokale ads meedoen. Na intake offreren we een duidelijke maandelijkse scope. We publiceren hier geen vaste pakketprijzen; vraag een voorstel met realistische planning en zonder volger- of leadgaranties.'
+          },
+          {
+            question: 'Hoeveel moet een makelaar per week posten?',
+            answer:
+              'Een houdbaar ritme is meestal meerdere posts per week op afgesproken kanalen — aanbodupdates, verkochtbewijs, buurt- of markttips en af en toe video — getimed op jouw opdrachtpijplijn. Volume zonder nuttig aanbod of bewijs helpt verkopers zelden jou te kiezen.'
+          },
+          {
+            question: 'Lever ik zelf de foto’s aan?',
+            answer:
+              'We werken met wat je al hebt: Realworks- of fotografenmappen, telefoonclips van bezichtigingen en goedgekeurd verkochtmateriaal. Gevoelige klantposts keur je goed. Ontbreken shots, dan geven we een korte shotlist voor de volgende fotograaf of open-huisdag.'
+          },
+          {
+            question: 'Werkt adverteren op huiseigenaren in een postcodegebied?',
+            answer:
+              'Betaald bereik gericht op huiseigenaren in jouw gebied kan aanbod, verkochtbewijs en waardebepalingaanbiedingen voor mensen zetten die mogelijk de volgende opdracht geven. Resultaten variëren per budget, creative en concurrentie. Ads zijn optionele versterking, nooit een beloofd leadvolume.'
+          },
+          {
+            question: 'Wat is het verschil met lokale SEO of een makelaarswebsite?',
+            answer:
+              'Lokale SEO gaat over gevonden worden in Google Maps en lokaal zoeken. De website-spoke converteert bezoekers met aanbod en waardebepalingforms. Deze social-spoke bouwt herkenning zodat verkopers jouw naam al kennen vóór ze zoeken of klikken. Samen werken ze het best, maar het zijn aparte trajecten.'
+          },
+          {
+            question: 'Kunnen jullie het persoonlijke merk van de makelaar opbouwen, niet alleen het kantoor?',
+            answer:
+              'Ja. Verkopers geven vaak opdracht aan iemand die ze herkennen. We plannen face-to-camera tips, marktupdates en behind-the-deal momenten naast kantoorwoningposts, met duidelijke goedkeuring zodat de toon professioneel blijft.'
+          },
+          {
+            question: 'Garanderen jullie volgers of waardebepalingleads via social?',
+            answer:
+              'Nee. Geen ethische partij kan volgers, virale Reels of een vast aantal waardebepalingleads garanderen. We zetten een consistent ritme, verbeteren contentkwaliteit en rapporteren over bereik, engagement en aanvraagsignalen in de tijd.'
           }
         ]
       }

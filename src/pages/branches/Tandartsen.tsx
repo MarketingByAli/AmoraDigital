@@ -29,11 +29,11 @@ const T = {
     servicesBadge: 'Our services',
     servicesHead: 'What we do for dentists',
     servicesSub:
-      'Practical services that match how patients search, choose a practice and book. Choose a service for more detail.',
+      'Services built around oral-care searches — from emergency dentists to family practices and insurer listings. Choose a service for detail.',
     learnMore: 'Learn more',
     whyBadge: 'Why Amora Digital',
     whyHead: 'Why dental practices choose us',
-    whySub: 'No generic marketing. An approach built for dental care.',
+    whySub: 'Dental marketing needs clinical trust, clear treatment info and careful claims. That is where we start.',
     whyItems: [
       {
         title: 'Industry experience',
@@ -49,12 +49,12 @@ const T = {
       },
       {
         title: 'Everything under one roof',
-        desc: 'Website, SEO, ads and social in one plan so channels reinforce each other.'
+        desc: 'Treatment pages, local SEO, patient ads and review requests run from one roadmap — so new-patient flows stay consistent across Google and your site.'
       }
     ],
-    ctaHeading: 'Ready to fill more appointments?',
+    ctaHeading: 'Ready for more new patient registrations?',
     ctaSub:
-      'Tell us about your practice. We will review your website, visibility and campaigns that fit your clinic.',
+      'Tell us about your chair count, insurance acceptance and intake process. We will review where prospects drop off before they register.',
     ctaButton: 'Request a quote'
   },
   nl: {
@@ -69,11 +69,11 @@ const T = {
     servicesBadge: 'Onze diensten',
     servicesHead: 'Wat we doen voor tandartsen',
     servicesSub:
-      'Concrete diensten die aansluiten op hoe patiënten zoeken, een praktijk kiezen en boeken. Kies een dienst voor meer detail.',
+      'Diensten rond mondzorg-zoekopdrachten — van spoedtandarts tot gezinspraktijk en verzekeraars. Kies een dienst voor details.',
     learnMore: 'Meer informatie',
     whyBadge: 'Waarom Amora Digital',
     whyHead: 'Waarom tandartspraktijken voor ons kiezen',
-    whySub: 'Geen generieke marketing. Wel aanpak die past bij de mondzorg.',
+    whySub: 'Tandartsmarketing vraagt om vertrouwen, duidelijke behandelingen en zorgvuldige claims. Daar beginnen wij.',
     whyItems: [
       {
         title: 'Branche-ervaring',
@@ -89,12 +89,12 @@ const T = {
       },
       {
         title: 'Alles onder één dak',
-        desc: 'Website, SEO, ads en social in één plan, zodat kanalen elkaar versterken.'
+        desc: 'Behandelpagina’s, lokale SEO, patiëntencampagnes en reviewverzoeken lopen via één roadmap — zodat inschrijfflows consistent blijven op Google en je site.'
       }
     ],
-    ctaHeading: 'Klaar voor meer afspraken in de agenda?',
+    ctaHeading: 'Klaar voor meer inschrijvingen van nieuwe patiënten?',
     ctaSub:
-      'Vertel ons over je praktijk. We kijken mee naar website, vindbaarheid en campagnes die bij jouw kliniek passen.',
+      'Vertel over stoelen, verzekeraars en intake. We bekijken waar prospects afhaken vóór ze inschrijven.',
     ctaButton: 'Vraag een offerte aan'
   }
 } as const
