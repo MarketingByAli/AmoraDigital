@@ -196,6 +196,15 @@ export const LIVE_BRANCH_HUBS: readonly LiveBranchHub[] = [
   { industrySlug: 'makelaars', routeKey: 'branches-makelaars' }
 ]
 
+/** True when the industry hub has a live RouteKey + page. */
+export function isLiveBranchHub(industrySlug: string): boolean {
+  return LIVE_BRANCH_HUBS.some((hub) => hub.industrySlug === industrySlug)
+}
+
+export function getLiveBranchHub(industrySlug: string): LiveBranchHub | undefined {
+  return LIVE_BRANCH_HUBS.find((hub) => hub.industrySlug === industrySlug)
+}
+
 export type ResolvedLiveBranchHub = LiveBranchHub & {
   name: LocalizedString
   benefit: LocalizedString

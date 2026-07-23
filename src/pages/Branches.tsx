@@ -1,7 +1,9 @@
+import { useMemo } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { ArrowRight, Building2, Sparkles } from 'lucide-react'
 import { ROUTES, localeFromPath, type Locale } from '../i18n/routes'
-import { BRANCH_INDUSTRIES } from '../data/branches'
+import { BRANCH_INDUSTRIES, isLiveBranchHub } from '../data/branches'
+import BranchHubCard from '../components/BranchHubCard'
 
 const T = {
   en: {
@@ -16,6 +18,7 @@ const T = {
     gridSub:
       'Open your industry hub to see how we use websites, SEO and campaigns to generate more enquiries.',
     viewIndustry: 'View industry',
+    comingSoon: 'Coming soon',
     ctaHeading: 'Ready to grow in your industry?',
     ctaSub:
       'Tell us about your business. We are happy to advise on websites, SEO and online marketing that fit your sector.',
@@ -33,6 +36,7 @@ const T = {
     gridSub:
       'Bekijk de hub voor jouw branche en ontdek hoe we websites, SEO en campagnes inzetten voor meer aanvragen.',
     viewIndustry: 'Bekijk branche',
+    comingSoon: 'Binnenkort',
     ctaHeading: 'Klaar om te groeien in jouw branche?',
     ctaSub:
       'Vertel ons over je bedrijf. We denken graag mee over websites, SEO en online marketing die bij jouw sector passen.',
@@ -44,7 +48,16 @@ export default function Branches() {
   const { pathname } = useLocation()
   const locale: Locale = localeFromPath(pathname)
   const t = T[locale]
-  const hubBase = ROUTES.branches[locale]
+
+  const industries = useMemo(
+    () =>
+      [...BRANCH_INDUSTRIES].sort((a, b) => {
+        const aLive = isLiveBranchHub(a.slug) ? 0 : 1
+        const bLive = isLiveBranchHub(b.slug) ? 0 : 1
+        return aLive - bLive
+      }),
+    []
+  )
 
   return (
     <div>
@@ -89,24 +102,14 @@ export default function Branches() {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {BRANCH_INDUSTRIES.map((industry) => (
-              <Link
+            {industries.map((industry) => (
+              <BranchHubCard
                 key={industry.slug}
-                to={`${hubBase}/${industry.slug}`}
-                className="card group p-6 lg:p-8 hover:-translate-y-1"
-              >
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform">
-                  <Building2 className="w-6 h-6 text-white" aria-hidden />
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-primary-600 transition-colors">
-                  {industry.name[locale]}
-                </h3>
-                <p className="text-slate-600 text-sm leading-relaxed mb-6">{industry.benefit[locale]}</p>
-                <div className="flex items-center gap-2 text-sm font-medium text-primary-600">
-                  <span>{t.viewIndustry}</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden />
-                </div>
-              </Link>
+                industry={industry}
+                locale={locale}
+                ctaLabel={t.viewIndustry}
+                comingSoonLabel={t.comingSoon}
+              />
             ))}
           </div>
         </div>
