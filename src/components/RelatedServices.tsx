@@ -273,6 +273,55 @@ const RELATED_BY_KEY: Partial<Record<RouteKey, RouteKey[]>> = {
     'social-media-marketing',
     'seo-services'
   ],
+  'branches-aannemers': [
+    'website-design',
+    'local-seo',
+    'paid-advertising',
+    'seo-services',
+    'conversion-optimization'
+  ],
+  'branches-installateurs': [
+    'website-design',
+    'local-seo',
+    'paid-advertising',
+    'seo-services',
+    'conversion-optimization'
+  ],
+  'branches-advocaten-notarissen': [
+    'website-design',
+    'local-seo',
+    'paid-advertising',
+    'seo-services',
+    'conversion-optimization'
+  ],
+  'branches-installateurs-website-laten-maken': [
+    'website-design',
+    'local-seo',
+    'conversion-optimization',
+    'seo-services',
+    'paid-advertising'
+  ],
+  'branches-installateurs-lokale-seo': [
+    'local-seo',
+    'website-design',
+    'seo-services',
+    'paid-advertising',
+    'conversion-optimization'
+  ],
+  'branches-aannemers-website-laten-maken': [
+    'website-design',
+    'local-seo',
+    'conversion-optimization',
+    'seo-services',
+    'paid-advertising'
+  ],
+  'branches-aannemers-lokale-seo': [
+    'local-seo',
+    'website-design',
+    'seo-services',
+    'paid-advertising',
+    'conversion-optimization'
+  ],
   'branches-restaurants-website-laten-maken': [
     'website-design',
     'local-seo',

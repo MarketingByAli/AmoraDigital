@@ -562,7 +562,6 @@ export default function KappersSchoonheidssalonsWebsiteLatenMaken() {
               <BranchSpokeCard
                 key={spoke.slug}
                 industrySlug="kappers-schoonheidssalons"
-                hubPath={hubPath}
                 spoke={spoke}
                 locale={locale}
                 ctaLabel={t.siblingsCta}

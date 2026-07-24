@@ -561,7 +561,6 @@ export default function TandartsenWebsiteLatenMaken() {
               <BranchSpokeCard
                 key={spoke.slug}
                 industrySlug="tandartsen"
-                hubPath={hubPath}
                 spoke={spoke}
                 locale={locale}
                 ctaLabel={t.siblingsCta}

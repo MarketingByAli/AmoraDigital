@@ -553,7 +553,6 @@ export default function RestaurantsWebsiteLatenMaken() {
               <BranchSpokeCard
                 key={spoke.slug}
                 industrySlug="restaurants"
-                hubPath={hubPath}
                 spoke={spoke}
                 locale={locale}
                 ctaLabel={t.siblingsCta}

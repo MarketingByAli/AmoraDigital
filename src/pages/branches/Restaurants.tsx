@@ -103,7 +103,6 @@ export default function Restaurants() {
   const { pathname } = useLocation()
   const locale: Locale = localeFromPath(pathname)
   const t = T[locale]
-  const hubPath = ROUTES['branches-restaurants'][locale]
 
   return (
     <div>
@@ -161,7 +160,6 @@ export default function Restaurants() {
               <BranchSpokeCard
                 key={spoke.slug}
                 industrySlug="restaurants"
-                hubPath={hubPath}
                 spoke={spoke}
                 locale={locale}
                 ctaLabel={t.learnMore}

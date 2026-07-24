@@ -102,7 +102,6 @@ export default function KappersSchoonheidssalons() {
   const { pathname } = useLocation()
   const locale: Locale = localeFromPath(pathname)
   const t = T[locale]
-  const hubPath = ROUTES['branches-kappers-schoonheidssalons'][locale]
 
   return (
     <div>
@@ -160,7 +159,6 @@ export default function KappersSchoonheidssalons() {
               <BranchSpokeCard
                 key={spoke.slug}
                 industrySlug="kappers-schoonheidssalons"
-                hubPath={hubPath}
                 spoke={spoke}
                 locale={locale}
                 ctaLabel={t.learnMore}

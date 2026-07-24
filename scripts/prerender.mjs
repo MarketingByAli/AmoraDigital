@@ -17,118 +17,17 @@ import path from 'node:path'
 import fs from 'node:fs'
 import serveHandler from 'serve-handler'
 import puppeteer from 'puppeteer'
+import { loadAllPathsFromTs } from './lib/loadRoutesFromTs.mjs'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 const ROOT = path.resolve(__dirname, '..')
 
 /**
- * Bilingual route table. Must stay in sync with `src/i18n/routes.ts`.
- * English keeps the original URLs; Dutch lives under `/nl/...` with
- * translated slugs so each locale has its own crawlable static document.
+ * Pathnames loaded from `src/i18n/routes.ts` so prerender cannot drift from
+ * the SPA route table (including localized EN/NL industry slugs).
  */
-const EN_ROUTES = [
-  '/',
-  '/about',
-  '/contact',
-  '/privacy-policy',
-  '/marketing',
-  '/marketing/website-design',
-  '/marketing/crm-solutions',
-  '/marketing/social-media-marketing',
-  '/marketing/paid-advertising',
-  '/marketing/seo-services',
-  '/marketing/ai-seo',
-  '/marketing/local-seo',
-  '/marketing/email-marketing',
-  '/marketing/conversion-optimization',
-  '/marketing/brand-strategy',
-  '/development',
-  '/development/react',
-  '/development/php',
-  '/development/java',
-  '/development/mobile-apps',
-  '/development/ecommerce',
-  '/development/ai-automation',
-  '/development/full-stack',
-  '/development/web-applications',
-  '/products/auto-form-builder',
-  '/products/auto-form-crm',
-  '/products/hi-fan',
-  '/products/pinkpeck',
-  '/products/unbox-deal',
-  '/products/royal-casino-hub',
-  '/branches',
-  '/branches/restaurants',
-  '/branches/tandartsen',
-  '/branches/fysiotherapeuten',
-  '/branches/kappers-schoonheidssalons',
-  '/branches/makelaars',
-  '/branches/restaurants/website-laten-maken',
-  '/branches/restaurants/lokale-seo',
-  '/branches/restaurants/social-media',
-  '/branches/tandartsen/website-laten-maken',
-  '/branches/tandartsen/lokale-seo',
-  '/branches/fysiotherapeuten/website-laten-maken',
-  '/branches/fysiotherapeuten/lokale-seo',
-  '/branches/kappers-schoonheidssalons/website-laten-maken',
-  '/branches/kappers-schoonheidssalons/lokale-seo',
-  '/branches/makelaars/website-laten-maken',
-  '/branches/makelaars/lokale-seo',
-  '/branches/makelaars/social-media'
-]
-
-const NL_ROUTES = [
-  '/nl',
-  '/nl/over-ons',
-  '/nl/contact',
-  '/nl/privacybeleid',
-  '/nl/marketing',
-  '/nl/marketing/webdesign',
-  '/nl/marketing/crm-oplossingen',
-  '/nl/marketing/social-media-marketing',
-  '/nl/marketing/online-adverteren',
-  '/nl/marketing/seo-diensten',
-  '/nl/marketing/ai-seo',
-  '/nl/marketing/lokale-seo',
-  '/nl/marketing/e-mailmarketing',
-  '/nl/marketing/conversie-optimalisatie',
-  '/nl/marketing/merkstrategie',
-  '/nl/ontwikkeling',
-  '/nl/ontwikkeling/react-development',
-  '/nl/ontwikkeling/php-development',
-  '/nl/ontwikkeling/java-development',
-  '/nl/ontwikkeling/mobiele-apps',
-  '/nl/ontwikkeling/e-commerce',
-  '/nl/ontwikkeling/ai-automatisering',
-  '/nl/ontwikkeling/full-stack',
-  '/nl/ontwikkeling/webapplicaties',
-  '/nl/producten/auto-form-builder',
-  '/nl/producten/auto-form-crm',
-  '/nl/producten/hi-fan',
-  '/nl/producten/pinkpeck',
-  '/nl/producten/unbox-deal',
-  '/nl/producten/royal-casino-hub',
-  '/nl/branches',
-  '/nl/branches/restaurants',
-  '/nl/branches/tandartsen',
-  '/nl/branches/fysiotherapeuten',
-  '/nl/branches/kappers-schoonheidssalons',
-  '/nl/branches/makelaars',
-  '/nl/branches/restaurants/website-laten-maken',
-  '/nl/branches/restaurants/lokale-seo',
-  '/nl/branches/restaurants/social-media',
-  '/nl/branches/tandartsen/website-laten-maken',
-  '/nl/branches/tandartsen/lokale-seo',
-  '/nl/branches/fysiotherapeuten/website-laten-maken',
-  '/nl/branches/fysiotherapeuten/lokale-seo',
-  '/nl/branches/kappers-schoonheidssalons/website-laten-maken',
-  '/nl/branches/kappers-schoonheidssalons/lokale-seo',
-  '/nl/branches/makelaars/website-laten-maken',
-  '/nl/branches/makelaars/lokale-seo',
-  '/nl/branches/makelaars/social-media'
-]
-
+const { en: EN_ROUTES, nl: NL_ROUTES } = loadAllPathsFromTs()
 const ROUTES = [...EN_ROUTES, ...NL_ROUTES]
 
 const PORT = 5178

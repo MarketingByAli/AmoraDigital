@@ -1,104 +1,106 @@
 import { Link, useLocation } from 'react-router-dom'
 import {
-  Activity,
   ArrowRight,
   CheckCircle2,
   Globe,
   MapPin,
+  Megaphone,
   Sparkles,
-  Target
+  Wrench
 } from 'lucide-react'
 import { ROUTES, localeFromPath, type Locale } from '../../i18n/routes'
 import { BRANCH_SPOKES } from '../../data/branchSpokes'
 import BranchSpokeCard from '../../components/BranchSpokeCard'
 
-const SPOKES = BRANCH_SPOKES.fysiotherapeuten
-const SPOKE_ICONS = [Globe, MapPin, Target] as const
+const SPOKES = BRANCH_SPOKES.installateurs
+const SPOKE_ICONS = [Globe, MapPin, Megaphone] as const
 
 const T = {
   en: {
     crumbHome: 'Home',
     crumbBranches: 'Industries',
-    crumbCurrent: 'Physiotherapists',
-    badge: 'Physio marketing',
-    h1: 'Online marketing for physiotherapists',
+    crumbCurrent: 'Plumbers, electricians & installers',
+    badge: 'Installer marketing',
+    h1: 'Online marketing for plumbers, electricians & installers',
     heroSub:
-      'We help physiotherapy practices attract new clients and fill their agenda through websites, local SEO and Google Ads. With 1,500+ completed projects, we know what works for physio clinics.',
+      'We help plumbers, electricians and installers win more service calls and installation jobs online — through a clear website, local findability and campaigns that reach homeowners when heat fails, power trips or a heat pump is on the shopping list. With 1,500+ completed projects, we know what works between the van and Google.',
     trust: '1,500+ completed projects',
     servicesBadge: 'Our services',
-    servicesHead: 'What we do for physiotherapists',
+    servicesHead: 'What we do for installers',
     servicesSub:
-      'Services for injury searches, referral partners and repeat treatment blocks — aligned with how people pick a physio. Choose a service for detail.',
+      'Work shaped around emergency reachability, installation enquiries and trade + city searches — not renovation portfolios or salon booking flows. Pick a service for the detail.',
     learnMore: 'Learn more',
     whyBadge: 'Why Amora Digital',
-    whyHead: 'Why physio practices choose us',
-    whySub: 'Physio clients often arrive in pain or via referral. We build visibility for both paths.',
+    whyHead: 'Why installers choose us',
+    whySub:
+      'Installation work is urgent, local and phone-first. We plan around how homeowners call a plumber at night or shortlist who installs their heat pump.',
     whyItems: [
       {
-        title: 'Industry experience',
-        desc: 'We know physio practices: trust, treatment pages, referrals and the need for a full agenda.'
+        title: 'Call-out aware marketing',
+        desc: 'We speak leak, outage and install language: boilers, fuse boards, heat pumps, solar — not kitchen extensions or dinner covers.'
       },
       {
-        title: 'Local focus',
-        desc: 'Clients search nearby. We optimise for local visibility and Google Business Profile.'
+        title: 'Catchment that matches the van',
+        desc: 'Homeowners search by trade and town when something breaks. We tune Google Business Profile and regional pages for that radius.'
       },
       {
-        title: 'Measurable results',
-        desc: 'We steer on new clients, calls and bookings — not vanity metrics alone.'
+        title: 'Speed-to-contact focus',
+        desc: 'We steer on phone taps and installation quote forms that answer fast — because a cold house does not wait for a brochure download.'
       },
       {
-        title: 'Everything under one roof',
-        desc: 'Condition pages, Maps presence, Google Ads and follow-up content share one brief — so someone who finds you for a shoulder issue sees the same story when they book.'
+        title: 'One partner from Maps to the van',
+        desc: 'Call-ready site, local SEO and later ads share one brief — so your emergency number and install offers look as sharp in search as on the door.'
       }
     ],
-    ctaHeading: 'Ready to bring more clients through your door?',
+    ctaHeading: 'Ready for more service calls and install enquiries?',
     ctaSub:
-      'Share your specialisms, referral sources and availability gaps. We will map what fills empty slots in your week.',
+      'Tell us your trades, whether you take night call-outs and the towns you cover. We will sketch how homeowners find a plumber or electrician before they dial the next van.',
     ctaButton: 'Request a quote'
   },
   nl: {
     crumbHome: 'Home',
     crumbBranches: 'Branches',
-    crumbCurrent: 'Fysiotherapeuten',
-    badge: 'Fysiotherapie marketing',
-    h1: 'Online marketing voor fysiotherapeuten',
+    crumbCurrent: 'Loodgieters, elektriciens & installateurs',
+    badge: 'Installateursmarketing',
+    h1: 'Online marketing voor loodgieters, elektriciens & installateurs',
     heroSub:
-      'Wij helpen fysiotherapiepraktijken nieuwe cliënten aantrekken en hun agenda vullen via websites, lokale SEO en Google Ads. Met 1.500+ afgeronde projecten weten we wat werkt voor fysiotherapeuten.',
+      'Wij helpen loodgieters, elektriciens en installateurs meer service-ritten en installatieklussen online binnen te halen — via een duidelijke website, lokale vindbaarheid en campagnes die huiseigenaren bereiken wanneer de cv uitvalt, de stroom eruit ligt of een warmtepomp op de lijst staat. Met 1.500+ afgeronde projecten weten we wat werkt tussen de bus en Google.',
     trust: '1.500+ afgeronde projecten',
     servicesBadge: 'Onze diensten',
-    servicesHead: 'Wat we doen voor fysiotherapeuten',
+    servicesHead: 'Wat we doen voor installateurs',
     servicesSub:
-      'Diensten voor klacht-zoekopdrachten, doorverwijzers en herhalingsblokken — afgestemd op hoe mensen een fysio kiezen. Kies een dienst voor details.',
+      'Werk rond spoedbereikbaarheid, installatieaanvragen en vak + stad-zoekopdrachten — geen verbouwportfolio’s of salonboekflows. Kies een dienst voor de details.',
     learnMore: 'Meer informatie',
     whyBadge: 'Waarom Amora Digital',
-    whyHead: 'Waarom fysiotherapiepraktijken voor ons kiezen',
-    whySub: 'Fysiopatiënten komen vaak met pijn of via verwijzing. Wij bouwen zichtbaarheid voor beide routes.',
+    whyHead: 'Waarom installateurs voor ons kiezen',
+    whySub:
+      'Installatiewerk is spoedgevoelig, lokaal en telefoon-eerst. Wij plannen rond hoe huiseigenaren ’s nachts een loodgieter bellen of shortlisten wie hun warmtepomp plaatst.',
     whyItems: [
       {
-        title: 'Branche-ervaring',
-        desc: 'We kennen fysiopraktijken: vertrouwen, behandelpagina’s, doorverwijzingen en het belang van een volle agenda.'
+        title: 'Spoedbewuste marketing',
+        desc: 'We spreken lekkage-, storing- en installatietaal: cv’s, groepenkasten, warmtepompen, zonnepanelen — geen keukenuitbouwen of dinercovers.'
       },
       {
-        title: 'Lokale focus',
-        desc: 'Cliënten zoeken dichtbij. Wij optimaliseren voor lokale zichtbaarheid en Google Bedrijfsprofiel.'
+        title: 'Werkgebied dat bij de bus past',
+        desc: 'Huiseigenaren zoeken op vak en plaats als iets stuk is. We stemmen Google Bedrijfsprofiel en regiopagina’s af op die straal.'
       },
       {
-        title: 'Meetbare resultaten',
-        desc: 'We sturen op nieuwe cliënten, belacties en afspraken — niet alleen vanity metrics.'
+        title: 'Focus op snel contact',
+        desc: 'We sturen op beltiks en installatie-offerteforms die snel antwoorden — een koud huis wacht niet op een brochure-download.'
       },
       {
-        title: 'Alles onder één dak',
-        desc: 'Klachtpagina’s, Maps, Google Ads en nazorgcontent delen één briefing — dezelfde boodschap van zoekmoment tot afspraak.'
+        title: 'Één partner van Maps tot de bus',
+        desc: 'Belklare site, lokale SEO en later ads delen één briefing — zodat je spoednummer en installatie-aanbod even scherp oogt in zoeken als op de deur.'
       }
     ],
-    ctaHeading: 'Klaar om meer cliënten binnen te halen?',
+    ctaHeading: 'Klaar voor meer service-ritten en installatieaanvragen?',
     ctaSub:
-      'Vertel over specialisaties, verwijzers en lege uren. We bekijken wat lege plekken in je week vult.',
+      'Vertel je vakken, of je nachtritten doet en welke gemeenten je bedient. We schetsen hoe huiseigenaren een loodgieter of elektricien vinden vóór ze het volgende busje bellen.',
     ctaButton: 'Vraag een offerte aan'
   }
 } as const
 
-export default function Fysiotherapeuten() {
+export default function Installateurs() {
   const { pathname } = useLocation()
   const locale: Locale = localeFromPath(pathname)
   const t = T[locale]
@@ -126,7 +128,7 @@ export default function Fysiotherapeuten() {
             </nav>
 
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-medium mb-6">
-              <Activity className="w-4 h-4" aria-hidden />
+              <Wrench className="w-4 h-4" aria-hidden />
               <span>{t.badge}</span>
             </div>
 
@@ -158,7 +160,7 @@ export default function Fysiotherapeuten() {
             {SPOKES.map((spoke, i) => (
               <BranchSpokeCard
                 key={spoke.slug}
-                industrySlug="fysiotherapeuten"
+                industrySlug="installateurs"
                 spoke={spoke}
                 locale={locale}
                 ctaLabel={t.learnMore}

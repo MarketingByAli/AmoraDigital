@@ -35,6 +35,10 @@ function setMetaName(name: string, content: string) {
   el.setAttribute('content', content)
 }
 
+function removeMetaName(name: string) {
+  document.querySelectorAll<HTMLMetaElement>(`meta[name="${name}"]`).forEach((el) => el.remove())
+}
+
 function setMetaProperty(property: string, content: string) {
   let el = document.querySelector<HTMLMetaElement>(`meta[property="${property}"]`)
   if (!el) {
@@ -115,6 +119,8 @@ export default function DocumentMeta() {
     setMetaName('description', description)
     if (keywords && keywords.length > 0) {
       setMetaName('keywords', keywords.join(', '))
+    } else {
+      removeMetaName('keywords')
     }
     setMetaName(
       'robots',

@@ -5,6 +5,29 @@
  * `LIVE_BRANCH_HUBS` lists hubs that already have a RouteKey + page.
  * Header/Footer nav map over this list so new hubs appear automatically.
  */
+import type { LucideIcon } from 'lucide-react'
+import {
+  Activity,
+  Calculator,
+  Camera,
+  Car,
+  CarFront,
+  Dumbbell,
+  Hammer,
+  Home,
+  PartyPopper,
+  PawPrint,
+  Scale,
+  Scissors,
+  ShoppingCart,
+  Smile,
+  SprayCan,
+  Sun,
+  Trees,
+  Users,
+  UtensilsCrossed,
+  Wrench
+} from 'lucide-react'
 import type { Locale, RouteKey } from '../i18n/routes'
 
 export type LocalizedString = Record<Locale, string>
@@ -13,6 +36,8 @@ export type BranchIndustry = {
   slug: string
   name: LocalizedString
   benefit: LocalizedString
+  /** Industry-specific lucide icon — used by nav, index cards, etc. */
+  icon: LucideIcon
 }
 
 export const BRANCH_INDUSTRIES: readonly BranchIndustry[] = [
@@ -22,7 +47,8 @@ export const BRANCH_INDUSTRIES: readonly BranchIndustry[] = [
     benefit: {
       en: 'More reservations and returning guests through local visibility.',
       nl: 'Meer reserveringen en terugkerende gasten via lokale vindbaarheid.'
-    }
+    },
+    icon: UtensilsCrossed
   },
   {
     slug: 'tandartsen',
@@ -30,7 +56,8 @@ export const BRANCH_INDUSTRIES: readonly BranchIndustry[] = [
     benefit: {
       en: 'Attract new patients with a strong local online presence.',
       nl: 'Nieuwe patiënten aantrekken met een sterke lokale online aanwezigheid.'
-    }
+    },
+    icon: Smile
   },
   {
     slug: 'fysiotherapeuten',
@@ -38,7 +65,8 @@ export const BRANCH_INDUSTRIES: readonly BranchIndustry[] = [
     benefit: {
       en: 'Get found by people searching for care in your area.',
       nl: 'Word gevonden door mensen die zoeken naar zorg in jouw regio.'
-    }
+    },
+    icon: Activity
   },
   {
     slug: 'kappers-schoonheidssalons',
@@ -46,7 +74,8 @@ export const BRANCH_INDUSTRIES: readonly BranchIndustry[] = [
     benefit: {
       en: 'Fill your calendar with bookings via SEO, Google Ads and social.',
       nl: 'Vul je agenda met afspraken via SEO, Google Ads en social.'
-    }
+    },
+    icon: Scissors
   },
   {
     slug: 'makelaars',
@@ -54,7 +83,8 @@ export const BRANCH_INDUSTRIES: readonly BranchIndustry[] = [
     benefit: {
       en: 'More viewings and leads from search traffic and campaigns.',
       nl: 'Meer bezichtigingen en leads uit zoekverkeer en campagnes.'
-    }
+    },
+    icon: Home
   },
   {
     slug: 'aannemers',
@@ -62,7 +92,8 @@ export const BRANCH_INDUSTRIES: readonly BranchIndustry[] = [
     benefit: {
       en: 'Win more quote requests from local clients.',
       nl: 'Krijg meer offerteaanvragen van lokale opdrachtgevers.'
-    }
+    },
+    icon: Hammer
   },
   {
     slug: 'installateurs',
@@ -73,7 +104,8 @@ export const BRANCH_INDUSTRIES: readonly BranchIndustry[] = [
     benefit: {
       en: 'Win emergency jobs and projects with local marketing.',
       nl: 'Spoedklussen en projecten binnenhalen met lokale marketing.'
-    }
+    },
+    icon: Wrench
   },
   {
     slug: 'advocaten-notarissen',
@@ -81,7 +113,8 @@ export const BRANCH_INDUSTRIES: readonly BranchIndustry[] = [
     benefit: {
       en: 'Position your firm as an authority and attract qualified cases.',
       nl: 'Positioneer je kantoor als autoriteit en trek gekwalificeerde zaken.'
-    }
+    },
+    icon: Scale
   },
   {
     slug: 'boekhouders',
@@ -89,7 +122,8 @@ export const BRANCH_INDUSTRIES: readonly BranchIndustry[] = [
     benefit: {
       en: 'Grow your client base with focused B2B online marketing.',
       nl: 'Groei je klantenbestand met gerichte B2B online marketing.'
-    }
+    },
+    icon: Calculator
   },
   {
     slug: 'autobedrijven',
@@ -97,7 +131,8 @@ export const BRANCH_INDUSTRIES: readonly BranchIndustry[] = [
     benefit: {
       en: 'More workshop bookings and vehicle sales through digital channels.',
       nl: 'Meer werkplaatsafspraken en autoverkopen via digitale kanalen.'
-    }
+    },
+    icon: Car
   },
   {
     slug: 'webshops',
@@ -105,7 +140,8 @@ export const BRANCH_INDUSTRIES: readonly BranchIndustry[] = [
     benefit: {
       en: 'Scale revenue with SEO, ads and conversion-focused optimisation.',
       nl: 'Schaal je omzet met SEO, ads en conversiegerichte optimalisatie.'
-    }
+    },
+    icon: ShoppingCart
   },
   {
     slug: 'sportscholen',
@@ -113,7 +149,8 @@ export const BRANCH_INDUSTRIES: readonly BranchIndustry[] = [
     benefit: {
       en: 'More members and trial sessions via local visibility and ads.',
       nl: 'Meer leden en proeflessen via lokale vindbaarheid en ads.'
-    }
+    },
+    icon: Dumbbell
   },
   {
     slug: 'schoonmaakbedrijven',
@@ -121,7 +158,8 @@ export const BRANCH_INDUSTRIES: readonly BranchIndustry[] = [
     benefit: {
       en: 'Win a steady flow of commercial and residential jobs.',
       nl: 'Structureel nieuwe zakelijke en particuliere opdrachten binnenhalen.'
-    }
+    },
+    icon: SprayCan
   },
   {
     slug: 'eventplanners',
@@ -129,7 +167,8 @@ export const BRANCH_INDUSTRIES: readonly BranchIndustry[] = [
     benefit: {
       en: 'Get found by couples and companies planning an event.',
       nl: 'Word gevonden door stellen en bedrijven die een event plannen.'
-    }
+    },
+    icon: PartyPopper
   },
   {
     slug: 'fotografen',
@@ -137,7 +176,8 @@ export const BRANCH_INDUSTRIES: readonly BranchIndustry[] = [
     benefit: {
       en: 'Let your portfolio work harder and attract better bookings.',
       nl: 'Laat je portfolio werken en trek betere boekingen aan.'
-    }
+    },
+    icon: Camera
   },
   {
     slug: 'rijscholen',
@@ -145,7 +185,8 @@ export const BRANCH_INDUSTRIES: readonly BranchIndustry[] = [
     benefit: {
       en: 'Fill lessons and exams with local SEO and targeted campaigns.',
       nl: 'Vul lessen en examens met lokale SEO en gerichte campagnes.'
-    }
+    },
+    icon: CarFront
   },
   {
     slug: 'hoveniers',
@@ -153,7 +194,8 @@ export const BRANCH_INDUSTRIES: readonly BranchIndustry[] = [
     benefit: {
       en: 'More garden design and maintenance jobs in your service area.',
       nl: 'Meer tuinaanleg- en onderhoudsopdrachten uit jouw werkgebied.'
-    }
+    },
+    icon: Trees
   },
   {
     slug: 'dakdekkers-zonnepanelen',
@@ -161,7 +203,8 @@ export const BRANCH_INDUSTRIES: readonly BranchIndustry[] = [
     benefit: {
       en: 'Generate leads for roofing work and energy projects.',
       nl: 'Genereer leads voor dakwerken en energieprojecten.'
-    }
+    },
+    icon: Sun
   },
   {
     slug: 'dierenartsen',
@@ -169,7 +212,8 @@ export const BRANCH_INDUSTRIES: readonly BranchIndustry[] = [
     benefit: {
       en: 'Attract pet owners in your region with reliable local marketing.',
       nl: 'Trek baasjes in je regio aan met betrouwbare lokale marketing.'
-    }
+    },
+    icon: PawPrint
   },
   {
     slug: 'uitzendbureaus',
@@ -177,7 +221,8 @@ export const BRANCH_INDUSTRIES: readonly BranchIndustry[] = [
     benefit: {
       en: 'More candidates and clients through targeted online acquisition.',
       nl: 'Meer kandidaten en opdrachtgevers via gerichte online acquisitie.'
-    }
+    },
+    icon: Users
   }
 ]
 
@@ -193,7 +238,10 @@ export const LIVE_BRANCH_HUBS: readonly LiveBranchHub[] = [
   { industrySlug: 'tandartsen', routeKey: 'branches-tandartsen' },
   { industrySlug: 'fysiotherapeuten', routeKey: 'branches-fysiotherapeuten' },
   { industrySlug: 'kappers-schoonheidssalons', routeKey: 'branches-kappers-schoonheidssalons' },
-  { industrySlug: 'makelaars', routeKey: 'branches-makelaars' }
+  { industrySlug: 'makelaars', routeKey: 'branches-makelaars' },
+  { industrySlug: 'aannemers', routeKey: 'branches-aannemers' },
+  { industrySlug: 'installateurs', routeKey: 'branches-installateurs' },
+  { industrySlug: 'advocaten-notarissen', routeKey: 'branches-advocaten-notarissen' }
 ]
 
 /** True when the industry hub has a live RouteKey + page. */
@@ -208,13 +256,21 @@ export function getLiveBranchHub(industrySlug: string): LiveBranchHub | undefine
 export type ResolvedLiveBranchHub = LiveBranchHub & {
   name: LocalizedString
   benefit: LocalizedString
+  icon: LucideIcon
 }
 
-/** Resolve live hubs with localized names/benefits from BRANCH_INDUSTRIES. */
+/** Resolve live hubs with localized names/benefits/icons from BRANCH_INDUSTRIES. */
 export function getLiveBranchHubs(): ResolvedLiveBranchHub[] {
   return LIVE_BRANCH_HUBS.flatMap((hub) => {
     const industry = BRANCH_INDUSTRIES.find((item) => item.slug === hub.industrySlug)
     if (!industry) return []
-    return [{ ...hub, name: industry.name, benefit: industry.benefit }]
+    return [
+      {
+        ...hub,
+        name: industry.name,
+        benefit: industry.benefit,
+        icon: industry.icon
+      }
+    ]
   })
 }

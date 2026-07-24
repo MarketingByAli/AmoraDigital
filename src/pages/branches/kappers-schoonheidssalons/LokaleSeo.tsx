@@ -562,7 +562,6 @@ export default function KappersSchoonheidssalonsLokaleSeo() {
               <BranchSpokeCard
                 key={spoke.slug}
                 industrySlug="kappers-schoonheidssalons"
-                hubPath={hubPath}
                 spoke={spoke}
                 locale={locale}
                 ctaLabel={t.siblingsCta}

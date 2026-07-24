@@ -32,11 +32,18 @@ function ogAssetPng(fileBase: string): string {
 /**
  * Resolves the OG image for a given RouteKey. Filenames follow the English
  * URL slug (`/marketing/paid-advertising` → `paid-advertising.png`). Home,
- * about, contact and privacy share `Home.png`.
+ * about, contact and privacy share `Home.png`. Branch spokes map to the
+ * closest existing service OG asset.
  */
 function ogImageForKey(key: RouteKey): string {
   if (key === 'home' || key === 'contact' || key === 'privacy' || key === 'about') {
     return ogAssetPng('Home')
+  }
+  if (key === 'branches' || key.startsWith('branches-')) {
+    if (key.endsWith('-website-laten-maken')) return ogAssetPng('website-design')
+    if (key.endsWith('-lokale-seo')) return ogAssetPng('local-seo')
+    if (key.endsWith('-social-media')) return ogAssetPng('social-media-marketing')
+    return ogAssetPng('marketing')
   }
   const enPath = ROUTES[key].en
   const segment = enPath.slice(enPath.lastIndexOf('/') + 1)
@@ -636,14 +643,12 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
       description:
         'Online marketing by industry: websites, SEO and campaigns tailored to your sector. Amora Digital has completed 1,500+ projects. Explore your industry hub.',
       keywords: ['online marketing by industry', 'industry marketing', 'SEO by industry'],
-      ogImage: ogAssetPng('Home')
     },
     nl: {
       title: `Online marketing per branche | Amora Digital`,
       description:
         'Online marketing per branche: websites, SEO en campagnes gericht op jouw sector. Amora Digital helpt met 1.500+ afgeronde projecten. Ontdek jouw branche.',
       keywords: ['online marketing per branche', 'branche marketing', 'SEO per branche'],
-      ogImage: ogAssetPng('Home')
     }
   },
 
@@ -658,7 +663,6 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
         'restaurant website',
         'Google Ads hospitality'
       ],
-      ogImage: ogAssetPng('Home')
     },
     nl: {
       title: `Online marketing voor restaurants | Amora Digital`,
@@ -670,7 +674,6 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
         'website restaurant',
         'Google Ads horeca'
       ],
-      ogImage: ogAssetPng('Home')
     }
   },
 
@@ -685,7 +688,6 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
         'dental practice website',
         'Google Ads dentists'
       ],
-      ogImage: ogAssetPng('Home')
     },
     nl: {
       title: `Online marketing voor tandartsen | Amora Digital`,
@@ -697,7 +699,6 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
         'website tandartspraktijk',
         'Google Ads tandarts'
       ],
-      ogImage: ogAssetPng('Home')
     }
   },
 
@@ -712,7 +713,6 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
         'physio practice website',
         'Google Ads physiotherapy'
       ],
-      ogImage: ogAssetPng('Home')
     },
     nl: {
       title: `Online marketing voor fysiotherapeuten | Amora`,
@@ -724,7 +724,6 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
         'website fysiopraktijk',
         'Google Ads fysiotherapie'
       ],
-      ogImage: ogAssetPng('Home')
     }
   },
 
@@ -739,7 +738,6 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
         'salon website',
         'social media for salons'
       ],
-      ogImage: ogAssetPng('Home')
     },
     nl: {
       title: `Online marketing voor kappers | Amora Digital`,
@@ -751,7 +749,6 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
         'website kapper',
         'social media salon'
       ],
-      ogImage: ogAssetPng('Home')
     }
   },
 
@@ -766,7 +763,6 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
         'real estate website',
         'Google Ads real estate'
       ],
-      ogImage: ogAssetPng('Home')
     },
     nl: {
       title: `Online marketing voor makelaars | Amora Digital`,
@@ -778,7 +774,174 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
         'website makelaarskantoor',
         'Google Ads makelaar'
       ],
-      ogImage: ogAssetPng('Home')
+    }
+  },
+  'branches-aannemers': {
+    en: {
+      title: `Online marketing for contractors | Amora`,
+      description:
+        'Online marketing for contractors: websites, local SEO and Google Ads for more project enquiries. 1,500+ projects.',
+      keywords: [
+        'online marketing for contractors',
+        'contractor SEO',
+        'contractor website',
+        'Google Ads contractors'
+      ],
+    },
+    nl: {
+      title: `Online marketing voor aannemers | Amora Digital`,
+      description:
+        'Online marketing voor aannemers: websites, lokale SEO en Google Ads voor meer projectaanvragen. 1.500+ projecten.',
+      keywords: [
+        'online marketing voor aannemers',
+        'SEO aannemer',
+        'website aannemer',
+        'Google Ads aannemer'
+      ],
+    }
+  },
+  'branches-installateurs': {
+    en: {
+      title: `Online marketing for installers | Amora`,
+      description:
+        'Online marketing for plumbers, electricians and installers: websites, local SEO and ads for service calls. 1,500+ projects.',
+      keywords: [
+        'online marketing for installers',
+        'plumber SEO',
+        'electrician website',
+        'Google Ads installers'
+      ],
+    },
+    nl: {
+      title: `Online marketing voor installateurs | Amora Digital`,
+      description:
+        'Online marketing voor loodgieters, elektriciens en installateurs: websites, lokale SEO en ads voor service-ritten. 1.500+ projecten.',
+      keywords: [
+        'online marketing voor installateurs',
+        'SEO loodgieter',
+        'website elektricien',
+        'Google Ads installateur'
+      ],
+    }
+  },
+  'branches-advocaten-notarissen': {
+    en: {
+      title: `Online marketing for lawyers & notaries | Amora`,
+      description:
+        'Online marketing for lawyers and notaries: websites, local SEO and ads for qualified legal enquiries. 1,500+ projects.',
+      keywords: [
+        'online marketing for lawyers',
+        'law firm SEO',
+        'notary website',
+        'Google Ads lawyers'
+      ],
+    },
+    nl: {
+      title: `Online marketing voor advocaten | Amora Digital`,
+      description:
+        'Online marketing voor advocaten en notarissen: websites, lokale SEO en ads voor gekwalificeerde zaakaanvragen. 1.500+ projecten.',
+      keywords: [
+        'online marketing voor advocaten',
+        'SEO advocatenkantoor',
+        'website notaris',
+        'Google Ads advocaat'
+      ],
+    }
+  },
+  'branches-installateurs-website-laten-maken': {
+    en: {
+      title: `Website design for installers | Amora`,
+      description:
+        'Installer website with emergency CTAs, trade pages, certifications and install quote forms. 1,500+ projects.',
+      keywords: [
+        'website design for installers',
+        'plumber website',
+        'electrician website',
+        'heat pump website'
+      ],
+    },
+    nl: {
+      title: `Website laten maken voor installateurs | Amora`,
+      description:
+        'Installateurswebsite met spoed-CTA, vakpagina’s, certificeringen en installatieofferte. 1.500+ projecten.',
+      keywords: [
+        'website laten maken voor installateurs',
+        'website loodgieter',
+        'website elektricien',
+        'website warmtepomp'
+      ],
+    }
+  },
+  'branches-installateurs-lokale-seo': {
+    en: {
+      title: `Local SEO for installers | Amora`,
+      description:
+        'Local SEO for installers: service-area GBP, call actions, town pages and trade keywords. 1,500+ projects.',
+      keywords: [
+        'local SEO for installers',
+        'plumber Google Maps',
+        'heat pump local SEO',
+        'electrician GBP'
+      ],
+    },
+    nl: {
+      title: `Lokale SEO voor installateurs | Amora`,
+      description:
+        'Lokale SEO voor installateurs: service-area GBP, belacties, plaatspagina’s en vakzoekwoorden. 1.500+ projecten.',
+      keywords: [
+        'lokale SEO voor installateurs',
+        'loodgieter Google Maps',
+        'warmtepomp lokale SEO',
+        'elektricien GBP'
+      ],
+    }
+  },
+  'branches-aannemers-website-laten-maken': {
+    en: {
+      title: `Website design for contractors | Amora`,
+      description:
+        'Contractor website with before/after portfolio, quote forms, service area and mobile paths. 1,500+ projects.',
+      keywords: [
+        'website design for contractors',
+        'contractor website',
+        'renovation website',
+        'quote form contractors'
+      ],
+    },
+    nl: {
+      title: `Website laten maken voor aannemers | Amora`,
+      description:
+        'Aannemerswebsite met voor/na-portfolio, offerteformulier, werkgebied en mobiel pad. 1.500+ projecten.',
+      keywords: [
+        'website laten maken voor aannemers',
+        'website aannemer',
+        'website klusbedrijf',
+        'offerteformulier aannemer'
+      ],
+    }
+  },
+  'branches-aannemers-lokale-seo': {
+    en: {
+      title: `Local SEO for contractors | Amora`,
+      description:
+        'Local SEO for contractors: service-area GBP, multi-town pages, trade keywords and reviews. 1,500+ projects.',
+      keywords: [
+        'local SEO for contractors',
+        'contractor Google Maps',
+        'renovation local SEO',
+        'contractor GBP'
+      ],
+    },
+    nl: {
+      title: `Lokale SEO voor aannemers | Amora`,
+      description:
+        'Lokale SEO voor aannemers: service-area GBP, plaatspagina’s, vakzoekwoorden en reviews. 1.500+ projecten.',
+      keywords: [
+        'lokale SEO voor aannemers',
+        'aannemer Google Maps',
+        'lokale SEO klusbedrijf',
+        'GBP aannemer'
+      ],
     }
   },
   'branches-restaurants-website-laten-maken': {
@@ -792,7 +955,6 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
         'online reservation system',
         'digital menu restaurant'
       ],
-      ogImage: ogAssetPng('Home')
     },
     nl: {
       title: `Website laten maken voor restaurants | Amora`,
@@ -804,7 +966,6 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
         'online reserveringssysteem',
         'digitale menukaart'
       ],
-      ogImage: ogAssetPng('Home')
     }
   },
   'branches-restaurants-lokale-seo': {
@@ -818,7 +979,6 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
         'Google Business Profile restaurant',
         'restaurant reviews SEO'
       ],
-      ogImage: ogAssetPng('Home')
     },
     nl: {
       title: `Lokale SEO voor restaurants | Amora`,
@@ -830,7 +990,6 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
         'Google Bedrijfsprofiel restaurant',
         'reviews restaurant SEO'
       ],
-      ogImage: ogAssetPng('Home')
     }
   },
   'branches-restaurants-social-media': {
@@ -844,7 +1003,6 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
         'restaurant social media',
         'hospitality social media'
       ],
-      ogImage: ogAssetPng('Home')
     },
     nl: {
       title: `Social media voor restaurants | Amora`,
@@ -856,7 +1014,6 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
         'social media beheer horeca',
         'Instagram restaurant'
       ],
-      ogImage: ogAssetPng('Home')
     }
   },
   'branches-tandartsen-website-laten-maken': {
@@ -870,7 +1027,6 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
         'online dental appointments',
         'dentist website'
       ],
-      ogImage: ogAssetPng('Home')
     },
     nl: {
       title: `Website laten maken voor tandartsen | Amora`,
@@ -882,7 +1038,6 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
         'online afspraak tandarts',
         'tandarts website'
       ],
-      ogImage: ogAssetPng('Home')
     }
   },
   'branches-tandartsen-lokale-seo': {
@@ -896,7 +1051,6 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
         'Google Business Profile dentist',
         'dental practice reviews'
       ],
-      ogImage: ogAssetPng('Home')
     },
     nl: {
       title: `Lokale SEO voor tandartsen | Amora`,
@@ -908,7 +1062,6 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
         'Google Bedrijfsprofiel tandarts',
         'patiëntreviews tandarts'
       ],
-      ogImage: ogAssetPng('Home')
     }
   },
   'branches-fysiotherapeuten-website-laten-maken': {
@@ -922,7 +1075,6 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
         'physio online booking',
         'fysio website'
       ],
-      ogImage: ogAssetPng('Home')
     },
     nl: {
       title: `Website laten maken voor fysiotherapeuten | Amora`,
@@ -934,7 +1086,6 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
         'online afspraak fysio',
         'fysiopraktijk website'
       ],
-      ogImage: ogAssetPng('Home')
     }
   },
   'branches-fysiotherapeuten-lokale-seo': {
@@ -948,7 +1099,6 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
         'Google Business Profile physio',
         'sports physio SEO'
       ],
-      ogImage: ogAssetPng('Home')
     },
     nl: {
       title: `Lokale SEO voor fysiotherapeuten | Amora`,
@@ -960,7 +1110,6 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
         'Google Bedrijfsprofiel fysio',
         'sportfysio SEO'
       ],
-      ogImage: ogAssetPng('Home')
     }
   },
   'branches-kappers-schoonheidssalons-website-laten-maken': {
@@ -974,7 +1123,6 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
         'hairdresser online booking',
         'beauty salon website'
       ],
-      ogImage: ogAssetPng('Home')
     },
     nl: {
       title: `Website laten maken voor kappers | Amora`,
@@ -986,7 +1134,6 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
         'online afspraak kapper',
         'schoonheidssalon website'
       ],
-      ogImage: ogAssetPng('Home')
     }
   },
   'branches-kappers-schoonheidssalons-lokale-seo': {
@@ -1000,7 +1147,6 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
         'salon Google Business Profile',
         'beauty salon reviews'
       ],
-      ogImage: ogAssetPng('Home')
     },
     nl: {
       title: `Lokale SEO voor kappers | Amora`,
@@ -1012,7 +1158,6 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
         'Google Bedrijfsprofiel salon',
         'reviews kapsalon'
       ],
-      ogImage: ogAssetPng('Home')
     }
   },
   'branches-makelaars-website-laten-maken': {
@@ -1026,7 +1171,6 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
         'real estate listings website',
         'property valuation form'
       ],
-      ogImage: ogAssetPng('Home')
     },
     nl: {
       title: `Website laten maken voor makelaars | Amora`,
@@ -1038,7 +1182,6 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
         'woningaanbod website',
         'gratis waardebepaling'
       ],
-      ogImage: ogAssetPng('Home')
     }
   },
   'branches-makelaars-lokale-seo': {
@@ -1052,7 +1195,6 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
         'makelaar local SEO',
         'sell house city SEO'
       ],
-      ogImage: ogAssetPng('Home')
     },
     nl: {
       title: `Lokale SEO voor makelaars | Amora`,
@@ -1064,7 +1206,6 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
         'wijkpagina’s makelaar',
         'gratis waardebepaling SEO'
       ],
-      ogImage: ogAssetPng('Home')
     }
   },
   'branches-makelaars-social-media': {
@@ -1078,7 +1219,6 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
         'real estate social media',
         'makelaar social media'
       ],
-      ogImage: ogAssetPng('Home')
     },
     nl: {
       title: `Social media voor makelaars | Amora`,
@@ -1090,7 +1230,6 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
         'social media beheer makelaar',
         'Instagram makelaar'
       ],
-      ogImage: ogAssetPng('Home')
     }
   }
 }

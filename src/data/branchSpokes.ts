@@ -2,12 +2,16 @@
  * Spoke services per industry hub in the /branches SEO silo.
  * Copy lives here for all planned spokes; only entries in LIVE_BRANCH_SPOKES
  * get routed/linked. Add a slug to LIVE_BRANCH_SPOKES when that page ships.
+ *
+ * `slug` is a stable internal id (Dutch form). URLs come only from RouteKey →
+ * ROUTES — never concatenate hubPath + slug.
  */
-import type { Locale } from '../i18n/routes'
+import type { Locale, RouteKey } from '../i18n/routes'
 
 export type LocalizedString = Record<Locale, string>
 
 export type BranchSpoke = {
+  /** Stable internal id — not a URL segment. */
   slug: string
   name: LocalizedString
   benefit: LocalizedString
@@ -19,11 +23,72 @@ export const LIVE_BRANCH_SPOKES: Readonly<Record<string, readonly string[]>> = {
   tandartsen: ['website-laten-maken', 'lokale-seo'],
   fysiotherapeuten: ['website-laten-maken', 'lokale-seo'],
   'kappers-schoonheidssalons': ['website-laten-maken', 'lokale-seo'],
-  makelaars: ['website-laten-maken', 'lokale-seo', 'social-media']
+  makelaars: ['website-laten-maken', 'lokale-seo', 'social-media'],
+  aannemers: ['website-laten-maken', 'lokale-seo'],
+  installateurs: ['website-laten-maken', 'lokale-seo'],
+  'advocaten-notarissen': []
+}
+
+/**
+ * Spoke RouteKeys for industries that have them registered in `ROUTES`.
+ * Add an entry when the spoke RouteKey is created — independent of liveness.
+ */
+export const BRANCH_SPOKE_ROUTE_KEYS: Readonly<
+  Record<string, Readonly<Partial<Record<string, RouteKey>>>>
+> = {
+  restaurants: {
+    'website-laten-maken': 'branches-restaurants-website-laten-maken',
+    'lokale-seo': 'branches-restaurants-lokale-seo',
+    'social-media': 'branches-restaurants-social-media'
+  },
+  tandartsen: {
+    'website-laten-maken': 'branches-tandartsen-website-laten-maken',
+    'lokale-seo': 'branches-tandartsen-lokale-seo'
+  },
+  fysiotherapeuten: {
+    'website-laten-maken': 'branches-fysiotherapeuten-website-laten-maken',
+    'lokale-seo': 'branches-fysiotherapeuten-lokale-seo'
+  },
+  'kappers-schoonheidssalons': {
+    'website-laten-maken': 'branches-kappers-schoonheidssalons-website-laten-maken',
+    'lokale-seo': 'branches-kappers-schoonheidssalons-lokale-seo'
+  },
+  makelaars: {
+    'website-laten-maken': 'branches-makelaars-website-laten-maken',
+    'lokale-seo': 'branches-makelaars-lokale-seo',
+    'social-media': 'branches-makelaars-social-media'
+  },
+  aannemers: {
+    'website-laten-maken': 'branches-aannemers-website-laten-maken',
+    'lokale-seo': 'branches-aannemers-lokale-seo'
+  },
+  installateurs: {
+    'website-laten-maken': 'branches-installateurs-website-laten-maken',
+    'lokale-seo': 'branches-installateurs-lokale-seo'
+  },
+  /**
+   * Planned spoke RouteKeys (EN: website-design / local-seo / google-ads).
+   * Cast until each spoke’s ROUTES entry + page ship — keeps muted cards link-safe
+   * without registering indexable paths early.
+   */
+  'advocaten-notarissen': {
+    'website-laten-maken':
+      'branches-advocaten-notarissen-website-laten-maken' as RouteKey,
+    'lokale-seo': 'branches-advocaten-notarissen-lokale-seo' as RouteKey,
+    'google-ads': 'branches-advocaten-notarissen-google-ads' as RouteKey
+  }
 }
 
 export function isLiveBranchSpoke(industrySlug: string, slug: string): boolean {
   return (LIVE_BRANCH_SPOKES[industrySlug] ?? []).includes(slug)
+}
+
+/** Resolve a spoke's RouteKey for ROUTES lookup, or undefined when unregistered. */
+export function getBranchSpokeRouteKey(
+  industrySlug: string,
+  spokeSlug: string
+): RouteKey | undefined {
+  return BRANCH_SPOKE_ROUTE_KEYS[industrySlug]?.[spokeSlug]
 }
 
 export const BRANCH_SPOKES: Record<string, readonly BranchSpoke[]> = {
@@ -232,6 +297,111 @@ export const BRANCH_SPOKES: Record<string, readonly BranchSpoke[]> = {
       benefit: {
         en: 'Build authority with listings, neighbourhood content and proof that drives valuations and viewings.',
         nl: 'Bouw autoriteit met woningen, buurtcontent en social proof die taxaties en bezichtigingen opleveren.'
+      }
+    }
+  ],
+  aannemers: [
+    {
+      slug: 'website-laten-maken',
+      name: {
+        en: 'Website design for contractors',
+        nl: 'Website laten maken voor aannemers'
+      },
+      benefit: {
+        en: 'A project-led site with before/after work, services and a clear quote form so homeowners ask you first.',
+        nl: 'Een projectgerichte site met voor/na-werk, diensten en een duidelijk offerteformulier, zodat huiseigenaren jou eerst benaderen.'
+      }
+    },
+    {
+      slug: 'lokale-seo',
+      name: {
+        en: 'Local SEO for contractors',
+        nl: 'Lokale SEO voor aannemers'
+      },
+      benefit: {
+        en: 'Show up for “contractor near me” and trade + city searches, including Google Business Profile setup.',
+        nl: 'Zichtbaar op “aannemer bij mij” en vak + stad-zoekopdrachten, inclusief Google Bedrijfsprofiel-opzet.'
+      }
+    },
+    {
+      slug: 'google-ads',
+      name: {
+        en: 'Google Ads for contractors',
+        nl: 'Google Ads voor aannemers'
+      },
+      benefit: {
+        en: 'Campaigns for urgent renovations and planned builds so quote requests hit your inbox when demand spikes.',
+        nl: 'Campagnes voor spoedklusjes en geplande verbouwingen, zodat offerteaanvragen binnenkomen wanneer de vraag piekt.'
+      }
+    }
+  ],
+  installateurs: [
+    {
+      slug: 'website-laten-maken',
+      name: {
+        en: 'Website design for installers',
+        nl: 'Website laten maken voor installateurs'
+      },
+      benefit: {
+        en: 'A call-ready site with emergency contact, services and clear CTAs so homeowners reach you when a boiler fails or a fuse board trips.',
+        nl: 'Een belklare site met spoedcontact, diensten en duidelijke CTA’s, zodat huiseigenaren je bereiken bij een defecte cv of doorgeslagen groepenkast.'
+      }
+    },
+    {
+      slug: 'lokale-seo',
+      name: {
+        en: 'Local SEO for installers',
+        nl: 'Lokale SEO voor installateurs'
+      },
+      benefit: {
+        en: 'Show up for “plumber near me”, “electrician [city]” and installation searches, including Google Business Profile setup.',
+        nl: 'Zichtbaar op “loodgieter bij mij”, “elektricien [stad]” en installatiezoekopdrachten, inclusief Google Bedrijfsprofiel-opzet.'
+      }
+    },
+    {
+      slug: 'google-ads',
+      name: {
+        en: 'Google Ads for installers',
+        nl: 'Google Ads voor installateurs'
+      },
+      benefit: {
+        en: 'Campaigns for emergency call-outs and planned installs so phones ring when someone needs heat, power or a heat pump quote.',
+        nl: 'Campagnes voor spoedritten en geplande installaties, zodat de telefoon gaat wanneer iemand warmte, stroom of een warmtepompofferte nodig heeft.'
+      }
+    }
+  ],
+  'advocaten-notarissen': [
+    {
+      slug: 'website-laten-maken',
+      name: {
+        en: 'Website design for law firms',
+        nl: 'Website laten maken voor advocaten'
+      },
+      benefit: {
+        en: 'A discreet, authoritative site that presents practice areas clearly and turns stressed visitors into consultation requests.',
+        nl: 'Een discrete, gezaghebbende site die rechtsgebieden helder presenteert en gestreste bezoekers omzet in consultaanvragen.'
+      }
+    },
+    {
+      slug: 'lokale-seo',
+      name: {
+        en: 'Local SEO for law firms',
+        nl: 'Lokale SEO voor advocaten'
+      },
+      benefit: {
+        en: 'Show up for practice area + city searches — family law, employment, notarial deeds — including Google Business Profile setup.',
+        nl: 'Zichtbaar op rechtsgebied + stad-zoekopdrachten — familierecht, arbeidsrecht, notariële aktes — inclusief Google Bedrijfsprofiel-opzet.'
+      }
+    },
+    {
+      slug: 'google-ads',
+      name: {
+        en: 'Google Ads for law firms',
+        nl: 'Google Ads voor advocaten'
+      },
+      benefit: {
+        en: 'Campaigns around high-intent legal moments so qualified case and deed enquiries reach the right desk.',
+        nl: 'Campagnes rond juridische momenten met hoge intentie, zodat gekwalificeerde zaak- en akteaanvragen het juiste bureau bereiken.'
       }
     }
   ]

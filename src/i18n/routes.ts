@@ -2,9 +2,10 @@
  * Bilingual routing table.
  *
  * A single `RouteKey` represents one logical page; each key maps to one
- * pathname per supported locale. English keeps the existing URLs to preserve
- * indexed rankings; Dutch lives under `/nl/...` with translated slugs for
- * native-feel SEO.
+ * pathname per supported locale. Most English paths keep their original slugs;
+ * the industries silo uses English EN paths (`/industries/...`) paired with
+ * Dutch NL paths (`/nl/branches/...`). Dutch lives under `/nl/...` with
+ * translated slugs for native-feel SEO.
  *
  * Helpers:
  *   - `localeFromPath` → infer locale from current pathname
@@ -76,6 +77,13 @@ export type RouteKey =
   | 'branches-fysiotherapeuten'
   | 'branches-kappers-schoonheidssalons'
   | 'branches-makelaars'
+  | 'branches-aannemers'
+  | 'branches-installateurs'
+  | 'branches-advocaten-notarissen'
+  | 'branches-installateurs-website-laten-maken'
+  | 'branches-installateurs-lokale-seo'
+  | 'branches-aannemers-website-laten-maken'
+  | 'branches-aannemers-lokale-seo'
   | 'branches-restaurants-website-laten-maken'
   | 'branches-restaurants-lokale-seo'
   | 'branches-restaurants-social-media'
@@ -90,9 +98,9 @@ export type RouteKey =
   | 'branches-makelaars-social-media'
 
 /**
- * Localized pathnames per route. English keeps the current URLs verbatim
- * to avoid breaking links and rankings; Dutch slugs are translated for
- * native search intent (e.g. `seo-services` → `seo-diensten`).
+ * Localized pathnames per route. Outside the industries silo, English keeps
+ * established slugs; Dutch slugs are translated for native search intent
+ * (e.g. `seo-services` → `seo-diensten`). Industry hubs/spokes localize both.
  */
 export const ROUTES: Record<RouteKey, Record<Locale, string>> = {
   home: { en: '/', nl: '/nl' },
@@ -145,73 +153,101 @@ export const ROUTES: Record<RouteKey, Record<Locale, string>> = {
     nl: '/nl/producten/royal-casino-hub'
   },
 
-  branches: { en: '/branches', nl: '/nl/branches' },
+  branches: { en: '/industries', nl: '/nl/branches' },
   'branches-restaurants': {
-    en: '/branches/restaurants',
+    en: '/industries/restaurants',
     nl: '/nl/branches/restaurants'
   },
   'branches-tandartsen': {
-    en: '/branches/tandartsen',
+    en: '/industries/dentists',
     nl: '/nl/branches/tandartsen'
   },
   'branches-fysiotherapeuten': {
-    en: '/branches/fysiotherapeuten',
+    en: '/industries/physiotherapists',
     nl: '/nl/branches/fysiotherapeuten'
   },
   'branches-kappers-schoonheidssalons': {
-    en: '/branches/kappers-schoonheidssalons',
+    en: '/industries/hair-beauty-salons',
     nl: '/nl/branches/kappers-schoonheidssalons'
   },
   'branches-makelaars': {
-    en: '/branches/makelaars',
+    en: '/industries/real-estate-agents',
     nl: '/nl/branches/makelaars'
   },
+  'branches-aannemers': {
+    en: '/industries/contractors',
+    nl: '/nl/branches/aannemers'
+  },
+  'branches-installateurs': {
+    en: '/industries/installers',
+    nl: '/nl/branches/installateurs'
+  },
+  'branches-advocaten-notarissen': {
+    en: '/industries/lawyers-notaries',
+    nl: '/nl/branches/advocaten-notarissen'
+  },
+  'branches-installateurs-website-laten-maken': {
+    en: '/industries/installers/website-design',
+    nl: '/nl/branches/installateurs/website-laten-maken'
+  },
+  'branches-installateurs-lokale-seo': {
+    en: '/industries/installers/local-seo',
+    nl: '/nl/branches/installateurs/lokale-seo'
+  },
+  'branches-aannemers-website-laten-maken': {
+    en: '/industries/contractors/website-design',
+    nl: '/nl/branches/aannemers/website-laten-maken'
+  },
+  'branches-aannemers-lokale-seo': {
+    en: '/industries/contractors/local-seo',
+    nl: '/nl/branches/aannemers/lokale-seo'
+  },
   'branches-restaurants-website-laten-maken': {
-    en: '/branches/restaurants/website-laten-maken',
+    en: '/industries/restaurants/website-design',
     nl: '/nl/branches/restaurants/website-laten-maken'
   },
   'branches-restaurants-lokale-seo': {
-    en: '/branches/restaurants/lokale-seo',
+    en: '/industries/restaurants/local-seo',
     nl: '/nl/branches/restaurants/lokale-seo'
   },
   'branches-restaurants-social-media': {
-    en: '/branches/restaurants/social-media',
+    en: '/industries/restaurants/social-media',
     nl: '/nl/branches/restaurants/social-media'
   },
   'branches-tandartsen-website-laten-maken': {
-    en: '/branches/tandartsen/website-laten-maken',
+    en: '/industries/dentists/website-design',
     nl: '/nl/branches/tandartsen/website-laten-maken'
   },
   'branches-tandartsen-lokale-seo': {
-    en: '/branches/tandartsen/lokale-seo',
+    en: '/industries/dentists/local-seo',
     nl: '/nl/branches/tandartsen/lokale-seo'
   },
   'branches-fysiotherapeuten-website-laten-maken': {
-    en: '/branches/fysiotherapeuten/website-laten-maken',
+    en: '/industries/physiotherapists/website-design',
     nl: '/nl/branches/fysiotherapeuten/website-laten-maken'
   },
   'branches-fysiotherapeuten-lokale-seo': {
-    en: '/branches/fysiotherapeuten/lokale-seo',
+    en: '/industries/physiotherapists/local-seo',
     nl: '/nl/branches/fysiotherapeuten/lokale-seo'
   },
   'branches-kappers-schoonheidssalons-website-laten-maken': {
-    en: '/branches/kappers-schoonheidssalons/website-laten-maken',
+    en: '/industries/hair-beauty-salons/website-design',
     nl: '/nl/branches/kappers-schoonheidssalons/website-laten-maken'
   },
   'branches-kappers-schoonheidssalons-lokale-seo': {
-    en: '/branches/kappers-schoonheidssalons/lokale-seo',
+    en: '/industries/hair-beauty-salons/local-seo',
     nl: '/nl/branches/kappers-schoonheidssalons/lokale-seo'
   },
   'branches-makelaars-website-laten-maken': {
-    en: '/branches/makelaars/website-laten-maken',
+    en: '/industries/real-estate-agents/website-design',
     nl: '/nl/branches/makelaars/website-laten-maken'
   },
   'branches-makelaars-lokale-seo': {
-    en: '/branches/makelaars/lokale-seo',
+    en: '/industries/real-estate-agents/local-seo',
     nl: '/nl/branches/makelaars/lokale-seo'
   },
   'branches-makelaars-social-media': {
-    en: '/branches/makelaars/social-media',
+    en: '/industries/real-estate-agents/social-media',
     nl: '/nl/branches/makelaars/social-media'
   }
 }

@@ -31,8 +31,11 @@
     <meta name="googlebot" content="index, follow" />
     <meta name="bingbot" content="index, follow" />
 
-    <!-- Canonical (hreflang added when Dutch pages ship under /nl/) -->
+    <!-- Canonical + hreflang cluster for the home page (DocumentMeta updates per route) -->
     <link rel="canonical" href="https://amoradigital.nl/" />
+    <link rel="alternate" hreflang="en" href="https://amoradigital.nl/" />
+    <link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl" />
+    <link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/" />
 
     <!-- Open Graph (DocumentMeta overrides per route) -->
     <meta property="og:type" content="website" />
@@ -167,15 +170,7 @@
           "name": "Amora Digital",
           "description": "Amora Digital is a Netherlands-based digital marketing and custom development agency. We help businesses grow with SEO, AI SEO, paid advertising, web design, React, PHP and Java development.",
           "publisher": { "@id": "https://amoradigital.nl/#organization" },
-          "inLanguage": "en",
-          "potentialAction": {
-            "@type": "SearchAction",
-            "target": {
-              "@type": "EntryPoint",
-              "urlTemplate": "https://amoradigital.nl/?s={search_term_string}"
-            },
-            "query-input": "required name=search_term_string"
-          }
+          "inLanguage": ["en", "nl"]
         }
       ]
     }

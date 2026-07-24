@@ -1,104 +1,106 @@
 import { Link, useLocation } from 'react-router-dom'
 import {
-  Activity,
   ArrowRight,
   CheckCircle2,
   Globe,
   MapPin,
-  Sparkles,
-  Target
+  Megaphone,
+  Scale,
+  Sparkles
 } from 'lucide-react'
 import { ROUTES, localeFromPath, type Locale } from '../../i18n/routes'
 import { BRANCH_SPOKES } from '../../data/branchSpokes'
 import BranchSpokeCard from '../../components/BranchSpokeCard'
 
-const SPOKES = BRANCH_SPOKES.fysiotherapeuten
-const SPOKE_ICONS = [Globe, MapPin, Target] as const
+const SPOKES = BRANCH_SPOKES['advocaten-notarissen']
+const SPOKE_ICONS = [Globe, MapPin, Megaphone] as const
 
 const T = {
   en: {
     crumbHome: 'Home',
     crumbBranches: 'Industries',
-    crumbCurrent: 'Physiotherapists',
-    badge: 'Physio marketing',
-    h1: 'Online marketing for physiotherapists',
+    crumbCurrent: 'Lawyers & notaries',
+    badge: 'Legal marketing',
+    h1: 'Online marketing for lawyers & notaries',
     heroSub:
-      'We help physiotherapy practices attract new clients and fill their agenda through websites, local SEO and Google Ads. With 1,500+ completed projects, we know what works for physio clinics.',
+      'We help law firms and notarial practices attract the right clients and better-qualified enquiries online — through a clear website, local findability and campaigns that reach people in high-stakes moments such as divorce, employment conflict, personal injury or a property transfer. With 1,500+ completed projects, we know what earns trust before someone books a consultation.',
     trust: '1,500+ completed projects',
     servicesBadge: 'Our services',
-    servicesHead: 'What we do for physiotherapists',
+    servicesHead: 'What we do for lawyers and notaries',
     servicesSub:
-      'Services for injury searches, referral partners and repeat treatment blocks — aligned with how people pick a physio. Choose a service for detail.',
+      'Work shaped around practice areas, authority and discreet enquiry paths — not installer call-outs or restaurant bookings. Pick a service for the detail.',
     learnMore: 'Learn more',
     whyBadge: 'Why Amora Digital',
-    whyHead: 'Why physio practices choose us',
-    whySub: 'Physio clients often arrive in pain or via referral. We build visibility for both paths.',
+    whyHead: 'Why legal firms choose us',
+    whySub:
+      'Legal buyers judge on specialisation and calm authority. We plan around how someone shortlists a family lawyer or compares notaries for a deed — not how they book a salon or call a plumber.',
     whyItems: [
       {
-        title: 'Industry experience',
-        desc: 'We know physio practices: trust, treatment pages, referrals and the need for a full agenda.'
+        title: 'Practice-area first messaging',
+        desc: 'We structure around family law, employment, corporate, injury and notarial deeds — the real search entries — not a generic “legal services” blur.'
       },
       {
-        title: 'Local focus',
-        desc: 'Clients search nearby. We optimise for local visibility and Google Business Profile.'
+        title: 'Authority without hype',
+        desc: 'Tone, proof and intake forms stay professional and discreet, so stressed visitors feel they found a serious firm rather than a lead broker.'
       },
       {
-        title: 'Measurable results',
-        desc: 'We steer on new clients, calls and bookings — not vanity metrics alone.'
+        title: 'Qualified enquiry focus',
+        desc: 'We steer on clear practice pages and consultation requests that filter tyre-kickers — better files for the desk, not more anonymous contact spam.'
       },
       {
-        title: 'Everything under one roof',
-        desc: 'Condition pages, Maps presence, Google Ads and follow-up content share one brief — so someone who finds you for a shoulder issue sees the same story when they book.'
+        title: 'One partner from search to intake',
+        desc: 'Website, local SEO and later ads share one brief — so your specialisations look as sharp in Google as in the first conversation with counsel.'
       }
     ],
-    ctaHeading: 'Ready to bring more clients through your door?',
+    ctaHeading: 'Ready for enquiries that match your practice areas?',
     ctaSub:
-      'Share your specialisms, referral sources and availability gaps. We will map what fills empty slots in your week.',
+      'Tell us your specialisations, whether you are a law firm or notarial office, and the cities you serve. We will sketch how the right clients find you before they shortlist the next firm.',
     ctaButton: 'Request a quote'
   },
   nl: {
     crumbHome: 'Home',
     crumbBranches: 'Branches',
-    crumbCurrent: 'Fysiotherapeuten',
-    badge: 'Fysiotherapie marketing',
-    h1: 'Online marketing voor fysiotherapeuten',
+    crumbCurrent: 'Advocaten & notarissen',
+    badge: 'Juridische marketing',
+    h1: 'Online marketing voor advocaten & notarissen',
     heroSub:
-      'Wij helpen fysiotherapiepraktijken nieuwe cliënten aantrekken en hun agenda vullen via websites, lokale SEO en Google Ads. Met 1.500+ afgeronde projecten weten we wat werkt voor fysiotherapeuten.',
+      'Wij helpen advocatenkantoren en notariskantoren de juiste cliënten en beter gekwalificeerde aanvragen online aan te trekken — via een duidelijke website, lokale vindbaarheid en campagnes die mensen bereiken in spannende momenten zoals echtscheiding, arbeidsconflict, letselschade of een woningoverdracht. Met 1.500+ afgeronde projecten weten we wat vertrouwen wekt vóór iemand een kennismaking boekt.',
     trust: '1.500+ afgeronde projecten',
     servicesBadge: 'Onze diensten',
-    servicesHead: 'Wat we doen voor fysiotherapeuten',
+    servicesHead: 'Wat we doen voor advocaten en notarissen',
     servicesSub:
-      'Diensten voor klacht-zoekopdrachten, doorverwijzers en herhalingsblokken — afgestemd op hoe mensen een fysio kiezen. Kies een dienst voor details.',
+      'Werk rond rechtsgebieden, autoriteit en discrete aanvraagpaden — geen installateurs-spoedritten of restaurantboekingen. Kies een dienst voor de details.',
     learnMore: 'Meer informatie',
     whyBadge: 'Waarom Amora Digital',
-    whyHead: 'Waarom fysiotherapiepraktijken voor ons kiezen',
-    whySub: 'Fysiopatiënten komen vaak met pijn of via verwijzing. Wij bouwen zichtbaarheid voor beide routes.',
+    whyHead: 'Waarom juridische kantoren voor ons kiezen',
+    whySub:
+      'Juridische kopers oordelen op specialisatie en rustige autoriteit. Wij plannen rond hoe iemand een familierechtadvocaat shortlist of notarissen vergelijkt voor een akte — niet hoe ze een salon boeken of een loodgieter bellen.',
     whyItems: [
       {
-        title: 'Branche-ervaring',
-        desc: 'We kennen fysiopraktijken: vertrouwen, behandelpagina’s, doorverwijzingen en het belang van een volle agenda.'
+        title: 'Rechtsgebied eerst in de boodschap',
+        desc: 'We structureren rond familierecht, arbeidsrecht, ondernemingsrecht, letselschade en notariële aktes — de echte zoekingangen — geen vaag “juridische diensten”-wolkje.'
       },
       {
-        title: 'Lokale focus',
-        desc: 'Cliënten zoeken dichtbij. Wij optimaliseren voor lokale zichtbaarheid en Google Bedrijfsprofiel.'
+        title: 'Autoriteit zonder poeha',
+        desc: 'Toon, bewijs en intakeforms blijven professioneel en discreet, zodat gestreste bezoekers een serieus kantoor vinden in plaats van een leadmakelaar.'
       },
       {
-        title: 'Meetbare resultaten',
-        desc: 'We sturen op nieuwe cliënten, belacties en afspraken — niet alleen vanity metrics.'
+        title: 'Focus op gekwalificeerde aanvragen',
+        desc: 'We sturen op heldere praktijpagina’s en consultaanvragen die shoppers filteren — betere dossiers voor het bureau, geen anonieme contactspam.'
       },
       {
-        title: 'Alles onder één dak',
-        desc: 'Klachtpagina’s, Maps, Google Ads en nazorgcontent delen één briefing — dezelfde boodschap van zoekmoment tot afspraak.'
+        title: 'Één partner van zoeken tot intake',
+        desc: 'Website, lokale SEO en later ads delen één briefing — zodat je specialisaties even scherp oogt in Google als in het eerste gesprek met de advocaat.'
       }
     ],
-    ctaHeading: 'Klaar om meer cliënten binnen te halen?',
+    ctaHeading: 'Klaar voor aanvragen die bij je rechtsgebieden passen?',
     ctaSub:
-      'Vertel over specialisaties, verwijzers en lege uren. We bekijken wat lege plekken in je week vult.',
+      'Vertel je specialisaties, of je advocatenkantoor of notariskantoor bent, en welke steden je bedient. We schetsen hoe de juiste cliënten je vinden vóór ze het volgende kantoor shortlisten.',
     ctaButton: 'Vraag een offerte aan'
   }
 } as const
 
-export default function Fysiotherapeuten() {
+export default function AdvocatenNotarissen() {
   const { pathname } = useLocation()
   const locale: Locale = localeFromPath(pathname)
   const t = T[locale]
@@ -126,7 +128,7 @@ export default function Fysiotherapeuten() {
             </nav>
 
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-medium mb-6">
-              <Activity className="w-4 h-4" aria-hidden />
+              <Scale className="w-4 h-4" aria-hidden />
               <span>{t.badge}</span>
             </div>
 
@@ -158,7 +160,7 @@ export default function Fysiotherapeuten() {
             {SPOKES.map((spoke, i) => (
               <BranchSpokeCard
                 key={spoke.slug}
-                industrySlug="fysiotherapeuten"
+                industrySlug="advocaten-notarissen"
                 spoke={spoke}
                 locale={locale}
                 ctaLabel={t.learnMore}

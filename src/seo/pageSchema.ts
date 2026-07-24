@@ -2474,6 +2474,703 @@ export const pageSeoByKey: Record<RouteKey, PageSeoConfig> = {
     }
   },
 
+  'branches-aannemers': {
+    parents: ['home', 'branches'],
+    pageType: 'CollectionPage',
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Online marketing for contractors',
+      category: 'Digital Marketing',
+      offers: [
+        { name: 'Website design for contractors' },
+        { name: 'Local SEO for contractors' },
+        { name: 'Google Ads for contractors' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Contractors',
+        serviceName: 'Online marketing for contractors',
+        serviceDescription:
+          'Online marketing for contractors and trades businesses: websites, local SEO and Google Ads focused on project enquiries and regional jobs.',
+        faqs: [
+          {
+            question: 'How do we show our project portfolio online?',
+            answer:
+              'We structure before/after galleries by trade — kitchens, roofs, bathrooms, extensions — with short job context so homeowners can picture their own project. Photos load fast on mobile, where most quote requests start.'
+          },
+          {
+            question: 'How do we get more quote requests from homeowners?',
+            answer:
+              'Put a simple quote form above the fold, match it to the trades you actually take on, and make calling or WhatsApp one tap on a phone. Local SEO and later ads can bring visitors; the site must turn them into enquiries you can price.'
+          },
+          {
+            question: 'How do we get found in our region?',
+            answer:
+              'Through local SEO: Google Business Profile with the right trade categories, service-area clarity, recent project photos, reviews after completed jobs, and pages that match how people search “roofer [town]” or “kitchen renovation [city]”. We do not promise a fixed map-pack place.'
+          },
+          {
+            question: 'How long does a contractor website take?',
+            answer:
+              'Most contractor sites launch in about four to eight weeks, depending on how ready your project photos and service list are. Discovery starts with your quote flow so we do not ship a generic brochure template.'
+          },
+          {
+            question: 'When does Google Ads make sense for a contractor?',
+            answer:
+              'When you can take on jobs quickly and have a clear landing page per trade or urgency type — for example storm damage or planned kitchen renovation. We keep ads non-live on this hub until keywords are validated for your catchment.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Aannemers & klusbedrijven',
+        serviceName: 'Online marketing voor aannemers',
+        serviceDescription:
+          'Online marketing voor aannemers en klusbedrijven: websites, lokale SEO en Google Ads gericht op projectaanvragen en regionaal werk.',
+        faqs: [
+          {
+            question: 'Hoe tonen we ons projectportfolio online?',
+            answer:
+              'We structureren voor/na-galerijen per vak — keukens, daken, badkamers, uitbouwen — met korte kluscontext zodat huiseigenaren hun eigen project kunnen voorstellen. Foto’s laden snel op mobiel, waar de meeste offerteaanvragen starten.'
+          },
+          {
+            question: 'Hoe krijgen we meer offerteaanvragen binnen?',
+            answer:
+              'Zet een eenvoudig offerteformulier bovenaan, koppel het aan de vakken die je écht doet, en maak bellen of WhatsApp één tik op de telefoon. Lokale SEO en later ads brengen bezoekers; de site moet ze omzetten in aanvragen die je kunt begroten.'
+          },
+          {
+            question: 'Hoe worden we vindbaar in de regio?',
+            answer:
+              'Via lokale SEO: Google Bedrijfsprofiel met de juiste vakcategorieën, duidelijk werkgebied, recente projectfoto’s, reviews na opgeleverde klussen, en pagina’s die aansluiten op zoekopdrachten als “dakdekker [plaats]” of “keukenrenovatie [stad]”. We beloven geen vaste plek in de kaartpack.'
+          },
+          {
+            question: 'Hoe lang duurt een website voor een aannemer?',
+            answer:
+              'De meeste aannemerssites gaan in ongeveer vier tot acht weken live, afhankelijk van hoe klaar je projectfoto’s en dienstenlijst zijn. Discovery start bij je offerteflow, zodat we geen generieke brochuretemplate opleveren.'
+          },
+          {
+            question: 'Wanneer heeft Google Ads zin voor een aannemer?',
+            answer:
+              'Als je snel klussen kunt oppakken en een duidelijke landingspagina per vak of urgentie hebt — bijvoorbeeld stormschade of geplande keukenrenovatie. Op deze hub houden we ads non-live tot zoekwoorden voor jouw verzorgingsgebied zijn gevalideerd.'
+          }
+        ]
+      }
+    }
+  },
+
+  'branches-installateurs': {
+    parents: ['home', 'branches'],
+    pageType: 'CollectionPage',
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Online marketing for installers',
+      category: 'Digital Marketing',
+      offers: [
+        { name: 'Website design for installers' },
+        { name: 'Local SEO for installers' },
+        { name: 'Google Ads for installers' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Plumbers, electricians & installers',
+        serviceName: 'Online marketing for installers',
+        serviceDescription:
+          'Online marketing for plumbers, electricians and installers: websites, local SEO and Google Ads focused on service calls and installation enquiries.',
+        faqs: [
+          {
+            question: 'How do we stay reachable for emergency call-outs?',
+            answer:
+              'Put your emergency number and WhatsApp one tap away on every page, show night and weekend hours clearly, and separate urgent call-outs from planned installs so callers know who to dial. A cold boiler search rarely waits for a contact form buried under a gallery.'
+          },
+          {
+            question: 'How do homeowners find us in our service area?',
+            answer:
+              'Local SEO ties your Google Business Profile, trade categories and town pages to the radius your vans actually cover. Reviews after completed call-outs and clear service towns help Maps and organic search match “plumber [town]” or “electrician near me”.'
+          },
+          {
+            question: 'How do we stand out from other installers nearby?',
+            answer:
+              'Show certifications, response windows, brands you install and real job photos per trade — heat pumps, solar, boilers, fuse boards — instead of generic “we do everything” claims. Specific install proof beats another stock photo of a toolbox.'
+          },
+          {
+            question: 'Can we attract heat pump and solar installation requests?',
+            answer:
+              'Yes: dedicated pages for heat pumps and solar with subsidy context, brand experience and a short install quote form work better than one catch-all services list. Homeowners researching upgrades search differently from someone with a leaking pipe tonight.'
+          },
+          {
+            question: 'When should we add Google Ads for installers?',
+            answer:
+              'When you can take call-outs or booked installs quickly and have landings for urgency versus planned work. On this hub we keep ads muted until keywords fit your catchment and capacity.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Loodgieters, elektriciens & installateurs',
+        serviceName: 'Online marketing voor installateurs',
+        serviceDescription:
+          'Online marketing voor loodgieters, elektriciens en installateurs: websites, lokale SEO en Google Ads gericht op service-ritten en installatieaanvragen.',
+        faqs: [
+          {
+            question: 'Hoe blijven we bereikbaar bij spoedklussen?',
+            answer:
+              'Zet spoednummer en WhatsApp overal één tik weg, toon avond- en weekenduren duidelijk, en scheid spoed van geplande installaties zodat bellers weten wie ze moeten bellen. Een koude cv wacht zelden op een formulier onder een fotogalerij.'
+          },
+          {
+            question: 'Hoe worden we vindbaar in ons werkgebied?',
+            answer:
+              'Lokale SEO koppelt je Google Bedrijfsprofiel, vakcategorieën en plaatspagina’s aan de straal die je bussen echt rijden. Reviews na service-ritten en heldere servicesteden helpen Maps en organisch zoeken bij “loodgieter [plaats]” of “elektricien in de buurt”.'
+          },
+          {
+            question: 'Hoe onderscheiden we ons van concurrenten in de buurt?',
+            answer:
+              'Toon certificeringen, responstijden, merken die je plaatst en echte klusfoto’s per vak — warmtepompen, zonnepanelen, cv’s, meterkasten — in plaats van vage “wij doen alles”-claims. Specifiek installatiebewijs wint van weer een stockfoto van een gereedschapskist.'
+          },
+          {
+            question: 'Kunnen we warmtepomp- en zonnepanelen-aanvragen aantrekken?',
+            answer:
+              'Ja: aparte pagina’s voor warmtepompen en zonnepanelen met subsidiecontext, merkeraring en een kort installatieformulier werken beter dan één algemene dienstenlijst. Huiseigenaren die upgraden zoeken anders dan iemand met een lekkende leiding vannacht.'
+          },
+          {
+            question: 'Wanneer heeft Google Ads zin voor installateurs?',
+            answer:
+              'Als je spoedritten of geboekte installaties snel kunt oppakken en landings hebt voor urgentie versus gepland werk. Op deze hub houden we ads non-live tot zoekwoorden bij jouw werkgebied en capaciteit passen.'
+          }
+        ]
+      }
+    }
+  },
+
+  'branches-advocaten-notarissen': {
+    parents: ['home', 'branches'],
+    pageType: 'CollectionPage',
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Online marketing for lawyers and notaries',
+      category: 'Digital Marketing',
+      offers: [
+        { name: 'Website design for law firms' },
+        { name: 'Local SEO for law firms' },
+        { name: 'Google Ads for law firms' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Lawyers & notaries',
+        serviceName: 'Online marketing for lawyers and notaries',
+        serviceDescription:
+          'Online marketing for lawyers and notaries: websites, local SEO and Google Ads focused on practice-area authority and qualified legal enquiries.',
+        faqs: [
+          {
+            question: 'How do we project trust and authority online?',
+            answer:
+              'Lead with clear practice areas, calm professional tone, team credentials and a discreet consultation path — not stock gavel photos or aggressive “free claim” banners. Stressed visitors decide quickly whether a firm feels serious enough to contact.'
+          },
+          {
+            question: 'How should we present our practice areas?',
+            answer:
+              'Give each major practice area its own page or block — family, employment, corporate, injury, notarial deeds — with plain language on who you help and what the first step is. One vague “we do everything legal” paragraph hides the specialisation people search for.'
+          },
+          {
+            question: 'How do we get better-qualified case enquiries?',
+            answer:
+              'Match landing pages to the problem someone is googling, ask a few intake questions on the form, and make phone or callback options obvious for urgent matters. Quality rises when tyre-kickers self-select before they hit the diary.'
+          },
+          {
+            question: 'How do we get found for a practice area in our city?',
+            answer:
+              'Local SEO and practice + city pages help Maps and organic search match “family lawyer [city]” or “notary deed [town]”. Reviews and a complete Google Business Profile support that; we do not promise a fixed ranking.'
+          },
+          {
+            question: 'Is marketing different for notaries than for lawyers?',
+            answer:
+              'Often yes. Notarial demand clusters around property transfer, wills and cohabitation agreements, with more price comparison. Lawyer marketing leans on high-stakes specialisation and trust. We keep both paths distinct on this hub’s future spokes.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Advocaten & notarissen',
+        serviceName: 'Online marketing voor advocaten en notarissen',
+        serviceDescription:
+          'Online marketing voor advocaten en notarissen: websites, lokale SEO en Google Ads gericht op rechtsgebiedautoriteit en gekwalificeerde juridische aanvragen.',
+        faqs: [
+          {
+            question: 'Hoe stralen we vertrouwen en autoriteit online uit?',
+            answer:
+              'Zet heldere rechtsgebieden, een rustige professionele toon, teamcredentials en een discreet consultpad voorop — geen stockhamerbeelden of agressieve “gratis claim”-banners. Gestreste bezoekers beslissen snel of een kantoor serieus genoeg voelt om contact op te nemen.'
+          },
+          {
+            question: 'Hoe presenteren we onze rechtsgebieden duidelijk?',
+            answer:
+              'Geef elk groot rechtsgebied een eigen pagina of blok — familie, arbeid, onderneming, letsel, notariële aktes — met begrijpelijke taal over wie je helpt en wat de eerste stap is. Eén vaag “wij doen alles juridisch”-alineaatje verbergt de specialisatie waarnaar mensen zoeken.'
+          },
+          {
+            question: 'Hoe krijgen we betere zaakaanvragen binnen?',
+            answer:
+              'Koppel landingspagina’s aan het probleem dat iemand googlet, stel een paar intakevragen in het formulier, en maak bellen of terugbellen duidelijk bij urgente zaken. Kwaliteit stijgt wanneer shoppers zichzelf filteren vóór ze in de agenda landen.'
+          },
+          {
+            question: 'Hoe worden we vindbaar per rechtsgebied en stad?',
+            answer:
+              'Lokale SEO en rechtsgebied + stad-pagina’s helpen Maps en organisch zoeken bij “advocaat familierecht [stad]” of “notaris akte [plaats]”. Reviews en een compleet Google Bedrijfsprofiel ondersteunen dat; we beloven geen vaste ranking.'
+          },
+          {
+            question: 'Is marketing anders voor notarissen dan voor advocaten?',
+            answer:
+              'Vaak wel. Notariële vraag clusterert rond woningoverdracht, testamenten en samenlevingscontracten, met meer prijsvergelijking. Advocatenmarketing leunt op specialisatie met hoge inzet en vertrouwen. We houden beide paden onderscheiden op de toekomstige spokes van deze hub.'
+          }
+        ]
+      }
+    }
+  },
+
+  'branches-installateurs-website-laten-maken': {
+    parents: ['home', 'branches', 'branches-installateurs'],
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Website design for installers',
+      category: 'Web Development',
+      offers: [
+        { name: 'Emergency call-ready installer website' },
+        { name: 'Trade pages for boilers, heat pumps and solar' },
+        { name: 'Planned-install quote form beside call CTAs' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Website design for installers',
+        serviceName: 'Website design for installers',
+        serviceDescription:
+          'Installer website design with emergency phone CTAs, fault-service hours, trade pages for boilers, heat pumps, solar and electrical work, certifications, maintenance contracts, subsidy notes and planned-install quote forms — built so urgent callers dial and upgrade visitors request a survey.',
+        faqs: [
+          {
+            question: 'How do I make sure emergency customers call immediately?',
+            answer:
+              'Put a sticky phone and WhatsApp button on every page, show night and weekend fault hours next to the number, and keep the emergency path separate from the planned-install form. Someone with a leak rarely finishes a long contact form before they dial the next van on Maps.'
+          },
+          {
+            question: 'Can I offer maintenance contracts on the website?',
+            answer:
+              'Yes. We build clear pages for boiler and heat-pump service plans with what each visit includes, so recurring contracts are sold online and not only mentioned after a repair on the doorstep.'
+          },
+          {
+            question: 'How do I show my certifications and brand approvals?',
+            answer:
+              'Sterkin, recognised-installer marks, F-gas registration and manufacturer certificates sit near the call CTA and on relevant trade pages. Visitors choosing who opens a boiler cupboard or rooftop see proof without hunting a PDF in the footer.'
+          },
+          {
+            question: 'Can I add new services myself after launch?',
+            answer:
+              'Yes. We train you or the office to publish an extra trade page — for example a new solar package or bathroom install offer — update hours and refresh maintenance packages without calling a developer for every change.'
+          },
+          {
+            question: 'Does the site work well on mobile in an emergency?',
+            answer:
+              'We design for shaky phone signal: lightweight pages, sticky call buttons and readable trade copy. Heavy portfolio carousels do not block the number when the heating has already failed.'
+          },
+          {
+            question: 'How do planned heat-pump or solar quotes work alongside call-outs?',
+            answer:
+              'Emergency visitors get the number; upgrade visitors get a short install quote form with trade, area and timing, plus brief subsidy context where it helps. Two paths share one site so neither funnel hides the other.'
+          },
+          {
+            question: 'How long does an installer website project take?',
+            answer:
+              'Most installer sites launch in about four to eight weeks, depending on how ready your trades list, certifications and fault-service hours are. Discovery starts with how night calls arrive so we do not ship a renovation-portfolio template.'
+          },
+          {
+            question: 'Should subsidy information appear for heat pumps and solar?',
+            answer:
+              'Short, honest notes help homeowners researching upgrades, as long as the site does not pretend to be a government calculator. We pair that context with a clear path to request a planned-install survey.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Website laten maken voor installateurs',
+        serviceName: 'Website laten maken voor installateurs',
+        serviceDescription:
+          'Installateurswebsite laten maken met spoed-bel-CTA’s, storingsuren, vakpagina’s voor cv, warmtepomp, zonnepanelen en elektra, certificeringen, onderhoudscontracten, subsidienotities en offerteforms voor geplande installaties — gebouwd zodat spoedbellers bellen en upgradebezoekers een opname aanvragen.',
+        faqs: [
+          {
+            question: 'Hoe zorg ik dat spoedklanten direct bellen?',
+            answer:
+              'Zet een vaste bel- en WhatsApp-knop op elke pagina, toon avond- en weekendstoringsuren naast het nummer, en houd het spoedpad gescheiden van het formulier voor geplande installaties. Iemand met een lekkage vult zelden een lang contactformulier in vóór hij het volgende busje op Maps belt.'
+          },
+          {
+            question: 'Kan ik onderhoudscontracten via de website aanbieden?',
+            answer:
+              'Ja. We bouwen duidelijke pagina’s voor cv- en warmtepomp-onderhoudscontracten met wat er per bezoek inzit, zodat terugkerende contracten online verkocht worden en niet alleen op de stoep na een reparatie genoemd worden.'
+          },
+          {
+            question: 'Hoe toon ik mijn certificeringen en merkgoedkeuringen?',
+            answer:
+              'Sterkin, erkend-installateurmerken, F-gassenregistratie en fabrikantcertificaten staan bij de bel-CTA en op relevante vakpagina’s. Bezoekers die kiezen wie hun cv-kast of dak opent, zien bewijs zonder een PDF in de footer te zoeken.'
+          },
+          {
+            question: 'Kan ik zelf diensten toevoegen na livegang?',
+            answer:
+              'Ja. We trainen jou of het kantoor om een extra vakpagina te publiceren — bijvoorbeeld een nieuw zonnepaneelpakket of badkamerinstallatie — uren te wijzigen en onderhoudspakketten te verversen zonder developer voor elke wijziging.'
+          },
+          {
+            question: 'Werkt de site goed op mobiel bij een noodgeval?',
+            answer:
+              'We ontwerpen voor matig telefoonsignaal: lichte pagina’s, vaste belknoppen en leesbare vaktekst. Zware portfoliocarrousels blokkeren het nummer niet wanneer de verwarming al uitvalt.'
+          },
+          {
+            question: 'Hoe werken geplande warmtepomp- of zonnepaneeloffertes naast spoedritten?',
+            answer:
+              'Spoedbezoekers krijgen het nummer; upgradebezoekers krijgen een kort installatieformulier met vak, plaats en timing, plus korte subsidiecontext waar dat helpt. Twee paden delen één site, zodat geen van beide funnels de ander verstopt.'
+          },
+          {
+            question: 'Hoe lang duurt een website-traject voor installateurs?',
+            answer:
+              'De meeste installateurssites gaan in ongeveer vier tot acht weken live, afhankelijk van hoe klaar je vakkenlijst, certificeringen en storingsuren zijn. Discovery start bij hoe nachtbelletjes binnenkomen, zodat we geen verbouwportfolio-template opleveren.'
+          },
+          {
+            question: 'Moet subsidie-informatie bij warmtepomp en zonnepanelen op de site?',
+            answer:
+              'Korte, eerlijke notities helpen huiseigenaren die upgrades onderzoeken, zolang de site niet doet alsof ze een overheidsrekenhulp is. We koppelen die context aan een duidelijk pad om een geplande installatieopname aan te vragen.'
+          }
+        ]
+      }
+    }
+  },
+
+  'branches-installateurs-lokale-seo': {
+    parents: ['home', 'branches', 'branches-installateurs'],
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Local SEO for installers',
+      category: 'Digital Marketing',
+      offers: [
+        { name: 'Service-area Google Business Profile for installers' },
+        { name: 'Town and install-service landing pages' },
+        { name: 'Call actions, fault hours and job-type reviews' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Local SEO for installers',
+        serviceName: 'Local SEO for installers',
+        serviceDescription:
+          'Local SEO for plumbers, electricians and installers focused on service-area Google Business Profile, emergency and install keywords, call actions, town pages and reviews by job type — without ranking guarantees.',
+        faqs: [
+          {
+            question: 'How do I get into the Google Maps pack for emergency jobs?',
+            answer:
+              'Treat GBP as a service-area business with the right trade categories, accurate night and weekend hours, a clear call button and recent reviews on fault work. Emergency searchers dial from the pack; we strengthen those signals without promising a fixed map position.'
+          },
+          {
+            question: 'Does local SEO work without a fixed shopfront?',
+            answer:
+              'Yes. Most installers are mobile. Google supports service-area businesses so you can appear for nearby plumber and electrician searches without pretending you have a retail counter. We set categories, service towns and phone actions for that model.'
+          },
+          {
+            question: 'How do I get found in multiple towns?',
+            answer:
+              'Configure GBP for the radius your vans actually cover, then support that with town or catchment pages for places you drive to. Empty postcode stubs rarely help; pages that name real service towns and install trades — with matching phone actions — send clearer signals to Maps.'
+          },
+          {
+            question: 'How do I get reviews per service type?',
+            answer:
+              'Ask after a boiler repair, heat-pump install or electrical job with a short Google review link and a habit tied to job close-out. Over time your photo and review strip shows proof per trade, not only generic five-star fluff.'
+          },
+          {
+            question: 'How long does local SEO take for installers?',
+            answer:
+              'GBP and call-action improvements often show within a few weeks. Stable relevance for competitive “plumber [city]” or “heat pump installer [region]” terms across a radius usually needs several months. Timelines depend on competition and how complete your profile is today. We do not promise a fixed map-pack place.'
+          },
+          {
+            question: 'Can local SEO help with winter boiler spikes and summer cooling?',
+            answer:
+              'We align GBP posts, photos and local pages with when those searches rise in your region — cold snaps, heat waves and subsidy-driven upgrade seasons — without promising you will own every seasonal query.'
+          },
+          {
+            question: 'How is this different from an installer website?',
+            answer:
+              'Local SEO is about being found in Maps and local search when someone needs a van or an install quote. The website spoke converts that traffic with emergency CTAs and planned-install forms. They support each other; this page covers findability.'
+          },
+          {
+            question: 'Should the call button appear in Google Business Profile?',
+            answer:
+              'Yes. For urgent faults the phone action in Maps matters more than a long contact form. We keep hours and the number accurate so stressed callers can tap without hunting your site footer.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Lokale SEO voor installateurs',
+        serviceName: 'Lokale SEO voor installateurs',
+        serviceDescription:
+          'Lokale SEO voor loodgieters, elektriciens en installateurs gericht op service-area Google Bedrijfsprofiel, spoed- en installatiezoekwoorden, belacties, plaatspagina’s en reviews per klustype — zonder rankinggaranties.',
+        faqs: [
+          {
+            question: 'Hoe kom ik in de Google Maps-pack voor spoedklussen?',
+            answer:
+              'Behandel GBP als service-area business met de juiste vakcategorieën, accurate avond- en weekenduren, een duidelijke belknop en recente reviews op storingswerk. Spoedzoekers bellen vanuit de pack; we versterken die signalen zonder een vaste kaartpositie te beloven.'
+          },
+          {
+            question: 'Werkt lokale SEO zonder vaste vestiging?',
+            answer:
+              'Ja. De meeste installateurs zijn mobiel. Google ondersteunt service-area businesses zodat je bij loodgieter- en elektricienzoekopdrachten in de buurt kunt verschijnen zonder een retailbalie te veinzen. We zetten categorieën, werkplaatsen en belacties voor dat model.'
+          },
+          {
+            question: 'Hoe word ik gevonden in meerdere plaatsen?',
+            answer:
+              'Richt GBP in voor de straal die je bussen écht rijden, en ondersteun dat met plaats- of werkgebiedpagina’s voor gemeenten waar je heen rijdt. Lege postcode-stubs helpen zelden; pagina’s die echte servicesteden en installatievakken noemen — met passende belacties — sturen Maps duidelijkere signalen.'
+          },
+          {
+            question: 'Hoe krijg ik reviews per dienst?',
+            answer:
+              'Vraag na een cv-reparatie, warmtepompinstallatie of elektraklus met een korte Google-reviewlink en een gewoonte gekoppeld aan klusafsluiting. Na verloop van tijd toont je foto- en reviewstrip bewijs per vak, niet alleen generieke vijf-sterren-fluff.'
+          },
+          {
+            question: 'Hoe lang duurt lokale SEO voor installateurs?',
+            answer:
+              'GBP- en belactieverbeteringen zie je vaak binnen enkele weken. Stabiele relevantie voor concurrerende “loodgieter [stad]”- of “warmtepomp installateur [regio]”-termen over een straal vraagt meestal maanden. Doorlooptijden hangen af van concurrentie en hoe compleet je profiel vandaag is. We beloven geen vaste kaartpackplek.'
+          },
+          {
+            question: 'Helpt lokale SEO bij winterse cv-pieken en zomerse koeling?',
+            answer:
+              'We stemmen GBP-posts, foto’s en lokale pagina’s af op wanneer die zoekopdrachten in jouw regio stijgen — koude-invallen, hittegolven en subsidiegedreven upgrade-seizoenen — zonder te beloven dat je elke seizoensquery bezit.'
+          },
+          {
+            question: 'Wat is het verschil met een installateurswebsite?',
+            answer:
+              'Lokale SEO gaat over gevonden worden in Maps en lokaal zoeken wanneer iemand een bus of installatieofferte nodig heeft. De websitespoke zet dat verkeer om met spoed-CTA’s en formulieren voor geplande installaties. Ze versterken elkaar; deze pagina gaat over vindbaarheid.'
+          },
+          {
+            question: 'Moet de belknop in Google Bedrijfsprofiel staan?',
+            answer:
+              'Ja. Bij spoedstoringen telt de belactie in Maps zwaarder dan een lang contactformulier. We houden uren en nummer accuraat zodat gestreste bellers kunnen tikken zonder je sitefooter te zoeken.'
+          }
+        ]
+      }
+    }
+  },
+
+  'branches-aannemers-website-laten-maken': {
+    parents: ['home', 'branches', 'branches-aannemers'],
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Website design for contractors',
+      category: 'Web Development',
+      offers: [
+        { name: 'Contractor project portfolio website' },
+        { name: 'Quote request form with photo upload' },
+        { name: 'Service-area and trade pages' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Website design for contractors',
+        serviceName: 'Website design for contractors',
+        serviceDescription:
+          'Contractor website design with before/after project portfolios, quote forms that capture job details, service-area clarity, trade pages for renovation and extensions, certifications and mobile paths — built to win project enquiries, not look like a generic brochure.',
+        faqs: [
+          {
+            question: 'How do I show my projects online as a contractor?',
+            answer:
+              'We structure before/after galleries by trade — kitchens, bathrooms, dormers, extensions — with short notes on scope and finish. Homeowners can scan quality on a phone before they request a quote, instead of guessing from a Facebook album.'
+          },
+          {
+            question: 'Will I get better quote requests from the website?',
+            answer:
+              'A form that asks for trade type, rough size, area and photos filters tyre-kickers earlier. Combined with clear minimum-job notes and catchment, you spend less time on “can you hang a shelf” chats and more on jobs you can price.'
+          },
+          {
+            question: 'Can I add project photos myself after launch?',
+            answer:
+              'Yes. We train you or the office to upload new before/after sets after a kitchen or bathroom handover, so the portfolio stays current without a developer for every job.'
+          },
+          {
+            question: 'How do homeowners find me in my service area?',
+            answer:
+              'The website makes towns and trades obvious and converts visitors who already found you. Local SEO (a separate engagement) strengthens Maps and “renovation [town]” visibility. We do not promise a fixed ranking.'
+          },
+          {
+            question: 'How long does a contractor website project take?',
+            answer:
+              'Most contractor sites launch in about four to eight weeks, depending on how ready your project photos and services list are. Discovery starts with your quote flow so we do not ship a clinic-style template.'
+          },
+          {
+            question: 'Should VCA and insurance appear on the site?',
+            answer:
+              'Where they apply, yes. Showing certifications, warranty schemes and liability cover next to the quote CTA helps private clients trust you before they compare three vans on WhatsApp.'
+          },
+          {
+            question: 'Can the site filter out jobs that are too small?',
+            answer:
+              'We can state typical job sizes per trade and ask form questions that steer micro-jobs away. Exact filtering depends on how strict you want the first reply to be.'
+          },
+          {
+            question: 'Does the quote form work well on a phone on site?',
+            answer:
+              'Yes. We design for dusty thumbs: sticky quote CTAs, photo upload from the camera roll, and service pages that load on uneven site wifi as well as at the kitchen table.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Website laten maken voor aannemers',
+        serviceName: 'Website laten maken voor aannemers',
+        serviceDescription:
+          'Aannemerswebsite laten maken met voor/na-projectportfolio’s, offerteformulieren die klusdetails uitvragen, duidelijk werkgebied, dienstenpagina’s voor verbouwing en aanbouw, certificeringen en mobiele paden — gebouwd om projectaanvragen te winnen, geen generieke brochure.',
+        faqs: [
+          {
+            question: 'Hoe toon ik mijn projecten online als aannemer?',
+            answer:
+              'We structureren voor/na-galerijen per vak — keukens, badkamers, dakkapellen, uitbouwen — met korte notities over scope en afwerking. Huiseigenaren kunnen kwaliteit op de telefoon scannen vóór ze een offerte aanvragen, in plaats van te gokken vanuit een Facebookalbum.'
+          },
+          {
+            question: 'Krijg ik betere offerteaanvragen via de website?',
+            answer:
+              'Een formulier dat vaktype, globale omvang, plaats en foto’s vraagt, filtert shoppers eerder. Gecombineerd met duidelijke minimale klusgrootte en werkgebied besteed je minder tijd aan “kun je een plankje ophangen”-chats en meer aan klussen die je kunt begroten.'
+          },
+          {
+            question: 'Kan ik zelf foto’s toevoegen na livegang?',
+            answer:
+              'Ja. We trainen jou of het kantoor om nieuwe voor/na-sets te uploaden na een keuken- of badkameroplevering, zodat het portfolio actueel blijft zonder developer voor elke klus.'
+          },
+          {
+            question: 'Hoe word ik gevonden in mijn werkgebied?',
+            answer:
+              'De website maakt gemeenten en vakken duidelijk en zet bezoekers om die je al vonden. Lokale SEO (apart traject) versterkt Maps en zichtbaarheid op “verbouwing [plaats]”. We beloven geen vaste ranking.'
+          },
+          {
+            question: 'Hoe lang duurt een website-traject voor aannemers?',
+            answer:
+              'De meeste aannemerssites gaan in ongeveer vier tot acht weken live, afhankelijk van hoe klaar je projectfoto’s en dienstenlijst zijn. Discovery start bij je offerteflow, zodat we geen kliniekachtige template opleveren.'
+          },
+          {
+            question: 'Moeten VCA en verzekering op de site staan?',
+            answer:
+              'Waar van toepassing: ja. Certificeringen, garantieregelingen en aansprakelijkheidsdekking naast de offerte-CTA helpen particulieren jou te vertrouwen vóór ze drie busjes via WhatsApp vergelijken.'
+          },
+          {
+            question: 'Kan de site te kleine klussen filteren?',
+            answer:
+              'We kunnen typische klusgroottes per vak noemen en formulierenvragen stellen die microklussen wegsturen. Exacte filtering hangt af van hoe streng je de eerste reactie wilt.'
+          },
+          {
+            question: 'Werkt het offerteformulier goed op de telefoon op de bouw?',
+            answer:
+              'Ja. We ontwerpen voor stoffige duimen: vaste offerte-CTA’s, foto-upload vanuit de camerarol, en dienstenpagina’s die laden op matige bouwplaats-wifi én aan de keukentafel.'
+          }
+        ]
+      }
+    }
+  },
+
+  'branches-aannemers-lokale-seo': {
+    parents: ['home', 'branches', 'branches-aannemers'],
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Local SEO for contractors',
+      category: 'Digital Marketing',
+      offers: [
+        { name: 'Service-area Google Business Profile for contractors' },
+        { name: 'Town and catchment landing pages' },
+        { name: 'Trade keyword and review growth' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Local SEO for contractors',
+        serviceName: 'Local SEO for contractors',
+        serviceDescription:
+          'Local SEO for contractors focused on service-area Google Business Profile, multi-town pages, trade + place keywords, project photos and homeowner reviews — competing for organic discovery beside lead platforms, without ranking guarantees.',
+        faqs: [
+          {
+            question: 'How do I get found in multiple towns as a contractor?',
+            answer:
+              'Configure GBP as a service-area business covering your real radius, then support that with town or catchment pages for places you actually drive to. Thin pages for every postcode do not help; useful local pages plus consistent service-area signals do.'
+          },
+          {
+            question: 'Does local SEO work without a showroom?',
+            answer:
+              'Yes. Most contractors are mobile. Google supports service-area businesses so you can appear for nearby searches without pretending you have a retail shopfront. We set categories, service towns and contact actions for that model.'
+          },
+          {
+            question: 'How do I get more Google reviews as a contractor?',
+            answer:
+              'Ask after a clean handover — when the kitchen or bathroom is finished and the client is happy — with a short Google review link. We help set a simple post-job habit so requests stay consistent without pressuring people mid-build.'
+          },
+          {
+            question: 'Is local SEO better than Werkspot or similar platforms?',
+            answer:
+              'They solve different problems. Platforms sell leads; local SEO builds owned discovery when someone searches Google for a contractor in their town. Many firms use both while they grow organic visibility — we do not claim one replaces the other overnight.'
+          },
+          {
+            question: 'How long does local SEO take for a contractor?',
+            answer:
+              'GBP and review improvements often show within a few weeks. Stable relevance for competitive “contractor [city]” or “dormer [town]” terms across a radius usually needs several months. Timelines depend on competition and how complete your profile is today. We do not promise a fixed map-pack place.'
+          },
+          {
+            question: 'Should I put project photos in Google Business Profile?',
+            answer:
+              'Yes. Before/after and site shots help homeowners choose between two map pins before they open a website. Stock scaffolding photos rarely win that glance.'
+          },
+          {
+            question: 'How is this different from a contractor website?',
+            answer:
+              'Local SEO is about being found in Maps and local search across your towns. The website spoke converts that traffic with portfolios and quote forms. They support each other; this page covers findability.'
+          },
+          {
+            question: 'Can local SEO help with seasonal jobs like roofs or insulation?',
+            answer:
+              'We align GBP posts, photos and local content with when those searches rise in your region — after storms, before winter — without promising you will own every seasonal query.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Lokale SEO voor aannemers',
+        serviceName: 'Lokale SEO voor aannemers',
+        serviceDescription:
+          'Lokale SEO voor aannemers gericht op service-area Google Bedrijfsprofiel, multi-plaats pagina’s, vak + plaatszoekwoorden, projectfoto’s en reviews van particulieren — concurreren om organische ontdekking naast leadplatforms, zonder rankinggaranties.',
+        faqs: [
+          {
+            question: 'Hoe word ik gevonden in meerdere plaatsen als aannemer?',
+            answer:
+              'Richt GBP in als service-area business voor jouw echte straal, en ondersteun dat met plaats- of werkgebiedpagina’s voor gemeenten waar je écht heen rijdt. Dunne pagina’s voor elke postcode helpen niet; nuttige lokale pagina’s plus consistente service-area-signalen wel.'
+          },
+          {
+            question: 'Werkt lokale SEO zonder showroom?',
+            answer:
+              'Ja. De meeste aannemers zijn mobiel. Google ondersteunt service-area businesses zodat je bij zoekopdrachten in de buurt kunt verschijnen zonder een winkelfront te veinzen. We zetten categorieën, werkplaatsen en contactacties voor dat model.'
+          },
+          {
+            question: 'Hoe krijg ik meer Google-reviews als aannemer?',
+            answer:
+              'Vraag na een nette oplevering — als de keuken of badkamer klaar is en de klant tevreden — met een korte Google-reviewlink. We helpen een eenvoudige na-klusgewoonte opzetten zodat verzoeken consistent blijven zonder druk tijdens de bouw.'
+          },
+          {
+            question: 'Is lokale SEO beter dan Werkspot of vergelijkbare platforms?',
+            answer:
+              'Ze lossen andere problemen op. Platforms verkopen leads; lokale SEO bouwt owned ontdekking wanneer iemand Google opent voor een aannemer in hun plaats. Veel bedrijven gebruiken beide terwijl organische zichtbaarheid groeit — we claimen niet dat één het andere overnight vervangt.'
+          },
+          {
+            question: 'Hoe lang duurt lokale SEO voor een aannemer?',
+            answer:
+              'GBP- en reviewverbeteringen zie je vaak binnen enkele weken. Stabiele relevantie voor concurrerende “aannemer [stad]”- of “dakkapel [plaats]”-termen over een straal vraagt meestal maanden. Doorlooptijden hangen af van concurrentie en hoe compleet je profiel vandaag is. We beloven geen vaste kaartpackplek.'
+          },
+          {
+            question: 'Moet ik projectfoto’s in Google Bedrijfsprofiel zetten?',
+            answer:
+              'Ja. Voor/na- en bouwplaatsfoto’s helpen huiseigenaren kiezen tussen twee kaartpins vóór ze een website openen. Stocksteigerfoto’s winnen die blik zelden.'
+          },
+          {
+            question: 'Wat is het verschil met een aannemerswebsite?',
+            answer:
+              'Lokale SEO gaat over gevonden worden in Maps en lokaal zoeken over jouw gemeenten. De websitespoke zet dat verkeer om met portfolio’s en offerteforms. Ze versterken elkaar; deze pagina gaat over vindbaarheid.'
+          },
+          {
+            question: 'Helpt lokale SEO bij seizoensklussen zoals dak of isolatie?',
+            answer:
+              'We stemmen GBP-posts, foto’s en lokale content af op wanneer die zoekopdrachten in jouw regio stijgen — na stormen, vóór de winter — zonder te beloven dat je elke seizoensquery bezit.'
+          }
+        ]
+      }
+    }
+  },
+
   'branches-restaurants-lokale-seo': {
     parents: ['home', 'branches', 'branches-restaurants'],
     extras: [buildProfessionalServiceSchema()],

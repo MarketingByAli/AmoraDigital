@@ -562,7 +562,6 @@ export default function MakelaarsWebsiteLatenMaken() {
               <BranchSpokeCard
                 key={spoke.slug}
                 industrySlug="makelaars"
-                hubPath={hubPath}
                 spoke={spoke}
                 locale={locale}
                 ctaLabel={t.siblingsCta}

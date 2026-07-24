@@ -103,7 +103,6 @@ export default function Makelaars() {
   const { pathname } = useLocation()
   const locale: Locale = localeFromPath(pathname)
   const t = T[locale]
-  const hubPath = ROUTES['branches-makelaars'][locale]
 
   return (
     <div>
@@ -161,7 +160,6 @@ export default function Makelaars() {
               <BranchSpokeCard
                 key={spoke.slug}
                 industrySlug="makelaars"
-                hubPath={hubPath}
                 spoke={spoke}
                 locale={locale}
                 ctaLabel={t.learnMore}

@@ -560,7 +560,6 @@ export default function MakelaarsLokaleSeo() {
               <BranchSpokeCard
                 key={spoke.slug}
                 industrySlug="makelaars"
-                hubPath={hubPath}
                 spoke={spoke}
                 locale={locale}
                 ctaLabel={t.siblingsCta}

@@ -561,7 +561,6 @@ export default function FysiotherapeutenWebsiteLatenMaken() {
               <BranchSpokeCard
                 key={spoke.slug}
                 industrySlug="fysiotherapeuten"
-                hubPath={hubPath}
                 spoke={spoke}
                 locale={locale}
                 ctaLabel={t.siblingsCta}

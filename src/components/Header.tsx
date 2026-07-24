@@ -36,6 +36,10 @@ import { UI } from '../i18n/ui'
 import { getLiveBranchHubs } from '../data/branches'
 import LanguageSwitcher from './LanguageSwitcher'
 
+/** Compact industries mega-menu: 3 cols fits ~20 hubs without viewport overflow. */
+const INDUSTRIES_DESKTOP_PANEL =
+  'bg-white rounded-2xl shadow-2xl border border-slate-100 p-4 w-[min(42rem,calc(100vw-2rem))] animate-fade-in'
+
 type NavItem = {
   icon: typeof Globe
   name: string
@@ -257,33 +261,42 @@ export default function Header() {
 
               {activeDropdown === 'industries' && (
                 <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4">
-                  <div className="bg-white rounded-2xl shadow-2xl border border-slate-100 p-4 w-80 animate-fade-in">
-                    <Link to={branchesPath} className="flex items-center gap-2 mb-3 pb-3 border-b border-slate-100 hover:opacity-80 transition-opacity">
+                  <div className={INDUSTRIES_DESKTOP_PANEL}>
+                    <Link
+                      to={branchesPath}
+                      className="flex items-center gap-2 mb-3 pb-3 border-b border-slate-100 hover:opacity-80 transition-opacity"
+                    >
                       <div className="w-8 h-8 rounded-lg bg-primary-100 flex items-center justify-center">
                         <Building2 className="w-4 h-4 text-primary-600" />
                       </div>
-                      <div>
-                        <h3 className="font-semibold text-slate-900">{ui.nav.industries}</h3>
-                        <p className="text-xs text-slate-500">{ui.nav.industriesTagline}</p>
-                      </div>
+                      <h3 className="font-semibold text-slate-900">{ui.nav.industries}</h3>
                     </Link>
-                    <div className="space-y-1">
-                      {liveHubs.map((hub) => (
-                        <Link
-                          key={hub.routeKey}
-                          to={ROUTES[hub.routeKey][locale]}
-                          className="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors group"
-                        >
-                          <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
-                            <Building2 className="w-5 h-5 text-white" />
-                          </div>
-                          <div>
-                            <div className="text-sm font-medium text-slate-900 group-hover:text-primary-600 transition-colors">{hub.name[locale]}</div>
-                            <div className="text-xs text-slate-500">{hub.benefit[locale]}</div>
-                          </div>
-                        </Link>
-                      ))}
+                    <div className="grid grid-cols-2 xl:grid-cols-3 gap-0.5">
+                      {liveHubs.map((hub) => {
+                        const Icon = hub.icon
+                        return (
+                          <Link
+                            key={hub.routeKey}
+                            to={ROUTES[hub.routeKey][locale]}
+                            className="flex items-center gap-2.5 px-2.5 py-2 rounded-xl hover:bg-slate-50 transition-colors group min-w-0"
+                          >
+                            <div className="w-8 h-8 shrink-0 rounded-lg bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
+                              <Icon className="w-4 h-4 text-white" aria-hidden />
+                            </div>
+                            <span className="text-sm font-medium text-slate-900 group-hover:text-primary-600 transition-colors truncate">
+                              {hub.name[locale]}
+                            </span>
+                          </Link>
+                        )
+                      })}
                     </div>
+                    <Link
+                      to={branchesPath}
+                      className="mt-3 pt-3 border-t border-slate-100 flex items-center justify-center gap-1.5 text-sm font-medium text-primary-600 hover:text-primary-700 transition-colors"
+                    >
+                      {ui.footer.viewAllIndustries}
+                      <ArrowRight className="w-4 h-4" aria-hidden />
+                    </Link>
                   </div>
                 </div>
               )}
@@ -359,7 +372,7 @@ export default function Header() {
         </div>
 
         {mobileMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-slate-100 animate-fade-in">
+          <div className="lg:hidden py-4 border-t border-slate-100 animate-fade-in max-h-[calc(100dvh-5rem)] overflow-y-auto overscroll-contain">
             <div className="px-4 pb-3 flex items-center justify-end">
               <LanguageSwitcher />
             </div>
@@ -414,17 +427,29 @@ export default function Header() {
                 </button>
               </div>
               {activeDropdown === 'industries-mobile' && (
-                <div className="ml-4 mt-2 space-y-1">
-                  <Link to={branchesPath} className="flex items-center gap-3 px-4 py-2 text-sm text-slate-600 hover:text-primary-600 hover:bg-slate-50 rounded-lg" onClick={() => setMobileMenuOpen(false)}>
-                    <Building2 className="w-4 h-4" />
-                    {ui.nav.industries}
+                <div className="ml-4 mt-2 space-y-1 max-h-[min(22rem,50dvh)] overflow-y-auto overscroll-contain">
+                  {liveHubs.map((hub) => {
+                    const Icon = hub.icon
+                    return (
+                      <Link
+                        key={hub.routeKey}
+                        to={ROUTES[hub.routeKey][locale]}
+                        className="flex items-center gap-3 px-4 py-2 text-sm text-slate-600 hover:text-primary-600 hover:bg-slate-50 rounded-lg"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        <Icon className="w-4 h-4 shrink-0" aria-hidden />
+                        {hub.name[locale]}
+                      </Link>
+                    )
+                  })}
+                  <Link
+                    to={branchesPath}
+                    className="flex items-center gap-3 px-4 py-2 text-sm font-medium text-primary-600 hover:text-primary-700 hover:bg-slate-50 rounded-lg"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    <ArrowRight className="w-4 h-4 shrink-0" aria-hidden />
+                    {ui.footer.viewAllIndustries}
                   </Link>
-                  {liveHubs.map((hub) => (
-                    <Link key={hub.routeKey} to={ROUTES[hub.routeKey][locale]} className="flex items-center gap-3 px-4 py-2 text-sm text-slate-600 hover:text-primary-600 hover:bg-slate-50 rounded-lg" onClick={() => setMobileMenuOpen(false)}>
-                      <Building2 className="w-4 h-4" />
-                      {hub.name[locale]}
-                    </Link>
-                  ))}
                 </div>
               )}
             </div>

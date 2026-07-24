@@ -51,6 +51,21 @@ const BranchesTandartsen = lazy(() => import('./pages/branches/Tandartsen'))
 const BranchesFysiotherapeuten = lazy(() => import('./pages/branches/Fysiotherapeuten'))
 const BranchesKappersSchoonheidssalons = lazy(() => import('./pages/branches/KappersSchoonheidssalons'))
 const BranchesMakelaars = lazy(() => import('./pages/branches/Makelaars'))
+const BranchesAannemers = lazy(() => import('./pages/branches/Aannemers'))
+const BranchesInstallateurs = lazy(() => import('./pages/branches/Installateurs'))
+const BranchesAdvocatenNotarissen = lazy(() => import('./pages/branches/AdvocatenNotarissen'))
+const BranchesInstallateursWebsiteLatenMaken = lazy(
+  () => import('./pages/branches/installateurs/WebsiteLatenMaken')
+)
+const BranchesInstallateursLokaleSeo = lazy(
+  () => import('./pages/branches/installateurs/LokaleSeo')
+)
+const BranchesAannemersWebsiteLatenMaken = lazy(
+  () => import('./pages/branches/aannemers/WebsiteLatenMaken')
+)
+const BranchesAannemersLokaleSeo = lazy(
+  () => import('./pages/branches/aannemers/LokaleSeo')
+)
 const BranchesRestaurantsWebsiteLatenMaken = lazy(
   () => import('./pages/branches/restaurants/WebsiteLatenMaken')
 )
@@ -181,6 +196,28 @@ function App() {
               <Route path={ROUTES['branches-fysiotherapeuten'].en} element={<BranchesFysiotherapeuten />} />
               <Route path={ROUTES['branches-kappers-schoonheidssalons'].en} element={<BranchesKappersSchoonheidssalons />} />
               <Route path={ROUTES['branches-makelaars'].en} element={<BranchesMakelaars />} />
+              <Route path={ROUTES['branches-aannemers'].en} element={<BranchesAannemers />} />
+              <Route path={ROUTES['branches-installateurs'].en} element={<BranchesInstallateurs />} />
+              <Route
+                path={ROUTES['branches-advocaten-notarissen'].en}
+                element={<BranchesAdvocatenNotarissen />}
+              />
+              <Route
+                path={ROUTES['branches-installateurs-website-laten-maken'].en}
+                element={<BranchesInstallateursWebsiteLatenMaken />}
+              />
+              <Route
+                path={ROUTES['branches-installateurs-lokale-seo'].en}
+                element={<BranchesInstallateursLokaleSeo />}
+              />
+              <Route
+                path={ROUTES['branches-aannemers-website-laten-maken'].en}
+                element={<BranchesAannemersWebsiteLatenMaken />}
+              />
+              <Route
+                path={ROUTES['branches-aannemers-lokale-seo'].en}
+                element={<BranchesAannemersLokaleSeo />}
+              />
               <Route
                 path={ROUTES['branches-restaurants-website-laten-maken'].en}
                 element={<BranchesRestaurantsWebsiteLatenMaken />}
@@ -270,6 +307,28 @@ function App() {
               <Route path={ROUTES['branches-fysiotherapeuten'].nl} element={<BranchesFysiotherapeuten />} />
               <Route path={ROUTES['branches-kappers-schoonheidssalons'].nl} element={<BranchesKappersSchoonheidssalons />} />
               <Route path={ROUTES['branches-makelaars'].nl} element={<BranchesMakelaars />} />
+              <Route path={ROUTES['branches-aannemers'].nl} element={<BranchesAannemers />} />
+              <Route path={ROUTES['branches-installateurs'].nl} element={<BranchesInstallateurs />} />
+              <Route
+                path={ROUTES['branches-advocaten-notarissen'].nl}
+                element={<BranchesAdvocatenNotarissen />}
+              />
+              <Route
+                path={ROUTES['branches-installateurs-website-laten-maken'].nl}
+                element={<BranchesInstallateursWebsiteLatenMaken />}
+              />
+              <Route
+                path={ROUTES['branches-installateurs-lokale-seo'].nl}
+                element={<BranchesInstallateursLokaleSeo />}
+              />
+              <Route
+                path={ROUTES['branches-aannemers-website-laten-maken'].nl}
+                element={<BranchesAannemersWebsiteLatenMaken />}
+              />
+              <Route
+                path={ROUTES['branches-aannemers-lokale-seo'].nl}
+                element={<BranchesAannemersLokaleSeo />}
+              />
               <Route
                 path={ROUTES['branches-restaurants-website-laten-maken'].nl}
                 element={<BranchesRestaurantsWebsiteLatenMaken />}

@@ -1,104 +1,106 @@
 import { Link, useLocation } from 'react-router-dom'
 import {
-  Activity,
   ArrowRight,
   CheckCircle2,
   Globe,
+  HardHat,
   MapPin,
-  Sparkles,
-  Target
+  Megaphone,
+  Sparkles
 } from 'lucide-react'
 import { ROUTES, localeFromPath, type Locale } from '../../i18n/routes'
 import { BRANCH_SPOKES } from '../../data/branchSpokes'
 import BranchSpokeCard from '../../components/BranchSpokeCard'
 
-const SPOKES = BRANCH_SPOKES.fysiotherapeuten
-const SPOKE_ICONS = [Globe, MapPin, Target] as const
+const SPOKES = BRANCH_SPOKES.aannemers
+const SPOKE_ICONS = [Globe, MapPin, Megaphone] as const
 
 const T = {
   en: {
     crumbHome: 'Home',
     crumbBranches: 'Industries',
-    crumbCurrent: 'Physiotherapists',
-    badge: 'Physio marketing',
-    h1: 'Online marketing for physiotherapists',
+    crumbCurrent: 'Contractors',
+    badge: 'Contractor marketing',
+    h1: 'Online marketing for contractors',
     heroSub:
-      'We help physiotherapy practices attract new clients and fill their agenda through websites, local SEO and Google Ads. With 1,500+ completed projects, we know what works for physio clinics.',
+      'We help contractors and trades businesses win more project enquiries and better-quality jobs online — through a clear website, local findability and campaigns that reach homeowners ready to renovate. With 1,500+ completed projects, we know what works on the building site and in Google.',
     trust: '1,500+ completed projects',
     servicesBadge: 'Our services',
-    servicesHead: 'What we do for physiotherapists',
+    servicesHead: 'What we do for contractors',
     servicesSub:
-      'Services for injury searches, referral partners and repeat treatment blocks — aligned with how people pick a physio. Choose a service for detail.',
+      'Work shaped around quote requests, project portfolios and trade + city searches — not salon booking flows or restaurant menus. Pick a service for the detail.',
     learnMore: 'Learn more',
     whyBadge: 'Why Amora Digital',
-    whyHead: 'Why physio practices choose us',
-    whySub: 'Physio clients often arrive in pain or via referral. We build visibility for both paths.',
+    whyHead: 'Why contractors choose us',
+    whySub:
+      'Building work is local, seasonal and trust-heavy. We plan around how homeowners compare quotes and decide who gets on the roof or in the kitchen.',
     whyItems: [
       {
-        title: 'Industry experience',
-        desc: 'We know physio practices: trust, treatment pages, referrals and the need for a full agenda.'
+        title: 'Trade-aware marketing',
+        desc: 'We speak renovation and build language: extensions, kitchens, roofs, bathrooms — not clinic intakes or dinner covers.'
       },
       {
-        title: 'Local focus',
-        desc: 'Clients search nearby. We optimise for local visibility and Google Business Profile.'
+        title: 'Local job catchment',
+        desc: 'Homeowners search by trade and town. We tune Google Business Profile and regional pages for that catchment.'
       },
       {
-        title: 'Measurable results',
-        desc: 'We steer on new clients, calls and bookings — not vanity metrics alone.'
+        title: 'Quote-quality focus',
+        desc: 'We steer on project enquiries you can price — photos, scope clarity and contact paths that filter tyre-kickers.'
       },
       {
-        title: 'Everything under one roof',
-        desc: 'Condition pages, Maps presence, Google Ads and follow-up content share one brief — so someone who finds you for a shoulder issue sees the same story when they book.'
+        title: 'One partner from site to search',
+        desc: 'Portfolio site, local SEO and later ads share one brief — so your before/after work looks as sharp on Maps as on the van.'
       }
     ],
-    ctaHeading: 'Ready to bring more clients through your door?',
+    ctaHeading: 'Ready for more project enquiries from your area?',
     ctaSub:
-      'Share your specialisms, referral sources and availability gaps. We will map what fills empty slots in your week.',
+      'Tell us your trades, typical job size and towns you cover. We will sketch how homeowners find a contractor before they shortlist three quotes.',
     ctaButton: 'Request a quote'
   },
   nl: {
     crumbHome: 'Home',
     crumbBranches: 'Branches',
-    crumbCurrent: 'Fysiotherapeuten',
-    badge: 'Fysiotherapie marketing',
-    h1: 'Online marketing voor fysiotherapeuten',
+    crumbCurrent: 'Aannemers & klusbedrijven',
+    badge: 'Aannemersmarketing',
+    h1: 'Online marketing voor aannemers & klusbedrijven',
     heroSub:
-      'Wij helpen fysiotherapiepraktijken nieuwe cliënten aantrekken en hun agenda vullen via websites, lokale SEO en Google Ads. Met 1.500+ afgeronde projecten weten we wat werkt voor fysiotherapeuten.',
+      'Wij helpen aannemers en klusbedrijven meer projectaanvragen en betere klussen online binnen te halen — via een duidelijke website, lokale vindbaarheid en campagnes die huiseigenaren bereiken die willen verbouwen. Met 1.500+ afgeronde projecten weten we wat werkt op de bouwplaats én in Google.',
     trust: '1.500+ afgeronde projecten',
     servicesBadge: 'Onze diensten',
-    servicesHead: 'Wat we doen voor fysiotherapeuten',
+    servicesHead: 'Wat we doen voor aannemers',
     servicesSub:
-      'Diensten voor klacht-zoekopdrachten, doorverwijzers en herhalingsblokken — afgestemd op hoe mensen een fysio kiezen. Kies een dienst voor details.',
+      'Werk rond offerteaanvragen, projectportfolio’s en vak + stad-zoekopdrachten — geen salonboekflows of restaurantmenu’s. Kies een dienst voor de details.',
     learnMore: 'Meer informatie',
     whyBadge: 'Waarom Amora Digital',
-    whyHead: 'Waarom fysiotherapiepraktijken voor ons kiezen',
-    whySub: 'Fysiopatiënten komen vaak met pijn of via verwijzing. Wij bouwen zichtbaarheid voor beide routes.',
+    whyHead: 'Waarom aannemers voor ons kiezen',
+    whySub:
+      'Bouwwerk is lokaal, seizoensgebonden en vertrouwensgevoelig. Wij plannen rond hoe huiseigenaren offertes vergelijken en kiezen wie op het dak of in de keuken komt.',
     whyItems: [
       {
-        title: 'Branche-ervaring',
-        desc: 'We kennen fysiopraktijken: vertrouwen, behandelpagina’s, doorverwijzingen en het belang van een volle agenda.'
+        title: 'Vakbewuste marketing',
+        desc: 'We spreken verbouw- en bouwtaal: uitbouwen, keukens, daken, badkamers — geen kliniekintakes of dinercovers.'
       },
       {
-        title: 'Lokale focus',
-        desc: 'Cliënten zoeken dichtbij. Wij optimaliseren voor lokale zichtbaarheid en Google Bedrijfsprofiel.'
+        title: 'Lokaal werkgebied',
+        desc: 'Huiseigenaren zoeken op vak en plaats. We stemmen Google Bedrijfsprofiel en regiopagina’s af op dat verzorgingsgebied.'
       },
       {
-        title: 'Meetbare resultaten',
-        desc: 'We sturen op nieuwe cliënten, belacties en afspraken — niet alleen vanity metrics.'
+        title: 'Focus op offertekwaliteit',
+        desc: 'We sturen op projectaanvragen die je kunt begroten — foto’s, scope-duidelijkheid en contactpaden die shoppers filteren.'
       },
       {
-        title: 'Alles onder één dak',
-        desc: 'Klachtpagina’s, Maps, Google Ads en nazorgcontent delen één briefing — dezelfde boodschap van zoekmoment tot afspraak.'
+        title: 'Één partner van site tot zoektocht',
+        desc: 'Portfoliosite, lokale SEO en later ads delen één briefing — zodat je voor/na-werk even scherp oogt in Maps als op de bus.'
       }
     ],
-    ctaHeading: 'Klaar om meer cliënten binnen te halen?',
+    ctaHeading: 'Klaar voor meer projectaanvragen uit jouw regio?',
     ctaSub:
-      'Vertel over specialisaties, verwijzers en lege uren. We bekijken wat lege plekken in je week vult.',
+      'Vertel je vakken, typische klusgrootte en gemeenten die je bedient. We schetsen hoe huiseigenaren een aannemer vinden vóór ze drie offertes naast elkaar leggen.',
     ctaButton: 'Vraag een offerte aan'
   }
 } as const
 
-export default function Fysiotherapeuten() {
+export default function Aannemers() {
   const { pathname } = useLocation()
   const locale: Locale = localeFromPath(pathname)
   const t = T[locale]
@@ -126,7 +128,7 @@ export default function Fysiotherapeuten() {
             </nav>
 
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-medium mb-6">
-              <Activity className="w-4 h-4" aria-hidden />
+              <HardHat className="w-4 h-4" aria-hidden />
               <span>{t.badge}</span>
             </div>
 
@@ -158,7 +160,7 @@ export default function Fysiotherapeuten() {
             {SPOKES.map((spoke, i) => (
               <BranchSpokeCard
                 key={spoke.slug}
-                industrySlug="fysiotherapeuten"
+                industrySlug="aannemers"
                 spoke={spoke}
                 locale={locale}
                 ctaLabel={t.learnMore}

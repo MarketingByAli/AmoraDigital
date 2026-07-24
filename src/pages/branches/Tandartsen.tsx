@@ -103,7 +103,6 @@ export default function Tandartsen() {
   const { pathname } = useLocation()
   const locale: Locale = localeFromPath(pathname)
   const t = T[locale]
-  const hubPath = ROUTES['branches-tandartsen'][locale]
 
   return (
     <div>
@@ -161,7 +160,6 @@ export default function Tandartsen() {
               <BranchSpokeCard
                 key={spoke.slug}
                 industrySlug="tandartsen"
-                hubPath={hubPath}
                 spoke={spoke}
                 locale={locale}
                 ctaLabel={t.learnMore}

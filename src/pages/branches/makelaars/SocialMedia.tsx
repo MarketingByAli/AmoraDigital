@@ -561,7 +561,6 @@ export default function MakelaarsSocialMedia() {
               <BranchSpokeCard
                 key={spoke.slug}
                 industrySlug="makelaars"
-                hubPath={hubPath}
                 spoke={spoke}
                 locale={locale}
                 ctaLabel={t.siblingsCta}

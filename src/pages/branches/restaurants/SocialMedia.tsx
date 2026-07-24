@@ -561,7 +561,6 @@ export default function RestaurantsSocialMedia() {
               <BranchSpokeCard
                 key={spoke.slug}
                 industrySlug="restaurants"
-                hubPath={hubPath}
                 spoke={spoke}
                 locale={locale}
                 ctaLabel={t.siblingsCta}

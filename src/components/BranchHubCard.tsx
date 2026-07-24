@@ -1,4 +1,4 @@
-import { ArrowRight, Building2 } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import {
   getLiveBranchHub,
@@ -26,6 +26,7 @@ export default function BranchHubCard({
 }: BranchHubCardProps) {
   const live = isLiveBranchHub(industry.slug)
   const hub = getLiveBranchHub(industry.slug)
+  const Icon = industry.icon
 
   const body = (
     <>
@@ -41,7 +42,7 @@ export default function BranchHubCard({
             : 'w-12 h-12 rounded-xl bg-slate-200 flex items-center justify-center mb-4'
         }
       >
-        <Building2 className={`w-6 h-6 ${live ? 'text-white' : 'text-slate-500'}`} aria-hidden />
+        <Icon className={`w-6 h-6 ${live ? 'text-white' : 'text-slate-500'}`} aria-hidden />
       </div>
       <h3
         className={

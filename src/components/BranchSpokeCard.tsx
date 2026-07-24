@@ -1,12 +1,15 @@
 import type { LucideIcon } from 'lucide-react'
 import { ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import { isLiveBranchSpoke, type BranchSpoke } from '../data/branchSpokes'
-import type { Locale } from '../i18n/routes'
+import {
+  getBranchSpokeRouteKey,
+  isLiveBranchSpoke,
+  type BranchSpoke
+} from '../data/branchSpokes'
+import { ROUTES, type Locale } from '../i18n/routes'
 
 type BranchSpokeCardProps = {
   industrySlug: string
-  hubPath: string
   spoke: BranchSpoke
   locale: Locale
   ctaLabel: string
@@ -18,17 +21,18 @@ type BranchSpokeCardProps = {
 /**
  * Renders a spoke as a link when live, or a muted non-clickable card when not.
  * Liveness comes solely from LIVE_BRANCH_SPOKES in data/branchSpokes.ts.
+ * URLs resolve via RouteKey → ROUTES — never hubPath + slug concatenation.
  */
 export default function BranchSpokeCard({
   industrySlug,
-  hubPath,
   spoke,
   locale,
   ctaLabel,
   icon: Icon,
   variant = 'sibling'
 }: BranchSpokeCardProps) {
-  const live = isLiveBranchSpoke(industrySlug, spoke.slug)
+  const routeKey = getBranchSpokeRouteKey(industrySlug, spoke.slug)
+  const live = Boolean(routeKey && isLiveBranchSpoke(industrySlug, spoke.slug))
   const isHub = variant === 'hub'
   const titleClass = isHub
     ? 'text-xl font-bold text-slate-900 mb-2'
@@ -70,12 +74,9 @@ export default function BranchSpokeCard({
     </>
   )
 
-  if (live) {
+  if (live && routeKey) {
     return (
-      <Link
-        to={`${hubPath}/${spoke.slug}`}
-        className={`${paddingClass} group hover:-translate-y-1`}
-      >
+      <Link to={ROUTES[routeKey][locale]} className={`${paddingClass} group hover:-translate-y-1`}>
         {body}
       </Link>
     )

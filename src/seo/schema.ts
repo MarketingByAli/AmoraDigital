@@ -114,28 +114,16 @@ export function buildOrganizationSchema(): JsonObject {
   }
 }
 
-/**
- * WebSite schema — sitewide. Defines the site as an entity with a search
- * action, which can produce a sitelinks search box in Google and helps AI
- * assistants discover internal search intent.
- */
-export function buildWebSiteSchema(language: string = CONTENT_LANGUAGE): JsonObject {
+/** WebSite schema — sitewide entity graph anchor (bilingual EN + NL). */
+export function buildWebSiteSchema(): JsonObject {
   return {
     '@type': 'WebSite',
     '@id': WEBSITE_ID,
     url: SITE_CANONICAL_ORIGIN,
     name: SITE_NAME,
     description: SITE_DESCRIPTION,
-    inLanguage: language,
-    publisher: { '@id': ORG_ID },
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: {
-        '@type': 'EntryPoint',
-        urlTemplate: `${SITE_CANONICAL_ORIGIN}/?s={search_term_string}`
-      },
-      'query-input': 'required name=search_term_string'
-    }
+    inLanguage: ['en', 'nl'],
+    publisher: { '@id': ORG_ID }
   }
 }
 
