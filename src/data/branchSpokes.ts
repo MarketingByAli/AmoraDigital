@@ -26,7 +26,9 @@ export const LIVE_BRANCH_SPOKES: Readonly<Record<string, readonly string[]>> = {
   makelaars: ['website-laten-maken', 'lokale-seo', 'social-media'],
   aannemers: ['website-laten-maken', 'lokale-seo'],
   installateurs: ['website-laten-maken', 'lokale-seo'],
-  'advocaten-notarissen': []
+  'advocaten-notarissen': ['website-laten-maken', 'lokale-seo'],
+  boekhouders: ['website-laten-maken', 'lokale-seo'],
+  autobedrijven: ['website-laten-maken', 'lokale-seo']
 }
 
 /**
@@ -67,15 +69,31 @@ export const BRANCH_SPOKE_ROUTE_KEYS: Readonly<
     'lokale-seo': 'branches-installateurs-lokale-seo'
   },
   /**
-   * Planned spoke RouteKeys (EN: website-design / local-seo / google-ads).
-   * Cast until each spoke’s ROUTES entry + page ship — keeps muted cards link-safe
-   * without registering indexable paths early.
+   * Website + lokale-seo are live in ROUTES. google-ads remains cast until that
+   * page ships — muted card stays link-safe without an indexable path early.
    */
   'advocaten-notarissen': {
-    'website-laten-maken':
-      'branches-advocaten-notarissen-website-laten-maken' as RouteKey,
-    'lokale-seo': 'branches-advocaten-notarissen-lokale-seo' as RouteKey,
+    'website-laten-maken': 'branches-advocaten-notarissen-website-laten-maken',
+    'lokale-seo': 'branches-advocaten-notarissen-lokale-seo',
     'google-ads': 'branches-advocaten-notarissen-google-ads' as RouteKey
+  },
+  /**
+   * Website + lokale-seo are live in ROUTES. google-ads remains cast until that
+   * page ships — muted card stays link-safe without an indexable path early.
+   */
+  boekhouders: {
+    'website-laten-maken': 'branches-boekhouders-website-laten-maken',
+    'lokale-seo': 'branches-boekhouders-lokale-seo',
+    'google-ads': 'branches-boekhouders-google-ads' as RouteKey
+  },
+  /**
+   * Website + lokale-seo are live in ROUTES. google-ads remains cast until that
+   * page ships — muted card stays link-safe without an indexable path early.
+   */
+  autobedrijven: {
+    'website-laten-maken': 'branches-autobedrijven-website-laten-maken',
+    'lokale-seo': 'branches-autobedrijven-lokale-seo',
+    'google-ads': 'branches-autobedrijven-google-ads' as RouteKey
   }
 }
 
@@ -402,6 +420,76 @@ export const BRANCH_SPOKES: Record<string, readonly BranchSpoke[]> = {
       benefit: {
         en: 'Campaigns around high-intent legal moments so qualified case and deed enquiries reach the right desk.',
         nl: 'Campagnes rond juridische momenten met hoge intentie, zodat gekwalificeerde zaak- en akteaanvragen het juiste bureau bereiken.'
+      }
+    }
+  ],
+  boekhouders: [
+    {
+      slug: 'website-laten-maken',
+      name: {
+        en: 'Website design for accountants',
+        nl: 'Website laten maken voor boekhouders'
+      },
+      benefit: {
+        en: 'A clear firm site that shows niches, software and services so the right freelancers and SMEs request an introduction.',
+        nl: 'Een duidelijke kantoorsite die niches, software en diensten toont, zodat de juiste zzp’ers en mkb’ers een kennismaking aanvragen.'
+      }
+    },
+    {
+      slug: 'lokale-seo',
+      name: {
+        en: 'Local SEO for accountants',
+        nl: 'Lokale SEO voor boekhouders'
+      },
+      benefit: {
+        en: 'Get found by zzp and mkb searchers in your region — including Google Business Profile for accounting practices.',
+        nl: 'Word gevonden door zzp- en mkb-zoekers in je regio — inclusief Google Bedrijfsprofiel voor accountantspraktijken.'
+      }
+    },
+    {
+      slug: 'google-ads',
+      name: {
+        en: 'Google Ads for accountants',
+        nl: 'Google Ads voor boekhouders'
+      },
+      benefit: {
+        en: 'Campaigns around tax filing and annual accounts seasons so high-intent entrepreneurs reach your intake.',
+        nl: 'Campagnes rond aangifte- en jaarrekeningperiodes, zodat ondernemers met hoge intentie jullie intake bereiken.'
+      }
+    }
+  ],
+  autobedrijven: [
+    {
+      slug: 'website-laten-maken',
+      name: {
+        en: 'Website design for car dealers & garages',
+        nl: 'Website laten maken voor autobedrijven'
+      },
+      benefit: {
+        en: 'A site that shows stock and workshop services clearly — so drivers book APK or enquire about an occasion without hunting WhatsApp numbers.',
+        nl: 'Een site die voorraad en werkplaatsdiensten helder toont — zodat automobilisten APK boeken of een occasion aanvragen zonder WhatsApp-nummers te zoeken.'
+      }
+    },
+    {
+      slug: 'lokale-seo',
+      name: {
+        en: 'Local SEO for car dealers & garages',
+        nl: 'Lokale SEO voor autobedrijven'
+      },
+      benefit: {
+        en: 'Get found for “garage [city]”, “APK [city]” and local maintenance searches — including Google Business Profile setup.',
+        nl: 'Word gevonden op “garage [stad]”, “APK [stad]” en lokale onderhoudszoeken — inclusief Google Bedrijfsprofiel-opzet.'
+      }
+    },
+    {
+      slug: 'google-ads',
+      name: {
+        en: 'Google Ads for car dealers & garages',
+        nl: 'Google Ads voor autobedrijven'
+      },
+      benefit: {
+        en: 'Campaigns around APK urgency, tyre season and occasion intent so workshop slots and stock enquiries reach the desk.',
+        nl: 'Campagnes rond APK-urgentie, bandenseizoen en occasionintentie, zodat werkplaatsplekken en voorraadaanvragen het bureau bereiken.'
       }
     }
   ]

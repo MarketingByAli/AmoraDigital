@@ -294,6 +294,62 @@ const RELATED_BY_KEY: Partial<Record<RouteKey, RouteKey[]>> = {
     'seo-services',
     'conversion-optimization'
   ],
+  'branches-boekhouders': [
+    'website-design',
+    'local-seo',
+    'paid-advertising',
+    'seo-services',
+    'conversion-optimization'
+  ],
+  'branches-autobedrijven': [
+    'website-design',
+    'local-seo',
+    'paid-advertising',
+    'seo-services',
+    'conversion-optimization'
+  ],
+  'branches-autobedrijven-website-laten-maken': [
+    'website-design',
+    'local-seo',
+    'conversion-optimization',
+    'seo-services',
+    'paid-advertising'
+  ],
+  'branches-autobedrijven-lokale-seo': [
+    'local-seo',
+    'website-design',
+    'seo-services',
+    'paid-advertising',
+    'conversion-optimization'
+  ],
+  'branches-boekhouders-website-laten-maken': [
+    'website-design',
+    'local-seo',
+    'conversion-optimization',
+    'seo-services',
+    'paid-advertising'
+  ],
+  'branches-boekhouders-lokale-seo': [
+    'local-seo',
+    'website-design',
+    'seo-services',
+    'paid-advertising',
+    'conversion-optimization'
+  ],
+  'branches-advocaten-notarissen-website-laten-maken': [
+    'website-design',
+    'local-seo',
+    'conversion-optimization',
+    'seo-services',
+    'paid-advertising'
+  ],
+  'branches-advocaten-notarissen-lokale-seo': [
+    'local-seo',
+    'website-design',
+    'seo-services',
+    'paid-advertising',
+    'conversion-optimization'
+  ],
   'branches-installateurs-website-laten-maken': [
     'website-design',
     'local-seo',

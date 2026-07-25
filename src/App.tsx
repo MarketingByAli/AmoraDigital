@@ -54,6 +54,26 @@ const BranchesMakelaars = lazy(() => import('./pages/branches/Makelaars'))
 const BranchesAannemers = lazy(() => import('./pages/branches/Aannemers'))
 const BranchesInstallateurs = lazy(() => import('./pages/branches/Installateurs'))
 const BranchesAdvocatenNotarissen = lazy(() => import('./pages/branches/AdvocatenNotarissen'))
+const BranchesBoekhouders = lazy(() => import('./pages/branches/Boekhouders'))
+const BranchesAutobedrijven = lazy(() => import('./pages/branches/Autobedrijven'))
+const BranchesAutobedrijvenWebsiteLatenMaken = lazy(
+  () => import('./pages/branches/autobedrijven/WebsiteLatenMaken')
+)
+const BranchesAutobedrijvenLokaleSeo = lazy(
+  () => import('./pages/branches/autobedrijven/LokaleSeo')
+)
+const BranchesBoekhoudersWebsiteLatenMaken = lazy(
+  () => import('./pages/branches/boekhouders/WebsiteLatenMaken')
+)
+const BranchesBoekhoudersLokaleSeo = lazy(
+  () => import('./pages/branches/boekhouders/LokaleSeo')
+)
+const BranchesAdvocatenWebsiteLatenMaken = lazy(
+  () => import('./pages/branches/advocaten-notarissen/WebsiteLatenMaken')
+)
+const BranchesAdvocatenLokaleSeo = lazy(
+  () => import('./pages/branches/advocaten-notarissen/LokaleSeo')
+)
 const BranchesInstallateursWebsiteLatenMaken = lazy(
   () => import('./pages/branches/installateurs/WebsiteLatenMaken')
 )
@@ -203,6 +223,38 @@ function App() {
                 element={<BranchesAdvocatenNotarissen />}
               />
               <Route
+                path={ROUTES['branches-boekhouders'].en}
+                element={<BranchesBoekhouders />}
+              />
+              <Route
+                path={ROUTES['branches-autobedrijven'].en}
+                element={<BranchesAutobedrijven />}
+              />
+              <Route
+                path={ROUTES['branches-autobedrijven-website-laten-maken'].en}
+                element={<BranchesAutobedrijvenWebsiteLatenMaken />}
+              />
+              <Route
+                path={ROUTES['branches-autobedrijven-lokale-seo'].en}
+                element={<BranchesAutobedrijvenLokaleSeo />}
+              />
+              <Route
+                path={ROUTES['branches-boekhouders-website-laten-maken'].en}
+                element={<BranchesBoekhoudersWebsiteLatenMaken />}
+              />
+              <Route
+                path={ROUTES['branches-boekhouders-lokale-seo'].en}
+                element={<BranchesBoekhoudersLokaleSeo />}
+              />
+              <Route
+                path={ROUTES['branches-advocaten-notarissen-website-laten-maken'].en}
+                element={<BranchesAdvocatenWebsiteLatenMaken />}
+              />
+              <Route
+                path={ROUTES['branches-advocaten-notarissen-lokale-seo'].en}
+                element={<BranchesAdvocatenLokaleSeo />}
+              />
+              <Route
                 path={ROUTES['branches-installateurs-website-laten-maken'].en}
                 element={<BranchesInstallateursWebsiteLatenMaken />}
               />
@@ -312,6 +364,38 @@ function App() {
               <Route
                 path={ROUTES['branches-advocaten-notarissen'].nl}
                 element={<BranchesAdvocatenNotarissen />}
+              />
+              <Route
+                path={ROUTES['branches-boekhouders'].nl}
+                element={<BranchesBoekhouders />}
+              />
+              <Route
+                path={ROUTES['branches-autobedrijven'].nl}
+                element={<BranchesAutobedrijven />}
+              />
+              <Route
+                path={ROUTES['branches-autobedrijven-website-laten-maken'].nl}
+                element={<BranchesAutobedrijvenWebsiteLatenMaken />}
+              />
+              <Route
+                path={ROUTES['branches-autobedrijven-lokale-seo'].nl}
+                element={<BranchesAutobedrijvenLokaleSeo />}
+              />
+              <Route
+                path={ROUTES['branches-boekhouders-website-laten-maken'].nl}
+                element={<BranchesBoekhoudersWebsiteLatenMaken />}
+              />
+              <Route
+                path={ROUTES['branches-boekhouders-lokale-seo'].nl}
+                element={<BranchesBoekhoudersLokaleSeo />}
+              />
+              <Route
+                path={ROUTES['branches-advocaten-notarissen-website-laten-maken'].nl}
+                element={<BranchesAdvocatenWebsiteLatenMaken />}
+              />
+              <Route
+                path={ROUTES['branches-advocaten-notarissen-lokale-seo'].nl}
+                element={<BranchesAdvocatenLokaleSeo />}
               />
               <Route
                 path={ROUTES['branches-installateurs-website-laten-maken'].nl}

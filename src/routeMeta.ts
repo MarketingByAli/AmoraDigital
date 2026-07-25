@@ -848,6 +848,198 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
       ],
     }
   },
+  'branches-boekhouders': {
+    en: {
+      title: `Online marketing for accountants | Amora`,
+      description:
+        'Online marketing for accountants and bookkeepers: websites, local SEO and ads for lasting SME clients. 1,500+ projects.',
+      keywords: [
+        'online marketing for accountants',
+        'bookkeeper SEO',
+        'accountant website',
+        'Google Ads accountants'
+      ],
+    },
+    nl: {
+      title: `Online marketing voor boekhouders | Amora`,
+      description:
+        'Online marketing voor boekhouders en accountants: websites, lokale SEO en ads voor langdurige mkb-klanten. 1.500+ projecten.',
+      keywords: [
+        'online marketing voor boekhouders',
+        'SEO accountant',
+        'website boekhouder',
+        'Google Ads boekhouder'
+      ],
+    }
+  },
+  'branches-autobedrijven': {
+    en: {
+      title: `Online marketing for car dealers | Amora`,
+      description:
+        'Online marketing for car dealers and garages: websites, local SEO and ads for APK, workshop and stock. 1,500+ projects.',
+      keywords: [
+        'online marketing for car dealers',
+        'garage SEO',
+        'car dealer website',
+        'Google Ads garage'
+      ],
+    },
+    nl: {
+      title: `Online marketing voor autobedrijven | Amora`,
+      description:
+        'Online marketing voor autobedrijven en garages: websites, lokale SEO en ads voor APK, werkplaats en voorraad. 1.500+ projecten.',
+      keywords: [
+        'online marketing voor autobedrijven',
+        'SEO garage',
+        'website autobedrijf',
+        'Google Ads garage'
+      ],
+    }
+  },
+  'branches-autobedrijven-website-laten-maken': {
+    en: {
+      title: `Website design for car dealers | Amora`,
+      description:
+        'Car dealer & garage website with stock filters, portal sync, APK booking and workshop services. 1,500+ projects.',
+      keywords: [
+        'website design for car dealers',
+        'garage website',
+        'car dealer website design',
+        'APK booking website'
+      ],
+    },
+    nl: {
+      title: `Website laten maken voor autobedrijven | Amora`,
+      description:
+        'Autobedrijfwebsite met voorraadfilters, portalsync, APK-boeking en werkplaatsdiensten. 1.500+ projecten.',
+      keywords: [
+        'website laten maken voor autobedrijven',
+        'website garage',
+        'website autobedrijf',
+        'APK online boeken'
+      ],
+    }
+  },
+  'branches-autobedrijven-lokale-seo': {
+    en: {
+      title: `Local SEO for car dealers | Amora`,
+      description:
+        'Local SEO for car dealers & garages: GBP, APK & city pages, reviews and seasonal workshop search. 1,500+ projects.',
+      keywords: [
+        'local SEO for car dealers',
+        'garage local SEO',
+        'APK SEO city',
+        'Google Business Profile garage'
+      ],
+    },
+    nl: {
+      title: `Lokale SEO voor autobedrijven | Amora`,
+      description:
+        'Lokale SEO voor autobedrijven: GBP, APK- & stadspagina’s, reviews en seizoenswerkplaatszoeken. 1.500+ projecten.',
+      keywords: [
+        'lokale SEO voor autobedrijven',
+        'SEO garage',
+        'APK SEO stad',
+        'Google Bedrijfsprofiel garage'
+      ],
+    }
+  },
+  'branches-boekhouders-website-laten-maken': {
+    en: {
+      title: `Website design for accountants | Amora`,
+      description:
+        'Accountant website with services, niche pages, software signals, packages and B2B intake. 1,500+ projects.',
+      keywords: [
+        'website design for accountants',
+        'bookkeeper website',
+        'accountant website design',
+        'accounting firm website'
+      ],
+    },
+    nl: {
+      title: `Website laten maken voor boekhouders | Amora`,
+      description:
+        'Boekhouderswebsite met diensten, niches, softwaresignalen, pakketten en B2B-intake. 1.500+ projecten.',
+      keywords: [
+        'website laten maken voor boekhouders',
+        'website boekhouder',
+        'website accountant',
+        'boekhoudkantoor website'
+      ],
+    }
+  },
+  'branches-boekhouders-lokale-seo': {
+    en: {
+      title: `Local SEO for accountants | Amora`,
+      description:
+        'Local SEO for accountants: bookkeeper + city keywords, GBP, entrepreneur reviews and niche pages. 1,500+ projects.',
+      keywords: [
+        'local SEO for accountants',
+        'bookkeeper Google Maps',
+        'accountant local SEO',
+        'administratiekantoor SEO'
+      ],
+    },
+    nl: {
+      title: `Lokale SEO voor boekhouders | Amora`,
+      description:
+        'Lokale SEO voor boekhouders: boekhouder + stad, GBP, ondernemersreviews en nichepagina’s. 1.500+ projecten.',
+      keywords: [
+        'lokale SEO voor boekhouders',
+        'boekhouder Google Maps',
+        'lokale SEO accountant',
+        'administratiekantoor SEO'
+      ],
+    }
+  },
+  'branches-advocaten-notarissen-website-laten-maken': {
+    en: {
+      title: `Website design for law firms | Amora`,
+      description:
+        'Law firm website with practice-area pages, lawyer profiles, discreet intake and notary deed quotes. 1,500+ projects.',
+      keywords: [
+        'website design for law firms',
+        'law firm website',
+        'lawyer website design',
+        'notary website'
+      ],
+    },
+    nl: {
+      title: `Website laten maken voor advocaten | Amora`,
+      description:
+        'Advocatenwebsite met rechtsgebiedpagina’s, advocaatprofielen, discrete intake en notarisoffertes. 1.500+ projecten.',
+      keywords: [
+        'website laten maken voor advocaten',
+        'website advocatenkantoor',
+        'website notaris',
+        'rechtsgebiedpagina’s'
+      ],
+    }
+  },
+  'branches-advocaten-notarissen-lokale-seo': {
+    en: {
+      title: `Local SEO for law firms | Amora`,
+      description:
+        'Local SEO for law firms: practice + city keywords, Google Business Profile, ethical reviews and authority. 1,500+ projects.',
+      keywords: [
+        'local SEO for law firms',
+        'lawyer Google Maps',
+        'law firm local SEO',
+        'notary local SEO'
+      ],
+    },
+    nl: {
+      title: `Lokale SEO voor advocaten | Amora`,
+      description:
+        'Lokale SEO voor advocaten: rechtsgebied + stad, Google Bedrijfsprofiel, ethische reviews en autoriteit. 1.500+ projecten.',
+      keywords: [
+        'lokale SEO voor advocaten',
+        'advocaat Google Maps',
+        'lokale SEO advocatenkantoor',
+        'lokale SEO notaris'
+      ],
+    }
+  },
   'branches-installateurs-website-laten-maken': {
     en: {
       title: `Website design for installers | Amora`,

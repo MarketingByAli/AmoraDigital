@@ -80,6 +80,14 @@ export type RouteKey =
   | 'branches-aannemers'
   | 'branches-installateurs'
   | 'branches-advocaten-notarissen'
+  | 'branches-advocaten-notarissen-website-laten-maken'
+  | 'branches-advocaten-notarissen-lokale-seo'
+  | 'branches-boekhouders'
+  | 'branches-boekhouders-website-laten-maken'
+  | 'branches-boekhouders-lokale-seo'
+  | 'branches-autobedrijven'
+  | 'branches-autobedrijven-website-laten-maken'
+  | 'branches-autobedrijven-lokale-seo'
   | 'branches-installateurs-website-laten-maken'
   | 'branches-installateurs-lokale-seo'
   | 'branches-aannemers-website-laten-maken'
@@ -185,6 +193,38 @@ export const ROUTES: Record<RouteKey, Record<Locale, string>> = {
   'branches-advocaten-notarissen': {
     en: '/industries/lawyers-notaries',
     nl: '/nl/branches/advocaten-notarissen'
+  },
+  'branches-advocaten-notarissen-website-laten-maken': {
+    en: '/industries/lawyers-notaries/website-design',
+    nl: '/nl/branches/advocaten-notarissen/website-laten-maken'
+  },
+  'branches-advocaten-notarissen-lokale-seo': {
+    en: '/industries/lawyers-notaries/local-seo',
+    nl: '/nl/branches/advocaten-notarissen/lokale-seo'
+  },
+  'branches-boekhouders': {
+    en: '/industries/accountants',
+    nl: '/nl/branches/boekhouders'
+  },
+  'branches-boekhouders-website-laten-maken': {
+    en: '/industries/accountants/website-design',
+    nl: '/nl/branches/boekhouders/website-laten-maken'
+  },
+  'branches-boekhouders-lokale-seo': {
+    en: '/industries/accountants/local-seo',
+    nl: '/nl/branches/boekhouders/lokale-seo'
+  },
+  'branches-autobedrijven': {
+    en: '/industries/car-dealers-garages',
+    nl: '/nl/branches/autobedrijven'
+  },
+  'branches-autobedrijven-website-laten-maken': {
+    en: '/industries/car-dealers-garages/website-design',
+    nl: '/nl/branches/autobedrijven/website-laten-maken'
+  },
+  'branches-autobedrijven-lokale-seo': {
+    en: '/industries/car-dealers-garages/local-seo',
+    nl: '/nl/branches/autobedrijven/lokale-seo'
   },
   'branches-installateurs-website-laten-maken': {
     en: '/industries/installers/website-design',

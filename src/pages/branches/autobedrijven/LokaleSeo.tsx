@@ -1,0 +1,601 @@
+import { Link, useLocation } from 'react-router-dom'
+import {
+  ArrowRight,
+  Car,
+  CheckCircle2,
+  MapPin,
+  MapPinned,
+  Phone,
+  Search,
+  Snowflake,
+  Sparkles,
+  Star,
+  Wrench
+} from 'lucide-react'
+import { ROUTES, localeFromPath, type Locale } from '../../../i18n/routes'
+import { BRANCH_SPOKES } from '../../../data/branchSpokes'
+import BranchSpokeCard from '../../../components/BranchSpokeCard'
+
+const FEATURE_ICONS = [
+  MapPinned,
+  Search,
+  Wrench,
+  Star,
+  Snowflake,
+  MapPin,
+  Phone,
+  Car
+] as const
+
+const FEATURES = [
+  {
+    en: {
+      title: 'GBP built for a garage, not a shopfront',
+      description:
+        'Google Business Profile with workshop services, yard photos, accurate APK and service hours and a call button — so drivers searching “garage near me” see a real workshop, not a vague car-sales pin.'
+    },
+    nl: {
+      title: 'GBP gebouwd voor een garage, geen winkelfront',
+      description:
+        'Google Bedrijfsprofiel met werkplaatsdiensten, terreinfoto’s, accurate APK- en service-uren en een belknop — zodat automobilisten die “garage bij mij” zoeken een echte werkplaats zien, geen vaag autoverkoop-pinnetje.'
+    }
+  },
+  {
+    en: {
+      title: 'Urgent workshop keywords that fill bays',
+      description:
+        'We target “APK [city]”, “garage near me”, “tyre change [city]” and “airco refill [city]” — the phrases people type when an inspection deadline or a seasonal service cannot wait.'
+    },
+    nl: {
+      title: 'Urgente werkplaatszoekwoorden die bruggen vullen',
+      description:
+        'We mikken op “APK [stad]”, “garage in de buurt”, “bandenwissel [stad]” en “airco bijvullen [stad]” — frasen die mensen typen wanneer een keuringsdeadline of seizoensservice niet kan wachten.'
+    }
+  },
+  {
+    en: {
+      title: 'Service + city landing pages',
+      description:
+        'Dedicated local pages for APK, maintenance, tyres and airco per town you serve — so Maps and organic clicks land on the right workshop story, not one thin “services” blob.'
+    },
+    nl: {
+      title: 'Dienst- + stadslandingspagina’s',
+      description:
+        'Dedicatie lokale pagina’s voor APK, onderhoud, banden en airco per stad die je bedient — zodat Maps- en organische klikken op het juiste werkplaatsverhaal landen, geen dun “diensten”-blok.'
+    }
+  },
+  {
+    en: {
+      title: 'Reviews against “expensive garage” fear',
+      description:
+        'Post-APK and post-service review habits with a short Google link — so your strip shows recent workshop proof that calms drivers who fear opaque bills before they book.'
+    },
+    nl: {
+      title: 'Reviews tegen “dure garage”-angst',
+      description:
+        'Reviewgewoontes na APK en onderhoud met een korte Google-link — zodat je strip recente werkplaatsbewijs toont dat automobilisten dempt die ondoorzichtige nota’s vrezen vóór ze boeken.'
+    }
+  },
+  {
+    en: {
+      title: 'Seasonal search peaks on the calendar',
+      description:
+        'Tyre change in spring and autumn, holiday checks before long trips, airco in summer — we keep GBP posts and local pages aligned with when those garage queries spike in your city.'
+    },
+    nl: {
+      title: 'Seizoenszoekpieken op de kalender',
+      description:
+        'Bandenwissel in voorjaar en najaar, vakantiecheck vóór lange ritten, airco in de zomer — we houden GBP-posts en lokale pagina’s in lijn met wanneer die garagequeries in jouw stad pieken.'
+    }
+  },
+  {
+    en: {
+      title: 'Local pack focus on workshop demand',
+      description:
+        'Map-pack work prioritises APK and service intent — because local SEO carries more weight for the workshop engine than for make/model occasion browsing that often starts on portals.'
+    },
+    nl: {
+      title: 'Local-packfocus op werkplaatsvraag',
+      description:
+        'Kaartpackwerk prioriteert APK- en service-intentie — omdat lokale SEO zwaarder weegt voor de werkplaatsmotor dan voor merk-/model-occasionbrowsen dat vaak op portals begint.'
+    }
+  },
+  {
+    en: {
+      title: 'Call actions when the diary is urgent',
+      description:
+        'Phone and directions in GBP stay accurate for same-day APK slots and walk-in questions — drivers book from Maps before they open a long website form.'
+    },
+    nl: {
+      title: 'Belacties wanneer de agenda urgent is',
+      description:
+        'Telefoon en route in GBP blijven accuraat voor APK-plekken dezelfde dag en inloopvragen — automobilisten boeken vanuit Maps vóór ze een lang websiteformulier openen.'
+    }
+  },
+  {
+    en: {
+      title: 'Multi-location yards without mixed signals',
+      description:
+        'When you run several sites, we structure categories, NAP and location pages so each yard competes for its city without confusing Maps about which bridge books the APK.'
+    },
+    nl: {
+      title: 'Meerdere vestigingen zonder gemengde signalen',
+      description:
+        'Bij meerdere locaties structureren we categorieën, NAP en locatiepagina’s zodat elk terrein om zijn stad concurreert zonder Maps te verwarren over welke brug de APK boekt.'
+    }
+  }
+] as const
+
+const PROCESS_STEPS = [
+  {
+    en: {
+      step: '01',
+      title: 'Workshop visibility audit',
+      description:
+        'We check how you appear for “APK [your city]”, “garage near me”, tyre and airco + city queries, and the map pack against nearby yards. We also audit GBP services, hours, photos, reviews and citation consistency — separate from how portals show your stock.'
+    },
+    nl: {
+      step: '01',
+      title: 'Werkplaatszichtbaarheidsaudit',
+      description:
+        'We checken hoe je verschijnt op “APK [jouw stad]”, “garage in de buurt”, banden- en airco + stad-queries en de kaartpack tegen buurtterreinen. Ook GBP-diensten, uren, foto’s, reviews en citation-consistentie — los van hoe portals je voorraad tonen.'
+    }
+  },
+  {
+    en: {
+      step: '02',
+      title: 'GBP and workshop keyword set',
+      description:
+        'We configure Google Business Profile for the garage: services, photos, hours and call actions. Then we lock a service + city keyword set tied to APK, maintenance, tyres and airco — not a generic “car dealer” category dump.'
+    },
+    nl: {
+      step: '02',
+      title: 'GBP en werkplaatszoekwoordenset',
+      description:
+        'We richten Google Bedrijfsprofiel in voor de garage: diensten, foto’s, uren en belacties. Daarna zetten we een dienst + stad-zoekwoordenset vast gekoppeld aan APK, onderhoud, banden en airco — geen generieke “autodealer”-categoriedump.'
+    }
+  },
+  {
+    en: {
+      step: '03',
+      title: 'Service and city page plan',
+      description:
+        'We plan APK, maintenance, tyre and airco landing pages as local SEO assets — distinct from the stock filters and booking build on the automotive website spoke, but aligned so map clicks land on pages that convert workshop demand.'
+    },
+    nl: {
+      step: '03',
+      title: 'Dienst- en stadspaginaplan',
+      description:
+        'We plannen APK-, onderhoud-, banden- en aircolandingspagina’s als lokale SEO-assets — los van de voorraadfilters, portalsync en boekbuild op de autobedrijfwebsite-spoke, maar afgestemd zodat kaartklikken landen op pagina’s die werkplaatsvraag converteren in plaats van een lege “diensten”-pagina.'
+    }
+  },
+  {
+    en: {
+      step: '04',
+      title: 'Reviews, seasons and citations',
+      description:
+        'We launch post-APK and post-service review habits, keep seasonal GBP posts ready for tyre and airco peaks, and clean citations so directories do not contradict your phone number or opening hours.'
+    },
+    nl: {
+      step: '04',
+      title: 'Reviews, seizoenen en citations',
+      description:
+        'We starten reviewgewoontes na APK en onderhoud, houden seizoensposts klaar voor banden- en aircopieken, en schonen citations zodat directories je telefoonnummer of openingstijden niet tegenspreken.'
+    }
+  },
+  {
+    en: {
+      step: '05',
+      title: 'Measure bookings and calls, not vanity ranks',
+      description:
+        'Monthly reporting on map views, call and direction taps and shifts on APK, garage and seasonal + city keywords — read as progress toward filled bays, without promising a permanent map-pack slot.'
+    },
+    nl: {
+      step: '05',
+      title: 'Meet boekingen en belletjes, geen vanity-ranks',
+      description:
+        'Maandelijkse rapportage over kaartweergaven, bel- en route-taps en verschuivingen op APK-, garage- en seizoens- + stadzoekwoorden — gelezen als voortgang naar volle bruggen, zonder een vaste kaartpackplek te beloven.'
+    }
+  }
+] as const
+
+const SIBLING_SLUGS = ['website-laten-maken', 'google-ads'] as const
+
+const T = {
+  en: {
+    crumbHome: 'Home',
+    crumbBranches: 'Industries',
+    crumbHub: 'Car dealers & garages',
+    crumbCurrent: 'Local SEO',
+    badge: 'Automotive local SEO',
+    h1: 'Local SEO for car dealers & garages',
+    heroSub:
+      'Get found when drivers search “APK [city]”, “garage near me”, “tyre change [city]” or “airco refill [city]” — with a garage-ready Google Business Profile, service and city pages, review growth against bill fear and seasonal posts that fill workshop bays. With 1,500+ completed projects, we know how yards win the local pack when an inspection or repair cannot wait.',
+    trust: '1,500+ completed projects',
+    ctaPrimary: 'Request a quote',
+    problemBadge: 'The real cost',
+    problemHead: 'Invisible in the local pack means an empty workshop bay',
+    problemP1:
+      'Someone who needs an APK before the sticker expires, or a tyre change before the next cold snap, searches on their phone and books one of the first trusted results in the Maps pack. If your Google Business Profile hides workshop hours, lacks recent garage reviews or still looks like a sales lot without APK or service categories, that tap goes to the next yard — even if your ramps were free that morning.',
+    problemP2:
+      'Automotive local search is urgent workshop intent on mobile, service + city phrases, seasonal spikes and review-led trust — not an installer emergency call-out radius and not an accountant “near me” shortlist. Occasion buyers often start on make/model portals; local SEO still helps brand discovery, but the heavier win is filling APK, maintenance, tyre and airco diaries when drivers compare garages in their city. Make that split explicit in your plan, or you optimise for the wrong engine.',
+    problemP3:
+      'Portals and classified ads own a large slice of stock browsing, but organic map visibility compounds every APK deadline and every seasonal service week. Without local SEO you keep hoping walk-ins and portal leftovers fill the workshop while the garage with sharper hours, fresher reviews and clearer service pages owns the free discovery layer that decides who books the bay.',
+    featuresBadge: 'What we do',
+    featuresHead: 'What is included in local SEO for car dealers & garages',
+    featuresSub:
+      'Every deliverable serves drivers searching garage, APK or seasonal service in your city — GBP with workshop services, service/city pages, reviews and local-pack focus — not a relabelled installer checklist and not a stock-module rebuild.',
+    processBadge: 'How we work',
+    processHead: 'How an automotive local SEO engagement runs',
+    processSub:
+      'From auditing how you appear for APK and garage queries in your city, to measuring call taps and bookings that fill bays — including tyre and airco seasonal peaks.',
+    whyBadge: 'Why Amora Digital',
+    whyHead: 'Why dealers and garages trust us with local findability',
+    whySub:
+      'Automotive-aware local SEO that treats workshop demand as the primary local engine — and respects that occasion traffic often starts on portals while APK and repair still start on Maps.',
+    whyItems: [
+      {
+        title: 'Workshop-first local focus',
+        desc: 'We optimise for APK, garage, tyre and airco + city intent — including urgent phrases that send taps to the phone before someone opens a stock carousel.'
+      },
+      {
+        title: 'Garage GBP expertise',
+        desc: 'Google Business Profile with real workshop services, hours, photos and call buttons that match how drivers choose a trusted bay, not a fake retail pin.'
+      },
+      {
+        title: 'Reviews that calm bill fear',
+        desc: 'We build post-service review habits so recent garage proof sits next to map results — the factor that often decides between two yards that look equal on distance.'
+      },
+      {
+        title: 'One partner from Maps to the ramp',
+        desc: 'Local SEO for workshop findability first; automotive website and later Google Ads when you need more city demand — one team that already knows APK deadlines and tyre weeks.'
+      }
+    ],
+    costsBadge: 'Timeframe & expectations',
+    costsHead: 'What to expect from local SEO for car dealers & garages',
+    costsIntro:
+      'Automotive local SEO is ongoing GBP workshop work, service and city pages, keywords, call actions, citations and review growth. Profile action lifts often appear within weeks; holding relevance for “APK [city]” or “garage [city]” in a competitive area usually needs months. We share realistic call and booking trends, not guaranteed rankings.',
+    costsItems: [
+      {
+        title: 'Foundation (one yard)',
+        desc: 'GBP overhaul for garage services, citation cleanup, hours and call setup, review process after APK and service, and a service + city keyword set. Ideal when Maps still underplays workshop categories or hides your phone action.'
+      },
+      {
+        title: 'Growth (competitive city)',
+        desc: 'Ongoing monthly optimisation: service-page support, review replies, seasonal posts for tyres and airco, competitor monitoring, reporting on taps that lead to workshop bookings.'
+      },
+      {
+        title: 'Multi-location yards',
+        desc: 'When you expand or run several sites, we structure locations and categories so each yard competes for its city without cannibalising the core NAP or confusing Google about which site books the APK.'
+      }
+    ],
+    costsNote:
+      'Scope depends on how many locations you run, which workshop services you publish and how incomplete GBP is today. Request an automotive local-SEO quote — we outline GBP setup, service keywords and review cadence with honest timelines, without ranking guarantees. Bring your cities and busiest APK weeks so we size the plan around real workshop demand.',
+    siblingsBadge: 'Also for car dealers & garages',
+    siblingsHead: 'Pair local SEO with a booking-ready site and later ads',
+    siblingsSub:
+      'Maps puts you on the shortlist when someone needs APK or a garage nearby; these services turn that glance into a booking or call — and later paid demand when organic is not enough.',
+    siblingsCta: 'View service',
+    hubLink: 'Back to car dealer & garage marketing',
+    supportLinkLabel: 'Also see our general local SEO service',
+    supportLinkNote:
+      'For businesses outside automotive we offer broader local SEO. Dealer and garage engagements follow the process on this page.',
+    ctaHeading: 'Ready to show up when drivers need an APK nearby?',
+    ctaSub:
+      'Tell us your city, workshop services and how bookings arrive today. We scope garage GBP, service pages and seasonal keywords with honest timelines — without promising a fixed map-pack place.',
+    ctaButton: 'Request a quote'
+  },
+  nl: {
+    crumbHome: 'Home',
+    crumbBranches: 'Branches',
+    crumbHub: 'Autobedrijven & garages',
+    crumbCurrent: 'Lokale SEO',
+    badge: 'Lokale SEO voor autobedrijven',
+    h1: 'Lokale SEO voor autobedrijven',
+    heroSub:
+      'Word gevonden wanneer automobilisten “APK [stad]”, “garage in de buurt”, “bandenwissel [stad]” of “airco bijvullen [stad]” zoeken — met een garageklaar Google Bedrijfsprofiel, dienst- en stadspagina’s, reviewgroei tegen nota-angst en seizoensposts die werkplaatsbruggen vullen. Met 1.500+ afgeronde projecten weten we hoe terreinen de lokale pack winnen wanneer een keuring of reparatie niet kan wachten.',
+    trust: '1.500+ afgeronde projecten',
+    ctaPrimary: 'Vraag een offerte aan',
+    problemBadge: 'De echte kosten',
+    problemHead: 'Onzichtbaar in de local pack betekent een lege werkplaatsbrug',
+    problemP1:
+      'Iemand die een APK nodig heeft vóór de sticker verloopt, of een bandenwissel vóór de volgende koude-inval, zoekt op de telefoon en boekt één van de eerste vertrouwde resultaten in de Maps-pack. Verstopt je Google Bedrijfsprofiel werkplaatsuren, mist het recente garagereviews of oogt het nog als een verkoopterrein zonder APK- of servicecategorieën, dan gaat die tik naar het volgende bedrijf — ook als jullie bruggen die ochtend vrij waren. Automobilisten die bang zijn voor een dure of onbetrouwbare garage kiezen vaak op recente reviews vóór ze überhaupt bellen.',
+    problemP2:
+      'Lokaal autobedrijfzoeken draait om urgente werkplaatsintentie op mobiel, dienst + stad-frasen, seizoenspieken en reviewgedreven vertrouwen — geen installateur-spoedstraal en geen accountants-“bij mij”-shortlist. Occasionkopers starten vaak op merk-/modelportals; lokale SEO helpt nog steeds bij merkontdekking, maar de zwaardere winst is het vullen van APK-, onderhoud-, banden- en aircoagenda’s wanneer automobilisten garages in hun stad vergelijken. Maak die scheiding expliciet in je plan, of je optimaliseert voor de verkeerde motor terwijl de bruggen leeg blijven tussen voorraadverkopen.',
+    problemP3:
+      'Portals en classifieds bezitten een groot deel van voorraadbrowsen, maar organische kaartzichtbaarheid stapelt elke APK-deadline en elke seizoensserviceweek — van bandenwissel in voorjaar en najaar tot airco in de zomer en vakantiechecks vóór lange ritten. Zonder lokale SEO hoop je dat inlopen en portalrestjes de werkplaats vullen terwijl de garage met scherpere uren, frissere reviews en helderdere dienstenpagina’s de gratis ontdekkingslaag bezit die bepaalt wie de brug boekt.',
+    featuresBadge: 'Wat we doen',
+    featuresHead: 'Wat zit er in lokale SEO voor autobedrijven',
+    featuresSub:
+      'Elke deliverable dient automobilisten die garage, APK of seizoensservice in jouw stad zoeken — GBP met werkplaatsdiensten, dienst-/stadspagina’s, reviews en local-packfocus — geen herlabelde installateurschecklist en geen voorraadmodule-rebuild.',
+    processBadge: 'Hoe we werken',
+    processHead: 'Hoe een lokaal SEO-traject voor een autobedrijf verloopt',
+    processSub:
+      'Van een audit van hoe je verschijnt op APK- en garagequeries in jouw stad, tot meten van beltaps en boekingen die bruggen vullen — inclusief banden- en aircoseizoenspieken.',
+    whyBadge: 'Waarom Amora Digital',
+    whyHead: 'Waarom dealers en garages hun lokale vindbaarheid aan ons toevertrouwen',
+    whySub:
+      'Automotivebewuste lokale SEO die werkplaatsvraag als primaire lokale motor behandelt — en respecteert dat occasionverkeer vaak op portals begint terwijl APK, reparatie, banden en airco nog steeds op Maps starten wanneer de sticker of het seizoen dwingt.',
+    whyItems: [
+      {
+        title: 'Werkplaatseerst lokale focus',
+        desc: 'We optimaliseren voor APK-, garage-, banden- en airco- + stadintentie — inclusief urgente frasen die taps naar de telefoon sturen vóór iemand een voorraadcarrousel opent of een AutoScout-listing vergelijkt.'
+      },
+      {
+        title: 'Garage-GBP-expertise',
+        desc: 'Google Bedrijfsprofiel met echte werkplaatsdiensten, actuele openingstijden, terreinfoto’s en belknoppen die passen bij hoe automobilisten een betrouwbare brug kiezen, geen nep-retailpin of lege verkoopcategorie.'
+      },
+      {
+        title: 'Reviews die nota-angst dempen',
+        desc: 'We bouwen reviewgewoontes na APK en onderhoud zodat recent garagebewijs naast kaartresultaten staat — vaak de factor die beslist tussen twee terreinen die op afstand gelijk ogen maar op vertrouwen niet.'
+      },
+      {
+        title: 'Eén partner van Maps tot de brug',
+        desc: 'Eerst lokale SEO voor werkplaatsvindbaarheid; autobedrijfwebsite en later Google Ads wanneer je meer stadsvraag nodig hebt — één team dat APK-deadlines, bandenweken en aircopieken al kent.'
+      }
+    ],
+    costsBadge: 'Doorlooptijd & verwachtingen',
+    costsHead: 'Wat je mag verwachten van lokale SEO voor autobedrijven',
+    costsIntro:
+      'Lokale SEO voor autobedrijven is doorlopend GBP-werkplaatswerk, dienst- en stadspagina’s, zoekwoorden, belacties, citations en reviewgroei. Profielacties stijgen vaak binnen enkele weken; relevantie vasthouden op “APK [stad]” of “garage [stad]” in een concurrerende omgeving vraagt meestal maanden van compounding werk. We delen realistische bel- en boekingstrends, geen gegarandeerde rankings of vaste local-packplekken.',
+    costsItems: [
+      {
+        title: 'Foundation (één vestiging)',
+        desc: 'GBP-overhaul voor garagediensten, citation-opschoning, uren- en belopzet, reviewproces na APK en onderhoud, en een dienst + stad-zoekwoordenset voor APK, onderhoud, banden en airco. Ideaal wanneer Maps werkplaatscategorieën nog onderschat of je belactie verstopt.'
+      },
+      {
+        title: 'Growth (concurrerende stad)',
+        desc: 'Doorlopende maandelijkse optimalisatie: steun voor dienstenpagina’s, reviewantwoorden, seizoensposts voor bandenwissel en airco, concurrentiemonitoring, rapportage op taps die tot werkplaatsboekingen leiden in plaats van alleen vanity-kaartranks.'
+      },
+      {
+        title: 'Meerdere vestigingen',
+        desc: 'Bij uitbreiding of meerdere locaties structureren we plaatsen en categorieën zodat elk terrein om zijn stad concurreert zonder de kern-NAP te kannibaliseren of Google te verwarren over welke vestiging de APK of bandenwissel boekt.'
+      }
+    ],
+    costsNote:
+      'Scope hangt af van hoeveel vestigingen je runt, welke werkplaatsdiensten je publiceert en hoe incompleet GBP vandaag is. Vraag een lokale-SEO-offerte voor autobedrijven aan — we schetsen GBP-opzet, dienstzoekwoorden en reviewritme met eerlijke planning, zonder rankinggaranties. Neem je steden, drukste APK-weken en of occasionverkeer vooral via portals loopt mee, zodat we het plan rond echte werkplaatsvraag dimensioneren.',
+    siblingsBadge: 'Ook voor autobedrijven',
+    siblingsHead: 'Combineer lokale SEO met een boekklare site en later ads',
+    siblingsSub:
+      'Maps zet je op de shortlist wanneer iemand APK of een garage in de buurt nodig heeft; deze diensten maken van die blik een boeking of belletje — en later betaalde vraag wanneer organisch niet volstaat.',
+    siblingsCta: 'Bekijk dienst',
+    hubLink: 'Terug naar autobedrijven- & garagemarketing',
+    supportLinkLabel: 'Bekijk ook onze algemene lokale SEO-dienst',
+    supportLinkNote:
+      'Voor bedrijven buiten automotive bieden we bredere lokale SEO. Dealer- en garagetrajecten volgen het proces op deze pagina.',
+    ctaHeading: 'Klaar om zichtbaar te zijn wanneer automobilisten APK in de buurt zoeken?',
+    ctaSub:
+      'Vertel je stad, werkplaatsdiensten en hoe boekingen nu binnenkomen. We scopen garage-GBP, dienstenpagina’s en seizoenszoekwoorden met eerlijke doorlooptijden — zonder een vaste kaartpackplek te beloven.',
+    ctaButton: 'Vraag een offerte aan'
+  }
+} as const
+
+export default function AutobedrijvenLokaleSeo() {
+  const { pathname } = useLocation()
+  const locale: Locale = localeFromPath(pathname)
+  const t = T[locale]
+  const hubPath = ROUTES['branches-autobedrijven'][locale]
+  const firmSpokes = BRANCH_SPOKES.autobedrijven
+  const siblings = firmSpokes.filter((spoke) =>
+    (SIBLING_SLUGS as readonly string[]).includes(spoke.slug)
+  )
+
+  return (
+    <div>
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary-600 via-primary-700 to-secondary-600 text-white">
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-white/10 rounded-full blur-3xl" />
+          <div className="absolute top-60 -left-20 w-60 h-60 bg-white/10 rounded-full blur-3xl" />
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-24 lg:pt-28 lg:pb-32">
+          <div className="max-w-3xl mx-auto text-center">
+            <nav className="flex items-center justify-center gap-2 text-sm mb-8 flex-wrap" aria-label="Breadcrumb">
+              <Link to={ROUTES.home[locale]} className="text-white/60 hover:text-white transition-colors">
+                {t.crumbHome}
+              </Link>
+              <span className="text-white/40" aria-hidden>/</span>
+              <Link to={ROUTES.branches[locale]} className="text-white/60 hover:text-white transition-colors">
+                {t.crumbBranches}
+              </Link>
+              <span className="text-white/40" aria-hidden>/</span>
+              <Link to={hubPath} className="text-white/60 hover:text-white transition-colors">
+                {t.crumbHub}
+              </Link>
+              <span className="text-white/40" aria-hidden>/</span>
+              <span className="text-white">{t.crumbCurrent}</span>
+            </nav>
+
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-medium mb-6">
+              <MapPin className="w-4 h-4" aria-hidden />
+              <span>{t.badge}</span>
+            </div>
+
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+              {t.h1}
+            </h1>
+            <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto mb-8">{t.heroSub}</p>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+              <Link
+                to={ROUTES.contact[locale]}
+                className="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-primary-700 bg-white rounded-lg hover:bg-slate-100 transition-all shadow-lg group"
+              >
+                {t.ctaPrimary}
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden />
+              </Link>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm text-white/90">
+                <Sparkles className="w-4 h-4 text-secondary-300" aria-hidden />
+                <span>{t.trust}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary-100 text-secondary-700 text-sm font-medium mb-4">
+            <span>{t.problemBadge}</span>
+          </div>
+          <h2 className="section-heading text-slate-900 mb-6">{t.problemHead}</h2>
+          <div className="space-y-5 text-lg text-slate-600 leading-relaxed">
+            <p>{t.problemP1}</p>
+            <p>{t.problemP2}</p>
+            <p>{t.problemP3}</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 lg:py-28 bg-gradient-to-b from-slate-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-100 text-primary-700 text-sm font-medium mb-4">
+              <Search className="w-4 h-4" aria-hidden />
+              <span>{t.featuresBadge}</span>
+            </div>
+            <h2 className="section-heading text-slate-900 mb-4">{t.featuresHead}</h2>
+            <p className="section-subheading mx-auto">{t.featuresSub}</p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            {FEATURES.map((feature, i) => {
+              const Icon = FEATURE_ICONS[i] ?? CheckCircle2
+              const copy = feature[locale]
+              return (
+                <div key={copy.title} className="card p-6">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center mb-4 shadow-lg">
+                    <Icon className="w-6 h-6 text-white" aria-hidden />
+                  </div>
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">{copy.title}</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">{copy.description}</p>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent-100 text-accent-700 text-sm font-medium mb-4">
+              <span>{t.processBadge}</span>
+            </div>
+            <h2 className="section-heading text-slate-900 mb-4">{t.processHead}</h2>
+            <p className="section-subheading mx-auto">{t.processSub}</p>
+          </div>
+
+          <div className="max-w-3xl mx-auto space-y-6">
+            {PROCESS_STEPS.map((item) => {
+              const copy = item[locale]
+              return (
+                <div key={copy.step} className="card p-6 sm:p-8 flex gap-5">
+                  <div className="text-2xl font-display font-bold text-primary-600 flex-shrink-0">{copy.step}</div>
+                  <div>
+                    <h3 className="text-xl font-bold text-slate-900 mb-2">{copy.title}</h3>
+                    <p className="text-slate-600 leading-relaxed">{copy.description}</p>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 lg:py-28 bg-gradient-to-b from-slate-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary-100 text-secondary-700 text-sm font-medium mb-4">
+              <CheckCircle2 className="w-4 h-4" aria-hidden />
+              <span>{t.whyBadge}</span>
+            </div>
+            <h2 className="section-heading text-slate-900 mb-4">{t.whyHead}</h2>
+            <p className="section-subheading mx-auto">{t.whySub}</p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            {t.whyItems.map((item) => (
+              <div key={item.title} className="card p-6">
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center mb-4">
+                  <CheckCircle2 className="w-5 h-5 text-white" aria-hidden />
+                </div>
+                <h3 className="text-lg font-bold text-slate-900 mb-2">{item.title}</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-100 text-primary-700 text-sm font-medium mb-4">
+            <span>{t.costsBadge}</span>
+          </div>
+          <h2 className="section-heading text-slate-900 mb-4">{t.costsHead}</h2>
+          <p className="text-lg text-slate-600 leading-relaxed mb-10">{t.costsIntro}</p>
+
+          <div className="space-y-4 mb-8">
+            {t.costsItems.map((item) => (
+              <div key={item.title} className="card p-6">
+                <h3 className="text-lg font-bold text-slate-900 mb-2">{item.title}</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-sm text-slate-500 leading-relaxed">{t.costsNote}</p>
+        </div>
+      </section>
+
+      <section className="py-20 lg:py-28 bg-gradient-to-b from-slate-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-100 text-primary-700 text-sm font-medium mb-4">
+              <span>{t.siblingsBadge}</span>
+            </div>
+            <h2 className="section-heading text-slate-900 mb-4">{t.siblingsHead}</h2>
+            <p className="section-subheading mx-auto">{t.siblingsSub}</p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-6 lg:gap-8 mb-10 max-w-3xl mx-auto">
+            {siblings.map((spoke) => (
+              <BranchSpokeCard
+                key={spoke.slug}
+                industrySlug="autobedrijven"
+                spoke={spoke}
+                locale={locale}
+                ctaLabel={t.siblingsCta}
+              />
+            ))}
+          </div>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-center">
+            <Link to={hubPath} className="text-primary-600 font-semibold hover:text-primary-700 inline-flex items-center gap-2">
+              {t.hubLink}
+              <ArrowRight className="w-4 h-4" aria-hidden />
+            </Link>
+            <span className="hidden sm:inline text-slate-300" aria-hidden>|</span>
+            <div className="text-sm text-slate-500 max-w-md">
+              <Link to={ROUTES['local-seo'][locale]} className="text-primary-600 font-medium hover:text-primary-700">
+                {t.supportLinkLabel}
+              </Link>
+              <span className="block mt-1">{t.supportLinkNote}</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="section-heading text-slate-900 mb-4">{t.ctaHeading}</h2>
+          <p className="section-subheading mx-auto mb-8">{t.ctaSub}</p>
+          <Link to={ROUTES.contact[locale]} className="btn-primary group">
+            {t.ctaButton}
+            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden />
+          </Link>
+        </div>
+      </section>
+    </div>
+  )
+}

@@ -2723,6 +2723,844 @@ export const pageSeoByKey: Record<RouteKey, PageSeoConfig> = {
     }
   },
 
+  'branches-boekhouders': {
+    parents: ['home', 'branches'],
+    pageType: 'CollectionPage',
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Online marketing for accountants and bookkeepers',
+      category: 'Digital Marketing',
+      offers: [
+        { name: 'Website design for accountants' },
+        { name: 'Local SEO for accountants' },
+        { name: 'Google Ads for accountants' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Accountants & bookkeepers',
+        serviceName: 'Online marketing for accountants and bookkeepers',
+        serviceDescription:
+          'Online marketing for accountants and bookkeepers: websites, local SEO and Google Ads focused on lasting SME relationships, trust and niche clarity.',
+        faqs: [
+          {
+            question: 'How do we attract the right clients — not just more of them?',
+            answer:
+              'Lead with who you serve best — freelancers, SMEs, hospitality or e-commerce — and which software you work with. Clear niches and service pages help entrepreneurs self-select before intake, so you spend less time onboarding poor fits.'
+          },
+          {
+            question: 'How do we project trust and reliability online?',
+            answer:
+              'Show real team faces, plain language on bookkeeping versus advisory work, and steady proof such as client longevity or sector experience — not gimmicky discount banners. Someone handing over their VAT wants calm reliability.'
+          },
+          {
+            question: 'How do we get found by freelancers and SMEs in our region?',
+            answer:
+              'Local SEO and a complete Google Business Profile help Maps and organic search match “bookkeeper [city]” or “accountant for freelancers [town]”. Reviews and consistent NAP support that; we do not promise a fixed ranking.'
+          },
+          {
+            question: 'How should we present annual accounts and tax filing services?',
+            answer:
+              'Give jaarrekening, BTW and income-tax filing their own clear blocks or pages with who each service fits and when to start. Seasonal peaks around filing deadlines are when entrepreneurs compare firms — vague “full service” blur loses them.'
+          },
+          {
+            question: 'Does software stack matter for marketing?',
+            answer:
+              'Often yes. Naming Exact, Twinfield, Moneybird or similar helps the right client recognise you as a fit. We surface those tools next to niche and service messaging on this hub’s future spokes.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Boekhouders & accountants',
+        serviceName: 'Online marketing voor boekhouders en accountants',
+        serviceDescription:
+          'Online marketing voor boekhouders en accountants: websites, lokale SEO en Google Ads gericht op langdurige mkb-relaties, vertrouwen en nichehelderheid.',
+        faqs: [
+          {
+            question: 'Hoe trekken we de juiste klanten aan — niet alleen meer volume?',
+            answer:
+              'Zet voorop wie je het beste bedient — zzp, mkb, horeca of e-commerce — en met welke software je werkt. Helder niches en dienstpagina’s helpen ondernemers zichzelf selecteren vóór intake, zodat je minder tijd kwijt bent aan slechte fits.'
+          },
+          {
+            question: 'Hoe stralen we vertrouwen en betrouwbaarheid online uit?',
+            answer:
+              'Toon echte gezichten van het team, begrijpelijke taal over boekhouding versus advies, en rustig bewijs zoals klantretentie of sectorervaring — geen gimmickkortingsbanners. Iemand die btw overdraagt wil kalme betrouwbaarheid.'
+          },
+          {
+            question: 'Hoe worden we vindbaar voor zzp en mkb in onze regio?',
+            answer:
+              'Lokale SEO en een compleet Google Bedrijfsprofiel helpen Maps en organisch zoeken bij “boekhouder [stad]” of “accountant voor zzp [plaats]”. Reviews en consistente NAP ondersteunen dat; we beloven geen vaste ranking.'
+          },
+          {
+            question: 'Hoe presenteren we jaarrekening- en aangiftediensten helder?',
+            answer:
+              'Geef jaarrekening, btw- en inkomstenbelastingaangifte eigen blokken of pagina’s met voor wie de dienst past en wanneer te starten. Seizoenspieken rond aangiftedeadlines zijn momenten waarop ondernemers kantoren vergelijken — vaag “full service” verliest ze.'
+          },
+          {
+            question: 'Speelt de softwarestack mee in marketing?',
+            answer:
+              'Vaak wel. Exact, Twinfield, Moneybird of vergelijkbaar noemen helpt de juiste klant je als fit herkennen. We zetten die tools naast niche- en dienstboodschap op de toekomstige spokes van deze hub.'
+          }
+        ]
+      }
+    }
+  },
+
+  'branches-autobedrijven': {
+    parents: ['home', 'branches'],
+    pageType: 'CollectionPage',
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Online marketing for car dealers and garages',
+      category: 'Digital Marketing',
+      offers: [
+        { name: 'Website design for car dealers and garages' },
+        { name: 'Local SEO for car dealers and garages' },
+        { name: 'Google Ads for car dealers and garages' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Car dealers & garages',
+        serviceName: 'Online marketing for car dealers and garages',
+        serviceDescription:
+          'Online marketing for car dealers and garages: websites, local SEO and Google Ads focused on workshop bookings, APK demand and occasion enquiries.',
+        faqs: [
+          {
+            question: 'How should we show stock and occasions online?',
+            answer:
+              'Give inventory a clear, filterable path with current photos and key specs, and make enquiry or viewing requests easy per vehicle. Stale brochure pages lose buyers who already compare AutoScout24-style listings elsewhere.'
+          },
+          {
+            question: 'How do we get more APK and maintenance appointments online?',
+            answer:
+              'Put booking or request paths for APK, service and tyres where mobile visitors can reach them in one tap, with plain language on what is included. Drivers comparing garages often leave when they cannot see how to book.'
+          },
+          {
+            question: 'How do we get found for “garage” or “APK” in our city?',
+            answer:
+              'Local SEO and a complete Google Business Profile help Maps and organic search match “garage [city]” or “APK [city]”. Reviews and accurate hours support that; we do not promise a fixed ranking.'
+          },
+          {
+            question: 'How do we grow workshop revenue without only chasing car sales?',
+            answer:
+              'Treat the workshop as its own engine: clear service pages, seasonal cues for tyres and airco, review growth and local findability for maintenance intent — not only occasion stock. Recurring APK and service fill the diary between vehicle sales.'
+          },
+          {
+            question: 'Do reviews matter as much for garages as for car sales?',
+            answer:
+              'Often more. Drivers fear opaque bills. Recent, specific workshop reviews next to APK and service CTAs reduce that fear before someone books — on this hub’s future spokes we keep sales and workshop trust paths distinct.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Autobedrijven & garages',
+        serviceName: 'Online marketing voor autobedrijven en garages',
+        serviceDescription:
+          'Online marketing voor autobedrijven en garages: websites, lokale SEO en Google Ads gericht op werkplaatsafspraken, APK-vraag en occasionaanvragen.',
+        faqs: [
+          {
+            question: 'Hoe tonen we voorraad en occasions online?',
+            answer:
+              'Geef voorraad een duidelijk, filterbaar pad met actuele foto’s en kernspecs, en maak aanvraag of bezichtiging per auto makkelijk. Verouderde brochurepagina’s verliezen kopers die elders al AutoScout24-achtige listings vergelijken.'
+          },
+          {
+            question: 'Hoe krijgen we meer APK- en onderhoudsafspraken online?',
+            answer:
+              'Zet boek- of aanvraagpaden voor APK, onderhoud en banden waar mobiele bezoekers ze in één tik bereiken, met begrijpelijke taal over wat erin zit. Automobilisten die garages vergelijken haken vaak af wanneer ze niet zien hoe ze boeken.'
+          },
+          {
+            question: 'Hoe worden we vindbaar op “garage” of “APK” in onze stad?',
+            answer:
+              'Lokale SEO en een compleet Google Bedrijfsprofiel helpen Maps en organisch zoeken bij “garage [stad]” of “APK [stad]”. Reviews en accurate openingstijden ondersteunen dat; we beloven geen vaste ranking.'
+          },
+          {
+            question: 'Hoe groeien we werkplaatsomzet zonder alleen autoverkoop te najagen?',
+            answer:
+              'Behandel de werkplaats als eigen motor: heldere dienstpagina’s, seizoenssignalen voor banden en airco, reviewgroei en lokale vindbaarheid voor onderhoudsintentie — niet alleen occasionvoorraad. Terugkerende APK en service vullen de agenda tussen voertuigverkopen.'
+          },
+          {
+            question: 'Wegen reviews voor garages even zwaar als voor autoverkoop?',
+            answer:
+              'Vaak zwaarder. Automobilisten vrezen ondoorzichtige nota’s. Recente, specifieke werkplaatsreviews naast APK- en service-CTA’s dempen die angst vóór iemand boekt — op de toekomstige spokes van deze hub houden we verkoop- en werkplaatspaden onderscheiden.'
+          }
+        ]
+      }
+    }
+  },
+
+  'branches-autobedrijven-website-laten-maken': {
+    parents: ['home', 'branches', 'branches-autobedrijven'],
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Website design for car dealers and garages',
+      category: 'Web Development',
+      offers: [
+        { name: 'Occasion stock with filters' },
+        { name: 'Portal sync for dealer inventory' },
+        { name: 'APK and maintenance booking online' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Website design',
+        serviceName: 'Website design for car dealers and garages',
+        serviceDescription:
+          'Car dealer and garage website design with filterable occasion stock, portal sync where possible, trade-in and finance requests, online APK booking, workshop services, reviews and mobile paths for drivers.',
+        faqs: [
+          {
+            question: 'Can my stock sync with AutoScout24 or Marktplaats?',
+            answer:
+              'Where your stack and portal feeds allow, we connect published listings so the website shows the same cars as AutoScout24, Marktplaats, Gaspedaal or similar — without retyping every arrival. Exact connectors depend on your DMS, feed format and portal contracts; we map that in discovery before promising a specific integration.'
+          },
+          {
+            question: 'Can customers book an APK or maintenance appointment online?',
+            answer:
+              'Yes. We put APK, service, tyre and similar workshop requests on paths drivers can reach from a phone in one or two taps, separate from occasion enquiry so urgent maintenance does not hide behind stock carousels. Booking tooling can be a form-to-diary flow or a calendar integration depending on how your workshop already plans slots.'
+          },
+          {
+            question: 'Can I offer trade-in and finance requests on the site?',
+            answer:
+              'Yes. Per vehicle or site-wide forms capture trade-in valuation and finance conversation requests with the car reference attached, so sales can follow up without hunting a private mobile number. This is a lead path for high-value stock — not an in-cart checkout like a webshop.'
+          },
+          {
+            question: 'How do I show reviews so drivers trust the garage?',
+            answer:
+              'We place recent, specific driver reviews next to APK booking and stock CTAs so trust sits where scanners decide. That reduces the fear of opaque bills when two garages look the same on Maps. We do not invent ratings; we surface authentic proof you already have or are building.'
+          },
+          {
+            question: 'Does the occasion module work well on mobile?',
+            answer:
+              'Yes. Filters for make, model, price, year and mileage, stock cards and enquire CTAs are built for one-thumb use — because most people browse occasions or search a garage between errands on their phone. If filters break on a small screen, stock hunters leave for a portal that already works.'
+          },
+          {
+            question: 'Is this the same as building a webshop?',
+            answer:
+              'No. A dealer site manages high-value, low-volume inventory that is often synced from portals and sold via enquiry, viewing and finance — not a shopping cart for low-ticket SKUs. Workshop booking is a second revenue engine. Treating it like generic e-commerce usually ships the wrong checkout and the wrong trust signals.'
+          },
+          {
+            question: 'Can I show brand specialisation and workshop services clearly?',
+            answer:
+              'Yes. Brand focus pages and plain-language blocks for APK, maintenance, repairs, tyres and airco help drivers see what you actually do before they call. Clear service layout is part of winning drivers who fear a “expensive garage” without knowing what is included.'
+          },
+          {
+            question: 'How long does a car dealer or garage website project take?',
+            answer:
+              'Most dealer-garage sites launch in about four to eight weeks, depending on feed complexity, booking tooling, workshop service depth and content readiness. Discovery starts with how stock and APK enquiries arrive today so we do not ship a generic brochure template.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Website laten maken',
+        serviceName: 'Website laten maken voor autobedrijven',
+        serviceDescription:
+          'Website laten maken voor autobedrijven en garages met filterbare occasionvoorraad, portalsync waar mogelijk, inruil- en financieringsaanvraag, online APK-boeking, werkplaatsdiensten, reviews en mobiele paden voor automobilisten.',
+        faqs: [
+          {
+            question: 'Kan mijn voorraad koppelen met AutoScout24 of Marktplaats?',
+            answer:
+              'Waar je stack en portalfeeds het toelaten, koppelen we gepubliceerde listings zodat de website dezelfde auto’s toont als AutoScout24, Marktplaats, Gaspedaal of vergelijkbaar — zonder elke binnenkomst opnieuw in te typen. Exacte connectors hangen af van je DMS, feedformaat en portalcontracten; dat brengen we in discovery in kaart vóór we een specifieke koppeling beloven.'
+          },
+          {
+            question: 'Kunnen klanten online een APK of onderhoud boeken?',
+            answer:
+              'Ja. We zetten APK-, onderhoud-, banden- en vergelijkbare werkplaatsaanvragen op paden die automobilisten vanaf de telefoon in één of twee tikken bereiken, gescheiden van occasionaanvraag zodat spoedonderhoud niet verstopt achter voorraadcarrousels. Boekingstools kunnen form-naar-agenda of een kalenderintegratie zijn, afhankelijk van hoe jullie werkplaats slots al plant.'
+          },
+          {
+            question: 'Kan ik inruil en financiering aanbieden op de site?',
+            answer:
+              'Ja. Forms per auto of sitebreed vangen inruilwaardering en financieringsgesprekken met de autoreferentie erbij, zodat verkoop kan opvolgen zonder een privénummer te zoeken. Dit is een leadpad voor hoogwaardige voorraad — geen winkelwagen-afrekenen zoals in een webshop.'
+          },
+          {
+            question: 'Hoe toon ik reviews zodat automobilisten de garage vertrouwen?',
+            answer:
+              'We plaatsen recente, specifieke reviews naast APK-boeking en voorraad-CTA’s, zodat vertrouwen staat waar scanners beslissen. Dat dempt de angst voor ondoorzichtige nota’s wanneer twee garages op Maps hetzelfde ogen. We verzinnen geen scores; we tonen authentiek bewijs dat jullie al hebben of aan het opbouwen zijn.'
+          },
+          {
+            question: 'Werkt de occasionmodule goed op mobiel?',
+            answer:
+              'Ja. Filters op merk, model, prijs, bouwjaar en kilometerstand, voorraadkaartjes en aanvraag-CTA’s zijn gebouwd voor één duim — omdat de meeste mensen occasions scrollen of een garage zoeken tussen boodschappen op de telefoon. Als filters op een klein scherm breken, vertrekken voorraadzoekers naar een portal die wél werkt.'
+          },
+          {
+            question: 'Is dit hetzelfde als een webshop laten bouwen?',
+            answer:
+              'Nee. Een dealersite beheert hoogwaardige, laagvolumige voorraad die vaak vanuit portals synct en via aanvraag, bezichtiging en financiering verkocht wordt — geen winkelwagen voor goedkope SKU’s. Werkplaatsboeking is een tweede omzetmotor. Het als generieke e-commerce behandelen levert meestal de verkeerde checkout en de verkeerde vertrouwenssignalen op.'
+          },
+          {
+            question: 'Kan ik merkspecialisatie en werkplaatsdiensten helder tonen?',
+            answer:
+              'Ja. Merkfocuspagina’s en begrijpelijke blokken voor APK, onderhoud, reparatie, banden en airco helpen automobilisten zien wat jullie écht doen vóór ze bellen. Heldere dienstenopbouw hoort bij het winnen van mensen die bang zijn voor een “dure garage” zonder te weten wat erin zit.'
+          },
+          {
+            question: 'Hoe lang duurt een website-traject voor een autobedrijf?',
+            answer:
+              'De meeste dealer-garagesites gaan in ongeveer vier tot acht weken live, afhankelijk van feedcomplexiteit, boekingstools, werkplaatsdiepte en contentklaarheid. Discovery begint bij hoe voorraad- en APK-aanvragen nu binnenkomen, zodat we geen generiek brochuretemplate opleveren.'
+          }
+        ]
+      }
+    }
+  },
+
+  'branches-autobedrijven-lokale-seo': {
+    parents: ['home', 'branches', 'branches-autobedrijven'],
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Local SEO for car dealers and garages',
+      category: 'Digital Marketing',
+      offers: [
+        { name: 'Garage Google Business Profile with workshop services' },
+        { name: 'APK and service + city landing pages' },
+        { name: 'Review growth and seasonal workshop keywords' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Local SEO',
+        serviceName: 'Local SEO for car dealers and garages',
+        serviceDescription:
+          'Local SEO for car dealers and garages focused on workshop Google Business Profile, APK and service + city pages, reviews against bill fear and seasonal tyre and airco search — without ranking guarantees.',
+        faqs: [
+          {
+            question: 'How do I rank at the top for APK in my city?',
+            answer:
+              'Strengthen Google Business Profile with APK and workshop services, accurate hours, yard photos and recent garage reviews, then support that with an APK + city page that matches how drivers search. Local-pack visibility compounds over time; we do not promise a fixed map position.'
+          },
+          {
+            question: 'How do I get more garage reviews?',
+            answer:
+              'Ask after APK and maintenance with a short Google review link and a habit tied to job close-out. Recent, specific workshop reviews calm the fear of an expensive or unreliable garage — often the deciding factor when two yards look equal on Maps distance.'
+          },
+          {
+            question: 'Can I rank per service such as tyres or airco?',
+            answer:
+              'Yes. We build service + city signals for APK, maintenance, tyre change and airco refill so Maps and organic clicks land on the right workshop story. Seasonal posts help when those queries spike; we still avoid promising you will own every seasonal term.'
+          },
+          {
+            question: 'Does local SEO also help occasion sales?',
+            answer:
+              'It can support brand discovery when someone searches a dealer or garage in their city, but occasion browsing is often make/model-led and starts on portals. Local SEO usually carries more weight for the workshop engine — APK, repairs, tyres and airco — than for stock sold via marketplace listings. We keep that split explicit in the plan.'
+          },
+          {
+            question: 'How long does local SEO take for a car dealer or garage?',
+            answer:
+              'GBP and call-action improvements often show within a few weeks. Stable relevance for competitive “APK [city]” or “garage [city]” terms usually needs several months. Timelines depend on competition and how complete your profile is today. We do not promise a fixed map-pack place.'
+          },
+          {
+            question: 'How is this different from an automotive website project?',
+            answer:
+              'Local SEO is about being found in Maps and local search when someone needs a bay or an APK slot. The website spoke converts that traffic with stock filters, portal sync and online booking. They support each other; this page covers findability for workshop demand.'
+          },
+          {
+            question: 'What if we have multiple locations?',
+            answer:
+              'We structure categories, NAP and location pages so each yard competes for its city without mixed signals that confuse Maps about which site books the APK. Multi-location scope is set after we map how diaries and phones work per site.'
+          },
+          {
+            question: 'Do seasonal tyre and airco peaks matter for local SEO?',
+            answer:
+              'Yes. Spring and autumn tyre change, summer airco and pre-holiday checks create predictable search spikes. We align GBP posts and local pages with those windows in your city without claiming you will win every seasonal query.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Lokale SEO',
+        serviceName: 'Lokale SEO voor autobedrijven',
+        serviceDescription:
+          'Lokale SEO voor autobedrijven en garages gericht op werkplaats Google Bedrijfsprofiel, APK- en dienst- + stadspagina’s, reviews tegen nota-angst en seizoenszoeken voor banden en airco — zonder rankinggaranties.',
+        faqs: [
+          {
+            question: 'Hoe kom ik bovenaan voor APK in mijn stad?',
+            answer:
+              'Versterk Google Bedrijfsprofiel met APK- en werkplaatsdiensten, accurate uren, terreinfoto’s en recente garagereviews, en ondersteun dat met een APK + stad-pagina die past bij hoe automobilisten zoeken. Local-packzichtbaarheid stapelt over tijd; we beloven geen vaste kaartpositie.'
+          },
+          {
+            question: 'Hoe krijg ik meer garagereviews?',
+            answer:
+              'Vraag na APK en onderhoud met een korte Google-reviewlink en een gewoonte gekoppeld aan klusafsluiting. Recente, specifieke werkplaatsreviews dempen de angst voor een dure of onbetrouwbare garage — vaak de doorslag wanneer twee terreinen op Maps-afstand gelijk ogen.'
+          },
+          {
+            question: 'Kan ik ranken per dienst zoals banden of airco?',
+            answer:
+              'Ja. We bouwen dienst + stad-signalen voor APK, onderhoud, bandenwissel en airco bijvullen zodat Maps- en organische klikken op het juiste werkplaatsverhaal landen. Seizoensposts helpen wanneer die queries pieken; we beloven nog steeds niet dat je elke seizoensterm bezit.'
+          },
+          {
+            question: 'Helpt lokale SEO ook voor occasionverkoop?',
+            answer:
+              'Het kan merkontdekking ondersteunen wanneer iemand een dealer of garage in hun stad zoekt, maar occasionbrowsen is vaak merk-/modelgericht en start op portals. Lokale SEO weegt meestal zwaarder voor de werkplaatsmotor — APK, reparatie, banden en airco — dan voor voorraad via marktplaatslistings. Die scheiding maken we expliciet in het plan.'
+          },
+          {
+            question: 'Hoe lang duurt lokale SEO voor een autobedrijf?',
+            answer:
+              'GBP- en belactieverbeteringen zie je vaak binnen enkele weken. Stabiele relevantie voor concurrerende “APK [stad]”- of “garage [stad]”-termen vraagt meestal maanden. Doorlooptijden hangen af van concurrentie en hoe compleet je profiel vandaag is. We beloven geen vaste kaartpackplek.'
+          },
+          {
+            question: 'Wat is het verschil met een autobedrijfwebsite-traject?',
+            answer:
+              'Lokale SEO gaat over gevonden worden in Maps en lokaal zoeken wanneer iemand een brug of APK-plek nodig heeft. De websitespoke zet dat verkeer om met voorraadfilters, portalsync en online boeken. Ze versterken elkaar; deze pagina gaat over vindbaarheid voor werkplaatsvraag.'
+          },
+          {
+            question: 'Wat als we meerdere vestigingen hebben?',
+            answer:
+              'We structureren categorieën, NAP en locatiepagina’s zodat elk terrein om zijn stad concurreert zonder gemengde signalen die Maps verwarren over welke vestiging de APK boekt. Scope voor meerdere locaties zetten we vast nadat we agenda’s en telefoons per vestiging in kaart hebben.'
+          },
+          {
+            question: 'Tellen seizoenspieken voor banden en airco mee voor lokale SEO?',
+            answer:
+              'Ja. Bandenwissel in voorjaar en najaar, airco in de zomer en vakantiechecks creëren voorspelbare zoekpieken. We stemmen GBP-posts en lokale pagina’s af op die vensters in jouw stad, zonder te claimen dat je elke seizoensquery wint.'
+          }
+        ]
+      }
+    }
+  },
+
+  'branches-boekhouders-website-laten-maken': {
+    parents: ['home', 'branches', 'branches-boekhouders'],
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Website design for accountants',
+      category: 'Web Development',
+      offers: [
+        { name: 'Accounting service and niche pages' },
+        { name: 'Software trust signals for bookkeepers' },
+        { name: 'B2B introduction intake for accounting firms' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Website design for accountants',
+        serviceName: 'Website design for accountants',
+        serviceDescription:
+          'Accountant and bookkeeper website design with clear services, branch niches, software signals, package structure without prices, B2B intake, client portal explainers and entrepreneur references.',
+        faqs: [
+          {
+            question: 'Can I show specialisations per industry niche?',
+            answer:
+              'Yes. We structure pages or sections for niches such as freelancers, hospitality, e-commerce and SMEs so entrepreneurs recognise their world before they request an introduction. That self-selection improves lead quality for a long-term relationship.'
+          },
+          {
+            question: 'Can I mention the software I work with?',
+            answer:
+              'Yes. Naming Exact, Twinfield, Moneybird, e-Boekhouden or similar where you actually work is a strong trust and compatibility signal. Entrepreneurs already living in that stack often choose the firm that speaks their tools.'
+          },
+          {
+            question: 'How do I attract the right clients with the website?',
+            answer:
+              'Lead with who you serve best, which services fit which company type, and how packages are shaped — then use a B2B intake that captures company type, software and needs. Quality rises when poor fits self-select out before onboarding.'
+          },
+          {
+            question: 'Can I show packages without publishing prices?',
+            answer:
+              'Yes. We present monthly package tiers with what is included and who each package suits, without figures on the page. Entrepreneurs understand the relationship shape, then request a quote for their situation.'
+          },
+          {
+            question: 'Does this work for a sole practitioner or a larger firm?',
+            answer:
+              'Yes. Scope scales from an essential practice site for a focused bookkeeping practice to niche-ready or multi-advisor builds. We map services, niches and intake before fixing deliverables.'
+          },
+          {
+            question: 'Should the site explain a client portal or document handover?',
+            answer:
+              'Usually yes. Plain language on how invoices, bank files and payroll docs reach your office reduces switching anxiety. Entrepreneurs want the handover to feel organised, not chaotic.'
+          },
+          {
+            question: 'How long does an accountant website project take?',
+            answer:
+              'Most practice websites launch in about four to eight weeks, depending on niche and service depth, package structure and content readiness. Discovery starts with how introductions arrive so we do not ship a generic clinic template.'
+          },
+          {
+            question: 'How is this different from a law firm website?',
+            answer:
+              'Accounting sites sell an ongoing B2B relationship around books, tax seasons and software fit. Law firm sites centre practice areas, discreet consultation and case-driven urgency. The structures and proof points are deliberately different.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Website laten maken voor boekhouders',
+        serviceName: 'Website laten maken voor boekhouders',
+        serviceDescription:
+          'Boekhouders- en accountantswebsite laten maken met heldere diensten, brancheniches, softwaresignalen, pakketstructuur zonder prijzen, B2B-intake, klantportaaluitleg en ondernemersreferenties.',
+        faqs: [
+          {
+            question: 'Kan ik mijn specialisaties per branche tonen?',
+            answer:
+              'Ja. We structureren pagina’s of secties voor niches zoals zzp, horeca, e-commerce en mkb, zodat ondernemers hun wereld herkennen vóór ze een kennismaking aanvragen. Die zelfselectie verbetert leadkwaliteit voor een langdurige relatie.'
+          },
+          {
+            question: 'Kan ik mijn software vermelden?',
+            answer:
+              'Ja. Exact, Twinfield, Moneybird, e-Boekhouden of vergelijkbaar noemen waar jullie écht in werken is een sterk vertrouwens- en compatibiliteitssignaal. Ondernemers die al in die stack leven kiezen vaak het kantoor dat hun tools spreekt.'
+          },
+          {
+            question: 'Hoe trek ik de juiste klanten aan via de website?',
+            answer:
+              'Zet voorop wie je het beste bedient, welke diensten bij welk bedrijfstype passen, en hoe pakketten zijn opgebouwd — en gebruik een B2B-intake die bedrijfstype, software en behoefte vastlegt. Kwaliteit stijgt wanneer slechte fits zichzelf eruit filteren vóór onboarding.'
+          },
+          {
+            question: 'Kan ik pakketten tonen zonder prijzen?',
+            answer:
+              'Ja. We presenteren maandpakketten met wat erin zit en voor wie elk pakket past, zonder bedragen op de pagina. Ondernemers snappen de vorm van de relatie en vragen daarna een offerte voor hun situatie.'
+          },
+          {
+            question: 'Werkt dit voor een eenmanszaak of groter kantoor?',
+            answer:
+              'Ja. De scope schaalt van een essentiële praktijksite voor een gerichte boekhoudpraktijk tot nicheklare of multi-adviseursbuilds. We brengen diensten, niches en intake in kaart vóór we deliverables vastzetten.'
+          },
+          {
+            question: 'Moet de site een klantportaal of documentaanlevering uitleggen?',
+            answer:
+              'Meestal wel. Begrijpelijke taal over hoe facturen, bankbestanden en loonstukken jullie kantoor bereiken vermindert wisselangst. Ondernemers willen dat de overdracht georganiseerd voelt, niet chaotisch.'
+          },
+          {
+            question: 'Hoe lang duurt het om een boekhouderswebsite te laten maken?',
+            answer:
+              'De meeste praktijksites gaan in ongeveer vier tot acht weken live, afhankelijk van niche- en dienstdiepte, pakketstructuur en contentklaarheid. Discovery begint bij hoe kennismakingen binnenkomen, zodat we geen generiek kliniektemplate opleveren.'
+          },
+          {
+            question: 'Wat is het verschil met een advocatenwebsite?',
+            answer:
+              'Accountancysites verkopen een lopende B2B-relatie rond boeken, aangifteseizoenen en softwarefit. Advocatenwebsites draaien om rechtsgebieden, discreet consult en zaakgedreven urgentie. Structuur en bewijspunten zijn bewust anders.'
+          }
+        ]
+      }
+    }
+  },
+
+  'branches-boekhouders-lokale-seo': {
+    parents: ['home', 'branches', 'branches-boekhouders'],
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Local SEO for accountants',
+      category: 'Digital Marketing',
+      offers: [
+        { name: 'Google Business Profile for accounting practices' },
+        { name: 'City and niche landing pages for bookkeepers' },
+        { name: 'Entrepreneur review growth for accountants' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Local SEO for accountants',
+        serviceName: 'Local SEO for accountants',
+        serviceDescription:
+          'Local SEO for accountants and bookkeepers focused on bookkeeper + city search, Google Business Profile, entrepreneur reviews, niche pages and owned visibility against national platforms — without ranking guarantees.',
+        faqs: [
+          {
+            question: 'How do I get found as a bookkeeper in my city?',
+            answer:
+              'Strengthen Google Business Profile with accurate categories, office photos and a clear website or call action, then support that with city landing pages and recent entrepreneur reviews. Consistent NAP citations help Maps and organic search match “bookkeeper [city]”. We do not promise a fixed ranking.'
+          },
+          {
+            question: 'Can I rank on a branch specialisation?',
+            answer:
+              'Yes, where your practice truly serves that niche. We align GBP, local pages and content with phrases such as hospitality bookkeeper or e-commerce bookkeeping plus your city — so café owners and webshop founders land on a specialised signal, not only a generic city pin.'
+          },
+          {
+            question: 'How do I get reviews from clients?',
+            answer:
+              'Ask after a settled working relationship — once onboarding is calm — with a short Google review link and a habit your team can repeat. Entrepreneur reviews carry weight for the next freelancer or SME comparing local practices.'
+          },
+          {
+            question: 'Does local SEO work if I work online or remotely?',
+            answer:
+              'Yes. Many clients collaborate online yet still search locally for trust. A complete GBP and city pages help distance-friendly practices win the regional shortlist without pretending you only serve one street.'
+          },
+          {
+            question: 'How long does local SEO take for an accounting practice?',
+            answer:
+              'GBP and action improvements often show within a few weeks. Stable relevance for competitive “bookkeeper [city]” terms usually needs several months of consistent work. Timelines depend on competition from local firms and national platforms. We do not promise a fixed map position.'
+          },
+          {
+            question: 'How is this different from an accountant website?',
+            answer:
+              'Local SEO is about being found in Maps and local search for city and niche queries. The website spoke converts that traffic with services, software signals and B2B intake. They support each other; this page covers findability.'
+          },
+          {
+            question: 'How do we compete with national online bookkeeping brands?',
+            answer:
+              'National platforms will keep appearing. Local SEO builds owned GBP and organic signals so high-lifetime-value regional clients are not only rented from listing sites. Strong city and niche pages reduce dependence on marketplace leads over time.'
+          },
+          {
+            question: 'Should we plan around tax filing season?',
+            answer:
+              'Yes. Filing and annual-accounts peaks are when many entrepreneurs compare bookkeepers. We align GBP posts and local content with those seasons without promising you will own every seasonal query.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Lokale SEO voor boekhouders',
+        serviceName: 'Lokale SEO voor boekhouders',
+        serviceDescription:
+          'Lokale SEO voor boekhouders en accountants gericht op boekhouder + stad-zoeken, Google Bedrijfsprofiel, ondernemersreviews, nichepagina’s en owned zichtbaarheid tegen landelijke platforms — zonder rankinggaranties.',
+        faqs: [
+          {
+            question: 'Hoe word ik gevonden als boekhouder in mijn stad?',
+            answer:
+              'Versterk Google Bedrijfsprofiel met juiste categorieën, kantoorfoto’s en een duidelijke website- of belactie, en ondersteun dat met stadslandingspagina’s en recente ondernemersreviews. Consistente NAP-citations helpen Maps en organisch zoeken bij “boekhouder [stad]”. We beloven geen vaste ranking.'
+          },
+          {
+            question: 'Kan ik ranken op een branche-specialisatie?',
+            answer:
+              'Ja, waar jullie praktijk die niche echt bedient. We stemmen GBP, lokale pagina’s en content af op frases zoals boekhouder horeca of e-commerce-boekhouding plus jullie stad — zodat caféhouders en webshopondernemers op een gespecialiseerd signaal landen, niet alleen op een generieke stadspin.'
+          },
+          {
+            question: 'Hoe krijg ik reviews van klanten?',
+            answer:
+              'Vraag na een ingespeelde samenwerking — zodra onboarding rustig loopt — met een korte Google-reviewlink en een gewoonte die het team kan herhalen. Ondernemersreviews wegen zwaar voor de volgende zzp’er of mkb’er die lokale praktijken vergelijkt.'
+          },
+          {
+            question: 'Werkt lokale SEO als ik online werk?',
+            answer:
+              'Ja. Veel klanten werken op afstand maar zoeken toch lokaal uit vertrouwen. Een compleet GBP en stadspagina’s helpen afstandsvriendelijke praktijken de regionale shortlist te winnen zonder te veinzen dat je alleen één straat bedient.'
+          },
+          {
+            question: 'Hoe lang duurt lokale SEO voor een accountancypraktijk?',
+            answer:
+              'GBP- en actieverbeteringen zie je vaak binnen enkele weken. Stabiele relevantie op concurrerende “boekhouder [stad]”-termen vraagt meestal enkele maanden consistent werk. Doorlooptijden hangen af van concurrentie van lokale kantoren en landelijke platforms. We beloven geen vaste kaartpositie.'
+          },
+          {
+            question: 'Wat is het verschil met een boekhouderswebsite laten maken?',
+            answer:
+              'Lokale SEO gaat over gevonden worden in Maps en lokaal zoeken op stad- en nichequeries. De websitespoke zet dat verkeer om met diensten, softwaresignalen en B2B-intake. Ze versterken elkaar; deze pagina gaat over vindbaarheid.'
+          },
+          {
+            question: 'Hoe concurreren we met landelijke online boekhoudpartijen?',
+            answer:
+              'Landelijke platforms blijven verschijnen. Lokale SEO bouwt owned GBP- en organische signalen zodat klanten met hoge levensduurwaarde niet alleen via listings worden gehuurd. Sterke stads- en nichepagina’s verminderen op termijn de afhankelijkheid van marktplaatsleads.'
+          },
+          {
+            question: 'Moeten we plannen rond aangifteseizoen?',
+            answer:
+              'Ja. Aangifte- en jaarrekeningpieken zijn momenten waarop veel ondernemers boekhouders vergelijken. We stemmen GBP-posts en lokale content af op die seizoenen zonder te beloven dat je elke seizoensquery bezit.'
+          }
+        ]
+      }
+    }
+  },
+
+  'branches-advocaten-notarissen-website-laten-maken': {
+    parents: ['home', 'branches', 'branches-advocaten-notarissen'],
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Website design for law firms',
+      category: 'Web Development',
+      offers: [
+        { name: 'Practice-area pages for law firms' },
+        { name: 'Lawyer and notary profile pages' },
+        { name: 'Discreet legal consultation intake' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Website design for law firms',
+        serviceName: 'Website design for law firms',
+        serviceDescription:
+          'Law firm website design with practice-area pages, lawyer and notary profiles, authority signals, discreet consultation intake, process explainers, notarial tariff and deed-quote paths, and multilingual options for expat clients.',
+        faqs: [
+          {
+            question: 'How do I project authority online as a law firm?',
+            answer:
+              'Lead with clear practice-area pages, calm professional lawyer profiles, publications and visible memberships such as the Netherlands Bar and specialised associations. Pair that with a discreet consultation path. Stock gavels and aggressive claim banners undermine the seriousness clients look for at a stressful moment.'
+          },
+          {
+            question: 'Can I get a separate page per practice area?',
+            answer:
+              'Yes. We structure dedicated pages for areas such as employment law, family law and divorce, corporate law, personal injury, real estate and notarial conveyancing. Each page explains who you help, typical matters and the first step — so searchers land on specialisation, not a single vague list.'
+          },
+          {
+            question: 'How do I get better-qualified case enquiries from the website?',
+            answer:
+              'Match landing pages to the problem someone is googling, ask a short intake that covers practice area and urgency without fishing for privileged detail, and make confidential callback options obvious. Quality rises when tyre-kickers self-select before they hit the diary.'
+          },
+          {
+            question: 'Can the site be multilingual for expat clients?',
+            answer:
+              'Yes, where your practice serves international clients. We add English or other locale versions of key practice and contact pages, with a language switch that respects locale URLs so expats facing divorce, employment or conveyancing can engage without guessing.'
+          },
+          {
+            question: 'Does this also work for a notary office?',
+            answer:
+              'Yes. Notarial sites need clear information on residential conveyancing and wills, indicative tariff context where appropriate, and a structured quote request for deeds. We keep lawyer and notary journeys distinct when a firm offers both.'
+          },
+          {
+            question: 'How should case intake protect confidentiality?',
+            answer:
+              'Forms should capture enough to triage — practice area, urgency, a short matter summary — without inviting privileged detail into an open web field. We design intake so the right desk can respond while confidentiality stays intact.'
+          },
+          {
+            question: 'How long does a law firm website project take?',
+            answer:
+              'Most firm websites launch in about four to eight weeks, depending on the number of practice pages, profile depth, notarial quote tooling and content readiness. Discovery starts with your practice map and intake rules so we do not build a generic clinic-style template.'
+          },
+          {
+            question: 'Should we show memberships and publications on the site?',
+            answer:
+              'Yes. Orde van Advocaten, specialised associations, KNB for notaries, publications and speaking engagements are authority signals clients scan for. We place them where they support trust next to profiles and practice pages — not buried in a footer.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Website laten maken voor advocaten',
+        serviceName: 'Website laten maken voor advocaten',
+        serviceDescription:
+          'Advocatenwebsite laten maken met rechtsgebiedpagina’s, advocaat- en notarisprofielen, autoriteitssignalen, discrete consultintake, procesuitleg, notariële tarief- en akteoffertepaden, en meertalige opties voor expats.',
+        faqs: [
+          {
+            question: 'Hoe straal ik autoriteit uit online als advocatenkantoor?',
+            answer:
+              'Zet heldere rechtsgebiedpagina’s, rustige professionele advocaatprofielen, publicaties en zichtbare lidmaatschappen zoals de Orde van Advocaten en specialisatieverenigingen voorop. Koppel dat aan een discreet consultpad. Stockhamers en agressieve claimbanners ondermijnen de ernst die cliënten zoeken op een stressvol moment.'
+          },
+          {
+            question: 'Kan ik per rechtsgebied een pagina krijgen?',
+            answer:
+              'Ja. We structureren dedicated pagina’s voor onder meer arbeidsrecht, familierecht en echtscheiding, ondernemingsrecht, letselschade, vastgoed en notariële overdracht. Elke pagina legt uit wie je helpt, typische zaken en de eerste stap — zodat zoekers op specialisatie landen, niet op één vage lijst.'
+          },
+          {
+            question: 'Hoe krijg ik betere zaakaanvragen via de website?',
+            answer:
+              'Koppel landingspagina’s aan het probleem dat iemand googelt, stel een korte intake in die rechtsgebied en urgentie dekt zonder naar privileged detail te vissen, en maak vertrouwelijk terugbellen duidelijk. Kwaliteit stijgt wanneer shoppers zichzelf filteren vóór ze in de agenda landen.'
+          },
+          {
+            question: 'Kan de site meertalig zijn voor expats?',
+            answer:
+              'Ja, waar jullie praktijk internationale cliënten bedient. We voegen Engelse of andere locale-versies toe van kernpagina’s over rechtsgebied en contact, met een taalswitch die locale-URL’s respecteert zodat expats bij echtscheiding, arbeid of overdracht niet hoeven te gokken.'
+          },
+          {
+            question: 'Geldt dit ook voor een notariskantoor?',
+            answer:
+              'Ja. Notariële sites hebben heldere informatie nodig over woningoverdracht en testamenten, indicatieve tariefcontext waar passend, en een gestructureerde offerte-aanvraag voor aktes. We houden advocaat- en notarisreizen onderscheiden wanneer een kantoor beide aanbiedt.'
+          },
+          {
+            question: 'Hoe beschermt zaakintake de vertrouwelijkheid?',
+            answer:
+              'Formulieren moeten genoeg vastleggen om te triëren — rechtsgebied, urgentie, een korte zaakomschrijving — zonder privileged detail in een open webveld te lokken. We ontwerpen intake zodat het juiste bureau kan reageren terwijl vertrouwelijkheid intact blijft.'
+          },
+          {
+            question: 'Hoe lang duurt het om een advocatenwebsite te laten maken?',
+            answer:
+              'De meeste kantoorwebsites gaan in ongeveer vier tot acht weken live, afhankelijk van het aantal rechtsgebiedpagina’s, profieldiepte, notariële offertetools en contentklaarheid. Discovery begint bij jullie praktijklkaart en intakeregels, zodat we geen generiek kliniektemplate bouwen.'
+          },
+          {
+            question: 'Moeten we lidmaatschappen en publicaties op de site tonen?',
+            answer:
+              'Ja. Orde van Advocaten, specialisatieverenigingen, KNB voor notarissen, publicaties en spreekbeurten zijn autoriteitssignalen waarnaar cliënten scannen. We plaatsen ze waar ze vertrouwen steunen naast profielen en rechtsgebiedpagina’s — niet begraven in een footer.'
+          }
+        ]
+      }
+    }
+  },
+
+  'branches-advocaten-notarissen-lokale-seo': {
+    parents: ['home', 'branches', 'branches-advocaten-notarissen'],
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Local SEO for law firms',
+      category: 'Digital Marketing',
+      offers: [
+        { name: 'Google Business Profile for law firms' },
+        { name: 'Practice area and city landing pages' },
+        { name: 'Ethical review growth for legal practices' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Local SEO for law firms',
+        serviceName: 'Local SEO for law firms',
+        serviceDescription:
+          'Local SEO for law firms and notaries focused on practice area + city search, Google Business Profile, ethical review habits, authority signals and owned visibility against directories — without ranking guarantees.',
+        faqs: [
+          {
+            question: 'How do I rank for a practice area and city?',
+            answer:
+              'Combine a complete Google Business Profile with dedicated practice + city landing pages — for example employment lawyer Amsterdam or divorce lawyer in your town — plus consistent NAP citations and authority signals. Thin stubs rarely work; useful local practice pages with matching GBP categories send clearer signals. We do not promise a fixed ranking.'
+          },
+          {
+            question: 'May I ask clients for reviews as a lawyer?',
+            answer:
+              'Often yes, but carefully. Sensitive family, employment or criminal matters need ethical and privacy boundaries. We design request habits that invite feedback where appropriate — after a closed matter, with informed consent — and never pressure parties mid-dispute. Your firm’s disciplinary rules always come first.'
+          },
+          {
+            question: 'How do I build authority in Google as a law firm?',
+            answer:
+              'Strengthen GBP with accurate categories and office photos, publish practice + city pages, show Bar and association memberships, and grow recent reviews within ethical limits. Publications and clear specialisation descriptors support relevance for specialist searches — without guaranteeing a map-pack place.'
+          },
+          {
+            question: 'Does this also apply to a notary office?',
+            answer:
+              'Yes. Notarial search around conveyancing and wills is strongly local and price-comparing. We align GBP and local pages with “notary [city]”, deed and will intent so buyers and sellers comparing offices find clear local information first.'
+          },
+          {
+            question: 'How long does local SEO take for a law firm?',
+            answer:
+              'GBP and action improvements often show within a few weeks. Stable relevance for competitive practice + city terms usually needs several months of consistent work. Timelines depend on competition, directory noise and how complete your profile already is. We do not promise a fixed map position.'
+          },
+          {
+            question: 'How is this different from a law firm website?',
+            answer:
+              'Local SEO is about being found in Maps and local search for practice + city queries. The website spoke converts that traffic with practice pages, profiles and discreet intake. They support each other; this page covers findability.'
+          },
+          {
+            question: 'How do we compete with lawyer directories and comparison sites?',
+            answer:
+              'Directories will keep appearing. Local SEO builds owned GBP and organic signals so qualified enquiries are not only rented from listing platforms. Strong practice + city pages and a complete firm profile reduce dependence on paid directory leads over time.'
+          },
+          {
+            question: 'What if we have multiple offices or specialised lawyers?',
+            answer:
+              'We structure profiles, categories and local pages so each location and specialisation keeps a clear signal — avoiding one desk cannibalising another when employment, family and notarial paths share a brand.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Lokale SEO voor advocaten',
+        serviceName: 'Lokale SEO voor advocaten',
+        serviceDescription:
+          'Lokale SEO voor advocaten en notarissen gericht op rechtsgebied + stad-zoeken, Google Bedrijfsprofiel, ethische reviewgewoontes, autoriteitssignalen en owned zichtbaarheid tegen directories — zonder rankinggaranties.',
+        faqs: [
+          {
+            question: 'Hoe rank ik per rechtsgebied en stad?',
+            answer:
+              'Combineer een compleet Google Bedrijfsprofiel met dedicated rechtsgebied + stad-landingspagina’s — bijvoorbeeld arbeidsrecht advocaat Amsterdam of echtscheidingsadvocaat in jullie stad — plus consistente NAP-citations en autoriteitssignalen. Dunne stubs werken zelden; nuttige lokale praktijkpagina’s met passende GBP-categorieën sturen duidelijkere signalen. We beloven geen vaste ranking.'
+          },
+          {
+            question: 'Mag ik cliëntreviews vragen als advocaat?',
+            answer:
+              'Vaak wel, maar voorzichtig. Gevoelige familie-, arbeids- of strafzaken vragen om ethische en privacygrenzen. We ontwerpen verzoekgewoontes die feedback uitnodigen waar passend — na een afgeronde zaak, met geïnformeerde toestemming — en nooit partijen onder druk zetten midden in een conflict. Jullie tuchtregels gaan altijd voor.'
+          },
+          {
+            question: 'Hoe bouw ik autoriteit op in Google als advocatenkantoor?',
+            answer:
+              'Versterk GBP met juiste categorieën en kantoorfoto’s, publiceer rechtsgebied + stad-pagina’s, toon Orde- en verenigingslidmaatschappen, en groei recente reviews binnen ethische grenzen. Publicaties en heldere specialisatieomschrijvingen steunen relevantie voor specialistzoeken — zonder een kaartpackplek te garanderen.'
+          },
+          {
+            question: 'Geldt dit ook voor een notariskantoor?',
+            answer:
+              'Ja. Notarieel zoeken rond woningoverdracht en testamenten is sterk lokaal en prijsvergelijkend. We stemmen GBP en lokale pagina’s af op “notaris [stad]”, akte- en testamentintentie zodat kopers en verkopers die kantoren vergelijken eerst heldere lokale informatie vinden.'
+          },
+          {
+            question: 'Hoe lang duurt lokale SEO voor een advocatenkantoor?',
+            answer:
+              'GBP- en actieverbeteringen zie je vaak binnen enkele weken. Stabiele relevantie op concurrerende rechtsgebied + stad-termen vraagt meestal enkele maanden consistent werk. Doorlooptijden hangen af van concurrentie, directoryruis en hoe compleet je profiel al is. We beloven geen vaste kaartpositie.'
+          },
+          {
+            question: 'Wat is het verschil met een advocatenwebsite laten maken?',
+            answer:
+              'Lokale SEO gaat over gevonden worden in Maps en lokaal zoeken op rechtsgebied + stad. De websitespoke zet dat verkeer om met praktijkpagina’s, profielen en discrete intake. Ze versterken elkaar; deze pagina gaat over vindbaarheid.'
+          },
+          {
+            question: 'Hoe concurreren we met advocaten-directories en vergelijkingssites?',
+            answer:
+              'Directories blijven verschijnen. Lokale SEO bouwt owned GBP- en organische signalen zodat gekwalificeerde aanvragen niet alleen via listings worden gehuurd. Sterke rechtsgebied + stad-pagina’s en een compleet kantoorprofiel verminderen op termijn de afhankelijkheid van betaalde directoryleads.'
+          },
+          {
+            question: 'Wat als we meerdere vestigingen of gespecialiseerde advocaten hebben?',
+            answer:
+              'We structureren profielen, categorieën en lokale pagina’s zodat elke locatie en specialisatie een helder signaal houdt — en voorkomen dat het ene bureau het andere kannibaliseert wanneer arbeidsrecht, familie en notariaat één merk delen.'
+          }
+        ]
+      }
+    }
+  },
+
   'branches-installateurs-website-laten-maken': {
     parents: ['home', 'branches', 'branches-installateurs'],
     extras: [buildProfessionalServiceSchema()],
