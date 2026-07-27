@@ -8,7 +8,7 @@ import RouteScrollAndFocus from './components/RouteScrollAndFocus'
 import DocumentMeta from './components/DocumentMeta'
 import RelatedServices from './components/RelatedServices'
 import FaqSection from './components/FaqSection'
-import { INDEXABLE_PATHS, ROUTES, localeFromPath } from './i18n/routes'
+import { isIndexablePath, ROUTES, localeFromPath } from './i18n/routes'
 import { UI } from './i18n/ui'
 
 const HomePage = lazy(() => import('./pages/HomePage'))
@@ -56,6 +56,13 @@ const BranchesInstallateurs = lazy(() => import('./pages/branches/Installateurs'
 const BranchesAdvocatenNotarissen = lazy(() => import('./pages/branches/AdvocatenNotarissen'))
 const BranchesBoekhouders = lazy(() => import('./pages/branches/Boekhouders'))
 const BranchesAutobedrijven = lazy(() => import('./pages/branches/Autobedrijven'))
+const BranchesWebshops = lazy(() => import('./pages/branches/Webshops'))
+const BranchesWebshopsWebsiteLatenMaken = lazy(
+  () => import('./pages/branches/webshops/WebsiteLatenMaken')
+)
+const BranchesWebshopsLokaleSeo = lazy(
+  () => import('./pages/branches/webshops/LokaleSeo')
+)
 const BranchesAutobedrijvenWebsiteLatenMaken = lazy(
   () => import('./pages/branches/autobedrijven/WebsiteLatenMaken')
 )
@@ -157,7 +164,7 @@ function PageInternalLinks() {
   ) {
     return null
   }
-  if (!INDEXABLE_PATHS.has(pathname)) return null
+  if (!isIndexablePath(pathname)) return null
   return <RelatedServices />
 }
 
@@ -229,6 +236,18 @@ function App() {
               <Route
                 path={ROUTES['branches-autobedrijven'].en}
                 element={<BranchesAutobedrijven />}
+              />
+              <Route
+                path={ROUTES['branches-webshops'].en}
+                element={<BranchesWebshops />}
+              />
+              <Route
+                path={ROUTES['branches-webshops-website-laten-maken'].en}
+                element={<BranchesWebshopsWebsiteLatenMaken />}
+              />
+              <Route
+                path={ROUTES['branches-webshops-lokale-seo'].en}
+                element={<BranchesWebshopsLokaleSeo />}
               />
               <Route
                 path={ROUTES['branches-autobedrijven-website-laten-maken'].en}
@@ -372,6 +391,18 @@ function App() {
               <Route
                 path={ROUTES['branches-autobedrijven'].nl}
                 element={<BranchesAutobedrijven />}
+              />
+              <Route
+                path={ROUTES['branches-webshops'].nl}
+                element={<BranchesWebshops />}
+              />
+              <Route
+                path={ROUTES['branches-webshops-website-laten-maken'].nl}
+                element={<BranchesWebshopsWebsiteLatenMaken />}
+              />
+              <Route
+                path={ROUTES['branches-webshops-lokale-seo'].nl}
+                element={<BranchesWebshopsLokaleSeo />}
               />
               <Route
                 path={ROUTES['branches-autobedrijven-website-laten-maken'].nl}

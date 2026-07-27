@@ -821,6 +821,66 @@
     <image:image><image:loc>https://amoradigital.nl/og/marketing.png</image:loc></image:image>
   </url>
   <url>
+    <loc>https://amoradigital.nl/industries/webshops</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/industries/webshops" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/branches/webshops" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/industries/webshops" />
+   
+    <image:image><image:loc>https://amoradigital.nl/og/marketing.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://amoradigital.nl/nl/branches/webshops</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/industries/webshops" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/branches/webshops" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/industries/webshops" />
+   
+    <image:image><image:loc>https://amoradigital.nl/og/marketing.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://amoradigital.nl/industries/webshops/website-design</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/industries/webshops/website-design" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/branches/webshops/website-laten-maken" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/industries/webshops/website-design" />
+   
+    <image:image><image:loc>https://amoradigital.nl/og/website-design.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://amoradigital.nl/nl/branches/webshops/website-laten-maken</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/industries/webshops/website-design" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/branches/webshops/website-laten-maken" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/industries/webshops/website-design" />
+   
+    <image:image><image:loc>https://amoradigital.nl/og/website-design.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://amoradigital.nl/industries/webshops/local-seo</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/industries/webshops/local-seo" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/branches/webshops/lokale-seo" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/industries/webshops/local-seo" />
+   
+    <image:image><image:loc>https://amoradigital.nl/og/local-seo.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://amoradigital.nl/nl/branches/webshops/lokale-seo</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/industries/webshops/local-seo" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/branches/webshops/lokale-seo" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/industries/webshops/local-seo" />
+   
+    <image:image><image:loc>https://amoradigital.nl/og/local-seo.png</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://amoradigital.nl/industries/car-dealers-garages/website-design</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

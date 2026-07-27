@@ -1,0 +1,602 @@
+import { Link, useLocation } from 'react-router-dom'
+import {
+  ArrowRight,
+  BookOpen,
+  CheckCircle2,
+  FileSearch,
+  Gauge,
+  Layers,
+  Link2,
+  Package,
+  Search,
+  ShoppingCart,
+  Sparkles,
+  Star
+} from 'lucide-react'
+import { ROUTES, localeFromPath, type Locale } from '../../../i18n/routes'
+import { BRANCH_SPOKES } from '../../../data/branchSpokes'
+import BranchSpokeCard from '../../../components/BranchSpokeCard'
+
+const FEATURE_ICONS = [
+  Package,
+  Layers,
+  FileSearch,
+  Gauge,
+  BookOpen,
+  Link2,
+  Star,
+  Search
+] as const
+
+const FEATURES = [
+  {
+    en: {
+      title: 'Product-page SEO that earns clicks',
+      description:
+        'Unique copy, Product structured data and review markup so rich results can surface specs and ratings — not thin manufacturer paste duplicated across a thousand SKUs.'
+    },
+    nl: {
+      title: 'Productpagina-SEO die klikken verdient',
+      description:
+        'Unieke content, Product structured data en reviews-markup zodat rich results specs en scores kunnen tonen — geen dunne fabrikantentekst gekopieerd over duizend SKU’s die onderling kannibaliseren.'
+    }
+  },
+  {
+    en: {
+      title: 'Category pages as ranking engines',
+      description:
+        'Categories carry the heaviest commercial intent in many niches. We strengthen titles, intros, filters and internal links so category URLs can compete for product-family queries.'
+    },
+    nl: {
+      title: 'Categoriepagina’s als rankingmotoren',
+      description:
+        'Categorieën dragen in veel niches de zwaarste commerciële intentie. We versterken titels, intro’s, filters en interne links zodat categorie-URL’s kunnen concurreren op productfamilie-queries die marktplaatsen ook najagen.'
+    }
+  },
+  {
+    en: {
+      title: 'Technical SEO for large catalogues',
+      description:
+        'Crawl budget, facet and filter URL control, canonicals and pagination hygiene — so Googlebot spends time on pages that can rank and sell, not infinite parameter combinations.'
+    },
+    nl: {
+      title: 'Technische SEO voor grote catalogi',
+      description:
+        'Crawlbudget, facet- en filter-URL-beheer, canonicals en pagineringshygiëne — zodat Googlebot tijd besteedt aan pagina’s die kunnen ranken en verkopen, geen oneindige parametercombinaties die indexatie en autoriteit verdunnen.'
+    }
+  },
+  {
+    en: {
+      title: 'Sitespeed and Core Web Vitals',
+      description:
+        'Image budgets, lean templates and mobile CWV treated as ranking and conversion infrastructure — because slow category grids lose both bots and buyers.'
+    },
+    nl: {
+      title: 'Sitesnelheid en Core Web Vitals',
+      description:
+        'Beeldbudgetten, slanke templates en mobiele CWV als ranking- én conversie-infrastructuur — omdat trage categoriegrids zowel bots als kopers verliezen voordat een productpagina überhaupt opent.'
+    }
+  },
+  {
+    en: {
+      title: 'Buying guides for top-of-funnel demand',
+      description:
+        'Editorial pages that answer “which X for Y” before the SKU click — so you capture research intent that marketplaces also fight for, then route readers into categories.'
+    },
+    nl: {
+      title: 'Koopgidsen voor top-of-funnel vraag',
+      description:
+        'Redactionele pagina’s die “welke X voor Y” beantwoorden vóór de SKU-klik — zodat je onderzoekintentie vangt waar marktplaatsen ook om vechten, en lezers via interne links naar categorieën leidt die kunnen converteren.'
+    }
+  },
+  {
+    en: {
+      title: 'Internal links across thousands of SKUs',
+      description:
+        'Hub-and-spoke linking from categories, guides and related products so authority reaches deep catalogue pages instead of dying on the homepage carousel.'
+    },
+    nl: {
+      title: 'Interne links over duizenden SKU’s',
+      description:
+        'Hub-and-spoke-linking vanuit categorieën, gidsen en gerelateerde producten zodat autoriteit diepe cataloguspagina’s bereikt in plaats van te sterven op de homepagecarrousel of een vergeten blogarchief.'
+    }
+  },
+  {
+    en: {
+      title: 'Out-of-stock and discontinued handling',
+      description:
+        'Rules for sold-out and expired products — soft 404s avoided, useful redirects or alternatives offered — so ranking equity is not thrown away when inventory turns.'
+    },
+    nl: {
+      title: 'Omgaan met uitverkocht en verlopen',
+      description:
+        'Regels voor uitverkochte en verlopen producten — soft 404s vermeden, nuttige redirects of alternatieven geboden — zodat rankingequity niet wordt weggegooid wanneer voorraad draait of seizoenscollecties verdwijnen.'
+    }
+  },
+  {
+    en: {
+      title: 'Search intent around products and brands',
+      description:
+        'Keyword work keyed to product, brand and comparison queries — the phrases shoppers type when they are ready to shortlist SKUs, not “near me” service urgency.'
+    },
+    nl: {
+      title: 'Zoekintentie rond producten en merken',
+      description:
+        'Zoekwoordwerk gekoppeld aan product-, merk- en vergelijkingsqueries — frasen die shoppers typen wanneer ze SKU’s shortlisten, geen “bij mij”-diensturgentie voor een straatverzorgingsgebied.'
+    }
+  }
+] as const
+
+const PROCESS_STEPS = [
+  {
+    en: {
+      step: '01',
+      title: 'Catalogue and crawl audit',
+      description:
+        'We audit indexation, facet URLs, canonicals, product uniqueness, category strength, CWV and how you compete with marketplaces on priority queries. No map-pack checklist — this is catalogue visibility.'
+    },
+    nl: {
+      step: '01',
+      title: 'Catalogus- en crawlaudit',
+      description:
+        'We auditen indexatie, facet-URL’s, canonicals, productuniciteit, categoriesterkte, CWV en hoe je concurreert met marktplaatsen op prioriteitsqueries. Geen kaartpackchecklist voor straatvangst — dit is cataloguszichtbaarheid die orders kan voeden.'
+    }
+  },
+  {
+    en: {
+      step: '02',
+      title: 'Priority keyword and URL set',
+      description:
+        'We lock a product, brand and category keyword set tied to pages that can earn organic demand — then decide which thin or duplicate URLs to fix, merge or noindex before content work starts.'
+    },
+    nl: {
+      step: '02',
+      title: 'Prioriteitszoekwoorden en URL-set',
+      description:
+        'We zetten een product-, merk- en categoriezoekwoordenset vast gekoppeld aan pagina’s die organische vraag kunnen verdienen — en beslissen welke dunne of dubbele URL’s te fixen, mergen of noindexen vóór contentwerk start, zodat crawlbudget niet verspild blijft.'
+    }
+  },
+  {
+    en: {
+      step: '03',
+      title: 'Technical and template upgrades',
+      description:
+        'Crawl budget, structured data, pagination, filter rules and template-level product/category improvements roll out so scale does not recreate the same SEO debt on every new SKU.'
+    },
+    nl: {
+      step: '03',
+      title: 'Technische en template-upgrades',
+      description:
+        'Crawlbudget, structured data, paginering, filterregels en template-niveau product-/categorieverbeteringen rollen uit zodat schaal niet dezelfde SEO-schuld op elke nieuwe SKU of seizoensimport herschept.'
+    }
+  },
+  {
+    en: {
+      step: '04',
+      title: 'Content, guides and internal links',
+      description:
+        'Category intros, product uniqueness where it matters, buying guides and internal link paths deepen relevance — aimed at competing for organic share against marketplaces without promising a #1 slot.'
+    },
+    nl: {
+      step: '04',
+      title: 'Content, gidsen en interne links',
+      description:
+        'Categorie-intro’s, productuniciteit waar het telt, koopgidsen en interne linkpaden verdiepen relevantie — gericht op organisch aandeel tegen marktplaatsen zoals bol.com en Coolblue, zonder een #1-plek te beloven.'
+    }
+  },
+  {
+    en: {
+      step: '05',
+      title: 'Measure organic orders, not vanity ranks',
+      description:
+        'Monthly reporting on organic sessions, category and product landings, indexed coverage and revenue influenced by organic — progress toward less paid dependency, without guaranteed rankings.'
+    },
+    nl: {
+      step: '05',
+      title: 'Meet organische orders, geen vanity-ranks',
+      description:
+        'Maandelijkse rapportage over organische sessies, categorie- en productlandings, geïndexeerde dekking en omzet beïnvloed door organisch — voortgang naar minder betaalde afhankelijkheid, zonder gegarandeerde rankings of vaste posities.'
+    }
+  }
+] as const
+
+const SIBLING_SLUGS = ['website-laten-maken', 'google-ads'] as const
+
+const T = {
+  en: {
+    crumbHome: 'Home',
+    crumbBranches: 'Industries',
+    crumbHub: 'Webshops & e-commerce',
+    crumbCurrent: 'SEO',
+    badge: 'E-commerce SEO',
+    h1: 'SEO for webshops',
+    heroSub:
+      'Grow organic demand for product and category pages — with catalogue technical SEO, Product and review structured data, Core Web Vitals, buying guides and internal links built for thousands of SKUs. With 1,500+ completed projects, we know how online stores earn visibility that compounds instead of renting every click forever through Shopping alone.',
+    trust: '1,500+ completed projects',
+    ctaPrimary: 'Request a quote',
+    problemBadge: 'The real cost',
+    problemHead: 'Invisible in organic search means every sale rents ad spend',
+    problemP1:
+      'When product and category pages barely appear for the queries shoppers type, the store leans on Shopping and search ads for every order. Margins shrink the moment you pause spend — because there is no compounding organic layer catching brand, product and comparison intent while you sleep. Every euro in paid clicks then has to cover acquisition alone, with nothing left in organic equity.',
+    problemP2:
+      'E-commerce SEO is catalogue work: unique product content, category pages that can rank, crawl budget across facets, structured data, sitespeed and guides that compete with bol.com, Amazon and Coolblue for attention. It is not a Google Business Profile map race for a street catchment, and it is not “[service] [city]” packing for vans or workshops. Shoppers compare SKUs nationally; your ranking surface is the catalogue URL, not a pin on a street corner.',
+    problemP3:
+      'Thin duplicates, uncontrolled filter URLs, slow mobile grids and dead out-of-stock pages waste crawl and authority. Organic rankings compound when templates and IA are healthy; ads stop the day the budget stops. That gap is why catalogue SEO belongs next to a conversion-ready storefront — not as an afterthought once media costs climb and ROAS pressure makes every unpaid click more valuable.',
+    featuresBadge: 'What we do',
+    featuresHead: 'What is included in SEO for webshops',
+    featuresSub:
+      'Every deliverable serves organic catalogue demand — product and category SEO, technical scale, structured data, CWV, guides and internal links — not a map-pack checklist relabelled for shops or a generic blog calendar without template work.',
+    processBadge: 'How we work',
+    processHead: 'How a webshop SEO engagement runs',
+    processSub:
+      'From auditing crawl and category strength to measuring organic landings and revenue influence — including how you compete with marketplaces on product intent and how out-of-stock URLs are handled.',
+    whyBadge: 'Why Amora Digital',
+    whyHead: 'Why online stores trust us with catalogue SEO',
+    whySub:
+      'E-commerce SEO that treats categories, crawl budget and product data as the ranking surface — not a local-service playbook with “near me” swapped for “buy online”, and not a thin blog strategy that ignores template debt.',
+    whyItems: [
+      {
+        title: 'Catalogue-first keyword work',
+        desc: 'We prioritise product, brand and category intent that can land on real URLs — then grow content and templates around those money pages that already carry commercial demand.'
+      },
+      {
+        title: 'Technical scale without chaos',
+        desc: 'Facets, canonicals, pagination and indexation rules keep large catalogues crawlable so new SKUs inherit a clean system instead of new SEO debt every import.'
+      },
+      {
+        title: 'Marketplace-aware competition',
+        desc: 'We plan for organic share against big retail platforms where it is realistic — with uniqueness, guides and CWV — without promising to outrank every giant on every head term overnight.'
+      },
+      {
+        title: 'One team from storefront to demand',
+        desc: 'SEO for the catalogue first; storefront and later Shopping ads when paid demand needs a push — one team that already knows your URL patterns, facet rules and product data shape.'
+      }
+    ],
+    costsBadge: 'Timeframe & expectations',
+    costsHead: 'What to expect from SEO for webshops',
+    costsIntro:
+      'Webshop SEO is ongoing technical, template and content work across categories, products and guides. Template and crawl fixes can show progress within weeks; durable category and product relevance usually needs months of compounding against marketplace competition. We share realistic organic traffic and revenue trends, not guaranteed rankings or fixed pack positions that do not apply to catalogues.',
+    costsItems: [
+      {
+        title: 'Foundation (catalogue health)',
+        desc: 'Crawl and indexation cleanup, canonical and facet rules, Product schema, CWV quick wins and a priority category/product keyword set. Ideal when Googlebot wastes budget on filter noise, thin duplicates or expired SKU URLs.'
+      },
+      {
+        title: 'Growth (competitive niches)',
+        desc: 'Ongoing monthly work: category content, product uniqueness where it moves the needle, buying guides, internal links, competitor monitoring versus marketplaces and reporting on organic landings that can become orders.'
+      },
+      {
+        title: 'Large-catalogue programmes',
+        desc: 'When SKU count or facet complexity is high, we structure templates and IA so scale does not recreate soft 404s, orphan products or uncontrolled parameter indexes that burn crawl budget every season.'
+      }
+    ],
+    costsNote:
+      'Scope depends on catalogue size, platform constraints and how much technical debt exists today. Request a webshop SEO quote — we outline crawl priorities, category work and content cadence with honest timelines, without ranking guarantees. Bring your top revenue categories, SKU count and where organic is weak versus paid so we size the programme around real catalogue demand.',
+    siblingsBadge: 'Also for webshops',
+    siblingsHead: 'Pair SEO with a converting storefront and later Shopping',
+    siblingsSub:
+      'Organic demand needs pages that can rank and check out; Shopping ads can amplify high-intent products when organic alone is not enough. These services point demand at a catalogue that is already SEO-ready.',
+    siblingsCta: 'View service',
+    hubLink: 'Back to webshop & e-commerce marketing',
+    supportLinkLabel: 'Also see our general SEO services',
+    supportLinkNote:
+      'For businesses outside e-commerce we offer broader SEO. Webshop engagements follow the catalogue process on this page.',
+    ctaHeading: 'Ready for organic demand that compounds beyond ad spend?',
+    ctaSub:
+      'Tell us your platform, catalogue size and which categories carry revenue. We scope crawl health, product and category SEO and guides with honest timelines — without promising a fixed ranking.',
+    ctaButton: 'Request a quote'
+  },
+  nl: {
+    crumbHome: 'Home',
+    crumbBranches: 'Branches',
+    crumbHub: 'Webshops & e-commerce',
+    crumbCurrent: 'SEO',
+    badge: 'E-commerce SEO',
+    h1: 'SEO voor webshops',
+    heroSub:
+      'Laat organische vraag naar product- en categoriepagina’s groeien — met technische SEO voor catalogi, Product- en review structured data, Core Web Vitals, koopgidsen en interne links gebouwd voor duizenden SKU’s. Met 1.500+ afgeronde projecten weten we hoe webshops zichtbaarheid verdienen die stapelt in plaats van elke klik eeuwig te huren via Shopping alleen — en hoe catalogus-SEO naast een sterke etalage hoort.',
+    trust: '1.500+ afgeronde projecten',
+    ctaPrimary: 'Vraag een offerte aan',
+    problemBadge: 'De echte kosten',
+    problemHead: 'Onzichtbaar in organisch zoeken betekent dat elke verkoop ad-spend huurt',
+    problemP1:
+      'Wanneer product- en categoriepagina’s nauwelijks verschijnen op de queries die shoppers typen, leunt de shop voor elke order op Shopping- en zoekads. Marges krimpen zodra je spend pauzeert — omdat er geen stapelende organische laag is die merk-, product- en vergelijkingsintentie vangt terwijl je slaapt. Elke euro in betaalde klikken moet dan acquisitie alleen dekken, zonder organische equity die meegroeit.',
+    problemP2:
+      'SEO voor webshops is cataloguswerk: unieke productcontent, categoriepagina’s die kunnen ranken, crawlbudget over facetten, structured data, sitesnelheid en gidsen die concurreren met bol.com, Amazon en Coolblue om aandacht. Het is geen Google Bedrijfsprofiel-kaartrace voor een straatverzorgingsgebied, en geen “[dienst] [stad]”-packwerk voor bussen of werkplaatsen. Shoppers vergelijken SKU’s landelijk; jouw rankingoppervlak is de catalogus-URL, geen pin op een straathoek.',
+    problemP3:
+      'Dunne duplicaten, ongecontroleerde filter-URL’s, trage mobiele grids en dode uitverkocht-pagina’s verspillen crawl en autoriteit. Organische rankings stapelen wanneer templates en IA gezond zijn; ads stoppen de dag dat het budget stopt. Dat gat is waarom catalogus-SEO naast een conversieklare etalage hoort — geen nawoord zodra mediakosten stijgen en ROAS-druk elke onbetaalde klik waardevoller maakt. Zonder die basis blijft Shopping de enige kraan die je open kunt houden.',
+    featuresBadge: 'Wat we doen',
+    featuresHead: 'Wat zit er in SEO voor webshops',
+    featuresSub:
+      'Elke deliverable dient organische catalogusvraag — product- en categorie-SEO, technische schaal, structured data, CWV, gidsen en interne links — geen kaartpackchecklist herlabeld voor shops, en geen generieke blogkalender zonder templatewerk dat schaalbaar blijft bij duizenden SKU’s.',
+    processBadge: 'Hoe we werken',
+    processHead: 'Hoe een SEO-traject voor een webshop verloopt',
+    processSub:
+      'Van een audit van crawl en categoriesterkte tot meten van organische landings en omzetinvloed — inclusief hoe je concurreert met marktplaatsen op productintentie en hoe uitverkocht-URL’s worden behandeld zonder soft 404s die equity weggooien.',
+    whyBadge: 'Waarom Amora Digital',
+    whyHead: 'Waarom webshops hun catalogus-SEO aan ons toevertrouwen',
+    whySub:
+      'E-commerce SEO die categorieën, crawlbudget en productdata als rankingoppervlak behandelt — geen lokale-dienstplaybook met “bij mij” vervangen door “online kopen”, en geen dunne blogstrategie die templateschuld en facetchaos negeert.',
+    whyItems: [
+      {
+        title: 'Catalogus-eerst zoekwoordwerk',
+        desc: 'We prioriteren product-, merk- en categorie-intentie die op echte URL’s kan landen — en groeien content en templates rond die geldpagina’s die al commerciële vraag dragen, niet rond losse blogposts zonder pad naar checkout.'
+      },
+      {
+        title: 'Technische schaal zonder chaos',
+        desc: 'Facetten, canonicals, paginering en indexatieregels houden grote catalogi crawlbaar zodat nieuwe SKU’s een schoon systeem erven in plaats van nieuwe SEO-schuld bij elke import of seizoenscollectie.'
+      },
+      {
+        title: 'Marktplaatsbewuste concurrentie',
+        desc: 'We plannen organisch aandeel tegen grote retailplatforms zoals bol.com, Amazon en Coolblue waar dat realistisch is — met uniciteit, gidsen en CWV — zonder te beloven elke reus op elke head term overnight te verslaan.'
+      },
+      {
+        title: 'Eén team van etalage tot vraag',
+        desc: 'Eerst SEO voor de catalogus; etalage en later Shopping-ads wanneer betaalde vraag een duwtje nodig heeft — één team dat jullie URL-patronen, facetregels en productdatavorm al kent voordat campagnes opstarten.'
+      }
+    ],
+    costsBadge: 'Doorlooptijd & verwachtingen',
+    costsHead: 'Wat je mag verwachten van SEO voor webshops',
+    costsIntro:
+      'SEO voor webshops is doorlopend technisch, template- en contentwerk over categorieën, producten en gidsen. Template- en crawlfixes kunnen binnen weken voortgang tonen; duurzame categorie- en productrelevantie vraagt meestal maanden van compounding tegen marktplaatsconcurrentie. We delen realistische organische verkeer- en omzettrends, geen gegarandeerde rankings of vaste packposities die niet bij catalogi horen en die we ook niet beloven.',
+    costsItems: [
+      {
+        title: 'Foundation (catalogusgezondheid)',
+        desc: 'Crawl- en indexatie-opschoning, canonical- en facetregels, Product schema, CWV quick wins en een prioriteitscategorie-/productzoekwoordenset. Ideaal wanneer Googlebot budget verspilt aan filterruis, dunne duplicaten of verlopen SKU-URL’s die geen orders meer kunnen dragen.'
+      },
+      {
+        title: 'Growth (concurrerende niches)',
+        desc: 'Doorlopend maandelijks werk: categoriecontent, productuniciteit waar het de naald beweegt, koopgidsen, interne links, concurrentiemonitoring versus marktplaatsen en rapportage op organische landings die orders kunnen worden in plaats van alleen vanity-posities.'
+      },
+      {
+        title: 'Grote-catalogusprogramma’s',
+        desc: 'Bij hoog SKU-aantal of facetcomplexiteit structureren we templates en IA zodat schaal geen soft 404s, weesproducten of ongecontroleerde parameterindexes herschept die elk seizoen crawlbudget verbranden en indexatie verdunnen.'
+      }
+    ],
+    costsNote:
+      'Scope hangt af van catalogusgrootte, platformbeperkingen en hoeveel technische schuld er vandaag is. Vraag een SEO-offerte voor webshops aan — we schetsen crawlprioriteiten, categoriewerk en contentritme met eerlijke planning, zonder rankinggaranties. Neem je top-omzetcategorieën, SKU-aantal en waar organisch zwak is versus betaald mee, zodat we het programma rond echte catalogusvraag dimensioneren en niet rond generieke “meer verkeer”-beloftes.',
+    siblingsBadge: 'Ook voor webshops',
+    siblingsHead: 'Combineer SEO met een converterende etalage en later Shopping',
+    siblingsSub:
+      'Organische vraag heeft pagina’s nodig die kunnen ranken én afrekenen; Shopping-ads kunnen producten met hoge intentie versterken wanneer organisch alleen niet volstaat. Deze diensten sturen vraag naar een catalogus die al technisch en inhoudelijk SEO-klaar is.',
+    siblingsCta: 'Bekijk dienst',
+    hubLink: 'Terug naar webshop- & e-commercemarketing',
+    supportLinkLabel: 'Bekijk ook onze algemene SEO-diensten',
+    supportLinkNote:
+      'Voor bedrijven buiten e-commerce bieden we bredere SEO. Webshoptrajecten volgen het catalogusproces op deze pagina.',
+    ctaHeading: 'Klaar voor organische vraag die verder stapelt dan ad-spend?',
+    ctaSub:
+      'Vertel je platform, catalogusgrootte, facetcomplexiteit en welke categorieën omzet dragen. We scopen crawlgezondheid, product- en categorie-SEO en gidsen met eerlijke doorlooptijden — zonder een vaste ranking te beloven tegen marktplaatsen of een #1-positie te garanderen.',
+    ctaButton: 'Vraag een offerte aan'
+  }
+} as const
+
+export default function WebshopsLokaleSeo() {
+  const { pathname } = useLocation()
+  const locale: Locale = localeFromPath(pathname)
+  const t = T[locale]
+  const hubPath = ROUTES['branches-webshops'][locale]
+  const firmSpokes = BRANCH_SPOKES.webshops
+  const siblings = firmSpokes.filter((spoke) =>
+    (SIBLING_SLUGS as readonly string[]).includes(spoke.slug)
+  )
+
+  return (
+    <div>
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary-600 via-primary-700 to-secondary-600 text-white">
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-white/10 rounded-full blur-3xl" />
+          <div className="absolute top-60 -left-20 w-60 h-60 bg-white/10 rounded-full blur-3xl" />
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-24 lg:pt-28 lg:pb-32">
+          <div className="max-w-3xl mx-auto text-center">
+            <nav className="flex items-center justify-center gap-2 text-sm mb-8 flex-wrap" aria-label="Breadcrumb">
+              <Link to={ROUTES.home[locale]} className="text-white/60 hover:text-white transition-colors">
+                {t.crumbHome}
+              </Link>
+              <span className="text-white/40" aria-hidden>/</span>
+              <Link to={ROUTES.branches[locale]} className="text-white/60 hover:text-white transition-colors">
+                {t.crumbBranches}
+              </Link>
+              <span className="text-white/40" aria-hidden>/</span>
+              <Link to={hubPath} className="text-white/60 hover:text-white transition-colors">
+                {t.crumbHub}
+              </Link>
+              <span className="text-white/40" aria-hidden>/</span>
+              <span className="text-white">{t.crumbCurrent}</span>
+            </nav>
+
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-medium mb-6">
+              <Search className="w-4 h-4" aria-hidden />
+              <span>{t.badge}</span>
+            </div>
+
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+              {t.h1}
+            </h1>
+            <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto mb-8">{t.heroSub}</p>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+              <Link
+                to={ROUTES.contact[locale]}
+                className="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-primary-700 bg-white rounded-lg hover:bg-slate-100 transition-all shadow-lg group"
+              >
+                {t.ctaPrimary}
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden />
+              </Link>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm text-white/90">
+                <Sparkles className="w-4 h-4 text-secondary-300" aria-hidden />
+                <span>{t.trust}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary-100 text-secondary-700 text-sm font-medium mb-4">
+            <span>{t.problemBadge}</span>
+          </div>
+          <h2 className="section-heading text-slate-900 mb-6">{t.problemHead}</h2>
+          <div className="space-y-5 text-lg text-slate-600 leading-relaxed">
+            <p>{t.problemP1}</p>
+            <p>{t.problemP2}</p>
+            <p>{t.problemP3}</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 lg:py-28 bg-gradient-to-b from-slate-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-100 text-primary-700 text-sm font-medium mb-4">
+              <ShoppingCart className="w-4 h-4" aria-hidden />
+              <span>{t.featuresBadge}</span>
+            </div>
+            <h2 className="section-heading text-slate-900 mb-4">{t.featuresHead}</h2>
+            <p className="section-subheading mx-auto">{t.featuresSub}</p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            {FEATURES.map((feature, i) => {
+              const Icon = FEATURE_ICONS[i] ?? CheckCircle2
+              const copy = feature[locale]
+              return (
+                <div key={copy.title} className="card p-6">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center mb-4 shadow-lg">
+                    <Icon className="w-6 h-6 text-white" aria-hidden />
+                  </div>
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">{copy.title}</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">{copy.description}</p>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent-100 text-accent-700 text-sm font-medium mb-4">
+              <span>{t.processBadge}</span>
+            </div>
+            <h2 className="section-heading text-slate-900 mb-4">{t.processHead}</h2>
+            <p className="section-subheading mx-auto">{t.processSub}</p>
+          </div>
+
+          <div className="max-w-3xl mx-auto space-y-6">
+            {PROCESS_STEPS.map((item) => {
+              const copy = item[locale]
+              return (
+                <div key={copy.step} className="card p-6 sm:p-8 flex gap-5">
+                  <div className="text-2xl font-display font-bold text-primary-600 flex-shrink-0">{copy.step}</div>
+                  <div>
+                    <h3 className="text-xl font-bold text-slate-900 mb-2">{copy.title}</h3>
+                    <p className="text-slate-600 leading-relaxed">{copy.description}</p>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 lg:py-28 bg-gradient-to-b from-slate-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary-100 text-secondary-700 text-sm font-medium mb-4">
+              <CheckCircle2 className="w-4 h-4" aria-hidden />
+              <span>{t.whyBadge}</span>
+            </div>
+            <h2 className="section-heading text-slate-900 mb-4">{t.whyHead}</h2>
+            <p className="section-subheading mx-auto">{t.whySub}</p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            {t.whyItems.map((item) => (
+              <div key={item.title} className="card p-6">
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center mb-4">
+                  <CheckCircle2 className="w-5 h-5 text-white" aria-hidden />
+                </div>
+                <h3 className="text-lg font-bold text-slate-900 mb-2">{item.title}</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-100 text-primary-700 text-sm font-medium mb-4">
+            <span>{t.costsBadge}</span>
+          </div>
+          <h2 className="section-heading text-slate-900 mb-4">{t.costsHead}</h2>
+          <p className="text-lg text-slate-600 leading-relaxed mb-10">{t.costsIntro}</p>
+
+          <div className="space-y-4 mb-8">
+            {t.costsItems.map((item) => (
+              <div key={item.title} className="card p-6">
+                <h3 className="text-lg font-bold text-slate-900 mb-2">{item.title}</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-sm text-slate-500 leading-relaxed">{t.costsNote}</p>
+        </div>
+      </section>
+
+      <section className="py-20 lg:py-28 bg-gradient-to-b from-slate-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-100 text-primary-700 text-sm font-medium mb-4">
+              <span>{t.siblingsBadge}</span>
+            </div>
+            <h2 className="section-heading text-slate-900 mb-4">{t.siblingsHead}</h2>
+            <p className="section-subheading mx-auto">{t.siblingsSub}</p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-6 lg:gap-8 mb-10 max-w-3xl mx-auto">
+            {siblings.map((spoke) => (
+              <BranchSpokeCard
+                key={spoke.slug}
+                industrySlug="webshops"
+                spoke={spoke}
+                locale={locale}
+                ctaLabel={t.siblingsCta}
+              />
+            ))}
+          </div>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-center">
+            <Link to={hubPath} className="text-primary-600 font-semibold hover:text-primary-700 inline-flex items-center gap-2">
+              {t.hubLink}
+              <ArrowRight className="w-4 h-4" aria-hidden />
+            </Link>
+            <span className="hidden sm:inline text-slate-300" aria-hidden>|</span>
+            <div className="text-sm text-slate-500 max-w-md">
+              <Link to={ROUTES['seo-services'][locale]} className="text-primary-600 font-medium hover:text-primary-700">
+                {t.supportLinkLabel}
+              </Link>
+              <span className="block mt-1">{t.supportLinkNote}</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="section-heading text-slate-900 mb-4">{t.ctaHeading}</h2>
+          <p className="section-subheading mx-auto mb-8">{t.ctaSub}</p>
+          <Link to={ROUTES.contact[locale]} className="btn-primary group">
+            {t.ctaButton}
+            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden />
+          </Link>
+        </div>
+      </section>
+    </div>
+  )
+}

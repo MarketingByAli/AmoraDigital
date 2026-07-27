@@ -13,13 +13,14 @@ import { buildGraph } from '../seo/schema'
 import { resolvePageSchema } from '../seo/pageSchema'
 import {
   DEFAULT_LOCALE,
-  INDEXABLE_PATHS,
   LOCALE_HREFLANG,
   LOCALE_HTML_LANG,
   LOCALE_OG,
   ROUTES,
   getRouteKey,
+  isIndexablePath,
   localeFromPath,
+  normalizePathname,
   type Locale
 } from '../i18n/routes'
 
@@ -93,11 +94,12 @@ function setPageJsonLd(schema: object | null) {
 }
 
 /**
- * Canonical URL helper. Home (`/`) keeps a trailing slash to match the
- * sitemap; every other route (including `/nl`) has no trailing slash.
+ * Absolute canonical for a slashless ROUTES path.
+ * Home (`/`) keeps a trailing slash to match the sitemap; every other route
+ * (including `/nl`) has no trailing slash.
  */
-function canonicalForPath(pathname: string): string {
-  return `${SITE_CANONICAL_ORIGIN}${pathname === '/' ? '/' : pathname}`
+function canonicalForRoutePath(routePath: string): string {
+  return `${SITE_CANONICAL_ORIGIN}${routePath === '/' ? '/' : routePath}`
 }
 
 export default function DocumentMeta() {
@@ -105,13 +107,16 @@ export default function DocumentMeta() {
   const skipNextGtagConfig = useRef(true)
 
   useEffect(() => {
-    const locale: Locale = localeFromPath(pathname)
-    const meta = getMetaForPath(pathname, locale)
+    const path = normalizePathname(pathname)
+    const locale: Locale = localeFromPath(path)
+    const key = getRouteKey(path)
+    const meta = getMetaForPath(path, locale)
     const { title, description, ogImage, keywords } = meta
-    const canonicalUrl = canonicalForPath(pathname)
+    // Prefer ROUTES[key] so canonicals never inherit a trailing slash from the bar.
+    const routePath = key ? ROUTES[key][locale] : path
+    const canonicalUrl = canonicalForRoutePath(routePath)
     const image = ogImage ?? DEFAULT_OG_IMAGE
-    const indexable = INDEXABLE_PATHS.has(pathname)
-    const key = getRouteKey(pathname)
+    const indexable = isIndexablePath(path)
 
     setHtmlLang(LOCALE_HTML_LANG[locale])
 
@@ -144,8 +149,8 @@ export default function DocumentMeta() {
     // search audiences.
     clearAlternateLinks()
     if (key) {
-      const enUrl = `${SITE_CANONICAL_ORIGIN}${ROUTES[key].en === '/' ? '/' : ROUTES[key].en}`
-      const nlUrl = `${SITE_CANONICAL_ORIGIN}${ROUTES[key].nl}`
+      const enUrl = canonicalForRoutePath(ROUTES[key].en)
+      const nlUrl = canonicalForRoutePath(ROUTES[key].nl)
       appendAlternate(LOCALE_HREFLANG.en, enUrl)
       appendAlternate(LOCALE_HREFLANG.nl, nlUrl)
       appendAlternate('x-default', enUrl)
@@ -184,7 +189,7 @@ export default function DocumentMeta() {
     setMetaName('geo.position', '52.3676;4.9041')
     setMetaName('ICBM', '52.3676, 4.9041')
 
-    const pageNodes = indexable ? resolvePageSchema(pathname, { title, description, image }) : []
+    const pageNodes = indexable ? resolvePageSchema(routePath, { title, description, image }) : []
     if (pageNodes.length > 0) {
       setPageJsonLd(buildGraph(pageNodes))
     } else {
@@ -195,7 +200,7 @@ export default function DocumentMeta() {
     if (skipNextGtagConfig.current) {
       skipNextGtagConfig.current = false
     } else {
-      gtag?.('config', GA_MEASUREMENT_ID, { page_path: pathname, page_title: title })
+      gtag?.('config', GA_MEASUREMENT_ID, { page_path: routePath, page_title: title })
     }
   }, [pathname])
 

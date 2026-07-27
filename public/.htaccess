@@ -7,6 +7,13 @@
 Options -MultiViews
 DirectoryIndex index.html
 
+# Do not 301 directory URLs to the trailing-slash form. Canonicals and the SPA
+# route table are slashless (except `/`). DirectoryIndex still serves
+# `<dir>/index.html` for prerendered folders when the slashless URL is requested.
+<IfModule mod_dir.c>
+  DirectorySlash Off
+</IfModule>
+
 # ----------------------------------------------------------------------------
 #  1. Canonicalize to HTTPS + non-www (pick one hostname for SEO)
 # ----------------------------------------------------------------------------
@@ -23,8 +30,8 @@ DirectoryIndex index.html
   RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
   RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
 
-  # Remove trailing slash (except for root)
-  RewriteCond %{REQUEST_FILENAME} !-d
+  # Remove trailing slash (except for root), including prerender directories.
+  # DirectorySlash Off above prevents a bounce back to the slash form.
   RewriteCond %{REQUEST_URI} ^(.+)/$
   RewriteRule ^ %1 [L,R=301]
 
@@ -34,7 +41,6 @@ DirectoryIndex index.html
   # ------------------------------------------------------------------------
   RewriteRule ^index\.html$ - [L]
   RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
   RewriteRule ^(.+?)/?$ /$1/index.html [L]
 

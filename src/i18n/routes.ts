@@ -88,6 +88,9 @@ export type RouteKey =
   | 'branches-autobedrijven'
   | 'branches-autobedrijven-website-laten-maken'
   | 'branches-autobedrijven-lokale-seo'
+  | 'branches-webshops'
+  | 'branches-webshops-website-laten-maken'
+  | 'branches-webshops-lokale-seo'
   | 'branches-installateurs-website-laten-maken'
   | 'branches-installateurs-lokale-seo'
   | 'branches-aannemers-website-laten-maken'
@@ -226,6 +229,18 @@ export const ROUTES: Record<RouteKey, Record<Locale, string>> = {
     en: '/industries/car-dealers-garages/local-seo',
     nl: '/nl/branches/autobedrijven/lokale-seo'
   },
+  'branches-webshops': {
+    en: '/industries/webshops',
+    nl: '/nl/branches/webshops'
+  },
+  'branches-webshops-website-laten-maken': {
+    en: '/industries/webshops/website-design',
+    nl: '/nl/branches/webshops/website-laten-maken'
+  },
+  'branches-webshops-lokale-seo': {
+    en: '/industries/webshops/local-seo',
+    nl: '/nl/branches/webshops/lokale-seo'
+  },
   'branches-installateurs-website-laten-maken': {
     en: '/industries/installers/website-design',
     nl: '/nl/branches/installateurs/website-laten-maken'
@@ -304,15 +319,27 @@ const PATH_TO_KEY: Record<string, RouteKey> = (() => {
   return map
 })()
 
+/**
+ * Collapse trailing-slash variants onto the slashless ROUTES shape.
+ * Preserves `/` (EN home). `/nl/` → `/nl` (NL home). Empty → `/`.
+ */
+export function normalizePathname(pathname: string): string {
+  if (!pathname || pathname === '/') return '/'
+  return pathname.length > 1 && pathname.endsWith('/')
+    ? pathname.slice(0, -1)
+    : pathname
+}
+
 /** Infer locale from pathname. Anything starting with `/nl` is Dutch. */
 export function localeFromPath(pathname: string): Locale {
-  if (pathname === '/nl' || pathname.startsWith('/nl/')) return 'nl'
+  const path = normalizePathname(pathname)
+  if (path === '/nl' || path.startsWith('/nl/')) return 'nl'
   return 'en'
 }
 
 /** Resolve a pathname to its logical RouteKey, or null when unknown. */
 export function getRouteKey(pathname: string): RouteKey | null {
-  return PATH_TO_KEY[pathname] ?? null
+  return PATH_TO_KEY[normalizePathname(pathname)] ?? null
 }
 
 /** Build the pathname for a RouteKey in the requested locale. */
@@ -340,3 +367,8 @@ export const INDEXABLE_PATHS: ReadonlySet<string> = new Set([
   ...ALL_EN_PATHS,
   ...ALL_NL_PATHS
 ])
+
+/** Whether a pathname (with or without trailing slash) is an indexable route. */
+export function isIndexablePath(pathname: string): boolean {
+  return INDEXABLE_PATHS.has(normalizePathname(pathname))
+}

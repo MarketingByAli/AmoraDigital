@@ -28,7 +28,8 @@ export const LIVE_BRANCH_SPOKES: Readonly<Record<string, readonly string[]>> = {
   installateurs: ['website-laten-maken', 'lokale-seo'],
   'advocaten-notarissen': ['website-laten-maken', 'lokale-seo'],
   boekhouders: ['website-laten-maken', 'lokale-seo'],
-  autobedrijven: ['website-laten-maken', 'lokale-seo']
+  autobedrijven: ['website-laten-maken', 'lokale-seo'],
+  webshops: ['website-laten-maken', 'lokale-seo']
 }
 
 /**
@@ -94,6 +95,16 @@ export const BRANCH_SPOKE_ROUTE_KEYS: Readonly<
     'website-laten-maken': 'branches-autobedrijven-website-laten-maken',
     'lokale-seo': 'branches-autobedrijven-lokale-seo',
     'google-ads': 'branches-autobedrijven-google-ads' as RouteKey
+  },
+  /**
+   * Website + lokale-seo (e-commerce SEO) are live in ROUTES. google-ads remains
+   * cast until that page ships — muted card stays link-safe. Note: lokale-seo
+   * visible copy is e-commerce SEO (not map-pack); google-ads is Shopping-led.
+   */
+  webshops: {
+    'website-laten-maken': 'branches-webshops-website-laten-maken',
+    'lokale-seo': 'branches-webshops-lokale-seo',
+    'google-ads': 'branches-webshops-google-ads' as RouteKey
   }
 }
 
@@ -490,6 +501,41 @@ export const BRANCH_SPOKES: Record<string, readonly BranchSpoke[]> = {
       benefit: {
         en: 'Campaigns around APK urgency, tyre season and occasion intent so workshop slots and stock enquiries reach the desk.',
         nl: 'Campagnes rond APK-urgentie, bandenseizoen en occasionintentie, zodat werkplaatsplekken en voorraadaanvragen het bureau bereiken.'
+      }
+    }
+  ],
+  webshops: [
+    {
+      slug: 'website-laten-maken',
+      name: {
+        en: 'Webshop design & development',
+        nl: 'Webshop laten maken'
+      },
+      benefit: {
+        en: 'A storefront built for catalogue browsing, mobile checkout and trust signals — so visitors reach pay, not abandon on a brochure site pretending to be a shop.',
+        nl: 'Een etalage gebouwd voor catalogusbrowsen, mobiele checkout en vertrouwenssignalen — zodat bezoekers betalen, niet afhaken op een brochuresite die een shop veinst.'
+      }
+    },
+    {
+      slug: 'lokale-seo',
+      name: {
+        en: 'SEO for webshops',
+        nl: 'SEO voor webshops'
+      },
+      benefit: {
+        en: 'Product and category pages that earn organic demand nationally or regionally — catalogue SEO and sitespeed, not Google Business Profile map-pack work for a street catchment.',
+        nl: 'Product- en categoriepagina’s die organische vraag landelijk of regionaal verdienen — catalogus-SEO en sitesnelheid, geen Google Bedrijfsprofiel-map-packwerk voor een straatverzorgingsgebied.'
+      }
+    },
+    {
+      slug: 'google-ads',
+      name: {
+        en: 'Google Ads for webshops',
+        nl: 'Google Ads voor webshops'
+      },
+      benefit: {
+        en: 'Shopping and Performance Max built around feed quality and high-intent product queries — so paid clicks chase profitable orders, not empty vanity traffic.',
+        nl: 'Shopping en Performance Max rond feedkwaliteit en productqueries met hoge intentie — zodat betaalde klikken winstgevende orders najagen, geen leeg vanity-verkeer.'
       }
     }
   ]

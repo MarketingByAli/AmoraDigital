@@ -243,7 +243,8 @@ export const LIVE_BRANCH_HUBS: readonly LiveBranchHub[] = [
   { industrySlug: 'installateurs', routeKey: 'branches-installateurs' },
   { industrySlug: 'advocaten-notarissen', routeKey: 'branches-advocaten-notarissen' },
   { industrySlug: 'boekhouders', routeKey: 'branches-boekhouders' },
-  { industrySlug: 'autobedrijven', routeKey: 'branches-autobedrijven' }
+  { industrySlug: 'autobedrijven', routeKey: 'branches-autobedrijven' },
+  { industrySlug: 'webshops', routeKey: 'branches-webshops' }
 ]
 
 /** True when the industry hub has a live RouteKey + page. */

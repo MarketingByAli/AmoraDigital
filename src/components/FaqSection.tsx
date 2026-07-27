@@ -1,7 +1,7 @@
 import { useLocation } from 'react-router-dom'
 import { ChevronDown } from 'lucide-react'
 import { getFaqsForPath } from '../seo/pageSchema'
-import { INDEXABLE_PATHS, localeFromPath } from '../i18n/routes'
+import { isIndexablePath, localeFromPath } from '../i18n/routes'
 import { UI } from '../i18n/ui'
 
 /**
@@ -10,7 +10,7 @@ import { UI } from '../i18n/ui'
  */
 export default function FaqSection() {
   const { pathname } = useLocation()
-  if (!INDEXABLE_PATHS.has(pathname)) return null
+  if (!isIndexablePath(pathname)) return null
 
   const locale = localeFromPath(pathname)
   const ui = UI[locale].faq

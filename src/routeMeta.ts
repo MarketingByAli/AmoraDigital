@@ -11,9 +11,9 @@
 
 import { SITE_CANONICAL_ORIGIN, SITE_NAME } from './siteConfig'
 import {
-  DEFAULT_LOCALE,
   ROUTES,
   getRouteKey,
+  localeFromPath,
   type Locale,
   type RouteKey
 } from './i18n/routes'
@@ -896,6 +896,78 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
       ],
     }
   },
+  'branches-webshops': {
+    en: {
+      title: `Online marketing for webshops | Amora`,
+      description:
+        'Online marketing for webshops: storefronts, catalogue SEO, Shopping ads and conversion. 1,500+ projects.',
+      keywords: [
+        'online marketing for webshops',
+        'ecommerce SEO',
+        'Google Shopping',
+        'webshop conversion'
+      ],
+    },
+    nl: {
+      title: `Online marketing voor webshops | Amora`,
+      description:
+        'Online marketing voor webshops: etalages, catalogus-SEO, Shopping-ads en conversie. 1.500+ projecten.',
+      keywords: [
+        'online marketing voor webshops',
+        'SEO webshop',
+        'Google Shopping',
+        'webshop conversie'
+      ],
+    }
+  },
+  'branches-webshops-website-laten-maken': {
+    en: {
+      title: `Webshop design & development | Amora`,
+      description:
+        'Webshop design & development: platform advice, conversion checkout, payments, speed and Shopping feeds. 1,500+ projects.',
+      keywords: [
+        'webshop design & development',
+        'webshop design',
+        'Shopify WooCommerce',
+        'ecommerce website'
+      ],
+    },
+    nl: {
+      title: `Webshop laten maken | Amora`,
+      description:
+        'Webshop laten maken: platformadvies, conversiecheckout, betalingen, snelheid en Shopping-feeds. 1.500+ projecten.',
+      keywords: [
+        'webshop laten maken',
+        'webshop bouwen',
+        'Shopify WooCommerce',
+        'e-commerce website'
+      ],
+    }
+  },
+  'branches-webshops-lokale-seo': {
+    en: {
+      title: `SEO for webshops | Amora Digital`,
+      description:
+        'SEO for webshops: product & category pages, catalogue technical SEO, structured data and CWV. 1,500+ projects.',
+      keywords: [
+        'SEO for webshops',
+        'ecommerce SEO',
+        'product page SEO',
+        'category page SEO'
+      ],
+    },
+    nl: {
+      title: `SEO voor webshops | Amora Digital`,
+      description:
+        'SEO voor webshops: product- & categoriepagina’s, technische catalogus-SEO, structured data en CWV. 1.500+ projecten.',
+      keywords: [
+        'SEO voor webshops',
+        'e-commerce SEO',
+        'productpagina SEO',
+        'categoriepagina SEO'
+      ],
+    }
+  },
   'branches-autobedrijven-website-laten-maken': {
     en: {
       title: `Website design for car dealers | Amora`,
@@ -1434,10 +1506,10 @@ export function getMetaForKey(key: RouteKey, locale: Locale): RouteMeta {
 export function getMetaForPath(pathname: string, locale?: Locale): RouteMeta {
   const key = getRouteKey(pathname)
   if (key) {
-    const loc = locale ?? (pathname.startsWith('/nl') ? 'nl' : 'en')
+    const loc = locale ?? localeFromPath(pathname)
     return getMetaForKey(key, loc)
   }
-  const loc = locale ?? DEFAULT_LOCALE
+  const loc = locale ?? localeFromPath(pathname)
   if (loc === 'nl') {
     return {
       title: `Pagina niet gevonden | ${SITE_NAME}`,

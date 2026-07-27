@@ -2889,6 +2889,313 @@ export const pageSeoByKey: Record<RouteKey, PageSeoConfig> = {
     }
   },
 
+  'branches-webshops': {
+    parents: ['home', 'branches'],
+    pageType: 'CollectionPage',
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Online marketing for webshops and e-commerce',
+      category: 'Digital Marketing',
+      offers: [
+        { name: 'Webshop design and development' },
+        { name: 'SEO for webshops' },
+        { name: 'Google Ads and Shopping for webshops' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Webshops & e-commerce',
+        serviceName: 'Online marketing for webshops and e-commerce',
+        serviceDescription:
+          'Online marketing for webshops and e-commerce: storefronts, catalogue SEO, Google Shopping and conversion focused on traffic, checkout and repeat purchase — not local map-pack SEO.',
+        faqs: [
+          {
+            question: 'How do we get more traffic to the webshop?',
+            answer:
+              'Combine catalogue SEO on product and category pages with Shopping or Performance Max where the feed is healthy, plus sitespeed so mobile visitors stay. National or regional search demand matters more here than a Google Business Profile pin for a street catchment.'
+          },
+          {
+            question: 'How do we raise conversion on the store?',
+            answer:
+              'Fix mobile checkout friction, clarify payment methods and return policy, and surface reviews or trust marks such as Thuiswinkel Waarborg where they apply. Traffic without a trustworthy path to pay wastes acquisition spend.'
+          },
+          {
+            question: 'Can product pages actually rank in search?',
+            answer:
+              'Yes when titles, content, internal links and technical health match real product intent — and when thin duplicate variants are cleaned up. Ranking takes time and competition varies by niche; we do not promise a fixed position.'
+          },
+          {
+            question: 'How should we advertise with Shopping for profitable ROAS?',
+            answer:
+              'Start from feed quality, margins and high-intent product queries, then structure Shopping or Performance Max so spend follows products that can carry the cost. We share realistic efficiency trends without guaranteeing a fixed ROAS.'
+          },
+          {
+            question: 'How is this different from marketing a local service business?',
+            answer:
+              'Webshops sell to a region or nationally through catalogues, feeds and checkout. Local-service hubs lean on map packs and “near me” urgency. This hub centres search demand, product feeds and conversion maths — not workshop diaries or salon bookings.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Webshops & e-commerce',
+        serviceName: 'Online marketing voor webshops en e-commerce',
+        serviceDescription:
+          'Online marketing voor webshops en e-commerce: etalages, catalogus-SEO, Google Shopping en conversie gericht op verkeer, checkout en herhaalaankoop — geen lokale map-pack-SEO.',
+        faqs: [
+          {
+            question: 'Hoe krijgen we meer verkeer naar de webshop?',
+            answer:
+              'Combineer catalogus-SEO op product- en categoriepagina’s met Shopping of Performance Max waar de feed gezond is, plus sitesnelheid zodat mobiele bezoekers blijven. Landelijke of regionale zoekvraag telt hier zwaarder dan een Google Bedrijfsprofiel-pin voor een straatverzorgingsgebied.'
+          },
+          {
+            question: 'Hoe verhogen we de conversie in de webshop?',
+            answer:
+              'Los mobiele checkoutwrijving op, maak betaalmethoden en retourbeleid helder, en toon reviews of keurmerken zoals Thuiswinkel Waarborg waar die passen. Verkeer zonder betrouwbaar pad naar betalen verspilt acquisitiebudget.'
+          },
+          {
+            question: 'Kunnen productpagina’s écht ranken in zoeken?',
+            answer:
+              'Ja wanneer titels, content, interne links en technische gezondheid bij echte productintentie passen — en dunne dubbele varianten zijn opgeschoond. Ranken kost tijd en concurrentie verschilt per niche; we beloven geen vaste positie.'
+          },
+          {
+            question: 'Hoe adverteren we met Shopping voor rendabele ROAS?',
+            answer:
+              'Begin bij feedkwaliteit, marges en productqueries met hoge intentie, en structureer Shopping of Performance Max zodat spend producten volgt die de kosten kunnen dragen. We delen realistische efficiëntietrends zonder een vaste ROAS te garanderen.'
+          },
+          {
+            question: 'Wat is het verschil met marketing voor een lokale dienstverlener?',
+            answer:
+              'Webshops verkopen regionaal of landelijk via catalogi, feeds en checkout. Lokale-diensthubs leunen op kaartpacks en “bij mij”-urgentie. Deze hub draait om zoekvraag, productfeeds en conversierekenkunde — geen werkplaatsagenda’s of salonboekingen.'
+          }
+        ]
+      }
+    }
+  },
+
+  'branches-webshops-website-laten-maken': {
+    parents: ['home', 'branches', 'branches-webshops'],
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Webshop design and development',
+      category: 'Web Development',
+      offers: [
+        { name: 'E-commerce platform advice and build' },
+        { name: 'Conversion-focused product and checkout pages' },
+        { name: 'Payments, integrations and Shopping feeds' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Website design',
+        serviceName: 'Webshop design and development',
+        serviceDescription:
+          'Webshop design and development with platform advice, conversion-led product and category pages, checkout and payments, sitespeed, integrations, Shopping feeds and migration planning.',
+        faqs: [
+          {
+            question: 'Which platform is best for my webshop?',
+            answer:
+              'It depends on catalogue size, custom needs, ops skills and budget shape. Shopify suits many growing catalogues with less server ops; WooCommerce fits WordPress-heavy teams; Lightspeed and Magento serve other scale or B2B patterns. We spell trade-offs in discovery before locking a stack — there is no single best platform for every store.'
+          },
+          {
+            question: 'Can you migrate my existing webshop?',
+            answer:
+              'Yes. We plan redirects, product and customer data moves, feed continuity and parallel checkout tests so revenue is protected at cutover. Exact risk depends on the old platform and URL structure; we map that before promising a migration window.'
+          },
+          {
+            question: 'How do you raise conversion on the store?',
+            answer:
+              'We improve product and category clarity, reduce checkout friction, surface payments such as iDEAL and Klarna, speed up mobile templates and place trust signals where shoppers decide. Conversion work is structural — not only a new hero image.'
+          },
+          {
+            question: 'Which payment methods can you connect?',
+            answer:
+              'Common Dutch and EU methods such as iDEAL, Klarna and card processors, plus others your PSP and platform support. Availability depends on merchant accounts and platform plugins or APIs; we confirm what your stack can take in discovery.'
+          },
+          {
+            question: 'Is the webshop fast on mobile?',
+            answer:
+              'That is a core requirement. We set image and template budgets aimed at usable Core Web Vitals on phones, because catalogue browsing and many checkouts happen on small screens. Exact scores vary by theme and apps; we treat speed as revenue infrastructure, not a nice-to-have.'
+          },
+          {
+            question: 'Can you connect stock, accounting or shipping software?',
+            answer:
+              'Where APIs and your tools allow, yes — inventory, accounting, shipping and sometimes PIM. Integration scope is fixed after we map systems so orders do not live in conflicting spreadsheets.'
+          },
+          {
+            question: 'Do you prepare product feeds for Google Shopping?',
+            answer:
+              'Yes. We structure product data so Shopping and Performance Max can consume clean titles, prices and availability. Feed quality is part of a scale-ready storefront, separate from running the ads themselves on the future Google Ads spoke.'
+          },
+          {
+            question: 'How is this different from a local-service website?',
+            answer:
+              'A webshop sells through catalogue, cart and payment. Local-service sites sell bookings or enquiries for a catchment. Structures, proof points and success metrics are deliberately different — we do not ship a restaurant or garage template with a cart bolted on.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Webshop laten maken',
+        serviceName: 'Webshop laten maken',
+        serviceDescription:
+          'Webshop laten maken met platformadvies, conversiegerichte product- en categoriepagina’s, checkout en betalingen, sitesnelheid, koppelingen, Shopping-feeds en migratieplanning.',
+        faqs: [
+          {
+            question: 'Welk platform is het beste voor mijn webshop?',
+            answer:
+              'Dat hangt af van catalogusgrootte, maatwerkbehoefte, operationele skills en budgetvorm. Shopify past bij veel groeiende catalogi met minder serverbeheer; WooCommerce bij WordPress-zware teams; Lightspeed en Magento bedienen andere schaal- of B2B-patronen. We zetten trade-offs in discovery op papier vóór we een stack vastzetten — er is geen universeel beste platform voor elke winkel.'
+          },
+          {
+            question: 'Kunnen jullie mijn bestaande webshop migreren?',
+            answer:
+              'Ja. We plannen redirects, product- en klantdataverhuizing, feedcontinuïteit en parallelle checkouttests zodat omzet bij cutover beschermd blijft. Exact risico hangt af van het oude platform en de URL-structuur; dat brengen we in kaart vóór we een migratievenster beloven.'
+          },
+          {
+            question: 'Hoe verhogen jullie de conversie?',
+            answer:
+              'We verbeteren product- en categoriehelderheid, verminderen checkoutwrijving, tonen betaalmethoden zoals iDEAL en Klarna, versnellen mobiele templates en plaatsen vertrouwenssignalen waar shoppers beslissen. Conversiewerk is structureel — niet alleen een nieuwe hero-afbeelding.'
+          },
+          {
+            question: 'Welke betaalmethoden kunnen jullie koppelen?',
+            answer:
+              'Gangbare NL- en EU-methoden zoals iDEAL, Klarna en card-processors, plus andere die jouw PSP en platform ondersteunen. Beschikbaarheid hangt af van merchant accounts en platformplugins of API’s; we bevestigen wat je stack aankan in discovery.'
+          },
+          {
+            question: 'Is de webshop snel op mobiel?',
+            answer:
+              'Dat is een kerneis. We zetten beeld- en templatebudgetten gericht op bruikbare Core Web Vitals op telefoons, omdat catalogusbrowsen en veel checkouts op kleine schermen gebeuren. Exacte scores variëren per thema en apps; we behandelen snelheid als omzetinfrastructuur, geen nice-to-have.'
+          },
+          {
+            question: 'Kunnen jullie voorraad-, boekhoud- of verzendsoftware koppelen?',
+            answer:
+              'Waar API’s en je tools het toelaten, ja — voorraad, boekhouding, verzending en soms PIM. Integratiescope zetten we vast nadat we systemen in kaart hebben, zodat orders niet in conflicterende spreadsheets leven.'
+          },
+          {
+            question: 'Bereiden jullie productfeeds voor Google Shopping voor?',
+            answer:
+              'Ja. We structureren productdata zodat Shopping en Performance Max schone titels, prijzen en beschikbaarheid kunnen consumeren. Feedkwaliteit hoort bij een schaalbare etalage, los van het draaien van de ads zelf op de toekomstige Google Ads-spoke.'
+          },
+          {
+            question: 'Wat is het verschil met een website voor een lokale dienstverlener?',
+            answer:
+              'Een webshop verkoopt via catalogus, winkelwagen en betaling. Lokale-dienstsites verkopen boekingen of aanvragen voor een verzorgingsgebied. Structuur, bewijspunten en succesmetrics zijn bewust anders — we leveren geen restaurant- of garagetemplate met een winkelwagen erop geschroefd.'
+          }
+        ]
+      }
+    }
+  },
+
+  'branches-webshops-lokale-seo': {
+    parents: ['home', 'branches', 'branches-webshops'],
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'SEO for webshops',
+      category: 'Digital Marketing',
+      offers: [
+        { name: 'Product and category page SEO' },
+        { name: 'Technical SEO for large catalogues' },
+        { name: 'Product schema, CWV and buying guides' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'SEO',
+        serviceName: 'SEO for webshops',
+        serviceDescription:
+          'SEO for webshops focused on product and category pages, technical catalogue SEO, Product and review structured data, Core Web Vitals, buying guides and internal links — without ranking guarantees.',
+        faqs: [
+          {
+            question: 'How do I get my product pages to rank?',
+            answer:
+              'Give each important SKU unique content where it matters, valid Product structured data, clear titles and internal links from stronger category pages. Thin manufacturer paste across thousands of URLs rarely wins. Progress compounds over months; we do not promise a fixed position.'
+          },
+          {
+            question: 'How do I compete with bol.com and Coolblue in organic search?',
+            answer:
+              'Compete where your assortment, uniqueness, guides and sitespeed can win share — often on mid-tail product and category intent rather than every head term a marketplace owns. We plan realistic organic share without claiming you will outrank every giant everywhere.'
+          },
+          {
+            question: 'How important is sitespeed for SEO?',
+            answer:
+              'Very. Core Web Vitals affect both ranking signals and whether shoppers stay on category grids. Slow mobile templates waste crawl and paid traffic alike. We treat CWV as catalogue infrastructure, not a one-off audit PDF.'
+          },
+          {
+            question: 'What do you do with out-of-stock products?',
+            answer:
+              'We set rules for sold-out and discontinued URLs: avoid soft 404s, offer alternatives or sensible redirects, and protect equity when inventory turns. Exact handling depends on whether the product returns and how important the URL already is.'
+          },
+          {
+            question: 'How long does SEO take for a webshop?',
+            answer:
+              'Crawl and template fixes can show movement within weeks. Durable category and product relevance usually needs several months of compounding work. Timelines depend on catalogue size, competition and technical debt. We do not guarantee rankings.'
+          },
+          {
+            question: 'Do category pages matter more than product pages?',
+            answer:
+              'Often yes for commercial family queries. Categories aggregate intent and link equity; products convert the click. Strong SEO programmes improve both, with categories as the ranking engines and products as the conversion layer.'
+          },
+          {
+            question: 'How is this different from SEO for a local service business?',
+            answer:
+              'Webshop SEO is catalogue, crawl budget, facets and product intent across a region or nationally. Local-service SEO centres map packs and city + service queries. The tactics and success metrics are deliberately different — this page never treats a shop like a street catchment.'
+          },
+          {
+            question: 'Can buying guides help ecommerce SEO?',
+            answer:
+              'Yes. Guides capture research intent before the SKU click and pass internal links into categories. They help you compete for top-of-funnel queries that marketplaces also target, without replacing solid product and category templates.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'SEO',
+        serviceName: 'SEO voor webshops',
+        serviceDescription:
+          'SEO voor webshops gericht op product- en categoriepagina’s, technische catalogus-SEO, Product- en review structured data, Core Web Vitals, koopgidsen en interne links — zonder rankinggaranties.',
+        faqs: [
+          {
+            question: 'Hoe laat ik mijn productpagina’s ranken?',
+            answer:
+              'Geef belangrijke SKU’s unieke content waar het telt, valide Product structured data, heldere titels en interne links vanaf sterkere categoriepagina’s. Dunne fabrikantentekst over duizenden URL’s wint zelden. Voortgang stapelt over maanden; we beloven geen vaste positie.'
+          },
+          {
+            question: 'Hoe concurreer ik met bol.com en Coolblue in organisch zoeken?',
+            answer:
+              'Concurreer waar jouw assortiment, uniciteit, gidsen en sitesnelheid aandeel kunnen winnen — vaak op mid-tail product- en categorie-intentie in plaats van elke head term die een marktplaats bezit. We plannen realistisch organisch aandeel zonder te claimen dat je elke reus overal verslaat.'
+          },
+          {
+            question: 'Hoe belangrijk is sitespeed voor SEO?',
+            answer:
+              'Zeer. Core Web Vitals raken zowel rankingsignalen als of shoppers op categoriegrids blijven. Trage mobiele templates verspillen crawl én betaald verkeer. We behandelen CWV als catalogusinfrastructuur, geen eenmalig audit-PDF.'
+          },
+          {
+            question: 'Wat doen jullie met uitverkochte producten?',
+            answer:
+              'We zetten regels voor uitverkochte en discontinue URL’s: soft 404s vermijden, alternatieven of zinvolle redirects bieden, en equity beschermen wanneer voorraad draait. Exacte aanpak hangt af van of het product terugkomt en hoe belangrijk de URL al is.'
+          },
+          {
+            question: 'Hoe lang duurt SEO voor een webshop?',
+            answer:
+              'Crawl- en templatefixes kunnen binnen weken beweging tonen. Duurzame categorie- en productrelevantie vraagt meestal maanden van compounding werk. Doorlooptijden hangen af van catalogusgrootte, concurrentie en technische schuld. We garanderen geen rankings.'
+          },
+          {
+            question: 'Tellen categoriepagina’s zwaarder dan productpagina’s?',
+            answer:
+              'Vaak wel voor commerciële familiequeries. Categorieën aggregeren intentie en linkequity; producten converteren de klik. Sterke SEO-programma’s verbeteren beide, met categorieën als rankingmotoren en producten als conversielaag.'
+          },
+          {
+            question: 'Wat is het verschil met SEO voor een lokale dienstverlener?',
+            answer:
+              'SEO voor webshops draait om catalogus, crawlbudget, facetten en productintentie regionaal of landelijk. SEO voor lokale diensten draait om kaartpacks en stad + dienst-queries. Tactiek en succesmetrics zijn bewust anders — deze pagina behandelt een shop nooit als straatverzorgingsgebied.'
+          },
+          {
+            question: 'Helpen koopgidsen bij e-commerce SEO?',
+            answer:
+              'Ja. Gidsen vangen onderzoekintentie vóór de SKU-klik en geven interne links door naar categorieën. Ze helpen concurreren om top-of-funnel queries die marktplaatsen ook targetten, zonder solide product- en categorietemplates te vervangen.'
+          }
+        ]
+      }
+    }
+  },
+
   'branches-autobedrijven-website-laten-maken': {
     parents: ['home', 'branches', 'branches-autobedrijven'],
     extras: [buildProfessionalServiceSchema()],
@@ -5464,22 +5771,23 @@ export function resolvePageSchema(
   const key = getRouteKey(pathname)
   if (!key) return []
   const locale = localeFromPath(pathname)
+  const path = ROUTES[key][locale]
   const config = pageSeoByKey[key]
   const localeEntry = config.locales[locale]
   const language = LOCALE_HTML_LANG[locale]
 
   const breadcrumbItems = breadcrumbItemsWithPaths(key, locale)
-  const breadcrumbId = `${absoluteUrl(pathname)}#breadcrumb`
+  const breadcrumbId = `${absoluteUrl(path)}#breadcrumb`
   const breadcrumb = {
     ...buildBreadcrumbSchema(breadcrumbItems),
     '@id': breadcrumbId
   }
 
-  const pageUrl = absoluteUrl(pathname)
+  const pageUrl = absoluteUrl(path)
   const faqId = localeEntry.faqs?.length ? `${pageUrl}#faq` : undefined
 
   const webPage = buildWebPageSchema({
-    path: pathname,
+    path,
     name: meta.title,
     description: meta.description,
     type: config.pageType,
@@ -5500,7 +5808,7 @@ export function resolvePageSchema(
   if (config.service && localeEntry.serviceName && localeEntry.serviceDescription) {
     nodes.push(
       buildServiceSchema({
-        path: pathname,
+        path,
         name: localeEntry.serviceName,
         description: localeEntry.serviceDescription,
         serviceType: config.service.serviceType,
@@ -5513,7 +5821,7 @@ export function resolvePageSchema(
   if (config.product && localeEntry.productName && localeEntry.productDescription) {
     nodes.push(
       buildProductSchema({
-        path: pathname,
+        path,
         name: localeEntry.productName,
         description: localeEntry.productDescription,
         category: config.product.category,
@@ -5525,7 +5833,7 @@ export function resolvePageSchema(
   }
 
   if (localeEntry.faqs?.length) {
-    nodes.push(buildFaqSchema(pathname, localeEntry.faqs, language))
+    nodes.push(buildFaqSchema(path, localeEntry.faqs, language))
   }
 
   return nodes
