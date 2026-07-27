@@ -30,7 +30,6 @@ const ROOT = path.resolve(__dirname, '..')
 const { en: EN_ROUTES, nl: NL_ROUTES } = loadAllPathsFromTs()
 const ROUTES = [...EN_ROUTES, ...NL_ROUTES]
 
-const PORT = 5178
 const RENDER_TIMEOUT_MS = 25000
 const POST_NAV_WAIT_MS = 600
 
@@ -42,8 +41,20 @@ async function startServer() {
       rewrites: [{ source: '**', destination: '/index.html' }]
     })
   )
-  await new Promise((resolve) => server.listen(PORT, resolve))
+  // Bind an ephemeral port so a leftover previous prerender cannot block builds.
+  await new Promise((resolve, reject) => {
+    server.once('error', reject)
+    server.listen(0, '127.0.0.1', resolve)
+  })
   return server
+}
+
+function serverPort(server) {
+  const addr = server.address()
+  if (!addr || typeof addr === 'string') {
+    throw new Error('Prerender server has no TCP address')
+  }
+  return addr.port
 }
 
 /** Minor HTML post-processing for crawler-friendly output. */
@@ -52,14 +63,14 @@ function postProcessHtml(html) {
   return html.replace(/<script[^>]*vite\/client[^>]*><\/script>/g, '')
 }
 
-async function renderRoute(browser, route) {
+async function renderRoute(browser, baseUrl, route) {
   const page = await browser.newPage()
   try {
     await page.setUserAgent(
       'Mozilla/5.0 (compatible; AmoraDigitalPrerender/1.0; +https://amoradigital.nl)'
     )
     await page.setViewport({ width: 1280, height: 800 })
-    await page.goto(`http://localhost:${PORT}${route}`, {
+    await page.goto(`${baseUrl}${route}`, {
       waitUntil: 'networkidle0',
       timeout: RENDER_TIMEOUT_MS
     })
@@ -87,17 +98,34 @@ async function main() {
   }
 
   const server = await startServer()
-  const browser = await puppeteer.launch({
+  const port = serverPort(server)
+  const baseUrl = `http://127.0.0.1:${port}`
+  const launchOpts = {
     headless: 'new',
     args: ['--no-sandbox', '--disable-setuid-sandbox']
-  })
+  }
+  // Prefer an explicit Chrome/Edge when Puppeteer's bundled browser cache is unavailable.
+  if (process.env.PUPPETEER_EXECUTABLE_PATH) {
+    launchOpts.executablePath = process.env.PUPPETEER_EXECUTABLE_PATH
+  } else {
+    for (const candidate of [
+      'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
+      'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe'
+    ]) {
+      if (fs.existsSync(candidate)) {
+        launchOpts.executablePath = candidate
+        break
+      }
+    }
+  }
+  const browser = await puppeteer.launch(launchOpts)
 
-  console.log(`[prerender] rendering ${ROUTES.length} routes...`)
+  console.log(`[prerender] rendering ${ROUTES.length} routes on ${baseUrl}...`)
   let ok = 0
   let failed = 0
   for (const route of ROUTES) {
     try {
-      const html = await renderRoute(browser, route)
+      const html = await renderRoute(browser, baseUrl, route)
       const outPath = outputPathFor(route)
       fs.writeFileSync(outPath, html, 'utf8')
       const rel = path.relative(ROOT, outPath).replace(/\\/g, '/')

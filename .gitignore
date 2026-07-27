@@ -18,6 +18,7 @@ dist-ssr
 #   - /index.html                   (prerendered home)
 #   - /assets/                      (hashed JS/CSS bundles)
 #   - /about/, /contact/, /privacy-policy/, /marketing/, /development/, /products/
+#   - /industries/, /nl/            (EN industry silo + full NL locale tree)
 #     (per-route prerendered index.html files)
 #
 # `index.html.template` is the source-of-truth template that scripts/clean.mjs

@@ -781,6 +781,166 @@
     <image:image><image:loc>https://amoradigital.nl/og/marketing.png</image:loc></image:image>
   </url>
   <url>
+    <loc>https://amoradigital.nl/industries/accountants</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/industries/accountants" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/branches/boekhouders" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/industries/accountants" />
+   
+    <image:image><image:loc>https://amoradigital.nl/og/marketing.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://amoradigital.nl/nl/branches/boekhouders</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/industries/accountants" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/branches/boekhouders" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/industries/accountants" />
+   
+    <image:image><image:loc>https://amoradigital.nl/og/marketing.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://amoradigital.nl/industries/car-dealers-garages</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/industries/car-dealers-garages" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/branches/autobedrijven" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/industries/car-dealers-garages" />
+   
+    <image:image><image:loc>https://amoradigital.nl/og/marketing.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://amoradigital.nl/nl/branches/autobedrijven</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/industries/car-dealers-garages" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/branches/autobedrijven" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/industries/car-dealers-garages" />
+   
+    <image:image><image:loc>https://amoradigital.nl/og/marketing.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://amoradigital.nl/industries/car-dealers-garages/website-design</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/industries/car-dealers-garages/website-design" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/branches/autobedrijven/website-laten-maken" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/industries/car-dealers-garages/website-design" />
+   
+    <image:image><image:loc>https://amoradigital.nl/og/website-design.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://amoradigital.nl/nl/branches/autobedrijven/website-laten-maken</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/industries/car-dealers-garages/website-design" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/branches/autobedrijven/website-laten-maken" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/industries/car-dealers-garages/website-design" />
+   
+    <image:image><image:loc>https://amoradigital.nl/og/website-design.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://amoradigital.nl/industries/car-dealers-garages/local-seo</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/industries/car-dealers-garages/local-seo" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/branches/autobedrijven/lokale-seo" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/industries/car-dealers-garages/local-seo" />
+   
+    <image:image><image:loc>https://amoradigital.nl/og/local-seo.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://amoradigital.nl/nl/branches/autobedrijven/lokale-seo</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/industries/car-dealers-garages/local-seo" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/branches/autobedrijven/lokale-seo" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/industries/car-dealers-garages/local-seo" />
+   
+    <image:image><image:loc>https://amoradigital.nl/og/local-seo.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://amoradigital.nl/industries/accountants/website-design</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/industries/accountants/website-design" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/branches/boekhouders/website-laten-maken" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/industries/accountants/website-design" />
+   
+    <image:image><image:loc>https://amoradigital.nl/og/website-design.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://amoradigital.nl/nl/branches/boekhouders/website-laten-maken</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/industries/accountants/website-design" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/branches/boekhouders/website-laten-maken" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/industries/accountants/website-design" />
+   
+    <image:image><image:loc>https://amoradigital.nl/og/website-design.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://amoradigital.nl/industries/accountants/local-seo</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/industries/accountants/local-seo" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/branches/boekhouders/lokale-seo" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/industries/accountants/local-seo" />
+   
+    <image:image><image:loc>https://amoradigital.nl/og/local-seo.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://amoradigital.nl/nl/branches/boekhouders/lokale-seo</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/industries/accountants/local-seo" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/branches/boekhouders/lokale-seo" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/industries/accountants/local-seo" />
+   
+    <image:image><image:loc>https://amoradigital.nl/og/local-seo.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://amoradigital.nl/industries/lawyers-notaries/website-design</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/industries/lawyers-notaries/website-design" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/branches/advocaten-notarissen/website-laten-maken" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/industries/lawyers-notaries/website-design" />
+   
+    <image:image><image:loc>https://amoradigital.nl/og/website-design.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://amoradigital.nl/nl/branches/advocaten-notarissen/website-laten-maken</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/industries/lawyers-notaries/website-design" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/branches/advocaten-notarissen/website-laten-maken" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/industries/lawyers-notaries/website-design" />
+   
+    <image:image><image:loc>https://amoradigital.nl/og/website-design.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://amoradigital.nl/industries/lawyers-notaries/local-seo</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/industries/lawyers-notaries/local-seo" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/branches/advocaten-notarissen/lokale-seo" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/industries/lawyers-notaries/local-seo" />
+   
+    <image:image><image:loc>https://amoradigital.nl/og/local-seo.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://amoradigital.nl/nl/branches/advocaten-notarissen/lokale-seo</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/industries/lawyers-notaries/local-seo" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/branches/advocaten-notarissen/lokale-seo" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/industries/lawyers-notaries/local-seo" />
+   
+    <image:image><image:loc>https://amoradigital.nl/og/local-seo.png</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://amoradigital.nl/industries/installers/website-design</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

@@ -6,9 +6,10 @@
   "scripts": {
     "dev": "vite",
     "clean": "node scripts/clean.mjs",
-    "build": "tsc && node scripts/clean.mjs && node scripts/generate-sitemap.mjs && vite build && node scripts/prerender.mjs",
+    "build": "tsc && node scripts/clean.mjs && node scripts/generate-sitemap.mjs && vite build && node scripts/prerender.mjs && node scripts/assert-prerender-assets.mjs",
     "build:no-prerender": "tsc && node scripts/clean.mjs && node scripts/generate-sitemap.mjs && vite build",
-    "prerender": "node scripts/prerender.mjs",
+    "prerender": "node scripts/prerender.mjs && node scripts/assert-prerender-assets.mjs",
+    "assert-assets": "node scripts/assert-prerender-assets.mjs",
     "sitemap": "node scripts/generate-sitemap.mjs",
     "preview": "vite preview"
   },
