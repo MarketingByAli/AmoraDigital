@@ -57,6 +57,20 @@ const BranchesAdvocatenNotarissen = lazy(() => import('./pages/branches/Advocate
 const BranchesBoekhouders = lazy(() => import('./pages/branches/Boekhouders'))
 const BranchesAutobedrijven = lazy(() => import('./pages/branches/Autobedrijven'))
 const BranchesWebshops = lazy(() => import('./pages/branches/Webshops'))
+const BranchesSportscholen = lazy(() => import('./pages/branches/Sportscholen'))
+const BranchesSchoonmaakbedrijven = lazy(() => import('./pages/branches/Schoonmaakbedrijven'))
+const BranchesSchoonmaakbedrijvenWebsiteLatenMaken = lazy(
+  () => import('./pages/branches/schoonmaakbedrijven/WebsiteLatenMaken')
+)
+const BranchesSchoonmaakbedrijvenLokaleSeo = lazy(
+  () => import('./pages/branches/schoonmaakbedrijven/LokaleSeo')
+)
+const BranchesSportscholenWebsiteLatenMaken = lazy(
+  () => import('./pages/branches/sportscholen/WebsiteLatenMaken')
+)
+const BranchesSportscholenLokaleSeo = lazy(
+  () => import('./pages/branches/sportscholen/LokaleSeo')
+)
 const BranchesWebshopsWebsiteLatenMaken = lazy(
   () => import('./pages/branches/webshops/WebsiteLatenMaken')
 )
@@ -242,6 +256,30 @@ function App() {
                 element={<BranchesWebshops />}
               />
               <Route
+                path={ROUTES['branches-sportscholen'].en}
+                element={<BranchesSportscholen />}
+              />
+              <Route
+                path={ROUTES['branches-schoonmaakbedrijven'].en}
+                element={<BranchesSchoonmaakbedrijven />}
+              />
+              <Route
+                path={ROUTES['branches-schoonmaakbedrijven-website-laten-maken'].en}
+                element={<BranchesSchoonmaakbedrijvenWebsiteLatenMaken />}
+              />
+              <Route
+                path={ROUTES['branches-schoonmaakbedrijven-lokale-seo'].en}
+                element={<BranchesSchoonmaakbedrijvenLokaleSeo />}
+              />
+              <Route
+                path={ROUTES['branches-sportscholen-website-laten-maken'].en}
+                element={<BranchesSportscholenWebsiteLatenMaken />}
+              />
+              <Route
+                path={ROUTES['branches-sportscholen-lokale-seo'].en}
+                element={<BranchesSportscholenLokaleSeo />}
+              />
+              <Route
                 path={ROUTES['branches-webshops-website-laten-maken'].en}
                 element={<BranchesWebshopsWebsiteLatenMaken />}
               />
@@ -395,6 +433,30 @@ function App() {
               <Route
                 path={ROUTES['branches-webshops'].nl}
                 element={<BranchesWebshops />}
+              />
+              <Route
+                path={ROUTES['branches-sportscholen'].nl}
+                element={<BranchesSportscholen />}
+              />
+              <Route
+                path={ROUTES['branches-schoonmaakbedrijven'].nl}
+                element={<BranchesSchoonmaakbedrijven />}
+              />
+              <Route
+                path={ROUTES['branches-schoonmaakbedrijven-website-laten-maken'].nl}
+                element={<BranchesSchoonmaakbedrijvenWebsiteLatenMaken />}
+              />
+              <Route
+                path={ROUTES['branches-schoonmaakbedrijven-lokale-seo'].nl}
+                element={<BranchesSchoonmaakbedrijvenLokaleSeo />}
+              />
+              <Route
+                path={ROUTES['branches-sportscholen-website-laten-maken'].nl}
+                element={<BranchesSportscholenWebsiteLatenMaken />}
+              />
+              <Route
+                path={ROUTES['branches-sportscholen-lokale-seo'].nl}
+                element={<BranchesSportscholenLokaleSeo />}
               />
               <Route
                 path={ROUTES['branches-webshops-website-laten-maken'].nl}

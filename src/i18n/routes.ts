@@ -91,6 +91,12 @@ export type RouteKey =
   | 'branches-webshops'
   | 'branches-webshops-website-laten-maken'
   | 'branches-webshops-lokale-seo'
+  | 'branches-sportscholen'
+  | 'branches-sportscholen-website-laten-maken'
+  | 'branches-sportscholen-lokale-seo'
+  | 'branches-schoonmaakbedrijven'
+  | 'branches-schoonmaakbedrijven-website-laten-maken'
+  | 'branches-schoonmaakbedrijven-lokale-seo'
   | 'branches-installateurs-website-laten-maken'
   | 'branches-installateurs-lokale-seo'
   | 'branches-aannemers-website-laten-maken'
@@ -240,6 +246,30 @@ export const ROUTES: Record<RouteKey, Record<Locale, string>> = {
   'branches-webshops-lokale-seo': {
     en: '/industries/webshops/local-seo',
     nl: '/nl/branches/webshops/lokale-seo'
+  },
+  'branches-sportscholen': {
+    en: '/industries/gyms-personal-trainers',
+    nl: '/nl/branches/sportscholen'
+  },
+  'branches-sportscholen-website-laten-maken': {
+    en: '/industries/gyms-personal-trainers/website-design',
+    nl: '/nl/branches/sportscholen/website-laten-maken'
+  },
+  'branches-sportscholen-lokale-seo': {
+    en: '/industries/gyms-personal-trainers/local-seo',
+    nl: '/nl/branches/sportscholen/lokale-seo'
+  },
+  'branches-schoonmaakbedrijven': {
+    en: '/industries/cleaning-companies',
+    nl: '/nl/branches/schoonmaakbedrijven'
+  },
+  'branches-schoonmaakbedrijven-website-laten-maken': {
+    en: '/industries/cleaning-companies/website-design',
+    nl: '/nl/branches/schoonmaakbedrijven/website-laten-maken'
+  },
+  'branches-schoonmaakbedrijven-lokale-seo': {
+    en: '/industries/cleaning-companies/local-seo',
+    nl: '/nl/branches/schoonmaakbedrijven/lokale-seo'
   },
   'branches-installateurs-website-laten-maken': {
     en: '/industries/installers/website-design',

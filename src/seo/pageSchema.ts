@@ -2889,6 +2889,620 @@ export const pageSeoByKey: Record<RouteKey, PageSeoConfig> = {
     }
   },
 
+  'branches-sportscholen': {
+    parents: ['home', 'branches'],
+    pageType: 'CollectionPage',
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Online marketing for gyms and personal trainers',
+      category: 'Digital Marketing',
+      offers: [
+        { name: 'Website design for gyms and personal trainers' },
+        { name: 'Local SEO for gyms and personal trainers' },
+        { name: 'Social media for gyms and personal trainers' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Gyms & personal trainers',
+        serviceName: 'Online marketing for gyms and personal trainers',
+        serviceDescription:
+          'Online marketing for gyms and personal trainers: websites, local SEO and social media focused on memberships, trial sessions, coaching intakes and community proof.',
+        faqs: [
+          {
+            question: 'How do we attract more members without only discounting?',
+            answer:
+              'Lead with class energy, clear membership paths and visible trial or intake CTAs — then back that with local findability and social proof. Price cuts alone fill short spikes; trust and schedule clarity keep people choosing you over the next club.'
+          },
+          {
+            question: 'How should trials and PT intakes work online?',
+            answer:
+              'Make the first step obvious on every device: a short trial or intake form, what to bring, and when someone hears back. Shoppers comparing studios abandon pages that only list a phone number and a stock photo of dumbbells.'
+          },
+          {
+            question: 'How do we get found for “gym” or “personal trainer” in our city?',
+            answer:
+              'Treat neighbourhood and city intent as a product: Google Business Profile hygiene, reviews that mention classes or coaching, and pages that answer “sportschool [stad]” or trainer-near-me queries. Rankings are never guaranteed; consistency beats one-off optimisation.'
+          },
+          {
+            question: 'Why does social media matter so much for fitness?',
+            answer:
+              'Search shows location; social shows community, coaching style and transformation proof. Consistent posts of classes, member energy and before-after stories warm people before they book a trial or package.'
+          },
+          {
+            question: 'How do we keep members after January or summer peaks?',
+            answer:
+              'Pair acquisition spikes with retention journeys — class reminders, community content and clear paths back into coaching or group programmes. Filling the diary once is wasted if churn empties it by March.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Sportscholen & personal trainers',
+        serviceName: 'Online marketing voor sportscholen en personal trainers',
+        serviceDescription:
+          'Online marketing voor sportscholen en personal trainers: websites, lokale SEO en social media gericht op abonnementen, proeflessen, coachingintakes en communitybewijs.',
+        faqs: [
+          {
+            question: 'Hoe werven we meer leden zonder alleen te kortingen?',
+            answer:
+              'Zet lesenergie, heldere abonnementspaden en zichtbare proefles- of intake-CTA’s voorop — en steun dat met lokale vindbaarheid en social proof. Alleen prijskortingen vullen korte pieken; vertrouwen en roosterhelderheid laten mensen jou kiezen boven de volgende club.'
+          },
+          {
+            question: 'Hoe moeten proeflessen en PT-intakes online werken?',
+            answer:
+              'Maak de eerste stap op elk apparaat vanzelfsprekend: een kort proefles- of intakeformulier, wat je meeneemt, en wanneer iemand terughoort. Bezoekers die studio’s vergelijken haken af bij pagina’s die alleen een telefoonnummer en een stockfoto van dumbbells tonen.'
+          },
+          {
+            question: 'Hoe worden we vindbaar op “sportschool” of “personal trainer” in onze stad?',
+            answer:
+              'Behandel buurt- en stadsintentie als product: Google Bedrijfsprofiel-hygiëne, reviews die lessen of coaching noemen, en pagina’s die “sportschool [stad]” of trainer-bij-mij-queries beantwoorden. Rankings zijn nooit gegarandeerd; consistentie wint van eenmalige optimalisatie.'
+          },
+          {
+            question: 'Waarom weegt social media zo zwaar in fitness?',
+            answer:
+              'Zoeken toont locatie; social toont community, coachingstijl en transformatiebewijs. Consistente posts van lessen, ledenenergie en before-after warmen mensen op vóór ze een proefles of pakket boeken.'
+          },
+          {
+            question: 'Hoe houden we leden vast na januari- of zomerpieken?',
+            answer:
+              'Koppel wervingspieken aan retentiejourneys — lesherinneringen, communitycontent en heldere paden terug naar coaching of groepsprogramma’s. De agenda één keer vullen is weggegooid als churn die in maart leegt.'
+          }
+        ]
+      }
+    }
+  },
+
+  'branches-schoonmaakbedrijven': {
+    parents: ['home', 'branches'],
+    pageType: 'CollectionPage',
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Online marketing for cleaning companies',
+      category: 'Digital Marketing',
+      offers: [
+        { name: 'Website design for cleaning companies' },
+        { name: 'Local SEO for cleaning companies' },
+        { name: 'Google Ads for cleaning companies' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Cleaning companies',
+        serviceName: 'Online marketing for cleaning companies',
+        serviceDescription:
+          'Online marketing for cleaning companies: websites, local SEO and Google Ads focused on recurring commercial and residential contracts, service-specific findability and quote quality.',
+        faqs: [
+          {
+            question: 'How do we get more quote requests online?',
+            answer:
+              'Make the path from service page to quote form obvious on mobile, with clear splits for office cleaning, window cleaning and move-out cleans. Facility managers and households abandon sites that only show a generic “contact” box without saying what happens next.'
+          },
+          {
+            question: 'How do we win recurring contracts, not only one-off cleans?',
+            answer:
+              'Position weekly office rounds, multi-site schedules and long-term facility agreements as the core offer — with reliability, insurance and staff signals next to the CTA. Lifetime value is high in cleaning; marketing that only chases single deep cleans trains the wrong demand.'
+          },
+          {
+            question: 'How do we get found per service and region?',
+            answer:
+              'Local SEO and a complete Google Business Profile help Maps and organic search match “cleaning company [city]”, “window cleaner [city]” or floor-care intent in your radius. Service pages per discipline support that; we do not promise a fixed ranking.'
+          },
+          {
+            question: 'How should we separate commercial and residential cleaning online?',
+            answer:
+              'Give zakelijk buyers — offices, schools, care, VvE — their own pages and proof, and keep residential paths for household help, glass and handover cleans distinct. Mixing both into one vague “we clean everything” story loses the longer B2B sales cycle and the faster consumer enquiry.'
+          },
+          {
+            question: 'Does trust matter as much as price for cleaning contracts?',
+            answer:
+              'Often more for commercial work. Insured teams, vetted staff and reliable schedule language reduce key-handover fear before a facility manager signs. Price still matters for residential window or move-out jobs, but empty trust signals kill contract conversations first.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Schoonmaakbedrijven',
+        serviceName: 'Online marketing voor schoonmaakbedrijven',
+        serviceDescription:
+          'Online marketing voor schoonmaakbedrijven: websites, lokale SEO en Google Ads gericht op terugkerende zakelijke en particuliere contracten, dienstspecifieke vindbaarheid en offertekwaliteit.',
+        faqs: [
+          {
+            question: 'Hoe krijgen we meer offerteaanvragen online?',
+            answer:
+              'Maak het pad van dienstpagina naar offerteformulier op mobiel vanzelfsprekend, met heldere splits voor kantoorschoonmaak, glasbewassing en opleverschoonmaak. Facility managers en huishoudens haken af bij sites die alleen een generiek “contact”-vak tonen zonder te zeggen wat er daarna gebeurt.'
+          },
+          {
+            question: 'Hoe winnen we terugkerende contracten, niet alleen eenmalige schoonmaak?',
+            answer:
+              'Positioneer wekelijkse kantoorroutes, multi-site roosters en langlopende facility-afspraken als kernaanbod — met betrouwbaarheid, verzekering en personeelssignalen naast de CTA. Lifetime value is hoog in schoonmaak; marketing die alleen losse diepteschoonmaak najagen, traint de verkeerde vraag.'
+          },
+          {
+            question: 'Hoe worden we vindbaar per dienst en regio?',
+            answer:
+              'Lokale SEO en een compleet Google Bedrijfsprofiel helpen Maps en organisch zoeken bij “schoonmaakbedrijf [stad]”, “glazenwasser [stad]” of vloeronderhoud-intentie in je straal. Dienstpagina’s per discipline ondersteunen dat; we beloven geen vaste ranking.'
+          },
+          {
+            question: 'Hoe scheiden we zakelijke en particuliere schoonmaak online?',
+            answer:
+              'Geef zakelijke kopers — kantoren, scholen, zorg, VvE’s — eigen pagina’s en bewijs, en houd particuliere paden voor huishoudelijke hulp, glas en oplevering apart. Beide mengen in één vaag “wij poetsen alles”-verhaal verliest de langere B2B-salescyclus én de snellere consumentenaanvraag.'
+          },
+          {
+            question: 'Weegt vertrouwen even zwaar als prijs bij schoonmaakcontracten?',
+            answer:
+              'Voor zakelijk werk vaak zwaarder. Verzekerde teams, gescreend personeel en betrouwbare roostertaal dempen sleutelangst vóór een facility manager tekent. Prijs blijft tellen bij particuliere glas- of opleverklussen, maar lege vertrouwenssignalen doden contractgesprekken eerst.'
+          }
+        ]
+      }
+    }
+  },
+
+  'branches-schoonmaakbedrijven-website-laten-maken': {
+    parents: ['home', 'branches', 'branches-schoonmaakbedrijven'],
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Website design for cleaning companies',
+      category: 'Web Development',
+      offers: [
+        { name: 'Commercial and residential cleaning entrances' },
+        { name: 'Contract-oriented quote request forms' },
+        { name: 'Trust signals for key handover' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Website design',
+        serviceName: 'Website design for cleaning companies',
+        serviceDescription:
+          'Cleaning company website design with service splits, commercial and residential entrances, contract-oriented quote forms, service radius, insurance and quality marks, commercial references and mobile paths.',
+        faqs: [
+          {
+            question: 'Can I separate commercial and residential services?',
+            answer:
+              'Yes. We build distinct entrances and pages for facility buyers — offices, schools, care, VvE — and for households seeking glass or move-out cleans. Mixing both into one vague journey loses the longer B2B contract cycle and confuses faster residential enquiries.'
+          },
+          {
+            question: 'Will I get better quote requests for recurring contracts?',
+            answer:
+              'Forms that ask frequency, floor area, location type and site count help your first reply scope a weekly office round or multi-site agreement — not only a one-off deep clean. Better questions filter tyre-kickers without promising a fixed conversion rate.'
+          },
+          {
+            question: 'How do I show marks, insurance and VCA?',
+            answer:
+              'We place insurance, VCA where relevant, screened-staff language and marks such as OSB or Schoonmakend Nederland next to quote CTAs — where key-handover fear is decided. We surface authentic marks you hold; we do not invent certifications.'
+          },
+          {
+            question: 'Can I set my service area on the site?',
+            answer:
+              'Yes. Towns and postcodes you cover sit on the homepage and quote path so enquiries outside your cleaning radius drop off early, and locals see you already work where their buildings sit. Exact presentation depends on how wide your catchment is.'
+          },
+          {
+            question: 'Can I update services myself after launch?',
+            answer:
+              'Yes. We train your team to edit service pages, radius towns and references without a developer for every new office contract. Structural changes such as a new commercial entrance still need a scoped update.'
+          },
+          {
+            question: 'How do fixed teams and quality control appear online?',
+            answer:
+              'Plain-language blocks explain how teams stay consistent and how inspections or checklists work — because cleaning buyers often fear rotating strangers more than a slightly higher weekly rate. That story belongs next to commercial references, not only in a PDF quality manual.'
+          },
+          {
+            question: 'Is this the same as a contractor website?',
+            answer:
+              'No. Contractor sites sell one-off renovation projects with before/after portfolios. Cleaning sites sell recurring routes, key trust and contract-scoped quotes across office, glass, floors and handover work. Reusing a build template usually ships the wrong proof and the wrong form questions.'
+          },
+          {
+            question: 'How long does a cleaning company website project take?',
+            answer:
+              'Most cleaning sites launch in about four to eight weeks, depending on service depth, commercial versus residential mix, quote-form complexity and content readiness. Discovery starts with how contracts are scoped today so we do not ship a generic brochure template.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Website laten maken',
+        serviceName: 'Website laten maken voor schoonmaakbedrijven',
+        serviceDescription:
+          'Website laten maken voor schoonmaakbedrijven met dienstensplitsing, zakelijke en particuliere ingangen, contractgerichte offerteforms, werkgebied, verzekering en keurmerken, zakelijke referenties en mobiele paden.',
+        faqs: [
+          {
+            question: 'Kan ik zakelijke en particuliere diensten scheiden?',
+            answer:
+              'Ja. We bouwen aparte ingangen en pagina’s voor facility-kopers — kantoren, scholen, zorg, VvE — en voor huishoudens die glas of oplevering zoeken. Beide mengen in één vage journey verliest de langere B2B-contractcyclus en verwart snellere particuliere aanvragen.'
+          },
+          {
+            question: 'Krijg ik betere offerteaanvragen voor contracten?',
+            answer:
+              'Forms die frequentie, oppervlakte, locatietype en aantal sites vragen helpen je eerste reactie een wekelijkse kantoorroute of multi-site-afspraak te scopen — niet alleen een eenmalige diepteschoonmaak. Betere vragen filteren shoppers zonder een vast conversiepercentage te beloven.'
+          },
+          {
+            question: 'Hoe toon ik mijn keurmerken en verzekering?',
+            answer:
+              'We plaatsen verzekering, VCA waar relevant, gescreend-personeelstaal en keurmerken zoals OSB of Schoonmakend Nederland naast offerte-CTA’s — waar sleutelangst wordt beslist. We tonen authentieke keurmerken die je hebt; we verzinnen geen certificeringen.'
+          },
+          {
+            question: 'Kan ik mijn werkgebied instellen?',
+            answer:
+              'Ja. Gemeenten en postcodes die je dekt staan op homepage en offertepad, zodat aanvragen buiten je schoonmaakstraal vroeg afvallen en locals zien dat je al werkt waar hun panden staan. Exacte presentatie hangt af van hoe breed je catchment is.'
+          },
+          {
+            question: 'Kan ik zelf diensten aanpassen?',
+            answer:
+              'Ja. We trainen je team om dienstpagina’s, werkgebiedplaatsen en referenties te bewerken zonder developer voor elk nieuw kantoorcontract. Structurele wijzigingen zoals een nieuwe zakelijke ingang vragen nog steeds een gescopte update.'
+          },
+          {
+            question: 'Hoe verschijnen vaste teams en kwaliteitscontrole online?',
+            answer:
+              'Begrijpelijke blokken leggen uit hoe teams consistent blijven en hoe inspecties of checklists werken — omdat schoonmaakkopers wisselende vreemden vaak meer vrezen dan een iets hogere weekprijs. Dat verhaal hoort naast zakelijke referenties, niet alleen in een PDF-kwaliteitshandboek.'
+          },
+          {
+            question: 'Is dit hetzelfde als een aannemerswebsite?',
+            answer:
+              'Nee. Aannemerssites verkopen eenmalige verbouwprojecten met voor/na-portfolio’s. Schoonmaaksites verkopen terugkerende routes, sleutelvertrouwen en contractgescoopte offertes over kantoor, glas, vloeren en oplevering. Een bouwtemplate hergebruiken levert meestal het verkeerde bewijs en de verkeerde formvragen op.'
+          },
+          {
+            question: 'Hoe lang duurt een website-traject voor een schoonmaakbedrijf?',
+            answer:
+              'De meeste schoonmaaksites gaan in ongeveer vier tot acht weken live, afhankelijk van dienstdiepte, zakelijk versus particulier, complexiteit van het offerteformulier en contentklaarheid. Discovery begint bij hoe contracten nu worden gescoped, zodat we geen generiek brochuretemplate opleveren.'
+          }
+        ]
+      }
+    }
+  },
+
+  'branches-schoonmaakbedrijven-lokale-seo': {
+    parents: ['home', 'branches', 'branches-schoonmaakbedrijven'],
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Local SEO for cleaning companies',
+      category: 'Digital Marketing',
+      offers: [
+        { name: 'Service-area Google Business Profile for cleaners' },
+        { name: 'Office, glass and handover + city landing pages' },
+        { name: 'Dual-market review growth and organic B2B discovery' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Local SEO',
+        serviceName: 'Local SEO for cleaning companies',
+        serviceDescription:
+          'Local SEO for cleaning companies focused on service-area Google Business Profile, office cleaning and window cleaner + city keywords, dual-market reviews and organic discovery versus platforms and chains — without ranking guarantees.',
+        faqs: [
+          {
+            question: 'How do I get found for office cleaning in my region?',
+            answer:
+              'Build service-area Google Business Profile signals for the towns your crews actually cover, then support “office cleaning [city]” and related facility phrases with local pages that speak to facility managers and VvE boards — longer cycles than a household glass job. We strengthen those signals without promising a fixed map-pack place against chains or marketplaces.'
+          },
+          {
+            question: 'Does local SEO work without a public office or shopfront?',
+            answer:
+              'Yes. Most cleaners operate from a depot or home base. Google supports service-area businesses so you can appear for “cleaning company near me” and town phrases without inventing a retail pin nobody visits. Categories, covered towns and quote actions should match how keys and site access actually work.'
+          },
+          {
+            question: 'How do I get commercial Google reviews as a cleaner?',
+            answer:
+              'Ask after a stable office round or a successful site visit — when the facility contact trusts the team — with a short Google review link and language that invites company names where allowed. Pair that habit with residential asks after glass or move-out jobs so Maps shows both markets you sell.'
+          },
+          {
+            question: 'Can I rank for each cleaning service separately?',
+            answer:
+              'Yes when you actually deliver those cleans. We build office cleaning, window cleaning, floors, handover and facade + town signals so Maps and organic clicks land on the right discipline instead of one thin “we clean” page. Competition varies by city; we avoid promising you will own every service term.'
+          },
+          {
+            question: 'How long does local SEO take for a cleaning company?',
+            answer:
+              'Profile hygiene and dual-market review habits often show action lifts within weeks; holding relevance for “office cleaning [city]” or “window cleaner [city]” against national brands and lead platforms usually needs months of compounding. Timelines depend on competition, citation health and content readiness — without ranking guarantees.'
+          },
+          {
+            question: 'How is this different from a cleaning company website project?',
+            answer:
+              'Local SEO wins Maps and city-search attention for cleaners and glass in your towns; the website spoke builds commercial versus residential paths and contract quote forms that convert the visit. We keep those scopes distinct, then align so a map tap lands on a page that already explains the clean type and how to request a route quote.'
+          },
+          {
+            question: 'Can organic local SEO reduce reliance on cleaning lead platforms?',
+            answer:
+              'That is a common goal. Platforms rent introductions; local SEO builds owned discovery when someone searches Google for a cleaner in their city. Many firms still buy some marketplace leads while organic visibility grows — we do not claim Maps replaces every paid channel overnight, but stronger pack presence usually starts more direct contract conversations.'
+          },
+          {
+            question: 'Should commercial and residential searches be treated differently?',
+            answer:
+              'Yes. Facility and VvE buyers often have longer cycles and different decision-makers than households booking glass or move-out cleans. Local pages, review asks and GBP categories should reflect both intents so one market does not drown the other in Maps and organic results.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Lokale SEO',
+        serviceName: 'Lokale SEO voor schoonmaakbedrijven',
+        serviceDescription:
+          'Lokale SEO voor schoonmaakbedrijven gericht op service-area Google Bedrijfsprofiel, kantoorschoonmaak- en glazenwasser- + stadszoekwoorden, dual-marktreviews en organische ontdekking versus platforms en ketens — zonder rankinggaranties.',
+        faqs: [
+          {
+            question: 'Hoe word ik gevonden voor kantoorschoonmaak in mijn regio?',
+            answer:
+              'Bouw service-area Google Bedrijfsprofiel-signalen voor de plaatsen die je crews écht dekken, en steun “kantoorschoonmaak [stad]” en gerelateerde facility-frasen met lokale pagina’s die facility managers en VvE-besturen aanspreken — langere cycli dan een huishoudelijke glasklus. We versterken die signalen zonder een vaste kaartpackplek tegen ketens of marktplaatsen te beloven.'
+          },
+          {
+            question: 'Werkt lokale SEO zonder publieke vestiging?',
+            answer:
+              'Ja. De meeste schoonmakers werken vanuit een depot of thuisbasis. Google ondersteunt service-area businesses zodat je kunt verschijnen op “schoonmaakbedrijf bij mij” en plaatsfrasen zonder een retailpin te verzinnen die niemand bezoekt. Categorieën, gedekte plaatsen en offerte-acties moeten passen bij hoe sleutels en locatietoegang écht werken.'
+          },
+          {
+            question: 'Hoe krijg ik zakelijke Google-reviews als schoonmaakbedrijf?',
+            answer:
+              'Vraag na een stabiele kantoorroute of een geslaagd locatiebezoek — wanneer het facility-contact het team vertrouwt — met een korte Google-reviewlink en taal die bedrijfsnamen uitnodigt waar toegestaan. Koppel die gewoonte aan particuliere verzoeken na glas- of opleverklussen, zodat Maps beide markten toont die je verkoopt.'
+          },
+          {
+            question: 'Kan ik ranken per schoonmaakdienst?',
+            answer:
+              'Ja wanneer je die schoonmaaktypes écht levert. We bouwen kantoorschoonmaak-, glasbewassing-, vloer-, oplever- en gevel- + plaats-signalen zodat Maps- en organische klikken op de juiste discipline landen in plaats van één dunne “wij poetsen”-pagina. Concurrentie verschilt per stad; we beloven niet dat je elke dienstterm bezit.'
+          },
+          {
+            question: 'Hoe lang duurt lokale SEO voor een schoonmaakbedrijf?',
+            answer:
+              'Profielhygiëne en dual-marktreviewgewoontes laten vaak binnen enkele weken actieliften zien; relevantie vasthouden op “kantoorschoonmaak [stad]” of “glazenwasser [stad]” tegen landelijke merken en leadplatforms vraagt meestal maanden van compounding. Doorlooptijden hangen af van concurrentie, citationgezondheid en contentklaarheid — zonder rankinggaranties.'
+          },
+          {
+            question: 'Wat is het verschil met een schoonmaakwebsite-traject?',
+            answer:
+              'Lokale SEO wint Maps- en stadszoekaandacht voor schoonmakers en glas in jouw plaatsen; de website-spoke bouwt zakelijke versus particuliere paden en contractofferteforms die het bezoek converteren. We houden die scopes gescheiden en stemmen ze af zodat een kaarttik landt op een pagina die al het schoonmaaktype en hoe je een routeofferte aanvraagt uitlegt.'
+          },
+          {
+            question: 'Kan organische lokale SEO afhankelijkheid van schoonmaak-leadplatforms verminderen?',
+            answer:
+              'Dat is een veelvoorkomend doel. Platforms huren introducties; lokale SEO bouwt owned ontdekking wanneer iemand Google opent voor een schoonmaker in hun stad. Veel bedrijven kopen nog marktplaatsleads terwijl organische zichtbaarheid groeit — we claimen niet dat Maps elk betaald kanaal overnight vervangt, maar sterkere packaanwezigheid start meestal meer directe contractgesprekken.'
+          },
+          {
+            question: 'Moeten zakelijke en particuliere zoekopdrachten anders behandeld worden?',
+            answer:
+              'Ja. Facility- en VvE-kopers hebben vaak langere cycli en andere beslissers dan huishoudens die glas of opleverschoonmaak boeken. Lokale pagina’s, reviewverzoeken en GBP-categorieën moeten beide intenties weerspiegelen, zodat de ene markt de andere niet verdrinkt in Maps en organische resultaten.'
+          }
+        ]
+      }
+    }
+  },
+
+  'branches-sportscholen-website-laten-maken': {
+    parents: ['home', 'branches', 'branches-sportscholen'],
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Website design for gyms and personal trainers',
+      category: 'Web Development',
+      offers: [
+        { name: 'Online trial lesson and intake booking' },
+        { name: 'Membership and package presentation' },
+        { name: 'Class schedule and coach profile pages' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Website design',
+        serviceName: 'Website design for gyms and personal trainers',
+        serviceDescription:
+          'Gym and personal trainer website design with online trial or intake booking, clear memberships and packages, class schedules, coach profiles, transformation proof, member-software links and mobile sign-up paths.',
+        faqs: [
+          {
+            question: 'Can members book a trial lesson online?',
+            answer:
+              'Yes. We put proefles or first-class booking on a path people can finish from a phone — class type or goal, preferred slot, and what happens next — so motivated visitors start without waiting for a callback. Booking can land as a form-to-diary flow or connect to member software where your stack allows.'
+          },
+          {
+            question: 'Can I show my class schedule on the website?',
+            answer:
+              'Yes. Group-class timetables, open-gym hours and popular slots get a readable mobile layout so visitors can see whether evening HIIT or morning yoga fits their week. Where Virtuagym, Sportbit, Eversports or similar allow it, we reduce double entry so the site does not lag behind a PDF that nobody updates.'
+          },
+          {
+            question: 'Can the site connect to my member software?',
+            answer:
+              'Where your stack and vendor feeds allow, we link booking or schedules to tools such as Virtuagym, Sportbit or Eversports so class changes and member login stay aligned. Exact connectors depend on your contracts and APIs; we map that in discovery before promising a specific integration.'
+          },
+          {
+            question: 'Can I show transformations and before-after stories?',
+            answer:
+              'Yes. Consent-aware transformation stories and member journeys sit where scanners decide, next to trial or intake CTAs. Fitness buyers trust visible change more than empty equipment photos — we surface authentic proof you already have permission to publish, not invented results.'
+          },
+          {
+            question: 'Does this work for a personal trainer without a gym building?',
+            answer:
+              'Yes. PT-focused builds emphasise personal brand, specialisms, 1-on-1 or online coaching packages and intake booking — without forcing a full club timetable you do not run. Outdoor coaches, home-visit trainers and online-only practices get paths that match how clients actually start with them.'
+          },
+          {
+            question: 'How should memberships and packages be presented without listing prices here?',
+            answer:
+              'We structure what each membership or coaching package includes, who it fits and how to start — so visitors compare options without a chaotic WhatsApp thread. Public price figures are not required on this page of our site; your own package pages can show what you choose to publish after scoping.'
+          },
+          {
+            question: 'Will the website work well on mobile for sign-ups?',
+            answer:
+              'Yes. Most people choose a gym or coach on their phone between work and home. Trial CTAs, package overview and schedule blocks are built for one-thumb use — because a desktop brochure that collapses on a small screen loses the evening someone was ready to book.'
+          },
+          {
+            question: 'How long does a gym or personal trainer website project take?',
+            answer:
+              'Most fitness sites launch in about four to eight weeks, depending on schedule depth, software connections, coach content readiness and whether you run a multi-location club. Discovery starts with how trials and intakes arrive today so we do not ship a generic brochure template.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Website laten maken',
+        serviceName: 'Website laten maken voor sportscholen',
+        serviceDescription:
+          'Website laten maken voor sportscholen en personal trainers met online proefles- of intakeboeking, heldere abonnementen en pakketten, lesroosters, coachprofielen, transformatiebewijs, ledensoftwarekoppelingen en mobiele inschrijfpaden.',
+        faqs: [
+          {
+            question: 'Kunnen leden online een proefles boeken?',
+            answer:
+              'Ja. We zetten proefles- of eerste-lesboeking op een pad dat mensen vanaf de telefoon afronden — lestype of doel, voorkeursmoment, en wat er daarna gebeurt — zodat gemotiveerde bezoekers starten zonder op een terugbelactie te wachten. Boeking kan als form-naar-agenda landen of koppelen met ledensoftware waar je stack het toelaat.'
+          },
+          {
+            question: 'Kan ik mijn lesrooster op de website tonen?',
+            answer:
+              'Ja. Groepslesroosters, open-gym-uren en populaire slots krijgen een leesbare mobiele layout, zodat bezoekers zien of avond-HIIT of ochtendyoga in hun week past. Waar Virtuagym, Sportbit, Eversports of vergelijkbaar het toelaat, verminderen we dubbele invoer zodat de site niet achterloopt op een PDF die niemand bijwerkt.'
+          },
+          {
+            question: 'Kan de site koppelen met mijn ledensoftware?',
+            answer:
+              'Waar je stack en vendorfeeds het toelaten, koppelen we boeking of roosters aan tools zoals Virtuagym, Sportbit of Eversports, zodat leswijzigingen en ledenlogin synchroon blijven. Exacte connectors hangen af van je contracten en API’s; dat brengen we in discovery in kaart vóór we een specifieke koppeling beloven.'
+          },
+          {
+            question: 'Kan ik transformaties en before-after laten zien?',
+            answer:
+              'Ja. Toestemmingsbewuste transformatieverhalen en ledenjourneys staan waar scanners beslissen, naast proefles- of intake-CTA’s. Fitnesskopers vertrouwen zichtbare verandering meer dan lege toestelfoto’s — we tonen authentiek bewijs dat je mag publiceren, geen verzonnen resultaten.'
+          },
+          {
+            question: 'Werkt dit ook voor een personal trainer zonder pand?',
+            answer:
+              'Ja. PT-gerichte builds benadrukken persoonlijk merk, specialisaties, 1-op-1 of online coachingpakketten en intakeboeking — zonder een volledig clubrooster te forceren dat je niet draait. Outdoorcoaches, thuisbezoek-trainers en online-only praktijken krijgen paden die passen bij hoe cliënten écht bij hen starten.'
+          },
+          {
+            question: 'Hoe presenteer ik abonnementen en pakketten zonder hier bedragen te noemen?',
+            answer:
+              'We structureren wat elk lidmaatschap of coachingpakket inhoudt, voor wie het past en hoe je start — zodat bezoekers opties vergelijken zonder chaotische WhatsApp-threads. Openbare prijscijfers zijn op deze pagina van onze site niet nodig; jouw eigen pakketpagina’s tonen wat je na scoping wilt publiceren.'
+          },
+          {
+            question: 'Werkt de website goed op mobiel voor inschrijvingen?',
+            answer:
+              'Ja. De meeste mensen kiezen een sportschool of coach op de telefoon tussen werk en thuis. Proefles-CTA’s, pakketoverzicht en roosterblokken zijn gebouwd voor één duim — omdat een desktopbrochure die op klein scherm uit elkaar valt de avond verliest waarop iemand klaar was om te boeken.'
+          },
+          {
+            question: 'Hoe lang duurt een website-traject voor een sportschool of personal trainer?',
+            answer:
+              'De meeste fitnesssites gaan in ongeveer vier tot acht weken live, afhankelijk van roosterdiepte, softwarekoppelingen, klaarheid van coachcontent en of je een club met meerdere locaties runt. Discovery begint bij hoe proeflessen en intakes nu binnenkomen, zodat we geen generiek brochuretemplate opleveren.'
+          }
+        ]
+      }
+    }
+  },
+
+  'branches-sportscholen-lokale-seo': {
+    parents: ['home', 'branches', 'branches-sportscholen'],
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Local SEO for gyms and personal trainers',
+      category: 'Digital Marketing',
+      offers: [
+        { name: 'Gym Google Business Profile with floor photos' },
+        { name: 'Discipline and city landing pages' },
+        { name: 'Review growth and seasonal local keywords' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Local SEO',
+        serviceName: 'Local SEO for gyms and personal trainers',
+        serviceDescription:
+          'Local SEO for gyms and personal trainers focused on Google Business Profile with training-floor proof, gym and PT + city keywords, discipline pages, review growth for emotional choices and seasonal peaks — without ranking guarantees.',
+        faqs: [
+          {
+            question: 'How do I rank at the top for “gym” in my city?',
+            answer:
+              'Strengthen Google Business Profile with floor photos, accurate hours, class or coaching categories and recent member reviews, then support that with gym or discipline + city pages that match how people search. Local-pack visibility compounds over time; we do not promise a fixed map position against chains or independents.'
+          },
+          {
+            question: 'How do I compete locally with big chains like Basic-Fit?',
+            answer:
+              'Chains often win broad city terms on brand weight. Independents win by sharpening neighbourhood proof, discipline clarity — bootcamp, kickboxing, small group — and fresher reviews that speak to vibe and coaching, not only distance. Local SEO helps you own the “right fit nearby” story while chains dominate generic “gym [city]” noise.'
+          },
+          {
+            question: 'How do I get more gym or coaching reviews?',
+            answer:
+              'Ask after a trial or a coaching block with a short Google review link and a habit tied to the first positive session. Recent, specific member voices calm an emotional choice — often the deciding factor when two studios look equal on Maps distance.'
+          },
+          {
+            question: 'Does local SEO work for a personal trainer without a venue?',
+            answer:
+              'Yes. We set up service-area signals so outdoor, home-visit or online coaches appear for the catchment they actually serve — without pretending they own a full club floor. Categories, reviews and city pages still matter; the footprint simply matches how clients find you.'
+          },
+          {
+            question: 'Should we prepare for January and spring search peaks?',
+            answer:
+              'Yes. Resolution and “summer body” weeks lift gym and PT search volume. We keep GBP posts and local pages ready ahead of those waves so you are already visible when intent floods the city — instead of starting optimisation in the middle of the rush.'
+          },
+          {
+            question: 'What is the difference with a fitness website project?',
+            answer:
+              'Local SEO wins Maps and city search attention; the website spoke builds trial booking, packages, schedules and software paths that convert the visit. We keep those scopes distinct, then align so a map tap lands on a page that already explains who you are for.'
+          },
+          {
+            question: 'Can I rank for disciplines such as bootcamp or yoga in my city?',
+            answer:
+              'Yes when you actually run those programmes. We build discipline + city signals so Maps and organic clicks land on the right story — bootcamp, kickboxing, yoga or small-group coaching — instead of one thin “fitness” page. Competition varies by city; we avoid promising you will own every term.'
+          },
+          {
+            question: 'How long does local SEO for a gym or trainer take?',
+            answer:
+              'Profile hygiene and review habits often show action lifts within weeks; holding relevance for “gym [city]” or “personal trainer [city]” against chains usually needs months of compounding work. Timelines depend on competition, citation health and content readiness — without ranking guarantees.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Lokale SEO',
+        serviceName: 'Lokale SEO voor sportscholen',
+        serviceDescription:
+          'Lokale SEO voor sportscholen en personal trainers gericht op Google Bedrijfsprofiel met zaalbewijs, sportschool- en PT- + stadszoekwoorden, disciplinepagina’s, reviewgroei voor emotionele keuzes en seizoenspieken — zonder rankinggaranties.',
+        faqs: [
+          {
+            question: 'Hoe kom ik bovenaan voor sportschool in mijn stad?',
+            answer:
+              'Versterk Google Bedrijfsprofiel met zaalfoto’s, accurate uren, les- of coachingcategorieën en recente ledenreviews, en steun dat met sportschool- of discipline- + stadspagina’s die matchen hoe mensen zoeken. Local-packzichtbaarheid stapelt zich op; we beloven geen vaste kaartpositie tegen ketens of independents.'
+          },
+          {
+            question: 'Hoe versla ik grote ketens lokaal?',
+            answer:
+              'Ketens winnen vaak brede stadszoeken op merkgewicht. Independents winnen door buurtbewijs, disciplinehelderheid — bootcamp, kickboksen, small group — en frissere reviews die vibe en coaching uitspreken, niet alleen afstand. Lokale SEO helpt je het “juiste fit in de buurt”-verhaal te bezitten terwijl ketens generieke “sportschool [stad]”-ruis domineren.'
+          },
+          {
+            question: 'Hoe krijg ik meer reviews?',
+            answer:
+              'Vraag na een proefles of coachingblok met een korte Google-reviewlink en een gewoonte gekoppeld aan de eerste positieve sessie. Recente, specifieke ledenstemmen dempen een emotionele keuze — vaak de beslissende factor wanneer twee studio’s op Maps-afstand gelijk ogen.'
+          },
+          {
+            question: 'Werkt lokale SEO voor een personal trainer zonder pand?',
+            answer:
+              'Ja. We zetten service-area-signalen op zodat outdoor-, thuisbezoek- of onlinecoaches verschijnen voor het verzorgingsgebied dat ze écht bedienen — zonder alsof ze een volledige clubvloer bezitten. Categorieën, reviews en stadspagina’s blijven tellen; de voetafdruk past gewoon bij hoe cliënten je vinden.'
+          },
+          {
+            question: 'Moeten we ons voorbereiden op januari- en voorjaarszoekpieken?',
+            answer:
+              'Ja. Voornemens- en “summer body”-weken tillen sportschool- en PT-zoekvolume. We houden GBP-posts en lokale pagina’s klaar vóór die golven, zodat je al zichtbaar bent wanneer intentie de stad binnenstroomt — in plaats van midden in de rush te beginnen met optimaliseren.'
+          },
+          {
+            question: 'Wat is het verschil met een fitnesswebsite-traject?',
+            answer:
+              'Lokale SEO wint Maps- en stadszoekaandacht; de website-spoke bouwt proeflesboeking, pakketten, roosters en softwarepaden die het bezoek converteren. We houden die scopes gescheiden en stemmen ze af zodat een kaarttik landt op een pagina die al uitlegt voor wie je past.'
+          },
+          {
+            question: 'Kan ik ranken op disciplines zoals bootcamp of yoga in mijn stad?',
+            answer:
+              'Ja wanneer je die programma’s écht draait. We bouwen discipline- + stadssignalen zodat Maps- en organische klikken op het juiste verhaal landen — bootcamp, kickboksen, yoga of small-group coaching — in plaats van één dunne “fitness”-pagina. Concurrentie verschilt per stad; we beloven niet dat je elke term bezit.'
+          },
+          {
+            question: 'Hoe lang duurt lokale SEO voor een sportschool of trainer?',
+            answer:
+              'Profielhygiëne en reviewgewoontes laten vaak binnen enkele weken actieliften zien; relevantie vasthouden op “sportschool [stad]” of “personal trainer [stad]” tegen ketens vraagt meestal maanden van compounding werk. Doorlooptijden hangen af van concurrentie, citationgezondheid en contentklaarheid — zonder rankinggaranties.'
+          }
+        ]
+      }
+    }
+  },
+
   'branches-webshops': {
     parents: ['home', 'branches'],
     pageType: 'CollectionPage',

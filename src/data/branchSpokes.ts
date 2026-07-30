@@ -29,7 +29,9 @@ export const LIVE_BRANCH_SPOKES: Readonly<Record<string, readonly string[]>> = {
   'advocaten-notarissen': ['website-laten-maken', 'lokale-seo'],
   boekhouders: ['website-laten-maken', 'lokale-seo'],
   autobedrijven: ['website-laten-maken', 'lokale-seo'],
-  webshops: ['website-laten-maken', 'lokale-seo']
+  webshops: ['website-laten-maken', 'lokale-seo'],
+  sportscholen: ['website-laten-maken', 'lokale-seo'],
+  schoonmaakbedrijven: ['website-laten-maken', 'lokale-seo']
 }
 
 /**
@@ -105,6 +107,25 @@ export const BRANCH_SPOKE_ROUTE_KEYS: Readonly<
     'website-laten-maken': 'branches-webshops-website-laten-maken',
     'lokale-seo': 'branches-webshops-lokale-seo',
     'google-ads': 'branches-webshops-google-ads' as RouteKey
+  },
+  /**
+   * Website + lokale-seo are live in ROUTES. social-media remains cast until
+   * that page ships — muted card stays link-safe. Third spoke is social-media
+   * (community/proof), not google-ads.
+   */
+  sportscholen: {
+    'website-laten-maken': 'branches-sportscholen-website-laten-maken',
+    'lokale-seo': 'branches-sportscholen-lokale-seo',
+    'social-media': 'branches-sportscholen-social-media' as RouteKey
+  },
+  /**
+   * Website + lokale-seo are live in ROUTES. google-ads remains cast until that
+   * page ships — muted card stays link-safe.
+   */
+  schoonmaakbedrijven: {
+    'website-laten-maken': 'branches-schoonmaakbedrijven-website-laten-maken',
+    'lokale-seo': 'branches-schoonmaakbedrijven-lokale-seo',
+    'google-ads': 'branches-schoonmaakbedrijven-google-ads' as RouteKey
   }
 }
 
@@ -536,6 +557,76 @@ export const BRANCH_SPOKES: Record<string, readonly BranchSpoke[]> = {
       benefit: {
         en: 'Shopping and Performance Max built around feed quality and high-intent product queries — so paid clicks chase profitable orders, not empty vanity traffic.',
         nl: 'Shopping en Performance Max rond feedkwaliteit en productqueries met hoge intentie — zodat betaalde klikken winstgevende orders najagen, geen leeg vanity-verkeer.'
+      }
+    }
+  ],
+  sportscholen: [
+    {
+      slug: 'website-laten-maken',
+      name: {
+        en: 'Website design for gyms & personal trainers',
+        nl: 'Website laten maken voor sportscholen'
+      },
+      benefit: {
+        en: 'A membership- and coaching-ready site with class schedules, trial or intake paths and proof that turns browsers into signed members or PT clients.',
+        nl: 'Een site klaar voor leden en coaching, met lesroosters, proefles- of intakepaden en bewijs dat bezoekers omzet in ingeschreven leden of PT-cliënten.'
+      }
+    },
+    {
+      slug: 'lokale-seo',
+      name: {
+        en: 'Local SEO for gyms & personal trainers',
+        nl: 'Lokale SEO voor sportscholen'
+      },
+      benefit: {
+        en: 'Show up for “gym [city]” and “personal trainer near me” — including Google Business Profile setup for studios and coaches.',
+        nl: 'Zichtbaar op “sportschool [stad]” en “personal trainer bij mij in de buurt” — inclusief Google Bedrijfsprofiel voor clubs en coaches.'
+      }
+    },
+    {
+      slug: 'social-media',
+      name: {
+        en: 'Social media for gyms & personal trainers',
+        nl: 'Social media beheer voor sportscholen'
+      },
+      benefit: {
+        en: 'Community posts, class energy and transformation proof that keep people engaged between visits and warm them toward membership or coaching.',
+        nl: 'Community posts, lesenergie en transformatiebewijs die mensen tussen bezoeken betrokken houden en warm maken voor een abonnement of coaching.'
+      }
+    }
+  ],
+  schoonmaakbedrijven: [
+    {
+      slug: 'website-laten-maken',
+      name: {
+        en: 'Website design for cleaning companies',
+        nl: 'Website laten maken voor schoonmaakbedrijven'
+      },
+      benefit: {
+        en: 'A site that splits commercial and residential cleaning, shows services clearly and turns visitors into quote requests for recurring contracts.',
+        nl: 'Een site die zakelijke en particuliere schoonmaak scheidt, diensten helder toont en bezoekers omzet in offerteaanvragen voor terugkerende contracten.'
+      }
+    },
+    {
+      slug: 'lokale-seo',
+      name: {
+        en: 'Local SEO for cleaning companies',
+        nl: 'Lokale SEO voor schoonmaakbedrijven'
+      },
+      benefit: {
+        en: 'Show up for “cleaning company [city]” and “window cleaner [city]” across your service radius — including Google Business Profile setup.',
+        nl: 'Zichtbaar op “schoonmaakbedrijf [stad]” en “glazenwasser [stad]” in je werkgebied — inclusief Google Bedrijfsprofiel-opzet.'
+      }
+    },
+    {
+      slug: 'google-ads',
+      name: {
+        en: 'Google Ads for cleaning companies',
+        nl: 'Google Ads voor schoonmaakbedrijven'
+      },
+      benefit: {
+        en: 'Campaigns around office cleaning, window cleaning and move-out cleans so high-intent quote requests reach the desk faster.',
+        nl: 'Campagnes rond kantoorschoonmaak, glasbewassing en opleverschoonmaak, zodat offerteaanvragen met hoge intentie sneller het bureau bereiken.'
       }
     }
   ]

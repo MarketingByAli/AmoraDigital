@@ -920,6 +920,150 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
       ],
     }
   },
+  'branches-sportscholen': {
+    en: {
+      title: `Online marketing for gyms & personal trainers | Amora`,
+      description:
+        'Online marketing for gyms and personal trainers: websites, local SEO and social for memberships and coaching. 1,500+ projects.',
+      keywords: [
+        'online marketing for gyms',
+        'personal trainer SEO',
+        'gym website',
+        'fitness social media'
+      ],
+    },
+    nl: {
+      title: `Online marketing voor sportscholen | Amora`,
+      description:
+        'Online marketing voor sportscholen en personal trainers: websites, lokale SEO en social voor leden en coaching. 1.500+ projecten.',
+      keywords: [
+        'online marketing voor sportscholen',
+        'SEO personal trainer',
+        'website sportschool',
+        'social media sportschool'
+      ],
+    }
+  },
+  'branches-schoonmaakbedrijven': {
+    en: {
+      title: `Online marketing for cleaning companies | Amora`,
+      description:
+        'Online marketing for cleaning companies: websites, local SEO and ads for recurring contracts and quotes. 1,500+ projects.',
+      keywords: [
+        'online marketing for cleaning companies',
+        'cleaning company SEO',
+        'office cleaning marketing',
+        'window cleaner Google Ads'
+      ],
+    },
+    nl: {
+      title: `Online marketing voor schoonmaakbedrijven | Amora`,
+      description:
+        'Online marketing voor schoonmaakbedrijven: websites, lokale SEO en ads voor terugkerende contracten en offertes. 1.500+ projecten.',
+      keywords: [
+        'online marketing voor schoonmaakbedrijven',
+        'SEO schoonmaakbedrijf',
+        'kantoorschoonmaak marketing',
+        'Google Ads glazenwasser'
+      ],
+    }
+  },
+  'branches-schoonmaakbedrijven-website-laten-maken': {
+    en: {
+      title: `Website design for cleaning companies | Amora`,
+      description:
+        'Cleaning company website with service splits, commercial/residential paths, contract quotes and trust signals. 1,500+ projects.',
+      keywords: [
+        'website design for cleaning companies',
+        'cleaning company website',
+        'office cleaning website',
+        'schoonmaak website design'
+      ],
+    },
+    nl: {
+      title: `Website laten maken voor schoonmaakbedrijven | Amora`,
+      description:
+        'Schoonmaakwebsite met dienstensplitsing, zakelijk/particulier, contractoffertes en vertrouwenssignalen. 1.500+ projecten.',
+      keywords: [
+        'website laten maken voor schoonmaakbedrijven',
+        'website schoonmaakbedrijf',
+        'kantoorschoonmaak website',
+        'website glazenwasser'
+      ],
+    }
+  },
+  'branches-schoonmaakbedrijven-lokale-seo': {
+    en: {
+      title: `Local SEO for cleaning companies | Amora`,
+      description:
+        'Local SEO for cleaning companies: service-area GBP, office & glass city pages, dual-market reviews. 1,500+ projects.',
+      keywords: [
+        'local SEO for cleaning companies',
+        'office cleaning SEO',
+        'window cleaner local SEO',
+        'schoonmaak Google Business Profile'
+      ],
+    },
+    nl: {
+      title: `Lokale SEO voor schoonmaakbedrijven | Amora`,
+      description:
+        'Lokale SEO voor schoonmaakbedrijven: service-area GBP, kantoor- & glasstadspagina’s, dual-marktreviews. 1.500+ projecten.',
+      keywords: [
+        'lokale SEO voor schoonmaakbedrijven',
+        'SEO kantoorschoonmaak',
+        'lokale SEO glazenwasser',
+        'Google Bedrijfsprofiel schoonmaak'
+      ],
+    }
+  },
+  'branches-sportscholen-website-laten-maken': {
+    en: {
+      title: `Website design for gyms & trainers | Amora`,
+      description:
+        'Gym & personal trainer website with trial booking, packages, schedules, coach profiles and mobile sign-up. 1,500+ projects.',
+      keywords: [
+        'website design for gyms & personal trainers',
+        'gym website design',
+        'personal trainer website',
+        'fitness website design'
+      ],
+    },
+    nl: {
+      title: `Website laten maken voor sportscholen | Amora`,
+      description:
+        'Sportschoolwebsite met proeflesboeking, abonnementen, lesrooster, PT-profielen en mobiele inschrijving. 1.500+ projecten.',
+      keywords: [
+        'website laten maken voor sportscholen',
+        'website sportschool',
+        'website personal trainer',
+        'fitness website laten maken'
+      ],
+    }
+  },
+  'branches-sportscholen-lokale-seo': {
+    en: {
+      title: `Local SEO for gyms & trainers | Amora`,
+      description:
+        'Local SEO for gyms & personal trainers: GBP, city keywords, reviews and pack visibility vs chains. 1,500+ projects.',
+      keywords: [
+        'local SEO for gyms & personal trainers',
+        'gym local SEO',
+        'personal trainer SEO',
+        'sportschool Google Business Profile'
+      ],
+    },
+    nl: {
+      title: `Lokale SEO voor sportscholen | Amora`,
+      description:
+        'Lokale SEO voor sportscholen: GBP, stadszoekwoorden, reviews en packzichtbaarheid tegen ketens. 1.500+ projecten.',
+      keywords: [
+        'lokale SEO voor sportscholen',
+        'SEO sportschool',
+        'personal trainer lokale SEO',
+        'Google Bedrijfsprofiel sportschool'
+      ],
+    }
+  },
   'branches-webshops-website-laten-maken': {
     en: {
       title: `Webshop design & development | Amora`,
