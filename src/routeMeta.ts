@@ -968,6 +968,102 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
       ],
     }
   },
+  'branches-eventplanners': {
+    en: {
+      title: `Online marketing for wedding & event planners | Amora`,
+      description:
+        'Online marketing for wedding & event planners: portfolio sites, local SEO and social for couple and corporate bookings. 1,500+ projects.',
+      keywords: [
+        'online marketing for wedding planners',
+        'event planner SEO',
+        'wedding planner website',
+        'event planner social media'
+      ],
+    },
+    nl: {
+      title: `Online marketing voor trouwplanners | Amora`,
+      description:
+        'Online marketing voor trouw- & eventplanners: portfolio-sites, lokale SEO en social voor bruiloften en zakelijke events. 1.500+ projecten.',
+      keywords: [
+        'online marketing voor trouwplanners',
+        'SEO eventplanner',
+        'website trouwplanner',
+        'social media eventplanner'
+      ],
+    }
+  },
+  'branches-fotografen': {
+    en: {
+      title: `Online marketing for photographers & videographers | Amora`,
+      description:
+        'Online marketing for photographers & videographers: fast portfolios, local SEO and Instagram discovery. 1,500+ projects.',
+      keywords: [
+        'online marketing for photographers',
+        'photographer SEO',
+        'videographer website',
+        'wedding photographer marketing'
+      ],
+    },
+    nl: {
+      title: `Online marketing voor fotografen | Amora`,
+      description:
+        'Online marketing voor fotografen & videografen: snelle portfolio’s, lokale SEO en Instagram-ontdekking. 1.500+ projecten.',
+      keywords: [
+        'online marketing voor fotografen',
+        'SEO fotograaf',
+        'website videograaf',
+        'trouwfotograaf marketing'
+      ],
+    }
+  },
+  'branches-eventplanners-website-laten-maken': {
+    en: {
+      title: `Website design for wedding & event planners | Amora`,
+      description:
+        'Planner website with real-event portfolio, wedding/corporate paths, brief forms and fast image galleries. 1,500+ projects.',
+      keywords: [
+        'website design for wedding & event planners',
+        'wedding planner website',
+        'event planner portfolio site',
+        'wedding planner quote form'
+      ],
+    },
+    nl: {
+      title: `Website laten maken voor trouwplanners | Amora`,
+      description:
+        'Plannerwebsite met echte-eventportfolio, trouw-/zakelijke paden, brief-forms en snelle beeldgalerijen. 1.500+ projecten.',
+      keywords: [
+        'website laten maken voor trouwplanners',
+        'website eventplanner',
+        'portfolio trouwplanner',
+        'offerteformulier trouwplanner'
+      ],
+    }
+  },
+  'branches-eventplanners-lokale-seo': {
+    en: {
+      title: `Local SEO for wedding & event planners | Amora`,
+      description:
+        'Local SEO for wedding & event planners: region pages, GBP with portfolio photos, bridal reviews. 1,500+ projects.',
+      keywords: [
+        'local SEO for wedding & event planners',
+        'wedding planner local SEO',
+        'event planner Google Business Profile',
+        'wedding planner region SEO'
+      ],
+    },
+    nl: {
+      title: `Lokale SEO voor trouwplanners | Amora`,
+      description:
+        'Lokale SEO voor trouwplanners: regio-/provinciepagina’s, GBP met portfolio, bridal-reviews. 1.500+ projecten.',
+      keywords: [
+        'lokale SEO voor trouwplanners',
+        'lokale SEO eventplanner',
+        'Google Bedrijfsprofiel trouwplanner',
+        'trouwplanner regio SEO'
+      ],
+    }
+  },
   'branches-schoonmaakbedrijven-website-laten-maken': {
     en: {
       title: `Website design for cleaning companies | Amora`,

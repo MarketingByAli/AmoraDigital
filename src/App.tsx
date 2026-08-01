@@ -59,6 +59,14 @@ const BranchesAutobedrijven = lazy(() => import('./pages/branches/Autobedrijven'
 const BranchesWebshops = lazy(() => import('./pages/branches/Webshops'))
 const BranchesSportscholen = lazy(() => import('./pages/branches/Sportscholen'))
 const BranchesSchoonmaakbedrijven = lazy(() => import('./pages/branches/Schoonmaakbedrijven'))
+const BranchesEventplanners = lazy(() => import('./pages/branches/Eventplanners'))
+const BranchesEventplannersWebsiteLatenMaken = lazy(
+  () => import('./pages/branches/eventplanners/WebsiteLatenMaken')
+)
+const BranchesEventplannersLokaleSeo = lazy(
+  () => import('./pages/branches/eventplanners/LokaleSeo')
+)
+const BranchesFotografen = lazy(() => import('./pages/branches/Fotografen'))
 const BranchesSchoonmaakbedrijvenWebsiteLatenMaken = lazy(
   () => import('./pages/branches/schoonmaakbedrijven/WebsiteLatenMaken')
 )
@@ -264,6 +272,22 @@ function App() {
                 element={<BranchesSchoonmaakbedrijven />}
               />
               <Route
+                path={ROUTES['branches-eventplanners'].en}
+                element={<BranchesEventplanners />}
+              />
+              <Route
+                path={ROUTES['branches-eventplanners-website-laten-maken'].en}
+                element={<BranchesEventplannersWebsiteLatenMaken />}
+              />
+              <Route
+                path={ROUTES['branches-eventplanners-lokale-seo'].en}
+                element={<BranchesEventplannersLokaleSeo />}
+              />
+              <Route
+                path={ROUTES['branches-fotografen'].en}
+                element={<BranchesFotografen />}
+              />
+              <Route
                 path={ROUTES['branches-schoonmaakbedrijven-website-laten-maken'].en}
                 element={<BranchesSchoonmaakbedrijvenWebsiteLatenMaken />}
               />
@@ -441,6 +465,22 @@ function App() {
               <Route
                 path={ROUTES['branches-schoonmaakbedrijven'].nl}
                 element={<BranchesSchoonmaakbedrijven />}
+              />
+              <Route
+                path={ROUTES['branches-eventplanners'].nl}
+                element={<BranchesEventplanners />}
+              />
+              <Route
+                path={ROUTES['branches-eventplanners-website-laten-maken'].nl}
+                element={<BranchesEventplannersWebsiteLatenMaken />}
+              />
+              <Route
+                path={ROUTES['branches-eventplanners-lokale-seo'].nl}
+                element={<BranchesEventplannersLokaleSeo />}
+              />
+              <Route
+                path={ROUTES['branches-fotografen'].nl}
+                element={<BranchesFotografen />}
               />
               <Route
                 path={ROUTES['branches-schoonmaakbedrijven-website-laten-maken'].nl}

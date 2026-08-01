@@ -97,6 +97,10 @@ export type RouteKey =
   | 'branches-schoonmaakbedrijven'
   | 'branches-schoonmaakbedrijven-website-laten-maken'
   | 'branches-schoonmaakbedrijven-lokale-seo'
+  | 'branches-eventplanners'
+  | 'branches-eventplanners-website-laten-maken'
+  | 'branches-eventplanners-lokale-seo'
+  | 'branches-fotografen'
   | 'branches-installateurs-website-laten-maken'
   | 'branches-installateurs-lokale-seo'
   | 'branches-aannemers-website-laten-maken'
@@ -270,6 +274,22 @@ export const ROUTES: Record<RouteKey, Record<Locale, string>> = {
   'branches-schoonmaakbedrijven-lokale-seo': {
     en: '/industries/cleaning-companies/local-seo',
     nl: '/nl/branches/schoonmaakbedrijven/lokale-seo'
+  },
+  'branches-eventplanners': {
+    en: '/industries/wedding-event-planners',
+    nl: '/nl/branches/eventplanners'
+  },
+  'branches-eventplanners-website-laten-maken': {
+    en: '/industries/wedding-event-planners/website-design',
+    nl: '/nl/branches/eventplanners/website-laten-maken'
+  },
+  'branches-eventplanners-lokale-seo': {
+    en: '/industries/wedding-event-planners/local-seo',
+    nl: '/nl/branches/eventplanners/lokale-seo'
+  },
+  'branches-fotografen': {
+    en: '/industries/photographers-videographers',
+    nl: '/nl/branches/fotografen'
   },
   'branches-installateurs-website-laten-maken': {
     en: '/industries/installers/website-design',

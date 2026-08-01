@@ -31,7 +31,9 @@ export const LIVE_BRANCH_SPOKES: Readonly<Record<string, readonly string[]>> = {
   autobedrijven: ['website-laten-maken', 'lokale-seo'],
   webshops: ['website-laten-maken', 'lokale-seo'],
   sportscholen: ['website-laten-maken', 'lokale-seo'],
-  schoonmaakbedrijven: ['website-laten-maken', 'lokale-seo']
+  schoonmaakbedrijven: ['website-laten-maken', 'lokale-seo'],
+  eventplanners: ['website-laten-maken', 'lokale-seo'],
+  fotografen: []
 }
 
 /**
@@ -126,6 +128,26 @@ export const BRANCH_SPOKE_ROUTE_KEYS: Readonly<
     'website-laten-maken': 'branches-schoonmaakbedrijven-website-laten-maken',
     'lokale-seo': 'branches-schoonmaakbedrijven-lokale-seo',
     'google-ads': 'branches-schoonmaakbedrijven-google-ads' as RouteKey
+  },
+  /**
+   * Website + lokale-seo are live in ROUTES. social-media remains cast until
+   * that page ships — muted card stays link-safe. Third spoke is social-media
+   * (visual/portfolio), not google-ads.
+   */
+  eventplanners: {
+    'website-laten-maken': 'branches-eventplanners-website-laten-maken',
+    'lokale-seo': 'branches-eventplanners-lokale-seo',
+    'social-media': 'branches-eventplanners-social-media' as RouteKey
+  },
+  /**
+   * Hub is live; all three spoke RouteKeys remain cast until those pages ship —
+   * muted cards stay link-safe. Third spoke is social-media (portfolio/visual),
+   * not google-ads.
+   */
+  fotografen: {
+    'website-laten-maken': 'branches-fotografen-website-laten-maken' as RouteKey,
+    'lokale-seo': 'branches-fotografen-lokale-seo' as RouteKey,
+    'social-media': 'branches-fotografen-social-media' as RouteKey
   }
 }
 
@@ -627,6 +649,76 @@ export const BRANCH_SPOKES: Record<string, readonly BranchSpoke[]> = {
       benefit: {
         en: 'Campaigns around office cleaning, window cleaning and move-out cleans so high-intent quote requests reach the desk faster.',
         nl: 'Campagnes rond kantoorschoonmaak, glasbewassing en opleverschoonmaak, zodat offerteaanvragen met hoge intentie sneller het bureau bereiken.'
+      }
+    }
+  ],
+  eventplanners: [
+    {
+      slug: 'website-laten-maken',
+      name: {
+        en: 'Website design for wedding & event planners',
+        nl: 'Website laten maken voor trouw- & eventplanners'
+      },
+      benefit: {
+        en: 'A portfolio-led site with clear wedding and corporate paths, inspiration that proves taste, and quote forms that capture date, venue, guest count and style.',
+        nl: 'Een portfolio-gedreven site met heldere trouw- en zakelijke paden, inspiratie die smaak bewijst, en offerteforms die datum, locatie, gastenaantal en stijl vangen.'
+      }
+    },
+    {
+      slug: 'lokale-seo',
+      name: {
+        en: 'Local SEO for wedding & event planners',
+        nl: 'Lokale SEO voor trouwplanners'
+      },
+      benefit: {
+        en: 'Show up for “wedding planner [city/region]” and province-level event-planning searches — including Google Business Profile with portfolio images for your catchment.',
+        nl: 'Zichtbaar op “trouwplanner [stad/regio]” en provinciebrede eventplanning-zoekopdrachten — inclusief Google Bedrijfsprofiel met portfoliobeelden voor jouw verzorgingsgebied.'
+      }
+    },
+    {
+      slug: 'social-media',
+      name: {
+        en: 'Social media for wedding & event planners',
+        nl: 'Social media beheer voor eventplanners'
+      },
+      benefit: {
+        en: 'Instagram- and Pinterest-ready storytelling of real events so couples and hosts discover your style before they shortlist a planner.',
+        nl: 'Instagram- en Pinterest-klare storytelling van echte events, zodat stellen en hosts jouw stijl ontdekken vóór ze een planner shortlisten.'
+      }
+    }
+  ],
+  fotografen: [
+    {
+      slug: 'website-laten-maken',
+      name: {
+        en: 'Website design for photographers & videographers',
+        nl: 'Website laten maken voor fotografen'
+      },
+      benefit: {
+        en: 'A fast, specialisation-led portfolio site with booking paths for date and package, and client galleries for photo and video delivery.',
+        nl: 'Een snelle, specialisatie-gedreven portfoliosite met boekingspaden voor datum en pakket, en klantgalerijen voor foto- en videolevering.'
+      }
+    },
+    {
+      slug: 'lokale-seo',
+      name: {
+        en: 'Local SEO for photographers & videographers',
+        nl: 'Lokale SEO voor fotografen'
+      },
+      benefit: {
+        en: 'Show up for “wedding photographer [city]” and specialisation + region searches — with a Google Business Profile that leads with your craft.',
+        nl: 'Zichtbaar op “trouwfotograaf [stad]” en specialisatie- + regiozoekopdrachten — met een Google Bedrijfsprofiel dat jouw craft voorop zet.'
+      }
+    },
+    {
+      slug: 'social-media',
+      name: {
+        en: 'Social media for photographers & videographers',
+        nl: 'Social media beheer voor fotografen'
+      },
+      benefit: {
+        en: 'Instagram-ready feeds of real shoots so clients discover your eye and click through to packages before they shortlist another maker.',
+        nl: 'Instagram-klare feeds van echte shoots, zodat klanten jouw oog ontdekken en doorklikken naar pakketten vóór ze een andere maker shortlisten.'
       }
     }
   ]

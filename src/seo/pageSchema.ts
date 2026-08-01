@@ -3055,6 +3055,396 @@ export const pageSeoByKey: Record<RouteKey, PageSeoConfig> = {
     }
   },
 
+  'branches-eventplanners': {
+    parents: ['home', 'branches'],
+    pageType: 'CollectionPage',
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Online marketing for wedding & event planners',
+      category: 'Digital Marketing',
+      offers: [
+        { name: 'Website design for wedding & event planners' },
+        { name: 'Local SEO for wedding & event planners' },
+        { name: 'Social media for wedding & event planners' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Wedding & event planners',
+        serviceName: 'Online marketing for wedding & event planners',
+        serviceDescription:
+          'Online marketing for wedding and event planners: portfolio websites, local SEO and social media focused on couple and corporate bookings, style discovery and quote quality.',
+        faqs: [
+          {
+            question: 'How do we show portfolio and atmosphere online?',
+            answer:
+              'Lead with real event photography, mood boards and short stories of days you planned — not stock couples on a beach. Pair gallery pages with clear paths into a quote form that asks for date, venue, guest count and style so inspiration turns into a brief.'
+          },
+          {
+            question: 'How do we attract the right enquiries, not every random request?',
+            answer:
+              'Separate wedding and corporate journeys, state regions and event types you take, and use form fields that filter for budget-relevant details. Vague “contact us” boxes attract tyre-kickers; a brief-led form attracts hosts who already sense your taste.'
+          },
+          {
+            question: 'How do couples and companies find a planner for weddings and business events?',
+            answer:
+              'Local SEO and a complete Google Business Profile help Maps and organic search match “wedding planner [city]” or regional event-planning intent. Corporate hosts often search differently and longer — service pages for company events support that. We do not promise a fixed ranking.'
+          },
+          {
+            question: 'Is social media where planners get discovered?',
+            answer:
+              'Often yes for bridal and lifestyle demand: Instagram and Pinterest act as discovery layers before a website visit. Consistent real-event storytelling feeds that funnel; social alone rarely closes a high-stakes corporate brief without a clear site and quote path.'
+          },
+          {
+            question: 'How should we work with venues, photographers and catering online?',
+            answer:
+              'Show trusted vendor relationships as proof of calm coordination, without turning your site into a supplier directory. Couples and hosts shortlist planners who look networked and organised for one important day — not a salon that sells weekly appointments.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Trouw- & eventplanners',
+        serviceName: 'Online marketing voor trouw- & eventplanners',
+        serviceDescription:
+          'Online marketing voor trouw- en eventplanners: portfolio-websites, lokale SEO en social media gericht op bruiloften en zakelijke boekingen, stijlontdekking en offertekwaliteit.',
+        faqs: [
+          {
+            question: 'Hoe laten we portfolio en sfeer online zien?',
+            answer:
+              'Leid met echte eventfotografie, moodboards en korte verhalen van dagen die je regisseerde — geen stockstellen op een strand. Koppel galerijpagina’s aan een offerteformulier met datum, locatie, gastenaantal en stijl, zodat inspiratie een briefje wordt.'
+          },
+          {
+            question: 'Hoe krijgen we de juiste aanvragen, niet elke willekeurige mail?',
+            answer:
+              'Scheid trouw- en zakelijke journeys, noem regio’s en eventtypes die je aanneemt, en gebruik formvelden die budgetrelevante details filteren. Vage “neem contact op”-vakken trekken kijklustigen; een brief-gedreven form trekt hosts die jouw smaak al voelen.'
+          },
+          {
+            question: 'Hoe worden we vindbaar voor bruiloften en zakelijke events?',
+            answer:
+              'Lokale SEO en een compleet Google Bedrijfsprofiel helpen Maps en organisch zoeken bij “trouwplanner [stad]” of regionale eventplanning-intentie. Zakelijke hosts zoeken vaak anders en langer — dienstpagina’s voor bedrijfsevents ondersteunen dat. We beloven geen vaste ranking.'
+          },
+          {
+            question: 'Is social media een vindplaats voor planners?',
+            answer:
+              'Voor bridal en lifestyle-vraag vaak wel: Instagram en Pinterest werken als ontdekkingslaag vóór een sitebezoek. Consistente storytelling van echte events voedt die trechter; social alleen sluit zelden een high-stakes zakelijk briefje zonder heldere site en offertepad.'
+          },
+          {
+            question: 'Hoe tonen we samenwerking met venues, fotografen en catering online?',
+            answer:
+              'Toon vertrouwde leveranciersrelaties als bewijs van rustige regie, zonder je site in een leveranciersgids te veranderen. Stellen en hosts shortlisten planners die vernetwerkt en georganiseerd ogen voor één belangrijke dag — geen salon die wekelijkse afspraken verkoopt.'
+          }
+        ]
+      }
+    }
+  },
+
+  'branches-fotografen': {
+    parents: ['home', 'branches'],
+    pageType: 'CollectionPage',
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Online marketing for photographers and videographers',
+      category: 'Digital Marketing',
+      offers: [
+        { name: 'Website design for photographers & videographers' },
+        { name: 'Local SEO for photographers & videographers' },
+        { name: 'Social media for photographers & videographers' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Photographers & videographers',
+        serviceName: 'Online marketing for photographers & videographers',
+        serviceDescription:
+          'Online marketing for photographers and videographers: fast portfolio websites, local SEO by specialisation and region, and Instagram-led discovery aimed at booking the right shoots — without ranking guarantees.',
+        faqs: [
+          {
+            question: 'How do we show a portfolio that loads fast?',
+            answer:
+              'Lead with compressed, lazy-loaded galleries of real shoots so mobile browsers feel your style before they bounce. Photographers and videographers ship heavy files; the site must prove craft without making clients wait — compression and gallery patterns matter more here than on a planner site that mostly curates other people’s images.'
+          },
+          {
+            question: 'How do we attract the right assignments, not every random enquiry?',
+            answer:
+              'Separate specialisations — wedding, portrait, commercial, product, real estate, newborn, events, video — with clear proof and form fields for date, package and delivery. Vague contact boxes attract price shoppers; specialisation-led paths attract clients who already love your eye.'
+          },
+          {
+            question: 'How do clients find a photographer by specialisation and region?',
+            answer:
+              'Local SEO and a Google Business Profile help Maps and organic search match “wedding photographer [city]” or niche + region intent. Style and portfolio still decide the shortlist after discovery. We strengthen those signals without promising a fixed ranking.'
+          },
+          {
+            question: 'Is social media where photographers get discovered?',
+            answer:
+              'Often yes: Instagram is a primary discovery layer before a website visit. Consistent real-shoot storytelling feeds that funnel; social alone rarely closes a package booking without a fast portfolio site and a clear path to date, package and delivery galleries.'
+          },
+          {
+            question: 'How is this different from marketing for wedding or event planners?',
+            answer:
+              'Planners sell coordination of a day; you sell the image itself. Your portfolio is the product, heavy files need technical speed, and specialisations filter briefs. We do not reuse planner vendor-network or salon chair-calendar messaging for photographer hubs.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Fotografen & videografen',
+        serviceName: 'Online marketing voor fotografen & videografen',
+        serviceDescription:
+          'Online marketing voor fotografen en videografen: snelle portfoliosites, lokale SEO per specialisatie en regio, en Instagram-gedreven ontdekking gericht op de juiste shoots — zonder rankinggaranties.',
+        faqs: [
+          {
+            question: 'Hoe tonen we een portfolio dat snel laadt?',
+            answer:
+              'Leid met gecomprimeerde, lazy-loaded galerijen van echte shoots, zodat mobiele browsers jouw stijl voelen vóór ze bouncen. Fotografen en videografen leveren zware bestanden; de site moet craft bewijzen zonder wachttijd — compressie en galerijpatronen wegen hier zwaarder dan op een plannerscript die vooral andermans beelden cureert.'
+          },
+          {
+            question: 'Hoe trekken we de juiste opdrachten aan, niet elke willekeurige mail?',
+            answer:
+              'Scheid specialisaties — bruiloft, portret, zakelijk, product, vastgoed, newborn, evenementen, video — met helder bewijs en formvelden voor datum, pakket en levering. Vage contactvakken trekken prijsshoppers; specialisatie-gedreven paden trekken klanten die jouw oog al voelen.'
+          },
+          {
+            question: 'Hoe worden we vindbaar per specialisatie en regio?',
+            answer:
+              'Lokale SEO en een Google Bedrijfsprofiel helpen Maps en organisch zoeken bij “trouwfotograaf [stad]” of niche- + regio-intentie. Stijl en portfolio beslissen daarna de shortlist. We versterken die signalen zonder een vaste ranking te beloven.'
+          },
+          {
+            question: 'Is social media een vindplaats voor fotografen?',
+            answer:
+              'Vaak wel: Instagram is een primaire ontdekkingslaag vóór een sitebezoek. Consistente storytelling van echte shoots voedt die trechter; social alleen sluit zelden een pakketboeking zonder snelle portfoliosite en een helder pad naar datum, pakket en leveringsgalerijen.'
+          },
+          {
+            question: 'Wat is het verschil met marketing voor trouw- of eventplanners?',
+            answer:
+              'Planners verkopen regie van een dag; jij verkoopt het beeld zelf. Jouw portfolio is het product, zware bestanden vragen technische snelheid, en specialisaties filteren briefs. We hergebruiken geen planner-leveranciersnetwerk- of salonstoelkalender-taal voor fotografenhubs.'
+          }
+        ]
+      }
+    }
+  },
+
+  'branches-eventplanners-website-laten-maken': {
+    parents: ['home', 'branches', 'branches-eventplanners'],
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Website design for wedding & event planners',
+      category: 'Web Development',
+      offers: [
+        { name: 'Real-event portfolio galleries' },
+        { name: 'Wedding and corporate enquiry paths' },
+        { name: 'Inspiration and quote forms with brief fields' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Website design',
+        serviceName: 'Website design for wedding & event planners',
+        serviceDescription:
+          'Website design for wedding and event planners focused on real-event portfolios, atmosphere-led design, wedding versus corporate paths, brief-ready quote forms, vendor-network proof and fast image-rich mobile pages — without ranking guarantees.',
+        faqs: [
+          {
+            question: 'How do I best show my portfolio online?',
+            answer:
+              'Lead with galleries of real weddings and company events you planned, then add short story pages for flagship days. Atmosphere and narrative matter more than a grid of anonymous thumbnails. We structure galleries for taste first and speed second so evening mobile browsers stay.'
+          },
+          {
+            question: 'Can I get an inspiration and quote form?',
+            answer:
+              'Yes. We build forms that capture date, venue, guest count, budget band and style so your first reply can scope a wedding weekend or a corporate launch. Vague “contact us” boxes attract tyre-kickers; brief-led forms attract hosts who already sense your taste.'
+          },
+          {
+            question: 'Will the site stay fast with many photos?',
+            answer:
+              'That is part of the build: compression, lazy loading and gallery patterns keep image-rich pages usable on a sofa phone. A heavy album that never finishes loses the shortlist before anyone reads a review.'
+          },
+          {
+            question: 'Can I separate private and corporate events?',
+            answer:
+              'Yes. Wedding and corporate journeys get distinct entrances, proof and form fields so seasonal bridal demand does not land in a board-level brief form — and procurement hosts do not feel like they opened a Pinterest mood board.'
+          },
+          {
+            question: 'Can I add new events myself?',
+            answer:
+              'Yes. We train your team to publish new gallery items and stories without a developer for every Saturday wedding. Editable by people who lived the day keeps the portfolio current through peak season.'
+          },
+          {
+            question: 'Should the website feel like part of my brand portfolio?',
+            answer:
+              'Yes. Couples and companies judge style from the first scroll. Typography, spacing and image hierarchy should mirror the calm you sell on the day — not a generic template with stock confetti.'
+          },
+          {
+            question: 'Do reviews from couples and companies belong on the site?',
+            answer:
+              'They help. Bridal and corporate proof about calm, deadlines and vendor liaison sit next to CTAs so trust settles when two portfolios look equally polished. We do not invent reviews; we place real ones where scanners look.'
+          },
+          {
+            question: 'How long does an event-planner website project take?',
+            answer:
+              'Timelines depend on portfolio volume, dual-market needs and content readiness. Many builds move from discovery to launch across several weeks once galleries and stories are prepared. We share a realistic plan after scoping — without promising a fixed ranking or booking volume.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Website laten maken',
+        serviceName: 'Website laten maken voor trouwplanners',
+        serviceDescription:
+          'Website laten maken voor trouw- en eventplanners gericht op echte-eventportfolio’s, sfeergericht design, trouw- versus zakelijke paden, brief-klare offerteforms, leveranciersnetwerk-bewijs en snelle beeldrijke mobiele pagina’s — zonder rankinggaranties.',
+        faqs: [
+          {
+            question: 'Hoe laat ik mijn portfolio het beste zien?',
+            answer:
+              'Leid met galerijen van echte bruiloften en bedrijfsevents die je regisseerde, en voeg korte verhaalpagina’s toe voor vlaggenschipdagen. Sfeer en narratief wegen zwaarder dan een grid anonieme thumbnails. We structureren galerijen voor smaak eerst en snelheid daarna, zodat avondbrowsers op mobiel blijven.'
+          },
+          {
+            question: 'Kan ik een inspiratie- en offerteformulier krijgen?',
+            answer:
+              'Ja. We bouwen forms die datum, locatie, gastenaantal, budgetband en stijl vangen, zodat je eerste reactie een trouwweekend of zakelijke lancering kan scopten. Vage “neem contact op”-vakken trekken kijklustigen; brief-gedreven forms trekken hosts die jouw smaak al voelen.'
+          },
+          {
+            question: 'Blijft de site snel met veel foto’s?',
+            answer:
+              'Dat zit in de build: compressie, lazy loading en galerijpatronen houden beeldrijke pagina’s bruikbaar op een telefoon op de bank. Een zwaar album dat nooit klaar is, verliest de shortlist vóór iemand een review leest.'
+          },
+          {
+            question: 'Kan ik particuliere en zakelijke events scheiden?',
+            answer:
+              'Ja. Trouw- en zakelijke journeys krijgen aparte ingangen, bewijs en formvelden, zodat seizoensgebonden bridal-vraag niet in een board-level brief-formulier landt — en inkoophosts niet voelen alsof ze een Pinterest-moodboard openden.'
+          },
+          {
+            question: 'Kan ik zelf events toevoegen?',
+            answer:
+              'Ja. We trainen je team om nieuwe galerij-items en verhalen te publiceren zonder developer voor elke zaterdagbruiloft. Bewerkbaar door mensen die de dag meemaakten houdt het portfolio actueel door het hoogseizoen.'
+          },
+          {
+            question: 'Moet de website zelf als portfolio-item voelen?',
+            answer:
+              'Ja. Stellen en bedrijven beoordelen stijl vanaf de eerste scroll. Typografie, witruimte en beeldhiërarchie moeten de rust spiegelen die je op de dag verkoopt — geen generiek template met stockconfetti.'
+          },
+          {
+            question: 'Horen reviews van bruidsparen en bedrijven op de site?',
+            answer:
+              'Ze helpen. Bridal- en zakelijk bewijs over rust, deadlines en leveranciersafstemming staat naast CTA’s, zodat vertrouwen zakt wanneer twee portfolio’s even gepolijst ogen. We verzinnen geen reviews; we plaatsen echte waar scanners kijken.'
+          },
+          {
+            question: 'Hoe lang duurt een website-traject voor een eventplanner?',
+            answer:
+              'Doorlooptijden hangen af van portfolio-omvang, dual-markbehoeften en contentgereedheid. Veel builds gaan van discovery tot livegang in enkele weken zodra galerijen en verhalen klaarstaan. We delen een realistisch plan na scoping — zonder een vaste ranking of boekingsvolume te beloven.'
+          }
+        ]
+      }
+    }
+  },
+
+  'branches-eventplanners-lokale-seo': {
+    parents: ['home', 'branches', 'branches-eventplanners'],
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Local SEO for wedding and event planners',
+      category: 'Digital Marketing',
+      offers: [
+        { name: 'Region and province landing pages for planners' },
+        { name: 'Google Business Profile with portfolio images' },
+        { name: 'Bridal review growth and style-led local keywords' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Local SEO',
+        serviceName: 'Local SEO for wedding & event planners',
+        serviceDescription:
+          'Local SEO for wedding and event planners focused on region and province pages, Google Business Profile with portfolio images, bridal and corporate reviews, style and event-type keywords, venue mention signals and organic discovery versus wedding marketplaces — without ranking guarantees.',
+        faqs: [
+          {
+            question: 'How do I get found as a wedding planner in my region?',
+            answer:
+              'Build region and province pages for “wedding planner [region]” and related phrases, stock Google Business Profile with real-event photos, and grow bridal reviews that calm an emotional shortlist. Planners travel, so we treat catchments as provinces and corridors — not a fake single-street shop pin — without promising a fixed map-pack place against directories.'
+          },
+          {
+            question: 'Can I rank in multiple cities or provinces?',
+            answer:
+              'Yes when you actually cover them. We structure multi-province footprints so each catchment has clear pages and GBP signals without confusing Maps about which footprint owns “wedding planner [region]”. Competition varies by province; we avoid promising you will own every city term at once.'
+          },
+          {
+            question: 'How important are reviews for wedding and event planners?',
+            answer:
+              'Extremely. Couples choose with their gut; bridal reviews next to Maps often decide who makes the shortlist when two portfolios look equally polished. Corporate hosts leave different proof. We set ethical ask habits after events — we do not invent reviews or guarantee a star average.'
+          },
+          {
+            question: 'Can I rank for a style or event type, not only a city?',
+            answer:
+              'Yes when you publish that work. Bohemian wedding, festival wedding, corporate launch and congress intent get planned keyword and page coverage so style searches do not only feed directories. Region + style layers work together; we do not promise every style term in every province.'
+          },
+          {
+            question: 'How long does local SEO take for a wedding or event planner?',
+            answer:
+              'Profile hygiene and review habits often show action lifts within weeks; holding relevance for “wedding planner [region]” against marketplaces usually needs months of compounding. Build ahead of the post-holiday engagement and new-year orientation peak. Timelines depend on competition and content readiness — without ranking guarantees.'
+          },
+          {
+            question: 'How is this different from an event-planner website project?',
+            answer:
+              'Local SEO wins Maps and region-search attention for planners in your provinces; the website spoke builds portfolio galleries, wedding versus corporate paths and brief forms that convert the visit. We keep those scopes distinct, then align so a map tap lands where a dated brief can start.'
+          },
+          {
+            question: 'Do venue and supplier mentions help local SEO?',
+            answer:
+              'They can. Mentions and listings with venues and trusted vendors reinforce regional relevance — local signals directories rarely earn the same way. We pursue them as supporting evidence alongside GBP and region pages, not as a substitute for reviews or keyword coverage.'
+          },
+          {
+            question: 'Can organic local SEO reduce reliance on wedding marketplaces?',
+            answer:
+              'That is a common goal. Marketplaces rent introductions; local SEO builds owned discovery when someone searches Google for a planner in their region. Many planners still buy some directory leads while organic visibility grows — we do not claim Maps replaces every paid channel overnight, but stronger regional presence usually starts more direct brief conversations.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Lokale SEO',
+        serviceName: 'Lokale SEO voor trouwplanners',
+        serviceDescription:
+          'Lokale SEO voor trouw- en eventplanners gericht op regio- en provinciepagina’s, Google Bedrijfsprofiel met portfoliobeelden, bridal- en zakelijke reviews, stijl- en eventtypezoekwoorden, venuevermeldingen als lokale signalen en organische ontdekking versus bruiloftmarktplaatsen — zonder rankinggaranties.',
+        faqs: [
+          {
+            question: 'Hoe word ik gevonden als trouwplanner in mijn regio?',
+            answer:
+              'Bouw regio- en provinciepagina’s voor “trouwplanner [regio]” en gerelateerde frasen, vul Google Bedrijfsprofiel met echte eventfoto’s, en groei bridal-reviews die een emotionele shortlist kalmeren. Planners reizen, dus we behandelen catchments als provincies en corridors — geen nep-één-straatpin — zonder een vaste kaartpackplek tegen directories te beloven.'
+          },
+          {
+            question: 'Kan ik op meerdere plaatsen of provincies ranken?',
+            answer:
+              'Ja wanneer je ze écht dekt. We structureren multi-provincievoetafdrukken zodat elk catchment heldere pagina’s en GBP-signalen heeft zonder Maps te verwarren over wie “trouwplanner [regio]” bezit. Concurrentie verschilt per provincie; we beloven niet dat je elke stads-term tegelijk bezit.'
+          },
+          {
+            question: 'Hoe belangrijk zijn reviews voor trouw- en eventplanners?',
+            answer:
+              'Extreem. Stellen kiezen met hun buik; bridal-reviews naast Maps beslissen vaak wie de shortlist haalt wanneer twee portfolio’s even gepolijst ogen. Zakelijke hosts laten ander bewijs achter. We zetten ethische vraaggewoontes op na events — we verzinnen geen reviews en garanderen geen stergemiddelde.'
+          },
+          {
+            question: 'Kan ik ranken op een stijl of type event?',
+            answer:
+              'Ja wanneer je dat werk publiceert. Bohemian bruiloft, festivalbruiloft, zakelijke lancering en congresintentie krijgen geplande zoekwoord- en paginadekking, zodat stijlzoeken niet alleen directories voedt. Regio- + stijllagen werken samen; we beloven niet elke stijlterm in elke provincie.'
+          },
+          {
+            question: 'Hoe lang duurt lokale SEO voor een trouw- of eventplanner?',
+            answer:
+              'Profielhygiëne en reviewgewoontes laten vaak binnen enkele weken actieliften zien; relevantie vasthouden op “trouwplanner [regio]” tegen marktplaatsen vraagt meestal maanden van compounding. Bouw vóór de verlovingspiek rond feestdagen en de oriëntatiegolf in het nieuwe jaar. Doorlooptijden hangen af van concurrentie en contentklaarheid — zonder rankinggaranties.'
+          },
+          {
+            question: 'Wat is het verschil met een website-traject voor eventplanners?',
+            answer:
+              'Lokale SEO wint Maps- en regiozoekaandacht voor planners in jouw provincies; de website-spoke bouwt portfoliogalerijen, trouw- versus zakelijke paden en brief-forms die het bezoek converteren. We houden die scopes gescheiden en stemmen ze af zodat een kaarttik landt waar een gedateerd briefje kan starten.'
+          },
+          {
+            question: 'Helpen venue- en leveranciersvermeldingen bij lokale SEO?',
+            answer:
+              'Dat kan. Vermeldingen bij venues en vertrouwde leveranciers versterken regionale relevantie — lokale signalen die directories zelden zo verdienen. We benaderen ze als steunbewijs naast GBP en regio-pagina’s, niet als vervanging van reviews of zoekwoorddekking.'
+          },
+          {
+            question: 'Kan organische lokale SEO afhankelijkheid van bruiloftmarktplaatsen verminderen?',
+            answer:
+              'Dat is een veelvoorkomend doel. Marktplaatsen huren introducties; lokale SEO bouwt owned ontdekking wanneer iemand Google opent voor een planner in hun regio. Veel planners kopen nog directoryleads terwijl organische zichtbaarheid groeit — we claimen niet dat Maps elk betaald kanaal overnight vervangt, maar sterkere regionale aanwezigheid start meestal meer directe briefgesprekken.'
+          }
+        ]
+      }
+    }
+  },
+
   'branches-schoonmaakbedrijven-website-laten-maken': {
     parents: ['home', 'branches', 'branches-schoonmaakbedrijven'],
     extras: [buildProfessionalServiceSchema()],

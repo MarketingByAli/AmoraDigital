@@ -329,6 +329,34 @@ const RELATED_BY_KEY: Partial<Record<RouteKey, RouteKey[]>> = {
     'seo-services',
     'conversion-optimization'
   ],
+  'branches-eventplanners': [
+    'website-design',
+    'local-seo',
+    'social-media-marketing',
+    'seo-services',
+    'brand-strategy'
+  ],
+  'branches-fotografen': [
+    'website-design',
+    'local-seo',
+    'social-media-marketing',
+    'seo-services',
+    'brand-strategy'
+  ],
+  'branches-eventplanners-website-laten-maken': [
+    'website-design',
+    'local-seo',
+    'social-media-marketing',
+    'conversion-optimization',
+    'seo-services'
+  ],
+  'branches-eventplanners-lokale-seo': [
+    'local-seo',
+    'website-design',
+    'social-media-marketing',
+    'seo-services',
+    'brand-strategy'
+  ],
   'branches-schoonmaakbedrijven-website-laten-maken': [
     'website-design',
     'local-seo',
