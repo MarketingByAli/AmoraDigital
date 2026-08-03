@@ -3138,6 +3138,313 @@ export const pageSeoByKey: Record<RouteKey, PageSeoConfig> = {
     }
   },
 
+  'branches-rijscholen': {
+    parents: ['home', 'branches'],
+    pageType: 'CollectionPage',
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Online marketing for driving schools',
+      category: 'Digital Marketing',
+      offers: [
+        { name: 'Website design for driving schools' },
+        { name: 'Local SEO for driving schools' },
+        { name: 'Google Ads for driving schools' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Driving schools',
+        serviceName: 'Online marketing for driving schools',
+        serviceDescription:
+          'Online marketing for driving schools: websites with pass rates and packages, local SEO for “driving school [city]”, and Google Ads aimed at lesson sign-ups — without ranking guarantees.',
+        faqs: [
+          {
+            question: 'How do we attract new students online?',
+            answer:
+              'Combine a clear site that shows packages and trial lessons, local SEO for “driving school [city]”, and ads on high-intent lesson searches. Young learners discover on social; parents often finish the research on reviews and pass rates. We do not promise a fixed enrolment volume.'
+          },
+          {
+            question: 'How should we show pass rates and reviews?',
+            answer:
+              'Place CBR success figures and recent student reviews next to package and trial-lesson CTAs — where parents scan before they call. Authentic numbers and voices matter; we surface proof you hold, we do not invent pass rates.'
+          },
+          {
+            question: 'How do we get found for “driving school [city]”?',
+            answer:
+              'Local SEO and a complete Google Business Profile help Maps and organic search match city and lesson intent. Comparison sites compete for the same clicks — stronger owned visibility usually starts more direct sign-up conversations. We do not promise a fixed map-pack place.'
+          },
+          {
+            question: 'How do we present packages and trial lessons?',
+            answer:
+              'Lead with clear package bands, licence types (car, automatic, motorcycle, intensive) and a low-friction trial-lesson path. Price-sensitive learners bounce when packs are buried; parents want to see what they pay for before they enrol.'
+          },
+          {
+            question: 'Do Instagram and TikTok matter for driving schools?',
+            answer:
+              'Often yes for the 17–25 audience: passed students and day-to-day lesson clips act as social proof. Social discovery still needs a site and local presence where parents finish the shortlist — feeds alone rarely close the enrolment.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Rijscholen',
+        serviceName: 'Online marketing voor rijscholen',
+        serviceDescription:
+          'Online marketing voor rijscholen: websites met slagingspercentages en pakketten, lokale SEO voor “rijschool [stad]”, en Google Ads gericht op lesinschrijvingen — zonder rankinggaranties.',
+        faqs: [
+          {
+            question: 'Hoe werven we online nieuwe leerlingen?',
+            answer:
+              'Combineer een heldere site die pakketten en proefles toont, lokale SEO op “rijschool [stad]”, en ads op high-intent leszoeken. Jonge leerlingen ontdekken op social; ouders ronden research vaak af op reviews en slagingspercentage. We beloven geen vast inschrijvingsvolume.'
+          },
+          {
+            question: 'Hoe tonen we slagingspercentage en reviews?',
+            answer:
+              'Plaats CBR-cijfers en recente leerlingreviews naast pakket- en proefles-CTA’s — waar ouders scannen vóór ze bellen. Authentieke cijfers en stemmen doen ertoe; we tonen bewijs dat je hebt, we verzinnen geen slagingspercentages.'
+          },
+          {
+            question: 'Hoe worden we vindbaar voor “rijschool [stad]”?',
+            answer:
+              'Lokale SEO en een compleet Google Bedrijfsprofiel helpen Maps en organisch zoeken bij stads- en lesintentie. Vergelijkingssites concurreren om dezelfde klikken — sterkere owned zichtbaarheid start meestal meer directe inschrijfgesprekken. We beloven geen vaste kaartpackplek.'
+          },
+          {
+            question: 'Hoe presenteren we pakketten en proefles?',
+            answer:
+              'Leid met heldere pakketbanden, rijbewijstypes (auto, automaat, motor, spoed) en een lage-frictie proeflespad. Prijsgevoelige leerlingen bouncen wanneer pakketten begraven liggen; ouders willen zien waarvoor ze betalen vóór ze inschrijven.'
+          },
+          {
+            question: 'Doen Instagram en TikTok ertoe voor rijscholen?',
+            answer:
+              'Voor de 17–25-doelgroep vaak wel: geslaagde leerlingen en alledaagse lesclips werken als social proof. Social discovery heeft nog steeds een site en lokale aanwezigheid nodig waar ouders de shortlist afronden — feeds alleen sluiten zelden de inschrijving.'
+          }
+        ]
+      }
+    }
+  },
+
+  'branches-rijscholen-website-laten-maken': {
+    parents: ['home', 'branches', 'branches-rijscholen'],
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Website design for driving schools',
+      category: 'Web Development',
+      offers: [
+        { name: 'CBR pass-rate and package presentation' },
+        { name: 'Trial lesson and online enrolment paths' },
+        { name: 'Licence-type pages and planning software links' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Website design',
+        serviceName: 'Website design for driving schools',
+        serviceDescription:
+          'Website design for driving schools focused on CBR pass rates, clear packages and lesson pricing, trial lessons and online enrolment, passed-student reviews, licence-type paths, instructor profiles, service area and pickup, mobile dual-audience paths and planning software links — without ranking guarantees.',
+        faqs: [
+          {
+            question: 'How do I show my pass rate?',
+            answer:
+              'Place your CBR success percentage where parents and learners scan first — next to packages and trial CTAs. Authentic figures you can stand behind matter; we surface proof you hold, we do not invent pass rates. Comparison sites already highlight this signal, so your own site should match that clarity.'
+          },
+          {
+            question: 'Can students enrol online and book a trial lesson?',
+            answer:
+              'Yes. We build trial and enrolment paths that capture licence type, availability and contact details so a learner starts today instead of promising to call after school. Exact booking depth depends on whether we connect your planning software.'
+          },
+          {
+            question: 'Can I show packages and lesson prices?',
+            answer:
+              'Yes. Package cards explain what is included, which licence they fit and how to start — clear enough to compare on a phone without a buried PDF. We structure the presentation; published figures follow what you choose to show.'
+          },
+          {
+            question: 'Can it connect with my lesson planning software?',
+            answer:
+              'Where your stack allows, we link planning or administration tools so enrolment and availability do not force double entry after every timetable change. Exact integrations depend on the systems you already use.'
+          },
+          {
+            question: 'Does the site work well on mobile?',
+            answer:
+              'Yes — that is a core requirement. Young learners shortlist on phones; parents often finish the decision on the same screen after work. Packs, pass-rate blocks and trial CTAs stay thumb-friendly, not a desktop brochure that collapses on small screens.'
+          },
+          {
+            question: 'Can I split pages per licence type?',
+            answer:
+              'Yes when you teach those tracks. Category B car, automatic, motorcycle, intensive courses and refresher lessons each get dedicated proof and paths so the wrong brief never wastes an instructor hour.'
+          },
+          {
+            question: 'How is this different from a gym website?',
+            answer:
+              'Gyms sell memberships and class schedules; driving schools sell CBR trust, lesson packs and dual decision-makers (learner plus parent). We do not reuse fitness membership templates for school builds.'
+          },
+          {
+            question: 'How long does a driving school website project take?',
+            answer:
+              'Timelines depend on licence mix, planning-software needs and location count. Many builds move from discovery to launch across several weeks once packs and pass figures are ready. We share a realistic plan after scoping — without promising a fixed enrolment volume.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Website laten maken',
+        serviceName: 'Website laten maken voor rijscholen',
+        serviceDescription:
+          'Website laten maken voor rijscholen gericht op CBR-slagingspercentages, heldere pakketten en lesprijzen, proefles en online inschrijven, reviews van geslaagden, rijbewijstype-paden, instructeursprofielen, werkgebied en ophaalservice, mobiele dual-audience-paden en planningssoftwarekoppelingen — zonder rankinggaranties.',
+        faqs: [
+          {
+            question: 'Hoe toon ik mijn slagingspercentage?',
+            answer:
+              'Plaats je CBR-slagingscijfer waar ouders en leerlingen eerst scannen — naast pakketten en proefles-CTA’s. Authentieke cijfers die je kunt verantwoorden doen ertoe; we tonen bewijs dat je hebt, we verzinnen geen percentages. Vergelijkingssites highlighten dit signaal al, dus jouw eigen site moet die helderheid evenaren.'
+          },
+          {
+            question: 'Kunnen leerlingen online inschrijven en een proefles boeken?',
+            answer:
+              'Ja. We bouwen proefles- en inschrijfpaden die rijbewijstype, beschikbaarheid en contactgegevens vangen, zodat een leerling vandaag start in plaats van beloven na school te bellen. Exacte boekingsdiepte hangt af van of we je planningssoftware koppelen.'
+          },
+          {
+            question: 'Kan ik pakketten en prijzen tonen?',
+            answer:
+              'Ja. Pakketkaarten leggen uit wat erin zit, welk rijbewijs ze passen en hoe je start — helder genoeg om op de telefoon te vergelijken zonder begraven PDF. Wij structureren de presentatie; gepubliceerde bedragen volgen wat jij wilt tonen.'
+          },
+          {
+            question: 'Kan het koppelen met mijn lesplanning?',
+            answer:
+              'Waar je stack het toelaat, koppelen we plannings- of administratietools zodat inschrijving en beschikbaarheid geen dubbele invoer forceren na elke roosterwijziging. Exacte integraties hangen af van de systemen die je al gebruikt.'
+          },
+          {
+            question: 'Werkt de site goed op mobiel?',
+            answer:
+              'Ja — dat is een kerneisen. Jonge leerlingen shortlisten op telefoons; ouders ronden de keuze vaak op hetzelfde scherm na het werk af. Pakketten, slagingsblokken en proefles-CTA’s blijven duimvriendelijk, geen desktopbrochure die op klein scherm uit elkaar valt.'
+          },
+          {
+            question: 'Kan ik pagina’s per rijbewijstype splitsen?',
+            answer:
+              'Ja wanneer je die trajecten geeft. Categorie B auto, automaat, motor, spoedcursussen en bijscholing krijgen elk eigen bewijs en paden, zodat het verkeerde briefje geen instructeursuur verspilt.'
+          },
+          {
+            question: 'Wat is het verschil met een sportschoolwebsite?',
+            answer:
+              'Sportscholen verkopen abonnementen en lesroosters; rijscholen verkopen CBR-vertrouwen, lespakketten en duale beslissers (leerling plus ouder). We hergebruiken geen fitness-abonnementstemplates voor schoolbuilds.'
+          },
+          {
+            question: 'Hoe lang duurt een website-traject voor een rijschool?',
+            answer:
+              'Doorlooptijden hangen af van rijbewijsmix, planningssoftwarebehoefte en aantal locaties. Veel builds gaan van discovery tot livegang in enkele weken zodra pakketten en slagingscijfers klaarstaan. We delen een realistisch plan na scoping — zonder een vast inschrijvingsvolume te beloven.'
+          }
+        ]
+      }
+    }
+  },
+
+  'branches-rijscholen-lokale-seo': {
+    parents: ['home', 'branches', 'branches-rijscholen'],
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Local SEO for driving schools',
+      category: 'Digital Marketing',
+      offers: [
+        { name: 'City and lesson-type landing pages for driving schools' },
+        { name: 'Google Business Profile with graduate photos and pass-rate context' },
+        { name: 'Review growth and organic local-pack presence versus comparison sites' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Local SEO',
+        serviceName: 'Local SEO for driving schools',
+        serviceDescription:
+          'Local SEO for driving schools focused on “driving school [city]”, “driving lessons [city]”, intensive and automatic + city keywords, Google Business Profile with graduate photos and pass-rate context, reviews that decide teenage shortlists, pickup-area signals, citations and organic discovery versus comparison sites for the local pack — without ranking guarantees.',
+        faqs: [
+          {
+            question: 'How do I rank at the top for driving school in my city?',
+            answer:
+              'Build city and lesson-type pages for “driving school [city]” and related lesson queries, stock Google Business Profile with graduate photos and pass-rate context, and grow reviews from passed students. We treat catchments as towns and pickup zones you actually cover — without promising a fixed map-pack place against nearby schools or comparison sites.'
+          },
+          {
+            question: 'How do I beat comparison sites locally?',
+            answer:
+              'Comparison directories rent pack attention; local SEO strengthens your own Maps footprint, city pages and graduate reviews so high-intent searches can start on your profile instead of a per-lead listing. Many schools still buy some directory leads while organic presence grows — we do not claim Maps replaces every paid channel overnight, but stronger city relevance usually starts more direct trial and pack requests.'
+          },
+          {
+            question: 'How do I get more reviews from graduated students?',
+            answer:
+              'Ask ethically after exams when pride is high and the experience is fresh. Passed-student voices next to pack results often decide teenage shortlists more than a comparison-site badge. We set habits and reply patterns — we do not invent reviews or guarantee a star average.'
+          },
+          {
+            question: 'Can I rank for intensive courses or automatic lessons?',
+            answer:
+              'Yes when you actually teach those tracks. Intensive courses, automatic and motorcycle get planned keyword and page coverage per town so niche lesson searches do not only feed directories. Competition varies by city and lesson type; we avoid promising you will own every lesson phrase at once.'
+          },
+          {
+            question: 'How long does local SEO take for a driving school?',
+            answer:
+              'Profile hygiene and review habits often show action lifts within weeks; holding relevance for “driving school [city]” against comparison sites usually needs months of compounding. Inflow of new learners is continuous, but towns are saturated — pack position often decides volume. Timelines depend on competition and content readiness — without ranking guarantees.'
+          },
+          {
+            question: 'How is this different from a driving school website project?',
+            answer:
+              'Local SEO wins Maps and city-search attention for towns and lesson types you cover; the website spoke builds pass-rate proof, packages, trial lessons and enrolment that convert the visit. We keep those scopes distinct, then align so a map tap lands where a dated trial or pack request can start.'
+          },
+          {
+            question: 'Can I target multiple towns and pickup points?',
+            answer:
+              'Yes when you serve them. Many schools cover several pickup towns, not one shop pin. We structure multi-town footprints so each catchment has clear pages and GBP signals without confusing Maps about which footprint owns “driving school [city]”.'
+          },
+          {
+            question: 'Why does local pack position matter so much for driving schools?',
+            answer:
+              'A seventeen-year-old shortlists the top three pack results with strong reviews on a phone. Invisible in that pack means an empty lesson calendar while competitors fill up — even with a stronger pass rate. Continuous local inflow still lands where findability looks safest.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Lokale SEO',
+        serviceName: 'Lokale SEO voor rijscholen',
+        serviceDescription:
+          'Lokale SEO voor rijscholen gericht op “rijschool [stad]”, “rijlessen [stad]”, spoedcursus- en automaat- + stadszoekwoorden, Google Bedrijfsprofiel met foto’s van geslaagden en slagingscontext, reviews die tiener-shortlists beslissen, ophaalgebied-signalen, citations en organische ontdekking versus vergelijkingssites om de local pack — zonder rankinggaranties.',
+        faqs: [
+          {
+            question: 'Hoe kom ik bovenaan voor rijschool in mijn stad?',
+            answer:
+              'Bouw stads- en lestypepagina’s voor “rijschool [stad]” en gerelateerde lesqueries, vul Google Bedrijfsprofiel met foto’s van geslaagden en slagingscontext, en groei reviews van geslaagden. We behandelen catchments als plaatsen en ophaalzones die je écht dekt — zonder een vaste kaartpackplek tegen nabije scholen of vergelijkingssites te beloven.'
+          },
+          {
+            question: 'Hoe versla ik vergelijkingssites lokaal?',
+            answer:
+              'Vergelijkingsdirectories huren packaandacht; lokale SEO versterkt jouw eigen Maps-voetafdruk, stadspagina’s en reviews van geslaagden zodat high-intent zoeken op jouw profiel kan starten in plaats van een per-lead listing. Veel scholen kopen nog directoryleads terwijl organische aanwezigheid groeit — we claimen niet dat Maps elk betaald kanaal overnight vervangt, maar sterkere stadsrelevantie start meestal meer directe proefles- en pakketaanvragen.'
+          },
+          {
+            question: 'Hoe krijg ik meer reviews van geslaagden?',
+            answer:
+              'Vraag ethisch na examens wanneer trots hoog is en de ervaring vers. Stemmen van geslaagden naast packresultaten beslissen tiener-shortlists vaak meer dan een vergelijkingssite-badge. We zetten gewoontes en antwoordpatronen op — we verzinnen geen reviews en garanderen geen stergemiddelde.'
+          },
+          {
+            question: 'Kan ik ranken op spoedcursus of automaat?',
+            answer:
+              'Ja wanneer je die trajecten écht geeft. Spoedcursus, automaat en motor krijgen geplande zoekwoord- en paginadekking per plaats, zodat niche-leszoeken niet alleen directories voedt. Concurrentie verschilt per stad en lestype; we beloven niet dat je elke lesfrase tegelijk bezit.'
+          },
+          {
+            question: 'Hoe lang duurt lokale SEO voor een rijschool?',
+            answer:
+              'Profielhygiëne en reviewgewoontes laten vaak binnen enkele weken actieliften zien; relevantie vasthouden op “rijschool [stad]” tegen vergelijkingssites vraagt meestal maanden van compounding. Instroom van nieuwe leerlingen is continu, maar plaatsen zijn verzadigd — packpositie bepaalt vaak het volume. Doorlooptijden hangen af van concurrentie en contentklaarheid — zonder rankinggaranties.'
+          },
+          {
+            question: 'Wat is het verschil met een website-traject voor rijscholen?',
+            answer:
+              'Lokale SEO wint Maps- en stadszoekaandacht voor plaatsen en lestypes die je dekt; de website-spoke bouwt slagingsbewijs, pakketten, proefles en inschrijving die het bezoek converteren. We houden die scopes gescheiden en stemmen ze af zodat een kaarttik landt waar een gedateerde proefles- of pakketaanvraag kan starten.'
+          },
+          {
+            question: 'Kan ik meerdere plaatsen en ophaalpunten targeten?',
+            answer:
+              'Ja wanneer je ze bedient. Veel scholen dekken meerdere ophaalplaatsen, niet één winkelpin. We structureren multi-plaatsvoetafdrukken zodat elk catchment heldere pagina’s en GBP-signalen heeft zonder Maps te verwarren over wie “rijschool [stad]” bezit.'
+          },
+          {
+            question: 'Waarom is local-packpositie zo bepalend voor rijscholen?',
+            answer:
+              'Een zeventienjarige shortlist de top drie packresultaten met sterke reviews op de telefoon. Onzichtbaar in die pack betekent een lege lessenagenda terwijl concurrenten vollopen — ook met een sterker slagingspercentage. Continue lokale instroom landt nog steeds waar vindbaarheid het veiligst oogt.'
+          }
+        ]
+      }
+    }
+  },
+
   'branches-fotografen': {
     parents: ['home', 'branches'],
     pageType: 'CollectionPage',
@@ -3215,6 +3522,230 @@ export const pageSeoByKey: Record<RouteKey, PageSeoConfig> = {
             question: 'Wat is het verschil met marketing voor trouw- of eventplanners?',
             answer:
               'Planners verkopen regie van een dag; jij verkoopt het beeld zelf. Jouw portfolio is het product, zware bestanden vragen technische snelheid, en specialisaties filteren briefs. We hergebruiken geen planner-leveranciersnetwerk- of salonstoelkalender-taal voor fotografenhubs.'
+          }
+        ]
+      }
+    }
+  },
+
+  'branches-fotografen-website-laten-maken': {
+    parents: ['home', 'branches', 'branches-fotografen'],
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Website design for photographers and videographers',
+      category: 'Web Development',
+      offers: [
+        { name: 'Fast portfolio galleries with image optimisation' },
+        { name: 'Specialisation pages and client delivery galleries' },
+        { name: 'Booking paths with packages, showreels and rights language' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Website design',
+        serviceName: 'Website design for photographers & videographers',
+        serviceDescription:
+          'Website design for photographers and videographers focused on the portfolio as the product, technical speed under large image and video files, specialisation pages, client delivery galleries, package booking, showreels, image-rights language and Instagram handoff — without ranking guarantees.',
+        faqs: [
+          {
+            question: 'Will my site stay fast with large photos and videos?',
+            answer:
+              'Yes — that is a core part of the build. We plan image optimisation, lazy loading and CDN delivery so megapixel stills and showreels feel instant on a phone. Photographers ship heavy files; a laggy gallery loses the booking before anyone reads a review. We do not promise a fixed Core Web Vitals score against every competitor.'
+          },
+          {
+            question: 'Can I get online galleries for client delivery and selection?',
+            answer:
+              'Yes. We structure private client galleries for review, favourites and download after a shoot — separate from public portfolio pages. That handoff proves you deliver as cleanly as you shoot and reduces post-shoot friction in email threads.'
+          },
+          {
+            question: 'Can I create a page per specialisation?',
+            answer:
+              'Yes when you actually shoot those crafts. Wedding, portrait, commercial, product, real estate, newborn, events and video each get dedicated proof and paths so the wrong brief never wastes a shoot day. Mixing everything into one vague gallery usually confuses intent.'
+          },
+          {
+            question: 'Can I show my showreel on the site?',
+            answer:
+              'Yes. We embed highlight films and reels with performance-safe players so motion proof sits on the homepage or specialisation pages without killing mobile load. Videographers need playable proof, not a dead thumbnail that never starts on cellular data.'
+          },
+          {
+            question: 'Can I connect a booking system with availability and packages?',
+            answer:
+              'Yes. We wire date, package and availability fields — or integrate a booking tool you already use — so clients start a shoot request without a vague DM. Packages sit next to gallery proof, not only in a PDF. Exact setup depends on your current tools and workflow.'
+          },
+          {
+            question: 'How do image rights and watermarks appear online?',
+            answer:
+              'We place clear licence and usage language next to galleries, and support watermark habits where you need them for public proof. Clients understand what they can use before they ask — without turning the site into a legal wall of text.'
+          },
+          {
+            question: 'How is this different from an event-planner website?',
+            answer:
+              'Planners sell coordination of a day and a vendor network; you sell the image itself. Your portfolio is the product, heavy files need technical speed, client delivery galleries matter, and specialisations filter briefs. We do not reuse planner or salon templates for photographer builds.'
+          },
+          {
+            question: 'How long does a photographer website project take?',
+            answer:
+              'Timelines depend on portfolio volume, specialisation count, delivery-gallery needs and video depth. Many builds move from discovery to launch across several weeks once files and packages are prepared. We share a realistic plan after scoping — without promising a fixed booking volume.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Website laten maken',
+        serviceName: 'Website laten maken voor fotografen',
+        serviceDescription:
+          'Website laten maken voor fotografen en videografen gericht op het portfolio als product, technische snelheid onder grote beeld- en videobestanden, specialisatiepagina’s, klantgalerijen voor levering, pakketboeking, showreels, beeldrechtentaal en Instagram-overdracht — zonder rankinggaranties.',
+        faqs: [
+          {
+            question: 'Blijft mijn site snel met grote foto’s en video’s?',
+            answer:
+              'Ja — dat zit in de kern van de build. We plannen beeldoptimalisatie, lazy loading en CDN-levering zodat megapixel-stills en showreels instant aanvoelen op de telefoon. Fotografen leveren zware bestanden; een trage galerij verliest de boeking vóór iemand een review leest. We beloven geen vaste Core Web Vitals-score tegen elke concurrent.'
+          },
+          {
+            question: 'Kan ik online galerijen voor klanten krijgen?',
+            answer:
+              'Ja. We structureren privé klantgalerijen voor review, favorieten en download na een shoot — los van publieke portfoliopagina’s. Die overdracht bewijst dat je net zo schoon levert als je shoot en vermindert nashoot-frictie in mailthreads.'
+          },
+          {
+            question: 'Kan ik per specialisatie een pagina maken?',
+            answer:
+              'Ja wanneer je die crafts écht shoot. Bruiloft, portret, zakelijk, product, vastgoed, newborn, evenementen en video krijgen elk eigen bewijs en paden, zodat het verkeerde briefje geen shootdag verspilt. Alles mengen in één vage galerij verwart meestal de intentie.'
+          },
+          {
+            question: 'Kan ik mijn showreel tonen?',
+            answer:
+              'Ja. We embedden highlightfilms en reels met performance-veilige players, zodat motion-bewijs op homepage of specialisatiepagina’s staat zonder mobiele load te breken. Videografen hebben speelbaar bewijs nodig, geen dode thumbnail die op mobiele data nooit start.'
+          },
+          {
+            question: 'Kan ik een boekingssysteem met beschikbaarheid en pakketten koppelen?',
+            answer:
+              'Ja. We zetten velden voor datum, pakket en beschikbaarheid klaar — of integreren een boekingstool die je al gebruikt — zodat klanten een shootaanvraag starten zonder vage DM. Pakketten staan naast galerijbewijs, niet alleen in een PDF. Exacte setup hangt af van je huidige tools en workflow.'
+          },
+          {
+            question: 'Hoe verschijnen beeldrechten en watermerken online?',
+            answer:
+              'We plaatsen heldere licentie- en gebruikstaal naast galerijen, en ondersteunen watermerkgewoontes waar je die nodig hebt voor publiek bewijs. Klanten begrijpen wat ze mogen gebruiken vóór ze vragen — zonder de site in een juridische tekstmuur te veranderen.'
+          },
+          {
+            question: 'Wat is het verschil met een website voor eventplanners?',
+            answer:
+              'Planners verkopen regie van een dag en een leveranciersnetwerk; jij verkoopt het beeld zelf. Jouw portfolio is het product, zware bestanden vragen technische snelheid, klantgalerijen voor levering doen ertoe, en specialisaties filteren briefs. We hergebruiken geen planner- of salontemplates voor fotografenbuilds.'
+          },
+          {
+            question: 'Hoe lang duurt een website-traject voor een fotograaf?',
+            answer:
+              'Doorlooptijden hangen af van portfolio-omvang, aantal specialisaties, leveringsgalerij-behoefte en videodiepte. Veel builds gaan van discovery tot livegang in enkele weken zodra bestanden en pakketten klaarstaan. We delen een realistisch plan na scoping — zonder een vast boekingsvolume te beloven.'
+          }
+        ]
+      }
+    }
+  },
+
+  'branches-fotografen-lokale-seo': {
+    parents: ['home', 'branches', 'branches-fotografen'],
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Local SEO for photographers and videographers',
+      category: 'Digital Marketing',
+      offers: [
+        { name: 'Specialisation and region landing pages for makers' },
+        { name: 'Google Business Profile with portfolio images' },
+        { name: 'Assignment-type review growth and niche + place keywords' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Local SEO',
+        serviceName: 'Local SEO for photographers & videographers',
+        serviceDescription:
+          'Local SEO for photographers and videographers focused on specialisation + place keywords, region and province pages, Google Business Profile with portfolio images, reviews per assignment type, venue and business mention signals and organic discovery versus photography marketplaces — without ranking guarantees.',
+        faqs: [
+          {
+            question: 'How do I get found as a wedding photographer in my city?',
+            answer:
+              'Build specialisation and city pages for “wedding photographer [city]”, stock Google Business Profile with real shoot photos, and grow bridal reviews that match that craft. We treat catchments as cities and regions you actually cover — without promising a fixed map-pack place against directories.'
+          },
+          {
+            question: 'Can I rank per specialisation?',
+            answer:
+              'Yes when you actually shoot those crafts. Wedding, portrait, commercial, real estate, newborn and videography each get planned keyword and page coverage so niche searches do not only feed marketplaces. Competition varies by city and craft; we avoid promising you will own every niche term at once.'
+          },
+          {
+            question: 'Can I target multiple regions?',
+            answer:
+              'Yes when you travel them. Photographers often cover a province, not one street. We structure multi-region footprints so each catchment has clear pages and GBP signals without confusing Maps about which footprint owns “portrait photographer [city]”.'
+          },
+          {
+            question: 'How important are reviews for photographers?',
+            answer:
+              'Very — especially when they match the assignment type someone searched. Bridal reviews next to a wedding-photographer result calm a different fear than commercial or newborn proof. We set ethical ask habits after each shoot type — we do not invent reviews or guarantee a star average.'
+          },
+          {
+            question: 'How long does local SEO take for a photographer?',
+            answer:
+              'Profile hygiene and review habits often show action lifts within weeks; holding relevance for “wedding photographer [city]” against marketplaces usually needs months of compounding. Build ahead of each niche’s booking season. Timelines depend on competition and content readiness — without ranking guarantees.'
+          },
+          {
+            question: 'How is this different from a photographer website project?',
+            answer:
+              'Local SEO wins Maps and niche-search attention for makers in your regions; the website spoke builds fast galleries, client delivery and package booking that convert the visit. We keep those scopes distinct, then align so a map tap lands where a dated package request can start.'
+          },
+          {
+            question: 'Do venue and business mentions help local SEO?',
+            answer:
+              'They can. Mentions with venues, agencies and companies reinforce regional relevance — local signals directories rarely earn the same way. We pursue them as supporting evidence alongside GBP and specialisation pages, not as a substitute for reviews or keyword coverage.'
+          },
+          {
+            question: 'Can organic local SEO reduce reliance on photography marketplaces?',
+            answer:
+              'That is a common goal. Platforms rent introductions; local SEO builds owned discovery when someone searches Google for a craft in their city. Many makers still buy some directory leads while organic visibility grows — we do not claim Maps replaces every paid channel overnight, but stronger niche presence usually starts more direct package conversations.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Lokale SEO',
+        serviceName: 'Lokale SEO voor fotografen',
+        serviceDescription:
+          'Lokale SEO voor fotografen en videografen gericht op specialisatie- + plaatszoekwoorden, regio- en provinciepagina’s, Google Bedrijfsprofiel met portfoliobeelden, reviews per opdrachttype, venue- en bedrijfsvermeldingen als lokale signalen en organische ontdekking versus fotografiemarktplaatsen — zonder rankinggaranties.',
+        faqs: [
+          {
+            question: 'Hoe word ik gevonden als trouwfotograaf in mijn stad?',
+            answer:
+              'Bouw specialisatie- en stadspagina’s voor “trouwfotograaf [stad]”, vul Google Bedrijfsprofiel met echte shootfoto’s, en groei bridal-reviews die bij die craft passen. We behandelen catchments als steden en regio’s die je écht dekt — zonder een vaste kaartpackplek tegen directories te beloven.'
+          },
+          {
+            question: 'Kan ik ranken per specialisatie?',
+            answer:
+              'Ja wanneer je die crafts écht shoot. Bruiloft, portret, zakelijk, vastgoed, newborn en videografie krijgen elk geplande zoekwoord- en paginadekking, zodat nichezoeken niet alleen marktplaatsen voedt. Concurrentie verschilt per stad en craft; we beloven niet dat je elke nicheterm tegelijk bezit.'
+          },
+          {
+            question: 'Kan ik meerdere regio’s targeten?',
+            answer:
+              'Ja wanneer je ze bereist. Fotografen dekken vaak een provincie, niet één straat. We structureren multi-regiovoetafdrukken zodat elk catchment heldere pagina’s en GBP-signalen heeft zonder Maps te verwarren over wie “portretfotograaf [stad]” bezit.'
+          },
+          {
+            question: 'Hoe belangrijk zijn reviews voor fotografen?',
+            answer:
+              'Erg — vooral wanneer ze bij het opdrachttype passen dat iemand zocht. Bridal-reviews naast een trouwfotograaf-resultaat kalmeren een andere angst dan zakelijk of newborn-bewijs. We zetten ethische vraaggewoontes op na elk shoottype — we verzinnen geen reviews en garanderen geen stergemiddelde.'
+          },
+          {
+            question: 'Hoe lang duurt lokale SEO voor een fotograaf?',
+            answer:
+              'Profielhygiëne en reviewgewoontes laten vaak binnen enkele weken actieliften zien; relevantie vasthouden op “trouwfotograaf [stad]” tegen marktplaatsen vraagt meestal maanden van compounding. Bouw vóór het boekingsseizoen van elke niche. Doorlooptijden hangen af van concurrentie en contentklaarheid — zonder rankinggaranties.'
+          },
+          {
+            question: 'Wat is het verschil met een website-traject voor fotografen?',
+            answer:
+              'Lokale SEO wint Maps- en nichezoekaandacht voor makers in jouw regio’s; de website-spoke bouwt snelle galerijen, klantlevering en pakketboeking die het bezoek converteren. We houden die scopes gescheiden en stemmen ze af zodat een kaarttik landt waar een gedateerde pakketaanvraag kan starten.'
+          },
+          {
+            question: 'Helpen venue- en bedrijfsvermeldingen bij lokale SEO?',
+            answer:
+              'Dat kan. Vermeldingen bij venues, bureaus en bedrijven versterken regionale relevantie — lokale signalen die directories zelden zo verdienen. We benaderen ze als steunbewijs naast GBP en specialisatiepagina’s, niet als vervanging van reviews of zoekwoorddekking.'
+          },
+          {
+            question: 'Kan organische lokale SEO afhankelijkheid van fotografiemarktplaatsen verminderen?',
+            answer:
+              'Dat is een veelvoorkomend doel. Platforms huren introducties; lokale SEO bouwt owned ontdekking wanneer iemand Google opent voor een craft in hun stad. Veel makers kopen nog directoryleads terwijl organische zichtbaarheid groeit — we claimen niet dat Maps elk betaald kanaal overnight vervangt, maar sterkere nicheaanwezigheid start meestal meer directe pakketgesprekken.'
           }
         ]
       }

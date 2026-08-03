@@ -961,6 +961,86 @@
     <image:image><image:loc>https://amoradigital.nl/og/marketing.png</image:loc></image:image>
   </url>
   <url>
+    <loc>https://amoradigital.nl/industries/photographers-videographers/website-design</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/industries/photographers-videographers/website-design" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/branches/fotografen/website-laten-maken" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/industries/photographers-videographers/website-design" />
+   
+    <image:image><image:loc>https://amoradigital.nl/og/website-design.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://amoradigital.nl/nl/branches/fotografen/website-laten-maken</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/industries/photographers-videographers/website-design" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/branches/fotografen/website-laten-maken" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/industries/photographers-videographers/website-design" />
+   
+    <image:image><image:loc>https://amoradigital.nl/og/website-design.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://amoradigital.nl/industries/photographers-videographers/local-seo</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/industries/photographers-videographers/local-seo" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/branches/fotografen/lokale-seo" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/industries/photographers-videographers/local-seo" />
+   
+    <image:image><image:loc>https://amoradigital.nl/og/local-seo.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://amoradigital.nl/nl/branches/fotografen/lokale-seo</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/industries/photographers-videographers/local-seo" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/branches/fotografen/lokale-seo" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/industries/photographers-videographers/local-seo" />
+   
+    <image:image><image:loc>https://amoradigital.nl/og/local-seo.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://amoradigital.nl/industries/driving-schools</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/industries/driving-schools" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/branches/rijscholen" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/industries/driving-schools" />
+   
+    <image:image><image:loc>https://amoradigital.nl/og/marketing.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://amoradigital.nl/nl/branches/rijscholen</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/industries/driving-schools" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/branches/rijscholen" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/industries/driving-schools" />
+   
+    <image:image><image:loc>https://amoradigital.nl/og/marketing.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://amoradigital.nl/industries/driving-schools/website-design</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/industries/driving-schools/website-design" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/branches/rijscholen/website-laten-maken" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/industries/driving-schools/website-design" />
+   
+    <image:image><image:loc>https://amoradigital.nl/og/website-design.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://amoradigital.nl/nl/branches/rijscholen/website-laten-maken</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoradigital.nl/industries/driving-schools/website-design" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://amoradigital.nl/nl/branches/rijscholen/website-laten-maken" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoradigital.nl/industries/driving-schools/website-design" />
+   
+    <image:image><image:loc>https://amoradigital.nl/og/website-design.png</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://amoradigital.nl/industries/cleaning-companies/website-design</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

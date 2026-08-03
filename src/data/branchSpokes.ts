@@ -33,7 +33,8 @@ export const LIVE_BRANCH_SPOKES: Readonly<Record<string, readonly string[]>> = {
   sportscholen: ['website-laten-maken', 'lokale-seo'],
   schoonmaakbedrijven: ['website-laten-maken', 'lokale-seo'],
   eventplanners: ['website-laten-maken', 'lokale-seo'],
-  fotografen: []
+  fotografen: ['website-laten-maken', 'lokale-seo'],
+  rijscholen: ['website-laten-maken', 'lokale-seo']
 }
 
 /**
@@ -140,14 +141,24 @@ export const BRANCH_SPOKE_ROUTE_KEYS: Readonly<
     'social-media': 'branches-eventplanners-social-media' as RouteKey
   },
   /**
-   * Hub is live; all three spoke RouteKeys remain cast until those pages ship —
-   * muted cards stay link-safe. Third spoke is social-media (portfolio/visual),
-   * not google-ads.
+   * Website + lokale-seo are live in ROUTES. social-media remains cast until
+   * that page ships — muted card stays link-safe. Third spoke is social-media
+   * (portfolio/visual), not google-ads.
    */
   fotografen: {
-    'website-laten-maken': 'branches-fotografen-website-laten-maken' as RouteKey,
-    'lokale-seo': 'branches-fotografen-lokale-seo' as RouteKey,
+    'website-laten-maken': 'branches-fotografen-website-laten-maken',
+    'lokale-seo': 'branches-fotografen-lokale-seo',
     'social-media': 'branches-fotografen-social-media' as RouteKey
+  },
+  /**
+   * Website + lokale-seo are live in ROUTES. google-ads remains cast until that
+   * page ships — muted card stays link-safe. Third spoke is google-ads
+   * (high-intent lesson search), not social-media.
+   */
+  rijscholen: {
+    'website-laten-maken': 'branches-rijscholen-website-laten-maken',
+    'lokale-seo': 'branches-rijscholen-lokale-seo',
+    'google-ads': 'branches-rijscholen-google-ads' as RouteKey
   }
 }
 
@@ -719,6 +730,41 @@ export const BRANCH_SPOKES: Record<string, readonly BranchSpoke[]> = {
       benefit: {
         en: 'Instagram-ready feeds of real shoots so clients discover your eye and click through to packages before they shortlist another maker.',
         nl: 'Instagram-klare feeds van echte shoots, zodat klanten jouw oog ontdekken en doorklikken naar pakketten vóór ze een andere maker shortlisten.'
+      }
+    }
+  ],
+  rijscholen: [
+    {
+      slug: 'website-laten-maken',
+      name: {
+        en: 'Website design for driving schools',
+        nl: 'Website laten maken voor rijscholen'
+      },
+      benefit: {
+        en: 'A clear school site with pass rates, lesson packages, trial-lesson CTAs and licence paths for car, automatic, motorcycle and intensive courses.',
+        nl: 'Een heldere rijschoolsite met slagingspercentages, lespakketten, proefles-CTA’s en rijbewijspaden voor auto, automaat, motor en spoedcursussen.'
+      }
+    },
+    {
+      slug: 'lokale-seo',
+      name: {
+        en: 'Local SEO for driving schools',
+        nl: 'Lokale SEO voor rijscholen'
+      },
+      benefit: {
+        en: 'Show up for “driving school [city]” and lesson searches in your towns — including Google Business Profile with reviews parents actually read.',
+        nl: 'Zichtbaar op “rijschool [stad]” en leszoekopdrachten in jouw plaatsen — inclusief Google Bedrijfsprofiel met reviews die ouders écht lezen.'
+      }
+    },
+    {
+      slug: 'google-ads',
+      name: {
+        en: 'Google Ads for driving schools',
+        nl: 'Google Ads voor rijscholen'
+      },
+      benefit: {
+        en: 'Campaigns around driving school, lesson price and intensive-course intent so high-intent sign-ups reach you before comparison sites take the click.',
+        nl: 'Campagnes rond rijschool-, lesprijs- en spoedcursusintentie, zodat high-intent inschrijvingen je bereiken vóór vergelijkingssites de klik pakken.'
       }
     }
   ]

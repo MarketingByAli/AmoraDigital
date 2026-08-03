@@ -1016,6 +1016,126 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
       ],
     }
   },
+  'branches-rijscholen': {
+    en: {
+      title: `Online marketing for driving schools | Amora`,
+      description:
+        'Online marketing for driving schools: websites, local SEO and Google Ads for lesson sign-ups. 1,500+ projects.',
+      keywords: [
+        'online marketing for driving schools',
+        'driving school SEO',
+        'driving school Google Ads',
+        'rijschool marketing'
+      ],
+    },
+    nl: {
+      title: `Online marketing voor rijscholen | Amora`,
+      description:
+        'Online marketing voor rijscholen: websites, lokale SEO en Google Ads voor lesinschrijvingen. 1.500+ projecten.',
+      keywords: [
+        'online marketing voor rijscholen',
+        'SEO rijschool',
+        'Google Ads rijschool',
+        'rijschool marketing'
+      ],
+    }
+  },
+  'branches-rijscholen-website-laten-maken': {
+    en: {
+      title: `Website design for driving schools | Amora`,
+      description:
+        'Driving school website with pass rates, packages, trial lessons and online enrolment. 1,500+ projects.',
+      keywords: [
+        'website design for driving schools',
+        'driving school website',
+        'rijschool website design',
+        'driving school trial lesson'
+      ],
+    },
+    nl: {
+      title: `Website laten maken voor rijscholen | Amora`,
+      description:
+        'Rijschoolwebsite met slagingspercentages, pakketten, proefles en online inschrijven. 1.500+ projecten.',
+      keywords: [
+        'website laten maken voor rijscholen',
+        'website rijschool',
+        'rijschool proefles website',
+        'website rijbewijs B'
+      ],
+    }
+  },
+  'branches-rijscholen-lokale-seo': {
+    en: {
+      title: `Local SEO for driving schools | Amora`,
+      description:
+        'Local SEO for driving schools: city pages, GBP with graduate photos, reviews vs comparison sites. 1,500+ projects.',
+      keywords: [
+        'local SEO for driving schools',
+        'driving school Google Business Profile',
+        'rijschool local SEO',
+        'driving lessons city SEO'
+      ],
+    },
+    nl: {
+      title: `Lokale SEO voor rijscholen | Amora`,
+      description:
+        'Lokale SEO voor rijscholen: stadspagina’s, GBP met geslaagd-foto’s, reviews vs vergelijkingssites. 1.500+ projecten.',
+      keywords: [
+        'lokale SEO voor rijscholen',
+        'Google Bedrijfsprofiel rijschool',
+        'SEO rijlessen stad',
+        'rijschool local pack'
+      ],
+    }
+  },
+  'branches-fotografen-website-laten-maken': {
+    en: {
+      title: `Website design for photographers & videographers | Amora`,
+      description:
+        'Photographer website with fast galleries, specialisations, client delivery and package booking. 1,500+ projects.',
+      keywords: [
+        'website design for photographers & videographers',
+        'photographer portfolio website',
+        'videographer website design',
+        'wedding photographer website'
+      ],
+    },
+    nl: {
+      title: `Website laten maken voor fotografen | Amora`,
+      description:
+        'Fotografenwebsite met snelle galerijen, specialisaties, klantlevering en pakketboeking. 1.500+ projecten.',
+      keywords: [
+        'website laten maken voor fotografen',
+        'portfolio website fotograaf',
+        'website videograaf',
+        'website trouwfotograaf'
+      ],
+    }
+  },
+  'branches-fotografen-lokale-seo': {
+    en: {
+      title: `Local SEO for photographers & videographers | Amora`,
+      description:
+        'Local SEO for photographers: specialisation + city pages, GBP with portfolio, niche reviews. 1,500+ projects.',
+      keywords: [
+        'local SEO for photographers & videographers',
+        'wedding photographer local SEO',
+        'photographer Google Business Profile',
+        'videographer local SEO'
+      ],
+    },
+    nl: {
+      title: `Lokale SEO voor fotografen | Amora`,
+      description:
+        'Lokale SEO voor fotografen: specialisatie- + stadspagina’s, GBP met portfolio, nichereviews. 1.500+ projecten.',
+      keywords: [
+        'lokale SEO voor fotografen',
+        'lokale SEO trouwfotograaf',
+        'Google Bedrijfsprofiel fotograaf',
+        'lokale SEO videograaf'
+      ],
+    }
+  },
   'branches-eventplanners-website-laten-maken': {
     en: {
       title: `Website design for wedding & event planners | Amora`,

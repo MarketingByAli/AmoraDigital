@@ -101,6 +101,11 @@ export type RouteKey =
   | 'branches-eventplanners-website-laten-maken'
   | 'branches-eventplanners-lokale-seo'
   | 'branches-fotografen'
+  | 'branches-fotografen-website-laten-maken'
+  | 'branches-fotografen-lokale-seo'
+  | 'branches-rijscholen'
+  | 'branches-rijscholen-website-laten-maken'
+  | 'branches-rijscholen-lokale-seo'
   | 'branches-installateurs-website-laten-maken'
   | 'branches-installateurs-lokale-seo'
   | 'branches-aannemers-website-laten-maken'
@@ -290,6 +295,26 @@ export const ROUTES: Record<RouteKey, Record<Locale, string>> = {
   'branches-fotografen': {
     en: '/industries/photographers-videographers',
     nl: '/nl/branches/fotografen'
+  },
+  'branches-fotografen-website-laten-maken': {
+    en: '/industries/photographers-videographers/website-design',
+    nl: '/nl/branches/fotografen/website-laten-maken'
+  },
+  'branches-fotografen-lokale-seo': {
+    en: '/industries/photographers-videographers/local-seo',
+    nl: '/nl/branches/fotografen/lokale-seo'
+  },
+  'branches-rijscholen': {
+    en: '/industries/driving-schools',
+    nl: '/nl/branches/rijscholen'
+  },
+  'branches-rijscholen-website-laten-maken': {
+    en: '/industries/driving-schools/website-design',
+    nl: '/nl/branches/rijscholen/website-laten-maken'
+  },
+  'branches-rijscholen-lokale-seo': {
+    en: '/industries/driving-schools/local-seo',
+    nl: '/nl/branches/rijscholen/lokale-seo'
   },
   'branches-installateurs-website-laten-maken': {
     en: '/industries/installers/website-design',

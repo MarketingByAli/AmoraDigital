@@ -67,6 +67,19 @@ const BranchesEventplannersLokaleSeo = lazy(
   () => import('./pages/branches/eventplanners/LokaleSeo')
 )
 const BranchesFotografen = lazy(() => import('./pages/branches/Fotografen'))
+const BranchesFotografenWebsiteLatenMaken = lazy(
+  () => import('./pages/branches/fotografen/WebsiteLatenMaken')
+)
+const BranchesFotografenLokaleSeo = lazy(
+  () => import('./pages/branches/fotografen/LokaleSeo')
+)
+const BranchesRijscholen = lazy(() => import('./pages/branches/Rijscholen'))
+const BranchesRijscholenWebsiteLatenMaken = lazy(
+  () => import('./pages/branches/rijscholen/WebsiteLatenMaken')
+)
+const BranchesRijscholenLokaleSeo = lazy(
+  () => import('./pages/branches/rijscholen/LokaleSeo')
+)
 const BranchesSchoonmaakbedrijvenWebsiteLatenMaken = lazy(
   () => import('./pages/branches/schoonmaakbedrijven/WebsiteLatenMaken')
 )
@@ -288,6 +301,26 @@ function App() {
                 element={<BranchesFotografen />}
               />
               <Route
+                path={ROUTES['branches-fotografen-website-laten-maken'].en}
+                element={<BranchesFotografenWebsiteLatenMaken />}
+              />
+              <Route
+                path={ROUTES['branches-fotografen-lokale-seo'].en}
+                element={<BranchesFotografenLokaleSeo />}
+              />
+              <Route
+                path={ROUTES['branches-rijscholen'].en}
+                element={<BranchesRijscholen />}
+              />
+              <Route
+                path={ROUTES['branches-rijscholen-website-laten-maken'].en}
+                element={<BranchesRijscholenWebsiteLatenMaken />}
+              />
+              <Route
+                path={ROUTES['branches-rijscholen-lokale-seo'].en}
+                element={<BranchesRijscholenLokaleSeo />}
+              />
+              <Route
                 path={ROUTES['branches-schoonmaakbedrijven-website-laten-maken'].en}
                 element={<BranchesSchoonmaakbedrijvenWebsiteLatenMaken />}
               />
@@ -481,6 +514,26 @@ function App() {
               <Route
                 path={ROUTES['branches-fotografen'].nl}
                 element={<BranchesFotografen />}
+              />
+              <Route
+                path={ROUTES['branches-fotografen-website-laten-maken'].nl}
+                element={<BranchesFotografenWebsiteLatenMaken />}
+              />
+              <Route
+                path={ROUTES['branches-fotografen-lokale-seo'].nl}
+                element={<BranchesFotografenLokaleSeo />}
+              />
+              <Route
+                path={ROUTES['branches-rijscholen'].nl}
+                element={<BranchesRijscholen />}
+              />
+              <Route
+                path={ROUTES['branches-rijscholen-website-laten-maken'].nl}
+                element={<BranchesRijscholenWebsiteLatenMaken />}
+              />
+              <Route
+                path={ROUTES['branches-rijscholen-lokale-seo'].nl}
+                element={<BranchesRijscholenLokaleSeo />}
               />
               <Route
                 path={ROUTES['branches-schoonmaakbedrijven-website-laten-maken'].nl}
