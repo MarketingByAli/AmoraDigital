@@ -80,6 +80,19 @@ const BranchesRijscholenWebsiteLatenMaken = lazy(
 const BranchesRijscholenLokaleSeo = lazy(
   () => import('./pages/branches/rijscholen/LokaleSeo')
 )
+const BranchesHoveniers = lazy(() => import('./pages/branches/Hoveniers'))
+const BranchesHoveniersWebsiteLatenMaken = lazy(
+  () => import('./pages/branches/hoveniers/WebsiteLatenMaken')
+)
+const BranchesHoveniersLokaleSeo = lazy(
+  () => import('./pages/branches/hoveniers/LokaleSeo')
+)
+const BranchesDakdekkersZonnepanelen = lazy(
+  () => import('./pages/branches/DakdekkersZonnepanelen')
+)
+const BranchesDakdekkersZonnepanelenWebsiteLatenMaken = lazy(
+  () => import('./pages/branches/dakdekkers-zonnepanelen/WebsiteLatenMaken')
+)
 const BranchesSchoonmaakbedrijvenWebsiteLatenMaken = lazy(
   () => import('./pages/branches/schoonmaakbedrijven/WebsiteLatenMaken')
 )
@@ -321,6 +334,26 @@ function App() {
                 element={<BranchesRijscholenLokaleSeo />}
               />
               <Route
+                path={ROUTES['branches-hoveniers'].en}
+                element={<BranchesHoveniers />}
+              />
+              <Route
+                path={ROUTES['branches-hoveniers-website-laten-maken'].en}
+                element={<BranchesHoveniersWebsiteLatenMaken />}
+              />
+              <Route
+                path={ROUTES['branches-hoveniers-lokale-seo'].en}
+                element={<BranchesHoveniersLokaleSeo />}
+              />
+              <Route
+                path={ROUTES['branches-dakdekkers-zonnepanelen'].en}
+                element={<BranchesDakdekkersZonnepanelen />}
+              />
+              <Route
+                path={ROUTES['branches-dakdekkers-zonnepanelen-website-laten-maken'].en}
+                element={<BranchesDakdekkersZonnepanelenWebsiteLatenMaken />}
+              />
+              <Route
                 path={ROUTES['branches-schoonmaakbedrijven-website-laten-maken'].en}
                 element={<BranchesSchoonmaakbedrijvenWebsiteLatenMaken />}
               />
@@ -534,6 +567,26 @@ function App() {
               <Route
                 path={ROUTES['branches-rijscholen-lokale-seo'].nl}
                 element={<BranchesRijscholenLokaleSeo />}
+              />
+              <Route
+                path={ROUTES['branches-hoveniers'].nl}
+                element={<BranchesHoveniers />}
+              />
+              <Route
+                path={ROUTES['branches-hoveniers-website-laten-maken'].nl}
+                element={<BranchesHoveniersWebsiteLatenMaken />}
+              />
+              <Route
+                path={ROUTES['branches-hoveniers-lokale-seo'].nl}
+                element={<BranchesHoveniersLokaleSeo />}
+              />
+              <Route
+                path={ROUTES['branches-dakdekkers-zonnepanelen'].nl}
+                element={<BranchesDakdekkersZonnepanelen />}
+              />
+              <Route
+                path={ROUTES['branches-dakdekkers-zonnepanelen-website-laten-maken'].nl}
+                element={<BranchesDakdekkersZonnepanelenWebsiteLatenMaken />}
               />
               <Route
                 path={ROUTES['branches-schoonmaakbedrijven-website-laten-maken'].nl}

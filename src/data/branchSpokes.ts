@@ -34,7 +34,9 @@ export const LIVE_BRANCH_SPOKES: Readonly<Record<string, readonly string[]>> = {
   schoonmaakbedrijven: ['website-laten-maken', 'lokale-seo'],
   eventplanners: ['website-laten-maken', 'lokale-seo'],
   fotografen: ['website-laten-maken', 'lokale-seo'],
-  rijscholen: ['website-laten-maken', 'lokale-seo']
+  rijscholen: ['website-laten-maken', 'lokale-seo'],
+  hoveniers: ['website-laten-maken', 'lokale-seo'],
+  'dakdekkers-zonnepanelen': ['website-laten-maken']
 }
 
 /**
@@ -159,6 +161,26 @@ export const BRANCH_SPOKE_ROUTE_KEYS: Readonly<
     'website-laten-maken': 'branches-rijscholen-website-laten-maken',
     'lokale-seo': 'branches-rijscholen-lokale-seo',
     'google-ads': 'branches-rijscholen-google-ads' as RouteKey
+  },
+  /**
+   * Website + lokale-seo are live in ROUTES. google-ads remains cast until that
+   * page ships — muted card stays link-safe. Third spoke is google-ads
+   * (seasonal / project intent), not social-media.
+   */
+  hoveniers: {
+    'website-laten-maken': 'branches-hoveniers-website-laten-maken',
+    'lokale-seo': 'branches-hoveniers-lokale-seo',
+    'google-ads': 'branches-hoveniers-google-ads' as RouteKey
+  },
+  /**
+   * Website is live in ROUTES. lokale-seo + google-ads remain cast until those
+   * pages ship — muted cards stay link-safe. Third spoke is google-ads
+   * (high-ticket / seasonal intent), not social-media.
+   */
+  'dakdekkers-zonnepanelen': {
+    'website-laten-maken': 'branches-dakdekkers-zonnepanelen-website-laten-maken',
+    'lokale-seo': 'branches-dakdekkers-zonnepanelen-lokale-seo' as RouteKey,
+    'google-ads': 'branches-dakdekkers-zonnepanelen-google-ads' as RouteKey
   }
 }
 
@@ -765,6 +787,76 @@ export const BRANCH_SPOKES: Record<string, readonly BranchSpoke[]> = {
       benefit: {
         en: 'Campaigns around driving school, lesson price and intensive-course intent so high-intent sign-ups reach you before comparison sites take the click.',
         nl: 'Campagnes rond rijschool-, lesprijs- en spoedcursusintentie, zodat high-intent inschrijvingen je bereiken vóór vergelijkingssites de klik pakken.'
+      }
+    }
+  ],
+  hoveniers: [
+    {
+      slug: 'website-laten-maken',
+      name: {
+        en: 'Website design for landscapers',
+        nl: 'Website laten maken voor hoveniers'
+      },
+      benefit: {
+        en: 'A garden-first site with before/after projects, design and planting paths, maintenance packages and clear quote requests for homeowners and commercial grounds.',
+        nl: 'Een tuingerichte site met voor/na-projecten, paden voor ontwerp en beplanting, onderhoudspakketten en heldere offerteaanvragen voor huiseigenaren en zakelijke terreinen.'
+      }
+    },
+    {
+      slug: 'lokale-seo',
+      name: {
+        en: 'Local SEO for landscapers',
+        nl: 'Lokale SEO voor hoveniers'
+      },
+      benefit: {
+        en: 'Show up for “landscaper [town]”, garden design and maintenance searches in your radius — with Google Business Profile photos of real gardens.',
+        nl: 'Zichtbaar op “hovenier [plaats]”, tuinontwerp- en onderhoudszoekopdrachten in jouw straal — met Google Bedrijfsprofiel-foto’s van echte tuinen.'
+      }
+    },
+    {
+      slug: 'google-ads',
+      name: {
+        en: 'Google Ads for landscapers',
+        nl: 'Google Ads voor hoveniers'
+      },
+      benefit: {
+        en: 'Campaigns around garden design, paving, planting and seasonal maintenance intent so high-intent quotes reach you before spring calendars fill elsewhere.',
+        nl: 'Campagnes rond tuinontwerp-, bestrating-, beplantings- en seizoensonderhoudintentie, zodat high-intent offertes je bereiken vóór voorjaarsagenda’s elders vollopen.'
+      }
+    }
+  ],
+  'dakdekkers-zonnepanelen': [
+    {
+      slug: 'website-laten-maken',
+      name: {
+        en: 'Website design for roofers & solar installers',
+        nl: 'Website laten maken voor dakdekkers & zonnepanelen'
+      },
+      benefit: {
+        en: 'A trust-led site with roof and solar project proof, warranty and certification signals, subsidy-aware solar paths and clear quote requests for high-ticket jobs.',
+        nl: 'Een vertrouwensgerichte site met dak- en zonprojectbewijs, garantie- en certificeringssignalen, subsidiebewuste zonpaden en heldere offerteaanvragen voor high-ticket klussen.'
+      }
+    },
+    {
+      slug: 'lokale-seo',
+      name: {
+        en: 'Local SEO for roofers & solar installers',
+        nl: 'Lokale SEO voor dakdekkers'
+      },
+      benefit: {
+        en: 'Show up for “roofer [town]”, leak repair and solar installer searches in your radius — with Google Business Profile photos of real roofs and arrays.',
+        nl: 'Zichtbaar op “dakdekker [plaats]”, lekkagereparatie- en zonnepanelen-installateurzoekopdrachten in jouw straal — met Google Bedrijfsprofiel-foto’s van echte daken en arrays.'
+      }
+    },
+    {
+      slug: 'google-ads',
+      name: {
+        en: 'Google Ads for roofers & solar installers',
+        nl: 'Google Ads voor dakdekkers & zonnepanelen'
+      },
+      benefit: {
+        en: 'Campaigns around roof repair, new roofs, solar install and subsidy-driven intent so high-value quotes reach you before storm or investment demand goes elsewhere.',
+        nl: 'Campagnes rond dakreparatie, nieuw dak, zonnepanelen-installatie en subsidiegedreven intentie, zodat high-value offertes je bereiken vóór storm- of investeringsvraag elders landt.'
       }
     }
   ]

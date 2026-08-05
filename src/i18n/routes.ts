@@ -106,6 +106,11 @@ export type RouteKey =
   | 'branches-rijscholen'
   | 'branches-rijscholen-website-laten-maken'
   | 'branches-rijscholen-lokale-seo'
+  | 'branches-hoveniers'
+  | 'branches-hoveniers-website-laten-maken'
+  | 'branches-hoveniers-lokale-seo'
+  | 'branches-dakdekkers-zonnepanelen'
+  | 'branches-dakdekkers-zonnepanelen-website-laten-maken'
   | 'branches-installateurs-website-laten-maken'
   | 'branches-installateurs-lokale-seo'
   | 'branches-aannemers-website-laten-maken'
@@ -315,6 +320,26 @@ export const ROUTES: Record<RouteKey, Record<Locale, string>> = {
   'branches-rijscholen-lokale-seo': {
     en: '/industries/driving-schools/local-seo',
     nl: '/nl/branches/rijscholen/lokale-seo'
+  },
+  'branches-hoveniers': {
+    en: '/industries/landscapers',
+    nl: '/nl/branches/hoveniers'
+  },
+  'branches-hoveniers-website-laten-maken': {
+    en: '/industries/landscapers/website-design',
+    nl: '/nl/branches/hoveniers/website-laten-maken'
+  },
+  'branches-hoveniers-lokale-seo': {
+    en: '/industries/landscapers/local-seo',
+    nl: '/nl/branches/hoveniers/lokale-seo'
+  },
+  'branches-dakdekkers-zonnepanelen': {
+    en: '/industries/roofers-solar',
+    nl: '/nl/branches/dakdekkers-zonnepanelen'
+  },
+  'branches-dakdekkers-zonnepanelen-website-laten-maken': {
+    en: '/industries/roofers-solar/website-design',
+    nl: '/nl/branches/dakdekkers-zonnepanelen/website-laten-maken'
   },
   'branches-installateurs-website-laten-maken': {
     en: '/industries/installers/website-design',

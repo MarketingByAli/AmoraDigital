@@ -80,6 +80,12 @@ const PAGE_META = [
   { key: 'branches-rijscholen', changefreq: 'weekly', priority: '0.85' },
   { key: 'branches-rijscholen-website-laten-maken', changefreq: 'weekly', priority: '0.8' },
   { key: 'branches-rijscholen-lokale-seo', changefreq: 'weekly', priority: '0.8' },
+  { key: 'branches-hoveniers', changefreq: 'weekly', priority: '0.85' },
+  { key: 'branches-hoveniers-website-laten-maken', changefreq: 'weekly', priority: '0.8' },
+  { key: 'branches-hoveniers-lokale-seo', changefreq: 'weekly', priority: '0.8' },
+  { key: 'branches-dakdekkers-zonnepanelen', changefreq: 'weekly', priority: '0.85' },
+  { key: 'branches-dakdekkers-zonnepanelen-website-laten-maken', changefreq: 'weekly', priority: '0.8' },
+
   { key: 'branches-schoonmaakbedrijven-website-laten-maken', changefreq: 'weekly', priority: '0.8' },
   { key: 'branches-schoonmaakbedrijven-lokale-seo', changefreq: 'weekly', priority: '0.8' },
   { key: 'branches-sportscholen-website-laten-maken', changefreq: 'weekly', priority: '0.8' },

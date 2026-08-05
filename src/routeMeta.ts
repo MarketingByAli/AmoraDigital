@@ -1040,6 +1040,126 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
       ],
     }
   },
+  'branches-hoveniers': {
+    en: {
+      title: `Online marketing for landscapers | Amora`,
+      description:
+        'Online marketing for landscapers: websites, local SEO and Google Ads for garden projects. 1,500+ projects.',
+      keywords: [
+        'online marketing for landscapers',
+        'landscaper SEO',
+        'garden design marketing',
+        'hovenier marketing'
+      ],
+    },
+    nl: {
+      title: `Online marketing voor hoveniers | Amora`,
+      description:
+        'Online marketing voor hoveniers: websites, lokale SEO en Google Ads voor tuinprojecten. 1.500+ projecten.',
+      keywords: [
+        'online marketing voor hoveniers',
+        'SEO hovenier',
+        'Google Ads hovenier',
+        'tuinmarketing'
+      ],
+    }
+  },
+  'branches-dakdekkers-zonnepanelen': {
+    en: {
+      title: `Online marketing for roofers & solar | Amora`,
+      description:
+        'Online marketing for roofers & solar installers: websites, local SEO and Google Ads. 1,500+ projects.',
+      keywords: [
+        'online marketing for roofers & solar',
+        'roofer SEO',
+        'solar installer marketing',
+        'dakdekker marketing'
+      ],
+    },
+    nl: {
+      title: `Online marketing voor dakdekkers | Amora`,
+      description:
+        'Online marketing voor dakdekkers & zonnepanelen: websites, lokale SEO en Google Ads. 1.500+ projecten.',
+      keywords: [
+        'online marketing voor dakdekkers',
+        'SEO dakdekker',
+        'Google Ads zonnepanelen',
+        'dak- en zonmarketing'
+      ],
+    }
+  },
+  'branches-dakdekkers-zonnepanelen-website-laten-maken': {
+    en: {
+      title: `Website design for roofers & solar | Amora`,
+      description:
+        'Roofing & solar website with warranties, dak vs zon paths, payback framing and quote forms. 1,500+ projects.',
+      keywords: [
+        'website design for roofers & solar installers',
+        'roofer website',
+        'solar installer website',
+        'dakdekker website design'
+      ],
+    },
+    nl: {
+      title: `Website laten maken voor dakdekkers | Amora`,
+      description:
+        'Dak- & zonwebsite met garanties, dak vs zon, terugverdienuitleg en offerteforms. 1.500+ projecten.',
+      keywords: [
+        'website laten maken voor dakdekkers',
+        'website dakdekker',
+        'website zonnepanelen installateur',
+        'dak website laten maken'
+      ],
+    }
+  },
+  'branches-hoveniers-website-laten-maken': {
+    en: {
+      title: `Website design for landscapers | Amora`,
+      description:
+        'Landscaper website with before/after gardens, design vs maintenance paths and quote forms. 1,500+ projects.',
+      keywords: [
+        'website design for landscapers',
+        'landscaper website',
+        'garden design website',
+        'hovenier website design'
+      ],
+    },
+    nl: {
+      title: `Website laten maken voor hoveniers | Amora`,
+      description:
+        'Hovenierswebsite met voor/na-tuinen, aanleg vs onderhoud en offerteforms. 1.500+ projecten.',
+      keywords: [
+        'website laten maken voor hoveniers',
+        'website hovenier',
+        'hovenier website laten maken',
+        'tuinwebsite'
+      ],
+    }
+  },
+  'branches-hoveniers-lokale-seo': {
+    en: {
+      title: `Local SEO for landscapers | Amora`,
+      description:
+        'Local SEO for landscapers: town pages, GBP with garden photos, reviews vs quote platforms. 1,500+ projects.',
+      keywords: [
+        'local SEO for landscapers',
+        'landscaper Google Business Profile',
+        'hovenier local SEO',
+        'garden design local SEO'
+      ],
+    },
+    nl: {
+      title: `Lokale SEO voor hoveniers | Amora`,
+      description:
+        'Lokale SEO voor hoveniers: stadspagina’s, GBP met tuinfoto’s, reviews vs offerteplatforms. 1.500+ projecten.',
+      keywords: [
+        'lokale SEO voor hoveniers',
+        'Google Bedrijfsprofiel hovenier',
+        'SEO tuinaanleg stad',
+        'hovenier local pack'
+      ],
+    }
+  },
   'branches-rijscholen-website-laten-maken': {
     en: {
       title: `Website design for driving schools | Amora`,

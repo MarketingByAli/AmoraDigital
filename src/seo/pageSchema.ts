@@ -3221,6 +3221,508 @@ export const pageSeoByKey: Record<RouteKey, PageSeoConfig> = {
     }
   },
 
+  'branches-hoveniers': {
+    parents: ['home', 'branches'],
+    pageType: 'CollectionPage',
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Online marketing for landscapers',
+      category: 'Digital Marketing',
+      offers: [
+        { name: 'Website design for landscapers' },
+        { name: 'Local SEO for landscapers' },
+        { name: 'Google Ads for landscapers' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Landscapers',
+        serviceName: 'Online marketing for landscapers',
+        serviceDescription:
+          'Online marketing for landscapers: websites with before/after garden portfolios, local SEO for design and maintenance searches by town, and Google Ads aimed at seasonal garden projects — without ranking guarantees.',
+        faqs: [
+          {
+            question: 'How do we show garden projects with before and after photos?',
+            answer:
+              'Structure galleries by garden type — design and planting, paving, terraces, ponds — with short project context so homeowners picture their own outdoor space. Fast mobile photos matter; most quote requests start on a phone after scrolling finished gardens, not construction shells.'
+          },
+          {
+            question: 'How do we get more garden design quote requests?',
+            answer:
+              'Lead with a clear quote path for design and aanleg briefs, separate from recurring maintenance packages, and make calling or WhatsApp one tap. Local SEO and later ads can bring visitors; the site must turn garden interest into scoped enquiries you can price — without promising a fixed quote volume.'
+          },
+          {
+            question: 'How do we get found per service and region?',
+            answer:
+              'Through local SEO: Google Business Profile with landscaping categories, service-area clarity for your radius, recent garden photos, reviews after completed plots, and pages that match “landscaper [town]”, garden design or seasonal maintenance searches. We do not promise a fixed map-pack place.'
+          },
+          {
+            question: 'How should we plan marketing around seasonal garden work?',
+            answer:
+              'Spring and summer peak for planting and builds; winter slows. Build findability and content ahead of planting season so calendars fill before competitors book every plot. Maintenance packages keep quieter months alive — marketing should cover both engines, not only one-off projects.'
+          },
+          {
+            question: 'How is landscaper marketing different from contractor marketing?',
+            answer:
+              'Contractors sell renovation and build trades; landscapers sell green outdoor aesthetics, planting and recurring onderhoud. Portfolio proof is finished gardens, not kitchens or roofs — and VHG craft signals plus maintenance routes matter alongside project quotes.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Hoveniers',
+        serviceName: 'Online marketing voor hoveniers',
+        serviceDescription:
+          'Online marketing voor hoveniers: websites met voor/na-tuinportfolio’s, lokale SEO voor ontwerp- en onderhoudszoeken per plaats, en Google Ads gericht op seizoensgebonden tuinprojecten — zonder rankinggaranties.',
+        faqs: [
+          {
+            question: 'Hoe tonen we tuinprojecten met voor- en na-foto’s?',
+            answer:
+              'Structureer galerijen per tuintype — ontwerp en beplanting, bestrating, terrassen, vijvers — met korte projectcontext zodat huiseigenaren hun eigen buitenruimte kunnen voorstellen. Snelle mobiele foto’s doen ertoe; de meeste offerteaanvragen starten op de telefoon na scrollen door afgeronde tuinen, niet door bouwcasco’s.'
+          },
+          {
+            question: 'Hoe krijgen we meer offerteaanvragen voor tuinontwerp binnen?',
+            answer:
+              'Leid met een helder offertepad voor ontwerp- en aanlegbriefs, los van terugkerende onderhoudspakketten, en maak bellen of WhatsApp één tik. Lokale SEO en later ads brengen bezoekers; de site moet tuininteresse omzetten in scoped aanvragen die je kunt begroten — zonder een vast offertevolume te beloven.'
+          },
+          {
+            question: 'Hoe worden we vindbaar per dienst en regio?',
+            answer:
+              'Via lokale SEO: Google Bedrijfsprofiel met hovenierscategorieën, duidelijk werkgebied voor jouw straal, recente tuinfoto’s, reviews na opgeleverde percelen, en pagina’s die aansluiten op “hovenier [plaats]”, tuinontwerp- of seizoensonderhoudzoeken. We beloven geen vaste plek in de kaartpack.'
+          },
+          {
+            question: 'Hoe plannen we marketing rond seizoenswerk in de tuin?',
+            answer:
+              'Voorjaar en zomer pieken voor beplanting en aanleg; winter vertraagt. Bouw vindbaarheid en content vóór het plantseizoen zodat agenda’s vollopen vóór concurrenten elk perceel boeken. Onderhoudspakketten houden stillere maanden levend — marketing moet beide motoren dekken, niet alleen eenmalige projecten.'
+          },
+          {
+            question: 'Wat is het verschil met marketing voor aannemers?',
+            answer:
+              'Aannemers verkopen verbouw- en bouwvakken; hoveniers verkopen groene buitenesthetiek, beplanting en terugkerend onderhoud. Portfolio-bewijs zijn afgeronde tuinen, geen keukens of daken — en VHG-vakmanschap plus onderhoudsrondes wegen mee naast projectoffertes.'
+          }
+        ]
+      }
+    }
+  },
+
+  'branches-dakdekkers-zonnepanelen': {
+    parents: ['home', 'branches'],
+    pageType: 'CollectionPage',
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Online marketing for roofers & solar installers',
+      category: 'Digital Marketing',
+      offers: [
+        { name: 'Website design for roofers & solar installers' },
+        { name: 'Local SEO for roofers & solar installers' },
+        { name: 'Google Ads for roofers & solar installers' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Roofers & solar',
+        serviceName: 'Online marketing for roofers & solar installers',
+        serviceDescription:
+          'Online marketing for roofers and solar installers: trust-led websites, local SEO for roof and solar + town searches, and Google Ads aimed at high-value quotes — without ranking guarantees.',
+        faqs: [
+          {
+            question: 'How do we get more roof and solar quote requests?',
+            answer:
+              'Combine a clear site that shows project proof, warranties and certifications, local SEO for “roofer [town]” and solar installer searches, and later ads on high-intent roof repair or panel install queries. Homeowners treat these as major investments — trust signals matter before they request a quote. We do not promise a fixed quote volume.'
+          },
+          {
+            question: 'How should we show trust, warranties and certifications?',
+            answer:
+              'Place recognised installer marks (where you hold them), warranty language and recent homeowner reviews next to quote CTAs — where people scan before they commit to a roof or array. Authentic proof matters; we surface marks and guarantees you actually carry, we do not invent certifications.'
+          },
+          {
+            question: 'How do we get found per service and region?',
+            answer:
+              'Through local SEO: Google Business Profile with roofing and solar categories, service-area clarity for your radius, project photos of roofs and arrays, reviews after completed jobs, and pages that match “roofer [town]”, leak repair or solar installer searches. We do not promise a fixed map-pack place.'
+          },
+          {
+            question: 'Should the site explain subsidies and payback for solar?',
+            answer:
+              'Yes when you install panels. Homeowners search return periods, netting rules and savings — clear, honest subsidy and payback framing next to solar paths helps investment-led enquiries without turning the site into a policy blog. Exact guidance follows schemes you actually support.'
+          },
+          {
+            question: 'How is this different from broad installer marketing?',
+            answer:
+              'Broad installer hubs cover plumbing, electrical and HVAC call-outs; this hub is dak + zon — high ticket, investment- and often subsidy-framed, with storm urgency on the roof side. We do not recycle a general plumber playbook for roof and solar quotes.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Dakdekkers & zonnepanelen',
+        serviceName: 'Online marketing voor dakdekkers & zonnepanelen-installateurs',
+        serviceDescription:
+          'Online marketing voor dakdekkers en zonnepanelen-installateurs: vertrouwensgerichte websites, lokale SEO voor dak- en zon- + plaatszoeken, en Google Ads gericht op high-value offertes — zonder rankinggaranties.',
+        faqs: [
+          {
+            question: 'Hoe krijgen we meer offerteaanvragen voor dak en zonnepanelen?',
+            answer:
+              'Combineer een heldere site die projectbewijs, garanties en certificeringen toont, lokale SEO op “dakdekker [plaats]” en zonnepanelen-installateurzoeken, en later ads op high-intent dakreparatie- of paneelinstallatiequeries. Huiseigenaren zien dit als grote investeringen — vertrouwenssignalen doen ertoe vóór ze een offerte vragen. We beloven geen vast offertevolume.'
+          },
+          {
+            question: 'Hoe tonen we vertrouwen, garanties en certificeringen?',
+            answer:
+              'Plaats erkenningen (waar je ze hebt), garantietaal en recente reviews van huiseigenaren naast offerte-CTA’s — waar mensen scannen vóór ze zich committeren aan een dak of array. Authentiek bewijs doet ertoe; we tonen keurmerken en garanties die je écht draagt, we verzinnen geen certificeringen.'
+          },
+          {
+            question: 'Hoe worden we vindbaar per dienst en regio?',
+            answer:
+              'Via lokale SEO: Google Bedrijfsprofiel met dak- en zoncategorieën, duidelijk werkgebied voor jouw straal, projectfoto’s van daken en arrays, reviews na opgeleverde klussen, en pagina’s die aansluiten op “dakdekker [plaats]”, lekkagereparatie- of zonnepanelen-installateurzoeken. We beloven geen vaste plek in de kaartpack.'
+          },
+          {
+            question: 'Moet de site subsidies en terugverdientijd voor zon uitleggen?',
+            answer:
+              'Ja wanneer je panelen plaatst. Huiseigenaren zoeken terugverdientijd, saldering en besparing — heldere, eerlijke subsidie- en terugverdienframing naast zonpaden helpt investeringsgedreven aanvragen zonder de site tot een beleidsblog te maken. Exacte uitleg volgt regelingen die je écht ondersteunt.'
+          },
+          {
+            question: 'Wat is het verschil met brede installateursmarketing?',
+            answer:
+              'Brede installateurshubs dekken loodgieter-, elektra- en cv-spoed; deze hub is dak + zon — high ticket, investerings- en vaak subsidieframed, met stormurgentie aan de dakkant. We hergebruiken geen algemene loodgieter-playbook voor dak- en zonoffertes.'
+          }
+        ]
+      }
+    }
+  },
+
+  'branches-dakdekkers-zonnepanelen-website-laten-maken': {
+    parents: ['home', 'branches', 'branches-dakdekkers-zonnepanelen'],
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Website design for roofers & solar installers',
+      category: 'Web Development',
+      offers: [
+        { name: 'Dakwerk versus solar service paths' },
+        { name: 'Investment-led quote forms and payback framing' },
+        { name: 'Warranty, certification and urgent leak entry points' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Website design',
+        serviceName: 'Website design for roofers & solar installers',
+        serviceDescription:
+          'Website design for roofers and solar installers focused on clear dakwerk versus solar paths, investment-led quote forms, savings and payback explanation, subsidy and netting context, warranties and certifications, project portfolios, urgent leak entry beside planned projects and mobile-first research — without ranking guarantees.',
+        faqs: [
+          {
+            question: 'Can I present roofing and solar separately?',
+            answer:
+              'Yes. Dakwerk and zonnepanelen get distinct paths, proof and enquiry forms so a storm leak never lands in a subsidy solar brief. Homeowners decide differently for urgent roof repair versus investment-led panel systems — the site should reflect both tempos.'
+          },
+          {
+            question: 'Can I show savings or payback explanation for solar?',
+            answer:
+              'Yes. We structure clear return framing and optional savings calculator patterns so homeowners understand investment logic before they shortlist. We surface figures and assumptions you can stand behind — we do not invent payback numbers.'
+          },
+          {
+            question: 'How do I show warranties and certifications?',
+            answer:
+              'Place recognised installer marks, Zonnekeur or InstallQ where you hold them, and roof warranty language next to CTAs and portfolio blocks. Authentic marks matter for high-ticket decisions; we surface what you carry, we do not invent badges.'
+          },
+          {
+            question: 'Can I include subsidy information?',
+            answer:
+              'Yes when you install panels. Honest saldering and subsidy context next to solar paths helps investment-led enquiries without turning the site into a policy blog. Exact guidance follows schemes you actually support.'
+          },
+          {
+            question: 'Can I receive both urgent and planned enquiries?',
+            answer:
+              'Yes. We build a clear spoed entry for active leaks and storm damage, separate from planned renovation and solar investment forms — so emergency callers reach you without filling a long questionnaire.'
+          },
+          {
+            question: 'Can I add finished roofs and arrays myself after launch?',
+            answer:
+              'Yes. We train your team to upload project sets and short notes without a developer for every completed job. A living portfolio beats a static launch album that ages every storm season.'
+          },
+          {
+            question: 'How is this different from a broad installer website?',
+            answer:
+              'Broad installer sites centre boiler call-outs and multi-trade vans; roofing and solar sites centre high-ticket envelope work, warranties and often subsidy-framed investment. We do not reuse a plumber template for dak and zon builds.'
+          },
+          {
+            question: 'How long does a roofing and solar website project take?',
+            answer:
+              'Timelines depend on whether both dakwerk and solar need deep paths, portfolio readiness and subsidy or calculator modules. Many builds move from discovery to launch across several weeks once services, marks and project photos are ready. We share a realistic plan after scoping — without promising a fixed quote volume.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Website laten maken',
+        serviceName: 'Website laten maken voor dakdekkers',
+        serviceDescription:
+          'Website laten maken voor dakdekkers en zonnepanelen-installateurs gericht op heldere dakwerk- versus zonpaden, investeringsgerichte offerteforms, besparings- en terugverdienuitleg, subsidie- en salderingscontext, garanties en certificeringen, projectportfolio’s, urgente lekkage-ingang naast geplande projecten en mobiel-first research — zonder rankinggaranties.',
+        faqs: [
+          {
+            question: 'Kan ik dakwerk en zonnepanelen apart presenteren?',
+            answer:
+              'Ja. Dakwerk en zonnepanelen krijgen aparte paden, bewijs en aanvraagforms zodat een stormlek nooit in een subsidie-zonbrief belandt. Huiseigenaren beslissen anders over spoed-dakreparatie versus investeringsgedreven panelsystemen — de site moet beide tempo’s weerspiegelen.'
+          },
+          {
+            question: 'Kan ik een besparings- of terugverdien-uitleg tonen?',
+            answer:
+              'Ja. We structureren heldere terugverdienframing en optionele besparingscalculatorpatronen zodat huiseigenaren investeringslogica begrijpen vóór ze shortlisten. We tonen cijfers en aannames die je kunt verantwoorden — we verzinnen geen terugverdienbedragen.'
+          },
+          {
+            question: 'Hoe toon ik garanties en certificeringen?',
+            answer:
+              'Plaats erkenningen, Zonnekeur of InstallQ waar je ze hebt, en dakgarantietaal naast CTA’s en portfolioblokken. Authentieke keurmerken doen ertoe bij high-ticket beslissingen; we tonen wat je draagt, we verzinnen geen badges.'
+          },
+          {
+            question: 'Kan ik subsidie-informatie opnemen?',
+            answer:
+              'Ja wanneer je panelen plaatst. Eerlijke salderings- en subsidiecontext naast zonpaden helpt investeringsgedreven aanvragen zonder de site tot een beleidsblog te maken. Exacte uitleg volgt regelingen die je écht ondersteunt.'
+          },
+          {
+            question: 'Kan ik zowel spoed als geplande aanvragen ontvangen?',
+            answer:
+              'Ja. We bouwen een heldere spoed-ingang voor actieve lekkages en stormschade, los van geplande renovatie- en zoninvesteringsforms — zodat spoedbellers je bereiken zonder een lange vragenlijst in te vullen.'
+          },
+          {
+            question: 'Kan ik zelf afgeronde daken en arrays toevoegen na livegang?',
+            answer:
+              'Ja. We trainen je team om projectsets en korte notities te uploaden zonder developer voor elke opgeleverde klus. Een levend portfolio verslaat een statisch launchalbum dat elk stormseizoen veroudert.'
+          },
+          {
+            question: 'Wat is het verschil met een brede installateurswebsite?',
+            answer:
+              'Brede installateurssites centreren cv-spoed en multi-vak busjes; dak- en zonsites centreren high-ticket omhullingswerk, garanties en vaak subsidieframed investering. We hergebruiken geen loodgietertemplate voor dak- en zonbuilds.'
+          },
+          {
+            question: 'Hoe lang duurt een website-traject voor dakdekkers & zon?',
+            answer:
+              'Doorlooptijden hangen af van of zowel dakwerk als zon diepe paden nodig hebben, portfolioreedheid en subsidie- of calculatormodules. Veel builds gaan van discovery tot livegang in enkele weken zodra diensten, keurmerken en projectfoto’s klaarstaan. We delen een realistisch plan na scoping — zonder een vast offertevolume te beloven.'
+          }
+        ]
+      }
+    }
+  },
+
+  'branches-hoveniers-website-laten-maken': {
+    parents: ['home', 'branches', 'branches-hoveniers'],
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Website design for landscapers',
+      category: 'Web Development',
+      offers: [
+        { name: 'Before/after garden portfolio galleries' },
+        { name: 'Design/aanleg versus onderhoud service paths' },
+        { name: 'Project quote and maintenance subscription forms' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Website design',
+        serviceName: 'Website design for landscapers',
+        serviceDescription:
+          'Website design for landscapers focused on before/after garden galleries, clear splits between design/aanleg and onderhoud, project quote and maintenance-subscription paths, seasonal content, craft marks, service area, homeowner reviews, inspiration blog and fast image-rich mobile pages — without ranking guarantees.',
+        faqs: [
+          {
+            question: 'How do I best show my garden projects online?',
+            answer:
+              'Lead with before/after galleries by garden type — design and planting, paving, terraces, ponds — with short project context so homeowners picture their own outdoor space. Fast mobile photos matter; most quote requests start after scrolling finished gardens, not construction shells.'
+          },
+          {
+            question: 'Can I separate design/build from maintenance on the site?',
+            answer:
+              'Yes. Aanleg and onderhoud get distinct paths, proof and enquiry forms so a mowing subscription never lands in a pond-design brief. Homeowners and VvEs often decide differently for one-off builds versus seasonal contracts — the site should reflect both engines.'
+          },
+          {
+            question: 'Can I offer a maintenance subscription through the website?',
+            answer:
+              'Yes. We build a maintenance-request path beside project quotes — package interest, garden size and timing — so recurring routes have their own inbox when spring project calendars are already full. Exact subscription depth follows how you run onderhoud today.'
+          },
+          {
+            question: 'Can I add new garden projects myself after launch?',
+            answer:
+              'Yes. We train your team to upload before/after sets and short notes without a developer for every finished border. A living portfolio beats a static launch album that ages every planting season.'
+          },
+          {
+            question: 'Will the site stay fast with many garden photos?',
+            answer:
+              'That is part of the build: compression, lazy loading and gallery patterns keep image-rich pages usable on a sofa phone. A heavy album that never finishes loses the shortlist before anyone reads a review or craft mark.'
+          },
+          {
+            question: 'Should VHG or Groenkeur appear on the website?',
+            answer:
+              'When you hold them, yes — next to galleries and CTAs so trust settles before WhatsApp shortlists. We surface marks you actually carry; we do not invent certifications.'
+          },
+          {
+            question: 'How is this different from a contractor website?',
+            answer:
+              'Contractors sell renovation and build trades with kitchen and roof proof; landscapers sell green outdoor aesthetics, planting and recurring onderhoud. We do not reuse contractor renovation templates for garden builds.'
+          },
+          {
+            question: 'How long does a landscaper website project take?',
+            answer:
+              'Timelines depend on portfolio readiness, whether both aanleg and onderhoud need deep forms, and content for seasonal inspiration. Many builds move from discovery to launch across several weeks once garden photos and service lists are ready. We share a realistic plan after scoping — without promising a fixed quote volume.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Website laten maken',
+        serviceName: 'Website laten maken voor hoveniers',
+        serviceDescription:
+          'Website laten maken voor hoveniers gericht op voor/na-tuingalerijen, heldere splitsing tussen ontwerp/aanleg en onderhoud, projectofferte- en onderhoudsabonnement-paden, seizoenscontent, keurmerken, werkgebied, reviews van huiseigenaren, inspiratieblog en snelle beeldrijke mobiele pagina’s — zonder rankinggaranties.',
+        faqs: [
+          {
+            question: 'Hoe laat ik mijn tuinprojecten het beste zien?',
+            answer:
+              'Leid met voor/na-galerijen per tuintype — ontwerp en beplanting, bestrating, terrassen, vijvers — met korte projectcontext zodat huiseigenaren hun eigen buitenruimte kunnen voorstellen. Snelle mobiele foto’s doen ertoe; de meeste offerteaanvragen starten na scrollen door afgeronde tuinen, niet door bouwcasco’s.'
+          },
+          {
+            question: 'Kan ik aanleg en onderhoud scheiden op de site?',
+            answer:
+              'Ja. Aanleg en onderhoud krijgen aparte paden, bewijs en aanvraagforms zodat een maai-abonnement nooit in een vijverontwerpbrief belandt. Huiseigenaren en VvE’s beslissen vaak anders over eenmalige builds versus seizoenscontracten — de site moet beide motoren weerspiegelen.'
+          },
+          {
+            question: 'Kan ik een onderhoudsabonnement aanbieden via de site?',
+            answer:
+              'Ja. We bouwen een onderhoudsaanvraagpad naast projectoffertes — pakketinteresse, tuinoppervlak en timing — zodat terugkerende rondes een eigen inbox hebben wanneer voorjaarsprojectagenda’s al vol zitten. Exacte abonnementsdiepte volgt hoe je onderhoud vandaag runt.'
+          },
+          {
+            question: 'Kan ik zelf projecten toevoegen na livegang?',
+            answer:
+              'Ja. We trainen je team om voor/na-sets en korte notities te uploaden zonder developer voor elke afgeronde border. Een levend portfolio verslaat een statisch launchalbum dat elk plantseizoen veroudert.'
+          },
+          {
+            question: 'Blijft de site snel met veel foto’s?',
+            answer:
+              'Dat zit in de build: compressie, lazy loading en galerijpatronen houden beeldrijke pagina’s bruikbaar op een sofatelefoon. Een zwaar album dat nooit klaar is verliest de shortlist vóór iemand een review of keurmerk leest.'
+          },
+          {
+            question: 'Moeten VHG of Groenkeur op de website staan?',
+            answer:
+              'Wanneer je ze hebt, ja — naast galerijen en CTA’s zodat vertrouwen staat vóór WhatsApp-shortlists. We tonen keurmerken die je écht draagt; we verzinnen geen certificeringen.'
+          },
+          {
+            question: 'Wat is het verschil met een aannemerswebsite?',
+            answer:
+              'Aannemers verkopen verbouw- en bouwvakken met keuken- en dakbewijs; hoveniers verkopen groene buitenesthetiek, beplanting en terugkerend onderhoud. We hergebruiken geen aannemers-verbouwtemplates voor tuinbuilds.'
+          },
+          {
+            question: 'Hoe lang duurt een website-traject voor een hovenier?',
+            answer:
+              'Doorlooptijden hangen af van portfolioreedheid, of zowel aanleg als onderhoud diepe forms nodig hebben, en content voor seizoensinspiratie. Veel builds gaan van discovery tot livegang in enkele weken zodra tuinfoto’s en dienstenlijsten klaarstaan. We delen een realistisch plan na scoping — zonder een vast offertevolume te beloven.'
+          }
+        ]
+      }
+    }
+  },
+
+  'branches-hoveniers-lokale-seo': {
+    parents: ['home', 'branches', 'branches-hoveniers'],
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Local SEO for landscapers',
+      category: 'Digital Marketing',
+      offers: [
+        { name: 'Service and town landing pages for landscapers' },
+        { name: 'Google Business Profile with before/after garden photos' },
+        { name: 'Seasonal aanleg and onderhoud keyword coverage versus quote platforms' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Local SEO',
+        serviceName: 'Local SEO for landscapers',
+        serviceDescription:
+          'Local SEO for landscapers focused on “landscaper [town]”, “garden design [town]”, paving and maintenance + town keywords, Google Business Profile with before/after garden photos, homeowner reviews, multi-town catchment signals, seasonal timing ahead of spring peaks and organic discovery versus quote platforms for the local pack — without ranking guarantees.',
+        faqs: [
+          {
+            question: 'How do I get found as a landscaper in my region?',
+            answer:
+              'Build service and town pages for “landscaper [town]” and related garden queries, stock Google Business Profile with before/after garden photos, and grow homeowner reviews after plot handover. We treat catchments as towns and radii you actually cover — without promising a fixed map-pack place against nearby firms or lead platforms.'
+          },
+          {
+            question: 'How do I prepare for the spring planting season?',
+            answer:
+              'Build GBP hygiene, garden photos, service pages and review habits in quieter winter months so pack relevance compounds before spring search volume spikes. Waiting until March usually means competing after calendars are already filling elsewhere. We plan timing around your season — without promising you will own every spring query.'
+          },
+          {
+            question: 'How do I get more reviews from homeowners?',
+            answer:
+              'Ask ethically after plot handover when the finished terrace or planting is fresh. Homeowner voices next to pack results often decide spring shortlists more than a marketplace badge. We set habits and reply patterns — we do not invent reviews or guarantee a star average.'
+          },
+          {
+            question: 'Can I rank for both garden design and maintenance?',
+            answer:
+              'Yes when you actually sell both. Aanleg and onderhoud get planned keyword and page coverage per town so one-off project searches and recurring route searches do not only feed lead platforms. Competition varies by town and service; we avoid promising you will own every garden phrase at once.'
+          },
+          {
+            question: 'How long does local SEO take for a landscaper?',
+            answer:
+              'Profile hygiene and review habits often show action lifts within weeks; holding relevance for “landscaper [town]” against quote platforms usually needs months of compounding. Build ahead of spring — winter is when findability compounds most. Timelines depend on competition and content readiness — without ranking guarantees.'
+          },
+          {
+            question: 'How is this different from a landscaper website project?',
+            answer:
+              'Local SEO wins Maps and town-search attention for places and garden services you cover; the website spoke builds before/after galleries, dual enquiry forms and craft marks that convert the visit. We keep those scopes distinct, then align so a map tap lands where a dated design or onderhoud request can start.'
+          },
+          {
+            question: 'Can I target multiple towns in my service area?',
+            answer:
+              'Yes when you serve them. Many landscapers cover a radius, not one street. We structure multi-town footprints so each catchment has clear pages and GBP signals without confusing Maps about which footprint owns “landscaper [town]” or “garden maintenance [town]”.'
+          },
+          {
+            question: 'How do I reduce reliance on quote platforms like Werkspot?',
+            answer:
+              'That is a common goal. Platforms rent introductions; local SEO builds owned discovery when someone searches Google for a landscaper or garden service in their town. Many firms still buy some marketplace leads while organic presence grows — we do not claim Maps replaces every paid channel overnight, but stronger town relevance usually starts more direct plot conversations.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Lokale SEO',
+        serviceName: 'Lokale SEO voor hoveniers',
+        serviceDescription:
+          'Lokale SEO voor hoveniers gericht op “hovenier [stad]”, “tuinaanleg [stad]”, bestrating- en onderhoud- + stadszoekwoorden, Google Bedrijfsprofiel met voor/na-tuinfoto’s, reviews van huiseigenaren, multi-plaats catchment-signalen, seizoenstiming vóór voorjaarspieken en organische ontdekking versus offerteplatforms om de local pack — zonder rankinggaranties.',
+        faqs: [
+          {
+            question: 'Hoe word ik gevonden als hovenier in mijn regio?',
+            answer:
+              'Bouw dienst- en stadspagina’s voor “hovenier [stad]” en gerelateerde tuinqueries, vul Google Bedrijfsprofiel met voor/na-tuinfoto’s, en groei reviews van huiseigenaren na perceeloplevering. We behandelen catchments als plaatsen en stralen die je écht dekt — zonder een vaste kaartpackplek tegen nabije bedrijven of leadplatforms te beloven.'
+          },
+          {
+            question: 'Hoe bereid ik me voor op het voorjaarsseizoen?',
+            answer:
+              'Bouw GBP-hygiëne, tuinfoto’s, dienstpagina’s en reviewgewoontes in stillere wintermaanden zodat packrelevantie compoundt vóór voorjaarszoekvolume piekt. Wachten tot maart betekent meestal concurreren nadat agenda’s elders al vollopen. We plannen timing rond jouw seizoen — zonder te beloven dat je elke voorjaarsquery bezit.'
+          },
+          {
+            question: 'Hoe krijg ik meer reviews?',
+            answer:
+              'Vraag ethisch na perceeloplevering wanneer het afgeronde terras of de beplanting vers is. Stemmen van huiseigenaren naast packresultaten beslissen voorjaars-shortlists vaak meer dan een marktplaatsbadge. We zetten gewoontes en antwoordpatronen op — we verzinnen geen reviews en garanderen geen stergemiddelde.'
+          },
+          {
+            question: 'Kan ik ranken op aanleg én onderhoud?',
+            answer:
+              'Ja wanneer je beide écht verkoopt. Aanleg en onderhoud krijgen geplande zoekwoord- en paginadekking per plaats, zodat eenmalige projectzoeken en terugkerende rondezoeken niet alleen leadplatforms voedt. Concurrentie verschilt per plaats en dienst; we beloven niet dat je elke tuinfrase tegelijk bezit.'
+          },
+          {
+            question: 'Hoe lang duurt lokale SEO voor een hovenier?',
+            answer:
+              'Profielhygiëne en reviewgewoontes laten vaak binnen enkele weken actieliften zien; relevantie vasthouden op “hovenier [stad]” tegen offerteplatforms vraagt meestal maanden van compounding. Bouw vóór het voorjaar — winter is wanneer vindbaarheid het meest compoundt. Doorlooptijden hangen af van concurrentie en contentklaarheid — zonder rankinggaranties.'
+          },
+          {
+            question: 'Wat is het verschil met een website-traject voor hoveniers?',
+            answer:
+              'Lokale SEO wint Maps- en stadszoekaandacht voor plaatsen en tuindiensten die je dekt; de website-spoke bouwt voor/na-galerijen, duale aanvraagforms en keurmerken die het bezoek converteren. We houden die scopes gescheiden en stemmen ze af zodat een kaarttik landt waar een gedateerde ontwerp- of onderhoudsaanvraag kan starten.'
+          },
+          {
+            question: 'Kan ik meerdere plaatsen in mijn werkgebied targeten?',
+            answer:
+              'Ja wanneer je ze bedient. Veel hoveniers dekken een straal, niet één straat. We structureren multi-plaatsvoetafdrukken zodat elk catchment heldere pagina’s en GBP-signalen heeft zonder Maps te verwarren over wie “hovenier [stad]” of “tuinonderhoud [stad]” bezit.'
+          },
+          {
+            question: 'Hoe verminder ik afhankelijkheid van offerteplatforms zoals Werkspot?',
+            answer:
+              'Dat is een veelvoorkomend doel. Platforms huren introducties; lokale SEO bouwt owned ontdekking wanneer iemand Google opent voor een hovenier of tuindienst in hun plaats. Veel bedrijven kopen nog marktplaatsleads terwijl organische aanwezigheid groeit — we claimen niet dat Maps elk betaald kanaal overnight vervangt, maar sterkere stadsrelevantie start meestal meer directe percelengesprekken.'
+          }
+        ]
+      }
+    }
+  },
+
   'branches-rijscholen-website-laten-maken': {
     parents: ['home', 'branches', 'branches-rijscholen'],
     extras: [buildProfessionalServiceSchema()],

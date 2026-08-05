@@ -1,0 +1,629 @@
+import { Link, useLocation } from 'react-router-dom'
+import {
+  ArrowRight,
+  BadgeCheck,
+  Calculator,
+  CheckCircle2,
+  ClipboardList,
+  Images,
+  PhoneCall,
+  Shield,
+  Smartphone,
+  Sparkles,
+  Star,
+  Sun,
+  Zap
+} from 'lucide-react'
+import { ROUTES, localeFromPath, type Locale } from '../../../i18n/routes'
+import { BRANCH_SPOKES } from '../../../data/branchSpokes'
+import BranchSpokeCard from '../../../components/BranchSpokeCard'
+
+const FEATURE_ICONS = [
+  Zap,
+  Sun,
+  ClipboardList,
+  Calculator,
+  Shield,
+  BadgeCheck,
+  Images,
+  Star,
+  PhoneCall,
+  Smartphone
+] as const
+
+const FEATURES = [
+  {
+    en: {
+      title: 'Roofing services split from solar paths',
+      description:
+        'Separate journeys for new roofs, renovations, coverings, leak repair, insulation and zinc/lead work versus panel install, expansion, home batteries and chargers — so a storm leak never lands in a subsidy solar brief.'
+    },
+    nl: {
+      title: 'Dakwerk gesplitst van zonpaden',
+      description:
+        'Aparte journeys voor nieuw dak, renovatie, bedekking, lekkagereparatie, isolatie en zink-/loodwerk versus paneelinstallatie, uitbreiding, thuisbatterij en laadpalen — zodat een stormlek nooit in een subsidie-zonbrief belandt.'
+    }
+  },
+  {
+    en: {
+      title: 'Quote forms built for high-ticket decisions',
+      description:
+        'Capture roof type, area, urgency and photos for dakwerk; usage, roof orientation and goals for solar — so your first reply can scope a major investment, not a vague “call us” tyre-kicker chat.'
+    },
+    nl: {
+      title: 'Offerteforms gebouwd voor high-ticket beslissingen',
+      description:
+        'Vang daktype, oppervlakte, urgentie en foto’s voor dakwerk; verbruik, dakoriëntatie en doelen voor zon — zodat je eerste reactie een grote investering kan scopen, geen vaag “bel ons”-shopperschat.'
+    }
+  },
+  {
+    en: {
+      title: 'Savings and payback explanation for solar',
+      description:
+        'Clear return framing and optional savings calculator patterns so homeowners understand investment logic before they shortlist — without inventing figures you cannot stand behind.'
+    },
+    nl: {
+      title: 'Besparings- en terugverdienuitleg voor zon',
+      description:
+        'Heldere terugverdienframing en optionele besparingscalculatorpatronen zodat huiseigenaren investeringslogica begrijpen vóór ze shortlisten — zonder cijfers te verzinnen die je niet kunt verantwoorden.'
+    }
+  },
+  {
+    en: {
+      title: 'Subsidy and netting information on solar paths',
+      description:
+        'Honest saldering and subsidy context next to panel journeys — investment-led searchers expect it; we surface schemes you actually support, not a policy dump that ages overnight.'
+    },
+    nl: {
+      title: 'Subsidie- en salderingsinformatie op zonpaden',
+      description:
+        'Eerlijke salderings- en subsidiecontext naast paneeljourneys — investeringszoekers verwachten het; we tonen regelingen die je écht ondersteunt, geen beleidsdump die overnight veroudert.'
+    }
+  },
+  {
+    en: {
+      title: 'Warranties and certifications up front',
+      description:
+        'Recognised installer marks, Zonnekeur or InstallQ where you hold them, and roof warranty language next to CTAs — trust that settles before someone opens three WhatsApp chats with unknown vans.'
+    },
+    nl: {
+      title: 'Garanties en certificeringen vooraan',
+      description:
+        'Erkenningen, Zonnekeur of InstallQ waar je ze hebt, en dakgarantietaal naast CTA’s — vertrouwen dat staat vóór iemand drie WhatsApp-chats opent met onbekende busjes.'
+    }
+  },
+  {
+    en: {
+      title: 'Project portfolio of roofs and arrays',
+      description:
+        'Finished dakwerk and solar installs with short job context — so homeowners picture their own roof or array, not a generic plumbing van photo or kitchen renovation gallery.'
+    },
+    nl: {
+      title: 'Projectportfolio van daken en arrays',
+      description:
+        'Afgerond dakwerk en zoninstallaties met korte kluscontext — zodat huiseigenaren hun eigen dak of array voorstellen, geen generieke loodgietersbusfoto of keukenrenovatiegalerij.'
+    }
+  },
+  {
+    en: {
+      title: 'Reviews that decide high-investment shortlists',
+      description:
+        'Homeowner voices about finish, communication and aftercare — placed beside portfolio and warranty blocks, the signals that tip a large cheque when two quotes are close.'
+    },
+    nl: {
+      title: 'Reviews die high-investment shortlists beslissen',
+      description:
+        'Stemmen van huiseigenaren over afwerking, communicatie en nazorg — naast portfolio- en garantieblokken, de signalen die een grote cheque tippen wanneer twee offertes dicht bij elkaar liggen.'
+    }
+  },
+  {
+    en: {
+      title: 'Urgent leak path beside planned projects',
+      description:
+        'A clear spoed entry for active leaks and storm damage, separate from planned renovation and solar investment forms — so emergency callers reach you without filling a subsidy questionnaire.'
+    },
+    nl: {
+      title: 'Urgente lekkage-ingang naast geplande projecten',
+      description:
+        'Een heldere spoed-ingang voor actieve lekkages en stormschade, los van geplande renovatie- en zoninvesteringsforms — zodat spoedbellers je bereiken zonder een subsidievragenlijst in te vullen.'
+    }
+  },
+  {
+    en: {
+      title: 'Mobile-first for research and call-outs',
+      description:
+        'Thumb-friendly proof, warranty blocks and quote taps — homeowners research roofs and panels on phones; leak callers need one tap when water is already in the loft.'
+    },
+    nl: {
+      title: 'Mobiel-first voor research en spoed',
+      description:
+        'Duimvriendelijk bewijs, garantieblokken en offertetiks — huiseigenaren researchen daken en panelen op telefoons; lekkagebellers hebben één tik nodig wanneer water al op zolder staat.'
+    }
+  },
+  {
+    en: {
+      title: 'Service area for regional high-ticket jobs',
+      description:
+        'Towns and radius you actually cover for dakwerk and solar — homeowners outside the catchment stop enquiring; locals see you install where they live.'
+    },
+    nl: {
+      title: 'Werkgebied voor regionale high-ticket klussen',
+      description:
+        'Plaatsen en straal die je écht dekt voor dakwerk en zon — huiseigenaren buiten het catchment stoppen met vragen; locals zien dat je installeert waar zij wonen.'
+    }
+  }
+] as const
+
+const PROCESS_STEPS = [
+  {
+    en: {
+      step: '01',
+      title: 'Roof and solar offer audit',
+      description:
+        'We review which dakwerk and solar services you sell, warranties and marks you hold, how urgent leaks versus investment quotes arrive, and portfolio readiness — separate from Maps findability on the local-SEO spoke.'
+    },
+    nl: {
+      step: '01',
+      title: 'Dak- en zondienstenaudit',
+      description:
+        'We bekijken welke dakwerk- en zondiensten je verkoopt, garanties en keurmerken die je hebt, hoe spoedlekkages versus investeringsoffertes binnenkomen, en portfolioreedheid — los van Maps-vindbaarheid op de lokale-SEO-spoke.'
+    }
+  },
+  {
+    en: {
+      step: '02',
+      title: 'Structure for investment-led buying',
+      description:
+        'We plan dak versus zon paths, dual enquiry depth, warranty and subsidy slots, and a spoed entry so homeowners can research a major spend and still reach you fast when a roof fails.'
+    },
+    nl: {
+      step: '02',
+      title: 'Structuur voor investeringsgedreven kopen',
+      description:
+        'We plannen dak- versus zonpaden, duale aanvraagdiepte, garantie- en subsidieslots, en een spoed-ingang zodat huiseigenaren een grote uitgave kunnen researchen en je toch snel bereiken wanneer een dak faalt.'
+    }
+  },
+  {
+    en: {
+      step: '03',
+      title: 'Visual system for roof and array proof',
+      description:
+        'Layouts built for project photos, certification badges and payback blocks — atmosphere without burying the leak CTA or the solar investment form.'
+    },
+    nl: {
+      step: '03',
+      title: 'Visueel systeem voor dak- en arraybewijs',
+      description:
+        'Layouts gebouwd voor projectfoto’s, certificeringsbadges en terugverdienblokken — sfeer zonder de lekkage-CTA of het zoninvesteringsformulier te begraven.'
+    }
+  },
+  {
+    en: {
+      step: '04',
+      title: 'Build, train, hand over updates',
+      description:
+        'We build the site, wire spoed and investment forms, place portfolio and craft marks, and train your team to add finished roofs and arrays without a developer for every completed job.'
+    },
+    nl: {
+      step: '04',
+      title: 'Bouwen, trainen, updates overdragen',
+      description:
+        'We bouwen de site, zetten spoed- en investeringsforms klaar, plaatsen portfolio en keurmerken, en trainen je team om afgeronde daken en arrays toe te voegen zonder developer voor elke opgeleverde klus.'
+    }
+  },
+  {
+    en: {
+      step: '05',
+      title: 'Launch and measure quote quality',
+      description:
+        'Launch tracks leak calls, roof renovation quotes and solar investment enquiries — so you see whether mobile traffic becomes dated high-ticket requests, not anonymous hits that bounce to a clearer competitor.'
+    },
+    nl: {
+      step: '05',
+      title: 'Live en offertekwaliteit meten',
+      description:
+        'Livegang volgt lekkagecalls, dakrenovatieoffertes en zoninvesteringsaanvragen — zodat je ziet of mobiel verkeer gedateerde high-ticket verzoeken wordt, geen anonieme hits die naar een helderdere concurrent bouncen.'
+    }
+  }
+] as const
+
+const SIBLING_SLUGS = ['lokale-seo', 'google-ads'] as const
+
+const T = {
+  en: {
+    crumbHome: 'Home',
+    crumbBranches: 'Industries',
+    crumbHub: 'Roofers & solar',
+    crumbCurrent: 'Website design',
+    badge: 'Roofing & solar websites',
+    h1: 'Website design for roofers & solar installers',
+    heroSub:
+      'A roofing and solar website that wins high-value quotes — with clear splits between dakwerk (new roofs, renovations, coverings, leak repair, insulation, zinc/lead) and zonnepanelen (install, expansion, home batteries, chargers), investment-led enquiry forms, savings and payback explanation, subsidy and netting context, warranties and certifications up front, project portfolios of roofs and arrays, reviews that tip large cheques, an urgent leak path beside planned projects, and mobile-first research paths. With 1,500+ completed projects, we know how homeowners buy a new roof or panel system when trust and proof are missing.',
+    trust: '1,500+ completed projects',
+    ctaPrimary: 'Request a quote',
+    problemBadge: 'The real cost',
+    problemHead: 'A big roof or solar investment goes to the site that proves trust first',
+    problemP1:
+      'A new roof or solar system is a large investment homeowners research carefully. A site that does not convey warranties, certifications and finished-project proof loses the high-value quote to a more convincing competitor — even when your craft and install quality are stronger. Eyes and trust settle before the phone rings.',
+    problemP2:
+      'Roofers and solar installers are not broad plumbers selling boiler call-outs, and not contractors selling kitchens. You combine urgent leak response with planned renovations and investment-led verduurzaming — two tempos that need separate paths, subsidy-aware solar framing and craft marks homeowners recognise. Miss the portfolio, the dak versus zon split or a fast spoed entry, and spring storms and subsidy interest land on firms that simply look safer online.',
+    problemP3:
+      'Local SEO and Google Ads can bring discovery, but the website is where a shortlist becomes a dated roof or solar quote. When two firms look equal on Maps, the one whose site shows warranties, project proof and clear investment forms often wins the cheque. Without that layer every Instagram story of an array is a promise a clearer homepage hardens into a request.',
+    featuresBadge: 'What we build',
+    featuresHead: 'What is included in a roofing & solar website',
+    featuresSub:
+      'Every deliverable serves a homeowner choosing a high-ticket outdoor envelope job — dak versus zon splits, investment enquiry depth, payback and subsidy framing, warranties, portfolio, spoed entry and mobile research paths — not a general installer template with a panel photo swapped in.',
+    processBadge: 'How we work',
+    processHead: 'How a roofing & solar website project runs',
+    processSub:
+      'From auditing how leak calls and investment quotes arrive today to measuring which paths start real high-ticket conversations.',
+    whyBadge: 'Why Amora Digital',
+    whyHead: 'Why roofers and solar installers trust us with their quote site',
+    whySub:
+      'Dak-and-zon-aware delivery that treats high-ticket trust, dual tempos and subsidy-framed solar as the product — not boiler emergencies or kitchen renovations.',
+    whyItems: [
+      {
+        title: 'Built around the investment shortlist',
+        desc: 'Pages answer “who stands behind the warranty?”, “what have you installed?” and “how does payback work?” before a homeowner opens a second tab.'
+      },
+      {
+        title: 'Dakwerk and solar kept distinct',
+        desc: 'Leak urgency and panel investment each get proof and forms — so a storm call never fills a subsidy questionnaire.'
+      },
+      {
+        title: 'Certifications and guarantees visible',
+        desc: 'Marks you hold sit next to CTAs — recognised installer, Zonnekeur or InstallQ where applicable — without inventing badges you do not carry.'
+      },
+      {
+        title: 'One team for findability next',
+        desc: 'Website first; local SEO and Google Ads when town or seasonal roof and solar intent needs a push — one team that already knows your dak and zon mix.'
+      }
+    ],
+    costsBadge: 'Scope',
+    costsHead: 'What shapes the scope of a roofing & solar website',
+    costsIntro:
+      'Scope scales with whether you sell both dakwerk and solar, how deep payback and subsidy modules need to be, portfolio size and how spoed versus investment forms should work. A leak-focused roofing firm asks for a different build than a solar-led installer with batteries and chargers. Fixed deliverables after we review your services, marks and how quotes arrive — not a rebuild every time a new array photo lands.',
+    costsItems: [
+      {
+        title: 'Essential roof and solar site',
+        desc: 'Homepage with trust strip, dak and zon overview, one strong quote path, warranty basics, portfolio strip and contact. Ideal for a focused firm that needs clarity beyond WhatsApp albums alone.'
+      },
+      {
+        title: 'Investment-deep dual-offer site',
+        desc: 'Everything in Essential, plus richer dak versus zon paths, separate spoed and investment forms, payback or subsidy blocks, fuller certification and review sections, and analytics on which quote types convert.'
+      },
+      {
+        title: 'Full dak-plus-zon or multi-radius firm',
+        desc: 'Both engines and several towns with shared portfolio rules. Scoped per firm after we map how projects, warranties and photo archives are managed today.'
+      }
+    ],
+    costsNote:
+      'Scope is fixed after we understand dak versus zon mix, calculator or subsidy needs and form depth. Request a roofing and solar website quote with clear deliverables and a delivery plan — that is where your figure is set, not on a public rate list here. Bring how clients enquire today and which project types you want featured first.',
+    siblingsBadge: 'Also for roofers & solar',
+    siblingsHead: 'Pair your website with local findability and Google Ads',
+    siblingsSub:
+      'A strong site converts the visit; local SEO and Google Ads bring homeowners already searching for a roofer, leak repair or solar installer in your radius. These services point them to warranties and forms that already make sense.',
+    siblingsCta: 'View service',
+    hubLink: 'Back to roofing & solar marketing',
+    webDesignLinkLabel: 'Also see our general website design service',
+    webDesignLinkNote:
+      'For projects outside roofing and solar we offer broader website design. Dak and zon builds follow the process on this page.',
+    ctaHeading: 'Ready for a website that turns roof and solar research into dated quotes?',
+    ctaSub:
+      'Share which dakwerk and solar services you offer, which marks you hold, and how urgent versus planned enquiries arrive today. We propose a fixed scope for a site homeowners trust before they shortlist another firm.',
+    ctaButton: 'Request a quote'
+  },
+  nl: {
+    crumbHome: 'Home',
+    crumbBranches: 'Branches',
+    crumbHub: 'Dakdekkers & zonnepanelen',
+    crumbCurrent: 'Website laten maken',
+    badge: 'Websites voor dakdekkers & zon',
+    h1: 'Website laten maken voor dakdekkers',
+    heroSub:
+      'Een dak- en zonwebsite die high-value offertes wint — met heldere splitsing tussen dakwerk (nieuw dak, renovatie, bedekking, lekkagereparatie, isolatie, zink/lood) en zonnepanelen (installatie, uitbreiding, thuisbatterij, laadpalen), investeringsgerichte aanvraagforms, besparings- en terugverdienuitleg, subsidie- en salderingscontext, garanties en certificeringen vooraan, projectportfolio’s van daken en arrays, reviews die grote cheques tippen, een urgente lekkage-ingang naast geplande projecten, en mobiel-first researchpaden. Met 1.500+ afgeronde projecten weten we hoe huiseigenaren een nieuw dak of panelsysteem kopen wanneer vertrouwen en bewijs ontbreken.',
+    trust: '1.500+ afgeronde projecten',
+    ctaPrimary: 'Vraag een offerte aan',
+    problemBadge: 'De echte kosten',
+    problemHead: 'Een grote dak- of zoninvestering gaat naar de site die eerst vertrouwen bewijst',
+    problemP1:
+      'Een nieuw dak of zonnepanelensysteem is een grote investering die huiseigenaren zorgvuldig researchen. Een site die geen garanties, certificeringen en opgeleverd projectbewijs uitstraalt, verliest de high-value offerte aan een overtuigender concurrent — ook wanneer jouw ambacht en installatiekwaliteit sterker zijn. Ogen en vertrouwen landen vóór de telefoon rinkelt.',
+    problemP2:
+      'Dakdekkers en zon-installateurs zijn geen brede loodgieters die cv-spoed verkopen, en geen aannemers die keukens verkopen. Jij combineert urgente lekkagerespons met geplande renovaties en investeringsgedreven verduurzaming — twee tempo’s die aparte paden, subsidiebewuste zonframing en herkenbare keurmerken nodig hebben. Mis je het portfolio, de dak-versus-zon-splitsing of een snelle spoed-ingang, dan landen stormen en subsidie-interesse bij bedrijven die online simpelweg veiliger ogen.',
+    problemP3:
+      'Lokale SEO en Google Ads kunnen ontdekking brengen, maar op de website wordt een shortlist een gedateerde dak- of zonofferte. Wanneer twee bedrijven op Maps gelijk ogen, wint vaak degene wiens site garanties, projectbewijs en heldere investeringsforms toont de cheque. Zonder die laag blijft elke Instagram-story van een array een belofte die een helderdere homepage tot een aanvraag hardmaakt — inclusief spoed wanneer water al binnenkomt.',
+    featuresBadge: 'Wat we bouwen',
+    featuresHead: 'Wat zit er in een website voor dakdekkers & zonnepanelen',
+    featuresSub:
+      'Elke deliverable dient een huiseigenaar die een high-ticket buitenomhulling kiest — dak- versus zonsplitsing, investeringsaanvraagdiepte, terugverdien- en subsidieframing, garanties, portfolio, spoed-ingang en mobiele researchpaden — geen algemeen installateurstemplate met een paneelfoto erin geplakt. We bouwen voor investeringsshortlists én stormspoed, niet voor een generieke klusbrochure.',
+    processBadge: 'Hoe we werken',
+    processHead: 'Hoe een website-traject voor dakdekkers & zon verloopt',
+    processSub:
+      'Van een audit van hoe lekkagecalls en investeringsoffertes vandaag binnenkomen tot meten welke paden echte high-ticket gesprekken starten — inclusief hoe subsidieframing en spoed naast elkaar blijven werken.',
+    whyBadge: 'Waarom Amora Digital',
+    whyHead: 'Waarom dakdekkers en zon-installateurs hun offertesite aan ons toevertrouwen',
+    whySub:
+      'Dak-en-zonbewuste oplevering die high-ticket vertrouwen, duale tempo’s en subsidieframed zon als product behandelt — geen cv-spoed of keukenrenovaties. We weten dat een lekkage een andere journey vraagt dan een terugverdienberekening.',
+    whyItems: [
+      {
+        title: 'Gebouwd rond de investerings-shortlist',
+        desc: 'Pagina’s beantwoorden “wie staat achter de garantie?”, “wat hebben jullie geïnstalleerd?” en “hoe werkt terugverdienen?” vóór een huiseigenaar een tweede tab opent of een concurrent WhatsApp’t.'
+      },
+      {
+        title: 'Dakwerk en zon apart gehouden',
+        desc: 'Lekkage-urgentie en paneelinvestering krijgen elk bewijs en forms — zodat een stormcall nooit een subsidievragenlijst vult en je team de juiste briefing ontvangt.'
+      },
+      {
+        title: 'Certificeringen en garanties zichtbaar',
+        desc: 'Keurmerken die je hebt staan naast CTA’s — erkend installateur, Zonnekeur of InstallQ waar van toepassing — zonder badges te verzinnen die je niet draagt, zodat vertrouwen staat vóór de grote cheque.'
+      },
+      {
+        title: 'Eén team voor vindbaarheid daarna',
+        desc: 'Website eerst; lokale SEO en Google Ads wanneer plaats- of seizoens-dak- en zonintentie een duwtje nodig heeft — één team dat jouw dak- en zonmix en werkgebied al kent.'
+      }
+    ],
+    costsBadge: 'Scope',
+    costsHead: 'Wat bepaalt de scope van een dak- & zonwebsite',
+    costsIntro:
+      'De scope schaalt met of je zowel dakwerk als zon verkoopt, hoe diep terugverdien- en subsidiemodules moeten zijn, portfolio-omvang en hoe spoed- versus investeringsforms moeten werken. Een lekkagegericht dakbedrijf vraagt een andere build dan een zongedreven installateur met batterijen en laadpalen. Vaste deliverables na review van je diensten, keurmerken en hoe offertes binnenkomen — geen rebuild elke keer dat er een nieuwe arrayfoto landt of een stormseizoen start.',
+    costsItems: [
+      {
+        title: 'Essentiële dak- en zonsite',
+        desc: 'Homepage met vertrouwensstrip, dak- en zonoverzicht, één sterk offertepad, basisgaranties, portfolio-strip en contact. Ideaal voor een gericht bedrijf dat helderheid nodig heeft naast WhatsApp-albums alleen, vóór het volgende storm- of subsidievenster.'
+      },
+      {
+        title: 'Investerings-diepe dual-offer site',
+        desc: 'Alles uit Essential, plus rijkere dak- versus zonpaden, aparte spoed- en investeringsforms, terugverdien- of subsidieblokken, vollere certificerings- en reviewsecties, en analytics op welke offerttypes converteren naar gedateerde high-ticket aanvragen.'
+      },
+      {
+        title: 'Volledig dak-plus-zon of multi-straal bedrijf',
+        desc: 'Beide motoren en meerdere plaatsen met gedeelde portfolioregels. Scope per bedrijf nadat we in kaart hebben hoe projecten, garanties en fotoarchieven nu worden beheerd — inclusief wie nieuwe dak- en arraysets uploadt.'
+      }
+    ],
+    costsNote:
+      'De scope zetten we vast na inzicht in dak- versus zonmix, calculator- of subsidiebehoeften en formdiepte. Vraag een website-offerte voor dakdekkers & zonnepanelen aan met duidelijke deliverables en opleverplan — daar staat jouw bedrag, niet op een openbare tarievenlijst hier. Neem mee hoe klanten nu aanvragen, welke projecttypes je eerst wilt tonen, en of spoed naast geplande investeringen meespeelt.',
+    siblingsBadge: 'Ook voor dakdekkers & zon',
+    siblingsHead: 'Combineer je website met lokale vindbaarheid en Google Ads',
+    siblingsSub:
+      'Een sterke site converteert het bezoek; lokale SEO en Google Ads brengen huiseigenaren die al zoeken naar een dakdekker, lekkagereparatie of zonnepanelen-installateur in jouw straal. Deze diensten sturen hen naar garanties en forms die al kloppen — website eerst voor conversie van high-ticket research.',
+    siblingsCta: 'Bekijk dienst',
+    hubLink: 'Terug naar dak- & zonmarketing',
+    webDesignLinkLabel: 'Bekijk ook onze algemene webdesign-dienst',
+    webDesignLinkNote:
+      'Voor projecten buiten dak- en zonwerk bieden we breder webdesign. Dak- en zonbuilds volgen het proces op deze pagina, met focus op investeringsvertrouwen, duale tempo’s en subsidieframing.',
+    ctaHeading: 'Klaar voor een website die dak- en zonresearch omzet in gedateerde offertes?',
+    ctaSub:
+      'Deel welke dakwerk- en zondiensten je aanbiedt, welke keurmerken je draagt, en hoe spoed- versus geplande aanvragen vandaag binnenkomen. We stellen een vaste scope voor een site die huiseigenaren vertrouwen vóór ze een ander bedrijf shortlisten — inclusief spoed wanneer water al binnenkomt.',
+    ctaButton: 'Vraag een offerte aan'
+  }
+} as const
+
+export default function DakdekkersZonnepanelenWebsiteLatenMaken() {
+  const { pathname } = useLocation()
+  const locale: Locale = localeFromPath(pathname)
+  const t = T[locale]
+  const hubPath = ROUTES['branches-dakdekkers-zonnepanelen'][locale]
+  const firmSpokes = BRANCH_SPOKES['dakdekkers-zonnepanelen']
+  const siblings = firmSpokes.filter((spoke) =>
+    (SIBLING_SLUGS as readonly string[]).includes(spoke.slug)
+  )
+
+  return (
+    <div>
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary-600 via-primary-700 to-secondary-600 text-white">
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-white/10 rounded-full blur-3xl" />
+          <div className="absolute top-60 -left-20 w-60 h-60 bg-white/10 rounded-full blur-3xl" />
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-24 lg:pt-28 lg:pb-32">
+          <div className="max-w-3xl mx-auto text-center">
+            <nav className="flex items-center justify-center gap-2 text-sm mb-8 flex-wrap" aria-label="Breadcrumb">
+              <Link to={ROUTES.home[locale]} className="text-white/60 hover:text-white transition-colors">
+                {t.crumbHome}
+              </Link>
+              <span className="text-white/40" aria-hidden>/</span>
+              <Link to={ROUTES.branches[locale]} className="text-white/60 hover:text-white transition-colors">
+                {t.crumbBranches}
+              </Link>
+              <span className="text-white/40" aria-hidden>/</span>
+              <Link to={hubPath} className="text-white/60 hover:text-white transition-colors">
+                {t.crumbHub}
+              </Link>
+              <span className="text-white/40" aria-hidden>/</span>
+              <span className="text-white">{t.crumbCurrent}</span>
+            </nav>
+
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-medium mb-6">
+              <Sun className="w-4 h-4" aria-hidden />
+              <span>{t.badge}</span>
+            </div>
+
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+              {t.h1}
+            </h1>
+            <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto mb-8">{t.heroSub}</p>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+              <Link
+                to={ROUTES.contact[locale]}
+                className="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-primary-700 bg-white rounded-lg hover:bg-slate-100 transition-all shadow-lg group"
+              >
+                {t.ctaPrimary}
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden />
+              </Link>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm text-white/90">
+                <Sparkles className="w-4 h-4 text-secondary-300" aria-hidden />
+                <span>{t.trust}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary-100 text-secondary-700 text-sm font-medium mb-4">
+            <span>{t.problemBadge}</span>
+          </div>
+          <h2 className="section-heading text-slate-900 mb-6">{t.problemHead}</h2>
+          <div className="space-y-5 text-lg text-slate-600 leading-relaxed">
+            <p>{t.problemP1}</p>
+            <p>{t.problemP2}</p>
+            <p>{t.problemP3}</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 lg:py-28 bg-gradient-to-b from-slate-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-100 text-primary-700 text-sm font-medium mb-4">
+              <Images className="w-4 h-4" aria-hidden />
+              <span>{t.featuresBadge}</span>
+            </div>
+            <h2 className="section-heading text-slate-900 mb-4">{t.featuresHead}</h2>
+            <p className="section-subheading mx-auto">{t.featuresSub}</p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            {FEATURES.map((feature, i) => {
+              const Icon = FEATURE_ICONS[i] ?? CheckCircle2
+              const copy = feature[locale]
+              return (
+                <div key={copy.title} className="card p-6">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center mb-4 shadow-lg">
+                    <Icon className="w-6 h-6 text-white" aria-hidden />
+                  </div>
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">{copy.title}</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">{copy.description}</p>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent-100 text-accent-700 text-sm font-medium mb-4">
+              <span>{t.processBadge}</span>
+            </div>
+            <h2 className="section-heading text-slate-900 mb-4">{t.processHead}</h2>
+            <p className="section-subheading mx-auto">{t.processSub}</p>
+          </div>
+
+          <div className="max-w-3xl mx-auto space-y-6">
+            {PROCESS_STEPS.map((item) => {
+              const copy = item[locale]
+              return (
+                <div key={copy.step} className="card p-6 sm:p-8 flex gap-5">
+                  <div className="text-2xl font-display font-bold text-primary-600 flex-shrink-0">{copy.step}</div>
+                  <div>
+                    <h3 className="text-xl font-bold text-slate-900 mb-2">{copy.title}</h3>
+                    <p className="text-slate-600 leading-relaxed">{copy.description}</p>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 lg:py-28 bg-gradient-to-b from-slate-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary-100 text-secondary-700 text-sm font-medium mb-4">
+              <CheckCircle2 className="w-4 h-4" aria-hidden />
+              <span>{t.whyBadge}</span>
+            </div>
+            <h2 className="section-heading text-slate-900 mb-4">{t.whyHead}</h2>
+            <p className="section-subheading mx-auto">{t.whySub}</p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            {t.whyItems.map((item) => (
+              <div key={item.title} className="card p-6">
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center mb-4">
+                  <CheckCircle2 className="w-5 h-5 text-white" aria-hidden />
+                </div>
+                <h3 className="text-lg font-bold text-slate-900 mb-2">{item.title}</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-100 text-primary-700 text-sm font-medium mb-4">
+            <span>{t.costsBadge}</span>
+          </div>
+          <h2 className="section-heading text-slate-900 mb-4">{t.costsHead}</h2>
+          <p className="text-lg text-slate-600 leading-relaxed mb-10">{t.costsIntro}</p>
+
+          <div className="space-y-4 mb-8">
+            {t.costsItems.map((item) => (
+              <div key={item.title} className="card p-6">
+                <h3 className="text-lg font-bold text-slate-900 mb-2">{item.title}</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-sm text-slate-500 leading-relaxed">{t.costsNote}</p>
+        </div>
+      </section>
+
+      <section className="py-20 lg:py-28 bg-gradient-to-b from-slate-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-100 text-primary-700 text-sm font-medium mb-4">
+              <span>{t.siblingsBadge}</span>
+            </div>
+            <h2 className="section-heading text-slate-900 mb-4">{t.siblingsHead}</h2>
+            <p className="section-subheading mx-auto">{t.siblingsSub}</p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-6 lg:gap-8 mb-10 max-w-3xl mx-auto">
+            {siblings.map((spoke) => (
+              <BranchSpokeCard
+                key={spoke.slug}
+                industrySlug="dakdekkers-zonnepanelen"
+                spoke={spoke}
+                locale={locale}
+                ctaLabel={t.siblingsCta}
+              />
+            ))}
+          </div>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-center">
+            <Link to={hubPath} className="text-primary-600 font-semibold hover:text-primary-700 inline-flex items-center gap-2">
+              {t.hubLink}
+              <ArrowRight className="w-4 h-4" aria-hidden />
+            </Link>
+            <span className="hidden sm:inline text-slate-300" aria-hidden>|</span>
+            <div className="text-sm text-slate-500 max-w-md">
+              <Link to={ROUTES['website-design'][locale]} className="text-primary-600 font-medium hover:text-primary-700">
+                {t.webDesignLinkLabel}
+              </Link>
+              <span className="block mt-1">{t.webDesignLinkNote}</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="section-heading text-slate-900 mb-4">{t.ctaHeading}</h2>
+          <p className="section-subheading mx-auto mb-8">{t.ctaSub}</p>
+          <Link to={ROUTES.contact[locale]} className="btn-primary group">
+            {t.ctaButton}
+            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden />
+          </Link>
+        </div>
+      </section>
+    </div>
+  )
+}

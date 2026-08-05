@@ -1,0 +1,630 @@
+import { Link, useLocation } from 'react-router-dom'
+import {
+  ArrowRight,
+  BadgeCheck,
+  BookOpen,
+  CheckCircle2,
+  ClipboardList,
+  Images,
+  Leaf,
+  MapPin,
+  Scissors,
+  Smartphone,
+  Sparkles,
+  Star,
+  Trees,
+  Zap
+} from 'lucide-react'
+import { ROUTES, localeFromPath, type Locale } from '../../../i18n/routes'
+import { BRANCH_SPOKES } from '../../../data/branchSpokes'
+import BranchSpokeCard from '../../../components/BranchSpokeCard'
+
+const FEATURE_ICONS = [
+  Images,
+  Leaf,
+  Scissors,
+  ClipboardList,
+  BookOpen,
+  BadgeCheck,
+  MapPin,
+  Star,
+  Zap,
+  Smartphone
+] as const
+
+const FEATURES = [
+  {
+    en: {
+      title: 'Before/after garden galleries as the close',
+      description:
+        'Finished terraces, planting beds, paving and ponds in clear before/after sets — so a homeowner pictures their own outdoor room, not a contractor kitchen shell or stock greenery.'
+    },
+    nl: {
+      title: 'Voor/na-tuingalerijen als closermiddel',
+      description:
+        'Afgeronde terrassen, borders, bestrating en vijvers in duidelijke voor/na-sets — zodat een huiseigenaar zijn eigen buitenruimte voorstelt, geen aannemerskeukenscasco of stockgroen. Dit is het sterkste verkoopmiddel in de branche.'
+    }
+  },
+  {
+    en: {
+      title: 'Design and build services split clearly',
+      description:
+        'Separate paths for garden design, paving, planting, terraces, ponds and lighting — matching how people search for aanleg work, not one vague “outdoor services” blob.'
+    },
+    nl: {
+      title: 'Ontwerp- en aanlegdiensten helder gesplitst',
+      description:
+        'Aparte paden voor tuinontwerp, bestrating, beplanting, terrassen, vijvers en verlichting — zoals mensen zoeken naar aanlegwerk, geen vage “buitendiensten”-blob.'
+    }
+  },
+  {
+    en: {
+      title: 'Maintenance packages beside project work',
+      description:
+        'Mowing, pruning and seasonal onderhoud contracts sit next to one-off builds — so recurring revenue has its own enquiry path when spring project calendars are already full.'
+    },
+    nl: {
+      title: 'Onderhoudspakketten naast projectwerk',
+      description:
+        'Maaien, snoeien en seizoensonderhoudscontracten staan naast eenmalige aanleg — zodat terugkerende omzet een eigen aanvraagpad heeft wanneer voorjaarsprojectagenda’s al vol zitten.'
+    }
+  },
+  {
+    en: {
+      title: 'Project quote and maintenance request forms',
+      description:
+        'One form for design and aanleg briefs (garden size, style, timing, photos), another for onderhoud subscription interest — so tyre-kickers and serious plot owners land in the right inbox.'
+    },
+    nl: {
+      title: 'Projectofferte- én onderhoudsaanvraagforms',
+      description:
+        'Eén form voor ontwerp- en aanlegbriefs (tuinomvang, stijl, timing, foto’s), een ander voor interesse in onderhoudsabonnement — zodat shoppers en serieuze perceeleigenaren in de juiste inbox landen.'
+    }
+  },
+  {
+    en: {
+      title: 'Seasonal content and planting-season timing',
+      description:
+        'Inspiration and planning blocks timed for spring planting peaks and quieter winter months — so findability and proof work ahead of the season, not after every plot is booked elsewhere.'
+    },
+    nl: {
+      title: 'Seizoenscontent en plantseizoen-timing',
+      description:
+        'Inspiratie- en planningsblokken getimed op voorjaarsplantpieken en stillere wintermaanden — zodat vindbaarheid en bewijs vóór het seizoen werken, niet nadat elk perceel elders is geboekt.'
+    }
+  },
+  {
+    en: {
+      title: 'Craft marks homeowners recognise',
+      description:
+        'VHG, Groenkeur or equivalent craft signals where you hold them — visible next to galleries so trust settles before someone shortlists three vans on WhatsApp alone.'
+    },
+    nl: {
+      title: 'Keurmerken die huiseigenaren herkennen',
+      description:
+        'VHG, Groenkeur of gelijkwaardige vakmanschapsignalen waar je ze hebt — zichtbaar naast galerijen, zodat vertrouwen staat vóór iemand drie busjes alleen op WhatsApp shortlist.'
+    }
+  },
+  {
+    en: {
+      title: 'Service area and radius made obvious',
+      description:
+        'Towns and drive-time radius you actually cover — homeowners outside the catchment stop enquiring, and locals see you plant and maintain where they live.'
+    },
+    nl: {
+      title: 'Werkgebied en straal meteen duidelijk',
+      description:
+        'Plaatsen en rijtijd-straal die je écht dekt — huiseigenaren buiten het catchment stoppen met vragen, en locals zien dat je plant en onderhoudt waar zij wonen.'
+    }
+  },
+  {
+    en: {
+      title: 'Homeowner reviews next to finished gardens',
+      description:
+        'Short voices about planting, finish and communication — placed beside before/after sets, the signals that decide who gets the terrace when design quotes are close.'
+    },
+    nl: {
+      title: 'Reviews van huiseigenaren naast afgeronde tuinen',
+      description:
+        'Korte stemmen over beplanting, afwerking en communicatie — naast voor/na-sets, de signalen die beslissen wie het terras krijgt wanneer ontwerpoffertes dicht bij elkaar liggen.'
+    }
+  },
+  {
+    en: {
+      title: 'Inspiration and garden-trends blog for SEO',
+      description:
+        'Seasonal planting ideas, terrace styles and onderhoud tips that attract searchers before they pick a landscaper — owned content, not only a gallery dump.'
+    },
+    nl: {
+      title: 'Inspiratie- en tuintrendsblog voor SEO',
+      description:
+        'Seizoensbeplantingsideeën, terrasstijlen en onderhoudstips die zoekers trekken vóór ze een hovenier kiezen — owned content, niet alleen een galerijdump.'
+    }
+  },
+  {
+    en: {
+      title: 'Image-rich yet fast, mobile-first',
+      description:
+        'Garden photos compressed and lazy-loaded so evening phone browsers stay — a heavy album that never finishes loses the shortlist before anyone reads a review.'
+    },
+    nl: {
+      title: 'Beeldrijk maar snel, mobiel-first',
+      description:
+        'Tuinfoto’s gecomprimeerd en lazy-loaded zodat avondbrowsers op de telefoon blijven — een zwaar album dat nooit klaar is verliest de shortlist vóór iemand een review leest.'
+    }
+  }
+] as const
+
+const PROCESS_STEPS = [
+  {
+    en: {
+      step: '01',
+      title: 'Garden portfolio and service audit',
+      description:
+        'We review how you show before/after plots today, which aanleg and onderhoud services you sell, seasonal peaks, craft marks and how quote requests arrive — separate from Maps findability on the local-SEO spoke.'
+    },
+    nl: {
+      step: '01',
+      title: 'Tuinportfolio- en dienstenaudit',
+      description:
+        'We bekijken hoe je voor/na-percelen vandaag toont, welke aanleg- en onderhoudsdiensten je verkoopt, seizoenspieken, keurmerken en hoe offerteaanvragen binnenkomen — los van Maps-vindbaarheid op de lokale-SEO-spoke.'
+    }
+  },
+  {
+    en: {
+      step: '02',
+      title: 'Structure for eyes-first garden buying',
+      description:
+        'We plan gallery order, design versus maintenance paths, dual enquiry forms and seasonal content slots so a homeowner can picture the result and start the right request in one sitting.'
+    },
+    nl: {
+      step: '02',
+      title: 'Structuur voor ogen-eerst tuin kopen',
+      description:
+        'We plannen galerijvolgorde, ontwerp- versus onderhoudspaden, duale aanvraagforms en seizoenscontentslots zodat een huiseigenaar het resultaat kan voorstellen en in één sessie de juiste aanvraag start.'
+    }
+  },
+  {
+    en: {
+      step: '03',
+      title: 'Visual system for outdoor proof',
+      description:
+        'Layouts, typography and image patterns built for terraces and planting — atmosphere without burying craft marks, werkgebied or the maintenance subscription path.'
+    },
+    nl: {
+      step: '03',
+      title: 'Visueel systeem voor buitenbewijs',
+      description:
+        'Layouts, typografie en beeldpatronen gebouwd voor terrassen en beplanting — sfeer zonder keurmerken, werkgebied of het onderhoudsabonnement-pad te begraven.'
+    }
+  },
+  {
+    en: {
+      step: '04',
+      title: 'Build, train, hand over project updates',
+      description:
+        'We build the site, wire project and onderhoud forms, place galleries and craft signals, and train your team to add new garden projects without a developer for every finished border.'
+    },
+    nl: {
+      step: '04',
+      title: 'Bouwen, trainen, projectupdates overdragen',
+      description:
+        'We bouwen de site, zetten project- en onderhoudsforms klaar, plaatsen galerijen en keurmerken, en trainen je team om nieuwe tuinprojecten toe te voegen zonder developer voor elke afgeronde border.'
+    }
+  },
+  {
+    en: {
+      step: '05',
+      title: 'Launch and measure garden enquiry quality',
+      description:
+        'Launch tracks design quotes, onderhoud interest and which gallery types convert — so you see whether mobile traffic becomes dated plot requests, not anonymous hits that bounce to another landscaper’s album.'
+    },
+    nl: {
+      step: '05',
+      title: 'Live en kwaliteit van tuinaanvragen meten',
+      description:
+        'Livegang volgt ontwerpoffertes, onderhoudsinteresse en welke galerijtypes converteren — zodat je ziet of mobiel verkeer gedateerde perceelaanvragen wordt, geen anonieme hits die naar het album van een andere hovenier bouncen.'
+    }
+  }
+] as const
+
+const SIBLING_SLUGS = ['lokale-seo', 'google-ads'] as const
+
+const T = {
+  en: {
+    crumbHome: 'Home',
+    crumbBranches: 'Industries',
+    crumbHub: 'Landscapers',
+    crumbCurrent: 'Website design',
+    badge: 'Landscaper websites',
+    h1: 'Website design for landscapers',
+    heroSub:
+      'A landscaper website that wins garden projects and maintenance contracts — with before/after garden galleries as the core sell, clear splits between design/aanleg (planting, paving, terraces, ponds, lighting) and onderhoud (mowing, pruning, seasonal contracts), project quote and maintenance-subscription paths, seasonal content, VHG or Groenkeur craft marks, service area, homeowner reviews, an inspiration blog for SEO, and image-rich pages that stay fast on mobile. With 1,500+ completed projects, we know how gardens are bought with the eyes before a homeowner shortlists another firm’s album.',
+    trust: '1,500+ completed projects',
+    ctaPrimary: 'Request a quote',
+    problemBadge: 'The real cost',
+    problemHead: 'Garden work is bought with the eyes — without before/after proof, the plot goes elsewhere',
+    problemP1:
+      'A homeowner scrolling for a terrace or new planting cannot picture the result without a strong before/after portfolio. Without that proof, the project goes to the landscaper who shows finished gardens — even when your craft and planting knowledge are stronger. Eyes decide before phone calls start.',
+    problemP2:
+      'Landscapers are not contractors selling kitchens and roofs, and not installers selling boiler emergencies. You combine one-off design and aanleg with recurring onderhoud — two revenue models that need separate paths, seasonal timing and craft marks homeowners recognise. Miss the gallery, the aanleg versus onderhoud split or a fast mobile album, and spring demand lands on a competitor who simply looks more finished online.',
+    problemP3:
+      'Local SEO and Google Ads can bring discovery, but the website is where a shortlist becomes a dated garden quote or onderhoud subscription. When two firms look equal on Maps, the one whose site shows before/after plots, craft marks and clear enquiry paths often wins the terrace. Without that layer every Instagram story of a border is a promise a clearer homepage hardens into a request.',
+    featuresBadge: 'What we build',
+    featuresHead: 'What is included in a landscaper website',
+    featuresSub:
+      'Every deliverable serves a homeowner or commercial grounds contact choosing outdoor work — before/after galleries, aanleg versus onderhoud splits, dual enquiry forms, seasonal content, craft marks, catchment, reviews, inspiration blog and fast image-rich mobile pages — not a contractor renovation template with a hedge swapped in.',
+    processBadge: 'How we work',
+    processHead: 'How a landscaper website project runs',
+    processSub:
+      'From auditing how garden projects and maintenance requests arrive today to measuring which galleries and forms start real plot conversations.',
+    whyBadge: 'Why Amora Digital',
+    whyHead: 'Why landscapers trust us with their project site',
+    whySub:
+      'Garden-aware delivery that treats before/after outdoor proof, dual revenue models and seasonal peaks as the product — not kitchen renovations or gym memberships.',
+    whyItems: [
+      {
+        title: 'Built around the scroll that sells the garden',
+        desc: 'Galleries answer “can they make my terrace look like that?” before a homeowner opens a second landscaper tab.'
+      },
+      {
+        title: 'Aanleg and onderhoud kept distinct',
+        desc: 'Design builds and seasonal contracts each get proof and forms — so a mowing subscription never lands in a pond-design brief.'
+      },
+      {
+        title: 'Seasonal calendars respected',
+        desc: 'Spring planting peaks and quieter winters shape content and CTAs — visibility planned ahead of the season, not after every plot is booked.'
+      },
+      {
+        title: 'One team for findability next',
+        desc: 'Website first; local SEO and Google Ads when town or seasonal garden intent needs a push — one team that already knows your plots and onderhoud routes.'
+      }
+    ],
+    costsBadge: 'Scope',
+    costsHead: 'What shapes the scope of a landscaper website',
+    costsIntro:
+      'Scope scales with portfolio size, whether you sell both aanleg and onderhoud, and how deep project and maintenance enquiry forms need to be. A firm that mostly does seasonal mowing asks for a different build than a design-led landscaper with ponds, paving and VvE grounds. Fixed deliverables after we review your gardens, services and how quotes arrive — not a rebuild every time a new border is finished.',
+    costsItems: [
+      {
+        title: 'Essential garden site',
+        desc: 'Homepage with before/after strip, aanleg and onderhoud overview, one strong quote path, craft marks, catchment basics and contact. Ideal for a focused firm that needs clarity beyond WhatsApp albums alone.'
+      },
+      {
+        title: 'Portfolio-deep landscaper site',
+        desc: 'Everything in Essential, plus richer galleries by garden type, separate project and maintenance forms, inspiration blog slots, fuller craft and review blocks, and analytics on which plot types convert.'
+      },
+      {
+        title: 'Design-plus-maintenance or multi-radius firm',
+        desc: 'Both revenue engines and several towns or commercial routes with shared gallery rules. Scoped per firm after we map how projects, subscriptions and photo archives are managed today.'
+      }
+    ],
+    costsNote:
+      'Scope is fixed after we understand portfolio volume, aanleg versus onderhoud mix and form needs. Request a landscaper website quote with clear deliverables and a delivery plan — that is where your figure is set, not on a public rate list here. Bring how clients enquire today and which garden types you want featured first.',
+    siblingsBadge: 'Also for landscapers',
+    siblingsHead: 'Pair your website with local findability and Google Ads',
+    siblingsSub:
+      'A strong site converts the visit; local SEO and Google Ads bring homeowners already searching for a landscaper, garden design or seasonal maintenance in your radius. These services point them to galleries and forms that already make sense.',
+    siblingsCta: 'View service',
+    hubLink: 'Back to landscaper marketing',
+    webDesignLinkLabel: 'Also see our general website design service',
+    webDesignLinkNote:
+      'For projects outside landscaping we offer broader website design. Garden builds follow the process on this page.',
+    ctaHeading: 'Ready for a website that turns garden scrolls into plot quotes?',
+    ctaSub:
+      'Share which services you offer, how before/after projects are stored today, and whether onderhoud subscriptions matter. We propose a fixed scope for a site homeowners actually use before they shortlist another landscaper’s album.',
+    ctaButton: 'Request a quote'
+  },
+  nl: {
+    crumbHome: 'Home',
+    crumbBranches: 'Branches',
+    crumbHub: 'Hoveniers',
+    crumbCurrent: 'Website laten maken',
+    badge: 'Websites voor hoveniers',
+    h1: 'Website laten maken voor hoveniers',
+    heroSub:
+      'Een hovenierswebsite die tuinprojecten en onderhoudscontracten wint — met voor/na-tuingalerijen als kernverkoopmiddel, heldere splitsing tussen ontwerp/aanleg (beplanting, bestrating, terrassen, vijvers, verlichting) en onderhoud (maaien, snoeien, seizoenscontracten), paden voor projectofferte én onderhoudsabonnement, seizoenscontent, VHG- of Groenkeur-keurmerken, werkgebied, reviews van huiseigenaren, een inspiratieblog voor SEO, en beeldrijke pagina’s die op mobiel snel blijven. Met 1.500+ afgeronde projecten weten we hoe tuinen met de ogen worden gekocht vóór een huiseigenaar het album van een ander bedrijf shortlist.',
+    trust: '1.500+ afgeronde projecten',
+    ctaPrimary: 'Vraag een offerte aan',
+    problemBadge: 'De echte kosten',
+    problemHead: 'Tuinen worden met de ogen gekocht — zonder voor/na-bewijs gaat het perceel elders',
+    problemP1:
+      'Een huiseigenaar die scrollt voor een terras of nieuwe beplanting kan het resultaat niet voorstellen zonder een sterk voor/na-portfolio. Zonder dat bewijs gaat het project naar de hovenier die afgeronde tuinen toont — ook wanneer jouw vakmanschap en plantenkennis sterker zijn. Ogen beslissen vóór telefoontjes starten.',
+    problemP2:
+      'Hoveniers zijn geen aannemers die keukens en daken verkopen, en geen installateurs die cv-spoed verkopen. Jij combineert eenmalig ontwerp en aanleg met terugkerend onderhoud — twee verdienmodellen die aparte paden, seizoenstiming en herkenbare keurmerken nodig hebben. Huiseigenaren, VvE’s en bedrijventerreinen zoeken elk anders: de één wil een terras-ontwerp, de ander een maai- en snoeicontract. Mis je de galerij, de aanleg-versus-onderhouds-splitsing of een snelle mobiele albumervaring, dan landt voorjaarsvraag bij een concurrent die online simpelweg afgeronder oogt.',
+    problemP3:
+      'Lokale SEO en Google Ads kunnen ontdekking brengen, maar op de website wordt een shortlist een gedateerde tuinoofferte of onderhoudsabonnement. Wanneer twee bedrijven op Maps gelijk ogen, wint vaak degene wiens site voor/na-percelen, keurmerken en heldere aanvraagpaden toont het terras. Zonder die laag blijft elke Instagram-story van een border een belofte die een helderdere homepage tot een aanvraag hardmaakt — inclusief seizoenstiming vóór het plantseizoen volloopt.',
+    featuresBadge: 'Wat we bouwen',
+    featuresHead: 'Wat zit er in een website voor hoveniers',
+    featuresSub:
+      'Elke deliverable dient een huiseigenaar of zakelijke terreincontact die buitenwerk kiest — voor/na-galerijen, aanleg- versus onderhoudssplitsing, duale aanvraagforms, seizoenscontent, keurmerken, werkgebied, reviews, inspiratieblog en snelle beeldrijke mobiele pagina’s — geen aannemers-verbouwtemplate met een haag erin geplakt. We bouwen voor ogen die tuinen kopen, niet voor een generieke projectbrochure.',
+    processBadge: 'Hoe we werken',
+    processHead: 'Hoe een website-traject voor een hovenier verloopt',
+    processSub:
+      'Van een audit van hoe tuinprojecten en onderhoudsaanvragen vandaag binnenkomen tot meten welke galerijen en forms echte percelengesprekken starten — inclusief hoe seizoenspieken je contentkalender sturen.',
+    whyBadge: 'Waarom Amora Digital',
+    whyHead: 'Waarom hoveniers hun projectsite aan ons toevertrouwen',
+    whySub:
+      'Tuinbewuste oplevering die voor/na-buitenbewijs, duale verdienmodellen en seizoenspieken als product behandelt — geen keukenrenovaties of sportschoolabonnementen. We weten dat groen en esthetiek centraal staan, naast terugkerend onderhoud.',
+    whyItems: [
+      {
+        title: 'Gebouwd rond de scroll die de tuin verkoopt',
+        desc: 'Galerijen beantwoorden “kunnen zij mijn terras zo laten ogen?” vóór een huiseigenaar een tweede hovenierstabbie opent of een WhatsApp-album van een concurrent doorstuurt.'
+      },
+      {
+        title: 'Aanleg en onderhoud apart gehouden',
+        desc: 'Ontwerpbouwen en seizoenscontracten krijgen elk bewijs en forms — zodat een maai-abonnement nooit in een vijverontwerpbrief belandt en je team de juiste briefings ontvangt.'
+      },
+      {
+        title: 'Seizoensagenda’s gerespecteerd',
+        desc: 'Voorjaarsplantpieken en stillere winters vormen content en CTA’s — zichtbaarheid gepland vóór het seizoen, niet nadat elk perceel is geboekt door een concurrent met een scherpere galerij.'
+      },
+      {
+        title: 'Eén team voor vindbaarheid daarna',
+        desc: 'Website eerst; lokale SEO en Google Ads wanneer plaats- of seizoens-tuinintentie een duwtje nodig heeft — één team dat jouw percelen, ophaalstraal en onderhoudsrondes al kent.'
+      }
+    ],
+    costsBadge: 'Scope',
+    costsHead: 'Wat bepaalt de scope van een hovenierswebsite',
+    costsIntro:
+      'De scope schaalt met portfolio-omvang, of je zowel aanleg als onderhoud verkoopt, en hoe diep project- en onderhoudsaanvraagforms moeten zijn. Een bedrijf dat vooral seizoensmaaien doet vraagt een andere build dan een ontwerpgedreven hovenier met vijvers, bestrating, verlichting en VvE-terreinen. Vaste deliverables na review van je tuinen, diensten en hoe offertes binnenkomen — geen rebuild elke keer dat een nieuwe border klaar is of een seizoensronde start.',
+    costsItems: [
+      {
+        title: 'Essentiële tuinsite',
+        desc: 'Homepage met voor/na-strip, aanleg- en onderhoudsoverzicht, één sterk offertepad, keurmerken, basis-werkgebied en contact. Ideaal voor een gericht bedrijf dat helderheid nodig heeft naast WhatsApp-albums alleen, vóór het volgende plantseizoen.'
+      },
+      {
+        title: 'Portfolio-diepe hovenierssite',
+        desc: 'Alles uit Essential, plus rijkere galerijen per tuintype, aparte project- en onderhoudsforms, inspiratieblogslots, vollere keurmerk- en reviewblokken, en analytics op welke perceeltypes converteren naar gedateerde offertes.'
+      },
+      {
+        title: 'Ontwerp-plus-onderhoud of multi-straal bedrijf',
+        desc: 'Beide verdienmotoren en meerdere plaatsen of zakelijke routes met gedeelde galerijregels. Scope per bedrijf nadat we in kaart hebben hoe projecten, abonnementen en fotoarchieven nu worden beheerd — inclusief wie nieuwe voor/na-sets uploadt.'
+      }
+    ],
+    costsNote:
+      'De scope zetten we vast na inzicht in portfolio-omvang, aanleg- versus onderhoudsmix en formbehoeften. Vraag een website-offerte voor hoveniers aan met duidelijke deliverables en opleverplan — daar staat jouw bedrag, niet op een openbare tarievenlijst hier. Neem mee hoe klanten nu aanvragen, welke tuintypes je eerst wilt tonen, en of onderhoudsabonnementen naast aanleg meespelen.',
+    siblingsBadge: 'Ook voor hoveniers',
+    siblingsHead: 'Combineer je website met lokale vindbaarheid en Google Ads',
+    siblingsSub:
+      'Een sterke site converteert het bezoek; lokale SEO en Google Ads brengen huiseigenaren die al zoeken naar een hovenier, tuinontwerp of seizoensonderhoud in jouw straal. Deze diensten sturen hen naar galerijen en forms die al kloppen — website eerst voor conversie.',
+    siblingsCta: 'Bekijk dienst',
+    hubLink: 'Terug naar hoveniersmarketing',
+    webDesignLinkLabel: 'Bekijk ook onze algemene webdesign-dienst',
+    webDesignLinkNote:
+      'Voor projecten buiten hovenierswerk bieden we breder webdesign. Tuinbuilds volgen het proces op deze pagina, met focus op voor/na-galerijen en duale verdienmodellen.',
+    ctaHeading: 'Klaar voor een website die tuinscrolls omzet in perceeloffertes?',
+    ctaSub:
+      'Deel welke diensten je aanbiedt, hoe voor/na-projecten vandaag zijn opgeslagen, en of onderhoudsabonnementen meespelen. We stellen een vaste scope voor een site die huiseigenaren écht gebruiken vóór ze het album van een andere hovenier shortlisten — inclusief seizoenstiming voor het volgende plantseizoen.',
+    ctaButton: 'Vraag een offerte aan'
+  }
+} as const
+
+export default function HoveniersWebsiteLatenMaken() {
+  const { pathname } = useLocation()
+  const locale: Locale = localeFromPath(pathname)
+  const t = T[locale]
+  const hubPath = ROUTES['branches-hoveniers'][locale]
+  const firmSpokes = BRANCH_SPOKES.hoveniers
+  const siblings = firmSpokes.filter((spoke) =>
+    (SIBLING_SLUGS as readonly string[]).includes(spoke.slug)
+  )
+
+  return (
+    <div>
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary-600 via-primary-700 to-secondary-600 text-white">
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-white/10 rounded-full blur-3xl" />
+          <div className="absolute top-60 -left-20 w-60 h-60 bg-white/10 rounded-full blur-3xl" />
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-24 lg:pt-28 lg:pb-32">
+          <div className="max-w-3xl mx-auto text-center">
+            <nav className="flex items-center justify-center gap-2 text-sm mb-8 flex-wrap" aria-label="Breadcrumb">
+              <Link to={ROUTES.home[locale]} className="text-white/60 hover:text-white transition-colors">
+                {t.crumbHome}
+              </Link>
+              <span className="text-white/40" aria-hidden>/</span>
+              <Link to={ROUTES.branches[locale]} className="text-white/60 hover:text-white transition-colors">
+                {t.crumbBranches}
+              </Link>
+              <span className="text-white/40" aria-hidden>/</span>
+              <Link to={hubPath} className="text-white/60 hover:text-white transition-colors">
+                {t.crumbHub}
+              </Link>
+              <span className="text-white/40" aria-hidden>/</span>
+              <span className="text-white">{t.crumbCurrent}</span>
+            </nav>
+
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-medium mb-6">
+              <Trees className="w-4 h-4" aria-hidden />
+              <span>{t.badge}</span>
+            </div>
+
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+              {t.h1}
+            </h1>
+            <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto mb-8">{t.heroSub}</p>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+              <Link
+                to={ROUTES.contact[locale]}
+                className="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-primary-700 bg-white rounded-lg hover:bg-slate-100 transition-all shadow-lg group"
+              >
+                {t.ctaPrimary}
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden />
+              </Link>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm text-white/90">
+                <Sparkles className="w-4 h-4 text-secondary-300" aria-hidden />
+                <span>{t.trust}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary-100 text-secondary-700 text-sm font-medium mb-4">
+            <span>{t.problemBadge}</span>
+          </div>
+          <h2 className="section-heading text-slate-900 mb-6">{t.problemHead}</h2>
+          <div className="space-y-5 text-lg text-slate-600 leading-relaxed">
+            <p>{t.problemP1}</p>
+            <p>{t.problemP2}</p>
+            <p>{t.problemP3}</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 lg:py-28 bg-gradient-to-b from-slate-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-100 text-primary-700 text-sm font-medium mb-4">
+              <Images className="w-4 h-4" aria-hidden />
+              <span>{t.featuresBadge}</span>
+            </div>
+            <h2 className="section-heading text-slate-900 mb-4">{t.featuresHead}</h2>
+            <p className="section-subheading mx-auto">{t.featuresSub}</p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            {FEATURES.map((feature, i) => {
+              const Icon = FEATURE_ICONS[i] ?? CheckCircle2
+              const copy = feature[locale]
+              return (
+                <div key={copy.title} className="card p-6">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center mb-4 shadow-lg">
+                    <Icon className="w-6 h-6 text-white" aria-hidden />
+                  </div>
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">{copy.title}</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">{copy.description}</p>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent-100 text-accent-700 text-sm font-medium mb-4">
+              <span>{t.processBadge}</span>
+            </div>
+            <h2 className="section-heading text-slate-900 mb-4">{t.processHead}</h2>
+            <p className="section-subheading mx-auto">{t.processSub}</p>
+          </div>
+
+          <div className="max-w-3xl mx-auto space-y-6">
+            {PROCESS_STEPS.map((item) => {
+              const copy = item[locale]
+              return (
+                <div key={copy.step} className="card p-6 sm:p-8 flex gap-5">
+                  <div className="text-2xl font-display font-bold text-primary-600 flex-shrink-0">{copy.step}</div>
+                  <div>
+                    <h3 className="text-xl font-bold text-slate-900 mb-2">{copy.title}</h3>
+                    <p className="text-slate-600 leading-relaxed">{copy.description}</p>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 lg:py-28 bg-gradient-to-b from-slate-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary-100 text-secondary-700 text-sm font-medium mb-4">
+              <CheckCircle2 className="w-4 h-4" aria-hidden />
+              <span>{t.whyBadge}</span>
+            </div>
+            <h2 className="section-heading text-slate-900 mb-4">{t.whyHead}</h2>
+            <p className="section-subheading mx-auto">{t.whySub}</p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            {t.whyItems.map((item) => (
+              <div key={item.title} className="card p-6">
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center mb-4">
+                  <CheckCircle2 className="w-5 h-5 text-white" aria-hidden />
+                </div>
+                <h3 className="text-lg font-bold text-slate-900 mb-2">{item.title}</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-100 text-primary-700 text-sm font-medium mb-4">
+            <span>{t.costsBadge}</span>
+          </div>
+          <h2 className="section-heading text-slate-900 mb-4">{t.costsHead}</h2>
+          <p className="text-lg text-slate-600 leading-relaxed mb-10">{t.costsIntro}</p>
+
+          <div className="space-y-4 mb-8">
+            {t.costsItems.map((item) => (
+              <div key={item.title} className="card p-6">
+                <h3 className="text-lg font-bold text-slate-900 mb-2">{item.title}</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-sm text-slate-500 leading-relaxed">{t.costsNote}</p>
+        </div>
+      </section>
+
+      <section className="py-20 lg:py-28 bg-gradient-to-b from-slate-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-100 text-primary-700 text-sm font-medium mb-4">
+              <span>{t.siblingsBadge}</span>
+            </div>
+            <h2 className="section-heading text-slate-900 mb-4">{t.siblingsHead}</h2>
+            <p className="section-subheading mx-auto">{t.siblingsSub}</p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-6 lg:gap-8 mb-10 max-w-3xl mx-auto">
+            {siblings.map((spoke) => (
+              <BranchSpokeCard
+                key={spoke.slug}
+                industrySlug="hoveniers"
+                spoke={spoke}
+                locale={locale}
+                ctaLabel={t.siblingsCta}
+              />
+            ))}
+          </div>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-center">
+            <Link to={hubPath} className="text-primary-600 font-semibold hover:text-primary-700 inline-flex items-center gap-2">
+              {t.hubLink}
+              <ArrowRight className="w-4 h-4" aria-hidden />
+            </Link>
+            <span className="hidden sm:inline text-slate-300" aria-hidden>|</span>
+            <div className="text-sm text-slate-500 max-w-md">
+              <Link to={ROUTES['website-design'][locale]} className="text-primary-600 font-medium hover:text-primary-700">
+                {t.webDesignLinkLabel}
+              </Link>
+              <span className="block mt-1">{t.webDesignLinkNote}</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="section-heading text-slate-900 mb-4">{t.ctaHeading}</h2>
+          <p className="section-subheading mx-auto mb-8">{t.ctaSub}</p>
+          <Link to={ROUTES.contact[locale]} className="btn-primary group">
+            {t.ctaButton}
+            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden />
+          </Link>
+        </div>
+      </section>
+    </div>
+  )
+}
