@@ -251,7 +251,9 @@ export const LIVE_BRANCH_HUBS: readonly LiveBranchHub[] = [
   { industrySlug: 'fotografen', routeKey: 'branches-fotografen' },
   { industrySlug: 'rijscholen', routeKey: 'branches-rijscholen' },
   { industrySlug: 'hoveniers', routeKey: 'branches-hoveniers' },
-  { industrySlug: 'dakdekkers-zonnepanelen', routeKey: 'branches-dakdekkers-zonnepanelen' }
+  { industrySlug: 'dakdekkers-zonnepanelen', routeKey: 'branches-dakdekkers-zonnepanelen' },
+  { industrySlug: 'dierenartsen', routeKey: 'branches-dierenartsen' },
+  { industrySlug: 'uitzendbureaus', routeKey: 'branches-uitzendbureaus' }
 ]
 
 /** True when the industry hub has a live RouteKey + page. */

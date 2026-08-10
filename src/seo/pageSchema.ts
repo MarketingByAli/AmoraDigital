@@ -3387,6 +3387,620 @@ export const pageSeoByKey: Record<RouteKey, PageSeoConfig> = {
     }
   },
 
+  'branches-dierenartsen': {
+    parents: ['home', 'branches'],
+    pageType: 'CollectionPage',
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Online marketing for veterinary clinics',
+      category: 'Digital Marketing',
+      offers: [
+        { name: 'Website design for veterinary clinics' },
+        { name: 'Local SEO for veterinary clinics' },
+        { name: 'Google Ads for veterinary clinics' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Veterinary clinics',
+        serviceName: 'Online marketing for veterinary clinics',
+        serviceDescription:
+          'Online marketing for veterinary clinics: trust-led websites, local SEO for “vet [town]” and emergency searches, and Google Ads that fill the appointment book — without ranking promises.',
+        faqs: [
+          {
+            question: 'How do we attract more new pet owners to the clinic?',
+            answer:
+              'Combine a site that shows species you treat, team faces and calm care language, local findability for nearby towns, and later ads on new-owner or urgent intent. Anxious families shortlist on trust and proximity — we surface proof you already earn, we do not invent reviews.'
+          },
+          {
+            question: 'Should we offer online appointments and repeat prescriptions?',
+            answer:
+              'Yes when your workflow supports it. Pet owners expect booking and refill clarity next to opening hours and emergency routes. We wire CTAs to tools you already use — we do not promise a specific booking volume.'
+          },
+          {
+            question: 'How do we get found for “vet [town]” and emergency searches?',
+            answer:
+              'Through local SEO: Google Business Profile with veterinary categories, clear hours and emergency notes, species and service areas, authentic reviews, and pages that match “vet [town]” or “emergency vet [town]”. We do not promise a fixed map-pack place.'
+          },
+          {
+            question: 'How do we show compassion and clinical trust online?',
+            answer:
+              'Place real team photos, species you welcome, wait-room tone and honest service descriptions where worried owners scan before they call. Price transparency helps when you publish ranges; we never invent fees or outcomes.'
+          },
+          {
+            question: 'How is veterinary marketing different from human healthcare hubs?',
+            answer:
+              'This is pet care: emotionally charged (animal as family), with emergency cover and species specialisation. We do not recycle dentist or physiotherapist patient-funnel copy for a veterinary clinic.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Dierenartsen',
+        serviceName: 'Online marketing voor dierenartsen',
+        serviceDescription:
+          'Online marketing voor dierenartsenpraktijken: vertrouwensgerichte websites, lokale SEO op “dierenarts [plaats]” en spoedzoeken, en Google Ads die de agenda vullen — zonder rankingbeloften.',
+        faqs: [
+          {
+            question: 'Hoe werven we meer nieuwe baasjes en patiënten voor de praktijk?',
+            answer:
+              'Combineer een site die diersoorten, teamgezichten en kalme zorgtaal toont, lokale vindbaarheid voor omliggende plaatsen, en later ads op nieuwe-baasjes- of spoedintentie. Gestresste gezinnen shortlisten op vertrouwen en nabijheid — we tonen bewijs dat je écht verdient, we verzinnen geen reviews.'
+          },
+          {
+            question: 'Moeten we online afspraken en herhaalrecepten aanbieden?',
+            answer:
+              'Ja wanneer je werkwijze dat aankan. Baasjes verwachten boekings- en herhaalhelderheid naast openingstijden en spoedroutes. We koppelen CTA’s aan tools die je al gebruikt — we beloven geen vast boekingsvolume.'
+          },
+          {
+            question: 'Hoe worden we vindbaar voor “dierenarts [stad]” en spoedzoeken?',
+            answer:
+              'Via lokale SEO: Google Bedrijfsprofiel met dierenarts-categorieën, duidelijke tijden en spoednotities, diersoorten en werkgebied, authentieke reviews, en pagina’s die aansluiten op “dierenarts [plaats]” of “spoed dierenarts [plaats]”. We beloven geen vaste plek in de kaartpack.'
+          },
+          {
+            question: 'Hoe stralen we vertrouwen en zorg online uit?',
+            answer:
+              'Plaats echte teamfoto’s, diersoorten die je welkom heet, wachtkamersfeer en eerlijke dienstomschrijvingen waar bezorgde baasjes scannen vóór ze bellen. Prijstransparantie helpt als je ranges publiceert; we verzinnen nooit tarieven of uitkomsten.'
+          },
+          {
+            question: 'Wat verschilt dierenartsenmarketing van menselijke zorghubs?',
+            answer:
+              'Dit is dierenzorg: emotioneel geladen (huisdier als gezinslid), met spoeddekking en diersoort-specialisatie. We hergebruiken geen tandarts- of fysiotherapeut-patiëntentrechtercopy voor een dierenartsenpraktijk.'
+          }
+        ]
+      }
+    }
+  },
+
+  'branches-uitzendbureaus': {
+    parents: ['home', 'branches'],
+    pageType: 'CollectionPage',
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Online marketing for staffing agencies',
+      category: 'Digital Marketing',
+      offers: [
+        { name: 'Website design for staffing agencies' },
+        { name: 'Local SEO for staffing agencies' },
+        { name: 'Google Ads for staffing agencies' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Staffing agencies',
+        serviceName: 'Online marketing for staffing agencies',
+        serviceDescription:
+          'Online marketing for staffing agencies: two-sided websites for candidates and employers, local SEO for vacancy and hire-intent searches, and Google Ads that feed both desks — without ranking promises.',
+        faqs: [
+          {
+            question: 'How do we attract both candidates and client companies?',
+            answer:
+              'Split journeys on one brand: vacancy filters and fast apply for job seekers, sector hire pages and enquiry forms for employers. Local findability and later ads support each intent separately — we do not promise a fixed placement volume.'
+          },
+          {
+            question: 'How should we present vacancies online?',
+            answer:
+              'With a filterable overview, clear sector and location labels, mobile apply, and JobPosting-ready structure so “vacancies [sector] [town]” searches can surface real roles. Content follows roles you actually publish — we do not invent openings.'
+          },
+          {
+            question: 'How do we get found per sector and region?',
+            answer:
+              'Through local and sector pages plus Google Business Profile where relevant: “staffing agency [town]”, “vacancies [sector] [town]” and “hire staff [sector]” paths matching markets you cover. We do not promise a fixed map-pack place.'
+          },
+          {
+            question: 'Can one site serve two audiences without confusion?',
+            answer:
+              'Yes. Distinct entry points for candidates and employers, with vacancy discovery and B2B hire paths that never share one muddled form. Two audiences, one clear brand — not a single CTA that mixes apply and hire.'
+          },
+          {
+            question: 'How is staffing marketing different from other industry hubs?',
+            answer:
+              'This is a true two-sided marketplace: vacancy-driven candidate inflow and employer lead generation on the same site. We do not recycle single-audience clinic or trades funnels for an uitzendbureau.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Uitzendbureaus',
+        serviceName: 'Online marketing voor uitzendbureaus',
+        serviceDescription:
+          'Online marketing voor uitzendbureaus: tweezijdige websites voor kandidaten en opdrachtgevers, lokale SEO op vacature- en inhuurzoeken, en Google Ads die beide desks voeden — zonder rankingbeloften.',
+        faqs: [
+          {
+            question: 'Hoe trekken we zowel kandidaten als opdrachtgevers aan?',
+            answer:
+              'Splits journeys op één merk: vacaturefilters en snelle sollicitatie voor werkzoekenden, sector-inhuurpagina’s en aanvraagforms voor opdrachtgevers. Lokale vindbaarheid en later ads steunen elke intentie apart — we beloven geen vast plaatsingsvolume.'
+          },
+          {
+            question: 'Hoe presenteren we vacatures online?',
+            answer:
+              'Met een filterbaar overzicht, heldere sector- en locatielabels, mobiel solliciteren, en JobPosting-klare structuur zodat “vacatures [sector] [plaats]”-zoeken echte rollen kunnen tonen. Content volgt rollen die je écht publiceert — we verzinnen geen openings.'
+          },
+          {
+            question: 'Hoe worden we vindbaar per sector en regio?',
+            answer:
+              'Via lokale en sectorpagina’s plus Google Bedrijfsprofiel waar relevant: “uitzendbureau [plaats]”, “vacatures [sector] [plaats]” en “personeel inhuren [sector]”-paden die matchen met markten die je dekt. We beloven geen vaste plek in de kaartpack.'
+          },
+          {
+            question: 'Kan één site twee doelgroepen bedienen zonder verwarring?',
+            answer:
+              'Ja. Aparte ingangen voor kandidaten en opdrachtgevers, met vacatureontdekking en B2B-inhuurpaden die nooit één vertroebeld formulier delen. Twee doelgroepen, één helder merk — geen enkele CTA die solliciteren en inhuren mengt.'
+          },
+          {
+            question: 'Wat verschilt uitzendmarketing van andere branchehubs?',
+            answer:
+              'Dit is een echte tweezijdige markt: vacaturegedreven kandidaatinstroom én opdrachtgevers-leadgeneratie op dezelfde site. We hergebruiken geen enkelvoudige kliniek- of ambachtsfunnels voor een uitzendbureau.'
+          }
+        ]
+      }
+    }
+  },
+
+  'branches-uitzendbureaus-website-laten-maken': {
+    parents: ['home', 'branches', 'branches-uitzendbureaus'],
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Website design for staffing agencies',
+      category: 'Web Development',
+      offers: [
+        { name: 'Candidate and employer entry points' },
+        { name: 'Vacancy filters and JobPosting-ready SEO' },
+        { name: 'ATS wiring, multilingual apply and trust marks' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Website design',
+        serviceName: 'Website design for staffing agencies',
+        serviceDescription:
+          'Website design for staffing agencies focused on dual candidate and employer doors, filterable vacancies, JobPosting-ready role SEO, fast mobile apply and registration, B2B hire forms, sector pages, multilingual migrant paths, ATS connections and recognised trust marks — without ranking promises.',
+        faqs: [
+          {
+            question: 'How do I serve candidates and employers on one site?',
+            answer:
+              'With distinct entry points and forms: vacancy filters and apply for job seekers, sector hire pages and brief forms for opdrachtgevers. Two audiences share one brand without sharing one muddled funnel — we do not promise a fixed placement volume.'
+          },
+          {
+            question: 'Can my vacancies appear in Google for Jobs?',
+            answer:
+              'Yes when you publish real roles with JobPosting-ready structure. We build role templates that support that markup so openings can surface when Google indexes them — we do not invent vacancies or promise guaranteed Jobs placement.'
+          },
+          {
+            question: 'Can you connect to my ATS or vacancy software?',
+            answer:
+              'Yes when your tools expose a workable integration path. We wire publish and apply flows so recruiters update roles once and the site stays live without a developer for every new opening.'
+          },
+          {
+            question: 'Can candidates apply quickly on mobile?',
+            answer:
+              'Yes. Thumb-first apply and registration are core — most vacancy searches happen on a phone between shifts. Sticky apply actions beat desktop PDFs that die in download folders.'
+          },
+          {
+            question: 'Can the site be multilingual for migrant workers?',
+            answer:
+              'Yes where you recruit internationally. Language switches or parallel content help Polish, Romanian or other speakers reach vacancies and registration without bouncing to a board that already speaks their tongue.'
+          },
+          {
+            question: 'How do we show SNA, NEN, ABU or NBBU trust?',
+            answer:
+              'We place marks you actually hold next to hire and apply CTAs. Authentic compliance signals matter for both sides; we surface what you carry, we do not invent memberships.'
+          },
+          {
+            question: 'How is this different from a single-audience service website?',
+            answer:
+              'This is a two-sided marketplace: vacancy-driven candidate inflow and employer lead generation on the same site. We do not reuse clinic or trades booking templates with “jobs” pasted in.'
+          },
+          {
+            question: 'How long does a staffing agency website project take?',
+            answer:
+              'Timelines depend on ATS depth, sector count, languages and dual-audience complexity. Many builds move from discovery to launch across several weeks once vacancy tooling and sector content are ready. We share a realistic plan after scoping — without promising a fixed application volume.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Website laten maken',
+        serviceName: 'Website laten maken voor uitzendbureaus',
+        serviceDescription:
+          'Website laten maken voor uitzendbureaus gericht op duale kandidaat- en opdrachtgeverdeuren, filterbare vacatures, JobPosting-klare rol-SEO, snelle mobiele sollicitatie en inschrijving, B2B-inhuurforms, sectorpagina’s, meertalige migrantenpaden, ATS-koppelingen en herkenbare keurmerken — zonder rankingbeloften.',
+        faqs: [
+          {
+            question: 'Hoe bedien ik kandidaten én opdrachtgevers op één site?',
+            answer:
+              'Met aparte ingangen en formulieren: vacaturefilters en solliciteren voor werkzoekenden, sector-inhuurpagina’s en briefforms voor opdrachtgevers. Twee doelgroepen delen één merk zonder één vertroebelde trechter — we beloven geen vast plaatsingsvolume.'
+          },
+          {
+            question: 'Kunnen mijn vacatures in Google for Jobs komen?',
+            answer:
+              'Ja wanneer je echte rollen publiceert met JobPosting-klare structuur. We bouwen rolsjablonen die die markup ondersteunen zodat openings kunnen verschijnen wanneer Google ze indexeert — we verzinnen geen vacatures en beloven geen gegarandeerde Jobs-plaatsing.'
+          },
+          {
+            question: 'Kan ik koppelen met mijn vacature-/ATS-systeem?',
+            answer:
+              'Ja wanneer je tools een werkbare integratiepad bieden. We koppelen publiceer- en solliciteerstromen zodat recruiters rollen één keer bijwerken en de site live blijft zonder developer voor elke nieuwe opening.'
+          },
+          {
+            question: 'Kunnen kandidaten snel op mobiel solliciteren?',
+            answer:
+              'Ja. Duim-first solliciteren en inschrijven staan centraal — de meeste vacaturezoeken gebeuren op een telefoon tussen diensten. Vaste solliciteeracties verslaan desktop-PDF’s die in downloadmappen sterven.'
+          },
+          {
+            question: 'Kan de site meertalig voor arbeidsmigranten?',
+            answer:
+              'Ja waar je internationaal werft. Taalwissels of parallelle content helpen Poolse, Roemeense of andere sprekers vacatures en inschrijving te bereiken zonder te bouncen naar een board dat hun taal al spreekt.'
+          },
+          {
+            question: 'Hoe tonen we SNA-, NEN-, ABU- of NBBU-vertrouwen?',
+            answer:
+              'We plaatsen keurmerken die je écht draagt naast inhuur- en solliciteer-CTA’s. Authentieke compliancesignalen doen ertoe voor beide kanten; we tonen wat je hebt, we verzinnen geen lidmaatschappen.'
+          },
+          {
+            question: 'Wat verschilt dit van een enkelvoudige dienstverlenersite?',
+            answer:
+              'Dit is een tweezijdige markt: vacaturegedreven kandidaatinstroom én opdrachtgevers-leadgeneratie op dezelfde site. We hergebruiken geen kliniek- of ambachtsboekingstemplates met “vacatures” erin geplakt.'
+          },
+          {
+            question: 'Hoe lang duurt een website-traject voor een uitzendbureau?',
+            answer:
+              'Doorlooptijden hangen af van ATS-diepte, sectorenaantal, talen en duale-doelgroepcomplexiteit. Veel builds gaan van discovery naar live in enkele weken zodra vacaturetooling en sectorcontent klaar zijn. We delen een realistisch plan na scoping — zonder een vast sollicitatievolume te beloven.'
+          }
+        ]
+      }
+    }
+  },
+
+  'branches-uitzendbureaus-lokale-seo': {
+    parents: ['home', 'branches', 'branches-uitzendbureaus'],
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Local SEO for staffing agencies',
+      category: 'Digital Marketing',
+      offers: [
+        { name: 'GBP per branch and dual candidate/employer keywords' },
+        { name: 'Sector and town pages plus JobPosting vacancy SEO' },
+        { name: 'Dual reviews, citations and multi-location pack work' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Local SEO',
+        serviceName: 'Local SEO for staffing agencies',
+        serviceDescription:
+          'Local SEO for staffing agencies focused on dual candidate and employer search intent, Google Business Profile per branch, sector and town landings, JobPosting vacancy SEO for Google for Jobs, dual reviews, citations and organic share versus national job boards — without ranking promises.',
+        faqs: [
+          {
+            question: 'How do I get found locally by candidates and companies?',
+            answer:
+              'Through dual-intent local SEO: GBP per vestiging, sector and town pages, candidate vacancy keywords and employer hire keywords, plus review growth on both sides. We do not promise a fixed map-pack place.'
+          },
+          {
+            question: 'How do my vacancies get into Google for Jobs?',
+            answer:
+              'With JobPosting-ready vacancy SEO and role landings that support markup when you publish real openings. Jobs visibility sits beside pack work — we do not invent roles or promise guaranteed Jobs placement.'
+          },
+          {
+            question: 'How do I compete with Indeed locally?',
+            answer:
+              'By owning organic bureau discovery for your towns: pack presence, sector-town pages and dual reviews so applications and hire briefs start on your assets, not only on per-click board listings. Boards remain competition; we do not promise to erase them overnight.'
+          },
+          {
+            question: 'Can I rank per branch and per sector?',
+            answer:
+              'Yes when structure matches reality. Separate GBP and pages per vestiging, plus sector-town landings for markets you cover — without claiming towns or sectors you do not serve.'
+          },
+          {
+            question: 'How long does staffing local SEO take?',
+            answer:
+              'Profile action lifts often appear within weeks; holding relevance for “staffing agency [town]” or “vacancies [sector] [town]” against boards and rival desks usually needs months of compounding. We share honest timelines after scoping — without ranking guarantees.'
+          },
+          {
+            question: 'Do you cover migrant-worker search behaviour?',
+            answer:
+              'Yes where you recruit internationally. We include relevant language and vacancy phrases in the keyword and page plan so those seekers can discover your local desks — content follows markets you actually serve.'
+          },
+          {
+            question: 'How is this different from the staffing website spoke?',
+            answer:
+              'The website builds dual doors, filters and ATS UX; this spoke is findability — pack, JobPosting discovery, citations and dual reviews. We do not rebuild the site here as a substitute for local SEO.'
+          },
+          {
+            question: 'How is this different from healthcare local SEO?',
+            answer:
+              'This is a two-sided marketplace fighting national job boards, with vacancy Jobs visibility beside the local pack. We do not reuse clinic patient-pack checklists with “staffing” pasted in.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Lokale SEO',
+        serviceName: 'Lokale SEO voor uitzendbureaus',
+        serviceDescription:
+          'Lokale SEO voor uitzendbureaus gericht op duale kandidaat- en opdrachtgeverzoekintentie, Google Bedrijfsprofiel per vestiging, sector- en stadslandings, JobPosting-vacature-SEO voor Google for Jobs, duale reviews, citations en organisch aandeel versus nationale vacatureboards — zonder rankingbeloften.',
+        faqs: [
+          {
+            question: 'Hoe word ik lokaal gevonden door kandidaten én bedrijven?',
+            answer:
+              'Via dual-intent lokale SEO: GBP per vestiging, sector- en stadspagina’s, kandidaat-vacaturezoekwoorden en opdrachtgever-inhuurzoekwoorden, plus reviewgroei aan beide kanten. We beloven geen vaste plek in de kaartpack.'
+          },
+          {
+            question: 'Hoe kom ik met vacatures in Google for Jobs?',
+            answer:
+              'Met JobPosting-klare vacature-SEO en rollandings die markup ondersteunen wanneer je echte openings publiceert. Jobs-zichtbaarheid staat naast packwerk — we verzinnen geen rollen en beloven geen gegarandeerde Jobs-plaatsing.'
+          },
+          {
+            question: 'Hoe versla ik Indeed lokaal?',
+            answer:
+              'Door organische bureauontdekking voor jouw plaatsen te bezitten: packaanwezigheid, sector-stadspagina’s en duale reviews zodat sollicitaties en inhuurbriefs op jouw assets starten, niet alleen op per-klik boardlistings. Boards blijven concurrentie; we beloven ze niet overnight weg te poetsen.'
+          },
+          {
+            question: 'Kan ik per vestiging en sector ranken?',
+            answer:
+              'Ja wanneer de structuur de werkelijkheid volgt. Aparte GBP en pagina’s per vestiging, plus sector-stadslandings voor markten die je dekt — zonder plaatsen of sectoren te claimen die je niet bedient.'
+          },
+          {
+            question: 'Hoe lang duurt lokale SEO voor uitzendbureaus?',
+            answer:
+              'Profielacties stijgen vaak binnen enkele weken; relevantie vasthouden op “uitzendbureau [stad]” of “vacatures [sector] [stad]” tegen boards en rivale desks vraagt meestal maanden van compounding. We delen eerlijke doorlooptijden na scoping — zonder rankinggaranties.'
+          },
+          {
+            question: 'Dekken jullie zoekgedrag van arbeidsmigranten?',
+            answer:
+              'Ja waar je internationaal werft. We nemen relevante taal- en vacaturefrasen op in het zoekwoord- en paginaplan zodat die zoekers jouw lokale desks kunnen ontdekken — content volgt markten die je écht bedient.'
+          },
+          {
+            question: 'Wat verschilt dit van de uitzend-website-spoke?',
+            answer:
+              'De website bouwt duale deuren, filters en ATS-UX; deze spoke is vindbaarheid — pack, JobPosting-ontdekking, citations en duale reviews. We herbouwen de site hier niet als vervanging voor lokale SEO.'
+          },
+          {
+            question: 'Wat verschilt dit van lokale SEO in de zorg?',
+            answer:
+              'Dit is een tweezijdige markt die vecht met nationale vacatureboards, met vacature-Jobs-zichtbaarheid naast de local pack. We hergebruiken geen kliniek-patiëntenpackchecklists met “uitzendbureau” erin geplakt.'
+          }
+        ]
+      }
+    }
+  },
+
+  'branches-dierenartsen-website-laten-maken': {
+    parents: ['home', 'branches', 'branches-dierenartsen'],
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Website design for veterinary clinics',
+      category: 'Web Development',
+      offers: [
+        { name: 'Online appointments and repeat-prescription requests' },
+        { name: 'Emergency and out-of-hours entry points' },
+        { name: 'Species paths, services, team and warm clinic trust' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Website design',
+        serviceName: 'Website design for veterinary clinics',
+        serviceDescription:
+          'Website design for veterinary clinics focused on online appointments and repeat prescriptions, panic-proof emergency entry, species and specialisation paths, service stories, new-pet registration, warm team trust, practical clinic info, owner reviews and mobile-first calm — without ranking promises.',
+        faqs: [
+          {
+            question: 'Can pet owners book an appointment online?',
+            answer:
+              'Yes when your diary tools allow it. We wire booking flows for vaccines, dental checks and follow-ups so owners pick species, reason and slot without ringing mid-consult. Confirmations go to clinic and owner — we do not promise a fixed booking volume.'
+          },
+          {
+            question: 'Can I show emergency and out-of-hours information prominently?',
+            answer:
+              'Yes. A clear spoed entry states when to call, where to drive and what not to wait for — separate from calm wellness booking so a midnight panic never fills a registration questionnaire.'
+          },
+          {
+            question: 'Can I present different species and specialisations?',
+            answer:
+              'Yes. Dogs and cats, rodents, exotics, horses or farm animals get distinct paths matching what you actually treat — so a rabbit owner never books a large-animal slot by mistake.'
+          },
+          {
+            question: 'Can people request repeat prescriptions online?',
+            answer:
+              'Yes when your clinical workflow supports refills. A dedicated path lets owners renew chronic meds or diets without blocking the emergency line or inventing a fake appointment just for tablets.'
+          },
+          {
+            question: 'Does the site work well on mobile?',
+            answer:
+              'Yes. Most “vet near me” and urgent searches happen on a phone in a car park or kitchen. We keep booking and spoed actions thumb-friendly, with fast loads and practical info owners need before they drive.'
+          },
+          {
+            question: 'Can new pets register before the first visit?',
+            answer:
+              'Yes. A guided intake collects animal details, prior history notes and consents that enter your process — fewer incomplete forms when a family arrives with a puppy or rescue.'
+          },
+          {
+            question: 'How is this different from a dentist or physio website?',
+            answer:
+              'This is pet care: emotionally charged, with emergency cover and species specialisation. We do not reuse human healthcare appointment funnels with animal nouns pasted over.'
+          },
+          {
+            question: 'How long does a veterinary clinic website project take?',
+            answer:
+              'Timelines depend on species depth, booking and refill tooling, and location count. Many builds move from discovery to launch across several weeks once services, team photos and tool access are ready. We share a realistic plan after scoping — without promising a fixed first-visit volume.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Website laten maken',
+        serviceName: 'Website laten maken voor dierenartsen',
+        serviceDescription:
+          'Website laten maken voor dierenartsen gericht op online afspraken en herhaalrecepten, paniekbestendige spoed-ingang, diersoort- en specialisatiepaden, dienstverhalen, inschrijving van nieuwe huisdieren, warm teamvertrouwen, praktische praktijkinfo, reviews van baasjes en mobiel-first rust — zonder rankingbeloften.',
+        faqs: [
+          {
+            question: 'Kunnen baasjes online een afspraak maken?',
+            answer:
+              'Ja wanneer je agendatools dat toelaten. We koppelen boekingsstromen voor vaccins, gebitscontroles en vervolgbezoeken zodat baasjes diersoort, reden en slot kiezen zonder te bellen tijdens een consult. Bevestigingen gaan naar praktijk én baasje — we beloven geen vast boekingsvolume.'
+          },
+          {
+            question: 'Kan ik spoed-/nooddienstinfo prominent tonen?',
+            answer:
+              'Ja. Een heldere spoed-ingang zegt wanneer bellen, waarheen rijden en waar je niet mee mag wachten — los van kalme wellnessboeking zodat middernachtpaniek nooit een inschrijfvraaglijst vult.'
+          },
+          {
+            question: 'Kan ik verschillende diersoorten en specialisaties tonen?',
+            answer:
+              'Ja. Honden en katten, knaagdieren, exoten, paarden of landbouwhuisdieren krijgen aparte paden die matchen wat je écht behandelt — zodat een konijnenbaasje nooit per ongeluk een grootdier-slot boekt.'
+          },
+          {
+            question: 'Kunnen mensen herhaalrecepten aanvragen?',
+            answer:
+              'Ja wanneer je klinische werkwijze herhalingen ondersteunt. Een apart pad laat baasjes chronische medicatie of diëten vernieuwen zonder de spoedlijn te blokkeren of een nepafspraak te maken alleen voor tabletten.'
+          },
+          {
+            question: 'Werkt de site goed op mobiel?',
+            answer:
+              'Ja. De meeste “dierenarts bij mij”- en spoedzoeken gebeuren op een telefoon op de parkeerplaats of in de keuken. We houden boekings- en spoedacties duimvriendelijk, met snelle laadtijden en praktische info die baasjes nodig hebben vóór ze rijden.'
+          },
+          {
+            question: 'Kunnen nieuwe huisdieren zich vóór het eerste bezoek inschrijven?',
+            answer:
+              'Ja. Een begeleid inschrijfpad verzamelt diergegevens, voorgeschiedenisnotities en toestemmingen die in jouw proces landen — minder incomplete formulieren wanneer een gezin met een pup of asieldier aankomt.'
+          },
+          {
+            question: 'Wat verschilt dit van een tandarts- of fysiowebsite?',
+            answer:
+              'Dit is dierenzorg: emotioneel geladen, met spoeddekking en diersoort-specialisatie. We hergebruiken geen menselijke zorgafspraaktrechters met dierennamen eroverheen geplakt.'
+          },
+          {
+            question: 'Hoe lang duurt een website-traject voor een dierenartsenpraktijk?',
+            answer:
+              'Doorlooptijden hangen af van diersoortdiepte, afspraak- en herhaaltools, en aantal locaties. Veel builds gaan van discovery naar live in enkele weken zodra diensten, teamfoto’s en tooltoegang klaar zijn. We delen een realistisch plan na scoping — zonder een vast volume eerste bezoeken te beloven.'
+          }
+        ]
+      }
+    }
+  },
+
+  'branches-dierenartsen-lokale-seo': {
+    parents: ['home', 'branches', 'branches-dierenartsen'],
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Local SEO for veterinary clinics',
+      category: 'Digital Marketing',
+      offers: [
+        { name: 'GBP with hours, emergency notes and clinic photos' },
+        { name: 'Species, service and town pages for vet search' },
+        { name: 'Baasje reviews, citations and dual-tempo pack work' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Local SEO',
+        serviceName: 'Local SEO for veterinary clinics',
+        serviceDescription:
+          'Local SEO for veterinary clinics focused on “vet [town]”, near-me and emergency searches, Google Business Profile hours and out-of-hours notes, clinic photos, species and service + town pages, baasje reviews, citations and multi-location clarity — without ranking promises.',
+        faqs: [
+          {
+            question: 'How do I get found as a vet in my town?',
+            answer:
+              'Through local SEO: Google Business Profile with accurate hours and clinic photos, species and service pages for towns you cover, consistent citations, and ethical review growth after consults. We do not promise a fixed map-pack place.'
+          },
+          {
+            question: 'How do I rank higher for emergency vet searches?',
+            answer:
+              'We align GBP emergency notes, categories, urgent + town keywords and pack signals so “emergency vet [town]” searches can surface you when owners need care fast. Visibility compounds over time — we do not promise overnight top spots.'
+          },
+          {
+            question: 'How do I get more reviews from pet owners?',
+            answer:
+              'We set ethical ask habits after consults and procedures so baasje voices appear next to pack results. Authentic reviews tip emotional shortlists; we never invent ratings or pressure owners unfairly.'
+          },
+          {
+            question: 'Can I rank on a species or specialisation?',
+            answer:
+              'Yes when you truly offer that care. Pages and GBP categories for cat clinics, dog dentistry, exotics or farm animals help match “cat clinic [town]” or “dog dental vet” intent — without claiming species you do not treat.'
+          },
+          {
+            question: 'How long does veterinary local SEO take?',
+            answer:
+              'Profile action lifts often appear within weeks; holding relevance for “vet [town]” against neighbouring clinics usually needs months of compounding GBP, pages, citations and reviews. We share honest timelines after scoping — without ranking guarantees.'
+          },
+          {
+            question: 'Do you cover both emergency and routine-care demand?',
+            answer:
+              'Yes. Dual-tempo keyword and page planning covers urgent spoed searches and recurring vaccines or check-ups — every new household can mean years of appointments, so both tempos matter.'
+          },
+          {
+            question: 'Can you help if we have several locations or vets?',
+            answer:
+              'Yes. We structure multi-location signals so Maps knows which footprint owns each town, and clinicians stay clear without confusing owners about which desk answers tonight.'
+          },
+          {
+            question: 'How is this different from dentist or physio local SEO?',
+            answer:
+              'This is pet care: emotionally charged choices for a family animal, with emergency cover and species specialisation. We do not reuse human healthcare pack checklists with “vet” pasted in.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Lokale SEO',
+        serviceName: 'Lokale SEO voor dierenartsen',
+        serviceDescription:
+          'Lokale SEO voor dierenartsen gericht op “dierenarts [stad]”, bij-mij- en spoedzoeken, Google Bedrijfsprofiel-tijden en nooddienstnotities, praktijkfoto’s, diersoort- en dienst- + stadspagina’s, baasjesreviews, citations en multi-locatiehelderheid — zonder rankingbeloften.',
+        faqs: [
+          {
+            question: 'Hoe word ik gevonden als dierenarts in mijn stad?',
+            answer:
+              'Via lokale SEO: Google Bedrijfsprofiel met accurate tijden en praktijkfoto’s, diersoort- en dienstpagina’s voor plaatsen die je dekt, consistente citations, en ethische reviewgroei na consulten. We beloven geen vaste plek in de kaartpack.'
+          },
+          {
+            question: 'Hoe kom ik bovenaan voor spoed dierenarts?',
+            answer:
+              'We stemmen GBP-nooddienstnotities, categorieën, spoed- + stadszoekwoorden en packsignalen af zodat “spoed dierenarts [stad]”-zoeken je kunnen tonen wanneer baasjes snel zorg nodig hebben. Zichtbaarheid compoundt over tijd — we beloven geen overnight topplekken.'
+          },
+          {
+            question: 'Hoe krijg ik meer reviews van baasjes?',
+            answer:
+              'We zetten ethische vraaggewoontes na consulten en ingrepen zodat stemmen van baasjes naast packresultaten verschijnen. Authentieke reviews tippen emotionele shortlists; we verzinnen nooit scores of drukken baasjes oneerlijk.'
+          },
+          {
+            question: 'Kan ik ranken op een diersoort of specialisatie?',
+            answer:
+              'Ja wanneer je die zorg écht biedt. Pagina’s en GBP-categorieën voor kattenkliniek, gebit hond, exoten of landbouwhuisdieren helpen “kattenkliniek [stad]” of “gebit hond dierenarts”-intentie te matchen — zonder diersoorten te claimen die je niet behandelt.'
+          },
+          {
+            question: 'Hoe lang duurt lokale SEO voor dierenartsen?',
+            answer:
+              'Profielacties stijgen vaak binnen enkele weken; relevantie vasthouden op “dierenarts [stad]” tegen buurtpraktijken vraagt meestal maanden van compounding GBP, pagina’s, citations en reviews. We delen eerlijke doorlooptijden na scoping — zonder rankinggaranties.'
+          },
+          {
+            question: 'Dekken jullie zowel spoed als reguliere zorgvraag?',
+            answer:
+              'Ja. Dual-tempo zoekwoord- en paginaplanning dekt urgente spoedzoeken én terugkerende vaccins of controles — elk nieuw huishouden kan jaren afspraken betekenen, dus beide tempo’s doen ertoe.'
+          },
+          {
+            question: 'Kunnen jullie helpen bij meerdere vestigingen of dierenartsen?',
+            answer:
+              'Ja. We structureren multi-locatiesignalen zodat Maps weet welk footprint elke plaats bezit, en clinici helder blijven zonder baasjes te verwarren over welke balie vanavond antwoordt.'
+          },
+          {
+            question: 'Wat verschilt dit van lokale SEO voor tandartsen of fysio?',
+            answer:
+              'Dit is dierenzorg: emotioneel geladen keuzes voor een gezinsdier, met spoeddekking en diersoort-specialisatie. We hergebruiken geen menselijke zorg-packchecklists met “dierenarts” erin geplakt.'
+          }
+        ]
+      }
+    }
+  },
+
   'branches-dakdekkers-zonnepanelen-website-laten-maken': {
     parents: ['home', 'branches', 'branches-dakdekkers-zonnepanelen'],
     extras: [buildProfessionalServiceSchema()],
@@ -3493,6 +4107,118 @@ export const pageSeoByKey: Record<RouteKey, PageSeoConfig> = {
             question: 'Hoe lang duurt een website-traject voor dakdekkers & zon?',
             answer:
               'Doorlooptijden hangen af van of zowel dakwerk als zon diepe paden nodig hebben, portfolioreedheid en subsidie- of calculatormodules. Veel builds gaan van discovery tot livegang in enkele weken zodra diensten, keurmerken en projectfoto’s klaarstaan. We delen een realistisch plan na scoping — zonder een vast offertevolume te beloven.'
+          }
+        ]
+      }
+    }
+  },
+
+  'branches-dakdekkers-zonnepanelen-lokale-seo': {
+    parents: ['home', 'branches', 'branches-dakdekkers-zonnepanelen'],
+    extras: [buildProfessionalServiceSchema()],
+    service: {
+      serviceType: 'Local SEO for roofers & solar installers',
+      category: 'Digital Marketing',
+      offers: [
+        { name: 'Service and town pages for dakwerk and solar offers' },
+        { name: 'Google Business Profile with roof and array photos' },
+        { name: 'Urgent leak and investment-led solar keyword coverage versus platforms' }
+      ]
+    },
+    locales: {
+      en: {
+        breadcrumbName: 'Local SEO',
+        serviceName: 'Local SEO for roofers & solar installers',
+        serviceDescription:
+          'Local SEO for roofers and solar installers focused on “roofer [town]”, “solar panels [town]”, urgent leak and solar installer + town keywords, Google Business Profile with roof and array photos plus warranty signals, high-ticket reviews, multi-town catchment, subsidy-aware solar search, weather and season peaks and organic discovery versus comparison platforms — without ranking guarantees.',
+        faqs: [
+          {
+            question: 'How do I get found for roof leaks and new roofs?',
+            answer:
+              'Plan keyword and page coverage for both tempos: urgent leak and storm phrases alongside new-roof and renovation + town searches. Stock Google Business Profile with project photos and clear call or quote actions. We treat catchments as towns you actually cover — without promising a fixed map-pack place against nearby firms or lead platforms.'
+          },
+          {
+            question: 'How do I rank for solar panels in my region?',
+            answer:
+              'Build solar installer and panel + town pages, align GBP with array photos and investment-led categories, and grow reviews after installs. Subsidy- and payback-aware search matters; we frame local content around that intent without inventing savings figures. Competition varies by town; we avoid promising you will own every solar phrase at once.'
+          },
+          {
+            question: 'How do I beat comparison sites locally?',
+            answer:
+              'Solar comparators and lead marketplaces rent introductions; local SEO strengthens your own Maps footprint, service pages and homeowner reviews so high-intent searches can start on your profile. Many firms still buy some platform leads while organic presence grows — we do not claim Maps replaces every paid channel overnight, but stronger town relevance usually starts more direct high-ticket conversations.'
+          },
+          {
+            question: 'How do I get more reviews after large jobs?',
+            answer:
+              'Ask ethically after roof or array handover when the finished work is fresh. Voices next to pack results often tip high-investment shortlists more than a marketplace badge. We set habits and reply patterns — we do not invent reviews or guarantee a star average.'
+          },
+          {
+            question: 'How long does local SEO take for roofers and solar installers?',
+            answer:
+              'Profile hygiene and review habits often show action lifts within weeks; holding relevance for “roofer [town]” or “solar installer [town]” against platforms usually needs months of compounding. Plan for storm spikes and spring solar interest. Timelines depend on competition and content readiness — without ranking guarantees.'
+          },
+          {
+            question: 'How is this different from a roofing and solar website project?',
+            answer:
+              'Local SEO wins Maps and town-search attention for places and dak/zon services you cover; the website spoke builds warranties, dual enquiry forms and payback framing that convert the visit. We keep those scopes distinct, then align so a map tap lands where a dated leak call or investment quote can start.'
+          },
+          {
+            question: 'Can I target multiple towns as a service-area business?',
+            answer:
+              'Yes when you serve them. Many dak-and-zon firms cover a radius, not one street. We structure multi-town footprints so each catchment has clear pages and GBP signals without confusing Maps about which footprint owns “roofer [town]” or “solar installer [town]”.'
+          },
+          {
+            question: 'Do weather and seasons change local SEO priorities?',
+            answer:
+              'Yes. Storms spike leak search; spring often lifts solar interest. We keep GBP and local pages aligned with weather-driven dakschade and investment-led panel seasons — without promising you will own every spike overnight.'
+          }
+        ]
+      },
+      nl: {
+        breadcrumbName: 'Lokale SEO',
+        serviceName: 'Lokale SEO voor dakdekkers',
+        serviceDescription:
+          'Lokale SEO voor dakdekkers en zonnepanelen-installateurs gericht op “dakdekker [stad]”, “zonnepanelen [stad]”, spoedlekkage- en zonnepanelen-installateur- + stadszoekwoorden, Google Bedrijfsprofiel met dak- en arrayfoto’s plus garantiesignalen, high-ticket reviews, multi-plaats catchment, subsidiebewust zonnezoeken, weer- en seizoenspieken en organische ontdekking versus vergelijkingsplatforms — zonder rankinggaranties.',
+        faqs: [
+          {
+            question: 'Hoe word ik gevonden voor daklekkage én nieuwe daken?',
+            answer:
+              'Plan zoekwoord- en paginadekking voor beide tempo’s: urgente lekkage- en stormfrases naast nieuw-dak- en renovatie- + stadszoeken. Vul Google Bedrijfsprofiel met projectfoto’s en heldere bel- of offerteacties. We behandelen catchments als plaatsen die je écht dekt — zonder een vaste kaartpackplek tegen nabije bedrijven of leadplatforms te beloven.'
+          },
+          {
+            question: 'Hoe rank ik voor zonnepanelen in mijn regio?',
+            answer:
+              'Bouw zonnepanelen-installateur- en paneel- + stadspagina’s, stem GBP af op arrayfoto’s en investeringsgedreven categorieën, en groei reviews na installs. Subsidie- en terugverdienbewust zoeken doet ertoe; we framen lokale content rond die intentie zonder besparingscijfers te verzinnen. Concurrentie verschilt per plaats; we beloven niet dat je elke zonfrase tegelijk bezit.'
+          },
+          {
+            question: 'Hoe versla ik vergelijkingssites lokaal?',
+            answer:
+              'Zonnepanelen-vergelijkers en leadmarktplaatsen huren introducties; lokale SEO versterkt jouw eigen Maps-voetafdruk, dienstpagina’s en reviews van huiseigenaren zodat high-intent zoeken op jouw profiel kan starten. Veel bedrijven kopen nog platformleads terwijl organische aanwezigheid groeit — we claimen niet dat Maps elk betaald kanaal overnight vervangt, maar sterkere stadsrelevantie start meestal meer directe high-ticket gesprekken.'
+          },
+          {
+            question: 'Hoe krijg ik meer reviews bij grote klussen?',
+            answer:
+              'Vraag ethisch na dak- of arrayoplevering wanneer het afgeronde werk vers is. Stemmen naast packresultaten tippen high-investment shortlists vaak meer dan een marktplaatsbadge. We zetten gewoontes en antwoordpatronen op — we verzinnen geen reviews en garanderen geen stergemiddelde.'
+          },
+          {
+            question: 'Hoe lang duurt lokale SEO voor dakdekkers & zon?',
+            answer:
+              'Profielhygiëne en reviewgewoontes laten vaak binnen enkele weken actieliften zien; relevantie vasthouden op “dakdekker [stad]” of “zonnepanelen installateur [stad]” tegen platforms vraagt meestal maanden van compounding. Plan voor stormpieken en voorjaars-zoninteresse. Doorlooptijden hangen af van concurrentie en contentklaarheid — zonder rankinggaranties.'
+          },
+          {
+            question: 'Wat is het verschil met een website-traject voor dakdekkers & zon?',
+            answer:
+              'Lokale SEO wint Maps- en stadszoekaandacht voor plaatsen en dak-/zondiensten die je dekt; de website-spoke bouwt garanties, duale aanvraagforms en terugverdienframing die het bezoek converteren. We houden die scopes gescheiden en stemmen ze af zodat een kaarttik landt waar een gedateerde lekkagecall of investeringsofferte kan starten.'
+          },
+          {
+            question: 'Kan ik meerdere plaatsen targeten als service-area business?',
+            answer:
+              'Ja wanneer je ze bedient. Veel dak-en-zonbedrijven dekken een straal, niet één straat. We structureren multi-plaatsvoetafdrukken zodat elk catchment heldere pagina’s en GBP-signalen heeft zonder Maps te verwarren over wie “dakdekker [stad]” of “zonnepanelen installateur [stad]” bezit.'
+          },
+          {
+            question: 'Veranderen weer en seizoenen lokale SEO-prioriteiten?',
+            answer:
+              'Ja. Stormen laten lekkagezoeken pieken; voorjaar tilt vaak zoninteresse. We houden GBP en lokale pagina’s in lijn met weer-gedreven dakschade en investeringsgedreven paneelseizoenen — zonder te beloven dat je elke piek overnight bezit.'
           }
         ]
       }

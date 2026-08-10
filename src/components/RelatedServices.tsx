@@ -364,12 +364,61 @@ const RELATED_BY_KEY: Partial<Record<RouteKey, RouteKey[]>> = {
     'seo-services',
     'conversion-optimization'
   ],
+  'branches-dierenartsen': [
+    'website-design',
+    'local-seo',
+    'paid-advertising',
+    'seo-services',
+    'conversion-optimization'
+  ],
+  'branches-uitzendbureaus': [
+    'website-design',
+    'local-seo',
+    'paid-advertising',
+    'seo-services',
+    'conversion-optimization'
+  ],
+  'branches-uitzendbureaus-website-laten-maken': [
+    'website-design',
+    'local-seo',
+    'paid-advertising',
+    'conversion-optimization',
+    'seo-services'
+  ],
+  'branches-uitzendbureaus-lokale-seo': [
+    'local-seo',
+    'website-design',
+    'paid-advertising',
+    'seo-services',
+    'conversion-optimization'
+  ],
+  'branches-dierenartsen-website-laten-maken': [
+    'website-design',
+    'local-seo',
+    'paid-advertising',
+    'conversion-optimization',
+    'seo-services'
+  ],
+  'branches-dierenartsen-lokale-seo': [
+    'local-seo',
+    'website-design',
+    'paid-advertising',
+    'seo-services',
+    'conversion-optimization'
+  ],
   'branches-dakdekkers-zonnepanelen-website-laten-maken': [
     'website-design',
     'local-seo',
     'paid-advertising',
     'conversion-optimization',
     'seo-services'
+  ],
+  'branches-dakdekkers-zonnepanelen-lokale-seo': [
+    'local-seo',
+    'website-design',
+    'paid-advertising',
+    'seo-services',
+    'conversion-optimization'
   ],
   'branches-hoveniers-website-laten-maken': [
     'website-design',

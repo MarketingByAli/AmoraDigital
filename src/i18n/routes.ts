@@ -111,6 +111,13 @@ export type RouteKey =
   | 'branches-hoveniers-lokale-seo'
   | 'branches-dakdekkers-zonnepanelen'
   | 'branches-dakdekkers-zonnepanelen-website-laten-maken'
+  | 'branches-dakdekkers-zonnepanelen-lokale-seo'
+  | 'branches-dierenartsen'
+  | 'branches-dierenartsen-website-laten-maken'
+  | 'branches-dierenartsen-lokale-seo'
+  | 'branches-uitzendbureaus'
+  | 'branches-uitzendbureaus-website-laten-maken'
+  | 'branches-uitzendbureaus-lokale-seo'
   | 'branches-installateurs-website-laten-maken'
   | 'branches-installateurs-lokale-seo'
   | 'branches-aannemers-website-laten-maken'
@@ -337,9 +344,37 @@ export const ROUTES: Record<RouteKey, Record<Locale, string>> = {
     en: '/industries/roofers-solar',
     nl: '/nl/branches/dakdekkers-zonnepanelen'
   },
+  'branches-dierenartsen': {
+    en: '/industries/veterinary-clinics',
+    nl: '/nl/branches/dierenartsen'
+  },
+  'branches-uitzendbureaus': {
+    en: '/industries/staffing-agencies',
+    nl: '/nl/branches/uitzendbureaus'
+  },
+  'branches-uitzendbureaus-website-laten-maken': {
+    en: '/industries/staffing-agencies/website-design',
+    nl: '/nl/branches/uitzendbureaus/website-laten-maken'
+  },
+  'branches-uitzendbureaus-lokale-seo': {
+    en: '/industries/staffing-agencies/local-seo',
+    nl: '/nl/branches/uitzendbureaus/lokale-seo'
+  },
+  'branches-dierenartsen-website-laten-maken': {
+    en: '/industries/veterinary-clinics/website-design',
+    nl: '/nl/branches/dierenartsen/website-laten-maken'
+  },
+  'branches-dierenartsen-lokale-seo': {
+    en: '/industries/veterinary-clinics/local-seo',
+    nl: '/nl/branches/dierenartsen/lokale-seo'
+  },
   'branches-dakdekkers-zonnepanelen-website-laten-maken': {
     en: '/industries/roofers-solar/website-design',
     nl: '/nl/branches/dakdekkers-zonnepanelen/website-laten-maken'
+  },
+  'branches-dakdekkers-zonnepanelen-lokale-seo': {
+    en: '/industries/roofers-solar/local-seo',
+    nl: '/nl/branches/dakdekkers-zonnepanelen/lokale-seo'
   },
   'branches-installateurs-website-laten-maken': {
     en: '/industries/installers/website-design',

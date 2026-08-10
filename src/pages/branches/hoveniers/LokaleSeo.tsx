@@ -282,7 +282,7 @@ const T = {
       'For businesses outside landscaping we offer broader local SEO. Garden engagements follow the process on this page.',
     ctaHeading: 'Ready to show up before spring garden demand books elsewhere?',
     ctaSub:
-      'Share your towns, aanleg and onderhoud mix, and how clients find you today. We scope GBP, service pages and homeowner reviews with honest timelines — without promising a fixed local-pack place.',
+      'Tell us which towns you plant and maintain, how spring aanleg peaks and winter onderhoud fill your calendar, and whether before/after garden proof is ready for Maps. We plan GBP, seasonal town pages and homeowner review asks with honest timelines — no promised pack slot for “landscaper [town]”.',
     ctaButton: 'Request a quote'
   },
   nl: {
@@ -365,7 +365,7 @@ const T = {
       'Voor bedrijven buiten hovenierswerk bieden we bredere lokale SEO. Tuintrajecten volgen het proces op deze pagina, met focus op stadszoeken, voor/na-tuinfoto’s, seizoenstiming en concurrentie met offerteplatforms.',
     ctaHeading: 'Klaar om zichtbaar te zijn vóór voorjaars-tuinvraag elders boekt?',
     ctaSub:
-      'Deel je plaatsen, aanleg- en onderhoudsmix, en hoe klanten je vandaag vinden. We scopen GBP, dienstpagina’s en reviews van huiseigenaren met eerlijke doorlooptijden — zonder een vaste local-packplek te beloven. Zo weet je wat er nodig is om de perceelagenda te vullen via Maps vóór het plantseizoen.',
+      'Vertel in welke plaatsen je aanlegt en onderhoudt, hoe voorjaarsaanleg en winteronderhoud je agenda vullen, en of voor/na-tuinbewijs klaar is voor Maps. We plannen GBP, seizoensstadspagina’s en reviewvragen aan huiseigenaren met eerlijke doorlooptijden — geen beloofde packplek voor “hovenier [plaats]”.',
     ctaButton: 'Vraag een offerte aan'
   }
 } as const

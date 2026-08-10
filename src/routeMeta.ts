@@ -1088,6 +1088,150 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
       ],
     }
   },
+  'branches-dierenartsen': {
+    en: {
+      title: `Online marketing for veterinary clinics | Amora`,
+      description:
+        'Online marketing for veterinary clinics: websites, local SEO and Google Ads. 1,500+ projects.',
+      keywords: [
+        'online marketing for veterinary clinics',
+        'vet clinic SEO',
+        'veterinary marketing',
+        'dierenarts marketing'
+      ],
+    },
+    nl: {
+      title: `Online marketing voor dierenartsen | Amora`,
+      description:
+        'Online marketing voor dierenartsen: websites, lokale SEO en Google Ads. 1.500+ projecten.',
+      keywords: [
+        'online marketing voor dierenartsen',
+        'SEO dierenarts',
+        'Google Ads dierenarts',
+        'dierenartsenmarketing'
+      ],
+    }
+  },
+  'branches-uitzendbureaus': {
+    en: {
+      title: `Online marketing for staffing agencies | Amora`,
+      description:
+        'Online marketing for staffing agencies: websites, local SEO and Google Ads. 1,500+ projects.',
+      keywords: [
+        'online marketing for staffing agencies',
+        'staffing agency SEO',
+        'recruitment marketing',
+        'uitzendbureau marketing'
+      ],
+    },
+    nl: {
+      title: `Online marketing voor uitzendbureaus | Amora`,
+      description:
+        'Online marketing voor uitzendbureaus: websites, lokale SEO en Google Ads. 1.500+ projecten.',
+      keywords: [
+        'online marketing voor uitzendbureaus',
+        'SEO uitzendbureau',
+        'Google Ads uitzendbureau',
+        'uitzendmarketing'
+      ],
+    }
+  },
+  'branches-uitzendbureaus-website-laten-maken': {
+    en: {
+      title: `Website design for staffing agencies | Amora`,
+      description:
+        'Staffing website with dual doors, vacancy filters, JobPosting SEO and employer hire forms. 1,500+ projects.',
+      keywords: [
+        'website design for staffing agencies',
+        'staffing agency website',
+        'recruitment website design',
+        'uitzendbureau website'
+      ],
+    },
+    nl: {
+      title: `Website laten maken voor uitzendbureaus | Amora`,
+      description:
+        'Uitzendwebsite met duale deuren, vacaturefilters, JobPosting-SEO en opdrachtgeverforms. 1.500+ projecten.',
+      keywords: [
+        'website laten maken voor uitzendbureaus',
+        'website uitzendbureau',
+        'uitzendbureaus website laten maken',
+        'vacaturewebsite uitzendbureau'
+      ],
+    }
+  },
+  'branches-uitzendbureaus-lokale-seo': {
+    en: {
+      title: `Local SEO for staffing agencies | Amora`,
+      description:
+        'Local SEO for staffing: dual candidate/employer intent, GBP per branch, JobPosting. 1,500+ projects.',
+      keywords: [
+        'local SEO for staffing agencies',
+        'staffing agency local SEO',
+        'vacancy SEO staffing',
+        'uitzendbureau lokale SEO'
+      ],
+    },
+    nl: {
+      title: `Lokale SEO voor uitzendbureaus | Amora`,
+      description:
+        'Lokale SEO voor uitzendbureaus: duale kandidaat-/opdrachtgeverintentie, GBP per vestiging, JobPosting. 1.500+ projecten.',
+      keywords: [
+        'lokale SEO voor uitzendbureaus',
+        'SEO uitzendbureau',
+        'vacature SEO uitzendbureau',
+        'Google Bedrijfsprofiel uitzendbureau'
+      ],
+    }
+  },
+  'branches-dierenartsen-website-laten-maken': {
+    en: {
+      title: `Website design for veterinary clinics | Amora`,
+      description:
+        'Vet clinic website with online booking, emergency entry, species paths and warm trust. 1,500+ projects.',
+      keywords: [
+        'website design for veterinary clinics',
+        'vet clinic website',
+        'veterinary website design',
+        'dierenarts website'
+      ],
+    },
+    nl: {
+      title: `Website laten maken voor dierenartsen | Amora`,
+      description:
+        'Dierenartsenwebsite met online afspraken, spoed-ingang, diersoortpaden en warm vertrouwen. 1.500+ projecten.',
+      keywords: [
+        'website laten maken voor dierenartsen',
+        'website dierenarts',
+        'dierenartsen website laten maken',
+        'praktijkwebsite dierenarts'
+      ],
+    }
+  },
+  'branches-dierenartsen-lokale-seo': {
+    en: {
+      title: `Local SEO for veterinary clinics | Amora`,
+      description:
+        'Local SEO for veterinary clinics: vet + town, emergency search, GBP hours and baasje reviews. 1,500+ projects.',
+      keywords: [
+        'local SEO for veterinary clinics',
+        'vet clinic local SEO',
+        'emergency vet SEO',
+        'dierenarts lokale SEO'
+      ],
+    },
+    nl: {
+      title: `Lokale SEO voor dierenartsen | Amora`,
+      description:
+        'Lokale SEO voor dierenartsen: dierenarts + stad, spoedzoeken, GBP-tijden en baasjesreviews. 1.500+ projecten.',
+      keywords: [
+        'lokale SEO voor dierenartsen',
+        'SEO dierenarts',
+        'spoed dierenarts SEO',
+        'Google Bedrijfsprofiel dierenarts'
+      ],
+    }
+  },
   'branches-dakdekkers-zonnepanelen-website-laten-maken': {
     en: {
       title: `Website design for roofers & solar | Amora`,
@@ -1109,6 +1253,30 @@ const META: Record<RouteKey, Record<Locale, RouteMeta>> = {
         'website dakdekker',
         'website zonnepanelen installateur',
         'dak website laten maken'
+      ],
+    }
+  },
+  'branches-dakdekkers-zonnepanelen-lokale-seo': {
+    en: {
+      title: `Local SEO for roofers & solar | Amora`,
+      description:
+        'Local SEO for roofers & solar: town pages, GBP with roof photos, reviews vs platforms. 1,500+ projects.',
+      keywords: [
+        'local SEO for roofers & solar installers',
+        'roofer Google Business Profile',
+        'solar installer local SEO',
+        'dakdekker local SEO'
+      ],
+    },
+    nl: {
+      title: `Lokale SEO voor dakdekkers | Amora`,
+      description:
+        'Lokale SEO voor dakdekkers: stadspagina’s, GBP met dakfoto’s, reviews vs platforms. 1.500+ projecten.',
+      keywords: [
+        'lokale SEO voor dakdekkers',
+        'Google Bedrijfsprofiel dakdekker',
+        'SEO zonnepanelen stad',
+        'dakdekker local pack'
       ],
     }
   },

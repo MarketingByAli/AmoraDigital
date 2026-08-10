@@ -36,7 +36,9 @@ export const LIVE_BRANCH_SPOKES: Readonly<Record<string, readonly string[]>> = {
   fotografen: ['website-laten-maken', 'lokale-seo'],
   rijscholen: ['website-laten-maken', 'lokale-seo'],
   hoveniers: ['website-laten-maken', 'lokale-seo'],
-  'dakdekkers-zonnepanelen': ['website-laten-maken']
+  'dakdekkers-zonnepanelen': ['website-laten-maken', 'lokale-seo'],
+  dierenartsen: ['website-laten-maken', 'lokale-seo'],
+  uitzendbureaus: ['website-laten-maken', 'lokale-seo']
 }
 
 /**
@@ -173,14 +175,32 @@ export const BRANCH_SPOKE_ROUTE_KEYS: Readonly<
     'google-ads': 'branches-hoveniers-google-ads' as RouteKey
   },
   /**
-   * Website is live in ROUTES. lokale-seo + google-ads remain cast until those
-   * pages ship — muted cards stay link-safe. Third spoke is google-ads
+   * Website + lokale-seo are live in ROUTES. google-ads remains cast until that
+   * page ships — muted card stays link-safe. Third spoke is google-ads
    * (high-ticket / seasonal intent), not social-media.
    */
   'dakdekkers-zonnepanelen': {
     'website-laten-maken': 'branches-dakdekkers-zonnepanelen-website-laten-maken',
-    'lokale-seo': 'branches-dakdekkers-zonnepanelen-lokale-seo' as RouteKey,
+    'lokale-seo': 'branches-dakdekkers-zonnepanelen-lokale-seo',
     'google-ads': 'branches-dakdekkers-zonnepanelen-google-ads' as RouteKey
+  },
+  /**
+   * Website + lokale-seo are live in ROUTES. google-ads remains cast until
+   * that page ships — muted card stays link-safe.
+   */
+  dierenartsen: {
+    'website-laten-maken': 'branches-dierenartsen-website-laten-maken',
+    'lokale-seo': 'branches-dierenartsen-lokale-seo',
+    'google-ads': 'branches-dierenartsen-google-ads' as RouteKey
+  },
+  /**
+   * Website + lokale-seo are live in ROUTES. google-ads remains cast until
+   * that page ships — muted card stays link-safe.
+   */
+  uitzendbureaus: {
+    'website-laten-maken': 'branches-uitzendbureaus-website-laten-maken',
+    'lokale-seo': 'branches-uitzendbureaus-lokale-seo',
+    'google-ads': 'branches-uitzendbureaus-google-ads' as RouteKey
   }
 }
 
@@ -857,6 +877,76 @@ export const BRANCH_SPOKES: Record<string, readonly BranchSpoke[]> = {
       benefit: {
         en: 'Campaigns around roof repair, new roofs, solar install and subsidy-driven intent so high-value quotes reach you before storm or investment demand goes elsewhere.',
         nl: 'Campagnes rond dakreparatie, nieuw dak, zonnepanelen-installatie en subsidiegedreven intentie, zodat high-value offertes je bereiken vóór storm- of investeringsvraag elders landt.'
+      }
+    }
+  ],
+  dierenartsen: [
+    {
+      slug: 'website-laten-maken',
+      name: {
+        en: 'Website design for veterinary clinics',
+        nl: 'Website laten maken voor dierenartsen'
+      },
+      benefit: {
+        en: 'A calm, trust-led clinic site with species paths, emergency entry, online booking and repeat-prescription clarity so anxious pet owners choose you before they drive to another practice.',
+        nl: 'Een kalme, vertrouwensgerichte praktijksite met diersoortpaden, spoedingang, online afspraken en helderheid over herhaalrecepten, zodat gestreste baasjes jou kiezen vóór ze naar een andere praktijk rijden.'
+      }
+    },
+    {
+      slug: 'lokale-seo',
+      name: {
+        en: 'Local SEO for veterinary clinics',
+        nl: 'Lokale SEO voor dierenartsen'
+      },
+      benefit: {
+        en: 'Findability for “vet [town]” and urgent “emergency vet [town]” searches — reviews, hours, species and catchment tuned so nearby owners see you when care cannot wait.',
+        nl: 'Vindbaarheid op “dierenarts [plaats]” en urgente “spoed dierenarts [plaats]”-zoeken — reviews, openingstijden, diersoorten en werkgebied afgestemd zodat baasjes in de buurt je zien wanneer zorg niet kan wachten.'
+      }
+    },
+    {
+      slug: 'google-ads',
+      name: {
+        en: 'Google Ads for veterinary clinics',
+        nl: 'Google Ads voor dierenartsen'
+      },
+      benefit: {
+        en: 'Campaigns on new-owner and emergency intent so first visits and urgent calls reach your desk before a neighbouring clinic captures the booking.',
+        nl: 'Campagnes op nieuwe-baasjes- en spoedintentie, zodat eerste bezoeken en urgente belletjes jouw balie bereiken vóór een buurtpraktijk de boeking pakt.'
+      }
+    }
+  ],
+  uitzendbureaus: [
+    {
+      slug: 'website-laten-maken',
+      name: {
+        en: 'Website design for staffing agencies',
+        nl: 'Website laten maken voor uitzendbureaus'
+      },
+      benefit: {
+        en: 'A two-sided site with filtered vacancies, fast mobile apply, JobPosting-ready structure and clear employer hire paths — so candidates and client companies each find their door without confusion.',
+        nl: 'Een tweezijdige site met gefilterde vacatures, snelle mobiele sollicitatie, JobPosting-klare structuur en heldere opdrachtgever-inhuurpaden — zodat kandidaten en bedrijven elk hun deur vinden zonder verwarring.'
+      }
+    },
+    {
+      slug: 'lokale-seo',
+      name: {
+        en: 'Local SEO for staffing agencies',
+        nl: 'Lokale SEO voor uitzendbureaus'
+      },
+      benefit: {
+        en: 'Findability for “staffing agency [town]”, “vacancies [sector] [town]” and “hire staff [sector]” — so both job seekers and employers discover you in the regions you cover.',
+        nl: 'Vindbaarheid op “uitzendbureau [plaats]”, “vacatures [sector] [plaats]” en “personeel inhuren [sector]” — zodat zowel werkzoekenden als opdrachtgevers je ontdekken in de regio’s die je dekt.'
+      }
+    },
+    {
+      slug: 'google-ads',
+      name: {
+        en: 'Google Ads for staffing agencies',
+        nl: 'Google Ads voor uitzendbureaus'
+      },
+      benefit: {
+        en: 'Campaigns split for candidate vacancy intent and employer hire intent — so applications and B2B briefs hit the right desk before a rival bureau captures the placement.',
+        nl: 'Campagnes gesplitst voor kandidaat-vacatureintentie en opdrachtgever-inhuurintentie — zodat sollicitaties en B2B-briefs de juiste desk bereiken vóór een concurrent de plaatsing pakt.'
       }
     }
   ]

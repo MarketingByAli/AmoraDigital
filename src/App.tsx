@@ -90,8 +90,25 @@ const BranchesHoveniersLokaleSeo = lazy(
 const BranchesDakdekkersZonnepanelen = lazy(
   () => import('./pages/branches/DakdekkersZonnepanelen')
 )
+const BranchesDierenartsen = lazy(() => import('./pages/branches/Dierenartsen'))
+const BranchesUitzendbureaus = lazy(() => import('./pages/branches/Uitzendbureaus'))
+const BranchesUitzendbureausWebsiteLatenMaken = lazy(
+  () => import('./pages/branches/uitzendbureaus/WebsiteLatenMaken')
+)
+const BranchesUitzendbureausLokaleSeo = lazy(
+  () => import('./pages/branches/uitzendbureaus/LokaleSeo')
+)
+const BranchesDierenartsenWebsiteLatenMaken = lazy(
+  () => import('./pages/branches/dierenartsen/WebsiteLatenMaken')
+)
+const BranchesDierenartsenLokaleSeo = lazy(
+  () => import('./pages/branches/dierenartsen/LokaleSeo')
+)
 const BranchesDakdekkersZonnepanelenWebsiteLatenMaken = lazy(
   () => import('./pages/branches/dakdekkers-zonnepanelen/WebsiteLatenMaken')
+)
+const BranchesDakdekkersZonnepanelenLokaleSeo = lazy(
+  () => import('./pages/branches/dakdekkers-zonnepanelen/LokaleSeo')
 )
 const BranchesSchoonmaakbedrijvenWebsiteLatenMaken = lazy(
   () => import('./pages/branches/schoonmaakbedrijven/WebsiteLatenMaken')
@@ -350,8 +367,36 @@ function App() {
                 element={<BranchesDakdekkersZonnepanelen />}
               />
               <Route
+                path={ROUTES['branches-dierenartsen'].en}
+                element={<BranchesDierenartsen />}
+              />
+              <Route
+                path={ROUTES['branches-uitzendbureaus'].en}
+                element={<BranchesUitzendbureaus />}
+              />
+              <Route
+                path={ROUTES['branches-uitzendbureaus-website-laten-maken'].en}
+                element={<BranchesUitzendbureausWebsiteLatenMaken />}
+              />
+              <Route
+                path={ROUTES['branches-uitzendbureaus-lokale-seo'].en}
+                element={<BranchesUitzendbureausLokaleSeo />}
+              />
+              <Route
+                path={ROUTES['branches-dierenartsen-website-laten-maken'].en}
+                element={<BranchesDierenartsenWebsiteLatenMaken />}
+              />
+              <Route
+                path={ROUTES['branches-dierenartsen-lokale-seo'].en}
+                element={<BranchesDierenartsenLokaleSeo />}
+              />
+              <Route
                 path={ROUTES['branches-dakdekkers-zonnepanelen-website-laten-maken'].en}
                 element={<BranchesDakdekkersZonnepanelenWebsiteLatenMaken />}
+              />
+              <Route
+                path={ROUTES['branches-dakdekkers-zonnepanelen-lokale-seo'].en}
+                element={<BranchesDakdekkersZonnepanelenLokaleSeo />}
               />
               <Route
                 path={ROUTES['branches-schoonmaakbedrijven-website-laten-maken'].en}
@@ -585,8 +630,36 @@ function App() {
                 element={<BranchesDakdekkersZonnepanelen />}
               />
               <Route
+                path={ROUTES['branches-dierenartsen'].nl}
+                element={<BranchesDierenartsen />}
+              />
+              <Route
+                path={ROUTES['branches-uitzendbureaus'].nl}
+                element={<BranchesUitzendbureaus />}
+              />
+              <Route
+                path={ROUTES['branches-uitzendbureaus-website-laten-maken'].nl}
+                element={<BranchesUitzendbureausWebsiteLatenMaken />}
+              />
+              <Route
+                path={ROUTES['branches-uitzendbureaus-lokale-seo'].nl}
+                element={<BranchesUitzendbureausLokaleSeo />}
+              />
+              <Route
+                path={ROUTES['branches-dierenartsen-website-laten-maken'].nl}
+                element={<BranchesDierenartsenWebsiteLatenMaken />}
+              />
+              <Route
+                path={ROUTES['branches-dierenartsen-lokale-seo'].nl}
+                element={<BranchesDierenartsenLokaleSeo />}
+              />
+              <Route
                 path={ROUTES['branches-dakdekkers-zonnepanelen-website-laten-maken'].nl}
                 element={<BranchesDakdekkersZonnepanelenWebsiteLatenMaken />}
+              />
+              <Route
+                path={ROUTES['branches-dakdekkers-zonnepanelen-lokale-seo'].nl}
+                element={<BranchesDakdekkersZonnepanelenLokaleSeo />}
               />
               <Route
                 path={ROUTES['branches-schoonmaakbedrijven-website-laten-maken'].nl}

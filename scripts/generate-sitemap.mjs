@@ -85,6 +85,13 @@ const PAGE_META = [
   { key: 'branches-hoveniers-lokale-seo', changefreq: 'weekly', priority: '0.8' },
   { key: 'branches-dakdekkers-zonnepanelen', changefreq: 'weekly', priority: '0.85' },
   { key: 'branches-dakdekkers-zonnepanelen-website-laten-maken', changefreq: 'weekly', priority: '0.8' },
+  { key: 'branches-dakdekkers-zonnepanelen-lokale-seo', changefreq: 'weekly', priority: '0.8' },
+  { key: 'branches-dierenartsen', changefreq: 'weekly', priority: '0.85' },
+  { key: 'branches-dierenartsen-website-laten-maken', changefreq: 'weekly', priority: '0.8' },
+  { key: 'branches-dierenartsen-lokale-seo', changefreq: 'weekly', priority: '0.8' },
+  { key: 'branches-uitzendbureaus', changefreq: 'weekly', priority: '0.85' },
+  { key: 'branches-uitzendbureaus-website-laten-maken', changefreq: 'weekly', priority: '0.8' },
+  { key: 'branches-uitzendbureaus-lokale-seo', changefreq: 'weekly', priority: '0.8' },
 
   { key: 'branches-schoonmaakbedrijven-website-laten-maken', changefreq: 'weekly', priority: '0.8' },
   { key: 'branches-schoonmaakbedrijven-lokale-seo', changefreq: 'weekly', priority: '0.8' },

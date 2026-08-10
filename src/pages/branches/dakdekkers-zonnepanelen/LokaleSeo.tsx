@@ -1,0 +1,602 @@
+import { Link, useLocation } from 'react-router-dom'
+import {
+  ArrowRight,
+  Calculator,
+  CheckCircle2,
+  CloudLightning,
+  Images,
+  MapPin,
+  MapPinned,
+  Search,
+  Sparkles,
+  Star,
+  Sun,
+  Zap
+} from 'lucide-react'
+import { ROUTES, localeFromPath, type Locale } from '../../../i18n/routes'
+import { BRANCH_SPOKES } from '../../../data/branchSpokes'
+import BranchSpokeCard from '../../../components/BranchSpokeCard'
+
+const FEATURE_ICONS = [
+  Search,
+  CloudLightning,
+  Zap,
+  Calculator,
+  MapPinned,
+  Images,
+  Star,
+  MapPin
+] as const
+
+const FEATURES = [
+  {
+    en: {
+      title: 'Keywords for leaks and high-ticket installs',
+      description:
+        'We target “roofer [town]”, “solar panels [town]”, “urgent roof leak [region]” and “solar installer [town]” — phrases homeowners type when water hits the loft or when they compare panel investments, not a plumber call-out.'
+    },
+    nl: {
+      title: 'Zoekwoorden voor lekkages en high-ticket installs',
+      description:
+        'We mikken op “dakdekker [stad]”, “zonnepanelen [stad]”, “daklekkage spoed [regio]” en “zonnepanelen installateur [stad]” — frasen die huiseigenaren typen wanneer water op zolder staat of wanneer ze paneelinvesteringen vergelijken, geen loodgieter-spoed of keukenverbouwzoeken.'
+    }
+  },
+  {
+    en: {
+      title: 'Urgent intent beside investment intent',
+      description:
+        'Storm leaks need fast pack visibility; new roofs and verduurzaming need trust-led discovery. We plan keyword and page coverage for both tempos so emergency demand and planned solar spend each find you organically.'
+    },
+    nl: {
+      title: 'Urgente intentie naast investeringsintentie',
+      description:
+        'Stormlekkages en actieve schade vragen snelle packzichtbaarheid; nieuwe daken en verduurzaming vragen vertrouwensgedreven ontdekking. We plannen zoekwoord- en paginadekking voor beide tempo’s zodat spoedvraag én geplande zonuitgaven je organisch vinden.'
+    }
+  },
+  {
+    en: {
+      title: 'Subsidy and savings search for solar',
+      description:
+        'Panel search is payback- and subsidy-aware. We align local pages and GBP posts with return framing and regional solar installer intent — without inventing savings figures you cannot stand behind.'
+    },
+    nl: {
+      title: 'Subsidie- en besparingszoeken voor zon',
+      description:
+        'Paneelzoeken is terugverdien- en subsidiebewust. We stemmen lokale pagina’s en GBP-posts af op terugverdienframing en regionale zonnepanelen-installateurintentie — zonder besparingscijfers te verzinnen die je niet kunt verantwoorden.'
+    }
+  },
+  {
+    en: {
+      title: 'Service and town pages per daktype and solar offer',
+      description:
+        'Pages for new roofs, renovations, leak repair, insulation and solar install or expansion per town in your radius — so Maps and organic clicks land on the envelope job someone searched, not a vague “energy services” homepage.'
+    },
+    nl: {
+      title: 'Dienst- en stadspagina’s per daktype en zonaanbod',
+      description:
+        'Pagina’s voor nieuw dak, renovatie, lekkagereparatie, isolatie en zoninstallatie of uitbreiding per plaats in jouw straal — zodat Maps- en organische klikken op de omhullingsklus landen die iemand zocht, geen vage “energiediensten”-homepage.'
+    }
+  },
+  {
+    en: {
+      title: 'GBP with roof and array photos plus warranty signals',
+      description:
+        'Google Business Profile as a service-area dak-and-zon footprint — stocked with finished roofs and installs, categories and actions toward quote or call — so the local pack shows craft and guarantees, not an empty shop pin.'
+    },
+    nl: {
+      title: 'GBP met dak- en arrayfoto’s plus garantiesignalen',
+      description:
+        'Google Bedrijfsprofiel als service-area dak-en-zonvoetafdruk — gevuld met afgeronde daken en installs, categorieën en acties naar offerte of bel — zodat de local pack ambacht en garanties toont, geen lege winkelpin.'
+    }
+  },
+  {
+    en: {
+      title: 'Reviews that tip large investment shortlists',
+      description:
+        'Ethical ask habits after roof or array handover — homeowner voices next to pack results often decide who gets the cheque when two high-ticket quotes sit side by side with a comparison-site badge.'
+    },
+    nl: {
+      title: 'Reviews die grote investerings-shortlists tippen',
+      description:
+        'Ethische vraaggewoontes na dak- of arrayoplevering — stemmen van huiseigenaren naast packresultaten beslissen vaak wie de cheque krijgt wanneer twee high-ticket offertes naast een vergelijkingssite-badge staan.'
+    }
+  },
+  {
+    en: {
+      title: 'Weather and season peaks built in',
+      description:
+        'Storms spike leak search; spring often lifts solar interest. We keep GBP and local content aligned with weather-driven dakschade and investment-led panel seasons — without promising you will own every spike overnight.'
+    },
+    nl: {
+      title: 'Weer- en seizoenspieken ingebouwd',
+      description:
+        'Stormen laten lekkagezoeken pieken; voorjaar tilt vaak zoninteresse. We houden GBP en lokale content in lijn met weer-gedreven dakschade en investeringsgedreven paneelseizoenen — zonder te beloven dat je elke piek overnight bezit.'
+    }
+  },
+  {
+    en: {
+      title: 'Organic share versus quote and comparison platforms',
+      description:
+        'Solar comparators and lead marketplaces rent introductions. Local SEO aims at the pack for your town and dak/zon phrases — so high-value requests start on Maps and service pages, not only on a per-lead listing.'
+    },
+    nl: {
+      title: 'Organisch aandeel versus offerte- en vergelijkingsplatforms',
+      description:
+        'Zonnepanelen-vergelijkers en leadmarktplaatsen huren introducties. Lokale SEO mikt op de pack voor jouw plaats- en dak/zonfrases — zodat high-value aanvragen op Maps en dienstpagina’s starten, niet alleen op een per-lead listing.'
+    }
+  }
+] as const
+
+const PROCESS_STEPS = [
+  {
+    en: {
+      step: '01',
+      title: 'Roof and solar visibility audit',
+      description:
+        'We check how you appear for “roofer [town]”, leak, new-roof and solar installer queries, the local pack against nearby firms and comparison-platform ads, and GBP project photos, warranty signals, reviews and citations — separate from quote-form UX on the website spoke.'
+    },
+    nl: {
+      step: '01',
+      title: 'Dak- en zonvindbaarheidsaudit',
+      description:
+        'We checken hoe je verschijnt op “dakdekker [stad]”, lekkage-, nieuw-dak- en zonnepanelen-installateurqueries, de local pack tegen nabije bedrijven en vergelijkingsplatform-ads, en GBP-projectfoto’s, garantiesignalen, reviews en citation-consistentie — los van offerteform-UX op de website-spoke.'
+    }
+  },
+  {
+    en: {
+      step: '02',
+      title: 'GBP and dual-intent keyword set',
+      description:
+        'We configure Google Business Profile for a dak-and-zon service-area footprint with roof and array imagery, then lock urgent leak and investment-led solar + town keyword sets for services and places you cover.'
+    },
+    nl: {
+      step: '02',
+      title: 'GBP en dual-intent zoekwoordenset',
+      description:
+        'We richten Google Bedrijfsprofiel in voor een dak-en-zon service-area-voetafdruk met dak- en arraybeelden, en zetten urgente lekkage- en investeringsgedreven zon- + stadszoekwoordensets vast voor diensten en plaatsen die je écht dekt.'
+    }
+  },
+  {
+    en: {
+      step: '03',
+      title: 'Service and town page plan',
+      description:
+        'We plan daktype and solar service pages as local SEO assets — distinct from portfolio storytelling and investment forms on the website spoke, but aligned so pack and organic taps land where a dated leak call or solar quote can start.'
+    },
+    nl: {
+      step: '03',
+      title: 'Dienst- en stadspaginaplan',
+      description:
+        'We plannen daktype- en zondienstpagina’s als lokale SEO-assets — los van portfolioverhalen en investeringsforms op de website-spoke, maar afgestemd zodat pack- en organische taps landen waar een gedateerde lekkagecall of zonofferte kan starten.'
+    }
+  },
+  {
+    en: {
+      step: '04',
+      title: 'Reviews, citations and platform pressure',
+      description:
+        'We launch review habits after high-ticket handover, strengthen multi-town citation signals, and track how organic pack presence reduces dependence on solar comparators and lead platforms across storm and spring seasons.'
+    },
+    nl: {
+      step: '04',
+      title: 'Reviews, citations en platformdruk',
+      description:
+        'We starten reviewgewoontes na high-ticket oplevering, versterken multi-plaats citation-signalen, en volgen hoe organische packaanwezigheid afhankelijkheid van zonnepanelen-vergelijkers en leadplatforms over storm- en voorjaarsseizoenen vermindert.'
+    }
+  },
+  {
+    en: {
+      step: '05',
+      title: 'Measure high-value requests, not vanity ranks',
+      description:
+        'Monthly reporting on map views, profile actions, service-page landings and shifts on roofer, leak and solar + town keywords — read as progress toward dated leak calls and investment quotes, without promising a permanent local-pack place.'
+    },
+    nl: {
+      step: '05',
+      title: 'Meet high-value aanvragen, geen vanity-ranks',
+      description:
+        'Maandelijkse rapportage over kaartweergaven, profielacties, dienstpagina-landings en verschuivingen op dakdekker-, lekkage- en zon- + stadszoekwoorden — gelezen als voortgang naar gedateerde lekkagecalls en investeringsoffertes, zonder een vaste local-packplek te beloven.'
+    }
+  }
+] as const
+
+const SIBLING_SLUGS = ['website-laten-maken', 'google-ads'] as const
+
+const T = {
+  en: {
+    crumbHome: 'Home',
+    crumbBranches: 'Industries',
+    crumbHub: 'Roofers & solar',
+    crumbCurrent: 'Local SEO',
+    badge: 'Roofing & solar local SEO',
+    h1: 'Local SEO for roofers & solar installers',
+    heroSub:
+      'Get found when homeowners search “roofer [town]”, “solar panels [town]”, “urgent roof leak [region]” or “solar installer [town]” — with service and town pages per daktype and solar offer, Google Business Profile stocked with roof and array photos plus warranty signals, reviews that tip large investment shortlists, multi-town catchment, subsidy-aware solar search, weather peaks, and organic discovery that competes with comparison platforms for the local pack. With 1,500+ completed projects, we know how dak-and-zon firms earn map trust before storms and subsidy windows send demand elsewhere.',
+    trust: '1,500+ completed projects',
+    ctaPrimary: 'Request a quote',
+    problemBadge: 'The real cost',
+    problemHead: 'Invisible in local search means losing high-value roof and solar jobs',
+    problemP1:
+      'Whether it is an urgent leak or a planned solar investment, homeowners search locally and trust the visible, well-reviewed installers first. If you are invisible in local search, you lose high-value jobs to nearby competitors — and keep paying lead-selling platforms while organic pack results fill someone else’s calendar.',
+    problemP2:
+      'Roofing and solar local search runs two tempos at once: storm and leak urgency beside investment-led new roofs and verduurzaming — not a broad plumber boiler pack and not a contractor kitchen renovation map race. Miss service and town pages, GBP project photos, warranty signals, reviews and subsidy-aware solar coverage, and weather spikes land on firms that simply look more findable.',
+    problemP3:
+      'A clear website converts the visit; local SEO decides who appears when someone types “roofer [town]” or “solar installer [town]” before they open a comparator. Without organic pack presence you keep renting introductions while the firm with sharper roof photos and fresher reviews owns the free discovery layer that starts dated leak calls and investment quotes. Capture both urgent storm demand and planned solar spend.',
+    featuresBadge: 'What we do',
+    featuresHead: 'What is included in local SEO for roofers & solar installers',
+    featuresSub:
+      'Every deliverable serves homeowners searching dakwerk or solar by town — GBP with project photos and warranty signals, service and town pages, urgent and investment keywords, subsidy-aware solar search, review growth, catchment signals, citations and organic share versus platforms — not a website redesign and not a general installer checklist.',
+    processBadge: 'How we work',
+    processHead: 'How a roofing & solar local SEO engagement runs',
+    processSub:
+      'From auditing how you appear for leak, roof and solar queries in the local pack, to measuring actions that become dated emergency calls and investment quotes — including weather peaks and platform pressure.',
+    whyBadge: 'Why Amora Digital',
+    whyHead: 'Why roofers and solar installers trust us with local-pack findability',
+    whySub:
+      'Dak-and-zon-aware local SEO that treats dual tempos, high-ticket reviews and comparison-platform competition as the product — not boiler emergencies or kitchen renovations.',
+    whyItems: [
+      {
+        title: 'Pack work tuned for leak and solar intent',
+        desc: 'We optimise for roofer, leak, new-roof and solar installer + town phrases — the queries that start high-value jobs after storms and during investment seasons.'
+      },
+      {
+        title: 'GBP that shows roofs, arrays and trust',
+        desc: 'Profiles carry finished project photos, categories and quote or call actions — craft and warranty context without inventing jobs you did not finish.'
+      },
+      {
+        title: 'Reviews that beat comparator badges',
+        desc: 'Homeowner voices after large installs sit next to pack results — often the factor that wins when two firms appear beside a lead-marketplace ad.'
+      },
+      {
+        title: 'One partner from Maps to quote',
+        desc: 'Local SEO for findability first; dak-and-zon website and Google Ads when conversion or paid seasonal intent needs a push — one team that already knows your towns and services.'
+      }
+    ],
+    costsBadge: 'Timeframe & expectations',
+    costsHead: 'What to expect from local SEO for roofers & solar installers',
+    costsIntro:
+      'Roofing and solar local SEO is ongoing GBP work, service and town pages, local keywords, citations, catchment signals and review growth after high-ticket handover. Profile action lifts often appear within weeks; holding relevance for “roofer [town]” or “solar installer [town]” against comparison platforms usually needs months of compounding. We plan for both urgent storm/leak demand and planned verduurzaming — without ranking guarantees.',
+    costsItems: [
+      {
+        title: 'Foundation (one radius catchment)',
+        desc: 'GBP overhaul with roof and array photos, citation cleanup, review process after handover, and a roofer / leak / solar + town keyword set. Ideal when Maps underplays your firm or still looks like a shop pin.'
+      },
+      {
+        title: 'Growth (competitive towns and seasons)',
+        desc: 'Ongoing monthly optimisation: daktype and solar page support, review replies, competitor monitoring against platforms, reporting on actions that lead to dated leak calls and investment quotes — timed toward storm seasons and spring solar interest.'
+      },
+      {
+        title: 'Multi-town or dual-offer firms',
+        desc: 'When you cover several towns or sell both heavy dakwerk and solar systems, we structure locations and pages so each catchment competes cleanly without confusing Maps about which footprint owns “roofer [town]” or “solar installer [town]”.'
+      }
+    ],
+    costsNote:
+      'Scope depends on how many towns and dak/zon services you cover and how crowded local platform results are. Request a roofing and solar local-SEO quote — we outline GBP setup, dual-intent keywords, catchment signals and review cadence with honest timelines, without ranking guarantees. Bring your towns and busiest services.',
+    siblingsBadge: 'Also for roofers & solar',
+    siblingsHead: 'Pair local SEO with a clear quote site and Google Ads',
+    siblingsSub:
+      'Maps and service pages put you on the shortlist; the website converts that glance into a leak call or investment quote, and Google Ads can capture high-intent seasonal searches later. These services complete the silo.',
+    siblingsCta: 'View service',
+    hubLink: 'Back to roofing & solar marketing',
+    supportLinkLabel: 'Also see our general local SEO service',
+    supportLinkNote:
+      'For businesses outside roofing and solar we offer broader local SEO. Dak-and-zon engagements follow the process on this page.',
+    ctaHeading: 'Ready to show up for the next leak search and the next solar shortlist?',
+    ctaSub:
+      'Share which towns you cover for dakwerk and solar, how storm-leak calls versus subsidy-framed panel enquiries arrive, and which warranties or return stories you can show. We plan GBP, dual-intent town pages and post-install review asks with honest timelines — no promised pack slot for “roofer [town]” or “solar installer [town]”.',
+    ctaButton: 'Request a quote'
+  },
+  nl: {
+    crumbHome: 'Home',
+    crumbBranches: 'Branches',
+    crumbHub: 'Dakdekkers & zonnepanelen',
+    crumbCurrent: 'Lokale SEO',
+    badge: 'Lokale SEO voor dakdekkers & zon',
+    h1: 'Lokale SEO voor dakdekkers',
+    heroSub:
+      'Word gevonden wanneer huiseigenaren “dakdekker [stad]”, “zonnepanelen [stad]”, “daklekkage spoed [regio]” of “zonnepanelen installateur [stad]” zoeken — met dienst- en stadspagina’s per daktype en zonaanbod, Google Bedrijfsprofiel gevuld met dak- en arrayfoto’s plus garantiesignalen, reviews die grote investerings-shortlists tippen, multi-plaats catchment, subsidiebewust zonnezoeken, weer- en seizoenspieken, en organische ontdekking die concurreert met vergelijkings- en leadplatforms om de local pack. Met 1.500+ afgeronde projecten weten we hoe dak-en-zonbedrijven kaartvertrouwen verdienen vóór stormen en subsidievensters vraag elders sturen.',
+    trust: '1.500+ afgeronde projecten',
+    ctaPrimary: 'Vraag een offerte aan',
+    problemBadge: 'De echte kosten',
+    problemHead: 'Onzichtbaar in lokaal zoeken betekent high-value dak- en zonklussen missen',
+    problemP1:
+      'Of het nu een urgente lekkage is of een geplande zoninvestering: huiseigenaren zoeken lokaal en vertrouwen eerst de zichtbare, goed gereviewde installateurs. Ben je onzichtbaar in lokaal zoeken, dan verlies je high-value klussen aan nabije concurrenten — en blijf je leadplatforms betalen terwijl organische packresultaten de agenda van een ander vullen.',
+    problemP2:
+      'Lokaal dak- en zonzoeken draait twee tempo’s tegelijk: storm- en lekkage-urgentie naast investeringsgedreven nieuwe daken en verduurzaming — geen breed loodgieter-cv-pack en geen aannemers-keukenrenovatie-kaartpack. Mis je dienst- en stadspagina’s, GBP-projectfoto’s, garantiesignalen, zware reviews en subsidiebewuste zondekking, dan optimaliseer je voor de verkeerde geografie terwijl weerpieken en voorjaars-paneelinteresse landen bij bedrijven die simpelweg vindbaarder ogen.',
+    problemP3:
+      'Een heldere website converteert het bezoek; lokale SEO beslist wie verschijnt wanneer iemand “dakdekker [stad]” of “zonnepanelen installateur [stad]” typt vóór een vergelijker opent. Zonder organische packaanwezigheid blijf je introducties huren terwijl het bedrijf met scherpere dakfoto’s en frissere reviews van huiseigenaren de gratis ontdekkingslaag bezit die gedateerde lekkagecalls en investeringsoffertes start. Vang zowel urgente stormvraag als geplande zonuitgaven — packpositie bepaalt vaak het volume.',
+    featuresBadge: 'Wat we doen',
+    featuresHead: 'Wat zit er in lokale SEO voor dakdekkers & zonnepanelen',
+    featuresSub:
+      'Elke deliverable dient huiseigenaren die dakwerk of zon zoeken op plaats — GBP met projectfoto’s en garantiesignalen, dienst- en stadspagina’s, urgente en investeringszoekwoorden, subsidiebewust zonnezoeken, reviewgroei, catchment-signalen, citations en organisch aandeel versus platforms — geen websiteredesign en geen algemene installateurschecklist met een paneel erin geplakt. We bouwen vindbaarheid voor spoed én investeringsshortlists, niet voor een generieke “bedrijf bij mij”-template.',
+    processBadge: 'Hoe we werken',
+    processHead: 'Hoe een lokaal SEO-traject voor dakdekkers & zon verloopt',
+    processSub:
+      'Van een audit van hoe je verschijnt op lekkage-, dak- en zonqueries in de local pack, tot meten van acties die gedateerde spoedcalls en investeringsoffertes worden — inclusief weerpieken en druk van vergelijkingsplatforms.',
+    whyBadge: 'Waarom Amora Digital',
+    whyHead: 'Waarom dakdekkers en zon-installateurs hun local-packvindbaarheid aan ons toevertrouwen',
+    whySub:
+      'Dak-en-zonbewuste lokale SEO die duale tempo’s, high-ticket reviews en concurrentie met vergelijkingsplatforms als product behandelt — geen cv-spoed of keukenrenovaties. We kennen het verschil tussen een stormlek vangen en een terugverdien-shortlist winnen.',
+    whyItems: [
+      {
+        title: 'Packwerk afgestemd op lekkage- en zonintentie',
+        desc: 'We optimaliseren voor dakdekker-, lekkage-, nieuw-dak- en zonnepanelen-installateur- + stadsfrasen — de queries die high-value klussen starten na stormen en tijdens investeringsseizoenen, niet voor een generieke retailcategorie.'
+      },
+      {
+        title: 'GBP dat daken, arrays en vertrouwen toont',
+        desc: 'Profielen dragen afgeronde projectfoto’s, categorieën en offerte- of belacties — ambacht- en garantiecontext zonder klussen te verzinnen die je niet hebt opgeleverd, zodat huiseigenaren craft zien vóór ze bellen.'
+      },
+      {
+        title: 'Reviews die vergelijker-badges verslaan',
+        desc: 'Stemmen van huiseigenaren na grote installs staan naast packresultaten — vaak de factor die wint wanneer twee bedrijven naast een leadmarktplaats-ad verschijnen in de top van de shortlist.'
+      },
+      {
+        title: 'Eén partner van Maps tot offerte',
+        desc: 'Eerst lokale SEO voor vindbaarheid; dak-en-zonsite en Google Ads wanneer conversie of betaalde seizoensintentie een duwtje nodig heeft — één team dat jouw plaatsen, daktypes en zonaanbod al kent.'
+      }
+    ],
+    costsBadge: 'Doorlooptijd & verwachtingen',
+    costsHead: 'Wat je mag verwachten van lokale SEO voor dakdekkers & zonnepanelen',
+    costsIntro:
+      'Lokale SEO voor dakdekkers en zon is doorlopend GBP-werk, dienst- en stadspagina’s, lokale zoekwoorden, citations, catchment-signalen en reviewgroei na high-ticket oplevering. Profielacties stijgen vaak binnen enkele weken; relevantie vasthouden op “dakdekker [stad]” of “zonnepanelen installateur [stad]” tegen vergelijkingsplatforms vraagt meestal maanden van compounding. We plannen voor zowel urgente storm-/lekkagevraag als geplande verduurzaming — zonder rankinggaranties. We delen realistische aanvraagtrends voor spoed en investering, geen vaste packplaats.',
+    costsItems: [
+      {
+        title: 'Foundation (één straal-catchment)',
+        desc: 'GBP-overhaul met dak- en arrayfoto’s, citation-opschoning, reviewproces na oplevering, en een dakdekker-/lekkage-/zon- + stadszoekwoordenset. Ideaal wanneer Maps je bedrijf onderschat of nog oogt als winkelpin terwijl je daken en arrays in de regio doet.'
+      },
+      {
+        title: 'Growth (concurrerende plaatsen en seizoenen)',
+        desc: 'Doorlopende maandelijkse optimalisatie: steun voor daktype- en zonpagina’s, reviewantwoorden, concurrentiemonitoring tegen platforms, rapportage op acties die tot gedateerde lekkagecalls en investeringsoffertes leiden — getimed op stormseizoenen en voorjaars-zoninteresse.'
+      },
+      {
+        title: 'Multi-plaats of dual-offer bedrijven',
+        desc: 'Bij meerdere plaatsen of zowel zwaar dakwerk als zonsystemen structureren we locaties en pagina’s zodat elk catchment schoon concurreert zonder Maps te verwarren over wie “dakdekker [stad]” of “zonnepanelen installateur [stad]” bezit.'
+      }
+    ],
+    costsNote:
+      'Scope hangt af van hoeveel plaatsen en dak-/zondiensten je dekt en hoe druk lokale platformresultaten zijn. Vraag een lokale-SEO-offerte voor dakdekkers & zonnepanelen aan — we schetsen GBP-opzet, dual-intent zoekwoorden, catchment-signalen en reviewritme met eerlijke planning, zonder rankinggaranties. Neem je plaatsen, ophaalstraal en drukste diensten mee, zodat we het plan rond echte storm- en investeringsvraag dimensioneren en niet rond een generieke checklist.',
+    siblingsBadge: 'Ook voor dakdekkers & zon',
+    siblingsHead: 'Combineer lokale SEO met een heldere offertesite en Google Ads',
+    siblingsSub:
+      'Maps en dienstpagina’s zetten je op de shortlist; de website maakt van die blik een lekkagecall of investeringsofferte, en Google Ads kan later high-intent seizoenszoeken vangen. Deze diensten maken de silo compleet — lokale SEO eerst voor organische packzichtbaarheid.',
+    siblingsCta: 'Bekijk dienst',
+    hubLink: 'Terug naar dak- & zonmarketing',
+    supportLinkLabel: 'Bekijk ook onze algemene lokale SEO-dienst',
+    supportLinkNote:
+      'Voor bedrijven buiten dak- en zonwerk bieden we bredere lokale SEO. Dak-en-zontrajecten volgen het proces op deze pagina, met focus op duale tempo’s, high-ticket reviews, subsidiezoekgedrag en concurrentie met vergelijkingsplatforms.',
+    ctaHeading: 'Klaar om zichtbaar te zijn bij de volgende lekkagezoek én de volgende zon-shortlist?',
+    ctaSub:
+      'Deel welke plaatsen je dekt voor dakwerk en zon, hoe stormlekkagecalls versus subsidiegeframed paneelaanvragen binnenkomen, en welke garanties of terugverdienverhalen je kunt tonen. We plannen GBP, dual-intent stadspagina’s en reviewvragen na oplevering met eerlijke doorlooptijden — geen beloofde packplek voor “dakdekker [plaats]” of “zonnepanelen-installateur [plaats]”.',
+    ctaButton: 'Vraag een offerte aan'
+  }
+} as const
+
+export default function DakdekkersZonnepanelenLokaleSeo() {
+  const { pathname } = useLocation()
+  const locale: Locale = localeFromPath(pathname)
+  const t = T[locale]
+  const hubPath = ROUTES['branches-dakdekkers-zonnepanelen'][locale]
+  const firmSpokes = BRANCH_SPOKES['dakdekkers-zonnepanelen']
+  const siblings = firmSpokes.filter((spoke) =>
+    (SIBLING_SLUGS as readonly string[]).includes(spoke.slug)
+  )
+
+  return (
+    <div>
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary-600 via-primary-700 to-secondary-600 text-white">
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-white/10 rounded-full blur-3xl" />
+          <div className="absolute top-60 -left-20 w-60 h-60 bg-white/10 rounded-full blur-3xl" />
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-24 lg:pt-28 lg:pb-32">
+          <div className="max-w-3xl mx-auto text-center">
+            <nav className="flex items-center justify-center gap-2 text-sm mb-8 flex-wrap" aria-label="Breadcrumb">
+              <Link to={ROUTES.home[locale]} className="text-white/60 hover:text-white transition-colors">
+                {t.crumbHome}
+              </Link>
+              <span className="text-white/40" aria-hidden>/</span>
+              <Link to={ROUTES.branches[locale]} className="text-white/60 hover:text-white transition-colors">
+                {t.crumbBranches}
+              </Link>
+              <span className="text-white/40" aria-hidden>/</span>
+              <Link to={hubPath} className="text-white/60 hover:text-white transition-colors">
+                {t.crumbHub}
+              </Link>
+              <span className="text-white/40" aria-hidden>/</span>
+              <span className="text-white">{t.crumbCurrent}</span>
+            </nav>
+
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-medium mb-6">
+              <Sun className="w-4 h-4" aria-hidden />
+              <span>{t.badge}</span>
+            </div>
+
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+              {t.h1}
+            </h1>
+            <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto mb-8">{t.heroSub}</p>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+              <Link
+                to={ROUTES.contact[locale]}
+                className="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-primary-700 bg-white rounded-lg hover:bg-slate-100 transition-all shadow-lg group"
+              >
+                {t.ctaPrimary}
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden />
+              </Link>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm text-white/90">
+                <Sparkles className="w-4 h-4 text-secondary-300" aria-hidden />
+                <span>{t.trust}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary-100 text-secondary-700 text-sm font-medium mb-4">
+            <span>{t.problemBadge}</span>
+          </div>
+          <h2 className="section-heading text-slate-900 mb-6">{t.problemHead}</h2>
+          <div className="space-y-5 text-lg text-slate-600 leading-relaxed">
+            <p>{t.problemP1}</p>
+            <p>{t.problemP2}</p>
+            <p>{t.problemP3}</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 lg:py-28 bg-gradient-to-b from-slate-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-100 text-primary-700 text-sm font-medium mb-4">
+              <Search className="w-4 h-4" aria-hidden />
+              <span>{t.featuresBadge}</span>
+            </div>
+            <h2 className="section-heading text-slate-900 mb-4">{t.featuresHead}</h2>
+            <p className="section-subheading mx-auto">{t.featuresSub}</p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            {FEATURES.map((feature, i) => {
+              const Icon = FEATURE_ICONS[i] ?? CheckCircle2
+              const copy = feature[locale]
+              return (
+                <div key={copy.title} className="card p-6">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center mb-4 shadow-lg">
+                    <Icon className="w-6 h-6 text-white" aria-hidden />
+                  </div>
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">{copy.title}</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">{copy.description}</p>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent-100 text-accent-700 text-sm font-medium mb-4">
+              <span>{t.processBadge}</span>
+            </div>
+            <h2 className="section-heading text-slate-900 mb-4">{t.processHead}</h2>
+            <p className="section-subheading mx-auto">{t.processSub}</p>
+          </div>
+
+          <div className="max-w-3xl mx-auto space-y-6">
+            {PROCESS_STEPS.map((item) => {
+              const copy = item[locale]
+              return (
+                <div key={copy.step} className="card p-6 sm:p-8 flex gap-5">
+                  <div className="text-2xl font-display font-bold text-primary-600 flex-shrink-0">{copy.step}</div>
+                  <div>
+                    <h3 className="text-xl font-bold text-slate-900 mb-2">{copy.title}</h3>
+                    <p className="text-slate-600 leading-relaxed">{copy.description}</p>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 lg:py-28 bg-gradient-to-b from-slate-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary-100 text-secondary-700 text-sm font-medium mb-4">
+              <CheckCircle2 className="w-4 h-4" aria-hidden />
+              <span>{t.whyBadge}</span>
+            </div>
+            <h2 className="section-heading text-slate-900 mb-4">{t.whyHead}</h2>
+            <p className="section-subheading mx-auto">{t.whySub}</p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            {t.whyItems.map((item) => (
+              <div key={item.title} className="card p-6">
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center mb-4">
+                  <CheckCircle2 className="w-5 h-5 text-white" aria-hidden />
+                </div>
+                <h3 className="text-lg font-bold text-slate-900 mb-2">{item.title}</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-100 text-primary-700 text-sm font-medium mb-4">
+            <span>{t.costsBadge}</span>
+          </div>
+          <h2 className="section-heading text-slate-900 mb-4">{t.costsHead}</h2>
+          <p className="text-lg text-slate-600 leading-relaxed mb-10">{t.costsIntro}</p>
+
+          <div className="space-y-4 mb-8">
+            {t.costsItems.map((item) => (
+              <div key={item.title} className="card p-6">
+                <h3 className="text-lg font-bold text-slate-900 mb-2">{item.title}</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-sm text-slate-500 leading-relaxed">{t.costsNote}</p>
+        </div>
+      </section>
+
+      <section className="py-20 lg:py-28 bg-gradient-to-b from-slate-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-100 text-primary-700 text-sm font-medium mb-4">
+              <span>{t.siblingsBadge}</span>
+            </div>
+            <h2 className="section-heading text-slate-900 mb-4">{t.siblingsHead}</h2>
+            <p className="section-subheading mx-auto">{t.siblingsSub}</p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-6 lg:gap-8 mb-10 max-w-3xl mx-auto">
+            {siblings.map((spoke) => (
+              <BranchSpokeCard
+                key={spoke.slug}
+                industrySlug="dakdekkers-zonnepanelen"
+                spoke={spoke}
+                locale={locale}
+                ctaLabel={t.siblingsCta}
+              />
+            ))}
+          </div>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-center">
+            <Link to={hubPath} className="text-primary-600 font-semibold hover:text-primary-700 inline-flex items-center gap-2">
+              {t.hubLink}
+              <ArrowRight className="w-4 h-4" aria-hidden />
+            </Link>
+            <span className="hidden sm:inline text-slate-300" aria-hidden>|</span>
+            <div className="text-sm text-slate-500 max-w-md">
+              <Link to={ROUTES['local-seo'][locale]} className="text-primary-600 font-medium hover:text-primary-700">
+                {t.supportLinkLabel}
+              </Link>
+              <span className="block mt-1">{t.supportLinkNote}</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="section-heading text-slate-900 mb-4">{t.ctaHeading}</h2>
+          <p className="section-subheading mx-auto mb-8">{t.ctaSub}</p>
+          <Link to={ROUTES.contact[locale]} className="btn-primary group">
+            {t.ctaButton}
+            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden />
+          </Link>
+        </div>
+      </section>
+    </div>
+  )
+}
